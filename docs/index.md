@@ -11,9 +11,7 @@ has_children: false
 BrainSTEM has a customizable web interface built on a flexible data model and functions as an electronic lab notebook that allows for the organization of experiments and raw data. Granular access control enables collaboration within or across labs. The database of metadata can be accessed through either a web interface or REST API. A prototype of this tool has been deployed in the Buzsáki Lab, and a beta version for broad distribution is currently under development.
 {: .fs-6 .fw-300}
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2} [API tools](https://github.com/petersenpeter/CellExplorer){: .btn .fs-5 .mb-4 .mb-md-0}
-
-![BrainSTEM](https://raw.githubusercontent.com/petersenpeter/common_resources/main/images/CellExplorerInterface-1200x730-1.jpeg)
+[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2} [Matlab API tool](https://github.com/petersenpeter/brainstem_matlab_api_tools){: .btn .fs-5 .mb-4 .mb-md-0} [Python API tool](https://github.com/petersenpeter/brainstem_python_api_tools){: .btn .fs-5 .mb-4 .mb-md-0}
 
 ## Introduction
 {: .no_toc}
