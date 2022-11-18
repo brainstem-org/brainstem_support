@@ -20,8 +20,8 @@ remote_theme: petersenpeter/just-the-docs
 title: BrainSTEM documentation
 description: A collaborative electronic lab notebook for FAIR experimental neuroscience.
 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://petersenpeter.github.io/brainstem_support" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/brainstem_support" # the subpath of your site, e.g. /blog
+url: "https://petersenpeter.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
@@ -72,9 +72,9 @@ aux_links:
   "BrainSTEM.org":
     - "https://www.brainstem.org/"
   "Matlab API tools":
-    - "https://github.com/petersenpeter/brainstem_matlab_api_tools"
+    - "https://github.com/petersenpeter/brainstem_matlab_api_tools/"
   "Python API tools":
-    - "https://github.com/petersenpeter/brainstem_python_api_tools"
+    - "https://github.com/petersenpeter/brainstem_python_api_tools/"
 
 
 # Makes Aux links open in a new tab. Default is false
