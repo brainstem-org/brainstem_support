@@ -5,6 +5,6 @@ parent: Web interface
 nav_order: 1
 ---
 # Dashboard
-The dashboard provides an overview of your data, organized in three colums. By default it shows your most recent project, subjects, datasets. It also shows statistics about the most used resources and taxonomies.
+The dashboard provides an overview of your data, organized in three columns. By default it shows your most recent project, subjects, datasets. It also shows statistics about the most used resources and taxonomies.
 
-### Show screenshot of dashboard
+![dashboard](/assets/images/dashboard.png)
