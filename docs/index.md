@@ -13,7 +13,7 @@ A collaborative electronic lab notebook for FAIR experimental neuroscience.
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2} [Visit BrainSTEM.org](https://www.brainstem.org/){: .btn .fs-5 .mb-4 .mb-md-0}
 
-![website screenshot](/assets/images/website_screenshot.jpg)
+![website screenshot](https://petersenpeter.github.io/brainstem_support/assets/images/website_screenshot.jpg)
 
 ## Introduction
 {: .no_toc}
@@ -40,5 +40,5 @@ Please use the [GitHub issues system](https://github.com/petersenpeter/brainstem
 BrainSTEM is funded through the [Oxytocin U19 BRAIN Initiative Grant](https://med.nyu.edu/departments-institutes/neuroscience/research/shared-research-resources/oxytocin-u19-brain-initiative-grant).
 
 <p align="center">
-	<img src="/assets/images/brain_initiative.png" width="19%">&emsp;&emsp;&emsp;&emsp;
+	<img src="https://petersenpeter.github.io/brainstem_support/assets/images/brain_initiative.png" width="19%">&emsp;&emsp;&emsp;&emsp;
 </p>
