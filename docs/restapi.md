@@ -6,4 +6,6 @@ has_children: true
 ---
 # REST API
 {: .no_toc}
-Below pages describe the REST API, our API tools for Matlab and Python, and the web API portal.
+The REST API allows for programmable access. API tools has been built for Matlab and Python. 
+
+Below pages describe the REST API, the API tools for Matlab and Python, and the web API portal.

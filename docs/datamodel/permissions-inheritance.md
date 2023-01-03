@@ -17,3 +17,5 @@ Groups have three permission levels:
 - Members inherit project-permissions assigned to group: including change, manager and owner project-permissions.
 - Managers can add and remove group members.
 - Owners can manage Group details and add and remove managers.
+
+![permissions](https://petersenpeter.github.io/brainstem_support/assets/images/permissions.png)
