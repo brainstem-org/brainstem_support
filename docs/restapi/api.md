@@ -1,13 +1,13 @@
 ---
 layout: default
-title: API endpoints and commands
+title: API endpoints
 parent: REST API
 nav_order: 2
 ---
 # API endpoints
 The API endpoints' URLs are defined by the portal, the app and the model: 
 ```
-https://www.BrainSTEM.org/rest/*portal*/*app*/*model*/
+https://www.BrainSTEM.org/rest/*portal*/*app*/*model*/*id*/
 ```
 {: .note }
 > __portal__: `private` or `public`
@@ -36,29 +36,40 @@ https://www.BrainSTEM.org/rest/public/stem/dataset/
 {: .no_toc}
 
 ## Query parameters
-When querying an endpoints, extra parameters can be set, including field-specific filters, change the sorting, and define relationships to include in the query. 
+When querying an endpoints, extra parameters can be set, including field-specific filters, the sorting of the output of a query can be set, and define relationships to include in the query. 
 
 ### Filters
+Filter entries by defining a specific value, e.g. name="project1":
 ```
-
 /?filter{name}=project1
+```
+or search for a specific string, e.g. description.icontains=hippo, where icontains, defines that the string description should contain the string "hippo":
+```
 /?filter{description.icontains}=hippo
 ```
+
 ### Sorting
+To alter the default sorting of the output of a query, define which field to use and which order, ascending or descending. A minus-sign will sort descending. E.g. to sort descending by the name field:
 ```
 /?sort[]=-name
+```
+
+Or simply sort by the description field:
+```
 /?sort[]=description
 ```
 
 ### Include relationships
-Relational fields will by default only include the id, but relationships can also be included when querying one model. The
+Relational fields will by default only include the id (UUID), but relationships can also be included when querying a model. To include the relational field `behaviors` or `experiment_data`: 
 ```
 /?include[]=behaviors
 /?include[]=experiment_data
 ```
 
 ### Combine query parameters
-The query parameters can be combined:
+Finally query parameters can be combined:
 ```
 /?filter{name}=project1&sort[]=-name&include[]=behaviors
 ```
+
+
