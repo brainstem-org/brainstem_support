@@ -14,34 +14,41 @@ The relational model can be separated into three levels:
 
 ## Employment of standardization while maintaining expandability
 The data model consists of 6 categories
-Stem data
+
+__Stem data__
+
 - Projects
 - Subjects
 - Datasets 
 - Collections
 
-Module data
+__Module data__
+
 - Actions
 - Behaviors
 - Experiment data
 - Manipulations
 
-Permissions and ownership
+__Permissions and ownership__
+
 - Users
 - Groups
 - Laboratories
 
-Resources (+)
+__Resources (+)__
+
 - Suppliers
 - Consumables
 - Hardware devices
 
-Taxonomies (+)
+__Taxonomies (+)__
+
 - Brain regions atlas
 - Species and strains
 - Environment types
 
-Personal attributes
+__Personal attributes__
+
 - Behavioral paradigms
 - Data repositories
 - Physical environments
