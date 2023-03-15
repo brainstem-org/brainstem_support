@@ -27,7 +27,7 @@ BrainSTEM is in a pilot stage, so please reach out if you are interested in help
 ## Getting started
 
 1. __Create a user account__: Visit the register page [https://brainstem.org/register/]
-([https://brainstem.org/register/) and fill in your personal info, including name, email and password.
+(https://brainstem.org/register/) and fill in your personal info, including name, email and password.
 2. __Create or join a group__: Once you are in your dashboard, click the __Groups__ link in the left side menu. Create your own group by clicking __+ Add group__ in the top right above the list of groups. To join an existing group, find the group you would like to join from the list and click __request membership__. A group administer must now accept your request. 
 3. __Create or join a project__: Go to the projects page via the Projects link in the left side menu. Create a project by clicking __+ Add project__ at the top right above the list of projects. If you join an existing group you inherit permissions to the group's projects, and they should be visible on the projects page. 
 
