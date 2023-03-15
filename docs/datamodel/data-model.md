@@ -10,7 +10,7 @@ The relational model can be separated into three levels:
 2. Module data
 3. Backend with taxonomies and resources.
 
-![data_model](https://petersenpeter.github.io/brainstem_support/assets/images/data_model.png)
+[![data_model](https://petersenpeter.github.io/brainstem_support/assets/images/data_model.png)](https://petersenpeter.github.io/brainstem_support/assets/images/data_model.png)
 
 ## The data model
 The data model is built around a standardized structure that maintains expandability allowing for incorporation of new methods, techniques, data types, resources and expanded taxonomies.
@@ -69,4 +69,4 @@ Personal attributes are model elements that typically are shared within labs: lo
 ## Example usage of the flexible modular design
 Extracellular recording during a behavioral session from a rat. 
 
-![data_model_example](https://petersenpeter.github.io/brainstem_support/assets/images/data_model_example.png)
+[![data_model_example](https://petersenpeter.github.io/brainstem_support/assets/images/data_model_example.png)](https://petersenpeter.github.io/brainstem_support/assets/images/data_model_example.png)

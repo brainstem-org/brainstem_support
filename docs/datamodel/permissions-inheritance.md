@@ -7,7 +7,7 @@ nav_order: 2
 # Permissions implementation and inheritance
 Permissions are implemented on an object level, inheriting permissions from users, groups, and projects. Subjects, datasets and collections inherits permissions from projects and module data inheits permissions from subjects and datasets. The personal attributes inherits permissions from groups.
 
-![permissions](https://petersenpeter.github.io/brainstem_support/assets/images/permissions.png)
+[![permissions](https://petersenpeter.github.io/brainstem_support/assets/images/permissions.png)](https://petersenpeter.github.io/brainstem_support/assets/images/permissions.png)
 
 ### Projects
 Projects have four permission levels that can be defined for individual groups and users:
