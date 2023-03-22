@@ -2,7 +2,7 @@
 layout: default
 title: Project
 parent: API endpoints
-has_toc: false
+has_toc: true
 nav_order: 3
 ---
 
