@@ -5,9 +5,11 @@ parent: API endpoints
 grand_parent: REST API
 nav_order: 2
 ---
-{: .no_toc}
 
 ## Contents
+
+{: .no_toc}
+
 - [Fields](/brainstem_support/restapi/stem/project/#fields)
 - Endpoints
   - [List view](/brainstem_support/restapi/stem/project/#list-view)
