@@ -2,7 +2,7 @@
 layout: default
 title: Project
 parent: API endpoints
-nav_order: 4
+nav_order: 3
 ---
 
 # Project REST API
@@ -18,6 +18,7 @@ nav_order: 4
 - **is_public:** boolean.
 - **tags:** list of strings.
 - **users:** dictionary where each entry has the following structure
+
 ```
 "<user_email>": {
                 "can_change": <boolean>,
@@ -25,7 +26,9 @@ nav_order: 4
                 "is_owner": <boolean>
             }
 ```
+
 - **groups:** dictionary where each entry has the following structure
+
 ```
 "<group_name>": {
                 "can_change": <boolean>,
