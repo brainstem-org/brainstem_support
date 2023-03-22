@@ -6,16 +6,7 @@ grand_parent: REST API
 nav_order: 2
 ---
 
-## Contents
 {: .no_toc}
-- [Fields](/brainstem_support/restapi/stem/project/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/stem/project/#list-view)
-  - [Add](/brainstem_support/restapi/stem/project/#add)
-  - [Detail](/brainstem_support/restapi/stem/project/#detail)
-  - [Change](/brainstem_support/restapi/stem/project/#change)
-  - [Delete](/brainstem_support/restapi/stem/project/#delete)
-
 
 ## Fields
 
