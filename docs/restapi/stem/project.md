@@ -7,9 +7,7 @@ nav_order: 2
 ---
 
 ## Contents
-
 {: .no_toc}
-
 - [Fields](/brainstem_support/restapi/stem/project/#fields)
 - Endpoints
   - [List view](/brainstem_support/restapi/stem/project/#list-view)
