@@ -2,11 +2,13 @@
 layout: default
 title: Project
 parent: API endpoints
+grand_parent: REST API
 nav_order: 2
 ---
 
 
 ## Fields
+
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
