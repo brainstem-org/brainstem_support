@@ -7,13 +7,13 @@ nav_order: 2
 ---
 
 ## Contents
-- [Fields](/restapi/stem/project/#fields)
+- [Fields](/brainstem_support/restapi/stem/project/#fields)
 - Endpoints
-  - [List view](/restapi/stem/project/#list-view)
-  - [Add](/restapi/stem/project/#add)
-  - [Detail](/restapi/stem/project/#detail)
-  - [Change](/restapi/stem/project/#change)
-  - [Delete](/restapi/stem/project/#delete)
+  - [List view](/brainstem_support/restapi/stem/project/#list-view)
+  - [Add](/brainstem_support/restapi/stem/project/#add)
+  - [Detail](/brainstem_support/restapi/stem/project/#detail)
+  - [Change](/brainstem_support/restapi/stem/project/#change)
+  - [Delete](/brainstem_support/restapi/stem/project/#delete)
 
 
 ## Fields
