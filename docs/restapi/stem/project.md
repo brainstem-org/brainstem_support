@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Project
-parent: stem
+parent: API endpoints
 nav_order: 4
 ---
 
