@@ -2,23 +2,26 @@
 layout: default
 title: Project
 parent: API endpoints
-has_toc: true
-nav_order: 3
+nav_order: 2
 ---
 
-# Project REST API
 
 ## Fields
-- **id:** string with UUID identificator.
-- **name:** string [required].
-- **description:** string.
-- **datasets:** list of strings representing the related datasets IDs [read-only].
-- **subjects:** list of strings representing the related subjects IDs [read-only].
-- **publications:** list of strings representing the related publications IDs [read-only].
-- **extra_content_json:** JSON dictionary.
-- **is_public:** boolean.
-- **tags:** list of strings.
-- **users:** dictionary where each entry has the following structure
+| Field        | Description  |
+|:-------------|:-------------|
+| `id` | string with UUID identificator |
+| `name` | string **[required]** |
+| `description` | string |
+| `datasets` | list of strings representing the related datasets IDs **[read-only]** |
+| `subjects` | list of strings representing the related subjects IDs **[read-only]** |
+| `publications` | list of strings representing the related publications IDs **[read-only]** |
+| `extra_content_json` | JSON dictionary |
+| `is_public` | boolean |
+| `tags` | list of strings |
+| `users` | JSON dictionary |
+| `groups` | JSON dictionary |
+
+Each entry of in the `users` dictionary must follow the following structure:
 
 ```
 "<user_email>": {
@@ -27,8 +30,7 @@ nav_order: 3
                 "is_owner": <boolean>
             }
 ```
-
-- **groups:** dictionary where each entry has the following structure
+Each entry of in the `groups` dictionary must follow the following structure:
 
 ```
 "<group_name>": {
@@ -179,7 +181,7 @@ resp = save_model(settings, "project",  data={"name": "NewRestProject", "descrip
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/stem/project/<id>/
+- **URL:** http://brainstem.org/rest/private/stem/project/<id\>/
 - **Data:** None
 
 ### Use example (using Python API):
@@ -209,7 +211,7 @@ resp = load_model(settings, 'project', filters={'id': 'a5f29099-2758-4163-a8e4-e
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/stem/project/<id>/
+- **URL:** http://brainstem.org/rest/private/stem/project/<id\>/
 - **Data:** JSON dictionary containing the fields to be updated **and the project's ID**.
 
 
@@ -264,7 +266,7 @@ resp = save_model(settings, "project",
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/stem/project/<id>/
+- **URL:** http://brainstem.org/rest/private/stem/project/<id\>/
 - **Data:** JSON dictionary containing the **project's ID**.
 
 
