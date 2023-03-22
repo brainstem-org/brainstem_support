@@ -6,6 +6,15 @@ grand_parent: REST API
 nav_order: 2
 ---
 
+## Contents
+- [Fields](/restapi/stem/project/#fields)
+- Endpoints
+  - [List view](/restapi/stem/project/#list-view)
+  - [Add](/restapi/stem/project/#add)
+  - [Detail](/restapi/stem/project/#detail)
+  - [Change](/restapi/stem/project/#change)
+  - [Delete](/restapi/stem/project/#delete)
+
 
 ## Fields
 
