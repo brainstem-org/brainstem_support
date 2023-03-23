@@ -6,6 +6,7 @@ grand_parent: REST API
 nav_order: 2
 ---
 
+1. The generated Toc will be an ordered list
 {:toc}
 
 ## Fields
