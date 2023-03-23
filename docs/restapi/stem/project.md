@@ -6,7 +6,7 @@ grand_parent: REST API
 nav_order: 2
 ---
 
-{: .no_toc}
+{:toc}
 
 ## Fields
 
