@@ -2,6 +2,7 @@
 layout: default
 title: API endpoints
 parent: REST API
+has_children: true
 nav_order: 2
 ---
 # API endpoints
