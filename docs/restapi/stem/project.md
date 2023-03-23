@@ -64,12 +64,12 @@ Each entry of in the `groups` dictionary must follow the following structure:
 - **URL:** http://brainstem.org/rest/private/stem/project
 - **Data:** None
 
-### Use example (using Python API):
+### Use example (using Python API)
 ```
 resp = load_model(settings, 'project')
 ```
 
-### Response example:
+### Response example
 ```
 {"projects": [
     {
@@ -163,12 +163,12 @@ resp = load_model(settings, 'project')
 
 **Additional notes:** when a user creates a project they become its owner and only member. Any other user or group will not be added at this point. Perform a change request to add more users or groups.
 
-### Use example (using Python API):
+### Use example (using Python API)
 ```
 resp = save_model(settings, "project",  data={"name": "NewRestProject", "description": "some text"})
 ```
 
-### Response example:
+### Response example
 ```
 {'project': {'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
     'name': 'NewRestProject',
@@ -194,12 +194,12 @@ resp = save_model(settings, "project",  data={"name": "NewRestProject", "descrip
 - **URL:** http://brainstem.org/rest/private/stem/project/<id\>/
 - **Data:** None
 
-### Use example (using Python API):
+### Use example (using Python API)
 ```
 resp = load_model(settings, 'project', filters={'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2'})
 ```
 
-### Response example:
+### Response example
 ```
 {'project': {'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
     'name': 'NewRestProject',
@@ -225,7 +225,7 @@ resp = load_model(settings, 'project', filters={'id': 'a5f29099-2758-4163-a8e4-e
 - **Data:** JSON dictionary containing the fields to be updated **and the project's ID**.
 
 
-### Use example (using Python API):
+### Use example (using Python API)
 ```
 resp = save_model(settings, "project",  
     data={"id": "a5f29099-2758-4163-a8e4-e5e2898e57b2", 
@@ -250,7 +250,7 @@ resp = save_model(settings, "project",
     "groups": {"Group1": {"remove": True}}})
 ```
 
-### Response example:
+### Response example
 ```
 {'project': {'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
   'name': 'NewRestProject',
@@ -280,7 +280,7 @@ resp = save_model(settings, "project",
 - **Data:** JSON dictionary containing the **project's ID**.
 
 
-### Use example (using Python API):
+### Use example (using Python API)
 ```
 resp = delete_model(settings, "project", data={"id": "a5f29099-2758-4163-a8e4-e5e2898e57b2"})
 ```
