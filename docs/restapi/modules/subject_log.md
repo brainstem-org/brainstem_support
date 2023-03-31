@@ -3,20 +3,20 @@ layout: default
 title: Modules - Subject Log
 parent: API endpoints
 grand_parent: REST API
-nav_order: 2
+nav_order: 3
 ---
 
 ## Table of contents
-- [Fields](/brainstem_support/restapi/modules/subjectlog/#fields)
+- [Fields](/brainstem_support/restapi/modules/subject_log/#fields)
 - Endpoints
-  - [List view](/brainstem_support/restapi/modules/subjectlog/#list-view)
-  - [Add](/brainstem_support/restapi/modules/subjectlog/#add)
-  - [Detail](/brainstem_support/restapi/modules/subjectlog/#detail)
-  - [Change](/brainstem_support/restapi/modules/subjectlog/#change)
-  - [Delete](/brainstem_support/restapi/modules/subjectlog/#delete)
-  - [Add entry](/brainstem_support/restapi/modules/subjectlog/#add-entry)
-  - [Change entry](/brainstem_support/restapi/modules/subjectlog/#change-entry)
-  - [Remove entry](/brainstem_support/restapi/modules/subjectlog/#remove-entry)
+  - [List view](/brainstem_support/restapi/modules/subject_log/#list-view)
+  - [Add](/brainstem_support/restapi/modules/subject_log/#add)
+  - [Detail](/brainstem_support/restapi/modules/subject_log/#detail)
+  - [Change](/brainstem_support/restapi/modules/subject_log/#change)
+  - [Delete](/brainstem_support/restapi/modules/subject_log/#delete)
+  - [Add entry](/brainstem_support/restapi/modules/subject_log/#add-entry)
+  - [Change entry](/brainstem_support/restapi/modules/subject_log/#change-entry)
+  - [Remove entry](/brainstem_support/restapi/modules/subject_log/#remove-entry)
 
 ## Fields
 

@@ -3,7 +3,7 @@ layout: default
 title: Modules - Manipulation
 parent: API endpoints
 grand_parent: REST API
-nav_order: 2
+nav_order: 3
 ---
 
 ## Table of contents
