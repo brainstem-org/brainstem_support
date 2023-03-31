@@ -40,6 +40,7 @@ nav_order: 2
 - **Request method:** GET
 - **URL:** http://brainstem.org/rest/private/stem/subject
 - **Data:** None
+- **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
 ```
@@ -97,6 +98,7 @@ resp = load_model(settings, 'subject')
 - **Request method:** POST
 - **URL:** http://brainstem.org/rest/private/stem/subject
 - **Data:** JSON dictionary containing at least the required fields.
+- **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 
 ### Use example (using Python API)
@@ -135,10 +137,11 @@ resp = save_model(settings, "subject",  data={
 - **Request method:** GET
 - **URL:** http://brainstem.org/rest/private/stem/subject/<id>/
 - **Data:** None
+- **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
 ```
-resp = load_model(settings, 'subject', filters={'id': 'c20b2025-2e98-4eb9-bc89-0bad9f271c7f'})
+resp = load_model(settings, 'subject', id='c20b2025-2e98-4eb9-bc89-0bad9f271c7f')
 ```
 
 ### Response example
@@ -165,14 +168,13 @@ resp = load_model(settings, 'subject', filters={'id': 'c20b2025-2e98-4eb9-bc89-0
 - **Allowed portals:** private, super
 - **Request method:** PATCH
 - **URL:** http://brainstem.org/rest/private/stem/subject/<id>/
-- **Data:** JSON dictionary containing the fields to be updated **and the subject's ID**.
+- **Data:** dictionary containing the fields to be updated
+- **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 
 ### Use example (using Python API)
 ```
-resp = save_model(settings, "subject",  
-    data={"id": "c20b2025-2e98-4eb9-bc89-0bad9f271c7f", 
-    "description": "new text"})
+resp = save_model(settings, "subject", id="c20b2025-2e98-4eb9-bc89-0bad9f271c7f", data={"description": "new text"})
 ```
 
 ### Response example
@@ -199,10 +201,11 @@ resp = save_model(settings, "subject",
 - **Allowed portals:** private, super
 - **Request method:** DELETE
 - **URL:** http://brainstem.org/rest/private/stem/subject/<id>/
-- **Data:** JSON dictionary containing the **subject's ID**.
+- **Data:** None
+- **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
 
 ### Use example (using Python API)
 ```
-resp = delete_model(settings, "subject", data={"id": "c20b2025-2e98-4eb9-bc89-0bad9f271c7f"})
+resp = delete_model(settings, "subject", id="c20b2025-2e98-4eb9-bc89-0bad9f271c7f")
 ```

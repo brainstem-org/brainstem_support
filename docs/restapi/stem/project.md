@@ -56,6 +56,7 @@ Each entry of in the `groups` dictionary must follow the following structure:
 - **Request method:** GET
 - **URL:** http://brainstem.org/rest/private/stem/project
 - **Data:** None
+- **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
 ```
@@ -153,6 +154,7 @@ resp = load_model(settings, 'project')
 - **Request method:** POST
 - **URL:** http://brainstem.org/rest/private/stem/project
 - **Data:** JSON dictionary containing at least the required fields.
+- **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 **Additional notes:** when a user creates a project they become its owner and only member. Any other user or group will not be added at this point. Perform a change request to add more users or groups.
 
@@ -186,10 +188,11 @@ resp = save_model(settings, "project",  data={"name": "NewRestProject", "descrip
 - **Request method:** GET
 - **URL:** http://brainstem.org/rest/private/stem/project/<id\>/
 - **Data:** None
+- **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
 ```
-resp = load_model(settings, 'project', filters={'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2'})
+resp = load_model(settings, 'project', id='a5f29099-2758-4163-a8e4-e5e2898e57b2')
 ```
 
 ### Response example
@@ -215,14 +218,13 @@ resp = load_model(settings, 'project', filters={'id': 'a5f29099-2758-4163-a8e4-e
 - **Allowed portals:** private, super
 - **Request method:** PATCH
 - **URL:** http://brainstem.org/rest/private/stem/project/<id\>/
-- **Data:** JSON dictionary containing the fields to be updated **and the project's ID**.
+- **Data:** dictionary containing the fields to be updated
+- **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 
 ### Use example (using Python API)
 ```
-resp = save_model(settings, "project",  
-    data={"id": "a5f29099-2758-4163-a8e4-e5e2898e57b2", 
-    "description": "new text"})
+resp = save_model(settings, "project", id="a5f29099-2758-4163-a8e4-e5e2898e57b2", data={"description": "new text"})
 ```
 
 To add new users and/or groups to the project, or modify the permissions of the existing ones, provide their corresponding dictionaries. Missing permissions will default to *False*.
@@ -270,10 +272,11 @@ resp = save_model(settings, "project",
 - **Allowed portals:** private, super
 - **Request method:** DELETE
 - **URL:** http://brainstem.org/rest/private/stem/project/<id\>/
-- **Data:** JSON dictionary containing the **project's ID**.
+- **Data:** None
+- **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
 
 ### Use example (using Python API)
 ```
-resp = delete_model(settings, "project", data={"id": "a5f29099-2758-4163-a8e4-e5e2898e57b2"})
+resp = delete_model(settings, "project", id="a5f29099-2758-4163-a8e4-e5e2898e57b2")
 ```

@@ -40,6 +40,7 @@ nav_order: 2
 - **Request method:** GET
 - **URL:** http://brainstem.org/rest/private/stem/dataset
 - **Data:** None
+- **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
 ```
@@ -90,6 +91,7 @@ resp = load_model(settings, 'dataset')
 - **Request method:** POST
 - **URL:** http://brainstem.org/rest/private/stem/dataset
 - **Data:** JSON dictionary containing at least the required fields.
+- **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 
 ### Use example (using Python API)
@@ -126,10 +128,11 @@ resp = save_model(settings, "dataset",  data={
 - **Request method:** GET
 - **URL:** http://brainstem.org/rest/private/stem/dataset/<id>/
 - **Data:** None
+- **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
 ```
-resp = load_model(settings, 'dataset', filters={'id': '3654964e-1bf7-40c7-a376-9dcec4c125cd'})
+resp = load_model(settings, 'dataset', id='3654964e-1bf7-40c7-a376-9dcec4c125cd')
 ```
 
 ### Response example
@@ -156,14 +159,13 @@ resp = load_model(settings, 'dataset', filters={'id': '3654964e-1bf7-40c7-a376-9
 - **Allowed portals:** private, super
 - **Request method:** PATCH
 - **URL:** http://brainstem.org/rest/private/stem/dataset/<id>/
-- **Data:** JSON dictionary containing the fields to be updated **and the dataset's ID**.
+- **Data:** dictionary containing the fields to be updated
+- **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 
 ### Use example (using Python API)
 ```
-resp = save_model(settings, "dataset",  
-    data={"id": "3654964e-1bf7-40c7-a376-9dcec4c125cd", 
-    "description": "new text"})
+resp = save_model(settings, "dataset", id="3654964e-1bf7-40c7-a376-9dcec4c125cd", data={"description": "new text"})
 ```
 
 ### Response example
@@ -190,10 +192,11 @@ resp = save_model(settings, "dataset",
 - **Allowed portals:** private, super
 - **Request method:** DELETE
 - **URL:** http://brainstem.org/rest/private/stem/dataset/<id>/
-- **Data:** JSON dictionary containing the **dataset's ID**.
+- **Data:** None
+- **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
 
 ### Use example (using Python API)
 ```
-resp = delete_model(settings, "dataset", data={"id": "3654964e-1bf7-40c7-a376-9dcec4c125cd"})
+resp = delete_model(settings, "dataset", id="3654964e-1bf7-40c7-a376-9dcec4c125cd")
 ``` 
