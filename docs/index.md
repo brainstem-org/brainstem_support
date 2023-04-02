@@ -12,7 +12,7 @@ BrainSTEM is a collaborative electronic lab notebook for FAIR experimental neuro
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2} [Visit BrainSTEM.org](https://www.brainstem.org/){: .btn .fs-5 .mb-4 .mb-md-0}
 
-![website screenshot](https://petersenpeter.github.io/brainstem_support/assets/images/website_screenshot.jpg)
+![website screenshot](https://brainstem-org.github.io/brainstem_support/assets/images/website_screenshot.jpg)
 
 ## Introduction
 {: .no_toc}
@@ -38,11 +38,11 @@ That's it! Now you can use the web interface and API tools for your experimental
 We are looking to get BrainSTEM into the hands of more researchers. If you want to support open science and you or your lab want to become pilot users [please fill out this form](https://docs.google.com/forms/d/e/1FAIpQLSctFj4ek5Ib-1FQoi9KeGzCkg6o-cuM26oggNu8FYeKRqNpwg/viewform).
 
 ## Support
-Please use the [GitHub issues system](https://github.com/petersenpeter/brainstem_support/issues) and [GitHub Discussions](https://github.com/petersenpeter/brainstem_support/discussions) for reporting bugs, enhancement requests or general questions.
+Please use the [GitHub issues system](https://github.com/brainstem-org/brainstem_support/issues) and [GitHub Discussions](https://github.com/brainstem-org/brainstem_support/discussions) for reporting bugs, enhancement requests or general questions.
 
 ## Funding
 BrainSTEM is funded through the [Oxytocin U19 BRAIN Initiative Grant](https://med.nyu.edu/departments-institutes/neuroscience/research/shared-research-resources/oxytocin-u19-brain-initiative-grant).
 
 <p align="center">
-	<img src="https://petersenpeter.github.io/brainstem_support/assets/images/brain_initiative.png" width="19%">&emsp;&emsp;&emsp;&emsp;
+	<img src="https://brainstem-org.github.io/brainstem_support/assets/images/brain_initiative.png" width="19%">&emsp;&emsp;&emsp;&emsp;
 </p>

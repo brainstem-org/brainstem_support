@@ -7,4 +7,4 @@ nav_order: 3
 # Table view
 The table views have a rich level of details with many relational links. The displayed search filters and table columns are user-adjustable. The relational columns will show a summary popup on hovering, giving a quick view without leaving the page.
 
-![Table view of projects](https://petersenpeter.github.io/brainstem_support/assets/images/projects.png)
+![Table view of projects](https://brainstem-org.github.io/brainstem_support/assets/images/projects.png)
