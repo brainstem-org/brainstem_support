@@ -15,7 +15,7 @@ https://www.BrainSTEM.org/rest/*portal*/*app*/*model*/*id*/
 > 
 > __app__: `stem`, `modules`, `personal_attributes`, `resources`, `taxonomies`, `attributes`, `auth`, `users`
 > 
-> __model__: e.g. `dataset` and `action`. Please see the [data model](https://petersenpeter.github.io/brainstem_support/datamodel/data-model/) for an overview of the models. 
+> __model__: e.g. `dataset` and `action`. Please see the [data model](https://brainstem-org.github.io/brainstem_support/datamodel/data-model/) for an overview of the models. 
 
 
 __dataset endpoint:__ 

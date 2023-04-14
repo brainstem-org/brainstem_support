@@ -21,7 +21,7 @@ title: BrainSTEM documentation
 description: A collaborative electronic lab notebook for FAIR experimental neuroscience.
 
 baseurl: "/brainstem_support" # the subpath of your site, e.g. /blog
-url: "https://petersenpeter.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://brainstem-org.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
@@ -72,9 +72,9 @@ aux_links:
   "BrainSTEM.org":
     - "https://www.brainstem.org/"
   "Matlab API tools":
-    - "https://github.com/petersenpeter/brainstem_matlab_api_tools/"
+    - "https://github.com/brainstem-org/brainstem_matlab_api_tools/"
   "Python API tools":
-    - "https://github.com/petersenpeter/brainstem_python_api_tools/"
+    - "https://github.com/brainstem-org/brainstem_python_api_tools/"
 
 # callouts
 callouts_level: quiet # or loud
@@ -108,7 +108,7 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 back_to_top: false
 back_to_top_text: "Back to top"
 
-footer_content: "Copyright &copy; 2021-2023. Theme: <a href=\"https://github.com/pmarsceill/just-the-docs\" target=\"_blank\">Just the Docs</a>. Support: <a href=\"https://github.com/petersenpeter/brainstem_support/issues\" target=\"_blank\">GitHub issues</a>, and <a href=\"https://github.com/petersenpeter/brainstem_support/discussions\" target=\"_blank\">GitHub Discussions</a>."
+footer_content: "Copyright &copy; 2021-2023. Theme: <a href=\"https://github.com/pmarsceill/just-the-docs\" target=\"_blank\">Just the Docs</a>. Support: <a href=\"https://github.com/brainstem-org/brainstem_support/issues\" target=\"_blank\">GitHub issues</a>, and <a href=\"https://github.com/brainstem-org/brainstem_support/discussions\" target=\"_blank\">GitHub Discussions</a>."
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
@@ -117,7 +117,7 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: false # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
-gh_edit_repository: "https://github.com/petersenpeter/brainstem_support" # the github URL for your repo
+gh_edit_repository: "https://github.com/brainstem-org/brainstem_support" # the github URL for your repo
 gh_edit_branch: "master" # the branch that your docs is served from
 # gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
