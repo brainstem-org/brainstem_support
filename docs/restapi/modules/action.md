@@ -192,7 +192,7 @@ resp = load_model(settings, 'action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 
 ### Use example (using Python API)
 ```
-resp = save_model(settings, "action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={description": "new text"})
+resp = save_model(settings, "action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"description": "new text"})
 ```
 
 ### Response example
