@@ -3,17 +3,17 @@ layout: default
 title: Personal attributes - Data repository
 parent: API endpoints
 grand_parent: REST API
-nav_order: 4
+nav_order: 5
 ---
 
 ## Table of contents
-- [Fields](/brainstem_support/restapi/personal-attributes/data-repository/#fields)
+- [Fields](/brainstem_support/restapi/personal_attributes/data_repository/#fields)
 - Endpoints
-  - [List view](/brainstem_support/restapi/personal-attributes/data-repository/#list-view)
-  - [Add](/brainstem_support/restapi/personal-attributes/data-repository/#add)
-  - [Detail](/brainstem_support/restapi/personal-attributes/data-repository/#detail)
-  - [Change](/brainstem_support/restapi/personal-attributes/data-repository/#change)
-  - [Delete](/brainstem_support/restapi/personal-attributes/data-repository/#delete)
+  - [List view](/brainstem_support/restapi/personal_attributes/data_repository/#list-view)
+  - [Add](/brainstem_support/restapi/personal_attributes/data_repository/#add)
+  - [Detail](/brainstem_support/restapi/personal_attributes/data_repository/#detail)
+  - [Change](/brainstem_support/restapi/personal_attributes/data_repository/#change)
+  - [Delete](/brainstem_support/restapi/personal_attributes/data_repository/#delete)
 
 
 ## Fields
