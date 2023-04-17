@@ -29,7 +29,6 @@ nav_order: 4
 | `publication_url` | string |
 | `pdf_url` | string |
 | `publication_date` | string containing date (e.g. "2023-03-22") **[required]** |
-| `comments` | string |
 
 
 ## List view

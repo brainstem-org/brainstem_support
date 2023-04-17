@@ -28,7 +28,6 @@ nav_order: 4
 | `institution` | string **[required]** |
 | `city` | string |
 | `country` | string |
-| `comments` | string |
 
 
 ## List view
