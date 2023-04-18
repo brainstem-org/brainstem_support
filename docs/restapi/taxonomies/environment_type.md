@@ -3,21 +3,21 @@ layout: default
 title: Taxonomies - Environment type
 parent: API endpoints
 grand_parent: REST API
-nav_order: 6
+nav_order: 7
 ---
 
 ## Table of contents
-- [Fields](/brainstem_support/restapi/taxonomies/environmenttype/#fields)
+- [Fields](/brainstem_support/restapi/taxonomies/environment_type/#fields)
 - Endpoints
-  - [List view](/brainstem_support/restapi/taxonomies/environmenttype/#list-view)
-  - [Add](/brainstem_support/restapi/taxonomies/environmenttype/#add)
-  - [Detail](/brainstem_support/restapi/taxonomies/environmenttype/#detail)
-  - [Change](/brainstem_support/restapi/taxonomies/environmenttype/#change)
-  - [Delete](/brainstem_support/restapi/taxonomies/environmenttype/#delete)
-  - [List approvals](/brainstem_support/restapi/taxonomies/environmenttype/#list-approvals)
-  - [Detail approval](/brainstem_support/restapi/taxonomies/environmenttype/#detail-approval)
-  - [Accept approval](/brainstem_support/restapi/taxonomies/environmenttype/#accept-approval)
-  - [Reject approval](/brainstem_support/restapi/taxonomies/environmenttype/#reject-approval)
+  - [List view](/brainstem_support/restapi/taxonomies/environment_type/#list-view)
+  - [Add](/brainstem_support/restapi/taxonomies/environment_type/#add)
+  - [Detail](/brainstem_support/restapi/taxonomies/environment_type/#detail)
+  - [Change](/brainstem_support/restapi/taxonomies/environment_type/#change)
+  - [Delete](/brainstem_support/restapi/taxonomies/environment_type/#delete)
+  - [List approvals](/brainstem_support/restapi/taxonomies/environment_type/#list-approvals)
+  - [Detail approval](/brainstem_support/restapi/taxonomies/environment_type/#detail-approval)
+  - [Accept approval](/brainstem_support/restapi/taxonomies/environment_type/#accept-approval)
+  - [Reject approval](/brainstem_support/restapi/taxonomies/environment_type/#reject-approval)
 
 ## Fields
 

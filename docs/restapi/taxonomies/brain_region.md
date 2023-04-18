@@ -3,17 +3,17 @@ layout: default
 title: Taxonomies - Brain Region
 parent: API endpoints
 grand_parent: REST API
-nav_order: 6
+nav_order: 7
 ---
 
 ## Table of contents
-- [Fields](/brainstem_support/restapi/taxonomies/brainregion/#fields)
+- [Fields](/brainstem_support/restapi/taxonomies/brain_region/#fields)
 - Endpoints
-  - [List view](/brainstem_support/restapi/taxonomies/brainregion/#list-view)
-  - [Add](/brainstem_support/restapi/taxonomies/brainregion/#add)
-  - [Detail](/brainstem_support/restapi/taxonomies/brainregion/#detail)
-  - [Change](/brainstem_support/restapi/taxonomies/brainregion/#change)
-  - [Delete](/brainstem_support/restapi/taxonomies/brainregion/#delete)
+  - [List view](/brainstem_support/restapi/taxonomies/brain_region/#list-view)
+  - [Add](/brainstem_support/restapi/taxonomies/brain_region/#add)
+  - [Detail](/brainstem_support/restapi/taxonomies/brain_region/#detail)
+  - [Change](/brainstem_support/restapi/taxonomies/brain_region/#change)
+  - [Delete](/brainstem_support/restapi/taxonomies/brain_region/#delete)
 
 ## Fields
 

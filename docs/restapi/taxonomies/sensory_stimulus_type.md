@@ -3,21 +3,21 @@ layout: default
 title: Taxonomies - Sensory stimulus type
 parent: API endpoints
 grand_parent: REST API
-nav_order: 6
+nav_order: 7
 ---
 
 ## Table of contents
-- [Fields](/brainstem_support/restapi/taxonomies/sensorystimulustype/#fields)
+- [Fields](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#fields)
 - Endpoints
-  - [List view](/brainstem_support/restapi/taxonomies/sensorystimulustype/#list-view)
-  - [Add](/brainstem_support/restapi/taxonomies/sensorystimulustype/#add)
-  - [Detail](/brainstem_support/restapi/taxonomies/sensorystimulustype/#detail)
-  - [Change](/brainstem_support/restapi/taxonomies/sensorystimulustype/#change)
-  - [Delete](/brainstem_support/restapi/taxonomies/sensorystimulustype/#delete)
-  - [List approvals](/brainstem_support/restapi/taxonomies/sensorystimulustype/#list-approvals)
-  - [Detail approval](/brainstem_support/restapi/taxonomies/sensorystimulustype/#detail-approval)
-  - [Accept approval](/brainstem_support/restapi/taxonomies/sensorystimulustype/#accept-approval)
-  - [Reject approval](/brainstem_support/restapi/taxonomies/sensorystimulustype/#reject-approval)
+  - [List view](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#list-view)
+  - [Add](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#add)
+  - [Detail](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#detail)
+  - [Change](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#change)
+  - [Delete](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#delete)
+  - [List approvals](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#list-approvals)
+  - [Detail approval](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#detail-approval)
+  - [Accept approval](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#accept-approval)
+  - [Reject approval](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#reject-approval)
 
 ## Fields
 
