@@ -100,7 +100,7 @@ resp = load_model(settings, 'consumable')
 ### Use example (using Python API)
 ```
 resp = save_model(settings, "consumable",  data={
-        "name": "NyNewConsumable",
+        "name": "MyNewConsumable",
         "description": "",
         "supplier": "fba48e24-eebf-4b11-a8b9-ac660854d779",
         "type": "OpticFiberDesign",
@@ -119,7 +119,7 @@ resp = save_model(settings, "consumable",  data={
 ```
 {'consumable_approval': {
         'id': 'b7595523-5578-45c0-b7ef-c1f1485ac041',
-        'name': 'NyNewConsumable',
+        'name': 'MyNewConsumable',
         'description': '',
         'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
         'type': 'OpticFiberDesign',
@@ -153,7 +153,7 @@ resp = load_model(settings, 'consumable', id='67f263cd-5960-406f-a879-c1f2591409
 ```
 {'consumable': {
         'id': '67f263cd-5960-406f-a879-c1f259140979',
-        'name': 'NyNewConsumable',
+        'name': 'MyNewConsumable',
         'description': '',
         'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
         'type': 'OpticFiberDesign',
@@ -187,7 +187,7 @@ resp = save_model(settings, "consumable", id="67f263cd-5960-406f-a879-c1f2591409
 ```
 {'consumable_approval': {
         'id': '8cf7d857-a197-4e36-9e0c-1766bb6aa285',
-        'name': 'NyNewConsumable',
+        'name': 'MyNewConsumable',
         'description': 'new text',
         'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
         'type': 'OpticFiberDesign',
@@ -236,7 +236,7 @@ resp = load_model(settings, 'consumableapproval')
 {"consumable_approvals": [
     {
         "id": "b7595523-5578-45c0-b7ef-c1f1485ac041",
-        "name": "NyNewConsumable",
+        "name": "MyNewConsumable",
         "description": "",
         "supplier": "fba48e24-eebf-4b11-a8b9-ac660854d779",
         "type": "OpticFiberDesign",
@@ -273,7 +273,7 @@ resp = load_model(settings, 'consumableapproval', id='b7595523-5578-45c0-b7ef-c1
 ```
 {'consumable_approval': {
         'id': 'b7595523-5578-45c0-b7ef-c1f1485ac041',
-        'name': 'NyNewConsumable',
+        'name': 'MyNewConsumable',
         'description': '',
         'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
         'type': 'OpticFiberDesign',

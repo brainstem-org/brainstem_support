@@ -186,14 +186,14 @@ resp = load_model(settings, 'hardwaredeviceapproval')
 {'hardware_device_approvals': [
     {
         'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
-    'name': 'MyNewHardwareDevice',
-    'description': '',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
-    'comments': '',
-    'instance_id': None,
-    'action': 'Add',
-    'reviewer': None,
-    'status': 'Pending'
+        'name': 'MyNewHardwareDevice',
+        'description': '',
+        'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
+        'comments': '',
+        'instance_id': None,
+        'action': 'Add',
+        'reviewer': None,
+        'status': 'Pending'
     },
     {
         'id': 'accd5fe5-6739-4e44-ba24-3910eff01fef',

@@ -79,7 +79,7 @@ resp = load_model(settings, 'journal')
 ### Use example (using Python API)
 ```
 resp = save_model(settings, "journal",  data={
-    'name': 'NyNewJournal',
+    'name': 'MyNewJournal',
     'description': '',
     'website': 'newjournal.com'}
 )
@@ -89,7 +89,7 @@ resp = save_model(settings, "journal",  data={
 ```
 {'journal_approval': {
         'id': 'dfb879c9-0e31-420b-8918-64dc30dbec6d',
-        'name': 'NyNewJournal',
+        'name': 'MyNewJournal',
         'description': '',
         'website': 'http://newjournal.com',
         'comments': ''
@@ -190,7 +190,7 @@ resp = load_model(settings, 'journalapproval')
     },
     {
         'id': '41f99539-e54e-4224-8e53-88a692f9a185',
-        'name': 'NyNewJournal',
+        'name': 'MyNewJournal',
         'description': '',
         'website': 'http://newjournal.com',
         'comments': '',
@@ -219,7 +219,7 @@ resp = load_model(settings, 'journalapproval', id='41f99539-e54e-4224-8e53-88a69
 ```
 {'journal_approval': {
     'id': '41f99539-e54e-4224-8e53-88a692f9a185',
-    'name': 'NyNewJournal',
+    'name': 'MyNewJournal',
     'description': '',
     'website': 'http://newjournal.com',
     'comments': '',
