@@ -29,11 +29,6 @@ nav_order: 8
 | `orcid_id` | string |
 | `atlas_preference` | string |
 
-Each dictionary in the `groups_own_json` list contains the group's `id` and `name`:
-```
-{'id': 8, 'name': 'test_group'}
-```
-
 The following fields are only accessible for administrators:
 
 | Field        | Description  |
@@ -44,6 +39,13 @@ The following fields are only accessible for administrators:
 | `is_taxonomies_admin` | boolean |
 | `is_resources_admin` | boolean |
 | `is_attributes_admin` | boolean |
+
+Each dictionary in the `groups_own_json` list contains the group's `id` and `name`:
+```
+{'id': 8, 'name': 'test_group'}
+```
+
+
 
 
 
@@ -98,7 +100,7 @@ Users can only be added through the website Register form.
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/user/<id>/
+- **URL:** http://brainstem.org/rest/private/users/user/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -126,7 +128,7 @@ resp = load_model(settings, 'user', id='16')
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/users/user/<id>/
+- **URL:** http://brainstem.org/rest/private/users/user/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -157,7 +159,7 @@ resp = save_model(settings, "user", id="16", data={"website": "www.someweb.com"}
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/users/user/<id>/
+- **URL:** http://brainstem.org/rest/private/users/user/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
