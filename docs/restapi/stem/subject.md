@@ -135,7 +135,7 @@ resp = save_model(settings, "subject",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/stem/subject/<id>/
+- **URL:** http://brainstem.org/rest/private/stem/subject/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -167,7 +167,7 @@ resp = load_model(settings, 'subject', id='c20b2025-2e98-4eb9-bc89-0bad9f271c7f'
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/stem/subject/<id>/
+- **URL:** http://brainstem.org/rest/private/stem/subject/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -200,7 +200,7 @@ resp = save_model(settings, "subject", id="c20b2025-2e98-4eb9-bc89-0bad9f271c7f"
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/stem/subject/<id>/
+- **URL:** http://brainstem.org/rest/private/stem/subject/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

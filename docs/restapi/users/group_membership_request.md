@@ -57,7 +57,7 @@ resp = load_model(settings, 'groupmembershiprequest')
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/groupmembershiprequest/<id>/
+- **URL:** http://brainstem.org/rest/private/users/groupmembershiprequest/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -79,7 +79,7 @@ resp = load_model(settings, 'groupmembershiprequest', id='fd335535-cf79-4ae8-86a
 ## Accept
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/groupmembershiprequest/<id>/
+- **URL:** http://brainstem.org/rest/private/users/groupmembershiprequest/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -93,7 +93,7 @@ resp = load_model(settings, "groupmembershiprequest", id="fd335535-cf79-4ae8-86a
 ## Reject
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/groupmembershiprequest/<id>/
+- **URL:** http://brainstem.org/rest/private/users/groupmembershiprequest/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -106,7 +106,7 @@ resp = load_model(settings, "groupmembershiprequest", id="5a6378e9-be26-4f0f-8e1
 ## Cancel
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/groupmembershiprequest/<id>/
+- **URL:** http://brainstem.org/rest/private/users/groupmembershiprequest/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
