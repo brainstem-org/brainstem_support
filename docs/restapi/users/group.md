@@ -3,7 +3,7 @@ layout: default
 title: Group
 parent: Users
 grand_parent: REST API
-nav_order: 8
+nav_order: 2
 ---
 
 # Group API endpoint

@@ -3,7 +3,7 @@ layout: default
 title: Action
 parent: Modules
 grand_parent: REST API
-nav_order: 3
+nav_order: 1
 ---
 
 # Action API endpoint

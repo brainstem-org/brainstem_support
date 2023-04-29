@@ -3,7 +3,7 @@ layout: default
 title: Subject Log
 parent: Modules
 grand_parent: REST API
-nav_order: 3
+nav_order: 7
 ---
 
 # Subject Log API endpoint

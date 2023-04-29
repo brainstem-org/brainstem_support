@@ -3,7 +3,7 @@ layout: default
 title: Dataset
 parent: STEM
 grand_parent: REST API
-nav_order: 2
+nav_order: 3
 ---
 
 # Dataset API endpoint

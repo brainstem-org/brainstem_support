@@ -3,7 +3,7 @@ layout: default
 title: Group Membership Request
 parent: Users
 grand_parent: REST API
-nav_order: 8
+nav_order: 4
 ---
 
 # Group Membership Request API endpoint

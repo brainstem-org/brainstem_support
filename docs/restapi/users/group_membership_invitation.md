@@ -3,7 +3,7 @@ layout: default
 title: Group Membership Invitation
 parent: Users
 grand_parent: REST API
-nav_order: 8
+nav_order: 3
 ---
 
 # Group Membership Invitation API endpoint
