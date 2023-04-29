@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Personal attributes - Physical environment
-parent: API endpoints
+title: Physical environment
+parent: Personal attributes endpoints
 grand_parent: REST API
 nav_order: 5
 ---
 
+# Physical environment API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/personal_attributes/physical_environment/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/personal_attributes/physical_environment/#list-view)
-  - [Add](/brainstem_support/restapi/personal_attributes/physical_environment/#add)
-  - [Detail](/brainstem_support/restapi/personal_attributes/physical_environment/#detail)
-  - [Change](/brainstem_support/restapi/personal_attributes/physical_environment/#change)
-  - [Delete](/brainstem_support/restapi/personal_attributes/physical_environment/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 
 ## Fields

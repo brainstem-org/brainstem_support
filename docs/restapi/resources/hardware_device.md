@@ -1,23 +1,19 @@
 ---
 layout: default
-title: Resources - Hardware Device
-parent: API endpoints
+title: Hardware Device
+parent: Resources endpoints
 grand_parent: REST API
 nav_order: 6
 ---
 
+# Hardware Device API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/resources/hardware_device/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/resources/hardware_device/#list-view)
-  - [Add](/brainstem_support/restapi/resources/hardware_device/#add)
-  - [Detail](/brainstem_support/restapi/resources/hardware_device/#detail)
-  - [Change](/brainstem_support/restapi/resources/hardware_device/#change)
-  - [Delete](/brainstem_support/restapi/resources/hardware_device/#delete)
-  - [List approvals](/brainstem_support/restapi/resources/hardware_device/#list-approvals)
-  - [Detail approval](/brainstem_support/restapi/resources/hardware_device/#detail-approval)
-  - [Accept approval](/brainstem_support/restapi/resources/hardware_device/#accept-approval)
-  - [Reject approval](/brainstem_support/restapi/resources/hardware_device/#reject-approval)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

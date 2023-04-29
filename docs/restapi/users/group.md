@@ -1,21 +1,19 @@
 ---
 layout: default
-title: Users - Group
-parent: API endpoints
+title: Group
+parent: User endpoints
 grand_parent: REST API
 nav_order: 8
 ---
 
+# Group API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/users/group/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/users/group/#list-view)
-  - [Add](/brainstem_support/restapi/users/group/#add)
-  - [Detail](/brainstem_support/restapi/users/group/#detail)
-  - [Change](/brainstem_support/restapi/users/group/#change)
-  - [Delete](/brainstem_support/restapi/users/group/#delete)
-  - [Join](/brainstem_support/restapi/users/group/#join)
-  - [Leave](/brainstem_support/restapi/users/group/#leave)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

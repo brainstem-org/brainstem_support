@@ -1,23 +1,19 @@
 ---
 layout: default
-title: Resources - Consumable
-parent: API endpoints
+title: Consumable
+parent: Resources endpoints
 grand_parent: REST API
 nav_order: 6
 ---
 
+# Consumable API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/resources/consumable/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/resources/consumable/#list-view)
-  - [Add](/brainstem_support/restapi/resources/consumable/#add)
-  - [Detail](/brainstem_support/restapi/resources/consumable/#detail)
-  - [Change](/brainstem_support/restapi/resources/consumable/#change)
-  - [Delete](/brainstem_support/restapi/resources/consumable/#delete)
-  - [List approvals](/brainstem_support/restapi/resources/consumable/#list-approvals)
-  - [Detail approval](/brainstem_support/restapi/resources/consumable/#detail-approval)
-  - [Accept approval](/brainstem_support/restapi/resources/consumable/#accept-approval)
-  - [Reject approval](/brainstem_support/restapi/resources/consumable/#reject-approval)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

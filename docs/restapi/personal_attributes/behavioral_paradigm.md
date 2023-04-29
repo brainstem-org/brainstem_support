@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Personal attributes - Behavioral paradigm
-parent: API endpoints
+title: Behavioral paradigm
+parent: Personal attributes endpoints
 grand_parent: REST API
 nav_order: 5
 ---
 
+# Behavioral paradigm API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/personal_attributes/behavioral_paradigm/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/personal_attributes/behavioral_paradigm/#list-view)
-  - [Add](/brainstem_support/restapi/personal_attributes/behavioral_paradigm/#add)
-  - [Detail](/brainstem_support/restapi/personal_attributes/behavioral_paradigm/#detail)
-  - [Change](/brainstem_support/restapi/personal_attributes/behavioral_paradigm/#change)
-  - [Delete](/brainstem_support/restapi/personal_attributes/behavioral_paradigm/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 
 ## Fields

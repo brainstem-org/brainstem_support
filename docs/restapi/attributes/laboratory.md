@@ -1,19 +1,19 @@
 ---
 layout: default
-title: General attributes - Laboratory
-parent: API endpoints
+title: Laboratory
+parent: General attributes endpoints
 grand_parent: REST API
 nav_order: 4
 ---
 
+# Laboratory API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/attributes/laboratory/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/attributes/laboratory/#list-view)
-  - [Add](/brainstem_support/restapi/attributes/laboratory/#add)
-  - [Detail](/brainstem_support/restapi/attributes/laboratory/#detail)
-  - [Change](/brainstem_support/restapi/attributes/laboratory/#change)
-  - [Delete](/brainstem_support/restapi/attributes/laboratory/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

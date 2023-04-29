@@ -1,22 +1,19 @@
 ---
 layout: default
-title: Modules - Subject Log
-parent: API endpoints
+title: Subject Log
+parent: Modules endpoints
 grand_parent: REST API
 nav_order: 3
 ---
 
+# Subject Log API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/modules/subject_log/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/modules/subject_log/#list-view)
-  - [Add](/brainstem_support/restapi/modules/subject_log/#add)
-  - [Detail](/brainstem_support/restapi/modules/subject_log/#detail)
-  - [Change](/brainstem_support/restapi/modules/subject_log/#change)
-  - [Delete](/brainstem_support/restapi/modules/subject_log/#delete)
-  - [Add entry](/brainstem_support/restapi/modules/subject_log/#add-entry)
-  - [Change entry](/brainstem_support/restapi/modules/subject_log/#change-entry)
-  - [Remove entry](/brainstem_support/restapi/modules/subject_log/#remove-entry)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

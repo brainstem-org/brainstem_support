@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Personal attributes - Data repository
-parent: API endpoints
+title: Data repository
+parent: Personal attributes endpoints
 grand_parent: REST API
 nav_order: 5
 ---
 
+# Data repository API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/personal_attributes/data_repository/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/personal_attributes/data_repository/#list-view)
-  - [Add](/brainstem_support/restapi/personal_attributes/data_repository/#add)
-  - [Detail](/brainstem_support/restapi/personal_attributes/data_repository/#detail)
-  - [Change](/brainstem_support/restapi/personal_attributes/data_repository/#change)
-  - [Delete](/brainstem_support/restapi/personal_attributes/data_repository/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 
 ## Fields

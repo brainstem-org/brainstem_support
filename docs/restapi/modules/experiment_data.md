@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Modules - Experiment Data
-parent: API endpoints
+title: Experiment Data
+parent: Modules endpoints
 grand_parent: REST API
 nav_order: 3
 ---
 
+# Experiment Data API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/modules/experiment_data/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/modules/experiment_data/#list-view)
-  - [Add](/brainstem_support/restapi/modules/experiment_data/#add)
-  - [Detail](/brainstem_support/restapi/modules/experiment_data/#detail)
-  - [Change](/brainstem_support/restapi/modules/experiment_data/#change)
-  - [Delete](/brainstem_support/restapi/modules/experiment_data/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

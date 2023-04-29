@@ -1,20 +1,19 @@
 ---
 layout: default
-title: Modules - Manipulation
-parent: API endpoints
+title: Manipulation
+parent: Modules endpoints
 grand_parent: REST API
 nav_order: 3
 ---
 
-## Table of contents
-- [Fields](/brainstem_support/restapi/modules/manipulation/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/modules/manipulation/#list-view)
-  - [Add](/brainstem_support/restapi/modules/manipulation/#add)
-  - [Detail](/brainstem_support/restapi/modules/manipulation/#detail)
-  - [Change](/brainstem_support/restapi/modules/manipulation/#change)
-  - [Delete](/brainstem_support/restapi/modules/manipulation/#delete)
+# Manipulation API endpoint
+{: .no_toc}
 
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ## Fields
 
 | Field        | Description  |

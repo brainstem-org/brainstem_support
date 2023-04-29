@@ -1,22 +1,19 @@
 ---
 layout: default
-title: Modules - Action Log
-parent: API endpoints
+title: Action Log
+parent: Modules endpoints
 grand_parent: REST API
 nav_order: 3
 ---
 
+# Action Log API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/modules/action_log/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/modules/action_log/#list-view)
-  - [Add](/brainstem_support/restapi/modules/action_log/#add)
-  - [Detail](/brainstem_support/restapi/modules/action_log/#detail)
-  - [Change](/brainstem_support/restapi/modules/action_log/#change)
-  - [Delete](/brainstem_support/restapi/modules/action_log/#delete)
-  - [Add entry](/brainstem_support/restapi/modules/action_log/#add-entry)
-  - [Change entry](/brainstem_support/restapi/modules/action_log/#change-entry)
-  - [Remove entry](/brainstem_support/restapi/modules/action_log/#remove-entry)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

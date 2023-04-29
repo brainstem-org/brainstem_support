@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Stem - Dataset
-parent: API endpoints
+title: Dataset
+parent: STEM endpoints
 grand_parent: REST API
 nav_order: 2
 ---
 
+# Dataset API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/stem/dataset/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/stem/dataset/#list-view)
-  - [Add](/brainstem_support/restapi/stem/dataset/#add)
-  - [Detail](/brainstem_support/restapi/stem/dataset/#detail)
-  - [Change](/brainstem_support/restapi/stem/dataset/#change)
-  - [Delete](/brainstem_support/restapi/stem/dataset/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Stem - Subject
-parent: API endpoints
+title: Subject
+parent: STEM endpoints
 grand_parent: REST API
 nav_order: 2
 ---
 
+# Subject API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/stem/subject/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/stem/subject/#list-view)
-  - [Add](/brainstem_support/restapi/stem/subject/#add)
-  - [Detail](/brainstem_support/restapi/stem/subject/#detail)
-  - [Change](/brainstem_support/restapi/stem/subject/#change)
-  - [Delete](/brainstem_support/restapi/stem/subject/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

@@ -1,19 +1,19 @@
 ---
 layout: default
-title: General attributes - Publication
-parent: API endpoints
+title: Publication
+parent: General attributes endpoints
 grand_parent: REST API
 nav_order: 4
 ---
 
+# Publication API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/attributes/publication/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/attributes/publication/#list-view)
-  - [Add](/brainstem_support/restapi/attributes/publication/#add)
-  - [Detail](/brainstem_support/restapi/attributes/publication/#detail)
-  - [Change](/brainstem_support/restapi/attributes/publication/#change)
-  - [Delete](/brainstem_support/restapi/attributes/publication/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 
 ## Fields

@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Modules - Behavior
-parent: API endpoints
+title: Behavior
+parent: Modules endpoints
 grand_parent: REST API
 nav_order: 3
 ---
 
+# Behavior API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/modules/behavior/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/modules/behavior/#list-view)
-  - [Add](/brainstem_support/restapi/modules/behavior/#add)
-  - [Detail](/brainstem_support/restapi/modules/behavior/#detail)
-  - [Change](/brainstem_support/restapi/modules/behavior/#change)
-  - [Delete](/brainstem_support/restapi/modules/behavior/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

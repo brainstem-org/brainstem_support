@@ -1,23 +1,19 @@
 ---
 layout: default
-title: Taxonomies - Species
-parent: API endpoints
+title: Species
+parent: Taxonomies endpoints
 grand_parent: REST API
 nav_order: 7
 ---
 
+# Species API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/taxonomies/species/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/taxonomies/species/#list-view)
-  - [Add](/brainstem_support/restapi/taxonomies/species/#add)
-  - [Detail](/brainstem_support/restapi/taxonomies/species/#detail)
-  - [Change](/brainstem_support/restapi/taxonomies/species/#change)
-  - [Delete](/brainstem_support/restapi/taxonomies/species/#delete)
-  - [List approvals](/brainstem_support/restapi/taxonomies/species/#list-approvals)
-  - [Detail approval](/brainstem_support/restapi/taxonomies/species/#detail-approval)
-  - [Accept approval](/brainstem_support/restapi/taxonomies/species/#accept-approval)
-  - [Reject approval](/brainstem_support/restapi/taxonomies/species/#reject-approval)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

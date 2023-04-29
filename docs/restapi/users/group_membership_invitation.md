@@ -1,19 +1,20 @@
 ---
 layout: default
-title: Users - Group Membership Invitation
-parent: API endpoints
+title: Group Membership Invitation
+parent: User endpoints
 grand_parent: REST API
 nav_order: 8
 ---
 
+# Group Membership Invitation API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/users/group_membership_invitation/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/users/group_membership_invitation/#list-view)
-  - [Detail](/brainstem_support/restapi/users/group_membership_invitation/#detail)
-  - [Accept](/brainstem_support/restapi/users/group_membership_invitation/#accept)
-  - [Reject](/brainstem_support/restapi/users/group_membership_invitation/#reject)
-  - [Cancel](/brainstem_support/restapi/users/group_membership_invitation/#cancel)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
 
 ## Fields
 
@@ -24,7 +25,6 @@ nav_order: 8
 | `authgroup` | string with the related group ID |
 | `new_manager` | boolean |
 | `new_owner` | boolean |
-
 
 
 ## List view

@@ -1,23 +1,19 @@
 ---
 layout: default
-title: Taxonomies - Environment type
-parent: API endpoints
+title: Environment type
+parent: Taxonomies endpoints
 grand_parent: REST API
 nav_order: 7
 ---
 
+# Environment type API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/taxonomies/environment_type/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/taxonomies/environment_type/#list-view)
-  - [Add](/brainstem_support/restapi/taxonomies/environment_type/#add)
-  - [Detail](/brainstem_support/restapi/taxonomies/environment_type/#detail)
-  - [Change](/brainstem_support/restapi/taxonomies/environment_type/#change)
-  - [Delete](/brainstem_support/restapi/taxonomies/environment_type/#delete)
-  - [List approvals](/brainstem_support/restapi/taxonomies/environment_type/#list-approvals)
-  - [Detail approval](/brainstem_support/restapi/taxonomies/environment_type/#detail-approval)
-  - [Accept approval](/brainstem_support/restapi/taxonomies/environment_type/#accept-approval)
-  - [Reject approval](/brainstem_support/restapi/taxonomies/environment_type/#reject-approval)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

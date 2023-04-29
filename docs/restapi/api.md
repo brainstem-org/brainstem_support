@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API endpoints
+title: API introduction
 parent: REST API
 has_children: true
 nav_order: 2
 ---
-# API endpoints
+# Interacting with the API endpoints
 The API endpoints' URLs are defined by the portal, the app and the model: 
 ```
 https://www.BrainSTEM.org/rest/*portal*/*app*/*model*/*id*/

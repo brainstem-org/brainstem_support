@@ -1,23 +1,19 @@
 ---
 layout: default
-title: General attributes - Journal
-parent: API endpoints
+title: Journal
+parent: General attributes endpoints
 grand_parent: REST API
 nav_order: 4
 ---
 
+# Journal API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/attributes/journal/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/attributes/journal/#list-view)
-  - [Add](/brainstem_support/restapi/attributes/journal/#add)
-  - [Detail](/brainstem_support/restapi/attributes/journal/#detail)
-  - [Change](/brainstem_support/restapi/attributes/journal/#change)
-  - [Delete](/brainstem_support/restapi/attributes/journal/#delete)
-  - [List approvals](/brainstem_support/restapi/attributes/journal/#list-approvals)
-  - [Detail approval](/brainstem_support/restapi/attributes/journal/#detail-approval)
-  - [Accept approval](/brainstem_support/restapi/attributes/journal/#accept-approval)
-  - [Reject approval](/brainstem_support/restapi/attributes/journal/#reject-approval)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

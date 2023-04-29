@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Modules - Action
-parent: API endpoints
+title: Action
+parent: Modules endpoints
 grand_parent: REST API
 nav_order: 3
 ---
 
+# Action API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/modules/action/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/modules/action/#list-view)
-  - [Add](/brainstem_support/restapi/modules/action/#add)
-  - [Detail](/brainstem_support/restapi/modules/action/#detail)
-  - [Change](/brainstem_support/restapi/modules/action/#change)
-  - [Delete](/brainstem_support/restapi/modules/action/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

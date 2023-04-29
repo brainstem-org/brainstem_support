@@ -1,23 +1,19 @@
 ---
 layout: default
-title: Taxonomies - Sensory stimulus type
-parent: API endpoints
+title: Sensory stimulus type
+parent: Taxonomies endpoints
 grand_parent: REST API
 nav_order: 7
 ---
 
+# Sensory stimulus type API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#list-view)
-  - [Add](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#add)
-  - [Detail](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#detail)
-  - [Change](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#change)
-  - [Delete](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#delete)
-  - [List approvals](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#list-approvals)
-  - [Detail approval](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#detail-approval)
-  - [Accept approval](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#accept-approval)
-  - [Reject approval](/brainstem_support/restapi/taxonomies/sensory_stimulus_type/#reject-approval)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

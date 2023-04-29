@@ -1,23 +1,19 @@
 ---
 layout: default
-title: Resources - Supplier
-parent: API endpoints
+title: Supplier
+parent: Resources endpoints
 grand_parent: REST API
 nav_order: 6
 ---
 
+# Supplier API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/resources/supplier/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/resources/supplier/#list-view)
-  - [Add](/brainstem_support/restapi/resources/supplier/#add)
-  - [Detail](/brainstem_support/restapi/resources/supplier/#detail)
-  - [Change](/brainstem_support/restapi/resources/supplier/#change)
-  - [Delete](/brainstem_support/restapi/resources/supplier/#delete)
-  - [List approvals](/brainstem_support/restapi/resources/supplier/#list-approvals)
-  - [Detail approval](/brainstem_support/restapi/resources/supplier/#detail-approval)
-  - [Accept approval](/brainstem_support/restapi/resources/supplier/#accept-approval)
-  - [Reject approval](/brainstem_support/restapi/resources/supplier/#reject-approval)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 

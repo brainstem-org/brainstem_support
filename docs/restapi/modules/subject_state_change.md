@@ -1,19 +1,19 @@
 ---
 layout: default
-title: Modules - Subject State Change
-parent: API endpoints
+title: Subject State Change
+parent: Modules endpoints
 grand_parent: REST API
 nav_order: 3
 ---
 
+# Subject State Change API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/modules/subject_state_change/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/modules/subject_state_change/#list-view)
-  - [Add](/brainstem_support/restapi/modules/subject_state_change/#add)
-  - [Detail](/brainstem_support/restapi/modules/subject_state_change/#detail)
-  - [Change](/brainstem_support/restapi/modules/subject_state_change/#change)
-  - [Delete](/brainstem_support/restapi/modules/subject_state_change/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 
