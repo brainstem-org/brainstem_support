@@ -21,7 +21,7 @@ nav_order: 5
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
-| `name` | string **[required]** |
+| `name` | string **[required]** [max length: 100]|
 | `description` | string |
 | `is_public` | boolean |
 | `data_organization_json` | JSON dictionary |

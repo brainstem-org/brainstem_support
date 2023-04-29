@@ -21,7 +21,7 @@ nav_order: 1
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
 | `type` | string **[required]**. *See options below* |
-| `description` | string |
+| `description` | string [max length: 200] |
 | `subject` | string with the related subject ID **[required]** |
 | `date_time` | string containing date (e.g. "2023-03-22") |
 | `consumable` | string with the related consumable ID |

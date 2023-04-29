@@ -20,19 +20,19 @@ nav_order: 2
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
-| `name` | string **[required]** |
+| `name` | string **[required]** [max length: 100]|
 | `description` | string |
 | `strain` | string with UUID **[required]** |
-| `sex` | string with "M" (male),"F" (female) or "U" (unknown) **[required]** |
-| `genetic_line` | string |
+| `sex` | string with "M" (male),"F" (female) or "U" (unknown) **[required]** [max length: 1]|
+| `genetic_line` | string [max length: 100]|
 | `projects` | list of strings representing the related projects IDs **[required]** |
 | `birth_date` | string containing date (e.g. "2023-03-22") |
 | `death_date` | string containing date (e.g. "2023-03-22") |
 | `extra_content_json` | JSON dictionary |
 | `actions` | list of strings representing the related actions IDs **[read-only]** |
 | `subjectstatechanges` | list of strings representing the related subject state changes IDs **[read-only]** |
+| `name_used_in_repository` | string [max length: 200]|
 | `tags` | list of strings |
-
 
 
 ## List view

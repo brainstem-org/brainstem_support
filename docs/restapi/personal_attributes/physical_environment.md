@@ -21,8 +21,8 @@ nav_order: 5
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
-| `name` | string **[required]** |
-| `description` | string |
+| `name` | string **[required]** [max length: 50] |
+| `description` | string [max length: 500]|
 | `environment_type` | string with the related environment type ID **[required]** |
 | `physical_dimensions_json` | JSON dictionary |
 | `authgroups` | list of strings representing the related groups IDs **[required]** |

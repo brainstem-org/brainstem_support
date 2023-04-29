@@ -21,7 +21,7 @@ nav_order: 7
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
 | `type` | string **[required]**. *See options below* |
-| `description` | string |
+| `description` | string [max length: 200]|
 | `subject` | string with the related subject ID **[required]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
 

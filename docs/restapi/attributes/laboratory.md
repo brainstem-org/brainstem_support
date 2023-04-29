@@ -22,12 +22,12 @@ nav_order: 4
 | `id` | string with UUID identificator |
 | `group` | string with the related group ID **[required]** |
 | `principal_investigators` | list of strings representing the related principal investigators IDs **[required]** |
-| `description` | string |
-| `website` | string |
-| `department` | string |
-| `institution` | string **[required]** |
-| `city` | string |
-| `country` | string |
+| `description` | string [max length: 100] |
+| `website` | string [max length: 200] |
+| `department` | string [max length: 100] |
+| `institution` | string **[required]** [max length: 100] |
+| `city` | string [max length: 100] |
+| `country` | string [max length: 100] |
 
 
 ## List view

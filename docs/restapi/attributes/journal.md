@@ -19,10 +19,10 @@ nav_order: 4
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
-| `name` | string **[required]** |
+| `id` | string with UUID identificator|
+| `name` | string **[required]** [max length: 500] |
 | `description` | string |
-| `website` | string |
+| `website` | string [max length: 200]|
 | `comments` | string |
 
 

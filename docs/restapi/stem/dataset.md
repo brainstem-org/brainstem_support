@@ -20,7 +20,7 @@ nav_order: 3
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
-| `name` | string **[required]** |
+| `name` | string **[required]** [max length: 100; must be unique]|
 | `description` | string |
 | `projects` | list of strings representing the related projects IDs **[required]** |
 | `date_time` | string containing date (e.g. "2023-03-22") |
@@ -31,6 +31,7 @@ nav_order: 3
 | `experimentdata` | list of strings representing the related experiment data IDs **[read-only]** |
 | `behaviors` | list of strings representing the related behaviors IDs **[read-only]** |
 | `manipulations` | list of strings representing the related manipulations IDs **[read-only]** |
+| `name_used_in_repository` | string [max length: 200]|
 | `tags` | list of strings |
 
 

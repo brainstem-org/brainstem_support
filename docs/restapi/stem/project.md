@@ -20,13 +20,14 @@ nav_order: 1
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
-| `name` | string **[required]** |
+| `name` | string **[required]** [max length: 200; must be unique]|
 | `description` | string |
 | `datasets` | list of strings representing the related datasets IDs **[read-only]** |
 | `subjects` | list of strings representing the related subjects IDs **[read-only]** |
 | `publications` | list of strings representing the related publications IDs **[read-only]** |
 | `extra_content_json` | JSON dictionary |
 | `is_public` | boolean |
+| `name_used_in_repository` | string [max length: 200]|
 | `tags` | list of strings |
 | `users` | JSON dictionary |
 | `groups` | JSON dictionary |

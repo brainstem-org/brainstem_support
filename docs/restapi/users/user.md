@@ -20,14 +20,14 @@ nav_order: 1
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
-| `email` | string |
+| `email` | string [must be unique]|
 | `first_name` | string |
 | `last_name` | string |
 | `groups_own_json` | list of dictionaries with each group owned by the user. *See structure below* |
-| `website` | string |
-| `google_scholar` | string |
-| `orcid_id` | string |
-| `atlas_preference` | string |
+| `website` | string [max length: 200] |
+| `google_scholar` | string [max length: 200] |
+| `orcid_id` | string [max length: 100] |
+| `atlas_preference` | string [max length: 7]|
 
 The following fields are only accessible for administrators:
 

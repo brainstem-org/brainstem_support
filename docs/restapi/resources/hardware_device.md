@@ -20,7 +20,7 @@ nav_order: 6
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
-| `name` | string **[required]** |
+| `name` | string **[required]** [max length: 100; must be unique] |
 | `description` | string |
 | `supplier` | string with the related supplier ID **[required]** |
 | `comments` | string |

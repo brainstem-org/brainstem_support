@@ -20,10 +20,12 @@ nav_order: 7
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
-| `name` | string **[required]** |
+| `name` | string **[required]** [max length: 200]|
 | `description` | string |
-| `acronym` | string **[required]** |
-| `atlas` | string **[required]**. *See options below* |
+| `acronym` | string **[required]** [max length: 15]|
+| `atlas` | string **[required]**. *See options below* [max length: 7]|
+
+unique_together: [`atlas`, `acronym`] and [`atlas`, `name`]. 
 
 These are the available `atlas` options for Brain Region:
 - `AIA`: Allen Mouse Brain Atlas

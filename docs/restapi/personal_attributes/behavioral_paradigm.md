@@ -21,14 +21,14 @@ nav_order: 5
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
-| `name` | string **[required]** |
-| `description` | string |
-| `task` | string |
-| `reward` | string |
+| `name` | string **[required]** [max length: 50] |
+| `description` | string [max length: 500] |
+| `task` | string [max length: 100] |
+| `reward` | string [max length: 100] |
 | `sensory_stimulus_type` | string with the related sensory stimulus type ID |
 | `environment_type` | string with the related environment type ID **[required]** |
 | `authgroups` | list of strings representing the related groups IDs **[required]** |
-
+| `is_public` | boolean |
 
 ## List view
 - **Allowed portals:** public, private, super

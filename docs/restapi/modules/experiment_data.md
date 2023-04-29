@@ -21,7 +21,7 @@ nav_order: 3
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
 | `type` | string **[required]**. *See options below* |
-| `description` | string |
+| `description` | string [max length: 500] |
 | `dataset` | string with the related dataset ID **[required]** |
 | `actions` | list of strings representing the related actions IDs **[required]** |
 | `hardware_device` | string with the related hardware device ID |

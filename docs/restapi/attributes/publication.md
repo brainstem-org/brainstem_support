@@ -21,13 +21,14 @@ nav_order: 4
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | string with UUID identificator |
-| `title` | string **[required]** |
-| `authors` | string **[required]** |
+| `title` | string **[required]** [max length: 200] |
+| `authors` | string **[required]** [max length: 500] |
 | `journal` | string with the related journal ID **[required]** |
 | `abstract` | string **[required]** |
-| `doi` | string |
-| `publication_url` | string |
-| `pdf_url` | string |
+| `doi` | string [max length: 200] |
+| `volume` | string [max length: 100] |
+| `publication_url` | string [max length: 300] |
+| `pdf_url` | string [max length: 300] |
 | `publication_date` | string containing date (e.g. "2023-03-22") **[required]** |
 
 
