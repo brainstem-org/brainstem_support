@@ -6,7 +6,7 @@ has_children: true
 ---
 # REST API
 {: .no_toc}
-BrainSTEM uses the [Django REST Framework](https://www.django-rest-framework.org/). The REST API allows for programmable access. [API tools](https://brainstem-org.github.io/brainstem_support/api-tools/) have been built for Matlab and Python and a Web API tool allows for browsing the API endpoints in a browser. 
+The REST API allows for programmable access to the full data model. [API tools](https://brainstem-org.github.io/brainstem_support/api-tools/) have been built for Matlab and Python and a Web API tool allows for browsing the API endpoints in a browser. 
 
 ## The API endpoints
 The API endpoints' URLs are defined by the portal, the app and the model: 
