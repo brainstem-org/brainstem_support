@@ -38,11 +38,15 @@ nav_order: 4
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'laboratory')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'laboratories': [
     {
@@ -79,8 +83,9 @@ resp = load_model(settings, 'laboratory')
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 
-
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "laboratory",  data={
     'group': 41,
@@ -90,6 +95,8 @@ resp = save_model(settings, "laboratory",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'laboratory': {
     'id': '5d882f8b-5c74-428e-9ed9-41c8780527ff',
@@ -114,11 +121,15 @@ resp = save_model(settings, "laboratory",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'laboratory': {
     'id': '5d882f8b-5c74-428e-9ed9-41c8780527ff',
@@ -143,11 +154,15 @@ resp = load_model(settings, 'laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'laboratory': {
     'id': '5d882f8b-5c74-428e-9ed9-41c8780527ff',
@@ -172,6 +187,8 @@ resp = save_model(settings, "laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff")
 ``` 

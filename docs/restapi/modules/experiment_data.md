@@ -47,11 +47,15 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'experimentdata')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'experiment_data': [
     {
@@ -97,6 +101,8 @@ resp = load_model(settings, 'experimentdata')
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "experimentdata",  data={
     "type": "Extracellular",
@@ -116,6 +122,8 @@ resp = save_model(settings, "experimentdata",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'experiment_data': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
@@ -136,8 +144,6 @@ resp = save_model(settings, "experimentdata",  data={
 }
 ```
 
-
-
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
@@ -146,11 +152,15 @@ resp = save_model(settings, "experimentdata",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'experimentdata', id='b0e4ed13-f2f1-4845-8772-24978539d0bd')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'experiment_data': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
@@ -181,11 +191,15 @@ resp = load_model(settings, 'experimentdata', id='b0e4ed13-f2f1-4845-8772-249785
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d0bd", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'experiment_data': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
@@ -216,6 +230,8 @@ resp = save_model(settings, "experimentdata", id="b0e4ed13-f2f1-4845-8772-249785
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d0bd")
 ``` 

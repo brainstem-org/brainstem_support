@@ -39,11 +39,15 @@ Each entry in the `users` dictionary has the user `email` as key and the followi
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'group')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'groups': [
     {
@@ -78,6 +82,8 @@ resp = load_model(settings, 'group')
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "group",  data={
     "name": "NewGroup", 
@@ -85,6 +91,8 @@ resp = save_model(settings, "group",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'group': {
         'id': 48,
@@ -110,6 +118,8 @@ resp = load_model(settings, 'group', id='48')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'group': {
         'id': 48,
@@ -131,6 +141,8 @@ resp = load_model(settings, 'group', id='48')
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "group", id="48", data={"name": "NewGroupName"})
 ```
@@ -154,6 +166,8 @@ resp = save_model(settings, "group", id="48", data={
 ```
 
 ### Response example
+{: .no_toc}
+
 
 **Note:** `'user4@mail.com'` has been invited to join the group.
 ```
@@ -177,6 +191,8 @@ resp = save_model(settings, "group", id="48", data={
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "group", id="3654964e-1bf7-40c7-a376-9dcec4c125cd")
 ``` 
@@ -191,6 +207,8 @@ resp = delete_model(settings, "group", id="3654964e-1bf7-40c7-a376-9dcec4c125cd"
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, "group", id="9", options="join")
 ```
@@ -207,6 +225,8 @@ resp = load_model(settings, "group", id="9", options="join")
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, "group", id="9", options="leave")
 ```

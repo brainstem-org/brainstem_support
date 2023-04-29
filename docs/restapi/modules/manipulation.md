@@ -53,11 +53,15 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'manipulation')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'manipulations': [
     {
@@ -106,6 +110,8 @@ resp = load_model(settings, 'manipulation')
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "manipulation",  data={
     'type': 'LiquidPerturbation',
@@ -126,6 +132,8 @@ resp = save_model(settings, "manipulation",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'manipulation': {
     'id': 'd05f56c6-9aea-4c38-a1cb-8680e015cad0',
@@ -156,11 +164,15 @@ resp = save_model(settings, "manipulation",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad0')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'manipulation': {
     'id': 'd05f56c6-9aea-4c38-a1cb-8680e015cad0',
@@ -191,11 +203,15 @@ resp = load_model(settings, 'manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad0", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'manipulation': {
     'id': 'd05f56c6-9aea-4c38-a1cb-8680e015cad0',
@@ -226,6 +242,8 @@ resp = save_model(settings, "manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad0")
 ``` 

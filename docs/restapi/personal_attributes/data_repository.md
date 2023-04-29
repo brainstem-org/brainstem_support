@@ -36,11 +36,15 @@ nav_order: 5
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'datarepository')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'data_repositories': [
     {
@@ -74,6 +78,8 @@ resp = load_model(settings, 'datarepository')
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "datarepository",  data=
     {
@@ -84,6 +90,8 @@ resp = save_model(settings, "datarepository",  data=
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'data_repository': {
     'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
@@ -106,11 +114,15 @@ resp = save_model(settings, "datarepository",  data=
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'datarepository', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'data_repository': {
     'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
@@ -133,11 +145,15 @@ resp = load_model(settings, 'datarepository', id='9f322057-cf48-4ec7-ab19-d0d717
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'data_repository': {
     'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
@@ -160,6 +176,8 @@ resp = save_model(settings, "datarepository", id="9f322057-cf48-4ec7-ab19-d0d717
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2")
 ``` 

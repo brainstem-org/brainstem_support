@@ -37,11 +37,15 @@ nav_order: 5
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'physicalenvironment')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'physical_environments': [
     {
@@ -78,6 +82,8 @@ resp = load_model(settings, 'physicalenvironment')
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "physicalenvironment",  data=
     {
@@ -94,6 +100,8 @@ resp = save_model(settings, "physicalenvironment",  data=
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'physical_environment': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
@@ -118,11 +126,15 @@ resp = save_model(settings, "physicalenvironment",  data=
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'physicalenvironment', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'physical_environment': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
@@ -147,11 +159,15 @@ resp = load_model(settings, 'physicalenvironment', id='d0ada97d-8607-48da-817b-b
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "physicalenvironment", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'physical_environment': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
@@ -176,6 +192,8 @@ resp = save_model(settings, "physicalenvironment", id="d0ada97d-8607-48da-817b-b
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "physicalenvironment", id="d0ada97d-8607-48da-817b-bdd54bc9077b")
 ``` 

@@ -43,11 +43,15 @@ nav_order: 2
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'subject')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subjects': [{'id': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
 		'name': 'subject1',
@@ -102,6 +106,8 @@ resp = load_model(settings, 'subject')
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "subject",  data={
 	"name": "NewSubject", 
@@ -113,6 +119,8 @@ resp = save_model(settings, "subject",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject': {'id': 'c20b2025-2e98-4eb9-bc89-0bad9f271c7f',
 	'name': 'NewSubject',
@@ -140,11 +148,15 @@ resp = save_model(settings, "subject",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'subject', id='c20b2025-2e98-4eb9-bc89-0bad9f271c7f')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject': {'id': 'c20b2025-2e98-4eb9-bc89-0bad9f271c7f',
 	'name': 'NewSubject',
@@ -173,11 +185,15 @@ resp = load_model(settings, 'subject', id='c20b2025-2e98-4eb9-bc89-0bad9f271c7f'
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "subject", id="c20b2025-2e98-4eb9-bc89-0bad9f271c7f", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject': {'id': 'c20b2025-2e98-4eb9-bc89-0bad9f271c7f',
     'name': 'NewSubject',
@@ -206,6 +222,8 @@ resp = save_model(settings, "subject", id="c20b2025-2e98-4eb9-bc89-0bad9f271c7f"
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "subject", id="c20b2025-2e98-4eb9-bc89-0bad9f271c7f")
 ```

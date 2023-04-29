@@ -43,11 +43,15 @@ nav_order: 2
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'dataset')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'datasets': [
     {
@@ -95,6 +99,8 @@ resp = load_model(settings, 'dataset')
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "dataset",  data={
 	"name": "NewDataset", 
@@ -104,6 +110,8 @@ resp = save_model(settings, "dataset",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'dataset': {'id': '3654964e-1bf7-40c7-a376-9dcec4c125cd',
     'name': 'NewDataset',
@@ -131,11 +139,15 @@ resp = save_model(settings, "dataset",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'dataset', id='3654964e-1bf7-40c7-a376-9dcec4c125cd')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'dataset': {'id': '3654964e-1bf7-40c7-a376-9dcec4c125cd',
     'name': 'NewDataset',
@@ -164,11 +176,15 @@ resp = load_model(settings, 'dataset', id='3654964e-1bf7-40c7-a376-9dcec4c125cd'
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "dataset", id="3654964e-1bf7-40c7-a376-9dcec4c125cd", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'dataset': {'id': '3654964e-1bf7-40c7-a376-9dcec4c125cd',
     'name': 'NewDataset',
@@ -197,6 +213,8 @@ resp = save_model(settings, "dataset", id="3654964e-1bf7-40c7-a376-9dcec4c125cd"
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "dataset", id="3654964e-1bf7-40c7-a376-9dcec4c125cd")
 ``` 

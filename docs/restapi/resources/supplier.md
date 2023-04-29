@@ -34,11 +34,15 @@ nav_order: 6
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'supplier')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'suppliers': [
     {
@@ -67,6 +71,8 @@ resp = load_model(settings, 'supplier')
 **Note**: suppliers submissions go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "supplier",  data={
     'name': 'MyNewSupplier',
@@ -76,6 +82,8 @@ resp = save_model(settings, "supplier",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'supplier_approval': {
     'id': '1af72008-d203-4bea-9766-f692b8a89df6',
@@ -96,11 +104,15 @@ resp = save_model(settings, "supplier",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'supplier': {
     'id': '1338d838-5b69-4e89-8db9-b35224dcb01e',
@@ -121,11 +133,15 @@ resp = load_model(settings, 'supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e
 **Note**: suppliers changes go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'supplier_approval': {
     'id': 'e52eb599-a42f-4c37-9298-9bc4c9b42ff0',
@@ -148,6 +164,8 @@ resp = save_model(settings, "supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e")
 ``` 
@@ -161,11 +179,15 @@ resp = delete_model(settings, "supplier", id="1338d838-5b69-4e89-8db9-b35224dcb0
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'supplierapproval')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'supplier_approvals': [
     {
@@ -202,11 +224,15 @@ resp = load_model(settings, 'supplierapproval')
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'supplierapproval', id='1af72008-d203-4bea-9766-f692b8a89df6')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'supplier_approval': {
     'id': '1af72008-d203-4bea-9766-f692b8a89df6',
@@ -230,6 +256,8 @@ resp = load_model(settings, 'supplierapproval', id='1af72008-d203-4bea-9766-f692
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "supplierapproval", id="1af72008-d203-4bea-9766-f692b8a89df6", options="accept")
 ```
@@ -243,6 +271,8 @@ resp = save_model(settings, "supplierapproval", id="1af72008-d203-4bea-9766-f692
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "supplierapproval", id="f314f4b0-a51d-45f8-8cda-d9dade2bff66", options="reject")
 ```

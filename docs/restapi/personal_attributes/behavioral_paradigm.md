@@ -38,11 +38,15 @@ nav_order: 5
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'behavioralparadigm')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'behavioral_paradigms': [
     {
@@ -78,6 +82,8 @@ resp = load_model(settings, 'behavioralparadigm')
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "behavioralparadigm",  data=
     {
@@ -90,6 +96,8 @@ resp = save_model(settings, "behavioralparadigm",  data=
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'behavioral_paradigm': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
@@ -113,11 +121,15 @@ resp = save_model(settings, "behavioralparadigm",  data=
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b94ac2edc7f8')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'behavioral_paradigm': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
@@ -141,11 +153,15 @@ resp = load_model(settings, 'behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b9
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'behavioral_paradigm': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
@@ -169,6 +185,8 @@ resp = save_model(settings, "behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b9
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8")
 ``` 

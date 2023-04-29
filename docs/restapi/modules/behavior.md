@@ -34,11 +34,15 @@ nav_order: 3
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'behavior')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'behaviors': [
 	{
@@ -74,6 +78,8 @@ resp = load_model(settings, 'behavior')
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "behavior",  data={
 	"dataset": "1f7f103b-e949-405a-9b01-ddda3b2f10cf", 
@@ -84,6 +90,8 @@ resp = save_model(settings, "behavior",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'behavior': 
 	{
@@ -106,11 +114,15 @@ resp = save_model(settings, "behavior",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'behavior', id='f9733b12-e2d5-4886-9e00-09ba26b01a16')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'behavior': 
 	{
@@ -133,11 +145,15 @@ resp = load_model(settings, 'behavior', id='f9733b12-e2d5-4886-9e00-09ba26b01a16
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16", data={'subjects': ['0f87c229-6769-4854-83a5-c71e154246b8', '35c41e86-dde1-4eb2-a0e2-94dfb1dccd92']})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'behavior': 
 	{
@@ -160,6 +176,8 @@ resp = save_model(settings, "behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16")
 ```

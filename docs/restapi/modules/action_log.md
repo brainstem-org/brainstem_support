@@ -48,11 +48,15 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'actionlog')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'action_logs': [
     {
@@ -103,6 +107,7 @@ resp = load_model(settings, 'actionlog')
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+
 ```
 resp = save_model(settings, "actionlog",  data={
     "type": "LinearDisplacement",
@@ -110,6 +115,8 @@ resp = save_model(settings, "actionlog",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'action_log': {
     'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
@@ -130,11 +137,15 @@ resp = save_model(settings, "actionlog",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'actionlog', id='743d9483-25d7-4c36-8b2a-e5f30dbbe062')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'action_log': {
     'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
@@ -155,11 +166,15 @@ resp = load_model(settings, 'actionlog', id='743d9483-25d7-4c36-8b2a-e5f30dbbe06
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe062", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'action_log': {
     'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
@@ -180,6 +195,8 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe062")
 ```
@@ -194,6 +211,8 @@ resp = delete_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe062", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
@@ -204,6 +223,8 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'action_log': {
         'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
@@ -229,11 +250,15 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe062", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'action_log': {
         'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
@@ -251,7 +276,6 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 ```
 
 
-
 ## Remove entry
 - **Allowed portals:** private, super
 - **Request method:** PATCH
@@ -261,11 +285,15 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe062", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'action_log': {
         'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',

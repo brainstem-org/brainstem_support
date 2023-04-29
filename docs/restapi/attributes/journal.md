@@ -34,11 +34,15 @@ nav_order: 4
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'journal')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'journals': [
     {
@@ -73,6 +77,8 @@ resp = load_model(settings, 'journal')
 **Note**: journals submissions go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "journal",  data={
     'name': 'MyNewJournal',
@@ -82,6 +88,8 @@ resp = save_model(settings, "journal",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'journal_approval': {
         'id': 'dfb879c9-0e31-420b-8918-64dc30dbec6d',
@@ -103,11 +111,15 @@ resp = save_model(settings, "journal",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'journal': {
     'id': 'da3359b7-e380-4dc6-ba9d-04831d3082d9',
@@ -128,11 +140,15 @@ resp = load_model(settings, 'journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9'
 **Note**: journals changes go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'journal_approval': {
     'id': '640ea107-cf9e-413a-b0b8-562082654481',
@@ -153,6 +169,8 @@ resp = save_model(settings, "journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9"
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 ``` 
@@ -166,11 +184,15 @@ resp = delete_model(settings, "journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200f
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'journalapproval')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'journal_approvals': [
     {
@@ -207,11 +229,15 @@ resp = load_model(settings, 'journalapproval')
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'journalapproval', id='41f99539-e54e-4224-8e53-88a692f9a185')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'journal_approval': {
     'id': '41f99539-e54e-4224-8e53-88a692f9a185',
@@ -235,6 +261,8 @@ resp = load_model(settings, 'journalapproval', id='41f99539-e54e-4224-8e53-88a69
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "journalapproval", id="41f99539-e54e-4224-8e53-88a692f9a185", options="accept")
 ```
@@ -248,6 +276,8 @@ resp = save_model(settings, "journalapproval", id="41f99539-e54e-4224-8e53-88a69
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "journalapproval", id="41f99539-e54e-4224-8e53-88a692f9a185", options="reject")
 ```

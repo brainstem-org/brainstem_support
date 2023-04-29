@@ -59,11 +59,15 @@ Each entry of in the `groups` dictionary must follow the following structure:
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'project')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {"projects": [
     {
@@ -159,11 +163,15 @@ resp = load_model(settings, 'project')
 **Additional notes:** when a user creates a project they become its owner and only member. Any other user or group will not be added at this point. Perform a change request to add more users or groups.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "project",  data={"name": "NewRestProject", "description": "some text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'project': {'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
     'name': 'NewRestProject',
@@ -191,11 +199,15 @@ resp = save_model(settings, "project",  data={"name": "NewRestProject", "descrip
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'project', id='a5f29099-2758-4163-a8e4-e5e2898e57b2')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'project': {'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
     'name': 'NewRestProject',
@@ -223,6 +235,8 @@ resp = load_model(settings, 'project', id='a5f29099-2758-4163-a8e4-e5e2898e57b2'
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "project", id="a5f29099-2758-4163-a8e4-e5e2898e57b2", data={"description": "new text"})
 ```
@@ -246,6 +260,8 @@ resp = save_model(settings, "project",
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'project': {'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
   'name': 'NewRestProject',
@@ -277,6 +293,8 @@ resp = save_model(settings, "project",
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "project", id="a5f29099-2758-4163-a8e4-e5e2898e57b2")
 ```

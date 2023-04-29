@@ -44,6 +44,8 @@ resp = load_model(settings, 'publication')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'publications': [
     {
@@ -81,6 +83,8 @@ resp = load_model(settings, 'publication')
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "publication",  data=
     {
@@ -97,6 +101,8 @@ resp = save_model(settings, "publication",  data=
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'publication': {'id': 'e308cb04-428b-4b2c-b86b-15e02c664560',
   'title': 'MyNewPaper',
@@ -120,11 +126,15 @@ resp = save_model(settings, "publication",  data=
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'publication', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'publication': {'id': 'e308cb04-428b-4b2c-b86b-15e02c664560',
   'title': 'MyNewPaper',
@@ -148,11 +158,15 @@ resp = load_model(settings, 'publication', id='da3359b7-e380-4dc6-ba9d-04831d308
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "publication", id="e308cb04-428b-4b2c-b86b-15e02c664560", data={"abstract": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'publication': {'id': 'e308cb04-428b-4b2c-b86b-15e02c664560',
   'title': 'MyNewPaper',
@@ -176,6 +190,8 @@ resp = save_model(settings, "publication", id="e308cb04-428b-4b2c-b86b-15e02c664
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "publication", id="e308cb04-428b-4b2c-b86b-15e02c664560")
 ``` 

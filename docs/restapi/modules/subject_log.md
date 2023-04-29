@@ -49,11 +49,15 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'subjectlog')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_logs': [
     {
@@ -97,6 +101,8 @@ resp = load_model(settings, 'subjectlog')
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "subjectlog",  data={
     "type": "WaterConsumption",
@@ -104,6 +110,8 @@ resp = save_model(settings, "subjectlog",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_log': {
     'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
@@ -124,11 +132,15 @@ resp = save_model(settings, "subjectlog",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105c3')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_log': {
     'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
@@ -149,11 +161,15 @@ resp = load_model(settings, 'subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_log': {
     'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
@@ -174,6 +190,8 @@ resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3")
 ```
@@ -188,6 +206,8 @@ resp = delete_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc31
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
@@ -198,6 +218,8 @@ resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_log': 
     {
@@ -224,11 +246,15 @@ resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_log': 
     {
@@ -257,11 +283,15 @@ resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_log': {
     'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',

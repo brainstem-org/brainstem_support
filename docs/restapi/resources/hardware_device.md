@@ -34,11 +34,15 @@ nav_order: 6
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'hardwaredevice')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'hardware_devices': [
     {
@@ -79,6 +83,8 @@ resp = load_model(settings, 'hardwaredevice')
 **Note**: hardware_devices submissions go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "hardwaredevice",  data={
     'name': 'MyNewHardwareDevice',
@@ -88,6 +94,8 @@ resp = save_model(settings, "hardwaredevice",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'hardware_device_approval': {
     'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
@@ -108,11 +116,15 @@ resp = save_model(settings, "hardwaredevice",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e817')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'hardware_device': {
     'id': '0e6c723c-e5f8-4979-b7f9-e77a3ae4e817',
@@ -133,11 +145,15 @@ resp = load_model(settings, 'hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3a
 **Note**: hardware_devices changes go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'hardware_device_approval': {
     'id': 'd10aaf4c-be23-45b2-9f81-ef1d65ca6c32',
@@ -160,6 +176,8 @@ resp = save_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3a
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817")
 ``` 
@@ -173,11 +191,15 @@ resp = delete_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'hardwaredeviceapproval')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'hardware_device_approvals': [
     {

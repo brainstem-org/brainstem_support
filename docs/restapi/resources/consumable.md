@@ -44,11 +44,15 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'consumable')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {"consumables": [
     {
@@ -94,6 +98,8 @@ resp = load_model(settings, 'consumable')
 **Note**: consumables submissions go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "consumable",  data={
         "name": "MyNewConsumable",
@@ -112,6 +118,8 @@ resp = save_model(settings, "consumable",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'consumable_approval': {
         'id': 'b7595523-5578-45c0-b7ef-c1f1485ac041',
@@ -141,11 +149,15 @@ resp = save_model(settings, "consumable",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'consumable', id='67f263cd-5960-406f-a879-c1f259140979')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'consumable': {
         'id': '67f263cd-5960-406f-a879-c1f259140979',
@@ -175,11 +187,15 @@ resp = load_model(settings, 'consumable', id='67f263cd-5960-406f-a879-c1f2591409
 **Note**: consumables changes go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "consumable", id="67f263cd-5960-406f-a879-c1f259140979", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'consumable_approval': {
         'id': '8cf7d857-a197-4e36-9e0c-1766bb6aa285',
@@ -210,6 +226,8 @@ resp = save_model(settings, "consumable", id="67f263cd-5960-406f-a879-c1f2591409
 **Note**: only administrators can delete Consumables.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "consumable", id="67f263cd-5960-406f-a879-c1f259140979")
 ``` 
@@ -223,11 +241,15 @@ resp = delete_model(settings, "consumable", id="67f263cd-5960-406f-a879-c1f25914
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'consumableapproval')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {"consumable_approvals": [
     {
@@ -261,11 +283,15 @@ resp = load_model(settings, 'consumableapproval')
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'consumableapproval', id='b7595523-5578-45c0-b7ef-c1f1485ac041')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'consumable_approval': {
         'id': 'b7595523-5578-45c0-b7ef-c1f1485ac041',
@@ -298,6 +324,8 @@ resp = load_model(settings, 'consumableapproval', id='b7595523-5578-45c0-b7ef-c1
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "consumableapproval", id="b7595523-5578-45c0-b7ef-c1f1485ac041", options="accept")
 ```
@@ -311,6 +339,8 @@ resp = save_model(settings, "consumableapproval", id="b7595523-5578-45c0-b7ef-c1
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "consumableapproval", id="8cf7d857-a197-4e36-9e0c-1766bb6aa285", options="reject")
 ```

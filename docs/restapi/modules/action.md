@@ -62,11 +62,15 @@ A detailed list of the accepted schemas for the `coordinates_json` field, relate
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'action')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'actions': [
     {
@@ -123,6 +127,8 @@ resp = load_model(settings, 'action')
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "action",  data={
     "type": "OpticFiberImplant",
@@ -134,6 +140,8 @@ resp = save_model(settings, "action",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'action': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
@@ -160,11 +168,15 @@ resp = save_model(settings, "action",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'action': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
@@ -191,11 +203,15 @@ resp = load_model(settings, 'action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'action': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
@@ -222,6 +238,8 @@ resp = save_model(settings, "action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 ```

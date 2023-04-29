@@ -61,11 +61,15 @@ A detailed list of the accepted schemas for the `coordinates_json` field, relate
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'subjectstatechange')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_state_changes': [
     {
@@ -119,6 +123,8 @@ resp = load_model(settings, 'subjectstatechange')
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "subjectstatechange",  data={
     "type": "Death",
@@ -130,6 +136,8 @@ resp = save_model(settings, "subjectstatechange",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_state_change': {
     'id': '93925815-9f8e-4d39-9c3a-cf1d6e13f150',
@@ -156,11 +164,15 @@ resp = save_model(settings, "subjectstatechange",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'subjectstatechange', id='93925815-9f8e-4d39-9c3a-cf1d6e13f150')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_state_change': {
     'id': '93925815-9f8e-4d39-9c3a-cf1d6e13f150',
@@ -187,11 +199,15 @@ resp = load_model(settings, 'subjectstatechange', id='93925815-9f8e-4d39-9c3a-cf
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf1d6e13f150", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'subject_state_change': {
     'id': '93925815-9f8e-4d39-9c3a-cf1d6e13f150',
@@ -218,6 +234,8 @@ resp = save_model(settings, "subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf1d6e13f150")
 ``` 

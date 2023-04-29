@@ -139,6 +139,8 @@ resp = save_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'environment_type_approval': {
     'id': '511f5736-5c34-46c5-b4d2-d7bb0727b5fe',
