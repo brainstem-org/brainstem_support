@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Behavior
-parent: Modules endpoints
+parent: Modules
 grand_parent: REST API
 nav_order: 3
 ---

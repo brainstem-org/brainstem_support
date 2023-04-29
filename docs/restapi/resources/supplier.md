@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Supplier
-parent: Resources endpoints
+parent: Resources
 grand_parent: REST API
 nav_order: 6
 ---

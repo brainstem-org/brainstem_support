@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Environment type
-parent: Taxonomies endpoints
+parent: Taxonomies
 grand_parent: REST API
 nav_order: 7
 ---
@@ -33,11 +33,15 @@ nav_order: 7
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'environmenttype')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'environment_types': [
     {
@@ -69,6 +73,8 @@ resp = load_model(settings, 'environmenttype')
 **Note**: Environment Types submissions go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "environmenttype",  data={
         "name": "MyNewEnvironmentType",
@@ -78,6 +84,8 @@ resp = save_model(settings, "environmenttype",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'environment_type_approval': {'
     id': '725ef635-09b7-4817-98f7-d58e598b445e',
@@ -88,7 +96,6 @@ resp = save_model(settings, "environmenttype",  data={
 ```
 
 
-
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
@@ -97,11 +104,15 @@ resp = save_model(settings, "environmenttype",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'environmenttype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'environment_type': {
     'id': 'a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6',
@@ -121,6 +132,8 @@ resp = load_model(settings, 'environmenttype', id='a2510c9e-3ef2-40eb-b4b4-70b8a
 **Note**: environmenttypes changes go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6", data={"description": "new text"})
 ```
@@ -146,6 +159,8 @@ resp = save_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a
 **Note**: only administrators can delete Environment Types.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6")
 ``` 
@@ -159,11 +174,15 @@ resp = delete_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'environmenttypeapproval')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'environment_type_approvals': [
     {
@@ -198,11 +217,15 @@ resp = load_model(settings, 'environmenttypeapproval')
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'environmenttypeapproval', id='725ef635-09b7-4817-98f7-d58e598b445e')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'environment_type_approval': {
     'id': '725ef635-09b7-4817-98f7-d58e598b445e',
@@ -225,6 +248,8 @@ resp = load_model(settings, 'environmenttypeapproval', id='725ef635-09b7-4817-98
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "environmenttypeapproval", id="725ef635-09b7-4817-98f7-d58e598b445e", options="accept")
 ```
@@ -238,6 +263,8 @@ resp = save_model(settings, "environmenttypeapproval", id="725ef635-09b7-4817-98
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "environmenttypeapproval", id="511f5736-5c34-46c5-b4d2-d7bb0727b5fe", options="reject")
 ```

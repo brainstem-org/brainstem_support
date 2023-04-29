@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Python API tool
-parent: REST API
-nav_order: 3
+parent: API Tools
+nav_order: 2
 ---
 # Python API tool
 {: .no_toc}

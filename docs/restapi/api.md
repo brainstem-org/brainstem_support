@@ -1,9 +1,9 @@
 ---
 layout: default
-title: API introduction
+title: Introduction
 parent: REST API
 has_children: true
-nav_order: 2
+nav_order: 1
 ---
 # Interacting with the API endpoints
 The API endpoints' URLs are defined by the portal, the app and the model: 

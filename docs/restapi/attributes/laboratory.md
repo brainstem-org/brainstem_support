@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Laboratory
-parent: General attributes endpoints
+parent: General attributes
 grand_parent: REST API
 nav_order: 4
 ---

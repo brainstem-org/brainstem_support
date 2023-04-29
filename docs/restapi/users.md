@@ -1,6 +1,6 @@
 ---
 layout: default
-title: User endpoints
+title: Users
 parent: REST API
 has_children: true
 nav_order: 2

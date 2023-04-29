@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Group
-parent: User endpoints
+parent: Users
 grand_parent: REST API
 nav_order: 8
 ---

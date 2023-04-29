@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Resources endpoints
+title: Resources
 parent: REST API
 has_children: true
 nav_order: 2

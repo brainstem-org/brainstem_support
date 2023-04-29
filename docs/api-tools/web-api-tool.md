@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Web API tool
-parent: REST API
+parent: API Tools
 nav_order: 3
 ---
 # Web API tool

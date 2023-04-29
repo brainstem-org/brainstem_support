@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Matlab API tool
-parent: REST API
-nav_order: 3
+parent: API Tools
+nav_order: 1
 ---
 # Matlab API tool
 {: .no_toc}

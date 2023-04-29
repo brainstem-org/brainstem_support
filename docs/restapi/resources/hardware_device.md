@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Hardware Device
-parent: Resources endpoints
+parent: Resources
 grand_parent: REST API
 nav_order: 6
 ---

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Taxonomies endpoints
+title: Taxonomies
 parent: REST API
 has_children: true
 nav_order: 2

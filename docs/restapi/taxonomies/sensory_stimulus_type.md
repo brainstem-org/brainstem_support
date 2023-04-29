@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sensory stimulus type
-parent: Taxonomies endpoints
+parent: Taxonomies
 grand_parent: REST API
 nav_order: 7
 ---
@@ -34,11 +34,15 @@ nav_order: 7
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'sensorystimulustype')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'sensory_stimulus_types': [
     {
@@ -70,6 +74,8 @@ resp = load_model(settings, 'sensorystimulustype')
 **Note**: Sensory Stimulus Types submissions go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "sensorystimulustype",  data={
         "name": "MyNewSensoryStimulusType",
@@ -79,6 +85,8 @@ resp = save_model(settings, "sensorystimulustype",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'sensory_stimulus_type_approval': {
     'id': '9a4e8ce4-b7a1-4431-9176-514640681d59',
@@ -98,11 +106,15 @@ resp = save_model(settings, "sensorystimulustype",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'sensorystimulustype', id='6094032c-c54f-4115-b8c8-139d93b98b80')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'sensory_stimulus_type': {
     'id': '6094032c-c54f-4115-b8c8-139d93b98b80',
@@ -122,11 +134,15 @@ resp = load_model(settings, 'sensorystimulustype', id='6094032c-c54f-4115-b8c8-1
 **Note**: sensorystimulustypes changes go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "sensorystimulustype", id="6094032c-c54f-4115-b8c8-139d93b98b80", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'sensory_stimulus_type_approval': {
     'id': '06552cc2-a2db-44ea-90bc-8c529440acdd',
@@ -147,6 +163,8 @@ resp = save_model(settings, "sensorystimulustype", id="6094032c-c54f-4115-b8c8-1
 **Note**: only administrators can delete SensoryStimulusTypes.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "sensorystimulustype", id="6094032c-c54f-4115-b8c8-139d93b98b80")
 ``` 
@@ -160,11 +178,15 @@ resp = delete_model(settings, "sensorystimulustype", id="6094032c-c54f-4115-b8c8
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'sensorystimulustypeapproval')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'sensory_stimulus_type_approvals': [
     {
@@ -199,11 +221,15 @@ resp = load_model(settings, 'sensorystimulustypeapproval')
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'sensorystimulustypeapproval', id='9a4e8ce4-b7a1-4431-9176-514640681d59')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'sensory_stimulus_type_approval': {
     'id': '9a4e8ce4-b7a1-4431-9176-514640681d59',
@@ -226,6 +252,8 @@ resp = load_model(settings, 'sensorystimulustypeapproval', id='9a4e8ce4-b7a1-443
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "sensorystimulustypeapproval", id="9a4e8ce4-b7a1-4431-9176-514640681d59", options="accept")
 ```
@@ -239,6 +267,8 @@ resp = save_model(settings, "sensorystimulustypeapproval", id="9a4e8ce4-b7a1-443
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "sensorystimulustypeapproval", id="06552cc2-a2db-44ea-90bc-8c529440acdd", options="reject")
 ```

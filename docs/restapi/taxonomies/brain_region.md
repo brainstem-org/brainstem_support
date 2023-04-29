@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Brain Region
-parent: Taxonomies endpoints
+parent: Taxonomies
 grand_parent: REST API
 nav_order: 7
 ---
@@ -46,11 +46,15 @@ These are the available `atlas` options for Brain Region:
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'brainregion')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {"brain_regions": [
     {
@@ -88,6 +92,8 @@ resp = load_model(settings, 'brainregion')
 **Note**: only administrators can add Brain Regions.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "brainregion",  data={
         "name": "MyNewBrainRegion",
@@ -99,6 +105,8 @@ resp = save_model(settings, "brainregion",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'brain_region': {
     'id': '2cdd3db4-1dc4-4568-9ee3-de2356ee31a9',
@@ -119,11 +127,15 @@ resp = save_model(settings, "brainregion",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee31a9')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'brain_region': {
     'id': '2cdd3db4-1dc4-4568-9ee3-de2356ee31a9',
@@ -145,11 +157,15 @@ resp = load_model(settings, 'brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee3
 **Note**: only administrators can change Brain Regions.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'brain_region': {
     'id': '2cdd3db4-1dc4-4568-9ee3-de2356ee31a9',
@@ -171,6 +187,8 @@ resp = save_model(settings, "brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee3
 **Note**: only administrators can delete Brain Regions.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9")
 ``` 

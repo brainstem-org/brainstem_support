@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Dataset
-parent: STEM endpoints
+parent: STEM
 grand_parent: REST API
 nav_order: 2
 ---

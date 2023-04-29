@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Group Membership Request
-parent: User endpoints
+parent: Users
 grand_parent: REST API
 nav_order: 8
 ---
@@ -32,11 +32,15 @@ nav_order: 8
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'groupmembershiprequest')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'group_membership_requests': [
     {
@@ -61,11 +65,15 @@ resp = load_model(settings, 'groupmembershiprequest')
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'groupmembershiprequest', id='fd335535-cf79-4ae8-86af-ed87e1108889')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'group_membership_request': {
     'id': 'fd335535-cf79-4ae8-86af-ed87e1108889',
@@ -83,6 +91,8 @@ resp = load_model(settings, 'groupmembershiprequest', id='fd335535-cf79-4ae8-86a
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, "groupmembershiprequest", id="fd335535-cf79-4ae8-86af-ed87e1108889", options="accept")
 ```
@@ -97,6 +107,8 @@ resp = load_model(settings, "groupmembershiprequest", id="fd335535-cf79-4ae8-86a
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, "groupmembershiprequest", id="5a6378e9-be26-4f0f-8e12-2d11a05cd769", options="reject")
 ```
@@ -110,6 +122,8 @@ resp = load_model(settings, "groupmembershiprequest", id="5a6378e9-be26-4f0f-8e1
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, "groupmembershiprequest", id="263fa5ff-1dd0-4b20-a028-5679ac1b54cf", options="cancel")
 ```

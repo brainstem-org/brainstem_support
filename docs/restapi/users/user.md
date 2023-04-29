@@ -1,19 +1,19 @@
 ---
 layout: default
 title: User
-parent: User endpoints
+parent: Users
 grand_parent: REST API
 nav_order: 8
 ---
 
+# User API endpoint
+{: .no_toc}
+
 ## Table of contents
-- [Fields](/brainstem_support/restapi/users/user/#fields)
-- Endpoints
-  - [List view](/brainstem_support/restapi/users/user/#list-view)
-  - [Add](/brainstem_support/restapi/users/user/#add)
-  - [Detail](/brainstem_support/restapi/users/user/#detail)
-  - [Change](/brainstem_support/restapi/users/user/#change)
-  - [Delete](/brainstem_support/restapi/users/user/#delete)
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 ## Fields
 
@@ -46,9 +46,6 @@ Each dictionary in the `groups_own_json` list contains the group's `id` and `nam
 ```
 
 
-
-
-
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
@@ -57,11 +54,17 @@ Each dictionary in the `groups_own_json` list contains the group's `id` and `nam
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
+
 ```
 resp = load_model(settings, 'user')
 ```
 
 ### Response example
+{: .no_toc}
+
+
 ```
 {'users': [
     {
@@ -105,11 +108,16 @@ Users can only be added through the website Register form.
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
+
 ```
 resp = load_model(settings, 'user', id='16')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'user': {
     'id': 16,
@@ -136,11 +144,17 @@ resp = load_model(settings, 'user', id='16')
 
 
 ### Use example (using Python API)
+{: .no_toc}
+
+
 ```
 resp = save_model(settings, "user", id="16", data={"website": "www.someweb.com"})
 ```
 
 ### Response example
+{: .no_toc}
+
+
 ```
 {'user': {
     'id': 16,
@@ -166,6 +180,8 @@ resp = save_model(settings, "user", id="16", data={"website": "www.someweb.com"}
 **Note:** only administrators can remove Users.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "user", id="16")
 ``` 

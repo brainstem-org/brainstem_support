@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Strain
-parent: Taxonomies endpoints
+parent: Taxonomies
 grand_parent: REST API
 nav_order: 7
 ---

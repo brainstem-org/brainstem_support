@@ -1,6 +1,6 @@
 ---
 layout: default
-title: STEM endpoints
+title: STEM
 parent: REST API
 has_children: true
 nav_order: 2

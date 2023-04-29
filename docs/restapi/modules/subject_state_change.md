@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Subject State Change
-parent: Modules endpoints
+parent: Modules
 grand_parent: REST API
 nav_order: 3
 ---
