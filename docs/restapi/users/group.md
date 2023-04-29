@@ -28,9 +28,6 @@ Each entry in the `users` dictionary has the user `email` as key and the followi
 {'is_manager': <boolean>, 'is_owner': <boolean>}
 ```
 
-
-
-
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
@@ -113,6 +110,8 @@ resp = save_model(settings, "group",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'group', id='48')
 ```

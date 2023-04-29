@@ -34,11 +34,15 @@ nav_order: 7
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'strain')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'strains': [
     {
@@ -67,6 +71,8 @@ resp = load_model(settings, 'strain')
 **Note**: Strains submissions go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "strain",  data={
         "name": "MyNewStrain",
@@ -77,6 +83,8 @@ resp = save_model(settings, "strain",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'strain_approval': {
     'id': 'b460dfbc-79bb-499e-87ed-57df02832d88',
@@ -87,8 +95,6 @@ resp = save_model(settings, "strain",  data={
 }
 ```
 
-
-
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
@@ -97,11 +103,15 @@ resp = save_model(settings, "strain",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'strain': {
     'id': '7963dc0b-e4e7-459c-9a05-cf5a54200e02',
@@ -122,11 +132,15 @@ resp = load_model(settings, 'strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
 **Note**: Strains changes go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'strain_approval': {
     'id': '6403fdaf-7896-4ef7-9b30-ee12d69aa408',
@@ -148,6 +162,8 @@ resp = save_model(settings, "strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02",
 **Note**: only administrators can delete Strains.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02")
 ``` 
@@ -161,11 +177,15 @@ resp = delete_model(settings, "strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'strainapproval')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'strain_approvals': [
     {
@@ -202,11 +222,15 @@ resp = load_model(settings, 'strainapproval')
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832d88')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'strain_approval': {
     'id': 'b460dfbc-79bb-499e-87ed-57df02832d88',
@@ -230,6 +254,8 @@ resp = load_model(settings, 'strainapproval', id='b460dfbc-79bb-499e-87ed-57df02
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "strainapproval", id="b460dfbc-79bb-499e-87ed-57df02832d88", options="accept")
 ```
@@ -243,6 +269,8 @@ resp = save_model(settings, "strainapproval", id="b460dfbc-79bb-499e-87ed-57df02
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "strainapproval", id="6403fdaf-7896-4ef7-9b30-ee12d69aa408", options="reject")
 ```

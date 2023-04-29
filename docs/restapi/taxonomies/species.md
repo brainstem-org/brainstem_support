@@ -33,11 +33,15 @@ nav_order: 7
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'species')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'species': [
     {
@@ -64,6 +68,8 @@ resp = load_model(settings, 'species')
 **Note**: Species submissions go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "species",  data={
         "name": "MyNewSpecies",
@@ -73,6 +79,8 @@ resp = save_model(settings, "species",  data={
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'species_approval': {
     'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
@@ -82,8 +90,6 @@ resp = save_model(settings, "species",  data={
 }
 ```
 
-
-
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
@@ -92,11 +98,15 @@ resp = save_model(settings, "species",  data={
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'species': {
     'id': '855d4962-52d9-49f2-a9ab-36073bd34c3f',
@@ -116,11 +126,15 @@ resp = load_model(settings, 'species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f'
 **Note**: Species changes go through an approval process.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f", data={"description": "new text"})
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'species_approval': {
     'id': '5ccb907c-520a-4c67-baf1-ac23a71ab710',
@@ -141,6 +155,8 @@ resp = save_model(settings, "species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f"
 **Note**: only administrators can delete Species.
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f")
 ``` 
@@ -154,11 +170,15 @@ resp = delete_model(settings, "species", id="855d4962-52d9-49f2-a9ab-36073bd34c3
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'speciesapproval')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'species_approvals': [
     {
@@ -193,11 +213,15 @@ resp = load_model(settings, 'speciesapproval')
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988f037')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'species_approval': {
     'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
@@ -220,6 +244,8 @@ resp = load_model(settings, 'speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "speciesapproval", id="529efb3b-99f9-4e42-90e3-f5990988f037", options="accept")
 ```
@@ -233,6 +259,8 @@ resp = save_model(settings, "speciesapproval", id="529efb3b-99f9-4e42-90e3-f5990
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "speciesapproval", id="5ccb907c-520a-4c67-baf1-ac23a71ab710", options="reject")
 ```

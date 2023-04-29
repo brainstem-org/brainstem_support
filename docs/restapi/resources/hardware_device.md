@@ -178,6 +178,8 @@ resp = save_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3a
 ### Use example (using Python API)
 {: .no_toc}
 
+{: .no_toc}
+
 ```
 resp = delete_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817")
 ``` 
@@ -193,11 +195,15 @@ resp = delete_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a
 ### Use example (using Python API)
 {: .no_toc}
 
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'hardwaredeviceapproval')
 ```
 
 ### Response example
+{: .no_toc}
+
 {: .no_toc}
 
 ```
@@ -236,11 +242,15 @@ resp = load_model(settings, 'hardwaredeviceapproval')
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = load_model(settings, 'hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0198222ee7dd')
 ```
 
 ### Response example
+{: .no_toc}
+
 ```
 {'hardware_device_approval': {
     'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
@@ -264,6 +274,8 @@ resp = load_model(settings, 'hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0198222ee7dd", options="accept")
 ```
@@ -277,6 +289,8 @@ resp = save_model(settings, "hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
+
 ```
 resp = save_model(settings, "hardwaredeviceapproval", id="fd7f6132-0527-4310-a9da-9241728a9163", options="reject")
 ```

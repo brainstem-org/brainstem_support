@@ -107,6 +107,7 @@ resp = load_model(settings, 'actionlog')
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Use example (using Python API)
+{: .no_toc}
 
 ```
 resp = save_model(settings, "actionlog",  data={
