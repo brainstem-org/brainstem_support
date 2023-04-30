@@ -56,7 +56,7 @@ A detailed list of the accepted schemas for the `coordinates_json` field, relate
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/modules/subjectstatechange
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectstatechange
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -118,7 +118,7 @@ resp = load_model(settings, 'subjectstatechange')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/modules/subjectstatechange
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectstatechange
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -159,7 +159,7 @@ resp = save_model(settings, "subjectstatechange",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/modules/subjectstatechange/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectstatechange/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -193,7 +193,7 @@ resp = load_model(settings, 'subjectstatechange', id='93925815-9f8e-4d39-9c3a-cf
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/modules/subjectstatechange/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectstatechange/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -228,7 +228,7 @@ resp = save_model(settings, "subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/modules/subjectstatechange/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectstatechange/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

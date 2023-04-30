@@ -39,7 +39,7 @@ nav_order: 3
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/stem/dataset
+- **URL:** https://www.brainstem.org/rest/private/stem/dataset
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -94,7 +94,7 @@ resp = load_model(settings, 'dataset')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/stem/dataset
+- **URL:** https://www.brainstem.org/rest/private/stem/dataset
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -135,7 +135,7 @@ resp = save_model(settings, "dataset",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/stem/dataset/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/stem/dataset/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -171,7 +171,7 @@ resp = load_model(settings, 'dataset', id='3654964e-1bf7-40c7-a376-9dcec4c125cd'
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/stem/dataset/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/stem/dataset/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -208,7 +208,7 @@ resp = save_model(settings, "dataset", id="3654964e-1bf7-40c7-a376-9dcec4c125cd"
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/stem/dataset/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/stem/dataset/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

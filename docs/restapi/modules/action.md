@@ -57,7 +57,7 @@ A detailed list of the accepted schemas for the `coordinates_json` field, relate
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/modules/action
+- **URL:** https://www.brainstem.org/rest/private/modules/action
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -122,7 +122,7 @@ resp = load_model(settings, 'action')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/modules/action
+- **URL:** https://www.brainstem.org/rest/private/modules/action
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -163,7 +163,7 @@ resp = save_model(settings, "action",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/modules/action/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/action/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -197,7 +197,7 @@ resp = load_model(settings, 'action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/modules/action/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/action/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -232,7 +232,7 @@ resp = save_model(settings, "action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/modules/action/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/action/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

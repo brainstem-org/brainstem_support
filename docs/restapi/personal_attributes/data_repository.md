@@ -31,7 +31,7 @@ nav_order: 5
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/personal_attributes/data_repository
+- **URL:** https://www.brainstem.org/rest/private/personal_attributes/data_repository
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -72,7 +72,7 @@ resp = load_model(settings, 'datarepository')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/personal_attributes/data_repository
+- **URL:** https://www.brainstem.org/rest/private/personal_attributes/data_repository
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -109,7 +109,7 @@ resp = save_model(settings, "datarepository",  data=
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/personal_attributes/data_repository/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/personal_attributes/data_repository/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -139,7 +139,7 @@ resp = load_model(settings, 'datarepository', id='9f322057-cf48-4ec7-ab19-d0d717
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/personal_attributes/data_repository/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/personal_attributes/data_repository/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -170,7 +170,7 @@ resp = save_model(settings, "datarepository", id="9f322057-cf48-4ec7-ab19-d0d717
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/personal_attributes/data_repository/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/personal_attributes/data_repository/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

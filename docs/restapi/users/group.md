@@ -31,7 +31,7 @@ Each entry in the `users` dictionary has the user `email` as key and the followi
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/group
+- **URL:** https://www.brainstem.org/rest/private/users/group
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -71,7 +71,7 @@ resp = load_model(settings, 'group')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/users/group
+- **URL:** https://www.brainstem.org/rest/private/users/group
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -105,7 +105,7 @@ resp = save_model(settings, "group",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/group/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/group/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -134,7 +134,7 @@ resp = load_model(settings, 'group', id='48')
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/users/group/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/group/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -184,7 +184,7 @@ resp = save_model(settings, "group", id="48", data={
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/users/group/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/group/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -201,7 +201,7 @@ resp = delete_model(settings, "group", id="3654964e-1bf7-40c7-a376-9dcec4c125cd"
 ## Join
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/group/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/group/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -219,7 +219,7 @@ resp = load_model(settings, "group", id="9", options="join")
 ## Leave
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/group/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/group/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 

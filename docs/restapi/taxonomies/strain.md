@@ -29,7 +29,7 @@ nav_order: 7
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/strain
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/strain
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -64,7 +64,7 @@ resp = load_model(settings, 'strain')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/taxonomies/strain
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/strain
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -98,7 +98,7 @@ resp = save_model(settings, "strain",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/strain/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/strain/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -125,7 +125,7 @@ resp = load_model(settings, 'strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/strain/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/strain/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -155,7 +155,7 @@ resp = save_model(settings, "strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02",
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/taxonomies/strain/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/strain/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -172,7 +172,7 @@ resp = delete_model(settings, "strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/strain_approvals
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/strain_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -217,7 +217,7 @@ resp = load_model(settings, 'strainapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/strain_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/strain_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -249,7 +249,7 @@ resp = load_model(settings, 'strainapproval', id='b460dfbc-79bb-499e-87ed-57df02
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/strain_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/strain_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -264,7 +264,7 @@ resp = save_model(settings, "strainapproval", id="b460dfbc-79bb-499e-87ed-57df02
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/strain_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/strain_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

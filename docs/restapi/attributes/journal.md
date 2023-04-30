@@ -29,7 +29,7 @@ nav_order: 4
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/attributes/journal
+- **URL:** https://www.brainstem.org/rest/private/attributes/journal
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -70,7 +70,7 @@ resp = load_model(settings, 'journal')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/attributes/journal
+- **URL:** https://www.brainstem.org/rest/private/attributes/journal
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -106,7 +106,7 @@ resp = save_model(settings, "journal",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/attributes/journal/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/attributes/journal/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -133,7 +133,7 @@ resp = load_model(settings, 'journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9'
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/attributes/journal/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/attributes/journal/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -163,7 +163,7 @@ resp = save_model(settings, "journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9"
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/attributes/journal/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/attributes/journal/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -179,7 +179,7 @@ resp = delete_model(settings, "journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200f
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/attributes/journal_approvals
+- **URL:** https://www.brainstem.org/rest/private/attributes/journal_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -224,7 +224,7 @@ resp = load_model(settings, 'journalapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/attributes/journal_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/attributes/journal_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -256,7 +256,7 @@ resp = load_model(settings, 'journalapproval', id='41f99539-e54e-4224-8e53-88a69
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/attributes/journal_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/attributes/journal_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -271,7 +271,7 @@ resp = save_model(settings, "journalapproval", id="41f99539-e54e-4224-8e53-88a69
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/attributes/journal_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/attributes/journal_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

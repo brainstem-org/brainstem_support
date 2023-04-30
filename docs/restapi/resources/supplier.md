@@ -29,7 +29,7 @@ nav_order: 6
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/supplier
+- **URL:** https://www.brainstem.org/rest/private/resources/supplier
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -64,7 +64,7 @@ resp = load_model(settings, 'supplier')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/resources/supplier
+- **URL:** https://www.brainstem.org/rest/private/resources/supplier
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -99,7 +99,7 @@ resp = save_model(settings, "supplier",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/supplier/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/supplier/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -126,7 +126,7 @@ resp = load_model(settings, 'supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/resources/supplier/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/supplier/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -156,7 +156,7 @@ resp = save_model(settings, "supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/resources/supplier/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/supplier/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -174,7 +174,7 @@ resp = delete_model(settings, "supplier", id="1338d838-5b69-4e89-8db9-b35224dcb0
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/supplier_approvals
+- **URL:** https://www.brainstem.org/rest/private/resources/supplier_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -219,7 +219,7 @@ resp = load_model(settings, 'supplierapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/supplier_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/supplier_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -251,7 +251,7 @@ resp = load_model(settings, 'supplierapproval', id='1af72008-d203-4bea-9766-f692
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/resources/supplier_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/supplier_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -266,7 +266,7 @@ resp = save_model(settings, "supplierapproval", id="1af72008-d203-4bea-9766-f692
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/resources/supplier_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/supplier_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

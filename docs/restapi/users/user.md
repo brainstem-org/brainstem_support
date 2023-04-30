@@ -49,7 +49,7 @@ Each dictionary in the `groups_own_json` list contains the group's `id` and `nam
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/user
+- **URL:** https://www.brainstem.org/rest/private/users/user
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -76,7 +76,7 @@ resp = load_model(settings, 'user')
             {'id': 9, 'name': 'my group1'},
             {'id': 13, 'name': 'Peters group'}
         ],
-        'website': 'http://petersen.neuroscience.rocks/',
+        'website': 'https://petersenlab.org/',
         'google_scholar': 'https://scholar.google.dk/citations?user=RywQhd8AAAAJ&hl',
         'orcid_id': 'https://orcid.org/0000-0002-2092-4791',
         'atlas_preference': 'AIA'
@@ -103,7 +103,7 @@ Users can only be added through the website Register form.
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/user/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/user/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -136,7 +136,7 @@ resp = load_model(settings, 'user', id='16')
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/users/user/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/user/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -173,7 +173,7 @@ resp = save_model(settings, "user", id="16", data={"website": "www.someweb.com"}
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/users/user/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/user/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

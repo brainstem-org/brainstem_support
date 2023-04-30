@@ -28,7 +28,7 @@ nav_order: 7
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/environmenttype
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/environmenttype
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -66,7 +66,7 @@ resp = load_model(settings, 'environmenttype')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/taxonomies/environmenttype
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/environmenttype
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -99,7 +99,7 @@ resp = save_model(settings, "environmenttype",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/environmenttype/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/environmenttype/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -125,7 +125,7 @@ resp = load_model(settings, 'environmenttype', id='a2510c9e-3ef2-40eb-b4b4-70b8a
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/environmenttype/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/environmenttype/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -154,7 +154,7 @@ resp = save_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/taxonomies/environmenttype/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/environmenttype/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -171,7 +171,7 @@ resp = delete_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/environmenttype_approvals
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/environmenttype_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -214,7 +214,7 @@ resp = load_model(settings, 'environmenttypeapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/environmenttype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/environmenttype_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -245,7 +245,7 @@ resp = load_model(settings, 'environmenttypeapproval', id='725ef635-09b7-4817-98
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/environmenttype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/environmenttype_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -260,7 +260,7 @@ resp = save_model(settings, "environmenttypeapproval", id="725ef635-09b7-4817-98
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/environmenttype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/environmenttype_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

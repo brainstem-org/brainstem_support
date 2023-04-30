@@ -29,7 +29,7 @@ nav_order: 7
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/sensorystimulustype
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/sensorystimulustype
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -67,7 +67,7 @@ resp = load_model(settings, 'sensorystimulustype')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/taxonomies/sensorystimulustype
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/sensorystimulustype
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -101,7 +101,7 @@ resp = save_model(settings, "sensorystimulustype",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/sensorystimulustype/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/sensorystimulustype/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -127,7 +127,7 @@ resp = load_model(settings, 'sensorystimulustype', id='6094032c-c54f-4115-b8c8-1
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/sensorystimulustype/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/sensorystimulustype/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -156,7 +156,7 @@ resp = save_model(settings, "sensorystimulustype", id="6094032c-c54f-4115-b8c8-1
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/taxonomies/sensorystimulustype/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/sensorystimulustype/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -173,7 +173,7 @@ resp = delete_model(settings, "sensorystimulustype", id="6094032c-c54f-4115-b8c8
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/sensorystimulustype_approvals
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/sensorystimulustype_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -216,7 +216,7 @@ resp = load_model(settings, 'sensorystimulustypeapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/sensorystimulustype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/sensorystimulustype_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -247,7 +247,7 @@ resp = load_model(settings, 'sensorystimulustypeapproval', id='9a4e8ce4-b7a1-443
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/sensorystimulustype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/sensorystimulustype_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -262,7 +262,7 @@ resp = save_model(settings, "sensorystimulustypeapproval", id="9a4e8ce4-b7a1-443
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/sensorystimulustype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/sensorystimulustype_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

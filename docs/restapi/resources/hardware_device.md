@@ -29,7 +29,7 @@ nav_order: 6
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/hardware_device
+- **URL:** https://www.brainstem.org/rest/private/resources/hardware_device
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -76,7 +76,7 @@ resp = load_model(settings, 'hardwaredevice')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/resources/hardware_device
+- **URL:** https://www.brainstem.org/rest/private/resources/hardware_device
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -111,7 +111,7 @@ resp = save_model(settings, "hardwaredevice",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/hardware_device/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/hardware_device/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -138,7 +138,7 @@ resp = load_model(settings, 'hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3a
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/resources/hardware_device/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/hardware_device/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -168,7 +168,7 @@ resp = save_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3a
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/resources/hardware_device/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/hardware_device/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -188,7 +188,7 @@ resp = delete_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/hardware_device_approvals
+- **URL:** https://www.brainstem.org/rest/private/resources/hardware_device_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -237,7 +237,7 @@ resp = load_model(settings, 'hardwaredeviceapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/hardware_device_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/hardware_device_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -269,7 +269,7 @@ resp = load_model(settings, 'hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/resources/hardware_device_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/hardware_device_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -284,7 +284,7 @@ resp = save_model(settings, "hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/resources/hardware_device_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/hardware_device_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

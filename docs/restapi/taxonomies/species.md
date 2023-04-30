@@ -28,7 +28,7 @@ nav_order: 7
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/species
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/species
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -61,7 +61,7 @@ resp = load_model(settings, 'species')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/taxonomies/species
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/species
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -93,7 +93,7 @@ resp = save_model(settings, "species",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/species/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/species/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -119,7 +119,7 @@ resp = load_model(settings, 'species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f'
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/species/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/species/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -148,7 +148,7 @@ resp = save_model(settings, "species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f"
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/taxonomies/species/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/species/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -165,7 +165,7 @@ resp = delete_model(settings, "species", id="855d4962-52d9-49f2-a9ab-36073bd34c3
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/species_approvals
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/species_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -208,7 +208,7 @@ resp = load_model(settings, 'speciesapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/species_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/species_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -239,7 +239,7 @@ resp = load_model(settings, 'speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/species_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/species_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -254,7 +254,7 @@ resp = save_model(settings, "speciesapproval", id="529efb3b-99f9-4e42-90e3-f5990
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/species_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/species_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

@@ -33,7 +33,7 @@ nav_order: 4
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/attributes/laboratory
+- **URL:** https://www.brainstem.org/rest/private/attributes/laboratory
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -78,7 +78,7 @@ resp = load_model(settings, 'laboratory')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/attributes/laboratory
+- **URL:** https://www.brainstem.org/rest/private/attributes/laboratory
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -116,7 +116,7 @@ resp = save_model(settings, "laboratory",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/attributes/laboratory/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/attributes/laboratory/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -148,7 +148,7 @@ resp = load_model(settings, 'laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/attributes/laboratory/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/attributes/laboratory/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -181,7 +181,7 @@ resp = save_model(settings, "laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/attributes/laboratory/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/attributes/laboratory/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

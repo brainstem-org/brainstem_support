@@ -55,7 +55,7 @@ Each entry of in the `groups` dictionary must follow the following structure:
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/stem/project
+- **URL:** https://www.brainstem.org/rest/private/stem/project
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -157,7 +157,7 @@ resp = load_model(settings, 'project')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/stem/project
+- **URL:** https://www.brainstem.org/rest/private/stem/project
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -195,7 +195,7 @@ resp = save_model(settings, "project",  data={"name": "NewRestProject", "descrip
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/stem/project/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/stem/project/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -230,7 +230,7 @@ resp = load_model(settings, 'project', id='a5f29099-2758-4163-a8e4-e5e2898e57b2'
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/stem/project/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/stem/project/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -288,7 +288,7 @@ resp = save_model(settings, "project",
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/stem/project/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/stem/project/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

@@ -39,7 +39,7 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/consumable
+- **URL:** https://www.brainstem.org/rest/private/resources/consumable
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -91,7 +91,7 @@ resp = load_model(settings, 'consumable')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/resources/consumable
+- **URL:** https://www.brainstem.org/rest/private/resources/consumable
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -144,7 +144,7 @@ resp = save_model(settings, "consumable",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/consumable/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/consumable/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -180,7 +180,7 @@ resp = load_model(settings, 'consumable', id='67f263cd-5960-406f-a879-c1f2591409
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/resources/consumable/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/consumable/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -219,7 +219,7 @@ resp = save_model(settings, "consumable", id="67f263cd-5960-406f-a879-c1f2591409
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/resources/consumable/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/consumable/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -236,7 +236,7 @@ resp = delete_model(settings, "consumable", id="67f263cd-5960-406f-a879-c1f25914
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/consumable_approvals
+- **URL:** https://www.brainstem.org/rest/private/resources/consumable_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -278,7 +278,7 @@ resp = load_model(settings, 'consumableapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/resources/consumable_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/consumable_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -319,7 +319,7 @@ resp = load_model(settings, 'consumableapproval', id='b7595523-5578-45c0-b7ef-c1
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/resources/consumable_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/consumable_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -334,7 +334,7 @@ resp = save_model(settings, "consumableapproval", id="b7595523-5578-45c0-b7ef-c1
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/resources/consumable_approvals/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/resources/consumable_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

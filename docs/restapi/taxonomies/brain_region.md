@@ -43,7 +43,7 @@ These are the available `atlas` options for Brain Region:
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/brainregion
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/brainregion
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -87,7 +87,7 @@ resp = load_model(settings, 'brainregion')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/taxonomies/brainregion
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/brainregion
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -124,7 +124,7 @@ resp = save_model(settings, "brainregion",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/taxonomies/brainregion/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/brainregion/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -152,7 +152,7 @@ resp = load_model(settings, 'brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee3
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/taxonomies/brainregion/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/brainregion/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -182,7 +182,7 @@ resp = save_model(settings, "brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee3
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/taxonomies/brainregion/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/taxonomies/brainregion/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

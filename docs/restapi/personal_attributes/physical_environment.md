@@ -32,7 +32,7 @@ nav_order: 5
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/personal_attributes/physical_environment
+- **URL:** https://www.brainstem.org/rest/private/personal_attributes/physical_environment
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -76,7 +76,7 @@ resp = load_model(settings, 'physicalenvironment')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/personal_attributes/physical_environment
+- **URL:** https://www.brainstem.org/rest/private/personal_attributes/physical_environment
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -121,7 +121,7 @@ resp = save_model(settings, "physicalenvironment",  data=
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/personal_attributes/physical_environment/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/personal_attributes/physical_environment/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -153,7 +153,7 @@ resp = load_model(settings, 'physicalenvironment', id='d0ada97d-8607-48da-817b-b
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/personal_attributes/physical_environment/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/personal_attributes/physical_environment/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -186,7 +186,7 @@ resp = save_model(settings, "physicalenvironment", id="d0ada97d-8607-48da-817b-b
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/personal_attributes/physical_environment/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/personal_attributes/physical_environment/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

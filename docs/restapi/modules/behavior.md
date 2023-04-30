@@ -29,7 +29,7 @@ nav_order: 2
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/modules/behavior
+- **URL:** https://www.brainstem.org/rest/private/modules/behavior
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -73,7 +73,7 @@ resp = load_model(settings, 'behavior')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/modules/behavior
+- **URL:** https://www.brainstem.org/rest/private/modules/behavior
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -109,7 +109,7 @@ resp = save_model(settings, "behavior",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/modules/behavior/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/behavior/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -139,7 +139,7 @@ resp = load_model(settings, 'behavior', id='f9733b12-e2d5-4886-9e00-09ba26b01a16
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/modules/behavior/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/behavior/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -170,7 +170,7 @@ resp = save_model(settings, "behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/modules/behavior/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/behavior/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

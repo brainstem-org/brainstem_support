@@ -44,7 +44,7 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/modules/subjectlog
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectlog
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -96,7 +96,7 @@ resp = load_model(settings, 'subjectlog')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** http://brainstem.org/rest/private/modules/subjectlog
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectlog
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -127,7 +127,7 @@ resp = save_model(settings, "subjectlog",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/modules/subjectlog/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectlog/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -155,7 +155,7 @@ resp = load_model(settings, 'subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/modules/subjectlog/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectlog/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -184,7 +184,7 @@ resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** http://brainstem.org/rest/private/modules/subjectlog/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectlog/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -200,7 +200,7 @@ resp = delete_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc31
 ## Add entry
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/modules/subjectlog/<id\>/add_entry/
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectlog/<id\>/add_entry/
 - **Data:** dictionary with the entry data
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -240,7 +240,7 @@ resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105
 ## Change entry
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/modules/subjectlog/<id\>/change_entry/
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectlog/<id\>/change_entry/
 - **Data:** dictionary with the entry data
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -277,7 +277,7 @@ resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105
 ## Remove entry
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** http://brainstem.org/rest/private/modules/subjectlog/<id\>/remove_entry/
+- **URL:** https://www.brainstem.org/rest/private/modules/subjectlog/<id\>/remove_entry/
 - **Data:** dictionary with the entry data
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 

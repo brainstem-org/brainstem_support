@@ -30,7 +30,7 @@ nav_order: 3
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/groupmembershipinvitation
+- **URL:** https://www.brainstem.org/rest/private/users/groupmembershipinvitation
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -67,7 +67,7 @@ resp = load_model(settings, 'groupmembershipinvitation')
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/groupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/groupmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -95,7 +95,7 @@ resp = load_model(settings, 'groupmembershipinvitation', id='bdbc1823-7bcf-402d-
 ## Accept
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/groupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/groupmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -111,7 +111,7 @@ resp = load_model(settings, "groupmembershipinvitation", id="caf8093f-def3-43a4-
 ## Reject
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/groupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/groupmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -126,7 +126,7 @@ resp = load_model(settings, "groupmembershipinvitation", id="fa2d3f83-f5e8-4c3f-
 ## Cancel
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/groupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/rest/private/users/groupmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
