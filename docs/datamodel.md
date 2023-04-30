@@ -3,6 +3,7 @@ layout: default
 title: Data model
 nav_order: 2
 has_children: true
+has_toc: false
 ---
 # Data model
 {: .no_toc}
@@ -23,7 +24,17 @@ The relational model can be separated into three levels:
 
 Below pages describe the relational data model behind BrainSTEM, the table elements and fields and the modular structure of the model, how permissions are inherited in the model, and how the data model can be expanded to incorporate new methods, techniques, and resources.
 
+- [STEM](https://brainstem-org.github.io/brainstem_support/datamodel/stem/)
+- [Modules](https://brainstem-org.github.io/brainstem_support/datamodel/modules/)
+- [Personal attributes](https://brainstem-org.github.io/brainstem_support/datamodel/personal_attributes/)
+- [Resources](https://brainstem-org.github.io/brainstem_support/datamodel/resources/)
+- [Taxonomies](https://brainstem-org.github.io/brainstem_support/datamodel/taxonomies/)
+- [General attributes](https://brainstem-org.github.io/brainstem_support/datamodel/attributes/)
+- [Users](https://brainstem-org.github.io/brainstem_support/datamodel/users/)
+
 ## Example usage of the flexible modular design
+{: .no_toc }
+
 Extracellular recording during a behavioral session from a rat. 
 
 [![data_model_example](https://brainstem-org.github.io/brainstem_support/assets/images/data_model_example.png)](https://brainstem-org.github.io/brainstem_support/assets/images/data_model_example.png)
@@ -34,6 +45,8 @@ Permissions are implemented on an object level, inheriting permissions from user
 [![permissions](https://brainstem-org.github.io/brainstem_support/assets/images/permissions.png)](https://brainstem-org.github.io/brainstem_support/assets/images/permissions.png)
 
 ### Projects
+{: .no_toc }
+
 Projects have four permission levels that can be defined for individual groups and users:
 - Members: have read access to project-related subjects, datasets, and module data.
 - Change permissions: allows for creation, editing and deletion of project related models.
@@ -41,6 +54,8 @@ Projects have four permission levels that can be defined for individual groups a
 - Owners: can manage project details and add and remove managers.
 
 ### Groups
+{: .no_toc }
+
 Groups have three permission levels:  
 - Members inherit project-permissions assigned to group: including change, manager and owner project-permissions.
 - Managers can add and remove group members.
@@ -52,7 +67,11 @@ The data model is built around a standardized structure that maintains expandabi
 New entries in Taxonomies and Resources can be submitted by users. Any submission goes through an approval by a dedicated admin team.
 
 ### Expansion of the modules structures
+{: .no_toc }
+
 The available modules the user can select between in actions, experiment data, manipulations, and subject state changes, can be expanded by our admin team. If you wish for this, please submit a request through the issue/discussion forum. 
 
 ### Personal attributes
-The personal attributes can be fully managed by the users. 
+{: .no_toc }
+
+The personal attributes can be fully managed by the users.
