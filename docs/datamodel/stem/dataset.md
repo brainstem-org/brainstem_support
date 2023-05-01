@@ -17,7 +17,7 @@ nav_order: 3
 
 ## Fields
 
-| Field  | Format  | Description |
+| Field  | Type  | Description |
 |:-------|:--------|-------------|
 | `id` | string with UUID identificator | Id of the entry |
 | `name` | string **[required]** [max length: 100; must be unique]|  |
@@ -36,3 +36,4 @@ nav_order: 3
 
 
 ### Epochs
+{: .no_toc}
