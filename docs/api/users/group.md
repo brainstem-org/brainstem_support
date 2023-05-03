@@ -2,7 +2,7 @@
 layout: default
 title: Group
 parent: Users
-grand_parent: REST API
+grand_parent: API
 nav_order: 2
 ---
 

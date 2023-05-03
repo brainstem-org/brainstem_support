@@ -2,7 +2,7 @@
 layout: default
 title: Species
 parent: Taxonomies
-grand_parent: REST API
+grand_parent: API
 nav_order: 7
 ---
 

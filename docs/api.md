@@ -4,7 +4,7 @@ title: API
 nav_order: 4
 has_children: true
 ---
-# ªAPI
+# API
 {: .no_toc}
 The REST API allows for programmable access to the full data model. [API tools](https://brainstem-org.github.io/brainstem_support/api-tools/) have been built for Matlab and Python and a Web API tool allows for browsing the API endpoints in a browser. 
 

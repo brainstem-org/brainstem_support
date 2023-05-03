@@ -2,7 +2,7 @@
 layout: default
 title: Journal
 parent: General attributes
-grand_parent: REST API
+grand_parent: API
 nav_order: 4
 ---
 

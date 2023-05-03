@@ -2,7 +2,7 @@
 layout: default
 title: Consumable
 parent: Resources
-grand_parent: REST API
+grand_parent: API
 nav_order: 6
 ---
 

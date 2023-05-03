@@ -2,7 +2,7 @@
 layout: default
 title: Physical environment
 parent: Personal attributes
-grand_parent: REST API
+grand_parent: API
 nav_order: 5
 ---
 

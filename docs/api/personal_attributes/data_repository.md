@@ -2,7 +2,7 @@
 layout: default
 title: Data repository
 parent: Personal attributes
-grand_parent: REST API
+grand_parent: API
 nav_order: 5
 ---
 
