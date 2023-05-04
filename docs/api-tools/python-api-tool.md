@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Python API tool
-parent: API Tools
+parent: API tools
 nav_order: 2
 ---
 # Python API tool

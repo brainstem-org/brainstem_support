@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Matlab API tool
-parent: API Tools
+parent: API tools
 nav_order: 1
 ---
 # Matlab API tool

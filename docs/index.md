@@ -21,7 +21,7 @@ BrainSTEM (Brain STructured Experimental Metadata) is designed as an electronic 
 
 BrainSTEM is in a pilot stage, so feel free to create an account and start using it, and reach out if you are interested in helping advancing and shaping it. Report bug through the issue system on this GitHub repository and use the GitHub discussion forum to suggest new features.
 
-[Data model]({{"/datamodel/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [Web interface]({{"/webinterface/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [API]({{"/api/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4}
+[Data model]({{"/datamodel/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [Web interface]({{"/webinterface/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [API]({{"/api/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4}[API tools]({{"/api-tools/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4}
 
 ## Getting started
 
