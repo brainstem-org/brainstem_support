@@ -1,9 +1,9 @@
 ---
 layout: default
-title: API Tools
+title: API tools
 nav_order: 5
 has_children: true
 ---
-# API Tools
+# API tools
 {: .no_toc}
 BrainSTEM has API tools for Matlab and Python, and A Web API that allows you to query your data directly in your browser. 
