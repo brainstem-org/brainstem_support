@@ -3,10 +3,10 @@ layout: default
 title: Project Membership Invitation
 parent: STEM
 grand_parent: API
-nav_order: 1
+nav_order: 2
 ---
 
-# Project API endpoint
+# Project Membership Invitation API endpoint
 {: .no_toc}
 
 ## Table of contents
