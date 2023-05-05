@@ -19,10 +19,10 @@ nav_order: 6
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 100; must be unique]|
 | `description` | string [max length: 500] |
-| `supplier` | string with the related supplier ID **[required]** |
+| `supplier` | related supplier ID formatted as a string **[required]** |
 | `type` | string **[required]**. *See options below* |
 | `type_json` | JSON object. *See accepted schemas below* |
 | `comments` | string |

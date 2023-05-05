@@ -19,18 +19,18 @@ nav_order: 3
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 100; must be unique]|
 | `description` | string |
-| `projects` | list of strings representing the related projects IDs **[required]** |
+| `projects` | list of related projects IDs formatted as strings **[required]** |
 | `date_time` | string containing date (e.g. "2023-03-22") |
-| `epochs` | list of strings representing the related actions IDs **[read-only]** |
-| `datarepositories` | list of strings representing the related dataset state changes IDs **[read-only]** |
+| `epochs` | list of related actions IDs formatted as strings **[read-only]** |
+| `datarepositories` | list of related data repositories IDs formatted as strings **[read-only]** |
 | `extra_content_json` | JSON dictionary |
 | `repository_links_json` | JSON dictionary |
-| `experimentdata` | list of strings representing the related experiment data IDs **[read-only]** |
-| `behaviors` | list of strings representing the related behaviors IDs **[read-only]** |
-| `manipulations` | list of strings representing the related manipulations IDs **[read-only]** |
+| `experimentdata` | list of related experiment data IDs formatted as strings **[read-only]** |
+| `behaviors` | list of related behaviors IDs formatted as strings **[read-only]** |
+| `manipulations` | list of related manipulations IDs formatted as strings **[read-only]** |
 | `name_used_in_repository` | string [max length: 200]|
 | `tags` | list of strings |
 

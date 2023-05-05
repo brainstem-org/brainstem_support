@@ -20,12 +20,12 @@ nav_order: 5
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 50] |
 | `description` | string [max length: 500]|
-| `environment_type` | string with the related environment type ID **[required]** |
+| `environment_type` | related environment type ID formatted as a string **[required]** |
 | `physical_dimensions_json` | JSON dictionary |
-| `authgroups` | list of strings representing the related groups IDs **[required]** |
+| `authgroups` | list of related groups IDs formatted as strings **[required]** |
 | `is_public` | boolean |
 
 

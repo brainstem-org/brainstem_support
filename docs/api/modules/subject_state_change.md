@@ -19,13 +19,13 @@ nav_order: 5
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
 | `description` | string [max length: 500] |
-| `subject` | string with the related subject ID **[required]** |
+| `subject` | related subject ID formatted as a string **[required]** |
 | `date_time` | string containing date (e.g. "2023-03-22") |
-| `hardware_device` | string with the related hardware device ID |
-| `brain_region` | string with the related brain region ID |
+| `hardware_device` | related hardware device ID formatted as a string |
+| `brain_region` | related brain region ID formatted as a string |
 | `type_json` | JSON object. *See accepted schemas below* |
 | `coordinates` | string **[required]**. *See options below* |
 | `coordinates_json` | JSON object. *See accepted schemas below* |

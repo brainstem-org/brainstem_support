@@ -19,10 +19,10 @@ nav_order: 6
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
 | `description` | string [max length: 500] |
-| `action` | string with the related action ID **[required]** |
+| `action` | related action ID formatted as a string **[required]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
 
 These are the available `type` options for Action Log:

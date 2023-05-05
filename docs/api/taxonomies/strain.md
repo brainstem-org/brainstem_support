@@ -19,10 +19,10 @@ nav_order: 7
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 100; must be unique] |
 | `description` | string [max length: 500] |
-| `species` | string with the related species ID **[required]** |
+| `species` | related species ID formatted as a string **[required]** |
 | `comments` | string |
 
 

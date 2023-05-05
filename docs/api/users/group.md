@@ -19,7 +19,7 @@ nav_order: 2
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** |
 | `users` | dictionary with one entry per member of the group. *See structure below.* |
 

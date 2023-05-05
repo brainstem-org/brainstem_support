@@ -19,7 +19,7 @@ nav_order: 1
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `email` | string [must be unique]|
 | `first_name` | string |
 | `last_name` | string |

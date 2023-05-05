@@ -20,10 +20,10 @@ nav_order: 4
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `title` | string **[required]** [max length: 200] |
 | `authors` | string **[required]** [max length: 500] |
-| `journal` | string with the related journal ID **[required]** |
+| `journal` | related journal ID formatted as a string **[required]** |
 | `abstract` | string **[required]** |
 | `doi` | string [max length: 200] |
 | `volume` | string [max length: 100] |

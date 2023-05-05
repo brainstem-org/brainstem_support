@@ -19,9 +19,9 @@ nav_order: 2
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
-| `invitee` | string with the invited user ID |
-| `project` | string with the related project ID |
+| `id` | UUID identificator formatted as a string |
+| `invitee` | invited user ID |
+| `project` | related project ID formatted as a string |
 | `can_change` | boolean |
 | `manage_project` | boolean |
 | `own_project` | boolean |

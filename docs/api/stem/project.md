@@ -19,12 +19,12 @@ nav_order: 1
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 200; must be unique]|
 | `description` | string |
-| `datasets` | list of strings representing the related datasets IDs **[read-only]** |
-| `subjects` | list of strings representing the related subjects IDs **[read-only]** |
-| `publications` | list of strings representing the related publications IDs **[read-only]** |
+| `datasets` | list of related datasets IDs formatted as strings **[read-only]** |
+| `subjects` | list of related subjects IDs formatted as strings **[read-only]** |
+| `publications` | list of related publications IDs formatted as strings **[read-only]** |
 | `extra_content_json` | JSON dictionary |
 | `is_public` | boolean |
 | `name_used_in_repository` | string [max length: 200]|
