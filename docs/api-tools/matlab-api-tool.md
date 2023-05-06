@@ -7,13 +7,15 @@ nav_order: 1
 # Matlab API tool
 {: .no_toc}
 
-### 0. Setup credentials: 
+### 0. Setup credentials/token: 
 
 Email and password will be requested
 
 ```m
-stem_set_basic_authorization
+get_token
 ```
+
+The token is saved to a mat file (`brainstem_authentication.mat`) in the Matlab API tool folder.
 
 ### 1. Loading datasets
 
