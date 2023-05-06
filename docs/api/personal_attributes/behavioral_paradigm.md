@@ -20,14 +20,14 @@ nav_order: 5
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 50] |
 | `description` | string [max length: 500] |
 | `task` | string [max length: 100] |
 | `reward` | string [max length: 100] |
-| `sensory_stimulus_type` | string with the related sensory stimulus type ID |
-| `environment_type` | string with the related environment type ID **[required]** |
-| `authgroups` | list of strings representing the related groups IDs **[required]** |
+| `sensory_stimulus_type` | related sensory stimulus type ID formatted as a string |
+| `environment_type` | related environment type ID formatted as a string **[required]** |
+| `authgroups` | list of related groups IDs formatted as strings **[required]** |
 | `is_public` | boolean |
 
 ## List view

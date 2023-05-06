@@ -19,7 +19,7 @@ nav_order: 7
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 200]|
 | `description` | string [max length: 500] |
 | `comments` | string |

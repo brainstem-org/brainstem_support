@@ -20,9 +20,9 @@ nav_order: 3
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
-| `user_account_invitation` | string with the invited user ID |
-| `authgroup` | string with the related group ID |
+| `id` | UUID identificator formatted as a string |
+| `user_account_invitation` | invited user ID formatted as a string |
+| `authgroup` | related group ID formatted as a string |
 | `new_manager` | boolean |
 | `new_owner` | boolean |
 

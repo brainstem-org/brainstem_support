@@ -20,13 +20,13 @@ nav_order: 5
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 100]|
 | `description` | string [max length: 500] |
 | `is_public` | boolean |
 | `data_organization_json` | JSON dictionary |
 | `data_protocols_json` | JSON dictionary |
-| `authgroups` | list of strings representing the related groups IDs **[required]** |
+| `authgroups` | list of related groups IDs formatted as a string **[required]** |
 
 ## List view
 - **Allowed portals:** public, private, super

@@ -19,10 +19,10 @@ nav_order: 7
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
 | `description` | string [max length: 500]|
-| `subject` | string with the related subject ID **[required]** |
+| `subject` | related subject ID formatted as a string **[required]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
 
 These are the available `type` options for Subject Log:

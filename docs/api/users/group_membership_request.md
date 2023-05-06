@@ -19,9 +19,9 @@ nav_order: 4
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
-| `user_account_request` | string with the requesting user ID |
-| `authgroup` | string with the related group ID |
+| `id` | UUID identificator formatted as a string |
+| `user_account_request` | requesting user ID formatted as a string |
+| `authgroup` | related group ID formatted as a string |
 
 
 ## List view

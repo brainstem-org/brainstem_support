@@ -18,12 +18,12 @@ nav_order: 4
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
+| `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
 | `description` | string [max length: 500] |
-| `action` | string with the related action ID **[required]** |
-| `dataset` | string with the related dataset ID **[required]** |
-| `hardware_device` | string with the related hardware device ID |
+| `action` | related action ID formatted as a string **[required]** |
+| `dataset` | related dataset ID formatted as a string **[required]** |
+| `hardware_device` | related hardware device ID formatted as a string |
 | `type_json` | JSON object. *See accepted schemas below* |
 
 

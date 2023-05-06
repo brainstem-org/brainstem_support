@@ -19,9 +19,9 @@ nav_order: 4
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
-| `group` | string with the related group ID **[required]** |
-| `principal_investigators` | list of strings representing the related principal investigators IDs **[required]** |
+| `id` | UUID identificator formatted as a string |
+| `group` | related group ID formatted as a string **[required]** |
+| `principal_investigators` | list of related principal investigators IDs formatted as strings **[required]** |
 | `description` | string [max length: 500] |
 | `website` | string [max length: 200] |
 | `department` | string [max length: 100] |

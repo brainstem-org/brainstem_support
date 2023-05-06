@@ -19,11 +19,11 @@ nav_order: 2
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | string with UUID identificator |
-| `dataset` | string with the related dataset ID **[required]** |
-| `subjects` | list of strings representing the related subjects IDs **[required]** |
-| `physical_environment` | string with the related physical environment ID **[required]** |
-| `behavioral_paradigm` | string with the related behavioral paradigm ID **[required]** |
+| `id` | UUID identificator formatted as a string |
+| `dataset` | related dataset ID formatted as a string **[required]** |
+| `subjects` | list of related subjects IDs formatted as strings **[required]** |
+| `physical_environment` | related physical environment ID formatted as a string **[required]** |
+| `behavioral_paradigm` | related behavioral paradigm ID formatted as a string **[required]** |
 
 
 ## List view
