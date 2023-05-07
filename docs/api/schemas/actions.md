@@ -131,7 +131,6 @@ __Wire count is a required field - default value set is 4.__
     },
     "required": ["tetrodeCount"]
 }
-
 ```
 
 __Tetrode count is a required field - default value set is 4.__
@@ -171,7 +170,6 @@ __Tetrode count is a required field - default value set is 4.__
     },
     "required": ["injectionVolume"]
 }
-
 ```
 
 __Injection volume is a required field - default value set is 0.__

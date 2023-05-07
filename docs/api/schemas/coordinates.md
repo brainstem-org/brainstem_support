@@ -113,7 +113,6 @@ nav_order: 1
         }
     }
 }
-
 ```
 
 ### Example of JSON according to this schema
