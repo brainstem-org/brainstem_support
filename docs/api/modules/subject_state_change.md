@@ -50,7 +50,7 @@ These are the available `coordinates` options for Subject State Change:
 - `Stereotaxic_XYZ_Absolute`
 - `Stereotaxic_XY_Surface`
 
-A detailed list of the accepted schemas for the `coordinates_json` field, related to each `coordinates`, can be found in the [Coordinates schemas page]({{"../schemas/coordinates/"|absolute_url}}).
+A detailed list of the accepted schemas for the `coordinates_json` field, related to each `coordinates`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
 
 
 ## List view
