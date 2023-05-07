@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Coordinates
-parent: Modules
-grand_parent: Data model
+parent: Schemas
+grand_parent: API
 nav_order: 1
 ---
 
@@ -20,9 +20,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "External XYZ absolute",
-    "options": {
-        "compact": false
-      },
     "properties": {
         "x": {
             "title": "X coordinate (mm)",
@@ -83,9 +80,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "Stereotaxic Bregma absolute",
-    "options": {
-        "compact": false
-      },
     "properties": {
         "apCoordinates": {
             "title": "AP coordinates (mm)",
@@ -140,9 +134,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "Stereotaxic Bregma brain surface",
-    "options": {
-        "compact": false
-      },
     "properties": {
         "apCoordinates": {
             "title": "AP coordinates (mm)",
@@ -196,9 +187,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "Stereotaxic Lambda absolute",
-    "options": {
-        "compact": false
-      },
     "properties": {
         "apCoordinates": {
             "title": "AP coordinates (mm)",
@@ -252,9 +240,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "Stereotaxic Lambda brain surface",
-    "options": {
-        "compact": false
-      },
     "properties": {
         "apCoordinates": {
             "title": "AP coordinates (mm)",
@@ -308,9 +293,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "Stereotaxic XY surface",
-    "options": {
-        "compact": false
-      },
     "properties": {
         "x": {
             "title": "X coordinate (mm)",
@@ -364,9 +346,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "Stereotaxic XYZ absolute",
-    "options": {
-        "compact": false
-      },
     "properties": {
         "x": {
             "title": "X coordinate (mm)",
