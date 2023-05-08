@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Actions
+title: Action
 parent: Schemas
 grand_parent: API
 nav_order: 1
 ---
 
-# Actions schemas
+# Action schemas
 {: .no_toc}
 
 ## Table of contents
@@ -15,11 +15,11 @@ nav_order: 1
 1. TOC
 {:toc}
 
-## Optic fiber
+## Optic fiber implant
 ```
 {
     "type": "object",
-    "title": "Optic fiber",
+    "title": "Optic fiber implant",
     "properties": {
         "fiberTipShape": {
             "title": "Fiber tip shape",
@@ -32,7 +32,7 @@ nav_order: 1
 }
 ```
 
-__fiber tip shape is a required field - default value set is flat.__
+*Fiber tip shape* is a **required** field - **default** value set is `flat`.
 
 ### Example of JSON according to this schema
 {: .no_toc}
@@ -85,7 +85,7 @@ __fiber tip shape is a required field - default value set is flat.__
 }
 ```
 
-__Wire count is a required field - default value set is 4.__
+*Wire count* is a **required** field - **default** value set is `4`.
 
 ### Example of JSON according to this schema
 {: .no_toc}
@@ -133,7 +133,7 @@ __Wire count is a required field - default value set is 4.__
 }
 ```
 
-__Tetrode count is a required field - default value set is 4.__
+*Tetrode count* is a **required** field - **default** value set is `4`.
 
 ### Example of JSON according to this schema
 {: .no_toc}
@@ -172,7 +172,7 @@ __Tetrode count is a required field - default value set is 4.__
 }
 ```
 
-__Injection volume is a required field - default value set is 0.__
+*Injection volume* is a **required** field - **default** value set is `0`.
 
 ### Example of JSON according to this schema
 {: .no_toc}
