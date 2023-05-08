@@ -7,104 +7,41 @@ nav_order: 1
 # Matlab API tool
 {: .no_toc}
 
-### 0. Setup credentials: 
+Matlab toolset for interacting with the BrainSTEM API. You can get it from GitHub at [github.com/brainstem-org/brainstem_matlab_api_tools](https://github.com/brainstem-org/brainstem_matlab_api_tools).
 
-Email and password will be requested
+Please see the dedicated [tutorial]({{"/tutorials/matlab-api-tool/"|absolute_url}}) with examples on usage. The main functions are described below.
 
-```m
-stem_set_basic_authorization
-```
+| Function        | Description  |
+|:-------------|:-------------|
+| `get_token` | Get and save authentication token |
+| `load_model` | Load data from any model |
+| `save_model` | Save data to any model |
+| `load_settings` | Local settings: API token, url to the server, and local repositories. |
+| `load_project` | Load project(s). Convenience function for handling projects. Extra parameters: `id`,`name`,`description`,`datasets`,`subjects`,`tags`,`is_public`. Included relational data: `datasets`,`subjects`. |
+| `load_subject` | Load subject(s). Convenience function for handling subjects. Extra parameters: `id`,`name`,`description`,`projects`,`strain`,`sex`,`tags`. Included relational data: `actions`,`subjectstatechanges`. |
+| `load_dataset` | Load dataset(s). Convenience function for handling datasets. Extra parameters: `id`,`name`,`description`,`projects`,`datarepositories`,`tags`. Included relational data: `experimentdata`,`behaviors`,`manipulations`,`epochs`. |
+| `brainstem_api_tutorial` | Tutorial script. |
 
-### 1. Loading datasets
-
-stem_load_model can be used to load any model: We just need to set the name of the model.
-
-```m
-output1 = stem_load_model('model','dataset');
-```
-
-We can fetch a single dataset entry from the loaded models.
-
-```m
-dataset = output1.datasets(1);
-```
-
-We can also filter the models by providing cell array with paired filters In this example, it will just load datasets whose name is "yeah".
+### Filters
+You can use filters, using fields and relationships by providing cell array with paired filters. Below example will just load the dataset with the id:
 
 ```m
-output1_1 = stem_load_model('model','dataset','filter',{'name','yeah'});
+output = load_dataset('filter',{'id','ee57e766-fc0c-42e1-9277-7d40d6e9353a'});
 ```
 
-Loaded models can be sorted by different criteria applying to their fields. In this example, datasets will be sorted in descending ording according to their name.
+### Change sorting
+Loaded models can be sorted by different criteria applying to their fields. In below example, datasets will be sorted in descending order according to their name.
 
 ```m
-output1_2 = stem_load_model('model','dataset','sort',{'-name'});
+output = stem_load_model('model','dataset','sort',{'-name'});
 ```
 
-In some cases models contain relations with other models, and they can be also loaded with the models if requested. In this example, all the projects, experiment data, behaviors and  manipulations related to each dataset will be included.
+### Include related models
+
+In some cases models contain relations with other models, and they can be also loaded with the models if requested. 
+
+In below example, all the projects, experiment data, behaviors and manipulations related to each dataset will be included.
 
 ```m
-output1_3 = stem_load_model('model','dataset','include',{'projects','experimentdata','behaviors','manipulations'});
+output = load_dataset('model','dataset','include',{'projects','experimentdata','behaviors','manipulations'});
 ```
-
-The list of related experiment data can be retrived from the returned dictionary.
-
-```m
-experiment_data = output1_3.experiment_data;
-```
-
-Get all subjects with related actions and subject state changes
-
-```m
-output1_4 = stem_load_model('model','subject','include',{'actions','subjectstatechanges'});
-```
-
-Get all projects with related subjects and datasets
-
-```m
-output1_5 = stem_load_model('model','project','include',{'datasets','subjects'});
-```
-
-All these options can be combined to suit the requirements of the users. For example, we can get only the dataset that contain the word "Rat" in their name, sorted in descending order by their name and including the related projects.
-
-```m
-output1_6 = stem_load_model('model','dataset', 'filter',{'name.icontains', 'Rat'}, 'sort',{'-name'}, 'include',{'projects'});
-```
-
-### 2. Updating a dataset
-
-We can make changes to a model and update it in the database. In this case, we change the description of one of the previously loaded datasets.
-
-```m
-dataset = output1.datasets(1);
-dataset.description = 'new description';
-output2 = stem_save_model('data',dataset,'model','dataset');
-```
-
-### 3. Creating a new dataset
-
-We can submit a new entry by defining a struct with the required fields.
-
-```m
-dataset = {};
-dataset.name = 'New dataset85';
-dataset.description = 'new dataset description';
-dataset.projects = {'0c894095-2d16-4bde-ad50-c33b7680417d'};
-```
-
-Submitting dataset
-
-```m
-output3 = stem_save_model('data',dataset,'model','dataset');
-```
-
-### 4. Load public projects
-
-Request the public data by defining the portal to be public
-
-```m
-output4 = stem_load_model('model','project','portal','public');
-```
-
-See the tutorial in the Matlab Github repository
-

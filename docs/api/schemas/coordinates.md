@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Coordinates
-parent: Modules
-grand_parent: Data model
+parent: Schemas
+grand_parent: API
 nav_order: 1
 ---
 
@@ -113,7 +113,6 @@ nav_order: 1
         }
     }
 }
-
 ```
 
 ### Example of JSON according to this schema

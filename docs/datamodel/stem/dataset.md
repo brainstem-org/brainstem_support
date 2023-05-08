@@ -34,6 +34,3 @@ nav_order: 3
 | `name_used_in_repository` | string [max length: 200]| Custom name for a dataset used in an organization in a repository.  |
 | `tags` | list of strings | any tags for the dataset |
 
-
-### Epochs
-{: .no_toc}

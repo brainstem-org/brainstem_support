@@ -39,7 +39,7 @@ These are the available `type` options for Action:
 - `TetrodeWireElectrode`
 - `VirusInjection`
 
-A detailed list of the accepted schemas for the `type_json` field, related to each `type`, can be found in
+A detailed list of the accepted schemas for the `type_json` field, related to each `type`, can be found in the [action schemas page]({{"/api/schemas/actions/"|absolute_url}}).
 
 
 These are the available `coordinates` options for Action:
@@ -51,7 +51,7 @@ These are the available `coordinates` options for Action:
 - `Stereotaxic_XYZ_Absolute`
 - `Stereotaxic_XY_Surface`
 
-A detailed list of the accepted schemas for the `coordinates_json` field, related to each `coordinates`, can be found in
+A detailed list of the accepted schemas for the `coordinates_json` field, related to each `coordinates`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
 
 
 ## List view
