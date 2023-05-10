@@ -43,6 +43,6 @@ In some cases models contain relations with other models, and they can be also l
 
 In below example, all the projects, experiment data, behaviors and manipulations related to each dataset will be included.
 
-```m
+```
 output = load_model(settings, 'dataset', include=['projects','experimentdata','behaviors','manipulations'])
 ```
