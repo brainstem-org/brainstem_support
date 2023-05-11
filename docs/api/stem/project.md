@@ -25,12 +25,22 @@ nav_order: 1
 | `datasets` | list of related datasets IDs formatted as strings **[read-only]** |
 | `subjects` | list of related subjects IDs formatted as strings **[read-only]** |
 | `publications` | list of related publications IDs formatted as strings **[read-only]** |
-| `extra_content_json` | JSON dictionary |
+| `extra_content_json` | list of JSON dictionaries. *See structure below* |
 | `is_public` | boolean |
 | `name_used_in_repository` | string [max length: 200]|
 | `tags` | list of strings |
-| `users` | JSON dictionary |
-| `groups` | JSON dictionary |
+| `users` | JSON dictionary. *See structure below* |
+| `groups` | JSON dictionary. *See structure below* |
+
+
+`extra_content_json` is a list of JSON dictionaries with two elements, `key` and `value`, like the following example:
+
+```
+[
+    {"key": "extra property", "value": "1"}, 
+    {"key": "another property", "value": "2"}
+]
+```
 
 Each entry of in the `users` dictionary must follow the following structure:
 
@@ -183,9 +193,13 @@ resp = save_model(settings, "project",  data={"name": "NewRestProject", "descrip
     'extra_content_json': [],
     'is_public': False,
     'tags': [],
-    'users': {'user@mail.com': {'can_change': True,
-    'is_manager': True,
-    'is_owner': True}},
+    'users': {
+        'user@mail.com': {
+            'can_change': True,
+            'is_manager': True,
+            'is_owner': True
+        }
+    },
     'groups': {}}
 }
 ```
@@ -213,15 +227,22 @@ resp = load_model(settings, 'project', id='a5f29099-2758-4163-a8e4-e5e2898e57b2'
 {'project': {'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
     'name': 'NewRestProject',
     'description': 'some text',
-    'datasets': [],
+    'datasets': ["eba7ed4b-44a9-4626-ae6f-09bccfa553fb"],
     'subjects': [],
     'publications': [],
-    'extra_content_json': [],
+    'extra_content_json': [
+        {"key": "extra property", "value": " 1"}, 
+        {"key": "another property", "value": "2"}
+    ],
     'is_public': False,
-    'tags': [],
-    'users': {'user@mail.com': {'can_change': True,
-    'is_manager': True,
-    'is_owner': True}},
+    'tags': ["tag1", "tag2"],
+    ''users': {
+        'user@mail.com': {
+            'can_change': True,
+            'is_manager': True,
+            'is_owner': True
+        }
+    },
     'groups': {}}
 }
 ```

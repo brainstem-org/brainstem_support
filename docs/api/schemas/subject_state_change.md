@@ -90,6 +90,7 @@ nav_order: 1
 ```
 
 *Shape of craniotomy* is a **required** field.
+
 *Length of craniotomy* is a **required** field.
 
 ### Example of JSON according to this schema
@@ -215,6 +216,7 @@ nav_order: 1
 ```
 
 *Thickness of slices* is a **required** field.
+
 *Orientation of slices* is a **required** field.
 
 ### Example of JSON according to this schema
