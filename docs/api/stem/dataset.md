@@ -26,13 +26,32 @@ nav_order: 3
 | `date_time` | string containing date (e.g. "2023-03-22") |
 | `epochs` | list of related actions IDs formatted as strings **[read-only]** |
 | `datarepositories` | list of related data repositories IDs formatted as strings **[read-only]** |
-| `extra_content_json` | JSON dictionary |
-| `repository_links_json` | JSON dictionary |
+| `extra_content_json` | list of JSON dictionaries. *See structure below* |
+| `repository_links_json` | list of JSON dictionaries. *See structure below* |
 | `experimentdata` | list of related experiment data IDs formatted as strings **[read-only]** |
 | `behaviors` | list of related behaviors IDs formatted as strings **[read-only]** |
 | `manipulations` | list of related manipulations IDs formatted as strings **[read-only]** |
 | `name_used_in_repository` | string [max length: 200]|
 | `tags` | list of strings |
+
+
+`extra_content_json` is a list of JSON dictionaries with two elements, `key` and `value`, like the following example:
+
+```
+[
+    {"key": "extra property", "value": "1"}, 
+    {"key": "another property", "value": "2"}
+]
+```
+
+`repository_links_json` is a list of JSON dictionaries with two elements, `Repository` and `URL`, like the following example:
+
+```
+[
+    {"Repository": "DANDI", "URL": "https://dandiarchive.org/dandiset/123456?pos=1"}, 
+    {"Repository": "GitHub", "URL": "https://github.com/my_user/my_code"}
+]
+```
 
 
 
@@ -157,8 +176,14 @@ resp = load_model(settings, 'dataset', id='3654964e-1bf7-40c7-a376-9dcec4c125cd'
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
     'date_time': None,
     'datarepositories': [],
-    'extra_content_json': [],
-    'repository_links_json': [],
+    'extra_content_json': [
+        {"key": "extra property", "value": " 1"}, 
+        {"key": "another property", "value": "2"}
+    ],
+    'repository_links_json': [
+        {"Repository": "DANDI", "URL": "https://dandiarchive.org/dandiset/123456?pos=1"}, 
+        {"Repository": "GitHub", "URL": "https://github.com/my_user/my_code"}
+    ],
     'experimentdata': [],
     'behaviors': [],
     'manipulations': [],

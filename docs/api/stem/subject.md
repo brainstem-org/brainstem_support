@@ -28,11 +28,21 @@ nav_order: 2
 | `projects` | list of related projects IDs formatted as strings **[required]** |
 | `birth_date` | string containing date (e.g. "2023-03-22") |
 | `death_date` | string containing date (e.g. "2023-03-22") |
-| `extra_content_json` | JSON dictionary |
+| `extra_content_json` | list of JSON dictionaries. *See structure below* |
 | `actions` | list of related actions IDs formatted as strings **[read-only]** |
 | `subjectstatechanges` | list of related subject state changes IDs formatted as strings **[read-only]** |
 | `name_used_in_repository` | string [max length: 200]|
 | `tags` | list of strings |
+
+
+`extra_content_json` is a list of JSON dictionaries with two elements, `key` and `value`, like the following example:
+
+```
+[
+    {"key": "extra property", "value": "1"}, 
+    {"key": "another property", "value": "2"}
+]
+```
 
 
 ## List view
@@ -167,7 +177,10 @@ resp = load_model(settings, 'subject', id='c20b2025-2e98-4eb9-bc89-0bad9f271c7f'
 	'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
 	'birth_date': None,
 	'death_date': None,
-	'extra_content_json': None,
+	'extra_content_json': [
+        {"key": "extra property", "value": " 1"}, 
+        {"key": "another property", "value": "2"}
+    ],
 	'actions': [],
 	'subjectstatechanges': [],
 	'tags': [],
