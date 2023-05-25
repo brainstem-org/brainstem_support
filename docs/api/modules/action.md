@@ -27,9 +27,9 @@ nav_order: 1
 | `consumable` | related consumable ID formatted as a string |
 | `hardware_device` | related hardware device ID formatted as a string |
 | `brain_region` | related brain region ID formatted as a string |
-| `type_json` | JSON object. *See accepted schemas below* |
-| `coordinates` | string **[required]**. *See options below* |
-| `coordinates_json` | JSON object. *See accepted schemas below* |
+| `details` | JSON object. *See accepted schemas below* |
+| `coordinates_system` | string **[required]**. *See options below* |
+| `coordinates_details` | JSON object. *See accepted schemas below* |
 
 
 These are the available `type` options for Action:
@@ -39,10 +39,10 @@ These are the available `type` options for Action:
 - `TetrodeWireElectrode`
 - `VirusInjection`
 
-A detailed list of the accepted schemas for the `type_json` field, related to each `type`, can be found in the [action schemas page]({{"/api/schemas/actions/"|absolute_url}}).
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the [action schemas page]({{"/api/schemas/actions/"|absolute_url}}).
 
 
-These are the available `coordinates` options for Action:
+These are the available `coordinates_system` options for Action:
 - `External_XYZ_Absolute`
 - `Stereotaxic_BregmaAbsolute`
 - `Stereotaxic_BregmaBrainSurface`
@@ -51,7 +51,7 @@ These are the available `coordinates` options for Action:
 - `Stereotaxic_XYZ_Absolute`
 - `Stereotaxic_XY_Surface`
 
-A detailed list of the accepted schemas for the `coordinates_json` field, related to each `coordinates`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
+A detailed list of the accepted schemas for the `coordinates_details` field, related to each `coordinates_system`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
 
 
 ## List view
@@ -81,15 +81,15 @@ resp = client.load_model('action')
         'date_time': None,
         'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
         'hardware_device': None,
-        'type_json': {
+        'details': {
             'tetrodeCount': 1,
             'nWiresTetrode': 4,
             'wireDiameter': 33.9,
             'wireMaterial': 'tunsgten'
         },
         'brain_region': '15f9aef5-2d46-4ff2-a0db-ac6be759c05c',
-        'coordinates': 'Stereotaxic_BregmaAbsolute',
-        'coordinates_json': {
+        'coordinates_system': 'Stereotaxic_BregmaAbsolute',
+        'coordinates_details': {
             'apCoordinates': 1.0
         }
     },
@@ -101,15 +101,15 @@ resp = client.load_model('action')
         'date_time': None,
         'consumable': None,
         'hardware_device': None,
-        'type_json': {
+        'details': {
             'tetrodeCount': 1,
             'nWiresTetrode': 4,
             'wireDiameter': 33.9,
             'wireMaterial': 'tunsgten'
         },
         'brain_region': '15f9aef5-2d46-4ff2-a0db-ac6be759c05c',
-        'coordinates': 'Stereotaxic_BregmaAbsolute',
-        'coordinates_json': {
+        'coordinates_system': 'Stereotaxic_BregmaAbsolute',
+        'coordinates_details': {
             'apCoordinates': 1.0,
             'mlCoordinates': 0.0,
             'dvAngle': 2.0
@@ -134,9 +134,18 @@ resp = client.save_model("action",  data={
     "type": "OpticFiberImplant",
     "subject": "0f87c229-6769-4854-83a5-c71e154246b8",
     "description": "some text",
-    "type_json": {"fiberTipShape": "flat"},
-    "coordinates": "Stereotaxic_BregmaAbsolute",
-    "coordinates_json": {"apCoordinates": 1.0}})
+    "details": {"fiberTipShape": "flat"},
+    "coordinates_system": "Stereotaxic_BregmaAbsolute",
+    "coordinates_details": {
+                "apCoordinates": 1.0,
+                "mlCoordinates": 2.0,
+                "dvCoordinates": 3.0,
+                "apAngle": 4.0,
+                "mlAngle": 5.0,
+                "dvAngle": 6.0
+            }
+    }
+)
 ```
 
 ### Response example
@@ -151,10 +160,18 @@ resp = client.save_model("action",  data={
     'date_time': None,
     'consumable': None,
     'hardware_device': None,
-    'type_json': {'fiberTipShape': 'flat'},
+    'details': {'fiberTipShape': 'flat'},
     'brain_region': None,
-    'coordinates': 'Stereotaxic_BregmaAbsolute',
-    'coordinates_json': {'apCoordinates': 1.0}}
+    'coordinates_system': 'Stereotaxic_BregmaAbsolute',
+    'coordinates_details': {
+                "apCoordinates": 1.0,
+                "mlCoordinates": 2.0,
+                "dvCoordinates": 3.0,
+                "apAngle": 4.0,
+                "mlAngle": 5.0,
+                "dvAngle": 6.0
+            }
+    }
 }
 ```
 
@@ -186,10 +203,18 @@ resp = client.load_model('action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
     'date_time': None,
     'consumable': None,
     'hardware_device': None,
-    'type_json': {'fiberTipShape': 'flat'},
+    'details': {'fiberTipShape': 'flat'},
     'brain_region': None,
-    'coordinates': 'Stereotaxic_BregmaAbsolute',
-    'coordinates_json': {'apCoordinates': 1.0}}
+    'coordinates_system': 'Stereotaxic_BregmaAbsolute',
+    'coordinates_details': : {
+                "apCoordinates": 1.0,
+                "mlCoordinates": 2.0,
+                "dvCoordinates": 3.0,
+                "apAngle": 4.0,
+                "mlAngle": 5.0,
+                "dvAngle": 6.0
+            }
+    }
 }
 ```
 
@@ -221,10 +246,18 @@ resp = client.save_model("action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", da
     'date_time': None,
     'consumable': None,
     'hardware_device': None,
-    'type_json': {'fiberTipShape': 'flat'},
+    'details': {'fiberTipShape': 'flat'},
     'brain_region': None,
-    'coordinates': 'Stereotaxic_BregmaAbsolute',
-    'coordinates_json': {'apCoordinates': 1.0}}
+    'coordinates_system': 'Stereotaxic_BregmaAbsolute',
+    'coordinates_details': : {
+                "apCoordinates": 1.0,
+                "mlCoordinates": 2.0,
+                "dvCoordinates": 3.0,
+                "apAngle": 4.0,
+                "mlAngle": 5.0,
+                "dvAngle": 6.0
+            }
+    }
 }
 ```
 

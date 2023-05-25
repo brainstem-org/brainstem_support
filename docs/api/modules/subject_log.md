@@ -37,9 +37,9 @@ Each entry in the `entries` list is a dictionary with the following fields:
 |:-------------|:-------------|
 | `date_time` | string containing date and time (e.g. "2023-05-05T06:20:00Z") **[required]** |
 | `notes` | string |
-| `type_json` | JSON object. *See accepted schemas below* |
+| `details` | JSON object. *See accepted schemas below* |
 
-A detailed list of the accepted schemas for the `type_json` field, related to each `type`, can be found in
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
 
 ## List view
 - **Allowed portals:** public, private, super
@@ -68,10 +68,10 @@ resp = client.load_model('subjectlog')
         'entries': [
             {'date_time': '2023-03-26T04:05:00Z',
              'notes': None,
-             'type_json': {'weight': 1254.0}},
+             'details': {'weight': 1254.0}},
             {'date_time': '2023-03-03T17:05:00Z',
              'notes': None,
-             'type_json': {'weight': 23.0}}
+             'details': {'weight': 23.0}}
          ],
         'links': {'entries': 'entries/'}
     },
@@ -83,10 +83,10 @@ resp = client.load_model('subjectlog')
         'entries': [
             {'date_time': '2023-03-09T07:10:00Z',
              'notes': None,
-             'type_json': {'foodAmount': 1.0}},
+             'details': {'foodAmount': 1.0}},
             {'date_time': '2023-03-01T13:45:00Z',
              'notes': None,
-             'type_json': {'foodAmount': 2.0}}
+             'details': {'foodAmount': 2.0}}
          ],
         'links': {'entries': 'entries/'}}
 ]}
@@ -212,7 +212,7 @@ resp = client.delete_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c
 resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
-            'type_json': {'waterAmount': 9.0}
+            'details': {'waterAmount': 9.0}
         }
 )
 ```
@@ -230,7 +230,7 @@ resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3"
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
-            'type_json': {'waterAmount': 9.0}}
+            'details': {'waterAmount': 9.0}}
         ],
         'links': {'entries': 'entries/'}
     }
@@ -265,7 +265,7 @@ resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3"
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': 'new text',
-            'type_json': {'waterAmount': 9.0}}
+            'details': {'waterAmount': 9.0}}
         ],
         'links': {'entries': 'entries/'}
     }

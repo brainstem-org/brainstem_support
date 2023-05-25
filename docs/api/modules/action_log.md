@@ -36,9 +36,9 @@ Each entry in the `entries` list is a dictionary with the following fields:
 |:-------------|:-------------|
 | `date_time` | string containing date and time (e.g. "2023-05-05T06:20:00Z") **[required]** |
 | `notes` | string |
-| `type_json` | JSON object. *See accepted schemas below* |
+| `details` | JSON object. *See accepted schemas below* |
 
-A detailed list of the accepted schemas for the `type_json` field, related to each `type`, can be found in
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
 
 ## List view
 - **Allowed portals:** public, private, super
@@ -67,16 +67,16 @@ resp = client.load_model('actionlog')
         'entries': [
             {'date_time': '2023-05-05T06:20:00Z',
              'notes': None,
-             'type_json': {'impedances': 3.0, 'phases': None, 'channels': ''}},
+             'details': {'impedances': 3.0, 'phases': None, 'channels': ''}},
             {'date_time': '2023-04-05T07:10:00Z',
              'notes': 'aa',
-             'type_json': {'impedances': 2.0, 'phases': None, 'channels': ''}},
+             'details': {'impedances': 2.0, 'phases': None, 'channels': ''}},
             {'date_time': '2023-03-26T13:20:00Z',
              'notes': None,
-             'type_json': {'impedances': 1.0, 'phases': None, 'channels': ''}},
+             'details': {'impedances': 1.0, 'phases': None, 'channels': ''}},
             {'date_time': '2023-03-13T07:10:00Z',
              'notes': None,
-             'type_json': {'impedances': 2.0, 'phases': None, 'channels': ''}}
+             'details': {'impedances': 2.0, 'phases': None, 'channels': ''}}
         ],
         'links': {'entries': 'entries/'}
     },
@@ -88,10 +88,10 @@ resp = client.load_model('actionlog')
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
              'notes': None,
-             'type_json': {'displacement': 9.0}},
+             'details': {'displacement': 9.0}},
             {'date_time': '2023-03-31T09:05:00Z',
              'notes': None,
-             'type_json': {'displacement': 7.0}}
+             'details': {'displacement': 7.0}}
         ],
         'links': {'entries': 'entries/'}
     }
@@ -218,7 +218,7 @@ resp = client.delete_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27
 resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
-            'type_json': {'displacement': 9.0}
+            'details': {'displacement': 9.0}
         }
 )
 ```
@@ -235,7 +235,7 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
-            'type_json': {'displacement': 9.0}}
+            'details': {'displacement': 9.0}}
         ],
         'links': {'entries': 'entries/'}
     }
@@ -269,7 +269,7 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': "new text",
-            'type_json': {'displacement': 9.0}}
+            'details': {'displacement': 9.0}}
         ],
         'links': {'entries': 'entries/'}
     }

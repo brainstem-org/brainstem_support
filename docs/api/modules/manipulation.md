@@ -24,7 +24,7 @@ nav_order: 4
 | `action` | related action ID formatted as a string **[required]** |
 | `dataset` | related dataset ID formatted as a string **[required]** |
 | `hardware_device` | related hardware device ID formatted as a string |
-| `type_json` | JSON object. *See accepted schemas below* |
+| `details` | JSON object. *See accepted schemas below* |
 
 
 These are the available `type` options for Manipulation:
@@ -41,7 +41,7 @@ These are the available `type` options for Manipulation:
 - `TranscranialElectricalStimulation`
 - `UltraSoundStimulation`
 
-A detailed list of the accepted schemas for the `type_json` field, related to each `type`, can be found in
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
 
 
 
@@ -71,7 +71,7 @@ resp = client.load_model('manipulation')
         'action': '43bd31cd-7122-42b8-b82e-b391fdfdad9e',
         'hardware_device': None,
         'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-        'type_json': {
+        'details': {
             'amplitude': '0',
             'duration': '0',
             'dutyCycle': '0',
@@ -88,7 +88,7 @@ resp = client.load_model('manipulation')
         'action': '64b6ae70-d07f-4fbc-ac04-cdfcfe27936f',
         'hardware_device': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
         'dataset': 'ef7ae22f-143a-4a5e-adf6-1c623531dd63',
-        'type_json': {
+        'details': {
             'liquidAgent': '1',
             'concentration': 2,
             'volume': 2,
@@ -119,7 +119,7 @@ resp = client.save_model("manipulation",  data={
     'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
     'hardware_device': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
     'description': 'some text',
-    'type_json': {
+    'details': {
             'liquidAgent': 'Water',
             'concentration': 7,
             'volume': 2,
@@ -142,7 +142,7 @@ resp = client.save_model("manipulation",  data={
     'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
     'hardware_device': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
     'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
-    'type_json': {
+    'details': {
         'liquidAgent': 'Water',
         'concentration': 7,
         'volume': 2,
@@ -181,7 +181,7 @@ resp = client.load_model('manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad
     'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
     'hardware_device': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
     'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
-    'type_json': {
+    'details': {
         'liquidAgent': 'Water',
         'concentration': 7,
         'volume': 2,
@@ -220,7 +220,7 @@ resp = client.save_model("manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad
     'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
     'hardware_device': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
     'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
-    'type_json': {
+    'details': {
         'liquidAgent': 'Water',
         'concentration': 7,
         'volume': 2,

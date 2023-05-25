@@ -25,7 +25,7 @@ nav_order: 3
 | `dataset` | related dataset ID formatted as a string **[required]** |
 | `actions` | list of related actions IDs formatted as strings **[required]** |
 | `hardware_device` | related hardware device ID formatted as a string |
-| `type_json` | JSON object. *See accepted schemas below* |
+| `details` | JSON object. *See accepted schemas below* |
 
 
 These are the available `type` options for Experiment Data:
@@ -36,7 +36,7 @@ These are the available `type` options for Experiment Data:
 - `GeneralTimeSeries`
 - `Intracellular`
 
-A detailed list of the accepted schemas for the `type_json` field, related to each `type`, can be found in
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
 
 
 ## List view
@@ -65,7 +65,7 @@ resp = client.load_model('experimentdata')
         'actions': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
         'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
         'type': 'BehavioralTracking',
-        'type_json': {
+        'details': {
             'fileName': 'myfile.txt',
             'format': '111',
             'frameRate': 0,
@@ -80,7 +80,7 @@ resp = client.load_model('experimentdata')
         'actions': ['dedef2d7-00ae-4967-8e93-a9d65a20dfce'],
         'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
         'type': 'Extracellular',
-        'type_json': {
+        'details': {
             'type': 'int16',
             'nChannels': 45,
             'sr': 20000.0,
@@ -109,13 +109,33 @@ resp = client.save_model("experimentdata",  data={
     "actions": ["087b71c4-6785-437c-b8ef-e35a82a8463e"],
     "dataset": "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
     "description": "some text",
-    "type_json": {
+    "details": {
             "type": "int16",
             "nChannels": 32,
             "sr": 1250,
             "nSamples": 3000,
-            "electrodeGroups": [],
-            "channelTags": []
+            "electrodeGroups": [
+                    {
+                        "channels": "0,2",
+                        "label": "group1"
+                    },
+                    {
+                        "channels": "1,3,5",
+                        "label": "group2"
+                    }
+                ],
+            "channelTags": [
+                    {
+                        "tag": "tag2",
+                        "channels": "1,3,5",
+                        "electrodeGroups": "group2"
+                    },
+                    {
+                        "tag": "tag1",
+                        "channels": "0,2",
+                        "electrodeGroups": "group1"
+                    }
+                ]
         }
     }
 )
@@ -132,13 +152,33 @@ resp = client.save_model("experimentdata",  data={
     'actions': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
     'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
     'type': 'Extracellular',
-    'type_json': {
+    'details': {
             'type': 'int16',
             'nChannels': 32,
             'sr': 1250,
             'nSamples': 3000,
-            'electrodeGroups': [],
-            'channelTags': []
+            'electrodeGroups': [
+                    {
+                        "channels": "0,2",
+                        "label": "group1"
+                    },
+                    {
+                        "channels": "1,3,5",
+                        "label": "group2"
+                    }
+                ],
+            'channelTags': [
+                    {
+                        "tag": "tag2",
+                        "channels": "1,3,5",
+                        "electrodeGroups": "group2"
+                    },
+                    {
+                        "tag": "tag1",
+                        "channels": "0,2",
+                        "electrodeGroups": "group1"
+                    }
+                ]
         }
     }
 }
@@ -169,13 +209,33 @@ resp = client.load_model('experimentdata', id='b0e4ed13-f2f1-4845-8772-24978539d
     'actions': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
     'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
     'type': 'Extracellular',
-    'type_json': {
+    'details': {
             'type': 'int16',
             'nChannels': 32,
             'sr': 1250,
             'nSamples': 3000,
-            'electrodeGroups': [],
-            'channelTags': []
+            'electrodeGroups': [
+                    {
+                        "channels": "0,2",
+                        "label": "group1"
+                    },
+                    {
+                        "channels": "1,3,5",
+                        "label": "group2"
+                    }
+                ],
+            'channelTags': [
+                    {
+                        "tag": "tag2",
+                        "channels": "1,3,5",
+                        "electrodeGroups": "group2"
+                    },
+                    {
+                        "tag": "tag1",
+                        "channels": "0,2",
+                        "electrodeGroups": "group1"
+                    }
+                ]
         }
     }
 }
@@ -208,13 +268,33 @@ resp = client.save_model("experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d
     'actions': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
     'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
     'type': 'Extracellular',
-    'type_json': {
+    'details': {
             'type': 'int16',
             'nChannels': 32,
             'sr': 1250,
             'nSamples': 3000,
-            'electrodeGroups': [],
-            'channelTags': []
+            'electrodeGroups': [
+                    {
+                        "channels": "0,2",
+                        "label": "group1"
+                    },
+                    {
+                        "channels": "1,3,5",
+                        "label": "group2"
+                    }
+                ],
+            'channelTags': [
+                    {
+                        "tag": "tag2",
+                        "channels": "1,3,5",
+                        "electrodeGroups": "group2"
+                    },
+                    {
+                        "tag": "tag1",
+                        "channels": "0,2",
+                        "electrodeGroups": "group1"
+                    }
+                ]
         }
     }
 }

@@ -26,9 +26,9 @@ nav_order: 5
 | `date_time` | string containing date (e.g. "2023-03-22") |
 | `hardware_device` | related hardware device ID formatted as a string |
 | `brain_region` | related brain region ID formatted as a string |
-| `type_json` | JSON object. *See accepted schemas below* |
-| `coordinates` | string **[required]**. *See options below* |
-| `coordinates_json` | JSON object. *See accepted schemas below* |
+| `details` | JSON object. *See accepted schemas below* |
+| `coordinates_system` | string **[required]**. *See options below* |
+| `coordinates_details` | JSON object. *See accepted schemas below* |
 
 
 These are the available `type` options for Subject State Change:
@@ -38,10 +38,10 @@ These are the available `type` options for Subject State Change:
 - `Craniotomy`
 - `BrainLesion`
 
-A detailed list of the accepted schemas for the `type_json` field, related to each `type`, can be found in
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
 
 
-These are the available `coordinates` options for Subject State Change:
+These are the available `coordinates_system` options for Subject State Change:
 - `External_XYZ_Absolute`
 - `Stereotaxic_BregmaAbsolute`
 - `Stereotaxic_BregmaBrainSurface`
@@ -50,7 +50,7 @@ These are the available `coordinates` options for Subject State Change:
 - `Stereotaxic_XYZ_Absolute`
 - `Stereotaxic_XY_Surface`
 
-A detailed list of the accepted schemas for the `coordinates_json` field, related to each `coordinates`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
+A detailed list of the accepted schemas for the `coordinates_details` field, related to each `coordinates_system`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
 
 
 ## List view
@@ -79,15 +79,15 @@ resp = client.load_model('subjectstatechange')
         'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
         'date_time': None,
         'hardware_device': None,
-        'type_json': {
+        'details': {
             'thickness': 12,
             'nSlices': 7,
             'orientation': 0,
             'fatalOutcome': True
         },
         'brain_region': None,
-        'coordinates': 'Stereotaxic_BregmaAbsolute',
-        'coordinates_json': {
+        'coordinates_system': 'Stereotaxic_BregmaAbsolute',
+        'coordinates_details': {
             'apCoordinates': 6.0,
             'mlCoordinates': 6.0,
             'dvCoordinates': 6.0,
@@ -103,13 +103,13 @@ resp = client.load_model('subjectstatechange')
         'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
         'hardware_device': None,
-        'type_json': {
+        'details': {
             'causeOfDeath': 'boredom', 
             'fatalOutcome': True
         },
         'brain_region': None,
-        'coordinates': 'Stereotaxic_BregmaBrainSurface',
-        'coordinates_json': {}
+        'coordinates_system': 'Stereotaxic_BregmaBrainSurface',
+        'coordinates_details': {}
     }
 ]}
 ```
@@ -130,9 +130,9 @@ resp = client.save_model("subjectstatechange",  data={
     "type": "Death",
     "subject": "0f87c229-6769-4854-83a5-c71e154246b8",
     "description": "some text",
-    "type_json": {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
-    "coordinates": "Stereotaxic_BregmaAbsolute",
-    "coordinates_json": {}})
+    "details": {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
+    "coordinates_system": "Stereotaxic_BregmaAbsolute",
+    "coordinates_details": {}})
 ```
 
 ### Response example
@@ -146,10 +146,17 @@ resp = client.save_model("subjectstatechange",  data={
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'hardware_device': None,
-    'type_json': {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
+    'details': {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
     'brain_region': None,
-    'coordinates': 'Stereotaxic_BregmaAbsolute',
-    'coordinates_json': {}
+    'coordinates_system': 'Stereotaxic_BregmaAbsolute',
+    'coordinates_details': {
+                "apCoordinates": 1.0,
+                "mlCoordinates": 2.0,
+                "dvCoordinates": 3.0,
+                "apAngle": 4.0,
+                "mlAngle": 5.0,
+                "dvAngle": 6.0
+            }
     }
 }
 ```
@@ -181,10 +188,17 @@ resp = client.load_model('subjectstatechange', id='93925815-9f8e-4d39-9c3a-cf1d6
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'hardware_device': None,
-    'type_json': {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
+    'details': {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
     'brain_region': None,
-    'coordinates': 'Stereotaxic_BregmaAbsolute',
-    'coordinates_json': {}
+    'coordinates_system': 'Stereotaxic_BregmaAbsolute',
+    'coordinates_details': {
+                "apCoordinates": 1.0,
+                "mlCoordinates": 2.0,
+                "dvCoordinates": 3.0,
+                "apAngle": 4.0,
+                "mlAngle": 5.0,
+                "dvAngle": 6.0
+            }
     }
 }
 ```
@@ -216,10 +230,17 @@ resp = client.save_model("subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf1d6
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'hardware_device': None,
-    'type_json': {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
+    'details': {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
     'brain_region': None,
-    'coordinates': 'Stereotaxic_BregmaAbsolute',
-    'coordinates_json': {}
+    'coordinates_system': 'Stereotaxic_BregmaAbsolute',
+    'coordinates_details': {
+                "apCoordinates": 1.0,
+                "mlCoordinates": 2.0,
+                "dvCoordinates": 3.0,
+                "apAngle": 4.0,
+                "mlAngle": 5.0,
+                "dvAngle": 6.0
+            }
     }
 }
 ```
