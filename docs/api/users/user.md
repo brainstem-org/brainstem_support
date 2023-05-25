@@ -39,6 +39,7 @@ The following fields are only accessible for administrators:
 | `is_taxonomies_admin` | boolean |
 | `is_resources_admin` | boolean |
 | `is_attributes_admin` | boolean |
+| `is_contact_form_email_receiver` | boolean |
 
 Each dictionary in the `groups_own_json` list contains the group's `id` and `name`:
 ```

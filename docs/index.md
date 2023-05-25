@@ -17,7 +17,7 @@ A collaborative electronic lab notebook for FAIR experimental neuroscience.
 ## Introduction
 {: .no_toc}
 
-BrainSTEM (Brain STructured Experimental Metadata) is designed as an electronic notebook to capture a range of electrophysiological-, imaging-, and behavioral data . It is built on a modular, standardized data model that is extendable to capture future types of data as well. Granular permissions enables collaborations within and across labs, and one-click public sharing of datasets. It has a customizable web interface that allows for the organization of experiments and raw data. BrainSTEM also has a REST API, for programmable access, with toolsets being built for Matlab and Python.
+BrainSTEM (Brain STructured Experimental Metadata) is designed as an electronic notebook to capture a range of electrophysiological-, imaging-, and behavioral data . It is built on a modular, standardized data model that is extendable to capture future types of data as well. Granular permissions enables collaborations within and across labs, and one-click public sharing of datasets. It has a customizable web interface that allows for the organization of experiments and raw data. BrainSTEM also has an API, for programmable access, with toolsets being built for Matlab and Python.
 
 BrainSTEM is in a pilot stage, so feel free to create an account and start using it, and reach out if you are interested in helping advancing and shaping it. Report bug through the issue system on this GitHub repository and use the GitHub discussion forum to suggest new features.
 

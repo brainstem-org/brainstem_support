@@ -31,7 +31,7 @@ nav_order: 2
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/projectmembershipinvitation
+- **URL:** https://www.brainstem.org/api/private/users/projectmembershipinvitation
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -71,7 +71,7 @@ resp = load_model(settings, 'projectmembershipinvitation')
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/projectmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/projectmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -100,7 +100,7 @@ resp = load_model(settings, 'projectmembershipinvitation', id='5c386192-1dc6-42d
 ## Accept
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/projectmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/projectmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -116,7 +116,7 @@ resp = load_model(settings, "projectmembershipinvitation", id="5c386192-1dc6-42d
 ## Reject
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/projectmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/projectmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -131,7 +131,7 @@ resp = load_model(settings, "projectmembershipinvitation", id="0f1e0097-0f41-4c5
 ## Cancel
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/projectmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/projectmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 

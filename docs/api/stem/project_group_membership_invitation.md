@@ -32,7 +32,7 @@ nav_order: 2
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/projectgroupmembershipinvitation
+- **URL:** https://www.brainstem.org/api/private/users/projectgroupmembershipinvitation
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -71,7 +71,7 @@ resp = load_model(settings, 'projectgroupmembershipinvitation')
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/projectgroupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/projectgroupmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -100,7 +100,7 @@ resp = load_model(settings, 'projectgroupmembershipinvitation', id='b6529885-e67
 ## Accept
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/projectgroupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/projectgroupmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -116,7 +116,7 @@ resp = load_model(settings, "projectgroupmembershipinvitation", id="b6529885-e67
 ## Reject
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/projectgroupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/projectgroupmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -131,7 +131,7 @@ resp = load_model(settings, "projectgroupmembershipinvitation", id="540a69bd-7a6
 ## Cancel
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** http://brainstem.org/rest/private/users/projectgroupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/projectgroupmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
