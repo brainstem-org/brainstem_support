@@ -61,8 +61,26 @@ resp = client.load_model('datarepository')
         'name': "Rodrigo's data",
         'description': '',
         'is_public': False,
-        'data_organization_json': [],
-        'data_protocols_json': [],
+        'data_organization_json': [
+                {
+                    "elements": "Datasets"
+                },
+                {
+                    "elements": "Subjects"
+                }
+            ],
+        'data_protocols_json': [
+                {
+                    "protocol": "Dropbox (Cloud solution)",
+                    "path": "data/myproject",
+                    "is_public": true
+                },
+                {
+                    "protocol": "Local harddrive",
+                    "path": "/home/myuser/data/myproject",
+                    "is_public": false
+                }
+            ],
         'authgroups': [41]
     }
 ]}
@@ -84,7 +102,27 @@ resp = client.load_model('datarepository')
 resp = client.save_model("datarepository",  data=
     {
         'name': "MyNewRepo",
-        'authgroups': [41]
+        'authgroups': [41],
+        'data_organization_json': [
+                {
+                    "elements": "Datasets"
+                },
+                {
+                    "elements": "Subjects"
+                }
+            ],
+        'data_protocols_json': [
+                {
+                    "protocol": "Dropbox (Cloud solution)",
+                    "path": "data/myproject",
+                    "is_public": True
+                },
+                {
+                    "protocol": "Local harddrive",
+                    "path": "/home/myuser/data/myproject",
+                    "is_public": False
+                }
+            ]
     }
 )
 ```
@@ -98,8 +136,26 @@ resp = client.save_model("datarepository",  data=
     'name': 'MyNewRepo',
     'description': '',
     'is_public': False,
-    'data_organization_json': None,
-    'data_protocols_json': None,
+    'data_organization_json': [
+                {
+                    "elements": "Datasets"
+                },
+                {
+                    "elements": "Subjects"
+                }
+            ],
+    'data_protocols_json': [
+                {
+                    "protocol": "Dropbox (Cloud solution)",
+                    "path": "data/myproject",
+                    "is_public": true
+                },
+                {
+                    "protocol": "Local harddrive",
+                    "path": "/home/myuser/data/myproject",
+                    "is_public": false
+                }
+            ],
     'authgroups': [41]}
 }
 ```
@@ -129,8 +185,26 @@ resp = client.load_model('datarepository', id='9f322057-cf48-4ec7-ab19-d0d7175cf
     'name': 'MyNewRepo',
     'description': '',
     'is_public': False,
-    'data_organization_json': None,
-    'data_protocols_json': None,
+    'data_organization_json': [
+                {
+                    "elements": "Datasets"
+                },
+                {
+                    "elements": "Subjects"
+                }
+            ],
+    'data_protocols_json': [
+                {
+                    "protocol": "Dropbox (Cloud solution)",
+                    "path": "data/myproject",
+                    "is_public": true
+                },
+                {
+                    "protocol": "Local harddrive",
+                    "path": "/home/myuser/data/myproject",
+                    "is_public": false
+                }
+            ],
     'authgroups': [41]}
 }
 ```
@@ -160,8 +234,26 @@ resp = client.save_model("datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cf
     'name': 'MyNewRepo',
     'description': 'new text',
     'is_public': False,
-    'data_organization_json': None,
-    'data_protocols_json': None,
+    'data_organization_json': [
+                {
+                    "elements": "Datasets"
+                },
+                {
+                    "elements": "Subjects"
+                }
+            ],
+    'data_protocols_json': [
+                {
+                    "protocol": "Dropbox (Cloud solution)",
+                    "path": "data/myproject",
+                    "is_public": true
+                },
+                {
+                    "protocol": "Local harddrive",
+                    "path": "/home/myuser/data/myproject",
+                    "is_public": false
+                }
+            ],
     'authgroups': [41]}
 }
 ```

@@ -24,7 +24,7 @@ nav_order: 6
 | `description` | string [max length: 500] |
 | `supplier` | related supplier ID formatted as a string **[required]** |
 | `type` | string **[required]**. *See options below* |
-| `type_json` | JSON object. *See accepted schemas below* |
+| `details` | JSON object. *See accepted schemas below* |
 | `comments` | string |
 
 These are the available `type` options for Consumable:
@@ -33,7 +33,7 @@ These are the available `type` options for Consumable:
 - `VirusConstruct`
 - `WireElectrode`
 
-A detailed list of the accepted schemas for the `type_json` field, related to each `type`, can be found in
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
 
 
 ## List view
@@ -61,7 +61,7 @@ resp = client.load_model('consumable')
         "description": "Transsynaptic Tracers: WGA-Cre (AAV2, 5 & 8)",
         "supplier": "4fa1c3b4-f955-47f5-8524-3f1afa3fc657",
         "type": "VirusConstruct",
-        "type_json": {
+        "details": {
             "virus_type": "AAV",
             "notes": "Transsynaptic Tracers: WGA-Cre (AAV2, 5 & 8)"
         }
@@ -72,7 +72,7 @@ resp = client.load_model('consumable')
         "description": "",
         "supplier": "fba48e24-eebf-4b11-a8b9-ac660854d779",
         "type": "SiliconProbeDesign",
-        "type_json": {
+        "details": {
             "product_id": "A16x1-2mm-100-177",
             "shanksLength": 2,
             "nChannels": 16,
@@ -106,7 +106,7 @@ resp = client.save_model("consumable",  data={
         "description": "",
         "supplier": "fba48e24-eebf-4b11-a8b9-ac660854d779",
         "type": "OpticFiberDesign",
-        "type_json": {
+        "details": {
             "productId": "42",
             "tipDescription": "",
             "coreDiameter": 0,
@@ -127,7 +127,7 @@ resp = client.save_model("consumable",  data={
         'description': '',
         'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
         'type': 'OpticFiberDesign',
-        'type_json': {
+        'details': {
             'productId': '42',
             'tipDescription': '',
             'coreDiameter': 0,
@@ -165,7 +165,7 @@ resp = client.load_model('consumable', id='67f263cd-5960-406f-a879-c1f259140979'
         'description': '',
         'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
         'type': 'OpticFiberDesign',
-        'type_json': {
+        'details': {
             'productId': '42',
             'tipDescription': '',
             'coreDiameter': 0,
@@ -203,7 +203,7 @@ resp = client.save_model("consumable", id="67f263cd-5960-406f-a879-c1f259140979"
         'description': 'new text',
         'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
         'type': 'OpticFiberDesign',
-        'type_json': {
+        'details': {
             'productId': '42',
             'tipDescription': '',
             'coreDiameter': 0,
@@ -258,7 +258,7 @@ resp = client.load_model('consumableapproval')
         "description": "",
         "supplier": "fba48e24-eebf-4b11-a8b9-ac660854d779",
         "type": "OpticFiberDesign",
-        "type_json": {
+        "details": {
             "productId": "42",
             "tipDescription": "",
             "coreDiameter": 0,
@@ -299,7 +299,7 @@ resp = client.load_model('consumableapproval', id='b7595523-5578-45c0-b7ef-c1f14
         'description': '',
         'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
         'type': 'OpticFiberDesign',
-        'type_json': {
+        'details': {
             'productId': '42',
             'tipDescription': '',
             'coreDiameter': 0,
