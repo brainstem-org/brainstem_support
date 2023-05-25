@@ -56,7 +56,7 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'manipulation')
+resp = client.load_model('manipulation')
 ```
 
 ### Response example
@@ -113,7 +113,7 @@ resp = load_model(settings, 'manipulation')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "manipulation",  data={
+resp = client.save_model("manipulation",  data={
     'type': 'LiquidPerturbation',
     'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
     'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
@@ -167,7 +167,7 @@ resp = save_model(settings, "manipulation",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad0')
+resp = client.load_model('manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad0')
 ```
 
 ### Response example
@@ -206,7 +206,7 @@ resp = load_model(settings, 'manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015
 {: .no_toc}
 
 ```
-resp = save_model(settings, "manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad0", data={"description": "new text"})
+resp = client.save_model("manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad0", data={"description": "new text"})
 ```
 
 ### Response example
@@ -245,5 +245,5 @@ resp = save_model(settings, "manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad0")
+resp = client.delete_model("manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad0")
 ``` 

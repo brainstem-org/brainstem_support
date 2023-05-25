@@ -50,7 +50,7 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'experimentdata')
+resp = client.load_model('experimentdata')
 ```
 
 ### Response example
@@ -104,7 +104,7 @@ resp = load_model(settings, 'experimentdata')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "experimentdata",  data={
+resp = client.save_model("experimentdata",  data={
     "type": "Extracellular",
     "actions": ["087b71c4-6785-437c-b8ef-e35a82a8463e"],
     "dataset": "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
@@ -155,7 +155,7 @@ resp = save_model(settings, "experimentdata",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'experimentdata', id='b0e4ed13-f2f1-4845-8772-24978539d0bd')
+resp = client.load_model('experimentdata', id='b0e4ed13-f2f1-4845-8772-24978539d0bd')
 ```
 
 ### Response example
@@ -194,7 +194,7 @@ resp = load_model(settings, 'experimentdata', id='b0e4ed13-f2f1-4845-8772-249785
 {: .no_toc}
 
 ```
-resp = save_model(settings, "experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d0bd", data={"description": "new text"})
+resp = client.save_model("experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d0bd", data={"description": "new text"})
 ```
 
 ### Response example
@@ -233,5 +233,5 @@ resp = save_model(settings, "experimentdata", id="b0e4ed13-f2f1-4845-8772-249785
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d0bd")
+resp = client.delete_model("experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d0bd")
 ``` 

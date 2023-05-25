@@ -73,7 +73,7 @@ Each entry of in the `groups` dictionary must follow the following structure:
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'project')
+resp = client.load_model('project')
 ```
 
 ### Response example
@@ -177,14 +177,14 @@ resp = load_model(settings, 'project')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "project",  data={"name": "NewRestProject", "description": "some text"})
+resp = client.save_model("project",  data={"name": "NewRestProject", "description": "some text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'project': {'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+{'project': {'id': 'd7de95c0-eb63-40e8-ac90-7573b58f6033',
     'name': 'NewRestProject',
     'description': 'some text',
     'datasets': [],
@@ -217,14 +217,14 @@ resp = save_model(settings, "project",  data={"name": "NewRestProject", "descrip
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'project', id='a5f29099-2758-4163-a8e4-e5e2898e57b2')
+resp = client.load_model('project', id='d7de95c0-eb63-40e8-ac90-7573b58f6033')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'project': {'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+{'project': {'id': 'd7de95c0-eb63-40e8-ac90-7573b58f6033',
     'name': 'NewRestProject',
     'description': 'some text',
     'datasets': ["eba7ed4b-44a9-4626-ae6f-09bccfa553fb"],
@@ -260,23 +260,23 @@ resp = load_model(settings, 'project', id='a5f29099-2758-4163-a8e4-e5e2898e57b2'
 {: .no_toc}
 
 ```
-resp = save_model(settings, "project", id="a5f29099-2758-4163-a8e4-e5e2898e57b2", data={"description": "new text"})
+resp = client.save_model("project", id="d7de95c0-eb63-40e8-ac90-7573b58f6033", data={"description": "new text"})
 ```
 
 To add new users and/or groups to the project, or modify the permissions of the existing ones, provide their corresponding dictionaries. Missing permissions will default to *False*.
 ```
-resp = save_model(settings, "project",  
-    data={"id": "a5f29099-2758-4163-a8e4-e5e2898e57b2", 
-    "description": "new text", 
+resp = client.save_model("project",
+    id="d7de95c0-eb63-40e8-ac90-7573b58f6033",
+    data={"description": "new text", 
     "users": {'user2@mail.com': {"can_change": True, "is_manager": True}}, 
     "groups": {"Group1": {"is_manager": True}}})
 ```
 
 To remove users and/or groups, provide the key-value pair `"remove": True` in the corresponding dictionary.
 ```
-resp = save_model(settings, "project",  
-    data={"id": "a5f29099-2758-4163-a8e4-e5e2898e57b2", 
-    "description": "new text", 
+resp = client.save_model("project",
+    id="d7de95c0-eb63-40e8-ac90-7573b58f6033",
+    data={"description": "new text", 
     "users": {'user2@mail.com': {"remove": True}}, 
     "groups": {"Group1": {"remove": True}}})
 ```
@@ -285,7 +285,7 @@ resp = save_model(settings, "project",
 {: .no_toc}
 
 ```
-{'project': {'id': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+{'project': {'id': 'd7de95c0-eb63-40e8-ac90-7573b58f6033',
   'name': 'NewRestProject',
   'description': 'new text',
   'datasets': [],
@@ -318,5 +318,5 @@ resp = save_model(settings, "project",
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "project", id="a5f29099-2758-4163-a8e4-e5e2898e57b2")
+resp = client.delete_model("project", id="d7de95c0-eb63-40e8-ac90-7573b58f6033")
 ```

@@ -51,7 +51,7 @@ These are the available `atlas` options for Brain Region:
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'brainregion')
+resp = client.load_model('brainregion')
 ```
 
 ### Response example
@@ -97,7 +97,7 @@ resp = load_model(settings, 'brainregion')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "brainregion",  data={
+resp = client.save_model("brainregion",  data={
         "name": "MyNewBrainRegion",
         "description": "",
         "acronym": "MNBR",
@@ -132,7 +132,7 @@ resp = save_model(settings, "brainregion",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee31a9')
+resp = client.load_model('brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee31a9')
 ```
 
 ### Response example
@@ -162,7 +162,7 @@ resp = load_model(settings, 'brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee3
 {: .no_toc}
 
 ```
-resp = save_model(settings, "brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9", data={"description": "new text"})
+resp = client.save_model("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9", data={"description": "new text"})
 ```
 
 ### Response example
@@ -192,5 +192,5 @@ resp = save_model(settings, "brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee3
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9")
+resp = client.delete_model("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9")
 ``` 

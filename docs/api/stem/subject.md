@@ -56,7 +56,7 @@ nav_order: 2
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'subject')
+resp = client.load_model('subject')
 ```
 
 ### Response example
@@ -119,7 +119,7 @@ resp = load_model(settings, 'subject')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "subject",  data={
+resp = client.save_model("subject",  data={
 	"name": "NewSubject", 
 	"description": "some text", 
 	"strain": "deec9da3-ee26-4348-954e-484f62c463c8", 
@@ -132,7 +132,7 @@ resp = save_model(settings, "subject",  data={
 {: .no_toc}
 
 ```
-{'subject': {'id': 'c20b2025-2e98-4eb9-bc89-0bad9f271c7f',
+{'subject': {'id': 'b4ae1f92-5260-4605-8d21-25ac5c3fce91',
 	'name': 'NewSubject',
 	'description': 'some text',
 	'strain': 'deec9da3-ee26-4348-954e-484f62c463c8',
@@ -161,14 +161,14 @@ resp = save_model(settings, "subject",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'subject', id='c20b2025-2e98-4eb9-bc89-0bad9f271c7f')
+resp = client.load_model('subject', id='b4ae1f92-5260-4605-8d21-25ac5c3fce91')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'subject': {'id': 'c20b2025-2e98-4eb9-bc89-0bad9f271c7f',
+{'subject': {'id': 'b4ae1f92-5260-4605-8d21-25ac5c3fce91',
 	'name': 'NewSubject',
 	'description': 'some text',
 	'strain': 'deec9da3-ee26-4348-954e-484f62c463c8',
@@ -201,14 +201,14 @@ resp = load_model(settings, 'subject', id='c20b2025-2e98-4eb9-bc89-0bad9f271c7f'
 {: .no_toc}
 
 ```
-resp = save_model(settings, "subject", id="c20b2025-2e98-4eb9-bc89-0bad9f271c7f", data={"description": "new text"})
+resp = client.save_model("subject", id="b4ae1f92-5260-4605-8d21-25ac5c3fce91", data={"description": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'subject': {'id': 'c20b2025-2e98-4eb9-bc89-0bad9f271c7f',
+{'subject': {'id': 'b4ae1f92-5260-4605-8d21-25ac5c3fce91',
     'name': 'NewSubject',
     'description': 'new text',
     'strain': 'deec9da3-ee26-4348-954e-484f62c463c8',
@@ -238,5 +238,5 @@ resp = save_model(settings, "subject", id="c20b2025-2e98-4eb9-bc89-0bad9f271c7f"
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "subject", id="c20b2025-2e98-4eb9-bc89-0bad9f271c7f")
+resp = client.delete_model("subject", id="b4ae1f92-5260-4605-8d21-25ac5c3fce91")
 ```

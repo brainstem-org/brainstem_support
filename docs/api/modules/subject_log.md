@@ -52,7 +52,7 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'subjectlog')
+resp = client.load_model('subjectlog')
 ```
 
 ### Response example
@@ -104,7 +104,7 @@ resp = load_model(settings, 'subjectlog')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "subjectlog",  data={
+resp = client.save_model("subjectlog",  data={
     "type": "WaterConsumption",
     "subject": "0cdaf69d-63cf-429f-b549-fc0cc163d046"})
 ```
@@ -135,7 +135,7 @@ resp = save_model(settings, "subjectlog",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105c3')
+resp = client.load_model('subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105c3')
 ```
 
 ### Response example
@@ -164,7 +164,7 @@ resp = load_model(settings, 'subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105
 {: .no_toc}
 
 ```
-resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", data={"description": "new text"})
+resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", data={"description": "new text"})
 ```
 
 ### Response example
@@ -193,7 +193,7 @@ resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3")
+resp = client.delete_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3")
 ```
 
 
@@ -209,7 +209,7 @@ resp = delete_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc31
 {: .no_toc}
 
 ```
-resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="add_entry", data={
+resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
             'type_json': {'waterAmount': 9.0}
@@ -249,7 +249,7 @@ resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105
 {: .no_toc}
 
 ```
-resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
+resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
 ```
 
 ### Response example
@@ -286,7 +286,7 @@ resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105
 {: .no_toc}
 
 ```
-resp = save_model(settings, "subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
+resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example

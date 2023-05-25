@@ -37,7 +37,7 @@ nav_order: 2
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'behavior')
+resp = client.load_model('behavior')
 ```
 
 ### Response example
@@ -81,7 +81,7 @@ resp = load_model(settings, 'behavior')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "behavior",  data={
+resp = client.save_model("behavior",  data={
 	"dataset": "1f7f103b-e949-405a-9b01-ddda3b2f10cf", 
 	"subjects": ["0f87c229-6769-4854-83a5-c71e154246b8"],
 	"physical_environment": "3e9ec0e0-d685-42ec-8386-0fa24602a73e",
@@ -117,7 +117,7 @@ resp = save_model(settings, "behavior",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'behavior', id='f9733b12-e2d5-4886-9e00-09ba26b01a16')
+resp = client.load_model('behavior', id='f9733b12-e2d5-4886-9e00-09ba26b01a16')
 ```
 
 ### Response example
@@ -148,7 +148,7 @@ resp = load_model(settings, 'behavior', id='f9733b12-e2d5-4886-9e00-09ba26b01a16
 {: .no_toc}
 
 ```
-resp = save_model(settings, "behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16", data={'subjects': ['0f87c229-6769-4854-83a5-c71e154246b8', '35c41e86-dde1-4eb2-a0e2-94dfb1dccd92']})
+resp = client.save_model("behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16", data={'subjects': ['0f87c229-6769-4854-83a5-c71e154246b8', '35c41e86-dde1-4eb2-a0e2-94dfb1dccd92']})
 ```
 
 ### Response example
@@ -179,5 +179,5 @@ resp = save_model(settings, "behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16")
+resp = client.delete_model("behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16")
 ```

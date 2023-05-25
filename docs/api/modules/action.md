@@ -65,7 +65,7 @@ A detailed list of the accepted schemas for the `coordinates_json` field, relate
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'action')
+resp = client.load_model('action')
 ```
 
 ### Response example
@@ -130,7 +130,7 @@ resp = load_model(settings, 'action')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "action",  data={
+resp = client.save_model("action",  data={
     "type": "OpticFiberImplant",
     "subject": "0f87c229-6769-4854-83a5-c71e154246b8",
     "description": "some text",
@@ -171,7 +171,7 @@ resp = save_model(settings, "action",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
+resp = client.load_model('action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ```
 
 ### Response example
@@ -206,7 +206,7 @@ resp = load_model(settings, 'action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"description": "new text"})
+resp = client.save_model("action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"description": "new text"})
 ```
 
 ### Response example
@@ -241,5 +241,5 @@ resp = save_model(settings, "action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
+resp = client.delete_model("action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 ```

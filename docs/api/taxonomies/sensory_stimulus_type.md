@@ -37,7 +37,7 @@ nav_order: 7
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'sensorystimulustype')
+resp = client.load_model('sensorystimulustype')
 ```
 
 ### Response example
@@ -77,7 +77,7 @@ resp = load_model(settings, 'sensorystimulustype')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "sensorystimulustype",  data={
+resp = client.save_model("sensorystimulustype",  data={
         "name": "MyNewSensoryStimulusType",
         "description": "some text",
     }
@@ -109,7 +109,7 @@ resp = save_model(settings, "sensorystimulustype",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'sensorystimulustype', id='6094032c-c54f-4115-b8c8-139d93b98b80')
+resp = client.load_model('sensorystimulustype', id='6094032c-c54f-4115-b8c8-139d93b98b80')
 ```
 
 ### Response example
@@ -137,7 +137,7 @@ resp = load_model(settings, 'sensorystimulustype', id='6094032c-c54f-4115-b8c8-1
 {: .no_toc}
 
 ```
-resp = save_model(settings, "sensorystimulustype", id="6094032c-c54f-4115-b8c8-139d93b98b80", data={"description": "new text"})
+resp = client.save_model("sensorystimulustype", id="6094032c-c54f-4115-b8c8-139d93b98b80", data={"description": "new text"})
 ```
 
 ### Response example
@@ -166,7 +166,7 @@ resp = save_model(settings, "sensorystimulustype", id="6094032c-c54f-4115-b8c8-1
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "sensorystimulustype", id="6094032c-c54f-4115-b8c8-139d93b98b80")
+resp = client.delete_model("sensorystimulustype", id="6094032c-c54f-4115-b8c8-139d93b98b80")
 ``` 
 
 
@@ -181,7 +181,7 @@ resp = delete_model(settings, "sensorystimulustype", id="6094032c-c54f-4115-b8c8
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'sensorystimulustypeapproval')
+resp = client.load_model('sensorystimulustypeapproval')
 ```
 
 ### Response example
@@ -224,7 +224,7 @@ resp = load_model(settings, 'sensorystimulustypeapproval')
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'sensorystimulustypeapproval', id='9a4e8ce4-b7a1-4431-9176-514640681d59')
+resp = client.load_model('sensorystimulustypeapproval', id='9a4e8ce4-b7a1-4431-9176-514640681d59')
 ```
 
 ### Response example
@@ -255,7 +255,7 @@ resp = load_model(settings, 'sensorystimulustypeapproval', id='9a4e8ce4-b7a1-443
 {: .no_toc}
 
 ```
-resp = save_model(settings, "sensorystimulustypeapproval", id="9a4e8ce4-b7a1-4431-9176-514640681d59", options="accept")
+resp = client.save_model("sensorystimulustypeapproval", id="9a4e8ce4-b7a1-4431-9176-514640681d59", options="accept")
 ```
 
 
@@ -270,5 +270,5 @@ resp = save_model(settings, "sensorystimulustypeapproval", id="9a4e8ce4-b7a1-443
 {: .no_toc}
 
 ```
-resp = save_model(settings, "sensorystimulustypeapproval", id="06552cc2-a2db-44ea-90bc-8c529440acdd", options="reject")
+resp = client.save_model("sensorystimulustypeapproval", id="06552cc2-a2db-44ea-90bc-8c529440acdd", options="reject")
 ```

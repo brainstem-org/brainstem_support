@@ -41,7 +41,7 @@ nav_order: 4
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'laboratory')
+resp = client.load_model('laboratory')
 ```
 
 ### Response example
@@ -87,7 +87,7 @@ resp = load_model(settings, 'laboratory')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "laboratory",  data={
+resp = client.save_model("laboratory",  data={
     'group': 41,
     'principal_investigators': [3],
     'institution': 'A university'}
@@ -124,7 +124,7 @@ resp = save_model(settings, "laboratory",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff')
+resp = client.load_model('laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff')
 ```
 
 ### Response example
@@ -157,7 +157,7 @@ resp = load_model(settings, 'laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527
 {: .no_toc}
 
 ```
-resp = save_model(settings, "laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff", data={"description": "new text"})
+resp = client.save_model("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff", data={"description": "new text"})
 ```
 
 ### Response example
@@ -190,5 +190,5 @@ resp = save_model(settings, "laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff")
+resp = client.delete_model("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff")
 ``` 

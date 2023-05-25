@@ -38,7 +38,7 @@ nav_order: 3
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'groupmembershipinvitation')
+resp = client.load_model('groupmembershipinvitation')
 ```
 
 ### Response example
@@ -75,7 +75,7 @@ resp = load_model(settings, 'groupmembershipinvitation')
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'groupmembershipinvitation', id='bdbc1823-7bcf-402d-bcaf-c16ce8da4632')
+resp = client.load_model('groupmembershipinvitation', id='bdbc1823-7bcf-402d-bcaf-c16ce8da4632')
 ```
 
 ### Response example
@@ -103,7 +103,7 @@ resp = load_model(settings, 'groupmembershipinvitation', id='bdbc1823-7bcf-402d-
 {: .no_toc}
 
 ```
-resp = load_model(settings, "groupmembershipinvitation", id="caf8093f-def3-43a4-9c46-543e3f7d63b0", options="accept")
+resp = client.load_model("groupmembershipinvitation", id="caf8093f-def3-43a4-9c46-543e3f7d63b0", options="accept")
 ```
 
 
@@ -119,7 +119,7 @@ resp = load_model(settings, "groupmembershipinvitation", id="caf8093f-def3-43a4-
 {: .no_toc}
 
 ```
-resp = load_model(settings, "groupmembershipinvitation", id="fa2d3f83-f5e8-4c3f-9006-fc2d92d0c0a0", options="reject")
+resp = client.load_model("groupmembershipinvitation", id="fa2d3f83-f5e8-4c3f-9006-fc2d92d0c0a0", options="reject")
 ```
 
 
@@ -134,5 +134,5 @@ resp = load_model(settings, "groupmembershipinvitation", id="fa2d3f83-f5e8-4c3f-
 {: .no_toc}
 
 ```
-resp = load_model(settings, "groupmembershipinvitation", id="77c92a03-79ce-4cd6-9379-fd3d4f459012", options="cancel")
+resp = client.load_model("groupmembershipinvitation", id="77c92a03-79ce-4cd6-9379-fd3d4f459012", options="cancel")
 ```

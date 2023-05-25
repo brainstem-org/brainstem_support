@@ -51,7 +51,7 @@ A detailed list of the accepted schemas for the `type_json` field, related to ea
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'actionlog')
+resp = client.load_model('actionlog')
 ```
 
 ### Response example
@@ -110,7 +110,7 @@ resp = load_model(settings, 'actionlog')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "actionlog",  data={
+resp = client.save_model("actionlog",  data={
     "type": "LinearDisplacement",
     "action": "61da7e53-1066-42de-a1a2-3db96bb7cba2"})
 ```
@@ -120,7 +120,7 @@ resp = save_model(settings, "actionlog",  data={
 
 ```
 {'action_log': {
-    'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
+    'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
     'type': 'LinearDisplacement',
     'description': None,
     'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
@@ -141,7 +141,7 @@ resp = save_model(settings, "actionlog",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'actionlog', id='743d9483-25d7-4c36-8b2a-e5f30dbbe062')
+resp = client.load_model('actionlog', id='43d3d060-4606-4e95-bd7e-79dcb910cf27')
 ```
 
 ### Response example
@@ -149,7 +149,7 @@ resp = load_model(settings, 'actionlog', id='743d9483-25d7-4c36-8b2a-e5f30dbbe06
 
 ```
 {'action_log': {
-    'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
+    'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
     'type': 'LinearDisplacement',
     'description': None,
     'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
@@ -170,7 +170,7 @@ resp = load_model(settings, 'actionlog', id='743d9483-25d7-4c36-8b2a-e5f30dbbe06
 {: .no_toc}
 
 ```
-resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe062", data={"description": "new text"})
+resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", data={"description": "new text"})
 ```
 
 ### Response example
@@ -178,7 +178,7 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 
 ```
 {'action_log': {
-    'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
+    'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
     'type': 'LinearDisplacement',
     'description': "new text",
     'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
@@ -199,7 +199,7 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe062")
+resp = client.delete_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27")
 ```
 
 
@@ -215,7 +215,7 @@ resp = delete_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe
 {: .no_toc}
 
 ```
-resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe062", options="add_entry", data={
+resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
             'type_json': {'displacement': 9.0}
@@ -228,7 +228,7 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 
 ```
 {'action_log': {
-        'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
+        'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
         'type': 'LinearDisplacement',
         'description': 'new text',
         'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
@@ -254,7 +254,7 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 {: .no_toc}
 
 ```
-resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe062", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
+resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
 ```
 
 ### Response example
@@ -262,7 +262,7 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 
 ```
 {'action_log': {
-        'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
+        'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
         'type': 'LinearDisplacement',
         'description': 'new text',
         'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
@@ -289,7 +289,7 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 {: .no_toc}
 
 ```
-resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe062", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
+resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example
@@ -297,7 +297,7 @@ resp = save_model(settings, "actionlog", id="743d9483-25d7-4c36-8b2a-e5f30dbbe06
 
 ```
 {'action_log': {
-        'id': '743d9483-25d7-4c36-8b2a-e5f30dbbe062',
+        'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
         'type': 'LinearDisplacement',
         'description': 'new text',
         'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',

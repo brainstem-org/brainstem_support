@@ -40,7 +40,7 @@ nav_order: 5
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'physicalenvironment')
+resp = client.load_model('physicalenvironment')
 ```
 
 ### Response example
@@ -85,7 +85,7 @@ resp = load_model(settings, 'physicalenvironment')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "physicalenvironment",  data=
+resp = client.save_model("physicalenvironment",  data=
     {
         'name': 'MyNewEnv',
         'description': '',
@@ -129,7 +129,7 @@ resp = save_model(settings, "physicalenvironment",  data=
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'physicalenvironment', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
+resp = client.load_model('physicalenvironment', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 ```
 
 ### Response example
@@ -162,7 +162,7 @@ resp = load_model(settings, 'physicalenvironment', id='d0ada97d-8607-48da-817b-b
 {: .no_toc}
 
 ```
-resp = save_model(settings, "physicalenvironment", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"description": "new text"})
+resp = client.save_model("physicalenvironment", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"description": "new text"})
 ```
 
 ### Response example
@@ -195,5 +195,5 @@ resp = save_model(settings, "physicalenvironment", id="d0ada97d-8607-48da-817b-b
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "physicalenvironment", id="d0ada97d-8607-48da-817b-bdd54bc9077b")
+resp = client.delete_model("physicalenvironment", id="d0ada97d-8607-48da-817b-bdd54bc9077b")
 ``` 

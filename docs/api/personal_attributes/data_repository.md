@@ -39,7 +39,7 @@ nav_order: 5
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'datarepository')
+resp = client.load_model('datarepository')
 ```
 
 ### Response example
@@ -81,7 +81,7 @@ resp = load_model(settings, 'datarepository')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "datarepository",  data=
+resp = client.save_model("datarepository",  data=
     {
         'name': "MyNewRepo",
         'authgroups': [41]
@@ -117,7 +117,7 @@ resp = save_model(settings, "datarepository",  data=
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'datarepository', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2')
+resp = client.load_model('datarepository', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2')
 ```
 
 ### Response example
@@ -148,7 +148,7 @@ resp = load_model(settings, 'datarepository', id='9f322057-cf48-4ec7-ab19-d0d717
 {: .no_toc}
 
 ```
-resp = save_model(settings, "datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2", data={"description": "new text"})
+resp = client.save_model("datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2", data={"description": "new text"})
 ```
 
 ### Response example
@@ -179,5 +179,5 @@ resp = save_model(settings, "datarepository", id="9f322057-cf48-4ec7-ab19-d0d717
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2")
+resp = client.delete_model("datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2")
 ``` 

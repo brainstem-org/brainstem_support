@@ -64,7 +64,7 @@ A detailed list of the accepted schemas for the `coordinates_json` field, relate
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'subjectstatechange')
+resp = client.load_model('subjectstatechange')
 ```
 
 ### Response example
@@ -126,7 +126,7 @@ resp = load_model(settings, 'subjectstatechange')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "subjectstatechange",  data={
+resp = client.save_model("subjectstatechange",  data={
     "type": "Death",
     "subject": "0f87c229-6769-4854-83a5-c71e154246b8",
     "description": "some text",
@@ -167,7 +167,7 @@ resp = save_model(settings, "subjectstatechange",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'subjectstatechange', id='93925815-9f8e-4d39-9c3a-cf1d6e13f150')
+resp = client.load_model('subjectstatechange', id='93925815-9f8e-4d39-9c3a-cf1d6e13f150')
 ```
 
 ### Response example
@@ -202,7 +202,7 @@ resp = load_model(settings, 'subjectstatechange', id='93925815-9f8e-4d39-9c3a-cf
 {: .no_toc}
 
 ```
-resp = save_model(settings, "subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf1d6e13f150", data={"description": "new text"})
+resp = client.save_model("subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf1d6e13f150", data={"description": "new text"})
 ```
 
 ### Response example
@@ -237,5 +237,5 @@ resp = save_model(settings, "subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf1d6e13f150")
+resp = client.delete_model("subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf1d6e13f150")
 ``` 

@@ -35,7 +35,7 @@ nav_order: 4
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'groupmembershiprequest')
+resp = client.load_model('groupmembershiprequest')
 ```
 
 ### Response example
@@ -68,7 +68,7 @@ resp = load_model(settings, 'groupmembershiprequest')
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'groupmembershiprequest', id='fd335535-cf79-4ae8-86af-ed87e1108889')
+resp = client.load_model('groupmembershiprequest', id='fd335535-cf79-4ae8-86af-ed87e1108889')
 ```
 
 ### Response example
@@ -94,7 +94,7 @@ resp = load_model(settings, 'groupmembershiprequest', id='fd335535-cf79-4ae8-86a
 {: .no_toc}
 
 ```
-resp = load_model(settings, "groupmembershiprequest", id="fd335535-cf79-4ae8-86af-ed87e1108889", options="accept")
+resp = client.load_model("groupmembershiprequest", id="fd335535-cf79-4ae8-86af-ed87e1108889", options="accept")
 ```
 
 
@@ -110,7 +110,7 @@ resp = load_model(settings, "groupmembershiprequest", id="fd335535-cf79-4ae8-86a
 {: .no_toc}
 
 ```
-resp = load_model(settings, "groupmembershiprequest", id="5a6378e9-be26-4f0f-8e12-2d11a05cd769", options="reject")
+resp = client.load_model("groupmembershiprequest", id="5a6378e9-be26-4f0f-8e12-2d11a05cd769", options="reject")
 ```
 
 
@@ -125,5 +125,5 @@ resp = load_model(settings, "groupmembershiprequest", id="5a6378e9-be26-4f0f-8e1
 {: .no_toc}
 
 ```
-resp = load_model(settings, "groupmembershiprequest", id="263fa5ff-1dd0-4b20-a028-5679ac1b54cf", options="cancel")
+resp = client.load_model("groupmembershiprequest", id="263fa5ff-1dd0-4b20-a028-5679ac1b54cf", options="cancel")
 ```

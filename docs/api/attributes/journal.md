@@ -37,7 +37,7 @@ nav_order: 4
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'journal')
+resp = client.load_model('journal')
 ```
 
 ### Response example
@@ -80,7 +80,7 @@ resp = load_model(settings, 'journal')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "journal",  data={
+resp = client.save_model("journal",  data={
     'name': 'MyNewJournal',
     'description': '',
     'website': 'newjournal.com'}
@@ -92,7 +92,7 @@ resp = save_model(settings, "journal",  data={
 
 ```
 {'journal_approval': {
-        'id': 'dfb879c9-0e31-420b-8918-64dc30dbec6d',
+        'id': '549b9e4f-5253-44f8-93ee-f18f08a39a36',
         'name': 'MyNewJournal',
         'description': '',
         'website': 'http://newjournal.com',
@@ -114,7 +114,7 @@ resp = save_model(settings, "journal",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
+resp = client.load_model('journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 ```
 
 ### Response example
@@ -143,7 +143,7 @@ resp = load_model(settings, 'journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9'
 {: .no_toc}
 
 ```
-resp = save_model(settings, "journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", data={"description": "new text"})
+resp = client.save_model("journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", data={"description": "new text"})
 ```
 
 ### Response example
@@ -172,7 +172,7 @@ resp = save_model(settings, "journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9"
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
+resp = client.delete_model("journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 ``` 
 
 
@@ -187,7 +187,7 @@ resp = delete_model(settings, "journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200f
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'journalapproval')
+resp = client.load_model('journalapproval')
 ```
 
 ### Response example
@@ -207,7 +207,7 @@ resp = load_model(settings, 'journalapproval')
         'status': 'Pending'
     },
     {
-        'id': '41f99539-e54e-4224-8e53-88a692f9a185',
+        'id': '549b9e4f-5253-44f8-93ee-f18f08a39a36',
         'name': 'MyNewJournal',
         'description': '',
         'website': 'http://newjournal.com',
@@ -232,7 +232,7 @@ resp = load_model(settings, 'journalapproval')
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'journalapproval', id='41f99539-e54e-4224-8e53-88a692f9a185')
+resp = client.load_model('journalapproval', id='549b9e4f-5253-44f8-93ee-f18f08a39a36')
 ```
 
 ### Response example
@@ -240,7 +240,7 @@ resp = load_model(settings, 'journalapproval', id='41f99539-e54e-4224-8e53-88a69
 
 ```
 {'journal_approval': {
-    'id': '41f99539-e54e-4224-8e53-88a692f9a185',
+    'id': '549b9e4f-5253-44f8-93ee-f18f08a39a36',
     'name': 'MyNewJournal',
     'description': '',
     'website': 'http://newjournal.com',
@@ -264,7 +264,7 @@ resp = load_model(settings, 'journalapproval', id='41f99539-e54e-4224-8e53-88a69
 {: .no_toc}
 
 ```
-resp = save_model(settings, "journalapproval", id="41f99539-e54e-4224-8e53-88a692f9a185", options="accept")
+resp = client.save_model("journalapproval", id="549b9e4f-5253-44f8-93ee-f18f08a39a36", options="accept")
 ```
 
 
@@ -279,5 +279,5 @@ resp = save_model(settings, "journalapproval", id="41f99539-e54e-4224-8e53-88a69
 {: .no_toc}
 
 ```
-resp = save_model(settings, "journalapproval", id="41f99539-e54e-4224-8e53-88a692f9a185", options="reject")
+resp = client.save_model("journalapproval", id="549b9e4f-5253-44f8-93ee-f18f08a39a36", options="reject")
 ```

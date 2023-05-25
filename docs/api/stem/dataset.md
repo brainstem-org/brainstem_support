@@ -66,7 +66,7 @@ nav_order: 3
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'dataset')
+resp = client.load_model('dataset')
 ```
 
 ### Response example
@@ -122,7 +122,7 @@ resp = load_model(settings, 'dataset')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "dataset",  data={
+resp = client.save_model("dataset",  data={
 	"name": "NewDataset", 
 	"description": "some text",  
 	"projects": ["c4b8a90b-2963-4d13-aa07-b6f497252dde"]
@@ -133,7 +133,7 @@ resp = save_model(settings, "dataset",  data={
 {: .no_toc}
 
 ```
-{'dataset': {'id': '3654964e-1bf7-40c7-a376-9dcec4c125cd',
+{'dataset': {'id': '13bdd793-86d4-428e-9708-167bbc26f6d2',
     'name': 'NewDataset',
     'description': 'some text',
     'epochs': [],
@@ -162,14 +162,14 @@ resp = save_model(settings, "dataset",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'dataset', id='3654964e-1bf7-40c7-a376-9dcec4c125cd')
+resp = client.load_model('dataset', id='13bdd793-86d4-428e-9708-167bbc26f6d2')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'dataset': {'id': '3654964e-1bf7-40c7-a376-9dcec4c125cd',
+{'dataset': {'id': '13bdd793-86d4-428e-9708-167bbc26f6d2',
     'name': 'NewDataset',
     'description': 'some text',
     'epochs': [],
@@ -205,14 +205,14 @@ resp = load_model(settings, 'dataset', id='3654964e-1bf7-40c7-a376-9dcec4c125cd'
 {: .no_toc}
 
 ```
-resp = save_model(settings, "dataset", id="3654964e-1bf7-40c7-a376-9dcec4c125cd", data={"description": "new text"})
+resp = client.save_model("dataset", id="13bdd793-86d4-428e-9708-167bbc26f6d2", data={"description": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'dataset': {'id': '3654964e-1bf7-40c7-a376-9dcec4c125cd',
+{'dataset': {'id': '13bdd793-86d4-428e-9708-167bbc26f6d2',
     'name': 'NewDataset',
     'description': 'new text',
     'epochs': [],
@@ -242,5 +242,5 @@ resp = save_model(settings, "dataset", id="3654964e-1bf7-40c7-a376-9dcec4c125cd"
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "dataset", id="3654964e-1bf7-40c7-a376-9dcec4c125cd")
+resp = client.delete_model("dataset", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
 ``` 

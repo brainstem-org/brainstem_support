@@ -37,7 +37,7 @@ nav_order: 7
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'strain')
+resp = client.load_model('strain')
 ```
 
 ### Response example
@@ -74,7 +74,7 @@ resp = load_model(settings, 'strain')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "strain",  data={
+resp = client.save_model("strain", data={
         "name": "MyNewStrain",
         "description": "",
         "species": "93dd9502-305a-4e7b-b66b-42cf8c79368f",
@@ -106,7 +106,7 @@ resp = save_model(settings, "strain",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
+resp = client.load_model('strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
 ```
 
 ### Response example
@@ -135,7 +135,7 @@ resp = load_model(settings, 'strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", data={"description": "new text"})
+resp = client.save_model("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", data={"description": "new text"})
 ```
 
 ### Response example
@@ -165,7 +165,7 @@ resp = save_model(settings, "strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02",
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02")
+resp = client.delete_model("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02")
 ``` 
 
 
@@ -180,7 +180,7 @@ resp = delete_model(settings, "strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'strainapproval')
+resp = client.load_model('strainapproval')
 ```
 
 ### Response example
@@ -225,7 +225,7 @@ resp = load_model(settings, 'strainapproval')
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832d88')
+resp = client.load_model('strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832d88')
 ```
 
 ### Response example
@@ -257,7 +257,7 @@ resp = load_model(settings, 'strainapproval', id='b460dfbc-79bb-499e-87ed-57df02
 {: .no_toc}
 
 ```
-resp = save_model(settings, "strainapproval", id="b460dfbc-79bb-499e-87ed-57df02832d88", options="accept")
+resp = client.save_model("strainapproval", id="b460dfbc-79bb-499e-87ed-57df02832d88", options="accept")
 ```
 
 
@@ -272,5 +272,5 @@ resp = save_model(settings, "strainapproval", id="b460dfbc-79bb-499e-87ed-57df02
 {: .no_toc}
 
 ```
-resp = save_model(settings, "strainapproval", id="6403fdaf-7896-4ef7-9b30-ee12d69aa408", options="reject")
+resp = client.save_model("strainapproval", id="6403fdaf-7896-4ef7-9b30-ee12d69aa408", options="reject")
 ```

@@ -36,7 +36,7 @@ nav_order: 7
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'environmenttype')
+resp = client.load_model('environmenttype')
 ```
 
 ### Response example
@@ -76,7 +76,7 @@ resp = load_model(settings, 'environmenttype')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "environmenttype",  data={
+resp = client.save_model("environmenttype",  data={
         "name": "MyNewEnvironmentType",
         "description": "",
     }
@@ -107,7 +107,7 @@ resp = save_model(settings, "environmenttype",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'environmenttype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
+resp = client.load_model('environmenttype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
 ```
 
 ### Response example
@@ -135,7 +135,7 @@ resp = load_model(settings, 'environmenttype', id='a2510c9e-3ef2-40eb-b4b4-70b8a
 {: .no_toc}
 
 ```
-resp = save_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6", data={"description": "new text"})
+resp = client.save_model("environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6", data={"description": "new text"})
 ```
 
 ### Response example
@@ -164,7 +164,7 @@ resp = save_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6")
+resp = client.delete_model("environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6")
 ``` 
 
 
@@ -179,7 +179,7 @@ resp = delete_model(settings, "environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'environmenttypeapproval')
+resp = client.load_model('environmenttypeapproval')
 ```
 
 ### Response example
@@ -222,7 +222,7 @@ resp = load_model(settings, 'environmenttypeapproval')
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'environmenttypeapproval', id='725ef635-09b7-4817-98f7-d58e598b445e')
+resp = client.load_model('environmenttypeapproval', id='725ef635-09b7-4817-98f7-d58e598b445e')
 ```
 
 ### Response example
@@ -253,7 +253,7 @@ resp = load_model(settings, 'environmenttypeapproval', id='725ef635-09b7-4817-98
 {: .no_toc}
 
 ```
-resp = save_model(settings, "environmenttypeapproval", id="725ef635-09b7-4817-98f7-d58e598b445e", options="accept")
+resp = client.save_model("environmenttypeapproval", id="725ef635-09b7-4817-98f7-d58e598b445e", options="accept")
 ```
 
 
@@ -268,5 +268,5 @@ resp = save_model(settings, "environmenttypeapproval", id="725ef635-09b7-4817-98
 {: .no_toc}
 
 ```
-resp = save_model(settings, "environmenttypeapproval", id="511f5736-5c34-46c5-b4d2-d7bb0727b5fe", options="reject")
+resp = client.save_model("environmenttypeapproval", id="511f5736-5c34-46c5-b4d2-d7bb0727b5fe", options="reject")
 ```

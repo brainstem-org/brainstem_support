@@ -43,7 +43,7 @@ nav_order: 4
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'publication')
+resp = client.load_model('publication')
 ```
 
 ### Response example
@@ -89,7 +89,7 @@ resp = load_model(settings, 'publication')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "publication",  data=
+resp = client.save_model("publication",  data=
     {
         "title": "MyNewPaper",
         "authors": "Me et al.",
@@ -132,7 +132,7 @@ resp = save_model(settings, "publication",  data=
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'publication', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
+resp = client.load_model('publication', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 ```
 
 ### Response example
@@ -164,7 +164,7 @@ resp = load_model(settings, 'publication', id='da3359b7-e380-4dc6-ba9d-04831d308
 {: .no_toc}
 
 ```
-resp = save_model(settings, "publication", id="e308cb04-428b-4b2c-b86b-15e02c664560", data={"abstract": "new text"})
+resp = client.save_model("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560", data={"abstract": "new text"})
 ```
 
 ### Response example
@@ -196,5 +196,5 @@ resp = save_model(settings, "publication", id="e308cb04-428b-4b2c-b86b-15e02c664
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "publication", id="e308cb04-428b-4b2c-b86b-15e02c664560")
+resp = client.delete_model("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560")
 ``` 

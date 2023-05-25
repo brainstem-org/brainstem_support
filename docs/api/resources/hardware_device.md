@@ -37,7 +37,7 @@ nav_order: 6
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'hardwaredevice')
+resp = client.load_model('hardwaredevice')
 ```
 
 ### Response example
@@ -86,7 +86,7 @@ resp = load_model(settings, 'hardwaredevice')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "hardwaredevice",  data={
+resp = client.save_model("hardwaredevice",  data={
     'name': 'MyNewHardwareDevice',
     'description': '',
     'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'}
@@ -119,7 +119,7 @@ resp = save_model(settings, "hardwaredevice",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e817')
+resp = client.load_model('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e817')
 ```
 
 ### Response example
@@ -148,7 +148,7 @@ resp = load_model(settings, 'hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3a
 {: .no_toc}
 
 ```
-resp = save_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817", data={"description": "new text"})
+resp = client.save_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817", data={"description": "new text"})
 ```
 
 ### Response example
@@ -181,7 +181,7 @@ resp = save_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3a
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817")
+resp = client.delete_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817")
 ``` 
 
 
@@ -198,7 +198,7 @@ resp = delete_model(settings, "hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'hardwaredeviceapproval')
+resp = client.load_model('hardwaredeviceapproval')
 ```
 
 ### Response example
@@ -245,7 +245,7 @@ resp = load_model(settings, 'hardwaredeviceapproval')
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0198222ee7dd')
+resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0198222ee7dd')
 ```
 
 ### Response example
@@ -277,7 +277,7 @@ resp = load_model(settings, 'hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc
 {: .no_toc}
 
 ```
-resp = save_model(settings, "hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0198222ee7dd", options="accept")
+resp = client.save_model("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0198222ee7dd", options="accept")
 ```
 
 
@@ -292,5 +292,5 @@ resp = save_model(settings, "hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc
 {: .no_toc}
 
 ```
-resp = save_model(settings, "hardwaredeviceapproval", id="fd7f6132-0527-4310-a9da-9241728a9163", options="reject")
+resp = client.save_model("hardwaredeviceapproval", id="fd7f6132-0527-4310-a9da-9241728a9163", options="reject")
 ```

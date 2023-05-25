@@ -37,7 +37,7 @@ nav_order: 6
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'supplier')
+resp = client.load_model('supplier')
 ```
 
 ### Response example
@@ -74,7 +74,7 @@ resp = load_model(settings, 'supplier')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "supplier",  data={
+resp = client.save_model("supplier",  data={
     'name': 'MyNewSupplier',
     'description': '',
     'website': 'newsupplier.com'}
@@ -107,7 +107,7 @@ resp = save_model(settings, "supplier",  data={
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
+resp = client.load_model('supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
 ```
 
 ### Response example
@@ -136,7 +136,7 @@ resp = load_model(settings, 'supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e
 {: .no_toc}
 
 ```
-resp = save_model(settings, "supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", data={"description": "new text"})
+resp = client.save_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", data={"description": "new text"})
 ```
 
 ### Response example
@@ -167,7 +167,7 @@ resp = save_model(settings, "supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e")
+resp = client.delete_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e")
 ``` 
 
 
@@ -182,7 +182,7 @@ resp = delete_model(settings, "supplier", id="1338d838-5b69-4e89-8db9-b35224dcb0
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'supplierapproval')
+resp = client.load_model('supplierapproval')
 ```
 
 ### Response example
@@ -227,7 +227,7 @@ resp = load_model(settings, 'supplierapproval')
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'supplierapproval', id='1af72008-d203-4bea-9766-f692b8a89df6')
+resp = client.load_model('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a89df6')
 ```
 
 ### Response example
@@ -259,7 +259,7 @@ resp = load_model(settings, 'supplierapproval', id='1af72008-d203-4bea-9766-f692
 {: .no_toc}
 
 ```
-resp = save_model(settings, "supplierapproval", id="1af72008-d203-4bea-9766-f692b8a89df6", options="accept")
+resp = client.save_model("supplierapproval", id="1af72008-d203-4bea-9766-f692b8a89df6", options="accept")
 ```
 
 
@@ -274,5 +274,5 @@ resp = save_model(settings, "supplierapproval", id="1af72008-d203-4bea-9766-f692
 {: .no_toc}
 
 ```
-resp = save_model(settings, "supplierapproval", id="f314f4b0-a51d-45f8-8cda-d9dade2bff66", options="reject")
+resp = client.save_model("supplierapproval", id="f314f4b0-a51d-45f8-8cda-d9dade2bff66", options="reject")
 ```

@@ -41,7 +41,7 @@ nav_order: 5
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'behavioralparadigm')
+resp = client.load_model('behavioralparadigm')
 ```
 
 ### Response example
@@ -85,7 +85,7 @@ resp = load_model(settings, 'behavioralparadigm')
 {: .no_toc}
 
 ```
-resp = save_model(settings, "behavioralparadigm",  data=
+resp = client.save_model("behavioralparadigm",  data=
     {
         'name': 'PlayMarioKart',
         'task': "Play Mario Kart on GameCube",
@@ -124,7 +124,7 @@ resp = save_model(settings, "behavioralparadigm",  data=
 {: .no_toc}
 
 ```
-resp = load_model(settings, 'behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b94ac2edc7f8')
+resp = client.load_model('behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b94ac2edc7f8')
 ```
 
 ### Response example
@@ -156,7 +156,7 @@ resp = load_model(settings, 'behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b9
 {: .no_toc}
 
 ```
-resp = save_model(settings, "behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8", data={"description": "new text"})
+resp = client.save_model("behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8", data={"description": "new text"})
 ```
 
 ### Response example
@@ -188,5 +188,5 @@ resp = save_model(settings, "behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b9
 {: .no_toc}
 
 ```
-resp = delete_model(settings, "behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8")
+resp = client.delete_model("behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8")
 ``` 
