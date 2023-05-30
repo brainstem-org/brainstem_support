@@ -3,7 +3,7 @@ layout: default
 title: Project Membership Invitation
 parent: STEM
 grand_parent: API
-nav_order: 2
+nav_order: 6
 ---
 
 # Project Membership Invitation API endpoint
