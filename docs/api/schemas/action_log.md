@@ -32,7 +32,8 @@ nav_order: 1
         },
         "channels": {
             "title": "List of channels",
-            "type": "string"
+            "type": "number",
+            "minimum": 0
         }
     },
     "required": ["impedances"]
@@ -46,8 +47,8 @@ nav_order: 1
 ```
 {
     "impedances": 2,
-    "phases": 15,
-    "channels": "0,2,3"
+    "phases": [15],
+    "channels": [0,2,3]
 }
 ```
 

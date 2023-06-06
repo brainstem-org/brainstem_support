@@ -229,98 +229,132 @@ nav_order: 1
 ## Extracellular
 ```
 {
-    "type": "object",
-    "title": "Extracellular",
-    "properties": {
-        "fileName": {
-            "title": "File name",
-            "brief": "File name",
-            "type": "string",
-            "format": "text"
-        },
-        "format": {
-            "title": "Format",
-            "brief": "Format",
-            "type": "string",
-            "format": "text"
-        },
-        "type": {
-            "title": "Data-type",
-            "brief": "Data-type",
-            "type": "string",
-            "format": "text",
-            "default": "int16"
-        },
-        "nChannels": {
-            "title": "Number of channels",
-            "brief": "channels",
-            "type": "number",
-            "minimum": 0
-        },
-        "sr": {
-            "title": "Sampling rate (Hz)",
-            "brief": "Hz",
-            "type": "number",
-            "minimum": 0,
-            "default": 20000
-        },        
-        "nSamples": {
-            "title": "Number of samples",
-            "brief": "samples",
-            "type": "number",
-            "minimum": 0
-        },
-        "lsb": {
-            "title": "Least significant bit (µV/bit)",
-            "brief": "µV/bit",
-            "type": "number",
-            "minimum": 0
-        },
-        "electrodeGroups": {
-          "type": "array",
-          "format": "table",
-          "title": "Electrode group",
-          "options": {"compact": true, "disable_array_delete_last_row":true,"enable_array_copy":true,"disable_properties":false,"disable_edit_json":false,"disable_array_delete_all_rows":false},
-          "items": {
-            "type": "object",
-            "title": "Electrode group",
-            "properties": {
-              "channels": {
-                "type": "string",
-                "title": "List of channels"
-              },
-              "label": {
-                "type": "string"
-              }
+  "type": "object",
+  "title": "Extracellular",
+  "options": {
+    "compact": "true"
+  },
+  "properties": {
+    "fileName": {
+      "title": "File name",
+      "brief": "File name",
+      "type": "string",
+      "format": "text"
+    },
+    "format": {
+      "title": "Format",
+      "brief": "Format",
+      "type": "string",
+      "format": "text"
+    },
+    "type": {
+      "title": "Data-type",
+      "brief": "Data-type",
+      "type": "string",
+      "format": "text",
+      "default": "int16"
+    },
+    "nChannels": {
+      "title": "Number of channels",
+      "brief": "channels",
+      "type": "number",
+      "minimum": 0
+    },
+    "sr": {
+      "title": "Sampling rate (Hz)",
+      "brief": "Hz",
+      "type": "number",
+      "minimum": 0,
+      "default": 20000
+    },
+    "nSamples": {
+      "title": "Number of samples",
+      "brief": "samples",
+      "type": "number",
+      "minimum": 0
+    },
+    "lsb": {
+      "title": "Least significant bit (µV/bit)",
+      "brief": "µV/bit",
+      "type": "number",
+      "minimum": 0
+    },
+    "electrodeGroups": {
+      "type": "array",
+      "format": "table",
+      "title": "Electrode group",
+      "options": {
+        "compact": true,
+        "disable_array_delete_last_row": true,
+        "enable_array_copy": true,
+        "disable_properties": false,
+        "disable_edit_json": false,
+        "disable_array_delete_all_rows": false
+      },
+      "items": {
+        "type": "object",
+        "title": "Electrode group",
+        "properties": {
+          "channels": {
+            "type": "array",
+            "format": "comma-separated-integers",
+            "title": "List of channels",
+            "brief": "Channels",
+            "items": {
+              "type": "integer",
+              "minimum": 0
             }
+          },
+          "label": {
+            "type": "string"
           }
-        },
-        "channelTags": {
-          "type": "array",
-          "format": "table",
-          "title": "Channel tag",
-          "options": {"compact": true, "disable_array_delete_last_row":true,"enable_array_copy":true,"disable_properties":false,"disable_edit_json":false,"disable_array_delete_all_rows":false},
-          "items": {
-            "type": "object",
-            "title": "Channel tag",
-            "properties": {
-              "tag": {
-                "type": "string",
-                "title": "Channel tag"
-              },
-              "channels": {
-                "type": "string",
-                "title": "List of channels"
-              }
-              ,
-              "electrodeGroups": {
-                "type": "string",
-                "title": "Electrode groups"
-              }
+        }
+      }
+    },
+    "channelTags": {
+      "type": "array",
+      "format": "table",
+      "title": "Channel tag",
+      "options": {
+        "compact": true,
+        "disable_array_delete_last_row": true,
+        "enable_array_copy": true,
+        "disable_properties": false,
+        "disable_edit_json": false,
+        "disable_array_delete_all_rows": false
+      },
+      "items": {
+        "type": "object",
+        "title": "Channel tag",
+        "properties": {
+          "tag": {
+            "type": "string",
+            "title": "Channel tag"
+          },
+          "channels": {
+            "type": "array",
+            "format": "comma-separated-integers",
+            "title": "List of channels",
+            "brief": "Channels",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "groups": {
+            "type": "array",
+            "format": "comma-separated-integers",
+            "title": "Electrode groups",
+            "brief": "Groups",
+            "items": {
+              "type": "integer",
+              "minimum": 0
             }
           }
         }
+      }
     }
+  }
 }
 ```
 
@@ -336,12 +370,12 @@ nav_order: 1
         "nSamples": 45000000,
         "lsb": 0,
         "electrodeGroups": [
-            {"channels": "0,2", "label": "group1"}, 
-            {"channels": "1,3,5", "label": "group2"}
+            {"channels": [0,2], "label": "group1"}, 
+            {"channels": [1,3,5], "label": "group2"}
         ], 
         "channelTags": [
-            {"tag": "tag2", "channels": "1,3,5", "electrodeGroups": "group2"}, 
-            {"tag": "tag1", "channels": "0,2", "electrodeGroups": "group1"}
+            {"tag": "tag2", "channels": [1,3,5], "electrodeGroups": "group2"}, 
+            {"tag": "tag1", "channels": [0,2], "electrodeGroups": "group1"}
         ]
     }
 ```
