@@ -35,12 +35,12 @@ nav_order: 2
 | `tags` | list of strings |
 
 
-`extra_content_json` is a list of JSON dictionaries with two elements, `key` and `value`, like the following example:
+`extra_content_json` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
 
 ```
 [
-    {"key": "extra property", "value": "1"}, 
-    {"key": "another property", "value": "2"}
+    {"extra_property": "setting1"}, 
+    {"another_property: 22}
 ]
 ```
 
@@ -178,8 +178,8 @@ resp = client.load_model('subject', id='b4ae1f92-5260-4605-8d21-25ac5c3fce91')
 	'birth_date': None,
 	'death_date': None,
 	'extra_content_json': [
-        {"key": "extra property", "value": " 1"}, 
-        {"key": "another property", "value": "2"}
+        {"extra_property": "setting1"}, 
+        {"another_property": 22}
     ],
 	'actions': [],
 	'subjectstatechanges': [],

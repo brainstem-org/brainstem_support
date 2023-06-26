@@ -33,12 +33,12 @@ nav_order: 1
 | `groups` | JSON dictionary. *See structure below* |
 
 
-`extra_content_json` is a list of JSON dictionaries with two elements, `key` and `value`, like the following example:
+`extra_content_json` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
 
 ```
 [
-    {"key": "extra property", "value": "1"}, 
-    {"key": "another property", "value": "2"}
+    {"extra_property": "setting1"}, 
+    {"another_property: 22}
 ]
 ```
 
@@ -231,8 +231,8 @@ resp = client.load_model('project', id='d7de95c0-eb63-40e8-ac90-7573b58f6033')
     'subjects': [],
     'publications': [],
     'extra_content_json': [
-        {"key": "extra property", "value": " 1"}, 
-        {"key": "another property", "value": "2"}
+        {"extra_property": "setting1"}, 
+        {"another_property": 22}
     ],
     'is_public': False,
     'tags': ["tag1", "tag2"],

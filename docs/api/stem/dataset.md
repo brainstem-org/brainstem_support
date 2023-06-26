@@ -35,12 +35,12 @@ nav_order: 3
 | `tags` | list of strings |
 
 
-`extra_content_json` is a list of JSON dictionaries with two elements, `key` and `value`, like the following example:
+`extra_content_json` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
 
 ```
 [
-    {"key": "extra property", "value": "1"}, 
-    {"key": "another property", "value": "2"}
+    {"extra_property": "setting1"}, 
+    {"another_property: 22}
 ]
 ```
 
@@ -177,8 +177,8 @@ resp = client.load_model('dataset', id='13bdd793-86d4-428e-9708-167bbc26f6d2')
     'date_time': None,
     'datarepositories': [],
     'extra_content_json': [
-        {"key": "extra property", "value": " 1"}, 
-        {"key": "another property", "value": "2"}
+        {"extra_property": "setting1"}, 
+        {"another_property": 22}
     ],
     'repository_links_json': [
         {"Repository": "DANDI", "URL": "https://dandiarchive.org/dandiset/123456?pos=1"}, 
