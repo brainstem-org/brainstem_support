@@ -26,12 +26,12 @@ The subject model describes your animal subject through a set of standard fields
 
 | Field          | Description  |
 |:---------------|:-------------|
-| `Name`         | Name of the subject (**[required]**; max length: 100; must be unique) |
+| `Name`         | Name of the subject (**required**; max length: 100; must be unique) |
 | `Description`  | A rich text description of the subject |
-| `Strain`       | Animal strain (**[required]**) |
-| `Sex`          | Sex of the animal: (Male, Female, or Unknown; **[required]**) |
+| `Strain`       | Animal strain (**required**) |
+| `Sex`          | Sex of the animal: (Male, Female, or Unknown; **required**) |
 | `Genetic line` | Genetic line of the subject. Could also be wild type (max length: 100) |
-| `Projects`     | Projects the subject belongs to (**[required]**) |
+| `Projects`     | Projects the subject belongs to (**required**) |
 | `Birth date`   | Birth date of the animal subject (e.g. "2023-03-22") |
 | `Death date`   | Death date of the animal subject (e.g. "2023-03-25") |
 | `Extra fields` | Allows you to add extra fields to the subject. The values can be a string or a numeric value |

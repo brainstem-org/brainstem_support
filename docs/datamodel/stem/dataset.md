@@ -27,14 +27,14 @@ A dataset is a modular construction that flexibly can describe varius aspect of 
 
 | Field              | Description |
 |:-------------------|:------------|
-| `Name`             | Name of the dataset ( **required**; string; max length: 100; must be unique across datasets) |
+| `Name`             | Name of the dataset (**required**; string; max length: 100; must be unique across datasets) |
 | `Description`      | A rich text description of the dataset |
-| `Projects`         | Any projects the dataset belongs to. Learn more about the project inheritance [here] |
+| `Projects`         | Any projects the dataset belongs to. Learn more about the project inheritance [here] (**required**) |
 | `Date and time`    | Date and time of the onset of the dataset (YYYY-MM-DD string containing date, e.g. "2023-03-22") |
 | `Datarepositories` | Data repositories |
 | `Extra fields`     | Allows you to add extra fields to the dataset. The values can be a string or a numeric value |
 | `Download links`   | JSON dictionary | name value pairs allowing you to add extra content |
-| `Name used in repository` | string [max length: 200]| Custom name for a dataset used in an organization in a repository |
+| `Name used in repository` | Custom name for a dataset used in an organization in a repository (string; max length: 200) |
 | `Tags`             | Tags for the dataset. Tags are great for organizational purpose, to quickly label a dataset and can be used as a filter afterwards |
 
 
@@ -42,7 +42,7 @@ A dataset is a modular construction that flexibly can describe varius aspect of 
 
 | Field             | Description |
 |:------------------|:------------|
-| `Name`            | Name of the epoch (**[required]**; a string; max length: 100) |
+| `Name`            | Name of the epoch (**required**; a string; max length: 100) |
 | `Start`           | Start time of the epochs. The start time is relative to the onset of the dataset (the date and time field of the dataset) |
 | `End`             | End time of the epochs. The start time is relative to the onset of the dataset (the date and time field of the dataset) |
 | `Behavior`        | Behavior associated with the epoch |
