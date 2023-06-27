@@ -26,8 +26,8 @@ nav_order: 3
 | `date_time` | string containing date (e.g. "2023-03-22") |
 | `epochs` | list of related actions IDs formatted as strings **[read-only]** |
 | `datarepositories` | list of related data repositories IDs formatted as strings **[read-only]** |
-| `extra_content_json` | list of JSON dictionaries. *See structure below* |
-| `repository_links_json` | list of JSON dictionaries. *See structure below* |
+| `extra_fields` | list of JSON dictionaries. *See structure below* |
+| `download_links` | list of JSON dictionaries. *See structure below* |
 | `experimentdata` | list of related experiment data IDs formatted as strings **[read-only]** |
 | `behaviors` | list of related behaviors IDs formatted as strings **[read-only]** |
 | `manipulations` | list of related manipulations IDs formatted as strings **[read-only]** |
@@ -35,7 +35,7 @@ nav_order: 3
 | `tags` | list of strings |
 
 
-`extra_content_json` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
+`extra_fields` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
 
 ```
 [
@@ -44,7 +44,7 @@ nav_order: 3
 ]
 ```
 
-`repository_links_json` is a list of JSON dictionaries with two elements, `Repository` and `URL`, like the following example:
+`extra_fields` is a list of JSON dictionaries with two elements, `Repository` and `URL`, like the following example:
 
 ```
 [
@@ -82,8 +82,8 @@ resp = client.load_model('dataset')
         'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
         'date_time': None,
         'datarepositories': [],
-        'extra_content_json': [],
-        'repository_links_json': [],
+        'extra_fields': [],
+        'download_links': [],
         'experimentdata': [],
         'behaviors': [],
         'manipulations': ['20387176-5f3c-433a-8bf9-34a0f2c431f7'],
@@ -98,8 +98,8 @@ resp = client.load_model('dataset')
         'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
         'date_time': None,
         'datarepositories': [],
-        'extra_content_json': [],
-        'repository_links_json': [],
+        'extra_fields': [],
+        'download_links': [],
         'experimentdata': ['1c77ae53-6f83-4398-bfe5-6eb95ff00610'],
         'behaviors': [],
         'manipulations': [],
@@ -140,8 +140,8 @@ resp = client.save_model("dataset",  data={
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
     'date_time': None,
     'datarepositories': [],
-    'extra_content_json': [],
-    'repository_links_json': [],
+    'extra_fields': [],
+    'download_links': [],
     'experimentdata': [],
     'behaviors': [],
     'manipulations': [],
@@ -176,11 +176,11 @@ resp = client.load_model('dataset', id='13bdd793-86d4-428e-9708-167bbc26f6d2')
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
     'date_time': None,
     'datarepositories': [],
-    'extra_content_json': [
+    'extra_fields': [
         {"extra_property": "setting1"}, 
         {"another_property": 22}
     ],
-    'repository_links_json': [
+    'download_links': [
         {"Repository": "DANDI", "URL": "https://dandiarchive.org/dandiset/123456?pos=1"}, 
         {"Repository": "GitHub", "URL": "https://github.com/my_user/my_code"}
     ],
@@ -219,8 +219,8 @@ resp = client.save_model("dataset", id="13bdd793-86d4-428e-9708-167bbc26f6d2", d
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
     'date_time': None,
     'datarepositories': [],
-    'extra_content_json': [],
-    'repository_links_json': [],
+    'extra_fields': [],
+    'download_links': [],
     'experimentdata': [],
     'behaviors': [],
     'manipulations': [],

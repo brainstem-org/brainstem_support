@@ -25,7 +25,7 @@ nav_order: 1
 | `datasets` | list of related datasets IDs formatted as strings **[read-only]** |
 | `subjects` | list of related subjects IDs formatted as strings **[read-only]** |
 | `publications` | list of related publications IDs formatted as strings **[read-only]** |
-| `extra_content_json` | list of JSON dictionaries. *See structure below* |
+| `extra_fields` | list of JSON dictionaries. *See structure below* |
 | `is_public` | boolean |
 | `name_used_in_repository` | string [max length: 200]|
 | `tags` | list of strings |
@@ -33,7 +33,7 @@ nav_order: 1
 | `groups` | JSON dictionary. *See structure below* |
 
 
-`extra_content_json` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
+`extra_fields` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
 
 ```
 [
@@ -94,7 +94,7 @@ resp = client.load_model('project')
             "0cdaf69d-63cf-429f-b549-fc0cc163d046"
         ],
         "publications": [],
-        "extra_content_json": [],
+        "extra_fields": [],
         "is_public": true,
         "tags": [],
         "users": {
@@ -135,7 +135,7 @@ resp = client.load_model('project')
             "0f87c229-6769-4854-83a5-c71e154246b8"
         ],
         "publications": [],
-        "extra_content_json": [],
+        "extra_fields": [],
         "is_public": true,
         "tags": [
             "cooling",
@@ -190,7 +190,7 @@ resp = client.save_model("project",  data={"name": "NewRestProject", "descriptio
     'datasets': [],
     'subjects': [],
     'publications': [],
-    'extra_content_json': [],
+    'extra_fields': [],
     'is_public': False,
     'tags': [],
     'users': {
@@ -230,7 +230,7 @@ resp = client.load_model('project', id='d7de95c0-eb63-40e8-ac90-7573b58f6033')
     'datasets': ["eba7ed4b-44a9-4626-ae6f-09bccfa553fb"],
     'subjects': [],
     'publications': [],
-    'extra_content_json': [
+    'extra_fields': [
         {"extra_property": "setting1"}, 
         {"another_property": 22}
     ],
@@ -291,7 +291,7 @@ resp = client.save_model("project",
   'datasets': [],
   'subjects': [],
   'publications': [],
-  'extra_content_json': [],
+  'extra_fields': [],
   'is_public': False,
   'tags': [],
   'users': {'user1@mail.com': {'can_change': True,

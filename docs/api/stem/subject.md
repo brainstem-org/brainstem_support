@@ -25,17 +25,19 @@ nav_order: 2
 | `strain` | strain ID formatted as a string **[required]** |
 | `sex` | string with "M" (male),"F" (female) or "U" (unknown) **[required]** [max length: 1]|
 | `genetic_line` | string [max length: 100]|
+| `subject_identifier` | string [max length: 100]|
+| `source` | string [max length: 100]|
 | `projects` | list of related projects IDs formatted as strings **[required]** |
 | `birth_date` | string containing date (e.g. "2023-03-22") |
 | `death_date` | string containing date (e.g. "2023-03-22") |
-| `extra_content_json` | list of JSON dictionaries. *See structure below* |
+| `extra_fields` | list of JSON dictionaries. *See structure below* |
 | `actions` | list of related actions IDs formatted as strings **[read-only]** |
 | `subjectstatechanges` | list of related subject state changes IDs formatted as strings **[read-only]** |
 | `name_used_in_repository` | string [max length: 200]|
 | `tags` | list of strings |
 
 
-`extra_content_json` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
+`extra_fields` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
 
 ```
 [
@@ -72,7 +74,7 @@ resp = client.load_model('subject')
 		'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
 		'birth_date': '2023-03-22',
 		'death_date': None,
-		'extra_content_json': [],
+		'extra_fields': [],
 		'actions': ['9542eb95-90b3-40c6-9e35-9eef01b3334a'],
 		'subjectstatechanges': ['7791fcff-fcee-4c74-bfff-e2b3e4e38481'],
 		'tags': [],
@@ -88,7 +90,7 @@ resp = client.load_model('subject')
 		'projects': ['e7475834-7733-48cf-9e3b-f4f2d2d0305a'],
 		'birth_date': None,
 		'death_date': None,
-		'extra_content_json': [],
+		'extra_fields': [],
 		'actions': ['f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
 		'a18dd2b1-6393-468c-9424-1bc77b9e4976',
 		'087b71c4-6785-437c-b8ef-e35a82a8463e',
@@ -141,7 +143,7 @@ resp = client.save_model("subject",  data={
 	'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
 	'birth_date': None,
 	'death_date': None,
-	'extra_content_json': None,
+	'extra_fields': None,
 	'actions': [],
 	'subjectstatechanges': [],
 	'tags': [],
@@ -177,7 +179,7 @@ resp = client.load_model('subject', id='b4ae1f92-5260-4605-8d21-25ac5c3fce91')
 	'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
 	'birth_date': None,
 	'death_date': None,
-	'extra_content_json': [
+	'extra_fields': [
         {"extra_property": "setting1"}, 
         {"another_property": 22}
     ],
@@ -217,7 +219,7 @@ resp = client.save_model("subject", id="b4ae1f92-5260-4605-8d21-25ac5c3fce91", d
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
     'birth_date': None,
     'death_date': None,
-    'extra_content_json': None,
+    'extra_fields': None,
     'actions': [],
     'subjectstatechanges': [],
     'tags': [],

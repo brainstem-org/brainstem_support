@@ -26,15 +26,14 @@ A dataset is a modular construction that flexibly can describe varius aspect of 
 
 | Field  | Type  | Description |
 |:-------|:--------|-------------|
-| `id` | string with UUID identificator | Id of the entry |
-| `name` | string **[required]** [max length: 100; must be unique across datasets ]| Name of dataset |
+| `name` | Name of the dataset ( **required**; string; max length: 100; must be unique across datasets)|  |
 | `description` | string | A rich text description of the dataset |
 | `projects` | FK | any projects the dataset belongs to. Learn more about the project inheritance [here]. |
 | `date_time` | YYYY-MM-DD string containing date (e.g. "2023-03-22") | Date and time of the onset of the dataset |
 | `epochs` | FK | List of epochs associated with the dataset |
 | `datarepositories` | FK | Data repositories |
-| `extra_content_json` | JSON dictionary | |
-| `repository_links_json` | JSON dictionary | name value pairs allowing you to add extra content |
+| `extra_fields` | JSON dictionary | |
+| `download_links` | JSON dictionary | name value pairs allowing you to add extra content |
 | `experimentdata` | FK | associated experiment data|
 | `behaviors` | FK | associated behaviors |
 | `manipulations` | FK | associated manipulations|
