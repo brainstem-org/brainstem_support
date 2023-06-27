@@ -50,6 +50,15 @@ A dataset is a modular construction that flexibly can describe varius aspect of 
 | `Manipulation`    | A manipulation associated with the epoch |
 
 
+### Experiment data fields
+Please see the dedicated page describing the [Experiment data model].
+
+### Manipulation data fields
+Please see the dedicated page describing the [Manipulations data model].
+
+### Behavior data fields
+Please see the dedicated page describing the [Behavior data model].
+
 ## Permissions
 The dataset inherits permissions from projects associated with it. Data repositories are shared through the projects groups, and you are only able to add a data repository associated with the same groups as the selected projects. The relationships in module data also depends on the selected projects
 

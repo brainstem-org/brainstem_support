@@ -39,6 +39,16 @@ The subject model describes your animal subject through a set of standard fields
 | `Tags`         | Tags for the subject. Tags are great for organizational purpose, to quickly label a subject and can be used as a filter afterwards. |
 
 
+### Action data fields
+Please see the dedicated page describing the [Action data model].
+
+### Subject state change data fields
+Please see the dedicated page describing the [Subject state change data model].
+
+### Subject log data fields
+Please see the dedicated page describing the [Subject log data model].
+
+
 ## Permissions
 Subjects inherit permissions from projects associated with them. Actions, Subject state changes, Subject logs and action logs all inherit permissions through the subject.
 
