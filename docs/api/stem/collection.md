@@ -21,10 +21,10 @@ nav_order: 4
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 200]|
+| `description` | string |
 | `project` | related project ID formatted as a string **[required]** |
 | `datasets` | list of related datasets IDs formatted as strings **[required]** |
-
-
+| `tags` | list of strings |
 
 ## List view
 - **Allowed portals:** public, private, super

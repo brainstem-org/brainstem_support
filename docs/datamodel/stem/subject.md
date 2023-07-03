@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 2
 ---
 
-# Subject
+# Subject model
 {: .no_toc}
 
 ## Table of contents

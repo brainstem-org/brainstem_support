@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 3
 ---
 
-# Dataset
+# Dataset model
 {: .no_toc}
 
 ## Table of contents
@@ -17,11 +17,11 @@ nav_order: 3
 
 
 ## Introduction 
-A dataset is a modular construction that flexibly can describe varius aspect of experiments based on four basic modules: 
+A dataset is a modular construction that flexibly can describe various aspect of experiments based on four basic modules: 
 1. Experiment data: Description of the data collected during the experiment
-2. Manipulations: Description of any manipulations performed during an expriment
+2. Manipulations: Description of any manipulations performed during an experiment
 3. Behavior: Description of the behavior of the animal subject
-4. Epochs: Temporal aspects of the dataset
+4. Epochs: Temporal aspects of a dataset
 
 ## Dataset fields
 
