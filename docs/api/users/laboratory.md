@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Laboratory
-parent: General attributes
+parent: Users
 grand_parent: API
 nav_order: 4
 ---
@@ -33,7 +33,7 @@ nav_order: 4
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/attributes/laboratory
+- **URL:** https://www.brainstem.org/api/private/users/laboratory
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -78,7 +78,7 @@ resp = client.load_model('laboratory')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/attributes/laboratory
+- **URL:** https://www.brainstem.org/api/private/users/laboratory
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -116,7 +116,7 @@ resp = client.save_model("laboratory",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/attributes/laboratory/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/laboratory/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -148,7 +148,7 @@ resp = client.load_model('laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff'
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/attributes/laboratory/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/laboratory/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -181,7 +181,7 @@ resp = client.save_model("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff"
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/attributes/laboratory/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/laboratory/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
