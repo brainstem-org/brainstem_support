@@ -16,7 +16,7 @@ https://www.BrainSTEM.org/api/*portal*/*app*/*model*/*id*/
 {: .note }
 > __portal__: `private` or `public`
 > 
-> __app__: `stem`, `modules`, `personal_attributes`, `resources`, `taxonomies`, `attributes`, `auth`, `users`
+> __app__: `stem`, `modules`, `personal_attributes`, `resources`, `taxonomies`, `dissemination`, `auth`, `users`
 > 
 > __model__: e.g. `dataset` and `action`. Please see the [data model](https://brainstem-org.github.io/brainstem_support/datamodel/data-model/) for an overview of the models. 
 

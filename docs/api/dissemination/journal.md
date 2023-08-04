@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Journal
-parent: General attributes
+parent: Dissemination
 grand_parent: API
 nav_order: 4
 ---
@@ -29,7 +29,7 @@ nav_order: 4
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/attributes/journal
+- **URL:** https://www.brainstem.org/api/private/dissemination/journal
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -70,7 +70,7 @@ resp = client.load_model('journal')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/attributes/journal
+- **URL:** https://www.brainstem.org/api/private/dissemination/journal
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -106,7 +106,7 @@ resp = client.save_model("journal",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/attributes/journal/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/journal/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -133,7 +133,7 @@ resp = client.load_model('journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/attributes/journal/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/journal/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -163,7 +163,7 @@ resp = client.save_model("journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", d
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/attributes/journal/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/journal/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -179,7 +179,7 @@ resp = client.delete_model("journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/attributes/journal_approvals
+- **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -224,7 +224,7 @@ resp = client.load_model('journalapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/attributes/journal_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -256,7 +256,7 @@ resp = client.load_model('journalapproval', id='549b9e4f-5253-44f8-93ee-f18f08a3
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/attributes/journal_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -271,7 +271,7 @@ resp = client.save_model("journalapproval", id="549b9e4f-5253-44f8-93ee-f18f08a3
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/attributes/journal_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

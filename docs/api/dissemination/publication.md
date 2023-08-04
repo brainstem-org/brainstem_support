@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Publication
-parent: General attributes
+parent: Dissemination
 grand_parent: API
 nav_order: 4
 ---
@@ -35,7 +35,7 @@ nav_order: 4
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/attributes/publication
+- **URL:** https://www.brainstem.org/api/private/dissemination/publication
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -80,7 +80,7 @@ resp = client.load_model('publication')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/attributes/publication
+- **URL:** https://www.brainstem.org/api/private/dissemination/publication
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -124,7 +124,7 @@ resp = client.save_model("publication",  data=
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/attributes/publication/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/publication/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -155,7 +155,7 @@ resp = client.load_model('publication', id='da3359b7-e380-4dc6-ba9d-04831d3082d9
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/attributes/publication/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/publication/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -187,7 +187,7 @@ resp = client.save_model("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/attributes/publication/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/publication/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

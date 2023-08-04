@@ -29,7 +29,7 @@ Below pages describe the relational data model behind BrainSTEM, the table eleme
 - [Personal attributes](https://brainstem-org.github.io/brainstem_support/datamodel/personal_attributes/)
 - [Resources](https://brainstem-org.github.io/brainstem_support/datamodel/resources/)
 - [Taxonomies](https://brainstem-org.github.io/brainstem_support/datamodel/taxonomies/)
-- [General attributes](https://brainstem-org.github.io/brainstem_support/datamodel/attributes/)
+- [Dissemination](https://brainstem-org.github.io/brainstem_support/datamodel/dissemination/)
 - [Users](https://brainstem-org.github.io/brainstem_support/datamodel/users/)
 
 ## Example usage of the flexible modular design
