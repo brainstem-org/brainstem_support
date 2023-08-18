@@ -20,7 +20,7 @@ remote_theme: petersenpeter/just-the-docs
 title: BrainSTEM documentation
 description: A collaborative electronic lab notebook for FAIR experimental neuroscience.
 
-baseurl: "/brainstem_support" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://support.brainstem.org" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
