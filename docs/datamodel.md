@@ -20,29 +20,29 @@ The relational model can be separated into three levels:
 2. Module data
 3. Backend with taxonomies and resources.
 
-[![data_model](https://brainstem-org.github.io/brainstem_support/assets/images/data_model.png)](https://brainstem-org.github.io/brainstem_support/assets/images/data_model.png)
+[![data_model](https://support.brainstem.org/assets/images/data_model.png)](https://support.brainstem.org/brainstem_support/assets/images/data_model.png)
 
 Below pages describe the relational data model behind BrainSTEM, the table elements and fields and the modular structure of the model, how permissions are inherited in the model, and how the data model can be expanded to incorporate new methods, techniques, and resources.
 
-- [STEM](https://brainstem-org.github.io/brainstem_support/datamodel/stem/)
-- [Modules](https://brainstem-org.github.io/brainstem_support/datamodel/modules/)
-- [Personal attributes](https://brainstem-org.github.io/brainstem_support/datamodel/personal_attributes/)
-- [Resources](https://brainstem-org.github.io/brainstem_support/datamodel/resources/)
-- [Taxonomies](https://brainstem-org.github.io/brainstem_support/datamodel/taxonomies/)
-- [Dissemination](https://brainstem-org.github.io/brainstem_support/datamodel/dissemination/)
-- [Users](https://brainstem-org.github.io/brainstem_support/datamodel/users/)
+- [STEM](/datamodel/stem/)
+- [Modules](/datamodel/modules/)
+- [Personal attributes](/datamodel/personal_attributes/)
+- [Resources](/datamodel/resources/)
+- [Taxonomies](/datamodel/taxonomies/)
+- [Dissemination](/datamodel/dissemination/)
+- [Users](/datamodel/users/)
 
 ## Example usage of the flexible modular design
 {: .no_toc }
 
 Extracellular recording during a behavioral session from a rat. 
 
-[![data_model_example](https://brainstem-org.github.io/brainstem_support/assets/images/data_model_example.png)](https://brainstem-org.github.io/brainstem_support/assets/images/data_model_example.png)
+[![data_model_example](https://support.brainstem.org/assets/images/data_model_example.png)](https://support.brainstem.org/brainstem_support/assets/images/data_model_example.png)
 
 # Permissions implementation and inheritance
 Permissions are implemented on an object level, inheriting permissions from users, groups, and projects. Subjects, datasets and collections inherits permissions from projects and module data inheits permissions from subjects and datasets. The personal attributes inherits permissions from groups.
 
-[![permissions](https://brainstem-org.github.io/brainstem_support/assets/images/permissions.png)](https://brainstem-org.github.io/brainstem_support/assets/images/permissions.png)
+[![permissions](https://support.brainstem.org/assets/images/permissions.png)](https://support.brainstem.org/assets/images/permissions.png)
 
 ### Projects
 {: .no_toc }
