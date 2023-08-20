@@ -15,7 +15,7 @@ This is the same as specifying `api` as format:
 https://www.brainstem.org/api/private/stem/dataset?format=api
 ```
 
-![web_api_screenshot](https://brainstem-org.github.io/brainstem_support/assets/images/web_api_screenshot.png)
+![web_api_screenshot](/assets/images/web_api_screenshot.png)
 
 ### Query as a json string
 To query the result as regular json string, you must specify `json` as the format:

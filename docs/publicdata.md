@@ -9,7 +9,7 @@ has_toc: false
 
 BrainSTEM has a dedicated interface for the public data. It also has dedicated public API endpoints.
 
-![Public dashboard](https://brainstem-org.github.io/brainstem_support/assets/images/public_dashboard.png)
+![Public dashboard](/assets/images/public_dashboard.png)
 
-![Public data](https://brainstem-org.github.io/brainstem_support/assets/images/public_data.png)
+![Public data](/assets/images/public_data.png)
 

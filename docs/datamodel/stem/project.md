@@ -24,7 +24,7 @@ The project model is a overall way to group subjects, datasets and collections t
 |:-------------|:-------------|
 | Name         | Name of the project (**required**; max length: 200; must be unique)|
 | Description  | A rich text description of the project |
-| Publications | list of related publications IDs formatted as strings **[read-only]** |
+| Publications | Related publications |
 | Extra fields | Allows you to add extra fields to the project. The values can be a string or a numeric value |
 | Public project | Determines if the project is publicly available or only through the private portal |
 | Name used in repository | Use this field if you have another name of your project (max length: 200) |

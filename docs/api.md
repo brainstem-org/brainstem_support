@@ -6,7 +6,7 @@ has_children: true
 ---
 # API
 {: .no_toc}
-The API allows for programmable access to the full data model. [API tools](https://brainstem-org.github.io/brainstem_support/api-tools/) have been built for Matlab and Python and a Web API tool allows for browsing the API endpoints in a browser. 
+The API allows for programmable access to the full data model. [API tools](/api-tools/) have been built for Matlab and Python and a Web API tool allows for browsing the API endpoints in a browser. 
 
 ## The API endpoints
 The API endpoints' URLs are defined by the portal, the app and the model: 
@@ -18,7 +18,7 @@ https://www.BrainSTEM.org/api/*portal*/*app*/*model*/*id*/
 > 
 > __app__: `stem`, `modules`, `personal_attributes`, `resources`, `taxonomies`, `dissemination`, `auth`, `users`
 > 
-> __model__: e.g. `dataset` and `action`. Please see the [data model](https://brainstem-org.github.io/brainstem_support/datamodel/data-model/) for an overview of the models. 
+> __model__: e.g. `dataset` and `action`. Please see the [data model](/datamodel/data-model/) for an overview of the models. 
 
 
 __dataset endpoint:__ 
