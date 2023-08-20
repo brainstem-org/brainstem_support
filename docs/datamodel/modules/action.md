@@ -46,7 +46,6 @@ Below are the available Coordinates system options for Action:
 
 | Type                             | Description  |
 |:---------------------------------|:-------------|
-| External X-Y-Z Absolute          | Absolute external coordinates. This can be used de describe e.g. a cameras position in a room |
 | Stereotaxic Bregma absolute      | Stereotaxic coordinates with Bregma as the origin. AP, ML, DV are used as coordinates |
 | Stereotaxic Bregma brain surface | Stereotaxic coordinates with Bregma as the origin. AP, ML and depth are used as coordinates |
 | Stereotaxic Lambda absolute      | Stereotaxic coordinates with Lambda as the origin. AP, ML, DV are used as coordinates |

@@ -22,20 +22,20 @@ nav_order: 1
     "title": "External XYZ absolute",
     "properties": {
         "x": {
-            "title": "X coordinate (mm)",
+            "title": "X coordinate (m)",
             "brief": "Y",
             "units": "mm",
             "type": "number"
 
         },
         "y": {
-            "title": "Y coordinate (mm)",
+            "title": "Y coordinate (m)",
             "brief": "Y",
             "units": "mm",
             "type": "number"
         },
         "z": {
-            "title": "Z coordinates (mm)",
+            "title": "Z coordinates (m)",
             "brief": "Z",
             "units": "mm",
             "type": "number"

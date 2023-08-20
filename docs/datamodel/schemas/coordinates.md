@@ -19,9 +19,9 @@ nav_order: 1
 
 | Field  | Type  | Description |
 |:-------|:--------|-------------|
-| `X` | number | X coordinate (mm) |
-| `Y` | number | Y coordinate (mm) |
-| `Z` | number | Z coordinates (mm) |
+| `X` | number | X coordinate (m) |
+| `Y` | number | Y coordinate (m) |
+| `Z` | number | Z coordinates (m) |
 | `X angle` | number | X angle (degrees) |
 | `Y angle` | number | Y angle (degrees) |
 | `Z angle` | number | Z angle (degrees) |
