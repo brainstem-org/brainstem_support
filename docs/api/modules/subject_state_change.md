@@ -24,7 +24,7 @@ nav_order: 5
 | `description` | string [max length: 500] |
 | `subject` | related subject ID formatted as a string **[required]** |
 | `date_time` | string containing date (e.g. "2023-03-22") |
-| `hardware_device` | related hardware device ID formatted as a string |
+| `hardwaredevice` | related hardware device ID formatted as a string |
 | `brain_region` | related brain region ID formatted as a string |
 | `details` | JSON object. *See accepted schemas below* |
 | `coordinates_system` | string **[required]**. *See options below* |
@@ -78,7 +78,7 @@ resp = client.load_model('subjectstatechange')
         'description': None,
         'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
         'date_time': None,
-        'hardware_device': None,
+        'hardwaredevice': None,
         'details': {
             'thickness': 12,
             'nSlices': 7,
@@ -102,7 +102,7 @@ resp = client.load_model('subjectstatechange')
         'description': None,
         'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
-        'hardware_device': None,
+        'hardwaredevice': None,
         'details': {
             'causeOfDeath': 'boredom', 
             'fatalOutcome': True
@@ -145,7 +145,7 @@ resp = client.save_model("subjectstatechange",  data={
     'description': 'some text',
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
-    'hardware_device': None,
+    'hardwaredevice': None,
     'details': {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
@@ -187,7 +187,7 @@ resp = client.load_model('subjectstatechange', id='93925815-9f8e-4d39-9c3a-cf1d6
     'description': 'some text',
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
-    'hardware_device': None,
+    'hardwaredevice': None,
     'details': {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
@@ -229,7 +229,7 @@ resp = client.save_model("subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf1d6
     'description': 'new text',
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
-    'hardware_device': None,
+    'hardwaredevice': None,
     'details': {'causeOfDeath': 'Unknown', 'fatalOutcome': False},
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',

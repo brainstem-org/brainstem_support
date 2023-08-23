@@ -51,12 +51,12 @@ output1 = stem_load_model(settings, 'dataset', sort=['-name'])
 In some cases models contain relations with other models, and they can be also loaded with the models if requested. In this example, all the projects, experiment data, behaviors and manipulations related to each dataset will be included.
 
 ```
-output1 = stem_load_model(settings, 'dataset', include=['projects', 'experiment_data', 'behaviors', 'manipulations'])
+output1 = stem_load_model(settings, 'dataset', include=['projects', 'experimentdata', 'behaviors', 'manipulations'])
 ```
 
 The list of related experiment data can be retrived from the returned dictionary.
 ```
-experiment_data = output1["experiment_data"]
+experimentdata = output1["experimentdata"]
 ```
 
 All these options can be combined to suit the requirements of the users. For example, we can get only the dataset that contain the word "Rat" in their name, sorted in descending order by their name and including the related projects.

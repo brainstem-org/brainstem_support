@@ -32,7 +32,7 @@ nav_order: 5
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/physical_environment
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/physicalenvironment
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -47,7 +47,7 @@ resp = client.load_model('physicalenvironment')
 {: .no_toc}
 
 ```
-{'physical_environments': [
+{'physicalenvironments': [
     {
         'id': '58e0003d-16c2-4264-913d-288463c0356d',
         'name': 'Head-fixed wheel',
@@ -76,7 +76,7 @@ resp = client.load_model('physicalenvironment')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/physical_environment
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/physicalenvironment
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -103,7 +103,7 @@ resp = client.save_model("physicalenvironment",  data=
 {: .no_toc}
 
 ```
-{'physical_environment': {
+{'physicalenvironment': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'MyNewEnv',
     'description': '',
@@ -121,7 +121,7 @@ resp = client.save_model("physicalenvironment",  data=
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/physical_environment/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/physicalenvironment/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -136,7 +136,7 @@ resp = client.load_model('physicalenvironment', id='d0ada97d-8607-48da-817b-bdd5
 {: .no_toc}
 
 ```
-{'physical_environment': {
+{'physicalenvironment': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'MyNewEnv',
     'description': '',
@@ -153,7 +153,7 @@ resp = client.load_model('physicalenvironment', id='d0ada97d-8607-48da-817b-bdd5
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/physical_environment/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/physicalenvironment/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -169,7 +169,7 @@ resp = client.save_model("physicalenvironment", id="d0ada97d-8607-48da-817b-bdd5
 {: .no_toc}
 
 ```
-{'physical_environment': {
+{'physicalenvironment': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'MyNewEnv',
     'description': 'new text',
@@ -186,7 +186,7 @@ resp = client.save_model("physicalenvironment", id="d0ada97d-8607-48da-817b-bdd5
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/physical_environment/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/physicalenvironment/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 

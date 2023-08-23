@@ -23,7 +23,7 @@ nav_order: 4
 | `description` | string [max length: 500] |
 | `actions` | list of related action IDs formatted as a string **[required]** |
 | `dataset` | related dataset ID formatted as a string **[required]** |
-| `hardware_device` | related hardware device ID formatted as a string |
+| `hardwaredevice` | related hardware device ID formatted as a string |
 | `details` | JSON object. *See accepted schemas below* |
 
 
@@ -69,7 +69,7 @@ resp = client.load_model('manipulation')
         'type': 'ElectricalStimulation',
         'description': None,
         'actions': ['43bd31cd-7122-42b8-b82e-b391fdfdad9e'],
-        'hardware_device': None,
+        'hardwaredevice': None,
         'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
         'details': {
             'amplitude': '0',
@@ -86,7 +86,7 @@ resp = client.load_model('manipulation')
         'type': 'LiquidPerturbation',
         'description': None,
         'actions': ['64b6ae70-d07f-4fbc-ac04-cdfcfe27936f'],
-        'hardware_device': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
+        'hardwaredevice': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
         'dataset': 'ef7ae22f-143a-4a5e-adf6-1c623531dd63',
         'details': {
             'liquidAgent': '1',
@@ -117,7 +117,7 @@ resp = client.save_model("manipulation",  data={
     'type': 'LiquidPerturbation',
     'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
     'actions': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
-    'hardware_device': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
+    'hardwaredevice': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
     'description': 'some text',
     'details': {
             'liquidAgent': 'Water',
@@ -140,7 +140,7 @@ resp = client.save_model("manipulation",  data={
     'type': 'LiquidPerturbation',
     'description': 'some text',
     'actions': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
-    'hardware_device': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
+    'hardwaredevice': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
     'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
     'details': {
         'liquidAgent': 'Water',
@@ -179,7 +179,7 @@ resp = client.load_model('manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad
     'type': 'LiquidPerturbation',
     'description': 'some text',
     'actions': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
-    'hardware_device': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
+    'hardwaredevice': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
     'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
     'details': {
         'liquidAgent': 'Water',
@@ -218,7 +218,7 @@ resp = client.save_model("manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad
     'type': 'LiquidPerturbation',
     'description': 'new text',
     'actions': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
-    'hardware_device': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
+    'hardwaredevice': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
     'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
     'details': {
         'liquidAgent': 'Water',

@@ -25,7 +25,7 @@ nav_order: 1
 | `subject` | related subject ID formatted as a string **[required]** |
 | `date_time` | string containing date (e.g. "2023-03-22") |
 | `consumable` | related consumable ID formatted as a string |
-| `hardware_device` | related hardware device ID formatted as a string |
+| `hardwaredevice` | related hardware device ID formatted as a string |
 | `brain_region` | related brain region ID formatted as a string |
 | `details` | JSON object. *See accepted schemas below* |
 | `coordinates_system` | string **[required]**. *See options below* |
@@ -80,7 +80,7 @@ resp = client.load_model('action')
         'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
         'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-        'hardware_device': None,
+        'hardwaredevice': None,
         'details': {
             'tetrodeCount': 1,
             'nWiresTetrode': 4,
@@ -100,7 +100,7 @@ resp = client.load_model('action')
         'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
         'consumable': None,
-        'hardware_device': None,
+        'hardwaredevice': None,
         'details': {
             'tetrodeCount': 1,
             'nWiresTetrode': 4,
@@ -159,7 +159,7 @@ resp = client.save_model("action",  data={
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
-    'hardware_device': None,
+    'hardwaredevice': None,
     'details': {'fiberTipShape': 'flat'},
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
@@ -202,7 +202,7 @@ resp = client.load_model('action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
-    'hardware_device': None,
+    'hardwaredevice': None,
     'details': {'fiberTipShape': 'flat'},
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
@@ -245,7 +245,7 @@ resp = client.save_model("action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", da
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
-    'hardware_device': None,
+    'hardwaredevice': None,
     'details': {'fiberTipShape': 'flat'},
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',

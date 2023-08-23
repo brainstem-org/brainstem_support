@@ -52,7 +52,7 @@ output1_3 = load_model('model','dataset','include',{'projects','experimentdata',
 The list of related experiment data can be retrieved from the returned dictionary.
 
 ```m
-experiment_data = output1_3.experiment_data;
+experimentdata = output1_3.experimentdata;
 ```
 
 Get all subjects with related actions and subject state changes

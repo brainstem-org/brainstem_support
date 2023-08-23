@@ -20,12 +20,12 @@ nav_order: 1
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
-| `physical_environment` | related physical environment ID formatted as a string **[required]** |
+| `physicalenvironment` | related physical environment ID formatted as a string **[required]** |
 | `type` | string **[required]**. *See options below* |
 | `description` | string [max length: 500] |
 | `date_time` | string containing date (e.g. "2023-03-22") |
 | `consumable` | related consumable ID formatted as a string |
-| `hardware_device` | related hardware device ID formatted as a string |
+| `hardwaredevice` | related hardware device ID formatted as a string |
 | `coordinates_system` | string **[required]**. *See options below* |
 | `coordinates_details` | JSON object. *See accepted schemas below* |
 
@@ -70,10 +70,10 @@ resp = client.load_model('installation')
         'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
         'type': 'TetrodeWireElectrode',
         'description': 'First implant',
-        'physical_environment': '0f87c229-6769-4854-83a5-c71e154246b8',
+        'physicalenvironment': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
         'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-        'hardware_device': None,
+        'hardwaredevice': None,
         'details': {
             'tetrodeCount': 1,
             'nWiresTetrode': 4,
@@ -89,10 +89,10 @@ resp = client.load_model('installation')
         'id': 'a18dd2b1-6393-468c-9424-1bc77b9e4976',
         'type': 'TetrodeWireElectrode',
         'description': 'Second implant',
-        'physical_environment': '0f87c229-6769-4854-83a5-c71e154246b8',
+        'physicalenvironment': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
         'consumable': None,
-        'hardware_device': None,
+        'hardwaredevice': None,
         'details': {
             'tetrodeCount': 1,
             'nWiresTetrode': 4,
@@ -123,7 +123,7 @@ resp = client.load_model('installation')
 ```
 resp = client.save_model("installation",  data={
     "type": "OpticFiberImplant",
-    "physical_environment": "0f87c229-6769-4854-83a5-c71e154246b8",
+    "physicalenvironment": "0f87c229-6769-4854-83a5-c71e154246b8",
     "description": "some text",
     "details": {"fiberTipShape": "flat"},
     "coordinates_system": "External_XYZ_Absolute",
@@ -147,10 +147,10 @@ resp = client.save_model("installation",  data={
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'description': 'some text',
-    'physical_environment': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'physicalenvironment': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
-    'hardware_device': None,
+    'hardwaredevice': None,
     'details': {'fiberTipShape': 'flat'},
     'coordinates_system': 'External_XYZ_Absolute',
     'coordinates_details': {
@@ -188,10 +188,10 @@ resp = client.load_model('installation', id='d37c9255-d5ae-47d9-b6e1-4ec760c200f
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'description': 'some text',
-    'physical_environment': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'physicalenvironment': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
-    'hardware_device': None,
+    'hardwaredevice': None,
     'details': {'fiberTipShape': 'flat'},
     'coordinates_system': 'External_XYZ_Absolute',
     'coordinates_details': : {
@@ -230,10 +230,10 @@ resp = client.save_model("installation", id="d37c9255-d5ae-47d9-b6e1-4ec760c200f
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'description': 'new text',
-    'physical_environment': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'physicalenvironment': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
-    'hardware_device': None,
+    'hardwaredevice': None,
     'details': {'fiberTipShape': 'flat'},
     'coordinates_system': 'External_XYZ_Absolute',
     'coordinates_details': : {

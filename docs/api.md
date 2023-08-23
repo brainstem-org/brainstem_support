@@ -64,10 +64,10 @@ Or simply sort by the description field:
 ```
 
 ### Include relationships
-Relational fields will by default only include the id (UUID), but relationships can also be included when querying a model. To include the relational field `behaviors` or `experiment_data`: 
+Relational fields will by default only include the id (UUID), but relationships can also be included when querying a model. To include the relational field `behaviors` or `experimentdata`: 
 ```
 /?include[]=behaviors
-/?include[]=experiment_data
+/?include[]=experimentdata
 ```
 
 ### Combine query parameters

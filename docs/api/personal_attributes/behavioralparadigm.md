@@ -48,7 +48,7 @@ resp = client.load_model('behavioralparadigm')
 {: .no_toc}
 
 ```
-{'behavioral_paradigms': [
+{'behavioralparadigms': [
     {
         'id': 'febe36f7-4769-496d-bb91-6a8443214b94',
         'name': 'AlternationRunning',
@@ -99,7 +99,7 @@ resp = client.save_model("behavioralparadigm",  data=
 {: .no_toc}
 
 ```
-{'behavioral_paradigm': {
+{'behavioralparadigm': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
     'name': 'PlayMarioKart',
     'description': '',
@@ -131,7 +131,7 @@ resp = client.load_model('behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b94ac
 {: .no_toc}
 
 ```
-{'behavioral_paradigm': {
+{'behavioralparadigm': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
     'name': 'PlayMarioKart',
     'description': '',
@@ -163,7 +163,7 @@ resp = client.save_model("behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac
 {: .no_toc}
 
 ```
-{'behavioral_paradigm': {
+{'behavioralparadigm': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
     'name': 'PlayMarioKart',
     'description': 'new text',

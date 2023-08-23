@@ -29,7 +29,7 @@ nav_order: 6
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/resources/hardware_device
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -44,7 +44,7 @@ resp = client.load_model('hardwaredevice')
 {: .no_toc}
 
 ```
-{'hardware_devices': [
+{'hardwaredevices': [
     {
         'id': 'a14cc671-6d21-4688-9772-1d2bf765b793',
         'name': 'RZ5D Processor',
@@ -76,11 +76,11 @@ resp = client.load_model('hardwaredevice')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/resources/hardware_device
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
-**Note**: hardware_devices submissions go through an approval process.
+**Note**: hardwaredevices submissions go through an approval process.
 
 ### Use example (using Python API)
 {: .no_toc}
@@ -97,7 +97,7 @@ resp = client.save_model("hardwaredevice",  data={
 {: .no_toc}
 
 ```
-{'hardware_device_approval': {
+{'hardwaredevice_approval': {
     'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
     'name': 'MyNewHardwareDevice',
     'description': '',
@@ -111,7 +111,7 @@ resp = client.save_model("hardwaredevice",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/resources/hardware_device/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -126,7 +126,7 @@ resp = client.load_model('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e
 {: .no_toc}
 
 ```
-{'hardware_device': {
+{'hardwaredevice': {
     'id': '0e6c723c-e5f8-4979-b7f9-e77a3ae4e817',
     'name': 'MyNewHardwareDevice',
     'description': '',
@@ -138,11 +138,11 @@ resp = client.load_model('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/hardware_device/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
-**Note**: hardware_devices changes go through an approval process.
+**Note**: hardwaredevices changes go through an approval process.
 
 ### Use example (using Python API)
 {: .no_toc}
@@ -155,7 +155,7 @@ resp = client.save_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e
 {: .no_toc}
 
 ```
-{'hardware_device_approval': {
+{'hardwaredevice_approval': {
     'id': 'd10aaf4c-be23-45b2-9f81-ef1d65ca6c32',
     'name': 'MyNewHardwareDevice',
     'description': 'new text',
@@ -168,7 +168,7 @@ resp = client.save_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/resources/hardware_device/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -188,7 +188,7 @@ resp = client.delete_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/resources/hardware_device_approvals
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -207,7 +207,7 @@ resp = client.load_model('hardwaredeviceapproval')
 {: .no_toc}
 
 ```
-{'hardware_device_approvals': [
+{'hardwaredevice_approvals': [
     {
         'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
         'name': 'MyNewHardwareDevice',
@@ -237,7 +237,7 @@ resp = client.load_model('hardwaredeviceapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/resources/hardware_device_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -252,7 +252,7 @@ resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0
 {: .no_toc}
 
 ```
-{'hardware_device_approval': {
+{'hardwaredevice_approval': {
     'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
     'name': 'MyNewHardwareDevice',
     'description': '',
@@ -269,7 +269,7 @@ resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/hardware_device_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -284,7 +284,7 @@ resp = client.save_model("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/hardware_device_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
