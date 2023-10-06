@@ -16,7 +16,7 @@ nav_order: 2
 {:toc}
 
 ## Introduction
-Behavior is a module in datasets that is used to describe the behavior of subjects. The behavior is described by the physical environment and a behavioral paradigm. Both physical environment and a behavioral paradigm are private attributes and belong to group, and must be defined separately.
+Behavior is a module in datasets that is used to describe the behavior of subjects. The behavior is described by the experimental setup and a behavioral paradigm. Both experimental setup and a behavioral paradigm are private attributes and belong to group, and must be defined separately.
 
 ## Fields
 
@@ -24,7 +24,7 @@ Behavior is a module in datasets that is used to describe the behavior of subjec
 |:------------|:-------------|
 | Dataset     | Dataset of the behavior (**required**) |
 | Subjects    | Subjects taking part in the behavior (**required**) |
-| Physical environment | Physical environment of the behavior (**required**) |
+| Experimental setup | Experimental setup of the behavior (**required**) |
 | Behavioral paradigm  | Behavioral paradigm of the behavior (**required**) |
 | Description | Description of the action (max length: 500) |
 

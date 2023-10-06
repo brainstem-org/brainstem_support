@@ -16,14 +16,14 @@ nav_order: 1
 {:toc}
 
 ## Introduction
-Installations covers installations done in a physical environment that allows you to track, or record from a subject(s). Installations have type-specific fields that are tailored to various installation-types. The types of installations currently supported by BrainSTEM are listed further down the page. An installation is described by the fields in the next section.
+Installations covers installations done in an experimental setup that allows you to track, or record from a subject(s). Installations have type-specific fields that are tailored to various installation-types. The types of installations currently supported by BrainSTEM are listed further down the page. An installation is described by the fields in the next section.
 
 ## Fields
 
 | Field               | Description  |
 |:--------------------|:-------------|
 | Type                | the type of installation (**required**). *See options below* |
-| Physical environment | The physical environment the installation is installed in (**required**) |
+| Experimental setup  | The experimental setup the installation is installed in (**required**) |
 | Description         | Description of the installation (max length: 500) |
 | Date and time       | Date and time the installation was performed (e.g. "2023-03-22") |
 | Consumable          | Consumable used for the installation |

@@ -38,10 +38,10 @@ nav_order: 3
 `extra_fields` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
 
 ```
-[
-    {"extra_property": "setting1"}, 
-    {"another_property: 22}
-]
+{
+    "extra_property": "setting1", 
+    "another_property: 22
+}
 ```
 
 `extra_fields` is a list of JSON dictionaries with two elements, `Repository` and `URL`, like the following example:
@@ -176,10 +176,10 @@ resp = client.load_model('dataset', id='13bdd793-86d4-428e-9708-167bbc26f6d2')
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
     'date_time': None,
     'datarepositories': [],
-    'extra_fields': [
-        {"extra_property": "setting1"}, 
-        {"another_property": 22}
-    ],
+    'extra_fields': {
+        "extra_property": "setting1", 
+        "another_property: 22
+    },
     'download_links': [
         {"Repository": "DANDI", "URL": "https://dandiarchive.org/dandiset/123456?pos=1"}, 
         {"Repository": "GitHub", "URL": "https://github.com/my_user/my_code"}

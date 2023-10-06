@@ -27,7 +27,6 @@ nav_order: 5
 | `reward` | string [max length: 100] |
 | `sensory_stimulus_type` | related sensory stimulus type ID formatted as a string |
 | `environment_type` | related environment type ID formatted as a string **[required]** |
-| `authgroups` | list of related groups IDs formatted as strings **[required]** |
 | `is_public` | boolean |
 
 ## List view
@@ -56,8 +55,7 @@ resp = client.load_model('behavioralparadigm')
         'task': "run",
         'reward': None,
         'environment_type': '531b2a21-ab1f-4aa8-8eaf-905421168d6b',
-        'sensory_stimulus_type': None,
-        'authgroups': [10]
+        'sensory_stimulus_type': None
     },
     {
         'id': 'f7bc834e-761c-4147-a3d4-da52293a565c',
@@ -66,8 +64,7 @@ resp = client.load_model('behavioralparadigm')
         'task': "run",
         'reward': None,
         'environment_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-        'sensory_stimulus_type': 'b1912fcf-14dd-4b3b-b779-2d076df50150',
-        'authgroups': [8]
+        'sensory_stimulus_type': 'b1912fcf-14dd-4b3b-b779-2d076df50150'
     }
 ]}
 ```
@@ -90,7 +87,6 @@ resp = client.save_model("behavioralparadigm",  data=
         'name': 'PlayMarioKart',
         'task': "Play Mario Kart on GameCube",
         'environment_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-        'authgroups': [8]
     }
 )
 ```
@@ -106,8 +102,7 @@ resp = client.save_model("behavioralparadigm",  data=
     'task': 'Play Mario Kart on GameCube',
     'reward': None,
     'environment_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-    'sensory_stimulus_type': None,
-    'authgroups': [8]}
+    'sensory_stimulus_type': None}
 }
 ```
 
@@ -138,8 +133,7 @@ resp = client.load_model('behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b94ac
     'task': 'Play Mario Kart on GameCube',
     'reward': None,
     'environment_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-    'sensory_stimulus_type': None,
-    'authgroups': [8]}
+    'sensory_stimulus_type': None}
 }
 ```
 
@@ -170,8 +164,7 @@ resp = client.save_model("behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac
     'task': 'Play Mario Kart on GameCube',
     'reward': None,
     'environment_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-    'sensory_stimulus_type': None,
-    'authgroups': [8]}
+    'sensory_stimulus_type': None}
 }
 ```
 

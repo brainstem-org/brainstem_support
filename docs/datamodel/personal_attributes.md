@@ -9,7 +9,7 @@ nav_order: 3
 
 - __Behavioral paradigms__
 - __Data repositories__
-- __Physical environments__
+- __Experimental setups__
 
 Personal attributes are model elements that typically are shared within labs: local data storage, various in-house built environments for experiments, and behavioral paradigms, which we chose not to standardized on a wider scale.
 

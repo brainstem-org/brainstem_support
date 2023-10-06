@@ -26,7 +26,6 @@ nav_order: 5
 | `is_public` | boolean |
 | `data_organization_json` | JSON dictionary |
 | `data_protocols_json` | JSON dictionary |
-| `authgroups` | list of related groups IDs formatted as a string **[required]** |
 
 ## List view
 - **Allowed portals:** public, private, super
@@ -53,8 +52,7 @@ resp = client.load_model('datarepository')
         'description': '',
         'is_public': False,
         'data_organization_json': [],
-        'data_protocols_json': [],
-        'authgroups': [8]
+        'data_protocols_json': []
     },
     {
         'id': 'c2197dea-eab6-4bbc-8257-3f05537ffdb6',
@@ -80,8 +78,7 @@ resp = client.load_model('datarepository')
                     "path": "/home/myuser/data/myproject",
                     "is_public": false
                 }
-            ],
-        'authgroups': [41]
+            ]
     }
 ]}
 ```
@@ -102,7 +99,6 @@ resp = client.load_model('datarepository')
 resp = client.save_model("datarepository",  data=
     {
         'name': "MyNewRepo",
-        'authgroups': [41],
         'data_organization_json': [
                 {
                     "elements": "Datasets"
@@ -155,8 +151,7 @@ resp = client.save_model("datarepository",  data=
                     "path": "/home/myuser/data/myproject",
                     "is_public": false
                 }
-            ],
-    'authgroups': [41]}
+            ]}
 }
 ```
 
@@ -204,8 +199,7 @@ resp = client.load_model('datarepository', id='9f322057-cf48-4ec7-ab19-d0d7175cf
                     "path": "/home/myuser/data/myproject",
                     "is_public": false
                 }
-            ],
-    'authgroups': [41]}
+            ]}
 }
 ```
 
@@ -253,8 +247,7 @@ resp = client.save_model("datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cf
                     "path": "/home/myuser/data/myproject",
                     "is_public": false
                 }
-            ],
-    'authgroups': [41]}
+            ]}
 }
 ```
 

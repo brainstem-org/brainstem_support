@@ -40,10 +40,10 @@ nav_order: 2
 `extra_fields` is a list of JSON dictionaries with two elements, `name` and `value` like the example below. The name must start with a letter and can only consist of letters, numbers and underscore. The value can be a string or a numeric value. 
 
 ```
-[
-    {"extra_property": "setting1"}, 
-    {"another_property: 22}
-]
+{
+    "extra_property": "setting1", 
+    "another_property: 22
+}
 ```
 
 
@@ -179,10 +179,10 @@ resp = client.load_model('subject', id='b4ae1f92-5260-4605-8d21-25ac5c3fce91')
 	'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
 	'birth_date': None,
 	'death_date': None,
-	'extra_fields': [
-        {"extra_property": "setting1"}, 
-        {"another_property": 22}
-    ],
+	'extra_fields': {
+	    "extra_property": "setting1", 
+	    "another_property: 22
+	},
 	'actions': [],
 	'subjectstatechanges': [],
 	'tags': [],
