@@ -16,7 +16,7 @@ nav_order: 2
 {:toc}
 
 ## Introduction
-Behavior is a module in datasets that is used to describe the behavior of subjects. The behavior is described by the experimental setup and a behavioral paradigm. Both experimental setup and a behavioral paradigm are private attributes and belong to group, and must be defined separately.
+The behavior model is a module in datasets that is used to describe the behavior occuring in a dataset. The behavior is described by the involved subjects, the experimental setup, and a behavioral paradigm. Both the experimental setup and the behavioral paradigm are private attributes and must be defined separately. You must create both before filling in the behavior form. The private attributes belong to group(s) that must be shared with one of a dataset's associated projects.
 
 ## Fields
 
