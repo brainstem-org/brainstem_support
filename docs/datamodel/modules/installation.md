@@ -50,7 +50,7 @@ Below are the available Coordinates system options for Installation:
 A detailed list of the fields in Coordinates system, can be found in the [Coordinate system page]({{"datamodel/schemas/coordinates/"|absolute_url}}).
 
 ## Permissions
-Installations inherit permissions through the subject associated with it.
+Installations inherit permissions through the experimental setup associated with it.
 
 Visit the [permissions page] to learn more.
 
