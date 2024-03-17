@@ -10,7 +10,7 @@ Public sharing is handled through the projects. All datasets, animals, collectio
 
 __Update public permissions inheritance picture__
 
-![permissions](/assets/images/permissions_v2.png)
+![permissions](/assets/images/permission_v2.png)
 
 Personal attributes: Behavioral paradigms, Data repositories, and Physcical environments, must also on an individual basic be shared publicly to be accessible through public projects.
 
