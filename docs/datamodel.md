@@ -43,7 +43,7 @@ Extracellular recording during a behavioral session from a rat.
 Permissions are implemented on an object level, inheriting permissions from users, groups, and projects. Subjects, datasets and collections inherits permissions from projects and module data inheits permissions from subjects and datasets. The personal attributes inherits permissions from groups.
 
 
-[![permissions](https://support.brainstem.org/assets/images/permissions.png)](https://support.brainstem.org/assets/images/permissions.png)
+[![permissions](https://support.brainstem.org/assets/images/permission_v2.png)](https://support.brainstem.org/assets/images/permission_v2.png)
 
 ### Projects
 {: .no_toc }

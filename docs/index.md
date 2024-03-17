@@ -12,7 +12,7 @@ A collaborative electronic lab notebook for FAIR experimental neuroscience.
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2} [Visit www.BrainSTEM.org](https://www.brainstem.org/){: .btn .fs-5 .mb-4 .mb-md-0}
 
-![website screenshot](/assets/images/website_screenshot.jpg)
+![website screenshot](/assets/images/website_screenshot_v2.jpg)
 
 ## Introduction
 {: .no_toc}
