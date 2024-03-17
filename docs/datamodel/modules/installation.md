@@ -16,7 +16,7 @@ nav_order: 1
 {:toc}
 
 ## Introduction
-Installations covers installations done in an experimental setup that allows you to track, or record from a subject(s). Installations have type-specific fields that are tailored to various installation-types. The types of installations currently supported by BrainSTEM are listed further down the page. An installation is described by the fields in the next section.
+Installations refer to the setup and utilization of various devices and sensors designed to monitor, record, or manipulate environmental variables or subject responses. These installations are critical for creating controlled experimental conditions, collecting data, and delivering stimuli. Each installation type has specific applications and functions within experimental setups. Installation types share relationships, but fields are tailored to the various installation-types. The types of installations currently supported by BrainSTEM are listed further down the page. An installation is described by the fields in the next section.
 
 ## Fields
 
