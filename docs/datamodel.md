@@ -17,10 +17,10 @@ has_toc: false
 # Relational data model
 The relational model can be separated into three levels:
 1. Organization and permissions level
-2. Module data
+2. Modules
 3. Backend with taxonomies and resources.
 
-[![data_model](https://support.brainstem.org/assets/images/data_model.png)](https://support.brainstem.org/assets/images/data_model.png)
+[![data_model](https://support.brainstem.org/assets/images/data_model_v5.png)](https://support.brainstem.org/assets/images/data_model_v5.png)
 
 Below pages describe the relational data model behind BrainSTEM, the table elements and fields and the modular structure of the model, how permissions are inherited in the model, and how the data model can be expanded to incorporate new methods, techniques, and resources.
 
@@ -37,10 +37,10 @@ Below pages describe the relational data model behind BrainSTEM, the table eleme
 
 Extracellular recording during a behavioral session from a rat. 
 
-[![data_model_example](https://support.brainstem.org/assets/images/data_model_example.png)](https://support.brainstem.org/assets/images/data_model_example.png)
+[![data_model_example](https://support.brainstem.org/assets/images/data_model_example_v5.png)](https://support.brainstem.org/assets/images/data_model_example_v5.png)
 
 # Permissions implementation and inheritance
-Permissions are implemented on an object level, inheriting permissions from users, groups, and projects. Subjects, datasets and collections inherits permissions from projects and module data inheits permissions from subjects and datasets. The personal attributes inherits permissions from groups.
+Permissions are implemented on an object level, inheriting permissions from users, groups, and projects. Subjects, datasets and collections inherits permissions from projects and modules inheits permissions from subjects and datasets. The personal attributes inherits permissions from groups.
 
 
 [![permissions](https://support.brainstem.org/assets/images/permission_v2.png)](https://support.brainstem.org/assets/images/permission_v2.png)
@@ -49,7 +49,7 @@ Permissions are implemented on an object level, inheriting permissions from user
 {: .no_toc }
 
 Projects have four permission levels that can be defined for individual groups and users:
-- Members: have read access to project-related subjects, datasets, and module data.
+- Members: have read access to project-related subjects, datasets, and modules.
 - Change permissions: allows for creation, editing and deletion of project related models.
 - Managers: can add and remove project members and project groups.
 - Owners: can manage project details and add and remove managers.

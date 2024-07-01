@@ -15,7 +15,7 @@ nav_order: 2
 - __Action logs__: Action logs are changes applied to an action entry. 
 - __Subject logs__: Subject logs are simpler log values applied to a subject, including food consumption, weighing, and water consumption. 
 
-Module data tables are standardized yet flexible containers for describing the experimental conditions. 
+Module tables are standardized yet flexible containers for describing the experimental conditions. 
 
 Please see the dedicated pages below for the models within the modules app:
 

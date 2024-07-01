@@ -6,7 +6,7 @@ nav_order: 1
 ---
 # Sharing data publicly
 {: .no_toc}
-Public sharing is handled through the projects. All datasets, animals, collections, and module data associate with the animals and datasets will also become public accessible. 
+Public sharing is handled through the projects. All datasets, animals, collections, and modules associate with the animals and datasets will also become public accessible. 
 
 __Update public permissions inheritance picture__
 

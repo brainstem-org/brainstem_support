@@ -32,7 +32,7 @@ The project model is a overall way to group subjects, datasets and collections t
 
 
 ## Permissions
-Projects are the overall permissions level. Subjects, Datasets, Collections and module data all inherit permissions through projects. You manage permissions through the management tab, where you can provide individual users and groups access-levels to a project.
+Projects are the overall permissions level. Subjects, Datasets, Collections and modules all inherit permissions through projects. You manage permissions through the management tab, where you can provide individual users and groups access-levels to a project.
 
 Visit the [permissions page] to learn more.
 

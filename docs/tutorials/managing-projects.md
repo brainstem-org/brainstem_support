@@ -6,7 +6,7 @@ nav_order: 2
 ---
 # Managing projects
 {: .no_toc}
-Projects have four permission levels that can be defined for individual groups and users: members, change permissions, managers, and owners. Members have read access to project-related subjects, datasets, and module data. Change permissions allow for creation, editing and deletion of project related models. Managers can add and remove project members and project groups. Owners can manage project details and add and remove managers. Regular members can only leave the project.
+Projects have four permission levels that can be defined for individual groups and users: members, change permissions, managers, and owners. Members have read access to project-related subjects, datasets, and modules. Change permissions allow for creation, editing and deletion of project related models. Managers can add and remove project members and project groups. Owners can manage project details and add and remove managers. Regular members can only leave the project.
 
 To manage a project, go the the projects page [https://www.brainstem.org/private/stem/project/](https://www.brainstem.org/private/stem/project/) and click the group from the list you want to manage and click the Manage button at the top right of the page. 
 
