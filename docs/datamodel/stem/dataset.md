@@ -60,7 +60,7 @@ Please see the dedicated page describing the [Manipulations data model].
 Please see the dedicated page describing the [Behavior data model].
 
 ## Permissions
-The dataset inherits permissions from projects associated with it. Data repositories are shared through the projects groups, and you are only able to add a data repository associated with the same groups as the selected projects. The relationships in module data also depends on the selected projects
+The dataset inherits permissions from projects associated with it. Data repositories are shared through the projects groups, and you are only able to add a data repository associated with the same groups as the selected projects. The relationships in modules also depends on the selected projects
 
 Visit the [permissions page] to learn more. 
 

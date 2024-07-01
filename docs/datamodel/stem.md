@@ -10,7 +10,7 @@ nav_order: 1
 
 - __Projects__: Projects 
 - __Subjects__: Animal subjects described by a name, its sex and strain. A subject must further belong to a project. 
-- __Datasets__: A dataset consists of various module data. It must belong to a project. 
+- __Datasets__: A dataset consists of various modules. It must belong to a project. 
 - __Collections__: Group of datasets belonging to the same project. This can be used to describe which datasets makes up a figure or a specific analysis. 
 
 Please see the dedicated pages below for the models within the STEM app:
