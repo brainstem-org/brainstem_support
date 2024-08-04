@@ -82,7 +82,7 @@ resp = client.load_model('installation')
         },
         'coordinates_system': 'External_XYZ_Absolute',
         'coordinates_details': {
-            'apCoordinates': 1.0
+            'apCoordinate': 1.0
         }
     },
     {

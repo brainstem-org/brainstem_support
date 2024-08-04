@@ -90,7 +90,7 @@ resp = client.load_model('action')
         'brain_region': '15f9aef5-2d46-4ff2-a0db-ac6be759c05c',
         'coordinates_system': 'Stereotaxic_BregmaAbsolute',
         'coordinates_details': {
-            'apCoordinates': 1.0
+            'apCoordinate': 1.0
         }
     },
     {
@@ -110,8 +110,8 @@ resp = client.load_model('action')
         'brain_region': '15f9aef5-2d46-4ff2-a0db-ac6be759c05c',
         'coordinates_system': 'Stereotaxic_BregmaAbsolute',
         'coordinates_details': {
-            'apCoordinates': 1.0,
-            'mlCoordinates': 0.0,
+            'apCoordinate': 1.0,
+            'mlCoordinate': 0.0,
             'dvAngle': 2.0
         }
     }
@@ -137,9 +137,9 @@ resp = client.save_model("action",  data={
     "details": {"fiberTipShape": "flat"},
     "coordinates_system": "Stereotaxic_BregmaAbsolute",
     "coordinates_details": {
-                "apCoordinates": 1.0,
-                "mlCoordinates": 2.0,
-                "dvCoordinates": 3.0,
+                "apCoordinate": 1.0,
+                "mlCoordinate": 2.0,
+                "dvCoordinate": 3.0,
                 "apAngle": 4.0,
                 "mlAngle": 5.0,
                 "dvAngle": 6.0
@@ -164,9 +164,9 @@ resp = client.save_model("action",  data={
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
     'coordinates_details': {
-                "apCoordinates": 1.0,
-                "mlCoordinates": 2.0,
-                "dvCoordinates": 3.0,
+                "apCoordinate": 1.0,
+                "mlCoordinate": 2.0,
+                "dvCoordinate": 3.0,
                 "apAngle": 4.0,
                 "mlAngle": 5.0,
                 "dvAngle": 6.0
@@ -207,9 +207,9 @@ resp = client.load_model('action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
     'coordinates_details': : {
-                "apCoordinates": 1.0,
-                "mlCoordinates": 2.0,
-                "dvCoordinates": 3.0,
+                "apCoordinate": 1.0,
+                "mlCoordinate": 2.0,
+                "dvCoordinate": 3.0,
                 "apAngle": 4.0,
                 "mlAngle": 5.0,
                 "dvAngle": 6.0
@@ -250,9 +250,9 @@ resp = client.save_model("action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", da
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
     'coordinates_details': : {
-                "apCoordinates": 1.0,
-                "mlCoordinates": 2.0,
-                "dvCoordinates": 3.0,
+                "apCoordinate": 1.0,
+                "mlCoordinate": 2.0,
+                "dvCoordinate": 3.0,
                 "apAngle": 4.0,
                 "mlAngle": 5.0,
                 "dvAngle": 6.0

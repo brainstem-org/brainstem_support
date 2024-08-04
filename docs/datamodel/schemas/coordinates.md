@@ -21,18 +21,18 @@ nav_order: 1
 |:-------|:--------|-------------|
 | `X` | number | X coordinate (m) |
 | `Y` | number | Y coordinate (m) |
-| `Z` | number | Z coordinates (m) |
+| `Z` | number | Z coordinate (m) |
 | `X angle` | number | X angle (degrees) |
 | `Y angle` | number | Y angle (degrees) |
 | `Z angle` | number | Z angle (degrees) |
 
 ## Stereotaxic Bregma absolute
-
+ 
 | Field  | Type  | Description |
 |:-------|:--------|-------------|
 | `AP` | number | AP coordinate (mm) |
 | `ML` | number | ML coordinate (mm) |
-| `DV` | number | DV coordinates (mm) |
+| `DV` | number | DV coordinate (mm) |
 | `AP angle` | number | AP angle (degrees) |
 | `ML angle` | number | ML angle (degrees) |
 | `DV angle` | number | DV angle (degrees) |
@@ -54,7 +54,7 @@ nav_order: 1
 |:-------|:--------|-------------|
 | `AP` | number | AP coordinate (mm) |
 | `ML` | number | ML coordinate (mm) |
-| `DV` | number | DV coordinates (mm) |
+| `DV` | number | DV coordinate (mm) |
 | `AP angle` | number | AP angle (degrees) |
 | `ML angle` | number | ML angle (degrees) |
 | `DV angle` | number | DV angle (degrees) |
@@ -78,7 +78,7 @@ nav_order: 1
 |:-------|:--------|-------------|
 | `X` | number | X coordinate (mm) |
 | `Y` | number | Y coordinate (mm) |
-| `Z` | number | Z coordinates (mm) |
+| `Z` | number | Z coordinate (mm) |
 | `X angle` | number | X angle (degrees) |
 | `Y angle` | number | Y angle (degrees) |
 | `Depth` | number | Depth (mm) |
@@ -91,7 +91,7 @@ nav_order: 1
 |:-------|:--------|-------------|
 | `X` | number | X coordinate (mm) |
 | `Y` | number | Y coordinate (mm) |
-| `Z` | number | Z coordinates (mm) |
+| `Z` | number | Z coordinate (mm) |
 | `X angle` | number | X angle (degrees) |
 | `Y angle` | number | Y angle (degrees) |
 | `Z angle` | number | Z angle (degrees) |

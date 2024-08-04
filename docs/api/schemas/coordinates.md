@@ -35,7 +35,7 @@ nav_order: 1
             "type": "number"
         },
         "z": {
-            "title": "Z coordinates (m)",
+            "title": "Z coordinate (m)",
             "brief": "Z",
             "units": "mm",
             "type": "number"
@@ -81,18 +81,18 @@ nav_order: 1
     "type": "object",
     "title": "Stereotaxic Bregma absolute",
     "properties": {
-        "apCoordinates": {
-            "title": "AP coordinates (mm)",
+        "apCoordinate": {
+            "title": "AP coordinate (mm)",
             "brief": "AP",
             "type": "number"
         },
-        "mlCoordinates": {
-            "title": "ML coordinates (mm)",
+        "mlCoordinate": {
+            "title": "ML coordinate (mm)",
             "brief": "ML",
             "type": "number"
         },
-        "dvCoordinates": {
-            "title": "DV coordinates (mm)",
+        "dvCoordinate": {
+            "title": "DV coordinate (mm)",
             "brief": "DV",
             "type": "number"
         },
@@ -119,9 +119,9 @@ nav_order: 1
 {: .no_toc}
 ```
 {
-    "apCoordinates": 4.7,
-    "mlCoordinates": 4,
-    "dvCoordinates": 23.2,
+    "apCoordinate": 4.7,
+    "mlCoordinate": 4,
+    "dvCoordinate": 23.2,
     "apAngle": 5,
     "mlAngle": 5,
     "dvAngle": 0
@@ -134,13 +134,13 @@ nav_order: 1
     "type": "object",
     "title": "Stereotaxic Bregma brain surface",
     "properties": {
-        "apCoordinates": {
-            "title": "AP coordinates (mm)",
+        "apCoordinate": {
+            "title": "AP coordinate (mm)",
             "brief": "AP",
             "type": "number"
         },
-        "mlCoordinates": {
-            "title": "ML coordinates (mm)",
+        "mlCoordinate": {
+            "title": "ML coordinate (mm)",
             "brief": "ML",
             "type": "number"
         },
@@ -172,8 +172,8 @@ nav_order: 1
 {: .no_toc}
 ```
 {
-    "apCoordinates": 0.4,
-    "mlCoordinates": 1.1,
+    "apCoordinate": 0.4,
+    "mlCoordinate": 1.1,
     "depth": 12,
     "rotation": 0,
     "apAngle": 15,
@@ -187,18 +187,18 @@ nav_order: 1
     "type": "object",
     "title": "Stereotaxic Lambda absolute",
     "properties": {
-        "apCoordinates": {
-            "title": "AP coordinates (mm)",
+        "apCoordinate": {
+            "title": "AP coordinate (mm)",
             "brief": "AP",
             "type": "number"
         },
-        "mlCoordinates": {
-            "title": "ML coordinates (mm)",
+        "mlCoordinate": {
+            "title": "ML coordinate (mm)",
             "brief": "ML",
             "type": "number"
         },
-        "dvCoordinates": {
-            "title": "DV coordinates (mm)",
+        "dvCoordinate": {
+            "title": "DV coordinate (mm)",
             "brief": "DV",
             "type": "number"
         },
@@ -225,9 +225,9 @@ nav_order: 1
 {: .no_toc}
 ```
 {
-    "apCoordinates": 4.7,
-    "mlCoordinates": 4,
-    "dvCoordinates": 23.2,
+    "apCoordinate": 4.7,
+    "mlCoordinate": 4,
+    "dvCoordinate": 23.2,
     "apAngle": 5,
     "mlAngle": 5,
     "dvAngle": 0
@@ -240,13 +240,13 @@ nav_order: 1
     "type": "object",
     "title": "Stereotaxic Lambda brain surface",
     "properties": {
-        "apCoordinates": {
-            "title": "AP coordinates (mm)",
+        "apCoordinate": {
+            "title": "AP coordinate (mm)",
             "brief": "AP",
             "type": "number" 
         },
-        "mlCoordinates": {
-            "title": "ML coordinates (mm)",
+        "mlCoordinate": {
+            "title": "ML coordinate (mm)",
             "brief": "ML",
             "type": "number"
         },
@@ -278,8 +278,8 @@ nav_order: 1
 {: .no_toc}
 ```
 {
-    "apCoordinates": 0.4,
-    "mlCoordinates": 1.1,
+    "apCoordinate": 0.4,
+    "mlCoordinate": 1.1,
     "depth": 12,
     "rotation": 0,
     "apAngle": 15,
@@ -357,7 +357,7 @@ nav_order: 1
             "type": "number"
         },
         "z": {
-            "title": "Z coordinates (mm)",
+            "title": "Z coordinate (mm)",
             "brief": "Z",
             "type": "number"
         },

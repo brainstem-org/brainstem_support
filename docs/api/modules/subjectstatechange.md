@@ -88,9 +88,9 @@ resp = client.load_model('subjectstatechange')
         'brain_region': None,
         'coordinates_system': 'Stereotaxic_BregmaAbsolute',
         'coordinates_details': {
-            'apCoordinates': 6.0,
-            'mlCoordinates': 6.0,
-            'dvCoordinates': 6.0,
+            'apCoordinate': 6.0,
+            'mlCoordinate': 6.0,
+            'dvCoordinate': 6.0,
             'apAngle': 0.0,
             'mlAngle': 0.0,
             'dvAngle': 0.0
@@ -150,9 +150,9 @@ resp = client.save_model("subjectstatechange",  data={
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
     'coordinates_details': {
-                "apCoordinates": 1.0,
-                "mlCoordinates": 2.0,
-                "dvCoordinates": 3.0,
+                "apCoordinate": 1.0,
+                "mlCoordinate": 2.0,
+                "dvCoordinate": 3.0,
                 "apAngle": 4.0,
                 "mlAngle": 5.0,
                 "dvAngle": 6.0
@@ -192,9 +192,9 @@ resp = client.load_model('subjectstatechange', id='93925815-9f8e-4d39-9c3a-cf1d6
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
     'coordinates_details': {
-                "apCoordinates": 1.0,
-                "mlCoordinates": 2.0,
-                "dvCoordinates": 3.0,
+                "apCoordinate": 1.0,
+                "mlCoordinate": 2.0,
+                "dvCoordinate": 3.0,
                 "apAngle": 4.0,
                 "mlAngle": 5.0,
                 "dvAngle": 6.0
@@ -234,9 +234,9 @@ resp = client.save_model("subjectstatechange", id="93925815-9f8e-4d39-9c3a-cf1d6
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
     'coordinates_details': {
-                "apCoordinates": 1.0,
-                "mlCoordinates": 2.0,
-                "dvCoordinates": 3.0,
+                "apCoordinate": 1.0,
+                "mlCoordinate": 2.0,
+                "dvCoordinate": 3.0,
                 "apAngle": 4.0,
                 "mlAngle": 5.0,
                 "dvAngle": 6.0
