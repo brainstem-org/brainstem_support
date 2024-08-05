@@ -16,23 +16,23 @@ nav_order: 1
 {:toc}
 
 ## Introduction
-The project model is a overall way to group subjects, datasets and collections together. A project can relate to the experiments going into a publication, but works just as well for describing day-to-day experiments or for sharing experimental data with collaborators. 
+Projects serve as an overall way to group subjects, datasets, and collections together. A project can be used to relate experiments for publications, as well as to describe day-to-day experiments or sharing experimental data with collaborators. Projects define the overall permissions level of most other content.
 
 ## Fields
 
 | Field        | Description  |
 |:-------------|:-------------|
-| Name         | Name of the project (**required**; max length: 200; must be unique)|
-| Description  | A rich text description of the project |
+| Name         | Name of the project (**required**; string; maximum length: 200 characters; must be unique)|
+| Description  | A text description of the project. You can upload and insert images.  |
 | Publications | Related publications |
 | Extra fields | Allows you to add extra fields to the project. The values can be a string or a numeric value |
-| Public project | Determines if the project is publicly available or only through the private portal |
-| Name used in repository | Use this field if you have another name of your project (max length: 200) |
+| Public project | Determines if the project is publicly available or only through the private portal (boolean value). |
+| Name used in repository | Use this field if you have another name of your project (string; maximum length: 200 characters) |
 | Tags         | Tags for the project. Tags are great for organizational purpose, to quickly label a project and can be used as a filter afterwards. |
 
 
 ## Permissions
-Projects are the overall permissions level. Subjects, Datasets, Collections and modules all inherit permissions through projects. You manage permissions through the management tab, where you can provide individual users and groups access-levels to a project.
+Projects define the overall permissions level for subjects, datasets, collections, and modules. You manage permissions through the management tab, where you can assign individual users and groups access levels to a project. Projects have four permission levels: membership (read access), change permissions, managers, and owners. For more information on permissions, please visit the permissions page.
 
 Visit the [permissions page] to learn more.
 

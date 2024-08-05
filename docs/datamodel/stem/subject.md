@@ -16,27 +16,26 @@ nav_order: 2
 {:toc}
 
 ## Introduction
-The subject model describes your animal subject through a set of standard fields. There is flexibility built through a rich text description field, extra fields, and tags.  Actions, Subject state change, and Subject logs all provides modular construction that flexibly can describe procedures and other things performed on your subject based on three modules: 
+The subject model describes your animal subject through a set of standard fields. There is flexibility built through a rich text description field, extra fields, and tags.  Actions and Subject state change provides modular construction that can describe procedures and other things performed on your subject based on three modules: 
 1. Actions: Surgical procedures and other actions performed on the environment (e.g.: probe implantations, virus injections, and optic fiber implants)
 2. Subject state changes: Any state change performed on a subject (e.g.: perfusion of the brain, lesion, creation of brain slices)
-3. Subject logs: Repetitive logs for your subject (e.g.: including Weighing logs, Food and Water deprivation logs, and Housing logs)
 
 
 ## Fields
 
 | Field        | Description  |
 |:-------------|:-------------|
-| Name         | Name of the subject (**required**; max length: 100; must be unique) |
-| Description  | A rich text description of the subject |
-| Strain       | Animal strain (**required**) |
-| Sex          | Sex of the animal: (Male, Female, or Unknown; **required**) |
-| Genetic line | Genetic line of the subject. Could also be wild type (max length: 100) |
+| Name         | Name of the subject (**required**; maximum length: 100 characters; must be unique) |
 | Projects     | Projects the subject belongs to (**required**) |
+| Sex          | Sex of the animal: (Male, Female, or Unknown; **required**) |
+| Strain       | The strain of the subject(**required**) |
+| Description  | A rich text description of the subject |
+| Genetic line | Genetic line of the subject. Could also be wild type (string; maximum length: 100 characters) |
 | Birth date   | Birth date of the animal subject (e.g. "2023-03-22") |
 | Death date   | Death date of the animal subject (e.g. "2023-03-25") |
-| Extra fields | Allows you to add extra fields to the subject. The values can be a string or a numeric value |
-| Name used in repository | Use this field if you have another name of your subject (max length: 200) |
 | Tags         | Tags for the subject. Tags are great for organizational purpose, to quickly label a subject and can be used as a filter afterwards. |
+| Name used in repository | Use this field if you have another name of your subject (string; maximum length: 100 characters) |
+| Extra fields | Allows you to add extra fields to the subject. The values can be a string or a numeric value. |
 
 
 ### Action data fields
@@ -44,10 +43,6 @@ Please see the dedicated page describing the [Action data model].
 
 ### Subject state change data fields
 Please see the dedicated page describing the [Subject state change data model].
-
-### Subject log data fields
-Please see the dedicated page describing the [Subject log data model].
-
 
 ## Permissions
 Subjects inherit permissions from projects associated with them. Actions, Subject state changes, Subject logs and action logs all inherit permissions through the subject.

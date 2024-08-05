@@ -6,7 +6,7 @@ grand_parent: API
 nav_order: 1
 ---
 
-# Coordinates schemas
+# Schemas of Coordinates systems
 {: .no_toc}
 
 ## Table of contents
@@ -15,48 +15,73 @@ nav_order: 1
 1. TOC
 {:toc}
 
-## External XYZ absolute
+## External_XYZ_Absolute: External XYZ Coordinates with Angles
 ```
 {
     "type": "object",
-    "title": "External XYZ absolute",
+    "title": "External XYZ Coordinates with Angles",
+    "options": {"compact": true},
+    "additionalProperties": false,
     "properties": {
         "x": {
             "title": "X coordinate (m)",
-            "brief": "Y",
-            "units": "mm",
-            "type": "number"
-
+            "brief": "X",
+            "units": "m",
+            "type": "number",
+            "options": {
+                "infoText": "Absolute X coordinate in meters, representing horizontal positioning along a local reference frame."
+            }
+        },
+        "xAngle": {
+            "title": "X angle (°)",
+            "brief": "X angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotational angle around the X axis, in degrees, indicating tilt or elevation relative to the horizontal plane."
+            }
         },
         "y": {
             "title": "Y coordinate (m)",
             "brief": "Y",
-            "units": "mm",
-            "type": "number"
+            "units": "m",
+            "type": "number",
+            "options": {
+                "infoText": "Absolute Y coordinate in meters, representing vertical positioning along a local reference frame."
+            }
+        },
+        "yAngle": {
+            "title": "Y angle (°)",
+            "brief": "Y angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotational angle around the Y axis, in degrees, indicating roll or sideways tilt relative to the vertical axis."
+            }
         },
         "z": {
             "title": "Z coordinate (m)",
             "brief": "Z",
-            "units": "mm",
-            "type": "number"
-        },
-        "xAngle": {
-            "title": "X angle (degrees)",
-            "brief": "X angle",
-            "units": "degrees",
-            "type": "number"
-        },
-        "yAngle": {
-            "title": "Y angle (degrees)",
-            "brief": "Y angle",
-            "units": "degrees",
-            "type": "number"
+            "units": "m",
+            "type": "number",
+            "options": {
+                "infoText": "Absolute Z coordinate in meters,representing height."
+            }
         },
          "zAngle": {
-            "title": "Z angle (degrees)",
+            "title": "Z angle (°)",
             "brief": "Z angle",
-            "units": "degrees",
-            "type": "number"
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotational angle around the Z axis, in degrees, indicating azimuth or orientation facing around the vertical axis."
+            }
         }
     }
 }
@@ -75,41 +100,74 @@ nav_order: 1
 }
 ```
 
-## Stereotaxic Bregma absolute
+
+## Stereotaxic_BregmaAbsolute: Stereotaxic Bregma-Based Absolute Coordinates
 ```
 {
     "type": "object",
-    "title": "Stereotaxic Bregma absolute",
+    "title": "Stereotaxic Bregma-Based Absolute Coordinates",
+    "options": {"compact": true},
+    "additionalProperties": false,
     "properties": {
         "apCoordinate": {
             "title": "AP coordinate (mm)",
             "brief": "AP",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Absolute Anterior-Posterior coordinate from a fixed point, in millimeters."
+            }
+        },
+        "apAngle": {
+            "title": "AP angle (°)",
+            "brief": "AP angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Angle of the device or probe in the Anterior-Posterior direction, in degrees."
+            }
         },
         "mlCoordinate": {
             "title": "ML coordinate (mm)",
             "brief": "ML",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Absolute Medial-Lateral coordinate from a fixed point, in millimeters."
+            }
+        },
+        "mlAngle": {
+            "title": "ML angle (°)",
+            "brief": "ML angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Angle of the device or probe in the Medial-Lateral direction, in degrees."
+            }
         },
         "dvCoordinate": {
             "title": "DV coordinate (mm)",
             "brief": "DV",
-            "type": "number"
-        },
-        "apAngle": {
-            "title": "AP angle (degrees)",
-            "brief": "AP angle",
-            "type": "number"
-        },
-        "mlAngle": {
-            "title": "ML angle (degrees)",
-            "brief": "ML angle",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Dorsal-Ventral coordinate from a reference point, typically the brain surface, in millimeters."
+            }
         },
         "dvAngle": {
-            "title": "DV angle (degrees)",
+            "title": "DV angle (°)",
             "brief": "DV angle",
-            "type": "number"
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Angle of the device or probe in the Dorsal-Ventral direction, in degrees."
+            }
         }
     }
 }
@@ -128,42 +186,75 @@ nav_order: 1
 }
 ```
 
-## Stereotaxic Bregma brain surface
+
+## Stereotaxic_BregmaBrainSurface: Stereotaxic Bregma-Based Surface Coordinates with Depth
 ```
 {
     "type": "object",
-    "title": "Stereotaxic Bregma brain surface",
+    "title": "Stereotaxic Bregma-Based Surface Coordinates with Depth",
+    "options": {"compact": true},
+    "additionalProperties": false,
     "properties": {
         "apCoordinate": {
             "title": "AP coordinate (mm)",
             "brief": "AP",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Anterior-Posterior coordinate relative to Bregma, in millimeters."
+            }
+        },
+        "apAngle": {
+            "title": "AP angle (°)",
+            "brief": "AP angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Angle adjustment in the Anterior-Posterior direction, in degrees."
+            }
         },
         "mlCoordinate": {
             "title": "ML coordinate (mm)",
             "brief": "ML",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Medial-Lateral coordinate relative to Bregma, in millimeters."
+            }
+        },
+        "mlAngle": {
+            "title": "ML angle (°)",
+            "brief": "ML angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Angle adjustment in the Medial-Lateral direction, in degrees."
+            }
         },
         "depth": {
             "title": "Depth (mm)",
-            "brief": "Depth",
-            "type": "number"
+            "brief": "depth",
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Depth of the implant in the brain, measured from the surface, in millimeters."
+            }
         },
         "rotation": {
-            "title": "Rotation (degrees)",
-            "brief": "Rotation",
-            "type": "number"
-        },
-        "apAngle": {
-            "title": "AP angle (degrees)",
-            "brief": "AP angle",
-            "type": "number"
-        },
-        "mlAngle": {
-            "title": "ML angle (degrees)",
-            "brief": "ML angle",
-            "type": "number"
-        }
+            "title": "Rotation (°)",
+            "brief": "rotation",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotation of the implant around the insertion axis, in degrees."
+            }
+        }    
     }
 }
 ```
@@ -181,41 +272,74 @@ nav_order: 1
 }
 ```
 
-## Stereotaxic Lambda absolute
+
+## Stereotaxic_LambdaAbsolute: Stereotaxic Lambda-Based Absolute Coordinates
 ```
 {
     "type": "object",
-    "title": "Stereotaxic Lambda absolute",
+    "title": "Stereotaxic Lambda-Based Absolute Coordinates",
+    "options": {"compact": true},
+    "additionalProperties": false,
     "properties": {
         "apCoordinate": {
             "title": "AP coordinate (mm)",
             "brief": "AP",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Anterior-Posterior coordinate measured from Lambda, in millimeters. Lambda serves as a posterior reference point on the skull in rodent brain mappings."
+            }
+        },
+        "apAngle": {
+            "title": "AP angle (°)",
+            "brief": "AP angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Tilting angle in the Anterior-Posterior axis from Lambda, in degrees. Used to adjust the probe or electrode's approach angle relative to the skull."
+            }
         },
         "mlCoordinate": {
             "title": "ML coordinate (mm)",
             "brief": "ML",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Medial-Lateral coordinate measured from the central line crossing Lambda, in millimeters. Used for precise lateral positioning of instruments."
+            }
+        },
+        "mlAngle": {
+            "title": "ML angle (°)",
+            "brief": "ML angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Tilting angle in the Medial-Lateral direction from Lambda, in degrees. Adjusts for lateral tilt relative to the skull's central line."
+            }
         },
         "dvCoordinate": {
             "title": "DV coordinate (mm)",
             "brief": "DV",
-            "type": "number"
-        },
-        "apAngle": {
-            "title": "AP angle (degrees)",
-            "brief": "AP angle",
-            "type": "number"
-        },
-        "mlAngle": {
-            "title": "ML angle (degrees)",
-            "brief": "ML angle",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Dorsal-Ventral coordinate measured from the skull's surface at Lambda, in millimeters. Indicates depth for vertical placement of instruments."
+            }
         },
         "dvAngle": {
-            "title": "DV angle (degrees)",
-            "brief": "CV angle",
-            "type": "number"
+            "title": "DV angle (°)",
+            "brief": "DV angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Angular adjustment in the Dorsal-Ventral plane from Lambda, in degrees. Used to orient instruments vertically."
+            }
         }
     }
 }
@@ -234,41 +358,74 @@ nav_order: 1
 }
 ```
 
-## Stereotaxic Lambda brain surface
+
+## Stereotaxic_LambdaBrainSurface: Stereotaxic Lambda-Based Surface Coordinates with Depth
 ```
 {
     "type": "object",
-    "title": "Stereotaxic Lambda brain surface",
+    "title": "Stereotaxic Lambda-Based Surface Coordinates with Depth",
+    "options": {"compact": true},
+    "additionalProperties": false,
     "properties": {
         "apCoordinate": {
             "title": "AP coordinate (mm)",
             "brief": "AP",
-            "type": "number" 
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Anterior-Posterior coordinate measured from the Lambda landmark, in millimeters. Lambda is used as a reference point at the posterior aspect of the skull."
+            }
+        },
+        "apAngle": {
+            "title": "AP angle (°)",
+            "brief": "AP angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Angle of tilt in the Anterior-Posterior direction from the Lambda reference point, in degrees, used to align the probe or electrode with respect to the brain's longitudinal axis."
+            }
         },
         "mlCoordinate": {
             "title": "ML coordinate (mm)",
             "brief": "ML",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Medial-Lateral coordinate measured from the midline crossing Lambda, in millimeters. This measurement helps in positioning equipment laterally across the brain's hemisphere."
+            }
+        },
+        "mlAngle": {
+            "title": "ML angle (°)",
+            "brief": "ML angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Medial-Lateral tilting angle from Lambda, in degrees, adjusting the lateral orientation of devices or surgical tools."
+            }
         },
         "depth": {
             "title": "Depth (mm)",
-            "brief": "Depth",
-            "type": "number"
+            "brief": "depth",
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Vertical depth measured from the surface at the Lambda reference point, in millimeters. Indicates how deep into the brain tissue the instrument penetrates."
+            }
         },
         "rotation": {
-            "title": "Rotation (degrees)",
-            "brief": "Rotation",
-            "type": "number"
-        },
-        "apAngle": {
-            "title": "AP angle (degrees)",
-            "brief": "AP angle",
-            "type": "number"
-        },
-        "mlAngle": {
-            "title": "ML angle (degrees)",
-            "brief": "ML angle",
-            "type": "number"
+            "title": "Rotation (°)",
+            "brief": "rotation",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotation around the vertical axis through Lambda, in degrees. This controls the azimuthal orientation of the probe or surgical tool."
+            }
         }
     }
 }
@@ -287,41 +444,160 @@ nav_order: 1
 }
 ```
 
-## Stereotaxic XY surface
+
+## Stereotaxic_XYZ_Absolute: Stereotaxic XYZ Absolute Coordinates
 ```
 {
     "type": "object",
-    "title": "Stereotaxic XY surface",
+    "title": "Stereotaxic XYZ Absolute Coordinates",
+    "options": {"compact": true},
+    "additionalProperties": false,
     "properties": {
         "x": {
             "title": "X coordinate (mm)",
             "brief": "X",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "X coordinate in millimeters, representing the position along the left-right axis relative to a standardized reference point."
+            }
+        },
+        "xAngle": {
+            "title": "X angle (°)",
+            "brief": "X angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotational angle about the X-axis, in degrees, adjusting the tilt of the instrument or probe horizontally."
+            }
         },
         "y": {
             "title": "Y coordinate (mm)",
             "brief": "Y",
-            "type": "number"
-        },
-        "xAngle": {
-            "title": "X angle (degrees)",
-            "brief": "X angle",
-            "type": "number"
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Y coordinate in millimeters, indicating the anterior-posterior position from a fixed reference point in the setup."
+            }
         },
         "yAngle": {
-            "title": "Y angle (degrees)",
+            "title": "Y angle (°)",
             "brief": "Y angle",
-            "type": "number"
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotational angle about the Y-axis, in degrees, used to orient the probe or device in the anterior-posterior plane."
+            }
+        },
+        "z": {
+            "title": "Z coordinate (mm)",
+            "brief": "Z",
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Z coordinate in millimeters, representing the depth or vertical position relative to a surface or base level."
+            }
+        },
+        "zAngle": {
+            "title": "Z angle (°)",
+            "brief": "Z angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotational angle about the Z-axis, in degrees, adjusting the azimuth or directional facing of the setup."
+            }
+        }
+    }
+}
+```
+
+### Example of JSON according to this schema
+{: .no_toc}
+```
+{
+    "x": 0,
+    "y": 0,
+    "z": 1,
+    "xAngle": 37,
+    "yAngle": 21,
+    "zAngle": 23
+}
+```
+
+
+## Stereotaxic_XY_Surface: Stereotaxic Surface XY Surface Coordinates with Depth
+```
+{
+    "type": "object",
+    "title": "Stereotaxic Surface XY Surface Coordinates with Depth",
+    "options": {"compact": true},
+    "additionalProperties": false,
+    "properties": {
+        "x": {
+            "title": "X coordinate (mm)",
+            "brief": "X",
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "X coordinate in millimeters, measuring horizontal position across the surface from a fixed central or reference point."
+            }
+        },
+        "xAngle": {
+            "title": "X angle (°)",
+            "brief": "X angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Angle of tilt around the X-axis, in degrees, indicating the inclination or elevation relative to the flat surface."
+            }
+        },
+        "y": {
+            "title": "Y coordinate (mm)",
+            "brief": "Y",
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Y coordinate in millimeters, measuring vertical position along the surface from a fixed central or reference point."
+            }
+        },
+        "yAngle": {
+            "title": "Y angle (°)",
+            "brief": "Y angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Angle of tilt around the Y-axis, in degrees, indicating the lateral tilt relative to the central axis of the surface."
+            }
         },
         "depth": {
             "title": "Depth (mm)",
-            "brief": "Depth",
-            "type": "number"
+            "brief": "depth",
+            "units": "mm",
+            "type": "number",
+            "options": {
+                "infoText": "Depth in millimeters, measuring the perpendicular distance below the surface plane, used for setting the penetration depth of an instrument."
+            }
         },
         "rotation": {
-            "title": "Rotation (degrees)",
-            "brief": "Rotation",
-            "type": "number"
+            "title": "Rotation (°)",
+            "brief": "rotation",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotation around the vertical axis through the point of interest, in degrees, used to adjust the orientation of the instrument or device."
+            }
         }
     }
 }
@@ -332,63 +608,10 @@ nav_order: 1
 ```
 {
     "x": 0, 
-    "y": 4, 
+    "y": 4,
+    "depth": 0.1,  
     "xAngle": 30, 
-    "yAngle": 15, 
-    "depth": 0.1, 
+    "yAngle": 15,    
     "rotation": 10
-}
-```
-
-## Stereotaxic XYZ absolute
-```
-{
-    "type": "object",
-    "title": "Stereotaxic XYZ absolute",
-    "properties": {
-        "x": {
-            "title": "X coordinate (mm)",
-            "brief": "X",
-            "type": "number"
-        },
-        "y": {
-            "title": "Y coordinate (mm)",
-            "brief": "Y",
-            "type": "number"
-        },
-        "z": {
-            "title": "Z coordinate (mm)",
-            "brief": "Z",
-            "type": "number"
-        },
-        "xAngle": {
-            "title": "X angle (degrees)",
-            "brief": "X angle",
-            "type": "number"
-        },
-        "yAngle": {
-            "title": "Y angle (degrees)",
-            "brief": "Y angle",
-            "type": "number"
-        },
-         "zAngle": {
-            "title": "Z angle (degrees)",
-            "brief": "Z angle",
-            "type": "number"
-        }
-    }
-}
-```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "x": 0,
-    "y": 0,
-    "z": 1,
-    "xAngle": 37,
-    "yAngle": 21,
-    "zAngle": 23
 }
 ```

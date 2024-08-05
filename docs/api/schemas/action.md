@@ -85,7 +85,7 @@ nav_order: 1
 }
 ```
 
-*Wire count* is a **required** field - **default** value set is `4`.
+*Wire count* is a **required** field - **default** value set is `1`.
 
 ### Example of JSON according to this schema
 {: .no_toc}
@@ -133,7 +133,7 @@ nav_order: 1
 }
 ```
 
-*Tetrode count* is a **required** field - **default** value set is `4`.
+*Tetrode count* is a **required** field - **default** value set is `1`.
 
 ### Example of JSON according to this schema
 {: .no_toc}
