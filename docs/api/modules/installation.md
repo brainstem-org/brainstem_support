@@ -3,7 +3,7 @@ layout: default
 title: Installation
 parent: Modules
 grand_parent: API
-nav_order: 1
+nav_order: 3
 ---
 
 # Installation API endpoint

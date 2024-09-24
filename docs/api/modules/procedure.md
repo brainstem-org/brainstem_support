@@ -3,7 +3,7 @@ layout: default
 title: Procedure
 parent: Modules
 grand_parent: API
-nav_order: 1
+nav_order: 5
 ---
 
 # Procedure API endpoint

@@ -3,7 +3,7 @@ layout: default
 title: Procedure
 parent: Modules
 grand_parent: Data model
-nav_order: 1
+nav_order: 4
 ---
 
 # Procedure model

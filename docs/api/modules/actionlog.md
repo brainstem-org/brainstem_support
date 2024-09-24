@@ -3,7 +3,7 @@ layout: default
 title: Action Log
 parent: Modules
 grand_parent: API
-nav_order: 6
+nav_order: 7
 ---
 
 # Action Log API endpoint

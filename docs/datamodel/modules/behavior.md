@@ -3,7 +3,7 @@ layout: default
 title: Behavior
 parent: Modules
 grand_parent: Data model
-nav_order: 2
+nav_order: 1
 ---
 
 # Behavior model
