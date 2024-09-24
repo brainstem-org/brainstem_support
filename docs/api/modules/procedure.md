@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Action
+title: Procedure
 parent: Modules
 grand_parent: API
 nav_order: 1
 ---
 
-# Action API endpoint
+# Procedure API endpoint
 {: .no_toc}
 
 ## Table of contents
@@ -32,17 +32,17 @@ nav_order: 1
 | `coordinates_details` | JSON object. *See accepted schemas below* |
 
 
-These are the available `type` options for Action:
+These are the available `type` options for Procedure:
 - `OpticFiberImplant`
 - `SingleWireElectrode`
 - `SiliconProbeImplant`
 - `TetrodeWireElectrode`
 - `VirusInjection`
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the [action schemas page]({{"/api/schemas/actions/"|absolute_url}}).
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the [procedure schemas page]({{"/api/schemas/procedures/"|absolute_url}}).
 
 
-These are the available `coordinates_system` options for Action:
+These are the available `coordinates_system` options for Procedure:
 - `External_XYZ_Absolute`
 - `Stereotaxic_BregmaAbsolute`
 - `Stereotaxic_BregmaBrainSurface`
@@ -57,7 +57,7 @@ A detailed list of the accepted schemas for the `coordinates_details` field, rel
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/modules/action
+- **URL:** https://www.brainstem.org/api/private/modules/procedure
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -65,14 +65,14 @@ A detailed list of the accepted schemas for the `coordinates_details` field, rel
 {: .no_toc}
 
 ```
-resp = client.load_model('action')
+resp = client.load_model('procedure')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'actions': [
+{'procedures': [
     {
         'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
         'type': 'TetrodeWireElectrode',
@@ -122,7 +122,7 @@ resp = client.load_model('action')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/modules/action
+- **URL:** https://www.brainstem.org/api/private/modules/procedure
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -130,7 +130,7 @@ resp = client.load_model('action')
 {: .no_toc}
 
 ```
-resp = client.save_model("action",  data={
+resp = client.save_model("procedure",  data={
     "type": "OpticFiberImplant",
     "subject": "0f87c229-6769-4854-83a5-c71e154246b8",
     "description": "some text",
@@ -152,7 +152,7 @@ resp = client.save_model("action",  data={
 {: .no_toc}
 
 ```
-{'action': {
+{'procedure': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'description': 'some text',
@@ -180,7 +180,7 @@ resp = client.save_model("action",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/modules/action/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/procedure/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -188,14 +188,14 @@ resp = client.save_model("action",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
+resp = client.load_model('procedure', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'action': {
+{'procedure': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'description': 'some text',
@@ -222,7 +222,7 @@ resp = client.load_model('action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/modules/action/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/procedure/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -231,14 +231,14 @@ resp = client.load_model('action', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 {: .no_toc}
 
 ```
-resp = client.save_model("action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"description": "new text"})
+resp = client.save_model("procedure", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"description": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'action': {
+{'procedure': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'description': 'new text',
@@ -265,7 +265,7 @@ resp = client.save_model("action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", da
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/modules/action/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/procedure/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -274,5 +274,5 @@ resp = client.save_model("action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", da
 {: .no_toc}
 
 ```
-resp = client.delete_model("action", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
+resp = client.delete_model("procedure", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 ```

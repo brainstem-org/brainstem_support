@@ -24,7 +24,7 @@ Installations refer to the setup and utilization of various devices and sensors 
 |:--------------------|:-------------|
 | Type                | the type of installation (**required**). *See options below* |
 | Experimental setup  | The experimental setup the installation is installed in (**required**) |
-| Description         | Description of the installation (max length: 500) |
+| Notes               | Notes of the installation (max length: 500) |
 | Date and time       | Date and time the installation was performed (e.g. "2023-03-22") |
 | Consumable          | Consumable used for the installation |
 | Hardware device     | Hardware device used to perform the installation |

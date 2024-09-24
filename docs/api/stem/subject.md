@@ -31,7 +31,7 @@ nav_order: 2
 | `birth_date` | string containing date (e.g. "2023-03-22") |
 | `death_date` | string containing date (e.g. "2023-03-22") |
 | `extra_fields` | list of JSON dictionaries. *See structure below* |
-| `actions` | list of related actions IDs formatted as strings **[read-only]** |
+| `procedures` | list of related procedures IDs formatted as strings **[read-only]** |
 | `subjectstatechanges` | list of related subject state changes IDs formatted as strings **[read-only]** |
 | `name_used_in_repository` | string [max length: 200]|
 | `tags` | list of strings |
@@ -75,11 +75,11 @@ resp = client.load_model('subject')
 		'birth_date': '2023-03-22',
 		'death_date': None,
 		'extra_fields': [],
-		'actions': ['9542eb95-90b3-40c6-9e35-9eef01b3334a'],
+		'procedures': ['9542eb95-90b3-40c6-9e35-9eef01b3334a'],
 		'subjectstatechanges': ['7791fcff-fcee-4c74-bfff-e2b3e4e38481'],
 		'tags': [],
 		'links': {'projects': 'projects/',
-		'actions': 'actions/',
+		'procedures': 'procedures/',
 		'subjectstatechanges': 'subjectstatechanges/'}},
 	{'id': '0f87c229-6769-4854-83a5-c71e154246b8',
 		'name': 'subject2',
@@ -91,7 +91,7 @@ resp = client.load_model('subject')
 		'birth_date': None,
 		'death_date': None,
 		'extra_fields': [],
-		'actions': ['f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
+		'procedures': ['f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
 		'a18dd2b1-6393-468c-9424-1bc77b9e4976',
 		'087b71c4-6785-437c-b8ef-e35a82a8463e',
 		'794fbe3b-3b11-4593-9a6a-96bad2ecf518',
@@ -102,7 +102,7 @@ resp = client.load_model('subject')
 		'subjectstatechanges': ['3d8ba812-2237-4811-875d-96cfdca66e18'],
 		'tags': ['cooling'],
 		'links': {'projects': 'projects/',
-		'actions': 'actions/',
+		'procedures': 'procedures/',
 		'subjectstatechanges': 'subjectstatechanges/'}
 	}
 ]}
@@ -144,7 +144,7 @@ resp = client.save_model("subject",  data={
 	'birth_date': None,
 	'death_date': None,
 	'extra_fields': None,
-	'actions': [],
+	'procedures': [],
 	'subjectstatechanges': [],
 	'tags': [],
 	'links': {'projects': 'projects/'}}
@@ -183,7 +183,7 @@ resp = client.load_model('subject', id='b4ae1f92-5260-4605-8d21-25ac5c3fce91')
 	    "extra_property": "setting1", 
 	    "another_property: 22
 	},
-	'actions': [],
+	'procedures': [],
 	'subjectstatechanges': [],
 	'tags': [],
 	'links': {'projects': 'projects/'}}
@@ -220,7 +220,7 @@ resp = client.save_model("subject", id="b4ae1f92-5260-4605-8d21-25ac5c3fce91", d
     'birth_date': None,
     'death_date': None,
     'extra_fields': None,
-    'actions': [],
+    'procedures': [],
     'subjectstatechanges': [],
     'tags': [],
     'links': {'projects': 'projects/'}}

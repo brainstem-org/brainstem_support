@@ -18,16 +18,16 @@ https://www.BrainSTEM.org/api/*portal*/*app*/*model*/*id*/
 > 
 > __app__: `stem`, `modules`, `personal_attributes`, `resources`, `taxonomies`, `dissemination`, `auth`, `users`
 > 
-> __model__: e.g. `dataset` and `action`. Please see the [data model](/datamodel/data-model/) for an overview of the models. 
+> __model__: e.g. `dataset` and `procedure`. Please see the [data model](/datamodel/data-model/) for an overview of the models. 
 
 
 __dataset endpoint:__ 
 ```
 https://www.BrainSTEM.org/api/private/stem/dataset/
 ```
-__action endpoint:__ 
+__procedure endpoint:__ 
 ```
-https://www.BrainSTEM.org/api/private/modules/action/
+https://www.BrainSTEM.org/api/private/modules/procedure/
 ```
 
 ### Portals

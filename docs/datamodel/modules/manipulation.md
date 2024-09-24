@@ -23,8 +23,8 @@ The manipulation model describes temporal manipulations performed in a dataset. 
 | Field           | Description  |
 |:----------------|:-------------|
 | Type            | Type of manipulation (**required**). *See options below* |
-| Description     | Description of the manipulation (max length: 500) |
-| Actions         | Related subject actions (**required**) |
+| Notes           | Notes of the manipulation (max length: 500) |
+| Procedures      | Related subject procedures (**required**) |
 | Dataset         | Dataset of the manipulation  (**required**) |
 | Hardware device | Hardware device used to perform the manipulation |
 | Type details    | There are also a number of type specific fields. *See options below* |

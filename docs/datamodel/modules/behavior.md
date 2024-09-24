@@ -26,7 +26,7 @@ The behavior model is a module in datasets that is used to describe the behavior
 | Subjects    | Subjects taking part in the behavior (**required**) |
 | Experimental setup | Experimental setup of the behavior (**required**) |
 | Behavioral paradigm  | Behavioral paradigm of the behavior (**required**) |
-| Description | Description of the action (max length: 500) |
+| Notes | Notes to the behavior (max length: 500) |
 
 ## Permissions
 Behavior inherit permissions through the dataset associated with it.

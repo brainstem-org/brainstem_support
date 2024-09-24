@@ -70,7 +70,7 @@ New entries in Taxonomies and Resources can be submitted by users. Any submissio
 ### Expansion of the modules structures
 {: .no_toc }
 
-The available modules the user can select between in actions, experiment data, manipulations, and subject state changes, can be expanded by our admin team. If you wish for this, please submit a request through the issue/discussion forum. 
+The available modules the user can select between in procedures, experiment data, manipulations, and subject state changes, can be expanded by our admin team. If you wish for this, please submit a request through the issue/discussion forum. 
 
 ### Personal attributes
 {: .no_toc }

@@ -23,7 +23,7 @@ nav_order: 3
 | `type` | string **[required]**. *See options below* |
 | `description` | string [max length: 500] |
 | `dataset` | related dataset ID formatted as a string **[required]** |
-| `actions` | list of related actions IDs formatted as strings **[required]** |
+| `procedures` | list of related procedures IDs formatted as strings **[required]** |
 | `hardwaredevice` | related hardware device ID formatted as a string |
 | `details` | JSON object. *See accepted schemas below* |
 
@@ -62,7 +62,7 @@ resp = client.load_model('experimentdata')
         'id': 'b3a6f43b-63f9-41cf-8fc2-5303e958d521',
         'description': None,
         'hardwaredevice': None,
-        'actions': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+        'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
         'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
         'type': 'BehavioralTracking',
         'details': {
@@ -77,7 +77,7 @@ resp = client.load_model('experimentdata')
         'id': '6b7d3eb1-0360-4c40-944b-83e285f8f8a7',
         'description': None,
         'hardwaredevice': None,
-        'actions': ['dedef2d7-00ae-4967-8e93-a9d65a20dfce'],
+        'procedures': ['dedef2d7-00ae-4967-8e93-a9d65a20dfce'],
         'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
         'type': 'Extracellular',
         'details': {
@@ -106,7 +106,7 @@ resp = client.load_model('experimentdata')
 ```
 resp = client.save_model("experimentdata",  data={
     "type": "Extracellular",
-    "actions": ["087b71c4-6785-437c-b8ef-e35a82a8463e"],
+    "procedures": ["087b71c4-6785-437c-b8ef-e35a82a8463e"],
     "dataset": "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
     "description": "some text",
     "details": {
@@ -149,7 +149,7 @@ resp = client.save_model("experimentdata",  data={
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
     'description': 'some text',
     'hardwaredevice': None,
-    'actions': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
     'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
     'type': 'Extracellular',
     'details': {
@@ -206,7 +206,7 @@ resp = client.load_model('experimentdata', id='b0e4ed13-f2f1-4845-8772-24978539d
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
     'description': 'some text',
     'hardwaredevice': None,
-    'actions': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
     'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
     'type': 'Extracellular',
     'details': {
@@ -265,7 +265,7 @@ resp = client.save_model("experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
     'description': 'new text',
     'hardwaredevice': None,
-    'actions': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
     'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
     'type': 'Extracellular',
     'details': {

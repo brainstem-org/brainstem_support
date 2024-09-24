@@ -55,10 +55,10 @@ The list of related experiment data can be retrieved from the returned dictionar
 experimentdata = output1_3.experimentdata;
 ```
 
-Get all subjects with related actions and subject state changes
+Get all subjects with related procedures and subject state changes
 
 ```m
-output1_4 = load_model('model','subject','include',{'actions','subjectstatechanges'});
+output1_4 = load_model('model','subject','include',{'procedures','subjectstatechanges'});
 ```
 
 Get all projects with related subjects and datasets

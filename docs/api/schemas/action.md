@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Action
+title: Procedure
 parent: Schemas
 grand_parent: API
 nav_order: 1
 ---
 
-# Action schemas
+# Procedure schemas
 {: .no_toc}
 
 ## Table of contents

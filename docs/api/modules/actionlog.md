@@ -22,7 +22,7 @@ nav_order: 6
 | `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
 | `description` | string [max length: 500] |
-| `action` | related action ID formatted as a string **[required]** |
+| `procedure` | related procedure ID formatted as a string **[required]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
 
 These are the available `type` options for Action Log:
@@ -63,7 +63,7 @@ resp = client.load_model('actionlog')
         'id': '6a24ec67-59df-4da2-beae-c138102e69b1',
         'type': 'Impedances',
         'description': None,
-        'action': '6a7c4ef9-f633-4b60-aa21-21d274ebab17',
+        'procedure': '6a7c4ef9-f633-4b60-aa21-21d274ebab17',
         'entries': [
             {'date_time': '2023-05-05T06:20:00Z',
              'notes': None,
@@ -84,7 +84,7 @@ resp = client.load_model('actionlog')
         'id': '88331276-e142-45ec-ae63-45a513881ed7',
         'type': 'LinearDisplacement',
         'description': None,
-        'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+        'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
              'notes': None,
@@ -112,7 +112,7 @@ resp = client.load_model('actionlog')
 ```
 resp = client.save_model("actionlog",  data={
     "type": "LinearDisplacement",
-    "action": "61da7e53-1066-42de-a1a2-3db96bb7cba2"})
+    "procedure": "61da7e53-1066-42de-a1a2-3db96bb7cba2"})
 ```
 
 ### Response example
@@ -123,7 +123,7 @@ resp = client.save_model("actionlog",  data={
     'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
     'type': 'LinearDisplacement',
     'description': None,
-    'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+    'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
     'entries': []}
 }
 ```
@@ -152,7 +152,7 @@ resp = client.load_model('actionlog', id='43d3d060-4606-4e95-bd7e-79dcb910cf27')
     'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
     'type': 'LinearDisplacement',
     'description': None,
-    'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+    'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
     'entries': []}
 }
 ```
@@ -181,7 +181,7 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
     'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
     'type': 'LinearDisplacement',
     'description': "new text",
-    'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+    'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
     'entries': []}
 }
 ```
@@ -231,7 +231,7 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
         'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
         'type': 'LinearDisplacement',
         'description': 'new text',
-        'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+        'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
@@ -265,7 +265,7 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
         'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
         'type': 'LinearDisplacement',
         'description': 'new text',
-        'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+        'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': "new text",
@@ -300,7 +300,7 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
         'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
         'type': 'LinearDisplacement',
         'description': 'new text',
-        'action': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+        'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
         'entries': []
     }
 }

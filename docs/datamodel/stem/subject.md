@@ -16,8 +16,8 @@ nav_order: 2
 {:toc}
 
 ## Introduction
-The subject model describes your animal subject through a set of standard fields. There is flexibility built through a rich text description field, extra fields, and tags.  Actions and Subject state change provides modular construction that can describe procedures and other things performed on your subject based on three modules: 
-1. Actions: Surgical procedures and other actions performed on the environment (e.g.: probe implantations, virus injections, and optic fiber implants)
+The subject model describes your animal subject through a set of standard fields. There is flexibility built through a rich text description field, extra fields, and tags.  Procedures and Subject state change provides modular construction that can describe procedures and other things performed on your subject based on three modules: 
+1. Procedures: Surgical procedures and other procedures performed on the environment (e.g.: probe implantations, virus injections, and optic fiber implants)
 2. Subject state changes: Any state change performed on a subject (e.g.: perfusion of the brain, lesion, creation of brain slices)
 
 
@@ -38,14 +38,14 @@ The subject model describes your animal subject through a set of standard fields
 | Extra fields | Allows you to add extra fields to the subject. The values can be a string or a numeric value. |
 
 
-### Action data fields
-Please see the dedicated page describing the [Action data model].
+### Procedure data fields
+Please see the dedicated page describing the [Procedure data model].
 
 ### Subject state change data fields
 Please see the dedicated page describing the [Subject state change data model].
 
 ## Permissions
-Subjects inherit permissions from projects associated with them. Actions, Subject state changes, Subject logs and action logs all inherit permissions through the subject.
+Subjects inherit permissions from projects associated with them. Procedures, Subject state changes, Subject logs and procedure logs all inherit permissions through the subject.
 
 Visit the [permissions page] to learn more. 
 

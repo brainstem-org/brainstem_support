@@ -24,7 +24,7 @@ nav_order: 3
 | `description` | string |
 | `projects` | list of related projects IDs formatted as strings **[required]** |
 | `date_time` | string containing date (e.g. "2023-03-22") |
-| `epochs` | list of related actions IDs formatted as strings **[read-only]** |
+| `epochs` | list of related epoch IDs formatted as strings **[read-only]** |
 | `datarepositories` | list of related data repositories IDs formatted as strings **[read-only]** |
 | `extra_fields` | list of JSON dictionaries. *See structure below* |
 | `download_links` | list of JSON dictionaries. *See structure below* |

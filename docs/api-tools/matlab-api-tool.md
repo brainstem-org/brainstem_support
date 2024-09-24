@@ -18,7 +18,7 @@ Please see the dedicated [tutorial]({{"/tutorials/matlab-api-tool/"|absolute_url
 | `save_model` | Save data to any model |
 | `load_settings` | Local settings: API token, url to the server, and local repositories. |
 | `load_project` | Load project(s). Convenience function for handling projects. Extra parameters: `id`,`name`,`description`,`datasets`,`subjects`,`tags`,`is_public`. Included relational data: `datasets`,`subjects`,`collections`. |
-| `load_subject` | Load subject(s). Convenience function for handling subjects. Extra parameters: `id`,`name`,`description`,`projects`,`strain`,`sex`,`tags`. Included relational data: `actions`,`subjectstatechanges`,`subjectlogs`. |
+| `load_subject` | Load subject(s). Convenience function for handling subjects. Extra parameters: `id`,`name`,`description`,`projects`,`strain`,`sex`,`tags`. Included relational data: `procedures`,`subjectstatechanges`,`subjectlogs`. |
 | `load_dataset` | Load dataset(s). Convenience function for handling datasets. Extra parameters: `id`,`name`,`description`,`projects`,`datarepositories`,`tags`. Included relational data: `experimentdata`,`behaviors`,`manipulations`,`epochs`. |
 | `brainstem_api_tutorial` | Tutorial script. |
 
@@ -75,5 +75,5 @@ output = load_subject('name','mysubject');
 ```
 Performs the same API call as:
 ```m
-output = load_model('app', 'stem', 'model', 'subject', 'filter', {'name','mysubject'}, 'include', {'actions', 'subjectstatechanges', 'subjectlogs'});
+output = load_model('app', 'stem', 'model', 'subject', 'filter', {'name','mysubject'}, 'include', {'procedures', 'subjectstatechanges', 'subjectlogs'});
 ```
