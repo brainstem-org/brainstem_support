@@ -16,7 +16,7 @@ Please see the dedicated [tutorial]({{"/tutorials/python-api-tool/"|absolute_url
 | `authentication` | Get and save authentication token |
 | `load_model` | Load data from any model |
 | `save_model` | Save data to any model |
-| `load_settings` | Local settings: API token, url to the server, and local repositories. |
+| `load_settings` | Local settings: API token, url to the server, and local storage. |
 | `brainstem_api_tutorial` | Tutorial script. |
 
 

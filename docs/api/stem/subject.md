@@ -33,7 +33,7 @@ nav_order: 2
 | `extra_fields` | list of JSON dictionaries. *See structure below* |
 | `procedures` | list of related procedures IDs formatted as strings **[read-only]** |
 | `subjectstatechanges` | list of related subject state changes IDs formatted as strings **[read-only]** |
-| `name_used_in_repository` | string [max length: 200]|
+| `name_used_in_storage` | string [max length: 200]|
 | `tags` | list of strings |
 
 

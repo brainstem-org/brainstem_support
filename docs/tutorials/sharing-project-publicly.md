@@ -12,7 +12,7 @@ __Update public permissions inheritance picture__
 
 ![permissions](/assets/images/permission_v2.png)
 
-Personal attributes: Behavioral paradigms, Data repositories, and Physcical environments, must also on an individual basic be shared publicly to be accessible through public projects.
+Personal attributes: Behavioral paradigms, Data storage, and Physical environments, must also on an individual basic be shared publicly to be accessible through public projects.
 
 ### Alter the public sharing status of a project
 Only the owners of a project can change the public sharing status. To change the status of a project, simply edit the project and tick of the public sharing checkmark field.

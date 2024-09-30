@@ -27,7 +27,7 @@ Projects serve as an overall way to group subjects, datasets, and collections to
 | Publications | Related publications |
 | Extra fields | Allows you to add extra fields to the project. The values can be a string or a numeric value |
 | Public project | Determines if the project is publicly available or only through the private portal (boolean value). |
-| Name used in repository | Use this field if you have another name of your project (string; maximum length: 200 characters) |
+| Name used in storage | Use this field if you have another name of your project (string; maximum length: 200 characters) |
 | Tags         | Tags for the project. Tags are great for organizational purpose, to quickly label a project and can be used as a filter afterwards. |
 
 

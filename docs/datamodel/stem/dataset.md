@@ -31,10 +31,10 @@ A dataset is a modular construction that provides flexible and standardized desc
 | Projects         | Any projects the dataset belongs to. Learn more about the project inheritance [here] (**required**) |
 | Description      | A text description of the dataset. Pictures can be uploaded and inserted. |
 | Date and time    | Date and time of the onset of the dataset (YYYY-MM-DD string containing date, e.g. "2023-03-22") |
-| Datarepositories | Describes where the data is stored |
+| Datastorage      | Describes where the data is stored |
 | Extra fields     | Allows you to add extra fields to the dataset. The values can be a string or a numeric value |
-| Download links   | JSON dictionary | name value pairs allowing you to add extra content |
-| Name used in repository | Custom name for a dataset used in an organization in a repository (string; max length: 200) |
+| Download links   | Name value pairs allowing you to add extra content |
+| Name used in storage | Custom name for a dataset used in an organization in a storage (string; max length: 200) |
 | Tags             | Tags for the dataset. Tags are great for organizational purpose, to quickly label a dataset and can be used as a filter afterwards |
 
 
@@ -60,7 +60,7 @@ Please see the dedicated page describing the [Manipulations data model].
 Please see the dedicated page describing the [Behavior data model].
 
 ## Permissions
-The dataset inherits permissions from projects associated with it. Data repositories are shared through the projects groups, and you are only able to add a data repository associated with the same groups as the selected projects. The relationships in modules also depends on the selected projects
+The dataset inherits permissions from projects associated with it. Data storage is shared through the projects groups, and you are only able to add a data storage associated with the same groups as the selected projects. The relationships in modules also depends on the selected projects
 
 Visit the [permissions page] to learn more. 
 

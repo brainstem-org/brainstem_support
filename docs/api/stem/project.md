@@ -27,7 +27,7 @@ nav_order: 1
 | `publications` | list of related publications IDs formatted as strings **[read-only]** |
 | `extra_fields` | list of JSON dictionaries. *See structure below* |
 | `is_public` | boolean |
-| `name_used_in_repository` | string [max length: 200]|
+| `name_used_in_storage` | string [max length: 200]|
 | `tags` | list of strings |
 | `users` | JSON dictionary. *See structure below* |
 | `groups` | JSON dictionary. *See structure below* |

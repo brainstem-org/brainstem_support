@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Data repository
+title: Data storage
 parent: Personal attributes
 grand_parent: API
 nav_order: 5
 ---
 
-# Data repository API endpoint
+# Data storage API endpoint
 {: .no_toc}
 
 ## Table of contents
@@ -30,7 +30,7 @@ nav_order: 5
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/datarepository
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/datastorage
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -38,14 +38,14 @@ nav_order: 5
 {: .no_toc}
 
 ```
-resp = client.load_model('datarepository')
+resp = client.load_model('datastorage')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'data_repositories': [
+{'datastorage': [
     {
         'id': '2ba92d91-349d-4e8c-9785-fc941ddd8868',
         'name': 'Peters testdata',
@@ -87,7 +87,7 @@ resp = client.load_model('datarepository')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/datarepository
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/datastorage
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -96,7 +96,7 @@ resp = client.load_model('datarepository')
 {: .no_toc}
 
 ```
-resp = client.save_model("datarepository",  data=
+resp = client.save_model("datastorage",  data=
     {
         'name': "MyNewRepo",
         'data_organization_json': [
@@ -127,7 +127,7 @@ resp = client.save_model("datarepository",  data=
 {: .no_toc}
 
 ```
-{'datarepository': {
+{'datastorage': {
     'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
     'name': 'MyNewRepo',
     'description': '',
@@ -160,7 +160,7 @@ resp = client.save_model("datarepository",  data=
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/datarepository/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/datastorage/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -168,14 +168,14 @@ resp = client.save_model("datarepository",  data=
 {: .no_toc}
 
 ```
-resp = client.load_model('datarepository', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2')
+resp = client.load_model('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'datarepository': {
+{'datastorage': {
     'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
     'name': 'MyNewRepo',
     'description': '',
@@ -207,7 +207,7 @@ resp = client.load_model('datarepository', id='9f322057-cf48-4ec7-ab19-d0d7175cf
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/datarepository/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/datastorage/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -216,14 +216,14 @@ resp = client.load_model('datarepository', id='9f322057-cf48-4ec7-ab19-d0d7175cf
 {: .no_toc}
 
 ```
-resp = client.save_model("datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2", data={"description": "new text"})
+resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2", data={"description": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'datarepository': {
+{'datastorage': {
     'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
     'name': 'MyNewRepo',
     'description': 'new text',
@@ -255,7 +255,7 @@ resp = client.save_model("datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cf
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/datarepository/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/datastorage/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -264,5 +264,5 @@ resp = client.save_model("datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cf
 {: .no_toc}
 
 ```
-resp = client.delete_model("datarepository", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2")
+resp = client.delete_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2")
 ``` 

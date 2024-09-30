@@ -25,13 +25,13 @@ nav_order: 3
 | `projects` | list of related projects IDs formatted as strings **[required]** |
 | `date_time` | string containing date (e.g. "2023-03-22") |
 | `epochs` | list of related epoch IDs formatted as strings **[read-only]** |
-| `datarepositories` | list of related data repositories IDs formatted as strings **[read-only]** |
+| `datastorage` | list of related data storage IDs formatted as strings **[read-only]** |
 | `extra_fields` | list of JSON dictionaries. *See structure below* |
 | `download_links` | list of JSON dictionaries. *See structure below* |
 | `experimentdata` | list of related experiment data IDs formatted as strings **[read-only]** |
 | `behaviors` | list of related behaviors IDs formatted as strings **[read-only]** |
 | `manipulations` | list of related manipulations IDs formatted as strings **[read-only]** |
-| `name_used_in_repository` | string [max length: 200]|
+| `name_used_in_storage` | string [max length: 200]|
 | `tags` | list of strings |
 
 
@@ -81,7 +81,7 @@ resp = client.load_model('dataset')
         'epochs': [],
         'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
         'date_time': None,
-        'datarepositories': [],
+        'datastorage': [],
         'extra_fields': [],
         'download_links': [],
         'experimentdata': [],
@@ -97,7 +97,7 @@ resp = client.load_model('dataset')
         'epochs': [],
         'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
         'date_time': None,
-        'datarepositories': [],
+        'datastorage': [],
         'extra_fields': [],
         'download_links': [],
         'experimentdata': ['1c77ae53-6f83-4398-bfe5-6eb95ff00610'],
@@ -139,7 +139,7 @@ resp = client.save_model("dataset",  data={
     'epochs': [],
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
     'date_time': None,
-    'datarepositories': [],
+    'datastorage': [],
     'extra_fields': [],
     'download_links': [],
     'experimentdata': [],
@@ -175,7 +175,7 @@ resp = client.load_model('dataset', id='13bdd793-86d4-428e-9708-167bbc26f6d2')
     'epochs': [],
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
     'date_time': None,
-    'datarepositories': [],
+    'datastorage': [],
     'extra_fields': {
         "extra_property": "setting1", 
         "another_property: 22
@@ -218,7 +218,7 @@ resp = client.save_model("dataset", id="13bdd793-86d4-428e-9708-167bbc26f6d2", d
     'epochs': [],
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
     'date_time': None,
-    'datarepositories': [],
+    'datastorage': [],
     'extra_fields': [],
     'download_links': [],
     'experimentdata': [],

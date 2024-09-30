@@ -34,7 +34,7 @@ The subject model describes your animal subject through a set of standard fields
 | Birth date   | Birth date of the animal subject (e.g. "2023-03-22") |
 | Death date   | Death date of the animal subject (e.g. "2023-03-25") |
 | Tags         | Tags for the subject. Tags are great for organizational purpose, to quickly label a subject and can be used as a filter afterwards. |
-| Name used in repository | Use this field if you have another name of your subject (string; maximum length: 100 characters) |
+| Name used in storage | Use this field if you have another name of your subject (string; maximum length: 100 characters) |
 | Extra fields | Allows you to add extra fields to the subject. The values can be a string or a numeric value. |
 
 
