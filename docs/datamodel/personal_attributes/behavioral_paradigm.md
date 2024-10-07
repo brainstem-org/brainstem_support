@@ -36,6 +36,6 @@ Behavioral paradigms define the overall permissions level for installations. You
 Visit the [permissions page] to learn more. 
 
 
-### Dataset API access
+## Dataset API access
 The API allows for programmable access to Behavioral paradigms, enabling you to read, edit, and delete Behavioral paradigms through the API. Learn more about the datasets' fields and data structure on the [Dataset API page]({{"api/personal_attributes/behavioralparadigm/"|absolute_url}}). 
 
