@@ -23,8 +23,8 @@ Procedures covers surgical procedures and other methods that allows you to track
 | Field               | Description  |
 |:--------------------|:-------------|
 | Type                | the type of procedure (**required**). *See options below* |
-| Notee               | Notes to the procedure (max length: 500) |
 | Subject             | The subject the procedure was performed on (**required**) |
+| Note               | Notes to the procedure (max length: 500) |
 | Date and time       | Date and time the procedure was performed (e.g. "2023-03-22") |
 | Consumable          | Consumable used for the procedure |
 | Hardware device     | Hardware device used to perform the procedure |

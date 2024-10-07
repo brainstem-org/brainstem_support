@@ -25,17 +25,20 @@ A dataset is a modular construction that provides flexible and standardized desc
 
 ## Dataset fields
 
-| Field            | Description |
-|:-----------------|:------------|
-| Name             | Name of the dataset (**required**; string; max length: 100 characters; must be unique) |
-| Projects         | Any projects the dataset belongs to. Learn more about the project inheritance [here] (**required**) |
-| Description      | A text description of the dataset. Pictures can be uploaded and inserted. |
-| Date and time    | Date and time of the onset of the dataset (YYYY-MM-DD string containing date, e.g. "2023-03-22") |
-| Datastorage      | Describes where the data is stored |
-| Extra fields     | Allows you to add extra fields to the dataset. The values can be a string or a numeric value |
-| Download links   | Name value pairs allowing you to add extra content |
+| Field                | Description |
+|:---------------------|:------------|
+| Name                 | Name of the dataset (**required**; string; max length: 100 characters; must be unique) |
+| Projects             | Any projects the dataset belongs to. Learn more about the project inheritance [here] (**required**) |
+| Description          | A text description of the dataset. Pictures can be uploaded and inserted. |
+| Date and time onset  | Date and time of the onset of the dataset (YYYY-MM-DD string containing date, e.g. "2023-03-22") |
+| Tags                 | Tags for the dataset. Tags are great for organizational purpose, to quickly label a dataset and can be used as a filter afterwards |
+| Data storage         | Describes where the data is stored |
+| Dataset name in data storage| Use this field if you have another name for your dataset, in your local data storage|
+| Extra fields         | Allows you to add extra fields to the dataset. The values can be a string or a numeric value |
+| Public repositories| If this project has been shared in a public repository, link it here.|
+| Download links       | Name value pairs allowing you to add extra content |
 | Name used in storage | Custom name for a dataset used in an organization in a storage (string; max length: 200) |
-| Tags             | Tags for the dataset. Tags are great for organizational purpose, to quickly label a dataset and can be used as a filter afterwards |
+
 
 
 ### Epoch fields

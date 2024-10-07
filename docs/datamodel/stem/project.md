@@ -19,17 +19,17 @@ nav_order: 1
 Projects serve as an overall way to group subjects, datasets, and collections together. A project can be used to relate experiments for publications, as well as to describe day-to-day experiments or sharing experimental data with collaborators. Projects define the overall permissions level of most other content.
 
 ## Fields
-
-| Field        | Description  |
-|:-------------|:-------------|
-| Name         | Name of the project (**required**; string; maximum length: 200 characters; must be unique)|
-| Description  | A text description of the project. You can upload and insert images.  |
-| Publications | Related publications |
-| Extra fields | Allows you to add extra fields to the project. The values can be a string or a numeric value |
-| Public project | Determines if the project is publicly available or only through the private portal (boolean value). |
-| Name used in storage | Use this field if you have another name of your project (string; maximum length: 200 characters) |
-| Tags         | Tags for the project. Tags are great for organizational purpose, to quickly label a project and can be used as a filter afterwards. |
-
+| Field | Description                                                                                                                  |
+|:------|:-----------------------------------------------------------------------------------------------------------------------------|
+| Name | Name of the project (**required**; string; maximum length: 200 characters; must be unique)                                   |
+| Description | A text description of the project. You can upload and insert images.                                                         |
+| Publications | Related publications                                                                                                         |
+| Tags | Tags for the project. Great for organizational purposes, quick labeling, and filtering.                                      |
+| Extra fields | Allows you to add extra fields to the project. Values can be strings or numeric.                                             |
+| Project name in storage | Use this field if you have another name for your project in your local data storage (string; maximum length: 200 characters) |
+| Public repositories | If this project has been shared in a public repository, link it here.                                                        |
+| User with role | Users associated with the project                                                                                            |
+| Role | The role assigned to each user                                                                                               |
 
 ## Permissions
 Projects define the overall permissions level for subjects, datasets, collections, and modules. You manage permissions through the management tab, where you can assign individual users and groups access levels to a project. Projects have four permission levels: membership (read access), change permissions, managers, and owners. For more information on permissions, please visit the permissions page.

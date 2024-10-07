@@ -33,11 +33,14 @@ Installations refer to the setup and utilization of various devices and sensors 
 
 ## Types of installations
 These are the available _Type_ options for Installation:
-- CameraInstallation
-- InfraredCamera
 - Microphone
-- PressureSensor
-- Thermostat
+- Video camara installation
+- Pressure sensor
+- Thermometer
+- Infared camera
+- Light sensor
+- Light emitter
+- Speaker
 
 A detailed list of the type-specific fields, can be found in the [installation type page]({{"/datamodel/schemas/installations/"|absolute_url}}).
 

@@ -22,27 +22,29 @@ The manipulation model describes temporal manipulations performed in a dataset. 
 
 | Field           | Description  |
 |:----------------|:-------------|
-| Type            | Type of manipulation (**required**). *See options below* |
-| Notes           | Notes of the manipulation (max length: 500) |
-| Procedures      | Related subject procedures (**required**) |
 | Dataset         | Dataset of the manipulation  (**required**) |
+| Type            | Type of manipulation (**required**). *See options below* |
+| Procedures      | Related subject procedures (**required**) |
+| Notes           | Notes of the manipulation (max length: 500) |
 | Hardware device | Hardware device used to perform the manipulation |
 | Type details    | There are also a number of type specific fields. *See options below* |
 
 ## Types of manipulations
 These are the available _Type_ options for manipulations:
+- Deep brain stimulation (DBS)
 - Electromagnetic field stimulation
-- Electrical stimulation 
+- Electrical stimulation
 - Liquid perturbation
 - Micro perfusion
 - Optogenetical stimulation
-- Pharmacological inhalation 
+- Pharmacological inhalation
 - Pharmacological injection
-- Pharmacological superfusion 
+- Pharmacological superfusion
 - Sound stimulation
 - Thermal perturbation
-- Transcranial electrical stimulation
-- Ultra sound stimulation 
+- Transcranial Electrical Stimulation
+- Transcranial Magnetic Stimulation (TMS)
+- Ultra sound stimulation
 
 A detailed list of the type-specific fields, can be found in the [manipulation type page]({{"/datamodel/schemas/manipulation/"|absolute_url}}).
 

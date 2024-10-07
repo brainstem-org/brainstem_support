@@ -23,19 +23,21 @@ The subject model describes your animal subject through a set of standard fields
 
 ## Fields
 
-| Field        | Description  |
-|:-------------|:-------------|
-| Name         | Name of the subject (**required**; maximum length: 100 characters; must be unique) |
-| Projects     | Projects the subject belongs to (**required**) |
-| Sex          | Sex of the animal: (Male, Female, or Unknown; **required**) |
-| Strain       | The strain of the subject(**required**) |
-| Description  | A rich text description of the subject |
-| Genetic line | Genetic line of the subject. Could also be wild type (string; maximum length: 100 characters) |
-| Birth date   | Birth date of the animal subject (e.g. "2023-03-22") |
-| Death date   | Death date of the animal subject (e.g. "2023-03-25") |
+| Field        | Description                                                                                                                         |
+|:-------------|:------------------------------------------------------------------------------------------------------------------------------------|
+| Name         | Name of the subject (**required**; maximum length: 100 characters; must be unique)                                                  |
+| Projects     | Projects the subject belongs to (**required**)                                                                                      |
+| Sex          | Sex of the animal: (Male, Female, or Unknown; **required**)                                                                         |
+| Strain       | The strain of the subject(**required**)                                                                                             |
+| Description  | A rich text description of the subject                                                                                              |
+| Genetic line | Genetic line of the subject. Could also be wild type (string; maximum length: 100 characters)                                       |
+| Birth date   | Birth date of the animal subject (e.g. "2023-03-22")                                                                                |
+| Death date   | Death date of the animal subject (e.g. "2023-03-25")                                                                                |
 | Tags         | Tags for the subject. Tags are great for organizational purpose, to quickly label a subject and can be used as a filter afterwards. |
-| Name used in storage | Use this field if you have another name of your subject (string; maximum length: 100 characters) |
-| Extra fields | Allows you to add extra fields to the subject. The values can be a string or a numeric value. |
+| Subject identifier| Any identifier used for this subject outside of BrainSTEM, such as an ear tag or RFID number.                                       |
+| Source| The source of the subject, e.g. Charles River.                                                                                      |
+| Name used in storage | Use this field if you have another name of your subject (string; maximum length: 100 characters)                                    |
+| Extra fields | Allows you to add extra fields to the subject. The values can be a string or a numeric value.                                       |
 
 
 ### Procedure data fields
