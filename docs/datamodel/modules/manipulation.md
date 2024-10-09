@@ -3,7 +3,7 @@ layout: default
 title: Manipulation
 parent: Modules
 grand_parent: Data model
-nav_order: 3
+nav_order: 4
 ---
 
 # Manipulation model

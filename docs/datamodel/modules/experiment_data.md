@@ -3,7 +3,7 @@ layout: default
 title: Experiment data
 parent: Modules
 grand_parent: Data model
-nav_order: 5
+nav_order: 2
 ---
 
 # Experiment data model

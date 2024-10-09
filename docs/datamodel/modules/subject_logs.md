@@ -25,10 +25,9 @@ Subject logs refer to records that track various aspects of the subjects' living
 | Type | Type of subject log (**required**). *See options below* |
 | Subject | The subject associated with the log (**required**) |
 | Description | Description of the subject log |
-| Type details | Type-specific fields for each log entry. *See options below* |
 | Notes | Notes about the subject log (for each log entry) |
 | Date and time | Timestamp for each log entry (for simple timestamp logs) |
-| Start and end time | Start and stop timestamp of each log entry (for time period logs) |
+| Type details | Type-specific fields for each log entry. *See options below* |
 
 ## Types of subject logs
 These are the available *Type* options for Subject logs:

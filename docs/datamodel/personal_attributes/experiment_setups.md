@@ -31,6 +31,27 @@ Experimental setups describe where experiments, procedures, or manipulations tak
 | Public access        | Determines if the setup is public or private |
 | Physical dimensions  | Any physical dimensions used to describe the setup. Each dimension is a name value pair with any associated units or description. |
 
+## Types of environment type
+- Barnes maze
+- Circular track
+- Elevated plus maze
+- Elevated zero maze
+- Figure eight maze
+- Forced swim test
+- Head-fixed disc
+- Homecage
+- Linear Track
+- Morris water maze
+- Open field environment
+- Radial arm maze
+- Running wheel
+- Sleepbox
+- Square cage
+- Theta maze
+- T-maze
+- Y-maze
+- Other
+
 ## Permissions
 Experimental setups define the overall permissions level for installations. You manage permissions through the management tab, where you can assign individual users and groups access levels to a Experimental setup. Experimental setup have four permission levels: membership (read access), change permissions, managers, and owners.
 

@@ -16,7 +16,7 @@ nav_order: 6
 {:toc}
 
 ## Introduction
-Action logs refer to systematic records that track specific parameters or outcomes related to the actions performed on or with subjects in scientific studies. These logs are vital for ensuring the accuracy and reproducibility of experimental results, allowing researchers to monitor the effectiveness, consistency, and potential issues associated with various procedures and equipment used in their studies. Action log types share relationships, but fields are tailored to the various action log types.
+Action logs refer to systematic records that track specific parameters or outcomes related to the actions (procedures) performed on or with subjects in scientific studies. These logs are vital for ensuring the accuracy and reproducibility of experimental results, allowing researchers to monitor the effectiveness, consistency, and potential issues associated with various procedures and equipment used in their studies. Action log types share relationships, but fields are tailored to the various action log types.
 
 ## Fields
 

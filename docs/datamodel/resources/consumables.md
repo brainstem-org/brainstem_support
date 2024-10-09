@@ -17,7 +17,7 @@ nav_order: 1
 
 
 ## Introduction 
-Consumables refer to items that are intended to be used once or have a limited lifespan before they need to be replaced. These include materials and products that are consumed or depleted during the course of experiments or procedures. Consumables are critical for maintaining the integrity, accuracy, and reproducibility of scientific experiments. In BrainSTEM, consumables are a shared model across users.
+CConsumables are items used in scientific experiments that have a limited lifespan or are intended for single use. These materials and products are essential for maintaining experimental integrity, accuracy, and reproducibility. In BrainSTEM, consumables are shared across users to promote standardization and ease of use.
 
 ## Dataset fields
 
@@ -26,8 +26,8 @@ Consumables refer to items that are intended to be used once or have a limited l
 | Name                 | Name of the consumable (**required**) |
 | Type  			   | Type of consumable (**required**) |
 | Supplier             | Supplier of the consumable (**required**) |
-| Type specific fields | Each type has custom fields (**required**) |
 | Description          | A description of the consumable |
+| Type specific fields | Custom fields based on consumable type (**required**) |
 
 ## Types of consumable
 - Optic fiber designs

@@ -3,7 +3,7 @@ layout: default
 title: Installation
 parent: Modules
 grand_parent: Data model
-nav_order: 2
+nav_order: 3
 ---
 
 # Installation model
