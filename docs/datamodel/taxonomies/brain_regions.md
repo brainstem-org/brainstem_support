@@ -22,7 +22,7 @@ Brain regions are a type of taxonomy defined by brain atlases. In BrainSTEM, bra
 
 | Field | Description |
 |:------|:------------|
-| Name | The name of the brain region (**required**) |
+| Name         | The name of the brain region (**required**) |
 | Acronym | Acronym used for the brain region (**required**) |
 | Atlas | The brain atlas in which the brain region is defined (**required**). *See options below* |
 | Description | A general description of the brain region |

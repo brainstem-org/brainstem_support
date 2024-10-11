@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Coordinates
+title: Coordinates systems
 parent: Schemas
 grand_parent: Data model
 nav_order: 1
@@ -113,3 +113,6 @@ Focuses on two-dimensional positioning on the brain's surface, using X and Y coo
 | `Y angle` | Y angle (degrees): Angle of tilt around the Y-axis, in degrees, indicating the lateral tilt relative to the central axis of the surface. |
 | `Depth` | Depth (mm): Depth in millimeters, measuring the perpendicular distance below the surface plane, used for setting the penetration depth of an instrument. |
 | `Rotation` | Rotation (degrees): Rotation around the vertical axis through the point of interest, in degrees, used to adjust the orientation of the instrument or device. |
+
+## Coordinates API access
+The API allows for programmable access to Coordinates, enabling you to read, edit, and delete coordinates through the API. Learn more about the coordinates' fields and data structure on the [Coordinates API page]({{"api/modules/coordinates/"|absolute_url}}).
