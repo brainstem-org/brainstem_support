@@ -30,7 +30,6 @@ A three-dimensional Cartesian coordinate system using absolute positions relativ
 | `Y angle` | Y angle (degrees): Rotational angle around the Y axis, in degrees, indicating roll or sideways tilt relative to the vertical axis. |
 | `Z angle` | Z angle (degrees): Rotational angle around the Z axis, in degrees, indicating azimuth or orientation facing around the vertical axis. |
 
-
 ## Stereotaxic Bregma-Based Absolute Coordinates
 
 Utilizes the Bregma point as a primary reference for absolute positioning within the skull. This system includes anteroposterior (AP), mediolateral (ML), and dorsoventral (DV) coordinates, along with their corresponding angles, enabling precise targeting and measurement from the Bregma landmark.
@@ -43,7 +42,6 @@ Utilizes the Bregma point as a primary reference for absolute positioning within
 | `AP angle` | AP angle (degrees): Angle of the device or probe in the Anterior-Posterior direction, in degrees. |
 | `ML angle` | ML angle (degrees): Angle of the device or probe in the Medial-Lateral direction, in degrees. |
 | `DV angle` | DV angle (degrees): Angle of the device or probe in the Dorsal-Ventral direction, in degrees. |
-
 
 ## Stereotaxic Bregma-Based Surface Coordinates with Depth
 
@@ -58,7 +56,6 @@ Measures coordinates from the surface of the brain at the Bregma point, incorpor
 | `AP angle` | AP angle (degrees): Angle adjustment in the Medial-Lateral direction, in degrees. |
 | `ML angle` | ML angle (degrees): Rotation of the implant around the insertion axis, in degrees. |
 
-
 ## Stereotaxic Lambda-Based Absolute Coordinates
 
 Anchors measurements to the Lambda, a secondary cranial landmark, providing a set of absolute coordinates. Like the Bregma system, it includes AP, ML, and DV coordinates and their angles, offering an alternative reference point for varied experimental setups.
@@ -71,7 +68,6 @@ Anchors measurements to the Lambda, a secondary cranial landmark, providing a se
 | `AP angle` | AP angle (degrees): Tilting angle in the Anterior-Posterior axis from Lambda, in degrees. Used to adjust the probe or electrode's approach angle relative to the skull. |
 | `ML angle` | ML angle (degrees): Tilting angle in the Medial-Lateral direction from Lambda, in degrees. Adjusts for lateral tilt relative to the skull's central line. |
 | `DV angle` | DV angle (degrees): Angular adjustment in the Dorsal-Ventral plane from Lambda, in degrees. Used to orient instruments vertically. |
-
 
 ## Stereotaxic Lambda-Based Surface Coordinates with Depth
 
@@ -86,7 +82,6 @@ Similar to the Bregma brain surface system, but using Lambda as the reference. I
 | `AP angle` | AP angle (degrees): Medial-Lateral tilting angle from Lambda, in degrees, adjusting the lateral orientation of devices or surgical tools. |
 | `ML angle` | ML angle (degrees): Rotation around the vertical axis through Lambda, in degrees. This controls the azimuthal orientation of the probe or surgical tool. |
 
-
 ## Stereotaxic XYZ Absolute Coordinates
 
 A comprehensive three-dimensional coordinate system based on stereotaxic principles, using X, Y, and Z coordinates along with their corresponding angles. This system allows for precise navigation and localization within a stereotaxic frame, supporting complex brain mapping and intervention tasks.
@@ -99,7 +94,6 @@ A comprehensive three-dimensional coordinate system based on stereotaxic princip
 | `X angle` | X angle (degrees): Rotational angle about the X-axis, in degrees, adjusting the tilt of the instrument or probe horizontally. |
 | `Y angle` | Y angle (degrees): Rotational angle about the Y-axis, in degrees, used to orient the probe or device in the anterior-posterior plane. |
 | `Z angle` | Z angle (degrees): Rotational angle about the Z-axis, in degrees, adjusting the azimuth or directional facing of the setup |
-
 
 ## Stereotaxic Surface XY Surface Coordinates with Depth
 

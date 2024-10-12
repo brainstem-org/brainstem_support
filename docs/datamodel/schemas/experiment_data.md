@@ -18,6 +18,7 @@ A wide range of data acquisition methods are supported to capture various aspect
 {:toc}
 
 ## Audio
+
 Audio experiment data captures sound recordings related to the experiment.
 
 | Field | Description |
@@ -29,6 +30,7 @@ Audio experiment data captures sound recordings related to the experiment.
 | `Codec` | Audio codec used for encoding |
 
 ## Behavioral Tracking
+
 Behavioral tracking data records the movement and actions of subjects during experiments.
 
 | Field | Description |
@@ -39,6 +41,7 @@ Behavioral tracking data records the movement and actions of subjects during exp
 | `Horizontal resolution` | Horizontal resolution of the tracking images or video |
 
 ## Computed Tomography (CT)
+
 CT data provides detailed cross-sectional images of the subject.
 
 | Field | Description |
@@ -51,6 +54,7 @@ CT data provides detailed cross-sectional images of the subject.
 | `Laser power (mW)` | Laser power used in milliwatts |
 
 ## Confocal Microscopy
+
 Confocal microscopy data captures high-resolution optical sections of samples.
 
 | Field | Description |
@@ -67,6 +71,7 @@ Confocal microscopy data captures high-resolution optical sections of samples.
 | `Voxel size (Z dimension)` | Voxel size in the Z dimension |
 
 ## Electroencephalography (EEG)
+
 EEG data records electrical activity of the brain.
 
 | Field | Description |
@@ -80,6 +85,7 @@ EEG data records electrical activity of the brain.
 | `Channel tags` | Tags associated with specific channels |
 
 ## Electroneurogram (ENG)
+
 ENG data records electrical activity from peripheral nerves.
 
 | Field | Description |
@@ -93,6 +99,7 @@ ENG data records electrical activity from peripheral nerves.
 | `Channel tags` | Tags associated with specific channels |
 
 ## Extracellular Electrophysiology
+
 Extracellular electrophysiology data records electrical activity from outside cells.
 
 | Field | Description |
@@ -106,6 +113,7 @@ Extracellular electrophysiology data records electrical activity from outside ce
 | `Channel tags` | Tags associated with specific channels |
 
 ## Fiber Photometry
+
 Fiber photometry data records fluorescence signals from specific neural populations.
 
 | Field | Description |
@@ -116,6 +124,7 @@ Fiber photometry data records fluorescence signals from specific neural populati
 | `Excitation wavelength (nm)` | Excitation wavelength used in nanometers |
 
 ## Functional Magnetic Resonance Imaging (fMRI)
+
 fMRI data measures brain activity by detecting changes in blood oxygenation and flow.
 
 | Field | Description |
@@ -128,6 +137,7 @@ fMRI data measures brain activity by detecting changes in blood oxygenation and 
 | `Laser power (mW)` | Laser power used in milliwatts (if applicable) |
 
 ## Functional Ultrasound Imaging (fUS)
+
 fUS data captures brain activity through changes in blood flow using ultrasound.
 
 | Field | Description |
@@ -140,6 +150,7 @@ fUS data captures brain activity through changes in blood flow using ultrasound.
 | `Laser power (mW)` | Laser power used in milliwatts (if applicable) |
 
 ## General time-series
+
 General time-series data represents any time-based measurements not covered by other specific types.
 
 | Field | Description |
@@ -153,6 +164,7 @@ General time-series data represents any time-based measurements not covered by o
 | `Channel tags` | Tags associated with specific channels |
 
 ## Intracellular Electrophysiology
+
 Intracellular electrophysiology data records electrical activity from inside cells.
 
 | Field | Description |
@@ -164,6 +176,7 @@ Intracellular electrophysiology data records electrical activity from inside cel
 | `Least significant bit (μV/bit)` | Voltage represented by the least significant bit |
 
 ## Light Field Microscopy (LFM)
+
 LFM data captures 3D information in a single shot using an array of microlenses.
 
 | Field | Description |
@@ -180,6 +193,7 @@ LFM data captures 3D information in a single shot using an array of microlenses.
 | `Voxel size (Z dimension)` | Voxel size in the Z dimension |
 
 ## Magnetic Resonance Imaging (MRI)
+
 MRI data provides detailed anatomical images of the brain and body.
 
 | Field | Description |
@@ -192,6 +206,7 @@ MRI data provides detailed anatomical images of the brain and body.
 | `Laser power (mW)` | Laser power used in milliwatts (if applicable) |
 
 ## Magnetoencephalography (MEG)
+
 MEG data records magnetic fields produced by electrical currents in the brain.
 
 | Field | Description |
@@ -204,6 +219,7 @@ MEG data records magnetic fields produced by electrical currents in the brain.
 | `Imaging depth (μm)` | Depth of imaging in micrometers (if applicable) |
 
 ## Miniscope Microscopy
+
 Miniscope microscopy data captures neural activity in freely behaving animals using miniature microscopes.
 
 | Field | Description |
@@ -216,6 +232,7 @@ Miniscope microscopy data captures neural activity in freely behaving animals us
 | `Imaging depth (μm)` | Depth of imaging in micrometers |
 
 ## Positron Emission Tomography (PET)
+
 PET data provides functional images of metabolic processes in the body.
 
 | Field | Description |
@@ -228,6 +245,7 @@ PET data provides functional images of metabolic processes in the body.
 | `Laser power (mW)` | Laser power used in milliwatts (if applicable) |
 
 ## Single-photon emission computed tomography (SPECT)
+
 SPECT data provides 3D images of radioactive tracer distribution in the body.
 
 | Field | Description |
@@ -240,6 +258,7 @@ SPECT data provides 3D images of radioactive tracer distribution in the body.
 | `Laser power (mW)` | Laser power used in milliwatts (if applicable) |
 
 ## Single-Photon Microscopy
+
 Single-photon microscopy data captures fluorescence images using single-photon excitation.
 
 | Field | Description |
@@ -256,6 +275,7 @@ Single-photon microscopy data captures fluorescence images using single-photon e
 | `Voxel size (Z dimension)` | Voxel size in the Z dimension |
 
 ## Two-Photon Microscopy
+
 Two-photon microscopy data captures high-resolution images of living tissue using two-photon excitation.
 
 | Field | Description |
@@ -272,6 +292,7 @@ Two-photon microscopy data captures high-resolution images of living tissue usin
 | `Voxel size (Z dimension)` | Voxel size in the Z dimension |
 
 ## Three-Photon Microscopy
+
 Three-photon microscopy data captures high-resolution images of living tissue using three-photon excitation, allowing for deeper tissue penetration.
 
 | Field | Description |
@@ -288,4 +309,5 @@ Three-photon microscopy data captures high-resolution images of living tissue us
 | `Voxel size (Z dimension)` | Voxel size in the Z dimension |
 
 ## Experiment data API access
+
 The API allows for programmable access to Experiment data, enabling you to read, edit, and delete Experiment data through the API. Learn more about the Experiment data' fields and data structure on the [Experiment data API page]({{"api/modules/experimentdata/"|absolute_url}}).
