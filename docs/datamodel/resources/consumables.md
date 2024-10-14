@@ -1,4 +1,4 @@
-
+---
 layout: default
 title: Consumables
 parent: Resources
@@ -40,6 +40,9 @@ Consumables are items used in scientific experiments that have a limited lifespa
 
 Anyone can submit consumables or submit changes to existing ones, but all submissions must be approved before they are available for usage. Please see existing entries for examples as to what to submit.
 
+For detailed information about the specific fields for each type of consumable, please refer to the [Consumable types schema page]({{"datamodel/schemas/consumables/"|absolute_url}}).
+
+
 ## Permissions
 
 Once a entry has been approved it becomes available to everyone.
@@ -47,4 +50,5 @@ Once a entry has been approved it becomes available to everyone.
 Visit the [permissions page] to learn more. 
 
 ## Dataset API access
+
 The API allows for programmable access to Data storage, enabling you to read, edit, and delete data storage through the API. Learn more about the datasets' fields and data structure on the [Dataset API page]({{"api/resources/consumable/"|absolute_url}}). 
