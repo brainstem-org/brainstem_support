@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Coordinates
+title: Coordinates systems
 parent: Schemas
 grand_parent: Data model
 nav_order: 1
@@ -23,13 +23,12 @@ A three-dimensional Cartesian coordinate system using absolute positions relativ
 
 | Field  | Description |
 |:-------|-------------|
-| `X` | X coordinate (m): Absolute X coordinate in meters, representing horizontal positioning along a local reference frame. |
-| `Y` | Y coordinate (m): Absolute Y coordinate in meters, representing vertical positioning along a local reference frame. |
-| `Z` | Z coordinate (m): Absolute Z coordinate in meters,representing height. |
-| `X angle` | X angle (degrees): Rotational angle around the X axis, in degrees, indicating tilt or elevation relative to the horizontal plane. |
-| `Y angle` | Y angle (degrees): Rotational angle around the Y axis, in degrees, indicating roll or sideways tilt relative to the vertical axis. |
-| `Z angle` | Z angle (degrees): Rotational angle around the Z axis, in degrees, indicating azimuth or orientation facing around the vertical axis. |
-
+| `X coordinate (m)` | Absolute X coordinate in meters, representing horizontal positioning along a local reference frame. |
+| `Y coordinate (m)` | Absolute Y coordinate in meters, representing vertical positioning along a local reference frame. |
+| `Z coordinate (m)` | Absolute Z coordinate in meters,representing height. |
+| `X angle (degrees)` | Rotational angle around the X axis, in degrees, indicating tilt or elevation relative to the horizontal plane. |
+| `Y angle (degrees)` | Rotational angle around the Y axis, in degrees, indicating roll or sideways tilt relative to the vertical axis. |
+| `Z angle (degrees)` | Rotational angle around the Z axis, in degrees, indicating azimuth or orientation facing around the vertical axis. |
 
 ## Stereotaxic Bregma-Based Absolute Coordinates
 
@@ -37,13 +36,12 @@ Utilizes the Bregma point as a primary reference for absolute positioning within
  
 | Field  | Description |
 |:-------|-------------|
-| `AP` | AP coordinate (mm): Absolute Anterior-Posterior coordinate from a fixed point, in millimeters. |
-| `ML` | ML coordinate (mm): Absolute Medial-Lateral coordinate from a fixed point, in millimeters. |
-| `DV` | DV coordinate (mm): Dorsal-Ventral coordinate from a reference point, typically the brain surface, in millimeters. |
-| `AP angle` | AP angle (degrees): Angle of the device or probe in the Anterior-Posterior direction, in degrees. |
-| `ML angle` | ML angle (degrees): Angle of the device or probe in the Medial-Lateral direction, in degrees. |
-| `DV angle` | DV angle (degrees): Angle of the device or probe in the Dorsal-Ventral direction, in degrees. |
-
+| `AP coordinate (mm)` | Absolute Anterior-Posterior coordinate from a fixed point, in millimeters. |
+| `ML coordinate (mm)` | Absolute Medial-Lateral coordinate from a fixed point, in millimeters. |
+| `DV coordinate (mm)` | Dorsal-Ventral coordinate from a reference point, typically the brain surface, in millimeters. |
+| `AP angle (degrees)` | Angle of the device or probe in the Anterior-Posterior direction, in degrees. |
+| `ML angle (degrees)` | Angle of the device or probe in the Medial-Lateral direction, in degrees. |
+| `DV angle (degrees)` | Angle of the device or probe in the Dorsal-Ventral direction, in degrees. |
 
 ## Stereotaxic Bregma-Based Surface Coordinates with Depth
 
@@ -51,13 +49,12 @@ Measures coordinates from the surface of the brain at the Bregma point, incorpor
 
 | Field  | Description |
 |:-------|-------------|
-| `AP` | AP coordinate (mm): Anterior-Posterior coordinate relative to Bregma, in millimeters. |
-| `ML` | ML coordinate (mm): Medial-Lateral coordinate relative to Bregma, in millimeters. |
-| `Depth` | Depth (mm): Depth of the implant in the brain, measured from the surface, in millimeters. |
-| `Rotation` | Rotation (degrees): Angle adjustment in the Anterior-Posterior direction, in degrees |
-| `AP angle` | AP angle (degrees): Angle adjustment in the Medial-Lateral direction, in degrees. |
-| `ML angle` | ML angle (degrees): Rotation of the implant around the insertion axis, in degrees. |
-
+| `AP coordinate (mm)` | Anterior-Posterior coordinate relative to Bregma, in millimeters. |
+| `ML coordinate (mm)` | Medial-Lateral coordinate relative to Bregma, in millimeters. |
+| `Depth (mm)` | Depth of the implant in the brain, measured from the surface, in millimeters. |
+| `Rotation (degrees)` | Angle adjustment in the Anterior-Posterior direction, in degrees |
+| `AP angle (degrees)` | Angle adjustment in the Medial-Lateral direction, in degrees. |
+| `ML angle (degrees)` | Rotation of the implant around the insertion axis, in degrees. |
 
 ## Stereotaxic Lambda-Based Absolute Coordinates
 
@@ -65,13 +62,12 @@ Anchors measurements to the Lambda, a secondary cranial landmark, providing a se
 
 | Field  | Description |
 |:-------|-------------|
-| `AP` | AP coordinate (mm): Anterior-Posterior coordinate measured from Lambda, in millimeters. Lambda serves as a posterior reference point on the skull in rodent brain mappings. |
-| `ML` | ML coordinate (mm): Medial-Lateral coordinate measured from the central line crossing Lambda, in millimeters. Used for precise lateral positioning of instruments. |
-| `DV` | DV coordinate (mm): Dorsal-Ventral coordinate measured from the skull's surface at Lambda, in millimeters. Indicates depth for vertical placement of instruments. |
-| `AP angle` | AP angle (degrees): Tilting angle in the Anterior-Posterior axis from Lambda, in degrees. Used to adjust the probe or electrode's approach angle relative to the skull. |
-| `ML angle` | ML angle (degrees): Tilting angle in the Medial-Lateral direction from Lambda, in degrees. Adjusts for lateral tilt relative to the skull's central line. |
-| `DV angle` | DV angle (degrees): Angular adjustment in the Dorsal-Ventral plane from Lambda, in degrees. Used to orient instruments vertically. |
-
+| `AP coordinate (mm)` | Anterior-Posterior coordinate measured from Lambda, in millimeters. Lambda serves as a posterior reference point on the skull in rodent brain mappings. |
+| `ML coordinate (mm)` | Medial-Lateral coordinate measured from the central line crossing Lambda, in millimeters. Used for precise lateral positioning of instruments. |
+| `DV coordinate (mm)` | Dorsal-Ventral coordinate measured from the skull's surface at Lambda, in millimeters. Indicates depth for vertical placement of instruments. |
+| `AP angle (degrees)` | Tilting angle in the Anterior-Posterior axis from Lambda, in degrees. Used to adjust the probe or electrode's approach angle relative to the skull. |
+| `ML angle (degrees)` | Tilting angle in the Medial-Lateral direction from Lambda, in degrees. Adjusts for lateral tilt relative to the skull's central line. |
+| `DV angle (degrees)` | Angular adjustment in the Dorsal-Ventral plane from Lambda, in degrees. Used to orient instruments vertically. |
 
 ## Stereotaxic Lambda-Based Surface Coordinates with Depth
 
@@ -79,13 +75,12 @@ Similar to the Bregma brain surface system, but using Lambda as the reference. I
 
 | Field  | Description |
 |:-------|-------------|
-| `AP` | AP coordinate (mm): Anterior-Posterior coordinate measured from the Lambda landmark, in millimeters. Lambda is used as a reference point at the posterior aspect of the skull. |
-| `ML` | ML coordinate (mm): Medial-Lateral coordinate measured from the midline crossing Lambda, in millimeters. This measurement helps in positioning equipment laterally across the brain's hemisphere. |
-| `Depth` | Depth (mm): Vertical depth measured from the surface at the Lambda reference point, in millimeters. Indicates how deep into the brain tissue the instrument penetrates. |
-| `Rotation` | Rotation (degrees): Angle of tilt in the Anterior-Posterior direction from the Lambda reference point, in degrees, used to align the probe or electrode with respect to the brain's longitudinal axis. |
-| `AP angle` | AP angle (degrees): Medial-Lateral tilting angle from Lambda, in degrees, adjusting the lateral orientation of devices or surgical tools. |
-| `ML angle` | ML angle (degrees): Rotation around the vertical axis through Lambda, in degrees. This controls the azimuthal orientation of the probe or surgical tool. |
-
+| `AP coordinate (mm)` | Anterior-Posterior coordinate measured from the Lambda landmark, in millimeters. Lambda is used as a reference point at the posterior aspect of the skull. |
+| `ML coordinate (mm)` | Medial-Lateral coordinate measured from the midline crossing Lambda, in millimeters. This measurement helps in positioning equipment laterally across the brain's hemisphere. |
+| `Depth (mm)` | Vertical depth measured from the surface at the Lambda reference point, in millimeters. Indicates how deep into the brain tissue the instrument penetrates. |
+| `Rotation (degrees)` | Angle of tilt in the Anterior-Posterior direction from the Lambda reference point, in degrees, used to align the probe or electrode with respect to the brain's longitudinal axis. |
+| `AP angle (degrees)` | Medial-Lateral tilting angle from Lambda, in degrees, adjusting the lateral orientation of devices or surgical tools. |
+| `ML angle (degrees)` | Rotation around the vertical axis through Lambda, in degrees. This controls the azimuthal orientation of the probe or surgical tool. |
 
 ## Stereotaxic XYZ Absolute Coordinates
 
@@ -93,13 +88,12 @@ A comprehensive three-dimensional coordinate system based on stereotaxic princip
 
 | Field  | Description |
 |:-------|-------------|
-| `X` | X coordinate (mm): X coordinate in millimeters, representing the position along the left-right axis relative to a standardized reference point. |
-| `Y` | Y coordinate (mm): Y coordinate in millimeters, indicating the anterior-posterior position from a fixed reference point in the setup. |
-| `Z` | Z coordinate (mm): Z coordinate in millimeters, representing the depth or vertical position relative to a surface or base level. |
-| `X angle` | X angle (degrees): Rotational angle about the X-axis, in degrees, adjusting the tilt of the instrument or probe horizontally. |
-| `Y angle` | Y angle (degrees): Rotational angle about the Y-axis, in degrees, used to orient the probe or device in the anterior-posterior plane. |
-| `Z angle` | Z angle (degrees): Rotational angle about the Z-axis, in degrees, adjusting the azimuth or directional facing of the setup |
-
+| `X coordinate (mm)` | X coordinate in millimeters, representing the position along the left-right axis relative to a standardized reference point. |
+| `Y coordinate (mm)` | Y coordinate in millimeters, indicating the anterior-posterior position from a fixed reference point in the setup. |
+| `Z coordinate (mm)` | Z coordinate in millimeters, representing the depth or vertical position relative to a surface or base level. |
+| `X angle (degrees)` | Rotational angle about the X-axis, in degrees, adjusting the tilt of the instrument or probe horizontally. |
+| `Y angle (degrees)` | Rotational angle about the Y-axis, in degrees, used to orient the probe or device in the anterior-posterior plane. |
+| `Z angle (degrees)` | Rotational angle about the Z-axis, in degrees, adjusting the azimuth or directional facing of the setup |
 
 ## Stereotaxic Surface XY Surface Coordinates with Depth
 
@@ -107,9 +101,12 @@ Focuses on two-dimensional positioning on the brain's surface, using X and Y coo
 
 | Field  | Description |
 |:-------|-------------|
-| `X` | coordinate (mm): X coordinate in millimeters, measuring horizontal position across the surface from a fixed central or reference point. |
-| `Y` | Y coordinate (mm): Y coordinate in millimeters, measuring vertical position along the surface from a fixed central or reference point. |
-| `X angle` | X angle (degrees): Angle of tilt around the X-axis, in degrees, indicating the inclination or elevation relative to the flat surface. |
-| `Y angle` | Y angle (degrees): Angle of tilt around the Y-axis, in degrees, indicating the lateral tilt relative to the central axis of the surface. |
-| `Depth` | Depth (mm): Depth in millimeters, measuring the perpendicular distance below the surface plane, used for setting the penetration depth of an instrument. |
-| `Rotation` | Rotation (degrees): Rotation around the vertical axis through the point of interest, in degrees, used to adjust the orientation of the instrument or device. |
+| `X coordinate (mm)` | X coordinate in millimeters, measuring horizontal position across the surface from a fixed central or reference point. |
+| `Y coordinate (mm)` | Y coordinate in millimeters, measuring vertical position along the surface from a fixed central or reference point. |
+| `X angle (degrees)` | Angle of tilt around the X-axis, in degrees, indicating the inclination or elevation relative to the flat surface. |
+| `Y angle (degrees)` | Angle of tilt around the Y-axis, in degrees, indicating the lateral tilt relative to the central axis of the surface. |
+| `Depth (mm)` | Depth in millimeters, measuring the perpendicular distance below the surface plane, used for setting the penetration depth of an instrument. |
+| `Rotation (degrees)` | Rotation around the vertical axis through the point of interest, in degrees, used to adjust the orientation of the instrument or device. |
+
+## Coordinates API access
+The API allows for programmable access to Coordinates, enabling you to read, edit, and delete coordinates through the API. Learn more about the coordinates' fields and data structure on the [Coordinates API page]({{"api/modules/coordinates/"|absolute_url}}).
