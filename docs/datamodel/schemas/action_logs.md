@@ -3,7 +3,7 @@ layout: default
 title: Action log types
 parent: Schemas
 grand_parent: Data model
-nav_order: 7
+nav_order: 6
 ---
 
 # Action log types

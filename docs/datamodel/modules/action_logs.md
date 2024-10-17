@@ -39,7 +39,7 @@ These are the available *Type* options for Action logs:
 - Tetrode log (4 tetrodes)
 - Tetrode log (8 tetrodes)
 
-A detailed list of the type-specific fields can be found on the [action log type page]({{"datamodel/schemas/action_logs/"|absolute_url}}).
+A detailed list of the type-specific fields can be found on the [action log types page]({{"datamodel/schemas/action_logs/"|absolute_url}}).
 
 ## Submission form
 

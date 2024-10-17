@@ -1,4 +1,7 @@
-
+---
+layout: default
+title: Brain regions
+parent: Taxonomies
 grand_parent: Data model
 nav_order: 1
 ---
@@ -20,9 +23,9 @@ Brain regions are a type of taxonomy defined by brain atlases. In BrainSTEM, bra
 
 | Field | Description |
 |:------|:------------|
-| `Name`         | The name of the brain region (**required**) |
+| `Name` | The name of the brain region (**required**) |
 | `Acronym` | Acronym used for the brain region (**required**) |
-| `Atlas` | The brain atlas in which the brain region is defined (**required**). *See options below* |
+| `Atlas` | The brain atlas in which the brain region is defined (**required**) |
 | `Description` | A general description of the brain region |
 | `Region id` | A unique identifier for the brain region within the atlas |
 | `Parent acronym` | The acronym of the parent region in the hierarchical structure of the brain atlas |
@@ -31,22 +34,22 @@ Brain regions are a type of taxonomy defined by brain atlases. In BrainSTEM, bra
 ## Brain Atlases
 
 The following brain atlases are available in BrainSTEM:
-- Allen Mouse Brain Atlas
-- Allen Developing Mouse Brain Atlas
-- Allen Human Brain Atlas
-- Allen Developing Human Brain Atlas
-- Allen Non-Human Primate Brain Atlas
-- Allen Spinal Column Atlas
-- Brain Maps 4.0 - Rat brain Atlas
-- Paxinos & Franklin 2001 Mouse Brain Atlas (Second edition)
-- Paxinos & Watson 1997 Rat Brain Atlas (Third edition)
-- Swanson 2004 Rat Brain Atlas (Third edition)
 
-A detailed list of the brain atlases can be found on the [brain atlases page]({{"datamodel/schemas/brain_atlases/"|absolute_url}}).
+- Allen Mouse Brain Atlas: A genome-wide, three-dimensional map of gene expression in the adult mouse brain, based on wild type C57BL/6J mice.
+- Allen Developing Mouse Brain Atlas: A detailed map of gene expression changes during mouse brain development, from embryo through adulthood.
+- Allen Human Brain Atlas: A multi-modal atlas mapping gene expression across the healthy human brain, including RNA microarray data and in situ hybridization images.
+- Allen Developing Human Brain Atlas: Provides anatomical analysis of gene expression across multiple stages of early human brain development.
+- Allen Non-Human Primate Brain Atlas: Explores the cellular and molecular architecture of the developing postnatal brain of the rhesus macaque.
+- Allen Spinal Column Atlas: A comprehensive map of gene expression in the healthy mouse spinal cord at ages p56 and p4.
+- Brain Maps 4.0 - Rat brain Atlas: An open access atlas with global nervous system nomenclature ontology and flatmaps for the rat brain.
+- Paxinos & Franklin 2001 Mouse Brain Atlas (Second edition): Based on adult C57BL/J6 Mouse (weight range 26-30 g).
+- Paxinos & Watson 1997 Rat Brain Atlas (Third edition): Based on adult male Wistar rats (weight range 270-310 g).
+- Swanson 2004 Rat Brain Atlas (Third edition): Based on adult Sprague-Dawley rats.
 
 ## Permissions
 
 Once a new brain atlas has been implemented, it becomes available to everyone.
 
 ## Brain regions API access
+
 The API allows for programmable access to brain regions, enabling you to read entries through the API. Learn more about the brain regions' fields and data structure on the [Brain regions API page]({{"api/taxonomies/brainregion/"|absolute_url}}).

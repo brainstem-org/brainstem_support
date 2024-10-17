@@ -108,7 +108,7 @@ Various procedure types are available for different experimental manipulations a
 
 ### Coordinates
 
-For all procedure types, coordinates are specified using the following system: [Coordinates system page]({{"datamodel/schemas/coordinates/"|absolute_url}})
+For all procedure types, coordinates are specified using the following system: [Coordinates systems page]({{"datamodel/schemas/coordinates/"|absolute_url}})
 
 ## Procedure API access
 

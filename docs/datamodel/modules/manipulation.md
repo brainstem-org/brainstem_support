@@ -49,7 +49,7 @@ These are the available *Type* options for manipulations:
 - Transcranial Magnetic Stimulation (TMS)
 - Ultrasound stimulation
 
-A detailed list of the type-specific fields can be found on the [manipulation type page]({{"datamodel/schemas/manipulation/"|absolute_url}}).
+A detailed list of the type-specific fields can be found on the [manipulation types page]({{"datamodel/schemas/manipulation/"|absolute_url}}).
 
 ## Permissions
 
