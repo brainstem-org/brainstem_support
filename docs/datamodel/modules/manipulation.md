@@ -3,7 +3,7 @@ layout: default
 title: Manipulation
 parent: Modules
 grand_parent: Data model
-nav_order: 3
+nav_order: 4
 ---
 
 # Manipulation model
@@ -16,42 +16,47 @@ nav_order: 3
 {:toc}
 
 ## Introduction
-The manipulation model describes temporal manipulations performed in a dataset. Manipulations are ways to perturb the natural brain dynamics. The types of manipulations that are currently supported by BrainSTEM are listed further down the page. A Manipulation is described by the fields in the next section.
+
+The manipulation model describes temporal manipulations performed in a dataset. Manipulations are ways to perturb natural brain dynamics. The types of manipulations currently supported by BrainSTEM are listed below. A Manipulation is described by the fields in the next section.
 
 ## Fields
 
-| Field           | Description  |
-|:----------------|:-------------|
-| Type            | Type of manipulation (**required**). *See options below* |
-| Notes           | Notes of the manipulation (max length: 500) |
-| Procedures      | Related subject procedures (**required**) |
-| Dataset         | Dataset of the manipulation  (**required**) |
-| Hardware device | Hardware device used to perform the manipulation |
-| Type details    | There are also a number of type specific fields. *See options below* |
+| Field | Description |
+|:------|:------------|
+| `Dataset` | Dataset of the manipulation (**required**) |
+| `Type` | Type of manipulation (**required**). *See options below* |
+| `Procedures` | Related subject procedures (**required**) |
+| `Notes` | Notes about the manipulation (max length: 500 characters) |
+| `Hardware device` | Hardware device used to perform the manipulation |
+| `Type details` | Type-specific fields. *See options below* |
 
 ## Types of manipulations
-These are the available _Type_ options for manipulations:
+
+These are the available *Type* options for manipulations:
+
+- Deep brain stimulation (DBS)
 - Electromagnetic field stimulation
-- Electrical stimulation 
+- Electrical stimulation
 - Liquid perturbation
 - Micro perfusion
-- Optogenetical stimulation
-- Pharmacological inhalation 
+- Optogenetic stimulation
+- Pharmacological inhalation
 - Pharmacological injection
-- Pharmacological superfusion 
+- Pharmacological superfusion
 - Sound stimulation
 - Thermal perturbation
-- Transcranial electrical stimulation
-- Ultra sound stimulation 
+- Transcranial Electrical Stimulation
+- Transcranial Magnetic Stimulation (TMS)
+- Ultrasound stimulation
 
-A detailed list of the type-specific fields, can be found in the [manipulation type page]({{"/datamodel/schemas/manipulation/"|absolute_url}}).
-
+A detailed list of the type-specific fields can be found on the [manipulation types page]({{"datamodel/schemas/manipulation/"|absolute_url}}).
 
 ## Permissions
-Manipulation inherit permissions through the dataset associated with it.
+
+Manipulations inherit permissions through the dataset associated with them.
 
 Visit the [permissions page] to learn more.
 
-
 ## Manipulation API access
-The API allows for programmable access to manipulations. Learn more about the manipulations' fields and data structure on the [Manipulation API page]({{"api/modules/manipulation/"|absolute_url}}). 
+
+The API allows for programmable access to manipulations. Learn more about the manipulations' fields and data structure on the [Manipulation API page]({{"api/modules/manipulation/"|absolute_url}}).
