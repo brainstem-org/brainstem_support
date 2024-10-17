@@ -5,6 +5,6 @@ parent: Data model
 has_children: true
 nav_order: 8
 ---
-# JSON schemas
+# Schemas
 
-The pages below describes the JSON schema files used for brain coordinates and module types:
+The pages below describes the schemas for brain coordinates and other types.
