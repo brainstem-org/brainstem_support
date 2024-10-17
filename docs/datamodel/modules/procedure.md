@@ -48,7 +48,7 @@ These are the available *Type* options for Procedure:
 - Tetrode wire electrode
 - Virus injection
 
-A detailed list of the type-specific fields can be found on the [procedure types page]({{"datamodel/schemas/procedures/"|absolute_url}}).
+A detailed list of the type-specific fields can be found on the [procedure type page]({{"datamodel/schemas/procedures/"|absolute_url}}).
 
 ## Coordinate system options
 

@@ -56,7 +56,7 @@ These are the available *Type* options for experiment data:
 - Two-Photon Microscopy
 - Three-Photon Microscopy
 
-A detailed list of the type-specific fields can be found on the [experiment data types page]({{"datamodel/schemas/experiment_data/"|absolute_url}}).
+A detailed list of the type-specific fields can be found on the [experiment data type page]({{"datamodel/schemas/experiment_data/"|absolute_url}}).
 
 ## Permissions
 

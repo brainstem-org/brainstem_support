@@ -36,11 +36,12 @@ Consumables are items used in scientific experiments that have a limited lifespa
 - Virus constructs
 - Wire electrodes
 
-For detailed information about the specific fields for each type of consumable, please refer to the [Consumable types page]({{"datamodel/schemas/consumables/"|absolute_url}}).
-
 ## Submission process
 
 Anyone can submit consumables or submit changes to existing ones, but all submissions must be approved before they are available for usage. Please see existing entries for examples as to what to submit.
+
+For detailed information about the specific fields for each type of consumable, please refer to the [Consumable types schema page]({{"datamodel/schemas/consumables/"|absolute_url}}).
+
 
 ## Permissions
 

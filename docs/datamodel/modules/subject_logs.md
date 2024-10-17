@@ -42,7 +42,7 @@ These are the available *Type* options for Subject logs:
 - Weighing log
 - Wellness log
 
-A detailed list of the type-specific fields can be found on the [subject log types page]({{"datamodel/schemas/subject_logs/"|absolute_url}}).
+A detailed list of the type-specific fields can be found on the [subject log type page]({{"datamodel/schemas/subject_logs/"|absolute_url}}).
 
 ## Submission form
 

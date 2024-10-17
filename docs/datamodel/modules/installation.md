@@ -45,6 +45,8 @@ These are the available *Type* options for Installation:
 - Light emitter
 - Speaker
 
+A detailed list of the type-specific fields can be found on the [installation type page]({{"datamodel/schemas/installations/"|absolute_url}}).
+
 ## Coordinate system options
 
 Available Coordinate system options for Installation:
@@ -53,7 +55,7 @@ Available Coordinate system options for Installation:
 |:-----|:------------|
 | External X-Y-Z Absolute | Absolute external coordinates. This can be used to describe, e.g., a camera's position in a room |
 
-A detailed list of the fields in Coordinate system can be found on the [Coordinate systems page]({{"datamodel/schemas/coordinates/"|absolute_url}}).
+A detailed list of the fields in Coordinate system can be found on the [Coordinate system page]({{"datamodel/schemas/coordinates/"|absolute_url}}).
 
 ## Permissions
 
