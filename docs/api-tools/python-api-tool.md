@@ -13,25 +13,26 @@ Please see the dedicated [tutorial]({{"/tutorials/python-api-tool/"|absolute_url
 
 | Function        | Description  |
 |:-------------|:-------------|
-| `authentication` | Get and save authentication token |
-| `load_model` | Load data from any model |
-| `save_model` | Save data to any model |
-| `load_settings` | Local settings: API token, url to the server, and local storage. |
-| `brainstem_api_tutorial` | Tutorial script. |
+| `brainstem_api_client` | main function |
+| `brainstem_api_tutorial` | Tutorial script |
 
 
 ### Filters
-You can use filters, using fields and relationships by providing cell array with paired filters. Below example will just load the dataset with the id:
+You can use filters, using fields and relationships by providing cell array with paired filters. Below example will just load the dataset with the name:
 
 ```
-output = load_model(settings, 'dataset', filters={'id': 'ee57e766-fc0c-42e1-9277-7d40d6e9353a'})
+from brainstem_api_client import BrainstemClient
+
+client = BrainstemClient()
+
+output1 = client.load_model('dataset', filters={'name': 'yeah'}).json()
 ```
 
 ### Change sorting
 Loaded models can be sorted by different criteria applying to their fields. In below example, datasets will be sorted in descending order according to their name.
 
 ```
-output = load_model(settings, 'dataset', sort=["-name"])
+output1 = client.load_model('dataset', sort=['-name']).json()
 ```
 
 ### Include related models
@@ -41,5 +42,6 @@ In some cases models contain relations with other models, and they can be also l
 In below example, all the projects, experiment data, behaviors and manipulations related to each dataset will be included.
 
 ```
-output = load_model(settings, 'dataset', include=['projects','experimentdata','behaviors','manipulations'])
+output1 = client.load_model('dataset', include=['projects', 'experimentdata', 'behaviors', 'manipulations']).json()
+
 ```

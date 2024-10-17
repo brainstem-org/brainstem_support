@@ -32,7 +32,6 @@ nav_order: 2
 | `death_date` | string containing date (e.g. "2023-03-22") |
 | `extra_fields` | list of JSON dictionaries. *See structure below* |
 | `procedures` | list of related procedures IDs formatted as strings **[read-only]** |
-| `subjectstatechanges` | list of related subject state changes IDs formatted as strings **[read-only]** |
 | `name_used_in_storage` | string [max length: 200]|
 | `tags` | list of strings |
 
@@ -76,11 +75,9 @@ resp = client.load_model('subject')
 		'death_date': None,
 		'extra_fields': [],
 		'procedures': ['9542eb95-90b3-40c6-9e35-9eef01b3334a'],
-		'subjectstatechanges': ['7791fcff-fcee-4c74-bfff-e2b3e4e38481'],
 		'tags': [],
 		'links': {'projects': 'projects/',
-		'procedures': 'procedures/',
-		'subjectstatechanges': 'subjectstatechanges/'}},
+		'procedures': 'procedures/'}},
 	{'id': '0f87c229-6769-4854-83a5-c71e154246b8',
 		'name': 'subject2',
 		'description': '',
@@ -99,11 +96,9 @@ resp = client.load_model('subject')
 		'2ef9b54f-080e-46a9-a172-612cffe3a24a',
 		'dedef2d7-00ae-4967-8e93-a9d65a20dfce',
 		'9bb4f750-07fb-44f5-9f68-cc0e1bfbcc74'],
-		'subjectstatechanges': ['3d8ba812-2237-4811-875d-96cfdca66e18'],
 		'tags': ['cooling'],
 		'links': {'projects': 'projects/',
-		'procedures': 'procedures/',
-		'subjectstatechanges': 'subjectstatechanges/'}
+		'procedures': 'procedures/',}
 	}
 ]}
 ```
@@ -145,7 +140,6 @@ resp = client.save_model("subject",  data={
 	'death_date': None,
 	'extra_fields': None,
 	'procedures': [],
-	'subjectstatechanges': [],
 	'tags': [],
 	'links': {'projects': 'projects/'}}
 }
@@ -184,7 +178,6 @@ resp = client.load_model('subject', id='b4ae1f92-5260-4605-8d21-25ac5c3fce91')
 	    "another_property: 22
 	},
 	'procedures': [],
-	'subjectstatechanges': [],
 	'tags': [],
 	'links': {'projects': 'projects/'}}
 }
@@ -221,7 +214,6 @@ resp = client.save_model("subject", id="b4ae1f92-5260-4605-8d21-25ac5c3fce91", d
     'death_date': None,
     'extra_fields': None,
     'procedures': [],
-    'subjectstatechanges': [],
     'tags': [],
     'links': {'projects': 'projects/'}}
 }
