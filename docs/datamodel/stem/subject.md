@@ -17,10 +17,7 @@ nav_order: 2
 
 ## Introduction
 
-The subject model describes your animal subject through a set of standard fields. Flexibility is built in through a rich text description field, extra fields, and tags. Procedures and Subject state changes provide modular construction that can describe procedures and other actions performed on your subject based on two modules:
-
-1. Procedures: Surgical procedures and other procedures performed on the subject (e.g., probe implantations, virus injections, and optic fiber implants)
-2. Subject state changes: Any state change performed on a subject (e.g., perfusion of the brain, lesion, creation of brain slices)
+The subject model describes your animal subject through a set of standard fields. Flexibility is built in through a rich text description field, extra fields, and tags. Procedures offer a modular framework that can be used to describe processes related to your subject.
 
 ## Fields
 
@@ -45,9 +42,6 @@ The subject model describes your animal subject through a set of standard fields
 
 Please see the dedicated page describing the [Procedure data model]({{"datamodel/modules/procedure"|absolute_url}}).
 
-### Subject state change data fields
-
-Please see the dedicated page describing the [Subject state change data model].
 
 ## Permissions
 

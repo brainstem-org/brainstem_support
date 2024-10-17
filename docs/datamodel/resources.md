@@ -8,11 +8,12 @@ nav_order: 4
 
 # Resources
 
-- __Suppliers__: Any entity that supplies consumables or hardware devices. Can be a company, a lab or a person. 
-- __Consumables__: Consumable are grouped by types. Optic fiber designs, Silicon probes designs, Virus constructs, wire electrodes. Types of consumables can be expanded by our admin team. Consumables are described by type specific fields.
-- __Hardware devices__: Hardware devices are any hardware, including computers, acquisition systems and stimulators. 
+Resources in BrainSTEM represent the various materials, equipment, and entities involved in neuroscience research. These include consumables, hardware devices, and suppliers. The Resources model is designed to be expandable through user submissions, allowing for a comprehensive and up-to-date catalog of research materials.
 
-Resources are expandable through user submissions, that must go through an approval process by our admin team.
+- __Consumables__: Items used in experiments that are typically depleted or have a limited lifespan. Each type of consumable is described by specific fields relevant to its characteristics and use.
 
-Please see the dedicated pages below for the models within the resources app:
+- __Hardware devices__: Durable equipment used in experiments, including computers, acquisition systems, and stimulators. These devices are typically used repeatedly across multiple experiments.
 
+- __Suppliers__: Entities that provide consumables or hardware devices. These can be companies, laboratories, or individuals. Supplier information helps in tracking the source and consistency of research materials.
+
+Please see the dedicated pages below for more detailed information on each of the resource types:
