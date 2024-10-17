@@ -7,7 +7,8 @@ nav_order: 6
 ---
 # Dissemination
 - __Journals__:
-- __Publications__: 
+- __Publications__:
+
 Please see the dedicated pages below for the models within the dissemination app:
 
 
