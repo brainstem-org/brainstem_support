@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Subject logs
+title: Subject log types
 parent: Schemas
 grand_parent: Data model
 nav_order: 5
 ---
 
-# Subject logs model
+# Subject log types
 {: .no_toc}
 
 Multiple log types are available to track and record various aspects of subject care, behavior, and experimental conditions.

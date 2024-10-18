@@ -5,17 +5,23 @@ parent: Data model
 has_children: true
 nav_order: 2
 ---
+
 # Modules
 
-- __Procedures__: Procedures performed on subjects, including implants (e.g. probes, wires, and fibers), injections (e.g. virus injections). Procedures allow for recording from a subject or manipulate its state.  
-- __Behaviors__: Animal behaviors are described by the experimental setup (also included VR) and what behavioral paradigm the animal is doing/trained to do. 
-- __Experiment data__: Captures all data collection performed on or centered around a subject. This includes Audio recordings, behavioral tracking with cameras, electrophysiological recordings, and imaging. 
-- __Installations__: Installations performed in a experimental setup, including camera setups, screens, thermal installations, speakers, sensors, and microphones. Installations allow for recording from an environment or manipulate its state.
-- __Manipulations__: Manipulations are any time-dependent manipulation performed on an animal subject, that changes its state. This includes any electrical, light or sensory stimulation, liquid perturbation, optogentical stimulation, perfusions,  inhalations, superfusions, injections, and ultrasound. Manipulations are described through a procedure and parameters that are specific to the type of manipulation. E.g. an electrical stimulation is described by its amplitude, duration, duty cycle, and repetitions, while a liquid perturbation by the liquid agent, concentration, the volume, flow rate and repetitions.
-- __Action logs__: Action logs are changes applied to an procedure entry. 
-- __Subject logs__: Subject logs are simpler log values applied to a subject, including food consumption, weighing, and water consumption. 
+Modules in BrainSTEM are standardized yet flexible containers for describing various aspects of experimental conditions and data. They provide a structured way to capture and organize detailed information about different components of neuroscience experiments.
 
-Module tables are standardized yet flexible containers for describing the experimental conditions. 
+- __Behaviors__: Capture information about animal behaviors, including the experimental setup (which may involve virtual reality) and the specific behavioral paradigm the animal is trained to perform or is engaged in during the experiment.
 
-Please see the dedicated pages below for the models within the modules app:
+- __Experiment data__: Captures all forms of data collected during an experiment. This module is highly flexible and can describe a wide range of data types. Each data type is described using parameters specific to its acquisition method, ensuring comprehensive documentation of experimental observations.
 
+- __Installations__: Document the setup of equipment and devices in an experimental environment, including camera setups, screens, thermal installations, speakers, sensors, and microphones. Installations enable recording from an environment or manipulating its state.
+
+- __Manipulations__: Describe any interventions performed on an animal subject that change its state. This includes electrical, light or sensory stimulation, liquid perturbation, optogenetic stimulation, perfusions, inhalations, superfusions, injections, and ultrasound. Each type of manipulation is characterized by specific parameters relevant to that intervention.
+
+- __Procedures__: Describe surgical procedures and other interventions performed on subjects, including implants (e.g., probes, wires, and fibers), injections (e.g., virus injections), and other methods that allow for recording from or manipulating a subject's state.
+
+- __Action logs__: Record changes applied to a procedure entry, providing a history of modifications and adjustments made during an experiment.
+
+- __Subject logs__: Capture simpler log values applied to a subject, including food consumption, weighing, and water consumption. These logs help track the day-to-day care and monitoring of experimental subjects.
+
+Please see the dedicated pages below for more information on each of the modules:
