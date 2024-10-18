@@ -3,7 +3,7 @@ layout: default
 title: Consumable types
 parent: Schemas
 grand_parent: Data model
-nav_order: 8
+nav_order: 7
 ---
 
 # Consumable types
