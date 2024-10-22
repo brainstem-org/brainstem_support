@@ -3,7 +3,18 @@ layout: default
 title: Web interface
 nav_order: 3
 has_children: true
-has_toc: true
 ---
+
 # Web interface
-The web interface consists of a couple of main views described on below pages. Data is entered through user-friendly forms, and once entered, the data can be viewed in a couple of main views: a dashboard provides an overview of a users entries, the table views show individual models in a flexible manner and the single entry views (detail pages) provides a rich level of details and relationships. 
+
+The web interface provides the primary way to interact with BrainSTEM, allowing users to enter, view, and manage their experimental data through an intuitive browser-based interface.
+
+The interface consists of several main components:
+
+- __Dashboard__: Provides an overview of your entries and recent activities
+- __Submission Forms__: User-friendly forms for entering data  
+- __List Views__: Table views showing individual models with flexible sorting and filtering
+- __Single Entry Views__: Detailed pages showing comprehensive information about specific entries
+- __User Profile__: Personal settings and preferences
+
+Each of these components is described in detail in the following sections.

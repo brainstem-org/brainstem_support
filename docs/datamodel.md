@@ -3,7 +3,6 @@ layout: default
 title: Data model
 nav_order: 2
 has_children: true
-has_toc: false
 ---
 # Data model
 {: .no_toc}
