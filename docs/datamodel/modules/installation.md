@@ -45,8 +45,6 @@ These are the available *Type* options for Installation:
 - Light emitter
 - Speaker
 
-A detailed list of the type-specific fields can be found on the [installation types page]({{"datamodel/schemas/installations/"|absolute_url}}).
-
 ## Coordinate system options
 
 Available Coordinate system options for Installation:
