@@ -29,12 +29,6 @@ Cohorts facilitate the creation of subgroups of subjects within a project. They 
 | `Description` | A text description of the cohort, providing additional context and information. Pictures can be uploaded and inserted. |
 | `Tags` | Tags for the cohort. Great for organizational purposes, quick labeling, and filtering. |
 
-## Submission form
-
-The cohort submission form consists of two parts:
-1. First part: Fill in the required fields, including the project and initial subject selection.
-2. Second part: After clicking "Create and continue," you can edit all fields of the cohort entry.
-
 ## Permissions
 
 Cohorts inherit permissions from their associated project. You can only add subjects to the cohort that are part of the same project.

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Experiment data
+title: Data acquisition
 parent: Modules
 grand_parent: Data model
 nav_order: 2
 ---
 
-# Experiment data model
+# Data acquisition model
 {: .no_toc}
 
 ## Table of contents
@@ -17,23 +17,23 @@ nav_order: 2
 
 ## Introduction
 
-Experiment data encompasses the diverse range of data types acquired during scientific experiments. These data types are crucial for understanding the complex workings of the brain and nervous system, offering insights into neural function, structure, behavior, and the effects of various interventions. While experiment data types share relationships, fields are tailored to the various data types.
+Data acquisition encompasses the diverse range of data types acquired during scientific experiments. These data types are crucial for understanding the complex workings of the brain and nervous system, offering insights into neural function, structure, behavior, and the effects of various interventions. While Data acquisition types share relationships, fields are tailored to the various data types.
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
-| `Dataset` | Dataset of the experiment data (**required**) |
-| `Type` | Type of experiment data (**required**). *See options below* |
+| `Dataset` | Dataset of the data acquisition (**required**) |
+| `Type` | Type of data acquisition (**required**). *See options below* |
 | `Procedures` | Related subject procedures (**required**) |
 | `Installations` | Installations used to acquire the data (**required**) |
-| `Notes` | Notes about the experiment data (max length: 500 characters) |
+| `Notes` | Notes about the data acquisition (max length: 500 characters) |
 | `Hardware device` | Hardware device used to perform the data acquisition |
 | `Type details` | Type-specific fields. *See options below* |
 
-## Types of experiment data
+## Types of Data acquisition
 
-These are the available *Type* options for experiment data:
+These are the available *Type* options for data acquisition:
 
 - Audio
 - Behavioral Tracking
@@ -56,14 +56,14 @@ These are the available *Type* options for experiment data:
 - Two-Photon Microscopy
 - Three-Photon Microscopy
 
-A detailed list of the type-specific fields can be found on the [experiment data types page]({{"datamodel/schemas/experiment_data/"|absolute_url}}).
+A detailed list of the type-specific fields can be found on the [Data acquisition types page]({{"datamodel/schemas/experiment_data/"|absolute_url}}).
 
 ## Permissions
 
-Experiment data inherits permissions through its associated dataset.
+Data acquisition inherits permissions through its associated dataset.
 
 Visit the [permissions page] to learn more.
 
-## Experiment data API access
+## Data acquisition API access
 
-The API allows for programmable access to experiment data. Learn more about the experiment data fields and data structure on the [Experiment data API page]({{"api/modules/experiment_data/"|absolute_url}}).
+The API allows for programmable access to data acquisition. Learn more about the data acquisition fields and data structure on the [data acquisition API page]({{"api/modules/experiment_data/"|absolute_url}}).
