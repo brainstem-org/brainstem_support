@@ -49,9 +49,9 @@ A dataset is a modular construction that provides flexible and standardized desc
 | `Experiment data` | Experiment data associated with the epoch |
 | `Manipulation` | Manipulation associated with the epoch |
 
-### Experiment data fields
+### Data acquisition fields
 
-Please see the dedicated page describing the [Experiment data model]({{"datamodel/modules/experiment_data"|absolute_url}}).
+Please see the dedicated page describing the [Data acquisition model]({{"datamodel/modules/experiment_data"|absolute_url}}).
 
 ### Manipulation data fields
 
