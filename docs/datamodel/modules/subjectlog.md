@@ -3,7 +3,7 @@ layout: default
 title: Subject logs
 parent: Modules
 grand_parent: Data model
-nav_order: 7
+nav_order: 8
 ---
 
 # Subject logs model

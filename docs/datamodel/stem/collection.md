@@ -16,6 +16,7 @@ nav_order: 4
 {:toc}
 
 ## Introduction
+
 Collections allow for creating subgroups of datasets within a project. They can be used to define a set of datasets for a specific analysis or figure. All datasets in a collection must belong to the same project.
 
 ## Fields
@@ -29,7 +30,9 @@ Collections allow for creating subgroups of datasets within a project. They can 
 | `Tags` | Tags for the collection. Great for organizational purposes, quick labeling, and filtering. |
 
 ## Permissions
+
 Collections inherit permissions from their associated project. You can only add datasets to the collection that are part of the same project.
 
 ## Collection API access
+
 The API allows for programmable access to collections. Learn more about the collections' fields and data structure on the [Collection API page]({{"api/stem/collection/"|absolute_url}}).

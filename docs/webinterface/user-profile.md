@@ -4,7 +4,12 @@ title: User profile
 parent: Web interface
 nav_order: 5
 ---
-{: .no_toc}
 
 # User profile
-Your user profile page allows you to change your personal details, and provides an overview of your various groups and projects and the permissions you have for each of them.
+{: .no_toc}
+
+The user profile page shows:
+
+- __Personal details__: View and edit your information
+- __Groups__: Overview of your group memberships
+- __Projects__: List of your projects and their permissions
