@@ -69,7 +69,7 @@ After joining or creating a group, you can start creating projects. Projects in 
 {: .note }
 > For detailed information about project fields and structure, see the [Project data model]({{site.baseurl}}/datamodel/stem/project/).
 
-## Add Your First Subject
+## Create Your First Subject
 
 Once you have created a project, you can start adding research subjects. Subjects in BrainSTEM represent the experimental animals in your studies.
 
