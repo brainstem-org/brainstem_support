@@ -127,9 +127,9 @@ Modules:
 
 ### Recommended Setup Order
 
-1. Set up data storage locations to organize your data files
-2. Create experimental setups to define your physical experiment environment
-3. Define behavioral paradigms for your experimental tasks
+1. Create experimental setups to define your physical experiment environment
+2. Define behavioral paradigms for your experimental tasks
+3. Set up data storage locations to organize your data files
 4. Set up inventories to track your lab resources
 5. Add procedures (e.g., surgeries, implants, injections)
 6. Configure equipment installations in your setups
