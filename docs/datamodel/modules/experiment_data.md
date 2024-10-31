@@ -23,10 +23,10 @@ Data acquisition encompasses the diverse range of data types acquired during sci
 
 | Field | Description |
 |:------|:------------|
-| `Dataset` | Dataset of the data acquisition (**required**) |
+| `Session` | Session of the data acquisition (**required**) |
 | `Type` | Type of data acquisition (**required**). *See options below* |
 | `Procedures` | Related subject procedures (**required**) |
-| `Installations` | Installations used to acquire the data (**required**) |
+| `Equipments` | Equipments used to acquire the data (**required**) |
 | `Notes` | Notes about the data acquisition (max length: 500 characters) |
 | `Hardware device` | Hardware device used to perform the data acquisition |
 | `Type details` | Type-specific fields. *See options below* |
@@ -60,7 +60,7 @@ A detailed list of the type-specific fields can be found on the [Data acquisitio
 
 ## Permissions
 
-Data acquisition inherits permissions through its associated dataset.
+Data acquisition inherits permissions through its associated session.
 
 Visit the [permissions page] to learn more.
 

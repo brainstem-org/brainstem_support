@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Installation
+title: Equipments
 parent: Modules
 grand_parent: Data model
 nav_order: 3
 ---
 
-# Installation model
+# Equipments model
 {: .no_toc}
 
 ## Table of contents
@@ -17,27 +17,27 @@ nav_order: 3
 
 ## Introduction
 
-Installations refer to the setup and utilization of various devices and sensors designed to monitor, record, or manipulate environmental variables or subject responses. These installations are critical for creating controlled experimental conditions, collecting data, and delivering stimuli. Each installation type has specific applications and functions within experimental setups. While installation types share relationships, fields are tailored to the various installation types. The types of installations currently supported by BrainSTEM are listed below.
+Equipments refer to the setup and utilization of various devices and sensors designed to monitor, record, or manipulate environmental variables or subject responses. These equipments are critical for creating controlled experimental conditions, collecting data, and delivering stimuli. Each equipments type has specific applications and functions within experimental setups. While equipments types share relationships, fields are tailored to the various equipments types. The types of equipments currently supported by BrainSTEM are listed below.
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
-| `Type` | Type of installation (**required**). *See options below* |
-| `Experimental setup` | The experimental setup the installation is installed in (**required**) |
-| `Notes` | Notes about the installation (max length: 500 characters) |
-| `Date and time` | Date and time the installation was performed (e.g., "2023-03-22") |
-| `Consumable` | Consumable used for the installation |
-| `Hardware device` | Hardware device used to perform the installation |
+| `Type` | Type of equipments (**required**). *See options below* |
+| `Experimental setup` | The experimental setup the equipments is installed in (**required**) |
+| `Notes` | Notes about the equipments (max length: 500 characters) |
+| `Date and time` | Date and time the equipments was performed (e.g., "2023-03-22") |
+| `Consumable` | Consumable used for the equipments |
+| `Hardware device` | Hardware device used to perform the equipments |
 | `Coordinates system` | Coordinate system (**required**). *See options below* |
 | `Type details` | Type-specific fields. *See options below* |
 
-## Types of installations
+## Types of equipments
 
-These are the available *Type* options for Installation:
+These are the available *Type* options for equipments:
 
 - Microphone
-- Video camera installation
+- Video camera equipments
 - Pressure sensor
 - Thermometer
 - Infrared camera
@@ -47,7 +47,7 @@ These are the available *Type* options for Installation:
 
 ## Coordinate system options
 
-Available Coordinate system options for Installation:
+Available Coordinate system options for equipments:
 
 | Type | Description |
 |:-----|:------------|
@@ -57,10 +57,10 @@ A detailed list of the fields in Coordinate system can be found on the [Coordina
 
 ## Permissions
 
-Installations inherit permissions through the experimental setup associated with them.
+Equipments inherit permissions through the experimental setup associated with them.
 
 Visit the [permissions page] to learn more.
 
-## Installation API access
+## Equipments API access
 
-The API allows for programmable access to installations. Learn more about the installations' fields and data structure on the [Installation API page]({{"api/modules/installation/"|absolute_url}}).
+The API allows for programmable access to equipments. Learn more about the equipments' fields and data structure on the [Equipments API page]({{"api/modules/installation/"|absolute_url}}).
