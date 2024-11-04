@@ -33,18 +33,12 @@ BrainSTEM is in a pilot stage, so feel free to create an account and start using
 
 ## Getting started
 
-1. **Create a user account**: 
-   Visit the registration page at [www.brainstem.org/register/](https://www.brainstem.org/register/) and fill in your personal info, including name, email and password.
+If you are new to BrainSTEM, we provide comprehensive tutorials to help you begin your journey. Our beginner's tutorial will guide you through creating or joining groups, and creating your first project in BrainSTEM.
 
-2. **Create or join a group**: 
-   Once you are in your dashboard, click the **Groups** link in the left side menu. Create your own group by clicking **+ Add group** in the top right above the list of groups. To join an existing group, find the group you would like to join from the list and click **request membership**. A group administer must now accept your request. 
+Through our platform, you can share data publicly, submit resources and taxonomies, manage projects and groups, and utilize our API tools for programmatic access. Check out our tutorials for detailed guidance on all these features.
 
-3. **Create or join a project**: 
-   Go to the projects page via the Projects link in the left side menu. Create a project by clicking **+ Add project** at the top right above the list of projects. If you join an existing group you inherit permissions to the group's projects, and they should be visible on the projects page. 
-
-That's it! Now you can use the web interface and API tools for your experimental data. We strongly recommend exploring some of the tutorials to help you get acquainted with BrainSTEM.
-
-[View tutorials]({{ "/tutorials/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[Start here]({{ "/tutorials/get_started/"|absolute_url}}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2}
+[View all tutorials]({{ "/tutorials/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
 
 ## We are looking for pilot groups
 
