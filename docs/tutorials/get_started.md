@@ -137,9 +137,9 @@ Modules:
 9. Configure data acquisition parameters
 10. Begin tracking with action logs and subject logs
 
-{: .important }
-> This order ensures dependent components are created first. For example, behaviors need experimental setups and behavioral paradigms to be defined first.
-
 {: .note }
 > The exact order may vary based on your specific experimental needs. Some components can be set up in parallel or may not be needed for every experiment.
+
+{: .important }
+> This order ensures dependent components are created first. For example, behaviors need experimental setups and behavioral paradigms to be defined first.
 
