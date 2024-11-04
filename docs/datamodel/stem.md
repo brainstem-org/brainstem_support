@@ -4,11 +4,12 @@ title: STEM
 parent: Data model
 has_children: true
 nav_order: 1
+has_toc: false
 ---
 
 # STEM models
 
-The STEM (Subjects, Time, Experiments, Manipulations) models form the core structure of the BrainSTEM data management system. These models provide a flexible and comprehensive framework for organizing and describing neuroscience experiments.
+The STEM (STructured Experimental Metadata) models form the core structure of the BrainSTEM data management system. These models provide a flexible and comprehensive framework for organizing and describing neuroscience experiments.
 
 - [**Project**]({{site.baseurl}}/datamodel/stem/project): Projects serve as the highest-level organizational unit, grouping related subjects, datasets, and collections. They define overall permissions and can be used to organize experiments for publications or day-to-day research activities.
 

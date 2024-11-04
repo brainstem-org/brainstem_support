@@ -4,6 +4,7 @@ title: Schemas
 parent: Data model
 has_children: true
 nav_order: 8
+has_toc: false
 ---
 
 # Schemas

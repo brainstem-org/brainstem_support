@@ -4,6 +4,7 @@ title: Resources
 parent: Data model
 has_children: true
 nav_order: 4
+has_toc: false
 ---
 
 # Resources
