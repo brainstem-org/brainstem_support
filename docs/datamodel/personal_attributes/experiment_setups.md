@@ -17,7 +17,7 @@ nav_order: 3
 
 ## Introduction 
 
-Experimental setups describe where experiments, procedures, or manipulations takes place. It also describes the environment of a recorded subject. Experimental setups has physical dimensions and installations associate with it.
+Experimental setups describe where experiments, procedures, or manipulations takes place. It also describes the environment of a recorded subject. Experimental setups has physical dimensions and equipments associate with it.
 
 ## Dataset fields
 
@@ -55,7 +55,7 @@ Experimental setups describe where experiments, procedures, or manipulations tak
 
 ## Permissions
 
-Experimental setups define the overall permissions level for installations. You manage permissions through the management tab, where you can assign individual users and groups access levels to a Experimental setup. Experimental setup have four permission levels: membership (read access), change permissions, managers, and owners.
+Experimental setups define the overall permissions level for equipments. You manage permissions through the management tab, where you can assign individual users and groups access levels to a Experimental setup. Experimental setup have four permission levels: membership (read access), change permissions, managers, and owners.
 
 Visit the [permissions page] to learn more. 
 
