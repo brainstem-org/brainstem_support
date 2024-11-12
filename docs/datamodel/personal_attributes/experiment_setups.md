@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Experimental setups
+title: Setups
 parent: Personal attributes
 grand_parent: Data model
 nav_order: 3
@@ -17,16 +17,16 @@ nav_order: 3
 
 ## Introduction 
 
-Experimental setups describe where experiments, procedures, or manipulations takes place. It also describes the environment of a recorded subject. Experimental setups has physical dimensions and equipments associate with it.
+Setups describe where experiments, procedures, or manipulations takes place. It also describes the environment of a recorded subject. Setups has physical dimensions and equipments associate with it.
 
 ## Dataset fields
 
 | Field                | Description |
 |:---------------------|:------------|
-| `Name`                 | Name of the experimental setup (**required**) |
+| `Name`                 | Name of the setup (**required**) |
 | `Environment type`     | The type of environment the setup is of (**required**)|
-| `Authenticated groups` | Groups that have change permissions for this experimental setup (**required**) |
-| `Description`          | Text description of the experimental setup |
+| `Authenticated groups` | Groups that have change permissions for this setup (**required**) |
+| `Description`          | Text description of the setup |
 | `Image`				   | Image of the setup|
 | `Public access`        | Determines if the setup is public or private |
 | `Physical dimensions`  | Any physical dimensions used to describe the setup. Each dimension is a name value pair with any associated units or description. |
@@ -55,10 +55,10 @@ Experimental setups describe where experiments, procedures, or manipulations tak
 
 ## Permissions
 
-Experimental setups define the overall permissions level for equipments. You manage permissions through the management tab, where you can assign individual users and groups access levels to a Experimental setup. Experimental setup have four permission levels: membership (read access), change permissions, managers, and owners.
+Setups define the overall permissions level for equipments. You manage permissions through the management tab, where you can assign individual users and groups access levels to a setup. Setup have four permission levels: membership (read access), change permissions, managers, and owners.
 
 Visit the [permissions page] to learn more. 
 
 ## Dataset API access
 
-The API allows for programmable access to Experimental setups, enabling you to read, edit, and delete Experimental setups through the API. Learn more about the datasets' fields and data structure on the [Dataset API page]({{"api/personal_attributes/experimentalsetup/"|absolute_url}}).
+The API allows for programmable access to setups, enabling you to read, edit, and delete Setups through the API. Learn more about the datasets' fields and data structure on the [Dataset API page]({{"api/personal_attributes/experimentalsetup/"|absolute_url}}).
