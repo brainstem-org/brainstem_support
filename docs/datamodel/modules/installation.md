@@ -17,14 +17,14 @@ nav_order: 3
 
 ## Introduction
 
-Equipments refer to the setup and utilization of various devices and sensors designed to monitor, record, or manipulate environmental variables or subject responses. These equipments are critical for creating controlled experimental conditions, collecting data, and delivering stimuli. Each equipments type has specific applications and functions within experimental setups. While equipments types share relationships, fields are tailored to the various equipments types. The types of equipments currently supported by BrainSTEM are listed below.
+Equipments refer to the setup and utilization of various devices and sensors designed to monitor, record, or manipulate environmental variables or subject responses. These equipments are critical for creating controlled experimental conditions, collecting data, and delivering stimuli. Each equipments type has specific applications and functions within setups. While equipments types share relationships, fields are tailored to the various equipments types. The types of equipments currently supported by BrainSTEM are listed below.
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
 | `Type` | Type of equipments (**required**). *See options below* |
-| `Experimental setup` | The experimental setup the equipments is installed in (**required**) |
+| `Setup` | The setup the equipments is installed in (**required**) |
 | `Notes` | Notes about the equipments (max length: 500 characters) |
 | `Date and time` | Date and time the equipments was performed (e.g., "2023-03-22") |
 | `Consumable` | Consumable used for the equipments |
@@ -57,7 +57,7 @@ A detailed list of the fields in Coordinate system can be found on the [Coordina
 
 ## Permissions
 
-Equipments inherit permissions through the experimental setup associated with them.
+Equipments inherit permissions through the setup associated with them.
 
 Visit the [permissions page] to learn more.
 

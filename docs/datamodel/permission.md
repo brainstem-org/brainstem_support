@@ -19,6 +19,8 @@ nav_order: 9
 
 BrainSTEM implements a hierarchical permission system that governs access control across the platform. This system enables flexible collaboration while maintaining data security through inheritance-based permissions.
 
+![permissions]({{site.baseurl}}/assets/images/permission.png)
+
 ## Permission Levels Overview
 
 | Permission levels | Groups | Projects | Personal Attributes |
@@ -95,8 +97,8 @@ Project
 
 Personal attributes follow their own inheritance structure from groups:
 ```
-Group
-├── Experimental Setups
+Personal Attributes
+├── Setups
 │   └── Equipments
 ├── Inventories
 │   └── Consumable Stocks
@@ -108,7 +110,7 @@ Group
 
 | Parent Level | Inheritance Pattern | Inheriting Components |
 |:-------------|:-------------------|:-------------------|
-| **Group** | Direct inheritance from associated groups | Personal Attributes (Behavioral Paradigms, Data Storage, Experimental Setups, Inventories) |
+| **Group** | Direct inheritance from associated groups | Personal Attributes (Behavioral Paradigms, Data Storage, Setups, Inventories) |
 | **Experimental Setup** | Direct inheritance with module-level access | Equipments |
 | **Inventory** | Direct inheritance with module-level access | Consumable Stocks |
 
@@ -129,7 +131,7 @@ Group
 {: .important }
 > - Each personal attribute requires individual public sharing settings
 > - Only owners can modify public access settings
-> - Public status required for behavioral paradigms, data storage, and experimental setups used in public projects
+> - Public status required for behavioral paradigms, data storage, and setups used in public projects
 
 ## Permission Management
 
