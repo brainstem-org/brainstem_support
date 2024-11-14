@@ -55,9 +55,11 @@ Setups describe where experiments, procedures, or manipulations takes place. It 
 
 ## Permissions
 
-Setups define the overall permissions level for equipments. You manage permissions through the management tab, where you can assign individual users and groups access levels to a setup. Setup have four permission levels: membership (read access), change permissions, managers, and owners.
+Setups define the overall permissions level for equipments. You manage permissions through the management tab, where you can assign individual users and groups access levels to a setup. Setup have four permission levels: membership (read access), contributors, managers, and owners.
 
-Visit the [permissions page] to learn more. 
+Equipments inherit permissions from their associated setup.
+
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
 
 ## Dataset API access
 

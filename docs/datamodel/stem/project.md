@@ -34,11 +34,11 @@ Projects serve as an overall way to group subjects, sessions, and collections to
 
 ## Permissions
 
-Projects define the overall permissions level for subjects, sessions, collections, and modules. You manage permissions through the management tab, where you can assign individual users and groups access levels to a project.
+Projects define the overall permissions level for subjects, sessions, collections, cohorts, and modules. You manage permissions through the management tab, where you can assign individual users and groups access levels to a project.
 
-Projects have four permission levels: membership (read access), change permissions, managers, and owners. For more information on permissions, please visit the permissions page.
+Projects have four permission levels: membership (read access), contributors, managers, and owners.
 
-Visit the [permissions page] to learn more.
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
 
 ## Project API access
 

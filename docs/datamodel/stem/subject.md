@@ -45,9 +45,9 @@ Please see the dedicated page describing the [Procedure data model]({{"datamodel
 
 ## Permissions
 
-Subjects inherit permissions from projects associated with them. Procedures, Subject state changes, Subject logs, and Procedure logs all inherit permissions through the subject.
+Subjects inherit permissions from projects associated with them. Procedures, Subject logs, and Procedure logs all inherit permissions through the subject.
 
-Visit the [permissions page] to learn more. 
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
 
 ## Subject API access
 

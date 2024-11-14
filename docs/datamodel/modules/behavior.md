@@ -17,13 +17,13 @@ nav_order: 1
 
 ## Introduction
 
-The behavior model is a module in datasets used to describe the behavior occurring in a dataset. The behavior is characterized by the involved subjects, the experimental setup, and a behavioral paradigm. Both the experimental setup and the behavioral paradigm are private attributes that must be defined separately before filling in the behavior form. These private attributes belong to group(s) that must be shared with one of the dataset's associated projects.
+The behavior model is a module in sessions used to describe the behavior occurring in a session. The behavior is characterized by the involved subjects, the experimental setup, and a behavioral paradigm. Both the experimental setup and the behavioral paradigm are private attributes that must be defined separately before filling in the behavior form. These private attributes belong to group(s) that must be shared with one of the session's associated projects.
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
-| `Dataset` | Dataset of the behavior (**required**) |
+| `Session` | Session of the behavior (**required**) |
 | `Subjects` | Subjects taking part in the behavior (**required**) |
 | `Experimental setup` | Experimental setup of the behavior (**required**) |
 | `Behavioral paradigm` | Behavioral paradigm of the behavior (**required**) |
@@ -31,9 +31,9 @@ The behavior model is a module in datasets used to describe the behavior occurri
 
 ## Permissions
 
-Behaviors inherit permissions through their associated dataset.
+Behaviors inherit permissions through their associated session.
 
-Visit the [permissions page] to learn more.
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
 
 ## Behavior API access
 

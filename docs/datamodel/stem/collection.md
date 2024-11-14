@@ -33,6 +33,8 @@ Collections allow for creating subgroups of sessions within a project. They can 
 
 Collections inherit permissions from their associated project. You can only add sessions to the collection that are part of the same project.
 
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+
 ## Collection API access
 
 The API allows for programmable access to collections. Learn more about the collections' fields and data structure on the [Collection API page]({{"api/stem/collection/"|absolute_url}}).

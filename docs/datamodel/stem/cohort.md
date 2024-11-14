@@ -33,6 +33,8 @@ Cohorts facilitate the creation of subgroups of subjects within a project. They 
 
 Cohorts inherit permissions from their associated project. You can only add subjects to the cohort that are part of the same project.
 
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+
 ## Cohort API access
 
 The API allows for programmable access to cohorts. Learn more about the cohorts' fields and data structure on the [Cohort API page]({{"api/stem/cohort/"|absolute_url}}).

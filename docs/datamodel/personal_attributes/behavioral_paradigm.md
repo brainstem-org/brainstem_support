@@ -54,9 +54,9 @@ Behavioral paradigms describe the paradigm a subject performs in details. The pa
 
 ## Permissions
 
-Behavioral paradigms define the overall permissions level for installations. You manage permissions through the management tab, where you can assign individual users and groups access levels to a Behavioral paradigm. Behavioral paradigm have four permission levels: membership (read access), change permissions, managers, and owners.
+You manage permissions through the management tab, where you can assign individual users and groups access levels to a Behavioral paradigm. Behavioral paradigm have four permission levels: membership (read access), contributors, managers, and owners.
 
-Visit the [permissions page] to learn more. 
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
 
 ## Dataset API access
 

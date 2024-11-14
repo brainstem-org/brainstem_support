@@ -30,11 +30,11 @@ Inventories in BrainSTEM provide a way to track and manage consumable resources 
 
 ## Permissions
 
-You manage permissions through the management tab, where you can assign individual users and groups access levels to an inventory. Inventories have four permission levels: membership (read access), change permissions, managers, and owners.
+You manage permissions through the management tab, where you can assign individual users and groups access levels to an inventory. Inventories have four permission levels: membership (read access), contributors, managers, and owners.
 
 Consumable stocks inherit permissions from their associated inventory.
 
-Visit the [permissions page] to learn more. 
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
 
 ## Inventory API access
 
