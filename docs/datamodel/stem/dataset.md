@@ -19,7 +19,7 @@ nav_order: 3
 
 A session is a modular construction that provides flexible and standardized descriptions of various aspects of experiments. The session has several direct fields but is primarily described by four modules:
 
-1. Behavior: Description of the animal subject(s) behavior during the session collection. A behavior is described by two personal attributes: the experimental setup and the behavioral paradigm.
+1. Behavior: Description of the animal subject(s) behavior during the session collection. A behavior is described by two personal attributes: the setup and the behavioral paradigm.
 2. Experiment data: Description of the data acquisition files. This module is highly flexible and can describe many types of experimental data, such as Extracellular and Intracellular Electrophysiology, 2-photon microscopy, Miniscope, Audio Recordings, and Behavioral Video Recordings. Details are tailored to each experiment type.
 3. Manipulations: Description of any manipulations performed during an experiment. This crucial module documents alterations to the physiological conditions of a recording. It can describe various types of manipulations, such as Optogenetic Stimulation, Micro Perfusion, Pharmacological Injection, Thermal Perturbation, Transcranial Electrical Stimulation, and Ultrasound Stimulation. A manipulation is described by a protocol, typically consisting of the manipulation profile, power, duration, duty cycle, and number of repetitions.
 4. Epochs: Temporal aspects of a session. An epoch is characterized by a name, start and end times relative to the session's start. Other modules (Experiment Data, Manipulations, and Behavior) can be linked to epochs, allowing for temporal segmentation of a session.
@@ -65,7 +65,7 @@ Please see the dedicated page describing the [Behavior data model]({{"datamodel/
 
 The session inherits permissions from its associated projects. Data storage is shared through the project groups, and you can only add data storage associated with the same groups as the selected projects. The relationships in modules also depend on the selected projects.
 
-Visit the [permissions page] to learn more. 
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
 
 ## Session API access
 

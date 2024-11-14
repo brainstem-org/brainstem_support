@@ -62,7 +62,7 @@ A detailed list of the type-specific fields can be found on the [Data acquisitio
 
 Data acquisition inherits permissions through its associated session.
 
-Visit the [permissions page] to learn more.
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
 
 ## Data acquisition API access
 

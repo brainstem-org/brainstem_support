@@ -54,7 +54,7 @@ The subject log submission form consists of two parts:
 
 Subject logs inherit permissions from projects via the subject associated with the entry.
 
-Visit the [permissions page] to learn more.
+Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
 
 ## Subject log API access
 
