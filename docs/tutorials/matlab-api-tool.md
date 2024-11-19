@@ -2,7 +2,7 @@
 layout: default
 title: Matlab API tool
 parent: Tutorials
-nav_order: 3
+nav_order: 5
 ---
 # Tutorial for the Matlab API tool
 {: .no_toc}
