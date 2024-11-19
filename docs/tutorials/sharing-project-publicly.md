@@ -109,6 +109,3 @@ After making items public, verify their accessibility:
 1. Visit the public dashboard at [www.brainstem.org/public](https://www.brainstem.org/public)
 2. Search for your shared project or attributes
 3. Verify that all components are accessible as expected
-
-{: .important }
-> If any personal attributes associated with public projects are not publicly shared, users will see error messages when trying to access those components.
