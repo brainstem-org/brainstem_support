@@ -33,7 +33,7 @@ The behavior model is a module in sessions used to describe the behavior occurri
 
 Behaviors inherit permissions through their associated session.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Behavior API access
 

@@ -47,8 +47,6 @@ For detailed information about the specific fields for each type of consumable, 
 
 Once a entry has been approved it becomes available to everyone.
 
-Visit the [permissions page] to learn more. 
-
 ## Dataset API access
 
 The API allows for programmable access to Data storage, enabling you to read, edit, and delete data storage through the API. Learn more about the datasets' fields and data structure on the [Dataset API page]({{"api/resources/consumable/"|absolute_url}}). 

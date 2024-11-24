@@ -59,7 +59,7 @@ Setups define the overall permissions level for equipments. You manage permissio
 
 Equipments inherit permissions from their associated setup.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Dataset API access
 

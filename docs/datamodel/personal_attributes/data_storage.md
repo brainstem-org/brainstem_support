@@ -33,7 +33,7 @@ Data storages describe the storage solution for datasets. A data storage can be 
 
 You manage permissions through the management tab, where you can assign individual users and groups access levels to a data storage. Data storage have four permission levels: membership (read access), contributors, managers, and owners.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Dataset API access
 

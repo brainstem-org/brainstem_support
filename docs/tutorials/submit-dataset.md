@@ -2,7 +2,7 @@
 layout: default
 title: Submitting a dataset
 parent: Tutorials
-nav_order: 2
+nav_order: 7
 ---
 # Submitting a dataset
 {: .no_toc}
