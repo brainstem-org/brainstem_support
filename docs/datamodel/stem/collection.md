@@ -33,7 +33,7 @@ Collections allow for creating subgroups of sessions within a project. They can 
 
 Collections inherit permissions from their associated project. You can only add sessions to the collection that are part of the same project.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Collection API access
 

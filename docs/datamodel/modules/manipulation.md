@@ -55,7 +55,7 @@ A detailed list of the type-specific fields can be found on the [manipulation ty
 
 Manipulations inherit permissions through the session associated with them.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Manipulation API access
 

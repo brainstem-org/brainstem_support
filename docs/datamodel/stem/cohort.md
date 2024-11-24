@@ -33,7 +33,7 @@ Cohorts facilitate the creation of subgroups of subjects within a project. They 
 
 Cohorts inherit permissions from their associated project. You can only add subjects to the cohort that are part of the same project.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Cohort API access
 

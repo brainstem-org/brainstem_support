@@ -38,7 +38,7 @@ Projects define the overall permissions level for subjects, sessions, collection
 
 Projects have four permission levels: membership (read access), contributors, managers, and owners.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Project API access
 

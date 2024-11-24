@@ -59,7 +59,7 @@ A detailed list of the fields in Coordinate system can be found on the [Coordina
 
 Equipments inherit permissions through the setup associated with them.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Equipments API access
 
