@@ -65,7 +65,7 @@ Please see the dedicated page describing the [Behavior data model]({{"datamodel/
 
 The session inherits permissions from its associated projects. Data storage is shared through the project groups, and you can only add data storage associated with the same groups as the selected projects. The relationships in modules also depend on the selected projects.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Session API access
 

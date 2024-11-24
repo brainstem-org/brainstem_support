@@ -70,7 +70,7 @@ A detailed list of the fields in Coordinate system can be found on the [Coordina
 
 Procedures inherit permissions through the subject associated with them.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Procedure API access
 The API allows for programmable access to procedures. Learn more about the procedures' fields and data structure on the [Procedure API page]({{"api/modules/procedure/"|absolute_url}}).

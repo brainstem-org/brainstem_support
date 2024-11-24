@@ -1,22 +1,89 @@
 ---
 layout: default
-title: Managing projects
+title: Managing Projects
 parent: Tutorials
-nav_order: 2
+nav_order: 4
 ---
-# Managing projects
+
+# Managing Projects in BrainSTEM
 {: .no_toc}
-Projects have four permission levels that can be defined for individual groups and users: members, change permissions, managers, and owners. Members have read access to project-related subjects, datasets, and modules. Change permissions allow for creation, editing and deletion of project related models. Managers can add and remove project members and project groups. Owners can manage project details and add and remove managers. Regular members can only leave the project.
 
-To manage a project, go the the projects page [https://www.brainstem.org/private/stem/project/](https://www.brainstem.org/private/stem/project/) and click the group from the list you want to manage and click the Manage button at the top right of the page. 
+## Table of contents
+{: .no_toc .text-delta }
 
-### Managers
+1. TOC
+{:toc}
 
-New project member invitations can be created via the __Add user__ button at the bottom of the group management page. Once an invitation has been created, you can check the status of it on the Group membership invitations page: [https://www.brainstem.org/private/users/projectmembershipinvitation/](https://www.brainstem.org/private/users/projectmembershipinvitation/). 
+## Project Permission Levels
 
-Managers can also remove a user or a group from the project. To do so, go to the list of users and groups of the project, check off any user/group that you want to remove and click save. 
+BrainSTEM projects implement four distinct permission levels that can be assigned to both individual users and groups:
 
-### Owners
+1. **Members (Basic)**
+   - Read access to project-related subjects, datasets, and modules
+   - Can view but not modify project content
+   - Can leave the project voluntarily
 
-Owners of the project can also provide members with change permissions, manager and owner priviledges. To do so, go to the list of members of the project click any of the Change permissions / Managers / Owners checkfields and click the save button.
+2. **Contributors**
+   - All Member permissions
+   - Can create new project-related content
+   - Can edit existing project content
+   - Can delete project-related models
 
+3. **Managers**
+   - All Contributor permissions
+   - Can add new project members
+   - Can remove project members
+   - Can add and remove project groups
+
+4. **Owners**
+   - All Manager permissions
+   - Can modify project details
+   - Can add/remove managers
+   - Full control over project settings
+
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+
+## Accessing Project Management
+
+1. Navigate to the Projects page:
+   - Visit [https://www.brainstem.org/private/stem/project/](https://www.brainstem.org/private/stem/project/)
+   - Select the project you want to manage
+   - Click the "Manage" button in the top right corner
+
+## Manager Capabilities
+
+### Adding New Members
+
+1. Go to your project's management page
+2. Click the **Invite user** or **Invite group** button
+3. Complete the invitation form
+4. Submit the invitation
+
+### Tracking Invitations
+
+1. Visit [https://www.brainstem.org/private/users/projectmembershipinvitation/](https://www.brainstem.org/private/users/projectmembershipinvitation/)
+2. Monitor pending and accepted invitations
+
+### Managing Membership
+
+1. Access the project's user/group list
+2. To remove members or groups:
+   - Select the checkbox next to their name
+   - Click Save to confirm removal
+
+## Owner Capabilities
+
+### Setting Permission Levels
+
+1. Access the project member list
+2. For each member, you can assign:
+   - Contributor permissions (Change permissions checkbox)
+   - Manager permissions (Managers checkbox)
+   - Owner permissions (Owners checkbox)
+3. Click Save to apply changes
+
+### Project Settings Management
+
+1. Edit project details
+2. Modify project configuration
+3. Update project metadata

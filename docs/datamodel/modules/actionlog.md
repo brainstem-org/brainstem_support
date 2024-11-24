@@ -51,7 +51,7 @@ The procedure logs submission form consists of two parts:
 
 Procedure logs inherit permissions from projects via the subject and then the procedure associated with the entry.
 
-Visit the [permissions page] to learn more.
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Procedure log API access
 

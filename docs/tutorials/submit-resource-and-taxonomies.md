@@ -2,7 +2,7 @@
 layout: default
 title: Submitting resources and taxonomies
 parent: Tutorials
-nav_order: 2
+nav_order: 8
 ---
 # Submitting resources and taxonomies
 {: .no_toc}

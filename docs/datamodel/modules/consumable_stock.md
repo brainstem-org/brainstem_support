@@ -54,7 +54,7 @@ A simple yet effective tool for measuring electrical activity at a single site. 
 
 Consumable stocks inherit permissions through the inventory associated with them.
 
-Visit the [permissions page]({{"datamodel/permission}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
 
 ## Consumable stocks API access
 

@@ -2,7 +2,7 @@
 layout: default
 title: Python API tool
 parent: Tutorials
-nav_order: 4
+nav_order: 6
 ---
 # Tutorial for the Python API tool
 {: .no_toc}
