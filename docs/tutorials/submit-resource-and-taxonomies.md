@@ -1,12 +1,56 @@
 ---
 layout: default
-title: Submitting resources and taxonomies
+title: Submit Resources & Taxonomies
 parent: Tutorials
 nav_order: 8
 ---
-# Submitting resources and taxonomies
+
+# Submitting Resources & Taxonomies
 {: .no_toc}
 
-Resources and taxonomies are controlled list, but can be expanded by user submissions. In any of the resources and taxonomies, entry are simply added through a form, like any other.   Any submission must be approved by the admin team. You can monitor the process on the approval pages: [https://www.brainstem.org/private/approvals/](https://www.brainstem.org/private/approvals/)
+## Table of contents
+{: .no_toc .text-delta }
 
-Once approved, the submitted entry will be selectable from the dropdowns.
+1. TOC
+{:toc}
+
+## Introduction
+
+BrainSTEM maintains controlled lists of resources and taxonomies that can be expanded through user submissions. All submissions go through an approval process to maintain data quality and consistency.
+
+## Available Resources & Taxonomies
+
+Resources that can be submitted:
+- [Consumables]({{"datamodel/resources/consumables/"|absolute_url}})
+- [Hardware devices]({{"datamodel/resources/hardware_devices/"|absolute_url}}) 
+- [Suppliers]({{"datamodel/resources/suppliers/"|absolute_url}})
+
+Taxonomies that can be submitted:
+- [Brain regions]({{"datamodel/taxonomies/brain_regions/"|absolute_url}})
+- [Environment types]({{"datamodel/taxonomies/environment_types/"|absolute_url}})
+- [Sensory stimulus types]({{"datamodel/taxonomies/sensory_stimulus_types/"|absolute_url}})
+- [Species]({{"datamodel/taxonomies/species/"|absolute_url}})
+- [Strains]({{"datamodel/taxonomies/strains/"|absolute_url}})
+
+## Submission Process
+
+1. Navigate to the appropriate section in BrainSTEM
+2. Click the *Add* button for the resource or taxonomy type
+3. Fill out the submission form with all required fields
+4. Submit the form for review
+
+{: .note }
+> Review existing entries before submitting to avoid duplicates. Each resource/taxonomy type has specific required fields detailed in their respective documentation pages.
+
+## Tracking Submissions
+
+1. Go to [https://www.brainstem.org/private/approvals/](https://www.brainstem.org/private/approvals/)
+2. View the status of your submissions
+3. Respond to any admin feedback if needed
+
+## After Approval
+
+Once approved:
+- The entry becomes available in dropdown menus across BrainSTEM
+- All users can select and use the approved entry
+- The entry can be referenced in new submissions
