@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Managing Projects
+title: Manage Projects
 parent: Tutorials
 nav_order: 4
 ---

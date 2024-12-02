@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Managing Groups
+title: Manage Groups
 parent: Tutorials
 nav_order: 3
 ---
