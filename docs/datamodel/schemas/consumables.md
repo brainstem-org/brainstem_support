@@ -19,7 +19,7 @@ Several types of consumables are available, each with specific fields to describ
 
 ## Silicon probe design
 
-A silicon probe design used for neural recording or stimulation.
+A specialized tool for recording electrical signals from neurons. Silicon probes are vital for experiments focused on understanding brain function through electrophysiological recordings.
 
 | Field | Description |
 |:------|:------------|
@@ -37,7 +37,7 @@ A silicon probe design used for neural recording or stimulation.
 
 ## Optic fiber design
 
-An optic fiber design used for optogenetic stimulation or fluorescence detection.
+A flexible light guide used primarily in optogenetic experiments to deliver light to specific brain regions. Optic fibers are essential in neuroscience for manipulating neural circuits using light.
 
 | Field | Description |
 |:------|:------------|
@@ -55,7 +55,7 @@ An optic fiber design used for optogenetic stimulation or fluorescence detection
 
 ## Virus construct
 
-A viral vector used for gene delivery or expression in neuroscience experiments.
+A viral vector preparation used for introducing genes into cells. Virus solutions are important for studies involving gene expression, neural circuit tracing, and optogenetics.
 
 | Field | Description |
 |:------|:------------|
@@ -69,7 +69,7 @@ A viral vector used for gene delivery or expression in neuroscience experiments.
 
 ## Single wire electrode
 
-A single wire electrode used for neural recording or stimulation.
+A simple yet effective tool for measuring electrical activity at a single site. Single wire electrodes are commonly used in studies examining neural or muscular electrical activity.
 
 | Field | Description |
 |:------|:------------|
