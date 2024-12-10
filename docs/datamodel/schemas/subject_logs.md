@@ -19,6 +19,8 @@ Multiple log types are available to track and record various aspects of subject 
 
 ### Food consumption log
 
+Records the amount and type of food consumed by the subject. This information is crucial for studies examining the effects of diet on health, behavior, or disease progression.
+
 | Field | Description |
 |:------|:------------|
 | `Date time` | Date and time of the food consumption measurement |
@@ -26,6 +28,8 @@ Multiple log types are available to track and record various aspects of subject 
 | `Notes` | Additional notes about the food consumption |
 
 ### Food deprivation log
+
+Documents periods when food is withheld from the subject. Food deprivation can be used as a motivational tool in behavioral experiments or to study the physiological and psychological effects of fasting.
 
 | Field | Description |
 |:------|:------------|
@@ -36,6 +40,8 @@ Multiple log types are available to track and record various aspects of subject 
 | `End time` | End time of the food deprivation period |
 
 ### Housing log
+
+Keeps track of the subject's living conditions, including the cage typehousing, location, light cycle, and any environmental enrichments. This log helps ensure that housing conditions remain consistent and meet ethical standards.
 
 | Field | Description |
 |:------|:------------|
@@ -50,6 +56,8 @@ Multiple log types are available to track and record various aspects of subject 
 
 ### Water consumption log
 
+Details the amount of water consumed by the subject. Monitoring water intake is essential for studies related to hydration, kidney function, or the effects of various substances on thirst and water balance.
+
 | Field | Description |
 |:------|:------------|
 | `Date time` | Date and time of the water consumption measurement |
@@ -57,6 +65,8 @@ Multiple log types are available to track and record various aspects of subject 
 | `Notes` | Additional notes about the water consumption |
 
 ### Water deprivation log
+
+Notes periods during which water is withheld from the subject. Similar to food deprivation, water deprivation can be used to study the effects of hydration status on various physiological and behavioral outcomes.
 
 | Field | Description |
 |:------|:------------|
@@ -68,6 +78,8 @@ Multiple log types are available to track and record various aspects of subject 
 
 ### Weighing log
 
+Records the subject's body weight over time. Regular weighing is critical for monitoring health, growth, and the effects of experimental treatments on body mass.
+
 | Field | Description |
 |:------|:------------|
 | `Date time` | Date and time of the weighing |
@@ -75,6 +87,8 @@ Multiple log types are available to track and record various aspects of subject 
 | `Notes` | Additional notes about the weighing |
 
 ### Wellness log
+
+Documents observations related to the subject's general health and well-being, including behavior, physical appearance, signs of distress, or illness. This log is essential for ensuring the ethical treatment of research subjects and for interpreting the effects of experimental manipulations on overall health.
 
 | Field | Description |
 |:------|:------------|

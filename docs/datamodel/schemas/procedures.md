@@ -17,15 +17,11 @@ Various procedure types are available for different experimental manipulations a
 1. TOC
 {:toc}
 
-### Brain lesion
-
-| Field | Description |
-|:------|:------------|
-| `Lesion method` | Method used to create the brain lesion (**required**) |
-| `Volume of brain lesion (μL)` | Volume of the brain lesion in microliters (**required**) |
-| `Fatal outcome` | Checkbox to indicate if the procedure resulted in a fatal outcome |
+## Surgical Procedures
 
 ### Craniectomy
+
+Involves the surgical removal of a portion of the skull to access the brain, without replacing the skull bone afterward. This procedure is often used in cases requiring prolonged brain access or to alleviate pressure after brain injury.
 
 | Field | Description |
 |:------|:------------|
@@ -38,6 +34,8 @@ Various procedure types are available for different experimental manipulations a
 
 ### Craniotomy
 
+A surgical procedure where part of the skull is temporarily removed to expose the brain for surgery or research purposes. The removed bone is typically replaced after the procedure, making it a temporary opening.
+
 | Field | Description |
 |:------|:------------|
 | `Method of craniotomy` | Method used for the craniotomy (**required**) |
@@ -47,22 +45,28 @@ Various procedure types are available for different experimental manipulations a
 | `Orientation of craniotomy` | Orientation of the craniotomy |
 | `Fatal outcome` | Checkbox to indicate if the procedure resulted in a fatal outcome |
 
+## Implant Procedures
+
 ### Optic fiber implant
+
+Involves the surgical implantation of an optic fiber into the brain, often used in optogenetics research to manipulate or record neuronal activity with light.
 
 | Field | Description |
 |:------|:------------|
 | `Fiber tip shape` | Shape of the optic fiber tip (**required**) |
 | `Sterilization Method` | Method used to sterilize the optic fiber implant |
 
-### Brain perfusion fixation
+### Silicon probe implant
+
+Involves the implantation of a silicon probe, a device equipped with multiple recording sites, into the brain. Silicon probes are used for high-density recording of neural activity.
 
 | Field | Description |
 |:------|:------------|
-| `Perfusion method` | Method used for brain perfusion fixation (**required**) |
-| `Perfusion volume (mL)` | Volume of perfusion solution in milliliters |
-| `Fatal outcome` | Checkbox to indicate if the procedure resulted in a fatal outcome |
+| `Sterilization Method` | Method used to sterilize the silicon probe |
 
 ### Single wire electrode
+
+Refers to the implantation of a single wire electrode into the brain, used for recording electrical activity from or stimulating specific neurons or brain areas.
 
 | Field | Description |
 |:------|:------------|
@@ -72,23 +76,9 @@ Various procedure types are available for different experimental manipulations a
 | `Impedance (kOhms)` | Impedance of the wire in kiloohms |
 | `Sterilization Method` | Method used to sterilize the electrode |
 
-### Silicon probe implant
-
-| Field | Description |
-|:------|:------------|
-| `Sterilization Method` | Method used to sterilize the silicon probe |
-
-### Brain slice
-
-| Field | Description |
-|:------|:------------|
-| `Thickness of slices (μm)` | Thickness of the brain slices in micrometers (**required**) |
-| `Number of slices` | Number of brain slices (integer) |
-| `Orientation of slices` | Orientation of the brain slices (**required**) |
-| `Medium used for slice` | Medium used for maintaining the brain slices |
-| `Vibratome blade angle (°)` | Angle of the vibratome blade in degrees |
-
 ### Tetrode wire electrode
+
+The implantation of a tetrode, a device made of four intertwined wire electrodes, into the brain. Tetrodes allow for the recording of electrical signals from multiple neurons simultaneously.
 
 | Field | Description |
 |:------|:------------|
@@ -98,7 +88,45 @@ Various procedure types are available for different experimental manipulations a
 | `Wire material` | Material of the wires |
 | `Sterilization Method` | Method used to sterilize the tetrode wire electrode |
 
+## Brain and Tissue Procedures
+
+### Brain lesion
+
+A surgical procedure that intentionally damages or destroys brain tissue to study the functions of specific brain areas. Lesions can help identify the roles of different brain regions in behavior and cognition.
+
+| Field | Description |
+|:------|:------------|
+| `Lesion method` | Method used to create the brain lesion (**required**) |
+| `Volume of brain lesion (μL)` | Volume of the brain lesion in microliters (**required**) |
+| `Fatal outcome` | Checkbox to indicate if the procedure resulted in a fatal outcome |
+
+### Brain perfusion fixation
+
+A technique for preserving brain tissue where a fixative solution is pumped through the circulatory system to stabilize and preserve tissue structure. This method is essential for preparing brain specimens for microscopic examination.
+
+| Field | Description |
+|:------|:------------|
+| `Perfusion method` | Method used for brain perfusion fixation (**required**) |
+| `Perfusion volume (mL)` | Volume of perfusion solution in milliliters |
+| `Fatal outcome` | Checkbox to indicate if the procedure resulted in a fatal outcome |
+
+### Brain slice
+
+Refers to ex vivo preparations obtained by sectioning brain tissue into thin slices. These slices are used for various types of experiments, including electrophysiological recordings and pharmacological studies.
+
+| Field | Description |
+|:------|:------------|
+| `Thickness of slices (μm)` | Thickness of the brain slices in micrometers (**required**) |
+| `Number of slices` | Number of brain slices (integer) |
+| `Orientation of slices` | Orientation of the brain slices (**required**) |
+| `Medium used for slice` | Medium used for maintaining the brain slices |
+| `Vibratome blade angle (°)` | Angle of the vibratome blade in degrees |
+
+## Injection and Infusion Procedures
+
 ### Virus injection
+
+Involves injecting a virus into the brain, typically to deliver genetic material for research purposes, such as gene therapy experiments or to manipulate gene expression in specific brain regions. Typically performed with a small glass capillary.
 
 | Field | Description |
 |:------|:------------|
