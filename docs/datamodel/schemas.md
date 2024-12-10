@@ -13,6 +13,7 @@ The Schemas in BrainSTEM define the structure and organization of data for vario
 
 - [**Coordinates systems**]({{site.baseurl}}/datamodel/schemas/coordinates): Defines the structure for representing spatial locations within the brain across different coordinate systems and species.
 ({{"webinterface/dashboard"|absolute_url}})
+
 - [**Data acquisition types**]({{site.baseurl}}/datamodel/schemas/experiment_data): Specifies the data fields and organization for various types of experimental data, such as electrophysiology, imaging, and behavioral measurements.
 
 - [**Manipulation types**]({{site.baseurl}}/datamodel/schemas/manipulation): Outlines the data fields for various types of experimental manipulations and interventions.
