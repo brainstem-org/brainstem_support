@@ -5,6 +5,7 @@ parent: Schemas
 grand_parent: Data model
 nav_order: 2
 ---
+
 # Data acquisition types
 {: .no_toc}
 
