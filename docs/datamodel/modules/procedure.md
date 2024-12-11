@@ -37,15 +37,22 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 
 These are the available *Type* options for Procedure:
 
-- Brain lesion
+## Surgical Procedures
 - Craniectomy
 - Craniotomy
+
+## Implant Procedures
 - Optic fiber implant
-- Brain perfusion fixation
-- Single wire electrode
 - Silicon probe implant
-- Brain slice
+- Single wire electrode
 - Tetrode wire electrode
+
+## Brain and Tissue Procedures
+- Brain lesion
+- Brain perfusion fixation
+- Brain slice
+
+## Injection and Infusion Procedures
 - Virus injection
 
 A detailed list of the type-specific fields can be found on the [procedure types page]({{"datamodel/schemas/procedures/"|absolute_url}}).
