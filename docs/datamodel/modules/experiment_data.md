@@ -35,17 +35,17 @@ Data acquisition encompasses the diverse range of data types acquired during sci
 
 These are the available *Type* options for data acquisition:
 
-## Audio and Behavioral Tracking
+### Audio and Behavioral Tracking
 - Audio
 - Behavioral Tracking
 
-## Electrophysiology
+### Electrophysiology
 - Electroencephalography (EEG)
 - Electroneurogram (ENG)
 - Extracellular Electrophysiology
 - Intracellular Electrophysiology
 
-## Optical Imaging
+### Optical Imaging
 - Confocal Microscopy
 - Fiber Photometry
 - Light Field Microscopy (LFM)
@@ -54,12 +54,12 @@ These are the available *Type* options for data acquisition:
 - Two-Photon Microscopy
 - Three-Photon Microscopy
 
-## Magnetic and Functional Imaging
+### Magnetic and Functional Imaging
 - Functional Magnetic Resonance Imaging (fMRI)
 - Magnetic Resonance Imaging (MRI)
 - Magnetoencephalography (MEG)
 
-## Tomography and Ultrasound
+### Tomography and Ultrasound
 - Computed Tomography (CT)
 - Positron Emission Tomography (PET)
 - Single-Photon Emission Computed Tomography (SPECT)
