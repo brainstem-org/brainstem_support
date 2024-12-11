@@ -35,26 +35,35 @@ Data acquisition encompasses the diverse range of data types acquired during sci
 
 These are the available *Type* options for data acquisition:
 
+## Audio and Behavioral Tracking
 - Audio
 - Behavioral Tracking
-- Computed Tomography (CT)
+
+## Electrophysiology
 - Electroencephalography (EEG)
 - Electroneurogram (ENG)
-- Confocal Microscopy
 - Extracellular Electrophysiology
-- Fiber Photometry
-- Functional Magnetic Resonance Imaging (fMRI)
-- Functional Ultrasound Imaging (fUS)
 - Intracellular Electrophysiology
+
+## Optical Imaging
+- Confocal Microscopy
+- Fiber Photometry
 - Light Field Microscopy (LFM)
-- Magnetic Resonance Imaging (MRI)
-- Magnetoencephalography (MEG)
 - Miniscope Microscopy
-- Positron Emission Tomography (PET)
-- Single-Photon Emission Computed Tomography (SPECT)
 - Single-Photon Microscopy
 - Two-Photon Microscopy
 - Three-Photon Microscopy
+
+## Magnetic and Functional Imaging
+- Functional Magnetic Resonance Imaging (fMRI)
+- Magnetic Resonance Imaging (MRI)
+- Magnetoencephalography (MEG)
+
+## Tomography and Ultrasound
+- Computed Tomography (CT)
+- Positron Emission Tomography (PET)
+- Single-Photon Emission Computed Tomography (SPECT)
+- Functional Ultrasound Imaging (fUS)
 
 A detailed list of the type-specific fields can be found on the [Data acquisition types page]({{"datamodel/schemas/experiment_data/"|absolute_url}}).
 
