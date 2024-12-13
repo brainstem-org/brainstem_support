@@ -20,7 +20,7 @@ nav_order: 3
 A session is a modular construction that provides flexible and standardized descriptions of various aspects of experiments. The session has several direct fields but is primarily described by four modules:
 
 1. Behavior: Description of the animal subject(s) behavior during the session collection. A behavior is described by two personal attributes: the setup and the behavioral paradigm.
-2. Experiment data: Description of the data acquisition files. This module is highly flexible and can describe many types of experimental data, such as Extracellular and Intracellular Electrophysiology, 2-photon microscopy, Miniscope, Audio Recordings, and Behavioral Video Recordings. Details are tailored to each experiment type.
+2. Data acquisition: Description of the data acquisition files. This module is highly flexible and can describe many types of experimental data, such as Extracellular and Intracellular Electrophysiology, 2-photon microscopy, Miniscope, Audio Recordings, and Behavioral Video Recordings. Details are tailored to each experiment type.
 3. Manipulations: Description of any manipulations performed during an experiment. This crucial module documents alterations to the physiological conditions of a recording. It can describe various types of manipulations, such as Optogenetic Stimulation, Micro Perfusion, Pharmacological Injection, Thermal Perturbation, Transcranial Electrical Stimulation, and Ultrasound Stimulation. A manipulation is described by a protocol, typically consisting of the manipulation profile, power, duration, duty cycle, and number of repetitions.
 4. Epochs: Temporal aspects of a session. An epoch is characterized by a name, start and end times relative to the session's start. Other modules (Experiment Data, Manipulations, and Behavior) can be linked to epochs, allowing for temporal segmentation of a session.
 
@@ -28,26 +28,26 @@ A session is a modular construction that provides flexible and standardized desc
 
 | Field | Description |
 |:------|:------------|
-| `Name` | Name of the session (**required**; string; max length: 100 characters; must be unique) |
-| `Projects` | Projects the session belongs to. Learn more about project inheritance [here] (**required**) |
-| `Description` | A text description of the session. Pictures can be uploaded and inserted. |
-| `Date and time onset` | Date and time of the session onset (YYYY-MM-DD format, e.g., "2023-03-22") |
-| `Tags` | Tags for the session. Great for organizational purposes, quick labeling, and filtering. |
-| `Data storage` | Describes where the data is stored |
-| `Name used in storage` | Custom name for the session used in local data storage (string; max length: 200) |
-| `Extra fields` | Allows you to add extra fields to the session. Values can be strings or numeric. |
-| `Online repositories` | If this session has been shared in a public repository, link it here. |
+| `Name` | Name of the session (**required**; string; max length: 100 characters; must be unique across BrainSTEM). Example: "Memory_Task_Session1", "PV_Recording_20240313" |
+| `Projects` | Projects the session belongs to (**required**). Learn more about project inheritance [here]({{"datamodel/stem/project/"|absolute_url}}). Example: "Hippocampal Memory Project" |
+| `Description` | A text description of the session. Pictures can be uploaded and inserted through rich text formatting. Example: "Recording session during novel object recognition task..." |
+| `Date and time onset` | Date and time of the session onset (YYYY-MM-DD format, e.g., "2023-03-22 14:30:00"). Can be left empty |
+| `Tags` | Tags for the session. Great for organizational purposes, quick labeling, and filtering. Tags are shared across all users. Example: "behavior", "recording", "morning-session" |
+| `Data storage` | Describes where the data is stored. Example: "Lab Server", "External Drive 1" |
+| `Name used in storage` | Custom name for the session used in local data storage (string; max length: 200). Example: "ses01_mem_2024" |
+| `Extra fields` | Allows you to add extra fields to the session. Values can be strings or numeric. Saved as key-value pairs. Example: {"Room": "B115", "Temperature": "22C"} |
+| `Online repositories` | If this session has been shared in a public repository, link it here. Example: "DANDI:123456" |
 
 ### Epoch fields
 
 | Field | Description |
 |:------|:------------|
-| `Name` | Name of the epoch (**required**; string; max length: 100 characters) |
-| `Start` | Start time of the epoch, relative to the session onset |
-| `End` | End time of the epoch, relative to the session onset |
-| `Behavior` | Behavior associated with the epoch |
-| `Experiment data` | Experiment data associated with the epoch |
-| `Manipulation` | Manipulation associated with the epoch |
+| `Name` | Name of the epoch (**required**; string; max length: 100 characters). Example: "Baseline", "Stimulus_Period" |
+| `Start` | Start time of the epoch, relative to the session onset. Example: "0:00:00" |
+| `End` | End time of the epoch, relative to the session onset. Example: "0:05:00" |
+| `Behavior` | Behavior associated with the epoch. Example: "Open field exploration" |
+| `Data acquisition` | Data acquisition associated with the epoch. Example: "Calcium imaging" |
+| `Manipulation` | Manipulation associated with the epoch. Example: "Optogenetic stimulation" |
 
 ### Data acquisition fields
 
