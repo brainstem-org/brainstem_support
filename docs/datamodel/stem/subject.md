@@ -23,20 +23,20 @@ The subject model describes your animal subject through a set of standard fields
 
 | Field | Description |
 |:------|:------------|
-| `Name` | Name of the subject (**required**; maximum length: 100 characters; must be unique) |
-| `Projects` | Projects the subject belongs to (**required**) |
-| `Sex` | Sex of the animal: (Male, Female, or Unknown; **required**) |
-| `Species` | Species of the subject (**required**) |
-| `Strain` | Strain of the subject (**required**) |
-| `Description` | A rich text description of the subject |
-| `Genetic line` | Genetic line of the subject. Could also be wild type (string; maximum length: 100 characters) |
-| `Birth date` | Birth date of the animal subject (e.g., "2023-03-22") |
-| `Death date` | Death date of the animal subject (e.g., "2023-03-25") |
-| `Tags` | Tags for the subject. Great for organizational purposes, quick labeling, and filtering. |
-| `Subject identifier` | Any identifier used for this subject outside of BrainSTEM, such as an ear tag or RFID number. |
-| `Source` | Source of the subject, e.g., Charles River. |
-| `Name used in storage` | Use this field if you have another name for your subject in your local data storage (string; maximum length: 100 characters) |
-| `Extra fields` | Allows you to add extra fields to the subject. Values can be strings or numeric. |
+| `Name` | Name of the subject (**required**; string; maximum length: 100 characters; must be unique across BrainSTEM). Example: "Mouse_01", "Rat_2024_A" |
+| `Projects` | Projects the subject belongs to (**required**). Can belong to multiple projects. Example: Added to both "Memory Study" and "Aging Study". [Projects]({{"datamodel/stem/project/"|absolute_url}}) |
+| `Sex` | Sex of the animal: (Male, Female, or Unknown; **required**). Selected from predefined choices. Example: "Female" |
+| `Species` | Species of the subject (**required**). Please add in taxonomies section if not available. Example: "Mus musculus" |
+| `Strain` | Strain of the subject (**required**). Please add in taxonomies section if not available. Example: "C57BL/6J" |
+| `Description` | A rich text description of the subject. Can be left empty. Example: "Male C57BL/6J mouse, exhibits normal behavior..." |
+| `Genetic line` | Genetic line of the subject. Could also be wild type (string; maximum length: 100 characters). Example: "Wild type" or "PV-Cre" |
+| `Birth date` | Birth date of the animal subject. Can be left empty. Example: "2023-03-22" |
+| `Death date` | Death date of the animal subject. Can be left empty. Example: "2024-03-25" |
+| `Tags` | Tags for the subject. Great for organizational purposes, quick labeling, and filtering. Example: control-group", "lesion" |
+| `Subject identifier` | Any identifier used for this subject outside of BrainSTEM, such as an ear tag or RFID number. Example: "Ear tag #A1234" |
+| `Source` | Source of the subject. Can be left empty. Example: "Charles River", "In-house breeding" |
+| `Name used in storage` | Use this field if you have another name for your subject in your local data storage (string; maximum length: 200 characters). Example: "M01_2024_exp3" |
+| `Extra fields` | Allows you to add extra fields to the subject. Values can be strings or numeric. Example: {"Weight": "25g", "Litter": "A3"} |
 
 ### Procedure data fields
 
