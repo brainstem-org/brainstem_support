@@ -24,7 +24,7 @@ The subject model describes your animal subject through a set of standard fields
 | Field | Description |
 |:------|:------------|
 | `Name` | Name of the subject (**required**; string; maximum length: 100 characters; must be unique across BrainSTEM). Example: "Mouse_01", "Rat_2024_A" |
-| `Projects` | Projects the subject belongs to (**required**). Can belong to multiple projects. Example: Added to both "Memory Study" and "Aging Study". [Projects]({{"datamodel/stem/project/"|absolute_url}}) |
+| `Projects` | Projects the subject belongs to (**required**). Can belong to multiple projects. Example: Added to both "Memory Study" and "Aging Study". Learn more about project inheritance [here]({{"datamodel/stem/project/"|absolute_url}}). |
 | `Sex` | Sex of the animal: (Male, Female, or Unknown; **required**). Selected from predefined choices. Example: "Female" |
 | `Species` | Species of the subject (**required**). Please add in taxonomies section if not available. Example: "Mus musculus" |
 | `Strain` | Strain of the subject (**required**). Please add in taxonomies section if not available. Example: "C57BL/6J" |
