@@ -23,11 +23,11 @@ Collections allow for creating subgroups of sessions within a project. They can 
 
 | Field | Description |
 |:------|:------------|
-| `Name` | Name of the collection (**required**; string; max length: 100 characters; must be unique within the project) |
-| `Project` | The project the collection belongs to (**required**) |
-| `Sessions` | Sessions in the collection. All sessions must belong to the same project (**required**) |
-| `Description` | A text description of the collection, providing additional context and information. Pictures can be uploaded and inserted. |
-| `Tags` | Tags for the collection. Great for organizational purposes, quick labeling, and filtering. |
+| `Name` | Name of the collection (**required**; string; max length: 100 characters; must be unique within the project). Example: "Place Cell Analysis", "Learning Sessions Day 1-5" |
+| `Project` | The project the collection belongs to (**required**). A collection can belong to a single project. Example: "Spatial Memory Project" |
+| `Sessions` | Sessions in the collection. All sessions must belong to the same project (**required**). Example: "Recording1", "Recording2", "Recording3" |
+| `Description` | A text description of the collection, providing additional context and information. Pictures can be uploaded and inserted through rich text formatting. Example: "Collection of all place cell recording sessions during the learning phase..." |
+| `Tags` | Tags for the collection. Great for organizational purposes, quick labeling, and filtering. Tags are shared across all users. Example: "place-cells", "learning-phase", "figure-1-data" |
 
 ## Permissions
 
