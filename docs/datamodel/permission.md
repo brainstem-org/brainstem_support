@@ -19,7 +19,7 @@ nav_order: 9
 
 BrainSTEM implements a hierarchical permission system that governs access control across the platform. This system enables flexible collaboration while maintaining data security through inheritance-based permissions.
 
-![permissions]({{site.baseurl}}/assets/images/permission.png)
+![permissions]({{site.baseurl}}/assets/images/permissions_v3.png)
 
 ## Permission Levels Overview
 
