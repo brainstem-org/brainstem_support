@@ -15,7 +15,7 @@ The STEM (STructured Experimental Metadata) models form the core structure of th
 
 - [**Subject**]({{site.baseurl}}/datamodel/stem/subject): Animal subjects are described by essential attributes such as name, sex, species, and strain. Subjects must belong to one or more projects and can be associated with various procedures.
 
-- [**Dataset**]({{site.baseurl}}/datamodel/stem/dataset): Datasets are modular constructs that provide standardized descriptions of various aspects of experiments. They are composed of four main modules: Behavior, Experiment data, Manipulations, and Epochs. Datasets must belong to one or more projects.
+- [**Session**]({{site.baseurl}}/datamodel/stem/dataset): Sessions are modular constructs that provide standardized descriptions of various aspects of experiments. They are composed of four main modules: Behavior, Data acquisition, Manipulations, and Epochs. Sessions must belong to one or more projects.
 
 - [**Collection**]({{site.baseurl}}/datamodel/stem/collection): Collections allow for grouping datasets within a project. They can be used to organize datasets for specific analyses or figures. All datasets in a collection must belong to the same project.
 
