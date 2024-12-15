@@ -23,12 +23,12 @@ Subject logs refer to records that track various aspects of the subjects' living
 
 | Field | Description |
 |:------|:------------|
-| `Type` | Type of subject log (**required**). *See options below* |
-| `Subject` | The subject associated with the log (**required**) |
-| `Description` | Description of the subject log |
-| `Notes` | Notes about the subject log (for each log entry) |
-| `Date and time` | Timestamp for each log entry (for simple timestamp logs) |
-| `Type details` | Type-specific fields for each log entry. *See options below* |
+| `Type` | Type of subject log (**required**). Selected from predefined types. Example: "Weighing log", "Water consumption log". *See options below* |
+| `Subject` | The subject associated with the log (**required**). Must reference an existing [subject]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
+| `Description` | Description of the subject log (string; maximum length: 500 characters). Example: "Daily weight monitoring during water restriction" |
+| `Notes` | Notes about the subject log (for each log entry). Example: "Subject appears healthy and active" |
+| `Date and time` | Timestamp for each log entry (for simple timestamp logs). Example: "2024-03-15 09:00:00" |
+| `Type details` | Type-specific fields for each log entry. Fields vary by log type. Example: For weighing log - weight in grams. *See options below* |
 
 ## Types of subject logs
 
