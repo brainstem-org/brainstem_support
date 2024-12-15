@@ -23,15 +23,15 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 
 | Field | Description |
 |:------|:------------|
-| `Type` | Type of procedure (**required**). *See options below* |
-| `Subject` | The subject the procedure was performed on (**required**) |
-| `Notes` | Notes about the procedure (max length: 500 characters) |
-| `Date and time` | Date and time the procedure was performed (e.g., "2023-03-22") |
-| `Consumable` | Consumable used for the procedure |
-| `Hardware device` | Hardware device used to perform the procedure |
-| `Brain region` | Target brain region where the procedure was performed |
-| `Coordinates system` | Coordinate system (**required**). *See options below* |
-| `Type details` | Type-specific fields. *See options below* |
+| `Type` | Type of procedure (**required**). Selected from predefined types. Example: "Optic fiber implant". *See options below* |
+| `Subject` | The subject the procedure was performed on (**required**). Must reference an existing [subject]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
+| `Notes` | Notes about the procedure (string; maximum length: 500 characters). Example: "Implant placed successfully with minimal bleeding" |
+| `Date and time` | Date and time the procedure was performed. Example: "2024-03-22 10:30:00" |
+| `Consumable` | Consumable used for the procedure. Example: "200µm core diameter fiber" |
+| `Hardware device` | Hardware device used to perform the procedure. Example: "Stereotaxic frame #3" |
+| `Brain region` | Target brain region where the procedure was performed. Example: "Hippocampus CA1" |
+| `Coordinates system` | Coordinate system (**required**). Selected from predefined systems. Example: "Stereotaxic Bregma-Based". *See options below* |
+| `Type details` | Type-specific fields. Fields vary by procedure type. Example: For fiber implant - fiber tip shape. *See options below* |
 
 ## Types of procedures
 

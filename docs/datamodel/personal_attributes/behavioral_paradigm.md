@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 1
 ---
 
-# Dataset model
+# Behavior paradigm model
 {: .no_toc}
 
 ## Table of contents

@@ -23,11 +23,11 @@ The behavior model is a module in sessions used to describe the behavior occurri
 
 | Field | Description |
 |:------|:------------|
-| `Session` | Session of the behavior (**required**) |
-| `Subjects` | Subjects taking part in the behavior (**required**) |
-| `Experimental setup` | Experimental setup of the behavior (**required**) |
-| `Behavioral paradigm` | Behavioral paradigm of the behavior (**required**) |
-| `Notes` | Notes about the behavior (max length: 500 characters) |
+| `Session` | Session of the behavior (**required**). Must reference an existing [session]({{"datamodel/stem/dataset/"|absolute_url}}). Example: "Training session #5" |
+| `Subjects` | Subjects taking part in the behavior (**required**). Can include multiple subjects. Example: "Mouse_01", "Mouse_02" |
+| `Setups` | Setup of the behavior (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/experiment_setups/"|absolute_url}}). Example: "Linear track A" |
+| `Behavioral paradigm` | Behavioral paradigm of the behavior (**required**). Must reference an existing [behavioral paradigm]({{"datamodel/personal_attributes/behavioral_paradigm/"|absolute_url}}). Example: "Spatial alternation task" |
+| `Notes` | Notes about the behavior (string; maximum length: 500 characters). Example: "Subject performed normally with 85% accuracy" |
 
 ## Permissions
 

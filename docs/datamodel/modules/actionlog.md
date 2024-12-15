@@ -23,12 +23,13 @@ Procedure logs refer to systematic records that track specific parameters or out
 
 | Field | Description |
 |:------|:------------|
-| `Type` | Type of procedure logs (**required**). *See options below* |
-| `Procedure` | The action of the log (**required**) |
-| `Description` | Description of the procedure logs |
-| `Date and time` | Timestamp for each entry in the log |
-| `Type details` | Type-specific fields for each entry in the log. *See options below* |
-| `Notes` | Notes about the procedure logs for each entry in the log |
+| `Type` | Type of procedure logs (**required**). Selected from predefined types. Example: "Impedances log", "Linear displacement log". *See options below* |
+| `Procedure` | The action of the log (**required**). Must reference an existing [procedure]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Silicon probe implant #A123" |
+| `Description` | Description of the procedure logs. Can be left empty (string; maximum length: 500 characters). Example: "Daily impedance measurements for tetrode array" |
+| `Date and time` | Timestamp for each entry in the log. Example: "2024-03-15 14:30:00" |
+| `Type details` | Type-specific fields for each entry in the log. Fields vary by type. Example: For impedance log - impedance values in kOhm. *See options below* |
+| `Notes` | Notes about the procedure logs for each entry in the log (string; maximum length: 500 characters). Example: "Observed slight increase in impedance values" |
+
 
 ## Types of procedure logss
 

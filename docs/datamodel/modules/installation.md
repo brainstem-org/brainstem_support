@@ -23,14 +23,14 @@ Equipments refer to the setup and utilization of various devices and sensors des
 
 | Field | Description |
 |:------|:------------|
-| `Type` | Type of equipments (**required**). *See options below* |
-| `Setup` | The setup the equipments is installed in (**required**) |
-| `Notes` | Notes about the equipments (max length: 500 characters) |
-| `Date and time` | Date and time the equipments was performed (e.g., "2023-03-22") |
-| `Consumable` | Consumable used for the equipments |
-| `Hardware device` | Hardware device used to perform the equipments |
-| `Coordinates system` | Coordinate system (**required**). *See options below* |
-| `Type details` | Type-specific fields. *See options below* |
+| `Type` | Type of equipments (**required**). Selected from predefined types. Example: "Video camera", "Microphone". *See options below* |
+| `Setup` | The setup the equipments is installed in (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/experiment_setups/"|absolute_url}}). Example: "Behavior room A setup" |
+| `Notes` | Notes about the equipments (string; maximum length: 500 characters). Example: "Camera positioned at 45-degree angle" |
+| `Date and time` | Date and time the equipments was performed. Example: "2024-03-22 09:00:00" |
+| `Consumable` | Consumable used for the equipments. Example: "HD webcam model XYZ" |
+| `Hardware device` | Hardware device used to perform the equipments. Example: "Recording computer #2" |
+| `Coordinates system` | Coordinate system (**required**). Selected from predefined systems. Example: "External X-Y-Z Absolute". *See options below* |
+| `Type details` | Type-specific fields. Fields vary by equipment type. Example: For camera - resolution, frame rate. *See options below* |
 
 ## Types of equipments
 

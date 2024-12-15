@@ -33,8 +33,8 @@ The subject model describes your animal subject through a set of standard fields
 | `Birth date` | Birth date of the animal subject. Can be left empty. Example: "2023-03-22" |
 | `Death date` | Death date of the animal subject. Can be left empty. Example: "2024-03-25" |
 | `Tags` | Tags for the subject. Great for organizational purposes, quick labeling, and filtering. Example: control-group", "lesion" |
-| `Subject identifier` | Any identifier used for this subject outside of BrainSTEM, such as an ear tag or RFID number. Example: "Ear tag #A1234" |
-| `Source` | Source of the subject. Can be left empty. Example: "Charles River", "In-house breeding" |
+| `Subject identifier` | Any identifier used for this subject outside of BrainSTEM, such as an ear tag or RFID number (string; maximum length: 100 characters). Example: "Ear tag #A1234" |
+| `Source` | Source of the subject. Can be left empty (string; maximum length: 100 characters). Example: "Charles River", "In-house breeding" |
 | `Name used in storage` | Use this field if you have another name for your subject in your local data storage (string; maximum length: 200 characters). Example: "M01_2024_exp3" |
 | `Extra fields` | Allows you to add extra fields to the subject. Values can be strings or numeric. Example: {"Weight": "25g", "Litter": "A3"} |
 

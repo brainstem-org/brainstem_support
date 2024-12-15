@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 3
 ---
 
-# Dataset model
+# Setups model
 {: .no_toc}
 
 ## Table of contents
