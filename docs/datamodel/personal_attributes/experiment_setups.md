@@ -23,13 +23,13 @@ Setups describe where experiments, procedures, or manipulations takes place. It 
 
 | Field                | Description |
 |:---------------------|:------------|
-| `Name`                 | Name of the setup (**required**) |
-| `Environment type`     | The type of environment the setup is of (**required**)|
-| `Authenticated groups` | Groups that have change permissions for this setup (**required**) |
-| `Description`          | Text description of the setup |
-| `Image`				   | Image of the setup|
-| `Public access`        | Determines if the setup is public or private |
-| `Physical dimensions`  | Any physical dimensions used to describe the setup. Each dimension is a name value pair with any associated units or description. |
+| `Name`                 | Name of the setup (**required**; string; maximum length: 50 characters). Example: "Behavior Room A - Setup 1" |
+| `Environment type`     | The type of environment the setup is of (**required**). Example: "Linear track"|
+| `Authenticated groups` | Groups that have change permissions for this setup (**required**). Example: "Behavior Core Team" |
+| `Description`          | Rich text description of the setup. Can include uploaded images. Example: "Linear track setup with two reward ports and tracking cameras..." |
+| `Image`				   | Image of the setup. Example: "setup1_overview.jpg"|
+| `Public access`        | Determines if the setup is public or private. Example: "False" for private access |
+| `Physical dimensions`  | Any physical dimensions used to describe the setup. Each dimension is a name value pair with any associated units or description. Example: {"length": "200 cm", "width": "10 cm", "height": "15 cm"} |
 
 ## Types of environment type
 

@@ -23,11 +23,11 @@ Consumables are items used in scientific experiments that have a limited lifespa
 
 | Field                | Description |
 |:---------------------|:------------|
-| `Name`                 | Name of the consumable (**required**) |
-| `Type`  			   | Type of consumable (**required**) |
-| `Supplier`             | Supplier of the consumable (**required**) |
-| `Description`          | A description of the consumable |
-| `Type specific fields` | Custom fields based on consumable type (**required**) |
+| `Name`                 | Name of the consumable (**required**; string; maximum length: 100 characters). Example: "Neuropixels 1.0 - 384 channels - Option 3" |
+| `Type`  			   | Type of consumable (**required**). Example: "Silicon probe" |
+| `Supplier`             | Supplier of the consumable (**required**). Must reference an existing [supplier]({{"datamodel/resources/suppliers/"|absolute_url}}). Example: "IMEC" |
+| `Description`          | Rich text description of the consumable. Can include uploaded images. Example: "High-density silicon probe with 384 recording sites distributed across a 10 mm shank..." |
+| `Type specific fields` | Custom fields based on consumable type. See [Consumable types schema]({{"datamodel/schemas/consumables/"|absolute_url}}) for type-specific fields |
 
 ## Types of consumable
 

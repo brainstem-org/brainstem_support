@@ -23,17 +23,17 @@ A specialized tool for recording electrical signals from neurons. Silicon probes
 
 | Field | Description |
 |:------|:------------|
-| `Product id` | Unique identifier for the product |
-| `Probe layout` | Layout of the probe (e.g., linear) |
-| `Number of channels` | Total number of channels on the probe |
-| `Number of shanks` | Number of shanks on the probe |
-| `Spacing between shanks (μm)` | Distance between shanks in micrometers |
-| `Thickness of shanks (μm)` | Thickness of the shanks in micrometers |
-| `Length of shanks (μm)` | Length of the shanks in micrometers |
-| `Area of electrode sites (μm^2)` | Area of individual electrode sites in square micrometers |
-| `Uniform layout` | Boolean indicating if the layout is uniform |
-| `Custom design` | Boolean indicating if it's a custom design |
-| `Vertical spacing between sites (μm)` | Vertical distance between electrode sites in micrometers |
+| `Product id` | Product identifier that must be unique for each probe design (string) |
+| `Probe layout` | Description of the probe's physical arrangement (string; e.g., "linear", "grid") |
+| `Number of channels` | Total number of recording channels on the probe (non-negative integer) |
+| `Number of shanks` | Number of probe shanks (non-negative integer) |
+| `Spacing between shanks` | Distance between adjacent shanks (floating-point number; measured in μm) |
+| `Thickness of shanks` | Physical thickness of each shank (floating-point number; measured in μm) |
+| `Length of shanks` | Physical length of each shank (floating-point number; measured in μm) |
+| `Area of electrode sites` | Surface area of individual recording sites (floating-point number; measured in μm²) |
+| `Uniform layout` | Indicates whether recording sites are uniformly spaced (boolean value) |
+| `Custom design` | Indicates whether this is a custom probe design (boolean value) |
+| `Vertical spacing between sites` | Distance between recording sites along the vertical axis (floating-point number; measured in μm) |
 
 ## Optic fiber design
 
@@ -41,17 +41,17 @@ A flexible light guide used primarily in optogenetic experiments to deliver ligh
 
 | Field | Description |
 |:------|:------------|
-| `Product id` | Unique identifier for the product |
-| `Numerical Aperture` | Numerical aperture of the fiber |
-| `Wavelength minimum (nm)` | Minimum wavelength the fiber can transmit in nanometers |
-| `Wavelength maximum (nm)` | Maximum wavelength the fiber can transmit in nanometers |
-| `Fiber type` | Type of the optical fiber |
-| `Core diameter (μm)` | Diameter of the fiber core in micrometers |
-| `Cladding diameter (μm)` | Diameter of the fiber cladding in micrometers |
-| `Coating diameter (μm)` | Diameter of the fiber coating in micrometers |
-| `Core` | Material of the fiber core |
-| `Cladding` | Material of the fiber cladding |
-| `Coating` | Material of the fiber coating |
+| `Product id` | Product identifier that must be unique for each fiber design (string) |
+| `Numerical Aperture` | Optical property defining the acceptance angle of the fiber (floating-point number) |
+| `Wavelength minimum` | Lower limit of transmissible wavelengths (floating-point number; measured in nm) |
+| `Wavelength maximum` | Upper limit of transmissible wavelengths (floating-point number; measured in nm) |
+| `Fiber type` | Classification of the optical fiber type (string) |
+| `Core diameter` | Diameter of the fiber's light-conducting core (floating-point number; measured in μm) |
+| `Cladding diameter` | Diameter including the light-confining cladding layer (floating-point number; measured in μm) |
+| `Coating diameter` | Total diameter including protective coating (floating-point number; measured in μm) |
+| `Core` | Material composition of the fiber core (string) |
+| `Cladding` | Material composition of the cladding layer (string) |
+| `Coating` | Material composition of the protective coating (string) |
 
 ## Virus construct
 
@@ -59,13 +59,13 @@ A viral vector preparation used for introducing genes into cells. Virus solution
 
 | Field | Description |
 |:------|:------------|
-| `Product id` | Unique identifier for the product |
-| `Virus type` | Type of virus (e.g., Adenovirus) |
-| `Capsid` | Capsid information |
-| `Promoter` | Promoter used in the construct |
-| `Gene` | Gene of interest in the construct |
-| `Reporter` | Reporter gene or protein |
-| `Other element` | Any other relevant genetic elements |
+| `Product id` | Product identifier that must be unique for each viral construct (string) |
+| `Virus type` | Classification of virus used (string; e.g., "Adenovirus", "AAV") |
+| `Capsid` | Specification of the viral capsid structure (string) |
+| `Promoter` | Genetic promoter sequence used in the construct (string) |
+| `Gene` | Target gene sequence in the construct (string) |
+| `Reporter` | Reporter gene or protein for tracking expression (string) |
+| `Other element` | Additional genetic elements in the construct (string) |
 
 ## Single wire electrode
 
@@ -73,11 +73,11 @@ A simple yet effective tool for measuring electrical activity at a single site. 
 
 | Field | Description |
 |:------|:------------|
-| `Product id` | Unique identifier for the product |
-| `Material` | Material of the wire electrode |
-| `Insulation/Coating` | Type of insulation or coating on the electrode |
-| `Diameter (mm)` | Diameter of the wire in millimeters |
-| `Insulation diameter (mm)` | Diameter of the insulation in millimeters |
+| `Product id` | Product identifier that must be unique for each electrode (string) |
+| `Material` | Composition of the electrode wire (string) |
+| `Insulation/Coating` | Type and material of electrode insulation (string) |
+| `Diameter` | Core wire diameter (floating-point number; measured in mm) |
+| `Insulation diameter` | Total diameter including insulation (floating-point number; measured in mm) |
 
 ## Consumable types API access
 

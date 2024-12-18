@@ -23,9 +23,9 @@ This log records the electrical impedance of electrodes implanted in the brain o
 
 | Field | Description |
 |:------|:------------|
-| `Impedances (kOhm)` | Measured impedance values in kiloohms (**required**) |
-| `Phases (degrees)` | Phase angles of the impedance measurements in degrees |
-| `List of channels` | Identifiers for the channels being measured |
+| `Impedances` | Array of impedance measurements for the electrodes (**required**; non-negative numbers; measured in kOhm). These values indicate the resistance to electrical current flow between the electrode and surrounding tissue |
+| `Phases` | Array of phase angle measurements (non-negative numbers; measured in degrees). These values represent the phase shift between voltage and current, providing information about the electrode-tissue interface properties |
+| `List of channels` | Array of channel identifiers (non-negative integers) corresponding to the recording channels being measured. Used to track which impedance measurements correspond to which electrode channels |
 
 ## Linear displacement log
 
@@ -33,7 +33,7 @@ A linear displacement log tracks the movement or position of an object or device
 
 | Field | Description |
 |:------|:------------|
-| `Displacement (μm)` | Measured displacement in micrometers (**required**) |
+| `Displacement` | The distance moved from a reference position (**required**; floating-point number; measured in μm). Records the linear movement of the device, typically representing depth in brain tissue or position along a track |
 
 ## Tetrode log (4 tetrodes)
 
@@ -41,10 +41,10 @@ This log keeps records related to the use and performance of a set of four tetro
 
 | Field | Description |
 |:------|:------------|
-| `Tetrode #1 (μm)` | Position or depth of the first tetrode in micrometers |
-| `Tetrode #2 (μm)` | Position or depth of the second tetrode in micrometers |
-| `Tetrode #3 (μm)` | Position or depth of the third tetrode in micrometers |
-| `Tetrode #4 (μm)` | Position or depth of the fourth tetrode in micrometers |
+| `Tetrode #1` | Position measurement for the first tetrode (floating-point number; measured in μm) |
+| `Tetrode #2` | Position measurement for the second tetrode (floating-point number; measured in μm) |
+| `Tetrode #3` | Position measurement for the third tetrode (floating-point number; measured in μm) |
+| `Tetrode #4` | Position measurement for the fourth tetrode (floating-point number; measured in μm) |
 
 ## Tetrode log (8 tetrodes)
 
@@ -52,14 +52,14 @@ Similar to the log for four tetrodes, this log pertains to experiments involving
 
 | Field | Description |
 |:------|:------------|
-| `Tetrode #1 (μm)` | Position or depth of the first tetrode in micrometers |
-| `Tetrode #2 (μm)` | Position or depth of the second tetrode in micrometers |
-| `Tetrode #3 (μm)` | Position or depth of the third tetrode in micrometers |
-| `Tetrode #4 (μm)` | Position or depth of the fourth tetrode in micrometers |
-| `Tetrode #5 (μm)` | Position or depth of the fifth tetrode in micrometers |
-| `Tetrode #6 (μm)` | Position or depth of the sixth tetrode in micrometers |
-| `Tetrode #7 (μm)` | Position or depth of the seventh tetrode in micrometers |
-| `Tetrode #8 (μm)` | Position or depth of the eighth tetrode in micrometers |
+| `Tetrode #1` | Position measurement for the first tetrode (floating-point number; measured in μm) |
+| `Tetrode #2` | Position measurement for the second tetrode (floating-point number; measured in μm) |
+| `Tetrode #3` | Position measurement for the third tetrode (floating-point number; measured in μm) |
+| `Tetrode #4` | Position measurement for the fourth tetrode (floating-point number; measured in μm) |
+| `Tetrode #5` | Position measurement for the fifth tetrode (floating-point number; measured in μm) |
+| `Tetrode #6` | Position measurement for the sixth tetrode (floating-point number; measured in μm) |
+| `Tetrode #7` | Position measurement for the seventh tetrode (floating-point number; measured in μm) |
+| `Tetrode #8` | Position measurement for the eighth tetrode (floating-point number; measured in μm) |
 
 ## Procedure log API access
 

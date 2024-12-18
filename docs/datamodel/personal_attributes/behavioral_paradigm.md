@@ -23,12 +23,11 @@ Behavioral paradigms describe the paradigm a subject performs in details. The pa
 
 | Field                | Description |
 |:---------------------|:------------|
-| `Name`                 | Name of the behavioral paradigm (**required**) |
-| `Environment type`     | Type of environment in which the behavioral paradigm is performed (**required**) |
-| `Authenticated groups` | Groups that have change permissions for this behavioral paradigm (**required**) |
-| `Description`          | Text description of the behavioral paradigm |
-| `Sensory stimulus type`| Type of sensory stimulus presented to the subject during the behavioral paradigm |
-| `Public access`        | Determines if the behavioral paradigm is publicly available or accessible only through the private portal |
+| `Name`                 | Name of the behavioral paradigm (**required**; string; maximum length: 50 characters). Example: "T-maze alternation task" |
+| `Environment type`     | Type of environment in which the behavioral paradigm is performed (**required**). Example: "T-maze" |
+| `Authenticated groups` | Groups that have change permissions for this behavioral paradigm (**required**). Example: "Lab A", "Neuroscience Department" |
+| `Description`          | Rich text description of the behavioral paradigm. Can include uploaded images. Example: "In this task, rodents alternate between left and right arms of a T-maze to receive rewards..." |
+| `Public access`        | Determines if the behavioral paradigm is publicly available or accessible only through the private portal. Example: "True" for public access |
 
 ## Types of environment type
 

@@ -23,9 +23,9 @@ Hardware devices refer to durable, often more complex equipment or tools that ar
 
 | Field | Description |
 |:------|:------------|
-| `Name` | The name of the hardware device (**required**; must be unique) |
-| `Description` | A description of the hardware device |
-| `Supplier` | The supplier of the hardware device (**required**) |
+| `Name` | The name of the hardware device (**required**; string; maximum length: 100 characters; must be unique). Example: "RHD2000 USB Interface Board" |
+| `Description` | Rich text description of the hardware device. Can include uploaded images. Example: "USB interface board for RHD2000 series digital electrophysiology recording systems..." |
+| `Supplier` | The supplier of the hardware device (**required**). Must reference an existing [supplier]({{"datamodel/resources/suppliers/"|absolute_url}}). Example: "Intan Technologies" |
 
 ## Submission process
 
