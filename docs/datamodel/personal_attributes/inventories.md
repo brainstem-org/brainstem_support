@@ -23,10 +23,10 @@ Inventories in BrainSTEM provide a way to track and manage consumable resources 
 
 | Field | Description |
 |:------|:------------|
-| `Name` | Name of the inventory (**required**; must describe contents or purpose) |
-| `Authenticated groups` | Groups that have change permissions for this inventory (**required**) |
-| `Description` | Text description of the inventory |
-| `Public access` | Determines if the inventory is publicly available or accessible only through the private portal |
+| `Name` | Name of the inventory (**required**; string; maximum length: 50 characters). Example: "Silicon Probe Storage" |
+| `Authenticated groups` | Groups that have change permissions for this inventory (**required**). Example: "Equipment Management Team" |
+| `Description` | Rich text description of the inventory. Can include uploaded images. Example: "Storage location for all silicon probes, organized by probe type and usage status..." |
+| `Public access` | Determines if the inventory is publicly available or accessible only through the private portal. Example: "False" for private access |
 
 ## Permissions
 

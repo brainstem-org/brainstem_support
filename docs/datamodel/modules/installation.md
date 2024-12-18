@@ -25,7 +25,7 @@ Equipments refer to the setup and utilization of various devices and sensors des
 |:------|:------------|
 | `Type` | Type of equipments (**required**). Selected from predefined types. Example: "Video camera", "Microphone". *See options below* |
 | `Setup` | The setup the equipments is installed in (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/experiment_setups/"|absolute_url}}). Example: "Behavior room A setup" |
-| `Notes` | Notes about the equipments (string; maximum length: 500 characters). Example: "Camera positioned at 45-degree angle" |
+| `Notes` | Notes about the equipments (string). Example: "Camera positioned at 45-degree angle" |
 | `Date and time` | Date and time the equipments was performed. Example: "2024-03-22 09:00:00" |
 | `Consumable` | Consumable used for the equipments. Example: "HD webcam model XYZ" |
 | `Hardware device` | Hardware device used to perform the equipments. Example: "Recording computer #2" |

@@ -17,15 +17,33 @@ Multiple log types are available to track and record various aspects of subject 
 1. TOC
 {:toc}
 
+# Subject log types
+
+Multiple log types are available to track and record various aspects of subject care, behavior, and experimental conditions. Each log type captures specific information critical for maintaining subject welfare and experimental integrity.
+
+## Diet And Consumption Logs
+
 ### Food consumption log
 
 Records the amount and type of food consumed by the subject. This information is crucial for studies examining the effects of diet on health, behavior, or disease progression.
 
 | Field | Description |
 |:------|:------------|
-| `Date time` | Date and time of the food consumption measurement |
-| `Food amount (grams)` | Amount of food consumed in grams (**required**) |
-| `Notes` | Additional notes about the food consumption |
+| `Date time` | Timestamp of the food consumption measurement (datetime). Records when the measurement was taken |
+| `Food amount (grams)` | Amount of food consumed (float, ≥ 0; measured in grams). Required field that tracks precise food intake |
+| `Notes` | Additional observations or comments (string). Provides context for the measurement |
+
+### Water consumption log
+
+Details the amount of water consumed by the subject. Monitoring water intake is essential for studies related to hydration, kidney function, or the effects of various substances on thirst.
+
+| Field | Description |
+|:------|:------------|
+| `Date time` | Timestamp of the measurement (datetime). Records when consumption was measured |
+| `Water amount (mL)` | Volume of water consumed (float, ≥ 0; measured in milliliters). Required field tracking fluid intake |
+| `Notes` | Additional observations (string). Provides context for the measurement |
+
+## Deprivation Logs
 
 ### Food deprivation log
 
@@ -33,68 +51,62 @@ Documents periods when food is withheld from the subject. Food deprivation can b
 
 | Field | Description |
 |:------|:------------|
-| `Notes` | Additional notes about the food deprivation |
-| `Responsible person (name and phone number)` | Name and contact information of the person responsible for the food deprivation (**required**) |
-| `Protocol` | Description of the food deprivation protocol |
-| `Start time` | Start time of the food deprivation period (**required**) |
-| `End time` | End time of the food deprivation period |
-
-### Housing log
-
-Keeps track of the subject's living conditions, including the cage typehousing, location, light cycle, and any environmental enrichments. This log helps ensure that housing conditions remain consistent and meet ethical standards.
-
-| Field | Description |
-|:------|:------------|
-| `Notes` | Additional notes about the housing |
-| `Location` | Location of the housing |
-| `Cage ID` | Identifier for the cage |
-| `Cage type` | Type of cage used |
-| `Light cycle` | Description of the light cycle in the housing |
-| `Enrichment` | Description of any enrichment provided in the housing |
-| `Start time` | Start time of the housing period (**required**) |
-| `End time` | End time of the housing period |
-
-### Water consumption log
-
-Details the amount of water consumed by the subject. Monitoring water intake is essential for studies related to hydration, kidney function, or the effects of various substances on thirst and water balance.
-
-| Field | Description |
-|:------|:------------|
-| `Date time` | Date and time of the water consumption measurement |
-| `Water amount (mL)` | Amount of water consumed in milliliters (**required**) |
-| `Notes` | Additional notes about the water consumption |
+| `Notes` | Additional relevant information (string). Captures any deviations or observations |
+| `Responsible person (name and phone number)` | Contact information of the person overseeing the deprivation (string). Required field for accountability |
+| `Protocol` | Description of the food deprivation procedure (string). Details the specific protocol being followed |
+| `Start time` | Beginning of the food deprivation period (datetime). Required field marking when deprivation begins |
+| `End time` | Conclusion of the food deprivation period (datetime). Marks when regular feeding resumes |
 
 ### Water deprivation log
 
-Notes periods during which water is withheld from the subject. Similar to food deprivation, water deprivation can be used to study the effects of hydration status on various physiological and behavioral outcomes.
+Notes periods during which water is withheld from the subject. Similar to food deprivation, water deprivation can be used to study the effects of hydration status.
 
 | Field | Description |
 |:------|:------------|
-| `Notes` | Additional notes about the water deprivation |
-| `Responsible person (name and phone number)` | Name and contact information of the person responsible for the water deprivation (**required**) |
-| `Protocol` | Description of the water deprivation protocol |
-| `Start time` | Start time of the water deprivation period (**required**) |
-| `End time` | End time of the water deprivation period |
+| `Notes` | Additional relevant information (string). Captures any deviations or observations |
+| `Responsible person (name and phone number)` | Contact information of the person overseeing the deprivation (string). Required field for accountability |
+| `Protocol` | Description of the water deprivation procedure (string). Details the specific protocol followed |
+| `Start time` | Beginning of the water deprivation period (datetime). Required field marking when deprivation begins |
+| `End time` | Conclusion of the water deprivation period (datetime). Marks when regular water access resumes |
+
+## Housing And Environment Logs
+
+### Housing log
+
+Keeps track of the subject's living conditions, including cage type, location, and environmental enrichments. This log helps ensure consistent and ethical housing standards.
+
+| Field | Description |
+|:------|:------------|
+| `Notes` | Additional housing-related information (string). Records any relevant observations |
+| `Location` | Physical location of the subject's housing (string). Specifies the exact housing unit location |
+| `Cage ID` | Unique identifier for the housing cage (string). Enables precise tracking of housing units |
+| `Cage type` | Specification of the cage model used (string). Details the exact cage configuration |
+| `Light cycle` | Description of the lighting schedule (string). Specifies normal or reversed light cycles |
+| `Enrichment` | Environmental enrichment details (string). Lists items provided for subject welfare |
+| `Start time` | Beginning of the housing period (datetime). Required field marking when housing begins |
+| `End time` | Conclusion of the housing period (datetime). Marks when housing arrangement changes |
+
+## Physical And Health Logs
 
 ### Weighing log
 
-Records the subject's body weight over time. Regular weighing is critical for monitoring health, growth, and the effects of experimental treatments on body mass.
+Records the subject's body weight over time. Regular weighing is critical for monitoring health, growth, and the effects of experimental treatments.
 
 | Field | Description |
 |:------|:------------|
-| `Date time` | Date and time of the weighing |
-| `Weight (grams)` | Weight of the subject in grams (**required**) |
-| `Notes` | Additional notes about the weighing |
+| `Date time` | Timestamp of the weighing (datetime). Records when measurement was taken |
+| `Weight (grams)` | Subject's measured weight (float, ≥ 0; measured in grams). Required field tracking body mass |
+| `Notes` | Additional observations (string). Provides context for the measurement |
 
 ### Wellness log
 
-Documents observations related to the subject's general health and well-being, including behavior, physical appearance, signs of distress, or illness. This log is essential for ensuring the ethical treatment of research subjects and for interpreting the effects of experimental manipulations on overall health.
+Documents observations related to the subject's general health and well-being, including behavior, physical appearance, and signs of distress or illness.
 
 | Field | Description |
 |:------|:------------|
-| `Date time` | Date and time of the wellness check |
-| `Wellness` | Description of the subject's wellness status (**required**) |
-| `Notes` | Additional notes about the wellness check |
+| `Date time` | Timestamp of the wellness check (datetime). Records when assessment was made |
+| `Wellness` | Description of the subject's health status (string). Required field documenting overall condition |
+| `Notes` | Additional health-related observations (string). Captures detailed observations |
 
 ## Subject log API access
 

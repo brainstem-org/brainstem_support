@@ -23,11 +23,11 @@ Data storages describe the storage solution for datasets. A data storage can be 
 
 | Field                | Description |
 |:---------------------|:------------|
-| `Name`                 | Name of the data storage (**required**) |
-| `Authenticated groups` | Groups that have change permissions for this data storage (**required**) |
-| `Description`          | Text description of the data storage |
-| `Data organization`    | How data is organized in the data storage. E.g., by Users/Subjects/Datasets; or simpler by Projects/Datasets |
-| `Data storage protocols` | Protocols used (local, network, cloud, web, peer-to-peer). Include path and public status for each |
+| `Name`                 | Name of the data storage (**required**; string; maximum length: 100 characters). Example: "Lab Server 01" |
+| `Authenticated groups` | Groups that have change permissions for this data storage (**required**). Example: "Lab B Data Team" |
+| `Description`          | Rich text description of the data storage. Can include uploaded images. Example: "Primary data storage server for electrophysiology recordings..." |
+| `Data organization`    | How data is organized in the data storage. Example: "Projects/Subjects/Sessions/Data" |
+| `Data storage protocols` | Protocols used (local, network, cloud, web, peer-to-peer). Include path and public status for each. Example: "Network: smb://labserver/data, Private access" |
 
 ## Permissions
 
