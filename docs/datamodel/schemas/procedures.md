@@ -19,16 +19,6 @@ Various procedure types are available for different experimental manipulations a
 
 ## Surgical Procedures
 
-### Brain lesion
-
-A surgical procedure that intentionally damages or destroys brain tissue to study the functions of specific brain areas. Lesions can help identify the roles of different brain regions in behavior and cognition.
-
-| Field | Description |
-|:------|:------------|
-| `Lesion method` | Specific technique used to induce the brain lesion (string; required). Includes surgical, suction, chemical, thermal, etc |
-| `Volume of brain lesion (µL)` | Estimated or calculated volume of the brain lesion (float, ≥ 0; required; measured in microliters) |
-| `Fatal outcome` | Whether lesion results in fatal outcome (boolean). Indicated by checkbox |
-
 ### Cranial window
 
 A surgical procedure to create a transparent window in the skull, allowing for optical access to the brain for imaging or other experimental purposes.
