@@ -21,7 +21,7 @@ BrainSTEM allows you to make your research data publicly accessible to promote o
 The diagram below illustrates how public permissions are inherited through the BrainSTEM data model:
 
 **Update needed**
-![permissions]({{site.baseurl}}/assets/images/permission_v2.png)
+![permissions]({{site.baseurl}}/assets/images/permission_public.png)
 
 ## Project Public Sharing
 
