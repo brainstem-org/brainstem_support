@@ -127,28 +127,28 @@ Personal Attributes:
 - [Inventories]({{site.baseurl}}/datamodel/personal_attributes/inventory/)
    - [Consumable stocks]({{site.baseurl}}/datamodel/modules/consumablestock/)
 
-### Recommended Setup Order
+### Recommended workflow
 
-1. Create a group
-2. Create your first project
-3. Next, create all personal attribures
-   1. Define behavioral paradigms for your experimental tasks
-   - Set up data storage locations to organize your data files
-   2. Create setups to define your physical experiment environment
-   - Configure equipment in your setups
-   3. Set up inventories to track your lab resources
-   - Add consumable stocks to your inventory
+1. Create/Join a group
+2. Create a project
+3. Next, create personal attribures relevant to your experiments
+   1. Define behavioral paradigms to describe the behavioral conditions of your subjects
+   2. Set up data storage locations to link to your data files
+   3. Create setups to define your physical experimental environments
+   - Configure the equipment in your setups
+   4. Set up inventories to track your lab resources
+   - Add consumable stocks to your inventories
 4. Create your first subject
-   - Add procedures to the subject (e.g., surgeries, implants, injections)
+   - Add procedures to the subject (e.g., implants and injections)
    - Begin tracking with procedure logs and subject logs
 5. Create your first session
    - Set up behaviors to describe subject tasks
-   - Define manipulations for experimental interventions
    - Configure data acquisition parameters
+   - Define manipulations for experimental interventions
 
 {: .note }
 > The exact order may vary based on your specific experimental needs. Some components can be set up in parallel or may not be needed for every experiment.
 
 {: .important }
 > This order ensures dependent components are created first. For example, behaviors need setups and behavioral paradigms to be defined first.
-
+> Data acquisition are linked to subjects through procedures, which should be created initially. Data acquistion are also linked to setups through equipments, whihc should be created first.
