@@ -14,6 +14,8 @@ nav_order: 1
 1. TOC
 {:toc}
 
+## Create an account
+
 ## Create or Join a Group
 
 Before you can start using BrainSTEM, you need to either create a new group for your lab or join an existing one. Groups in BrainSTEM help organize lab members and manage permissions for projects and resources.
@@ -151,4 +153,4 @@ Personal Attributes:
 
 {: .important }
 > This order ensures dependent components are created first. For example, behaviors need setups and behavioral paradigms to be defined first.
-> Data acquisition are linked to subjects through procedures, which should be created initially. Data acquistion are also linked to setups through equipments, whihc should be created first.
+> Data acquisition are linked to subjects through procedures, and to setups through equipments, which should be created first.

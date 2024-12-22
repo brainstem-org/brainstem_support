@@ -37,8 +37,8 @@ If you are new to BrainSTEM, we provide comprehensive tutorials to help you begi
 
 Through our platform, you can share data publicly, submit resources and taxonomies, manage projects and groups, and utilize our API tools for programmatic access. Check out our tutorials for detailed guidance on all these features.
 
-[Start here]({{ "/tutorials/get_started/"|absolute_url}}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2}
-[View all tutorials]({{ "/tutorials/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[Get started tutorial]({{ "/tutorials/get_started/"|absolute_url}}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2}
+[All tutorials]({{ "/tutorials/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
 
 ## We are looking for pilot groups
 

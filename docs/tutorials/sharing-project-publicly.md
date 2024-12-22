@@ -19,8 +19,7 @@ nav_order: 2
 BrainSTEM allows you to make your research data publicly accessible to promote open science and collaboration. Public sharing is managed at the project level, with personal attributes requiring individual public sharing settings.
 
 The diagram below illustrates how public permissions are inherited through the BrainSTEM data model:
-
-**Update needed**
+ 
 ![permissions]({{site.baseurl}}/assets/images/permission_public.png)
 
 ## Project Public Sharing
