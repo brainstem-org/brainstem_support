@@ -18,12 +18,12 @@ https://www.BrainSTEM.org/api/*portal*/*app*/*model*/*id*/
 > 
 > __app__: `stem`, `modules`, `personal_attributes`, `resources`, `taxonomies`, `dissemination`, `auth`, `users`
 > 
-> __model__: e.g. `dataset` and `procedure`. Please see the [data model](/datamodel/data-model/) for an overview of the models. 
+> __model__: e.g. `session` and `procedure`. Please see the [data model](/datamodel/data-model/) for an overview of the models. 
 
 
-__dataset endpoint:__ 
+__session endpoint:__ 
 ```
-https://www.BrainSTEM.org/api/private/stem/dataset/
+https://www.BrainSTEM.org/api/private/stem/session/
 ```
 __procedure endpoint:__ 
 ```
@@ -32,9 +32,9 @@ https://www.BrainSTEM.org/api/private/modules/procedure/
 
 ### Portals
 The private and public portals have separate authentication systems. Please see the dedicated page on 
-Public datasets: 
+Public sessions: 
 ```
-https://www.BrainSTEM.org/api/public/stem/dataset/
+https://www.BrainSTEM.org/api/public/stem/session/
 ```
 
 {: .no_toc}
@@ -64,10 +64,10 @@ Or simply sort by the description field:
 ```
 
 ### Include relationships
-Relational fields will by default only include the id (UUID), but relationships can also be included when querying a model. To include the relational field `behaviors` or `experimentdata`: 
+Relational fields will by default only include the id (UUID), but relationships can also be included when querying a model. To include the relational field `behaviors` or `dataacquisition`: 
 ```
 /?include[]=behaviors
-/?include[]=experimentdata
+/?include[]=dataacquisition
 ```
 
 ### Combine query parameters

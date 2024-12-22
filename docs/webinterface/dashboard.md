@@ -11,9 +11,9 @@ The dashboard provides an overview of your research data in BrainSTEM, displayin
 
 - __Projects__: Your recent projects with total project count
 - __Subjects__: Recently added or modified subjects
-- __Datasets__: Your most recent datasets
+- __Sessions__: Your most recent sessions
 - __Cohorts__: Recent subject cohorts
-- __Collections__: Recent dataset collections
+- __Collections__: Recent session collections
 - __Strain Statistics__: Most commonly used strains
 - __Consumable Statistics__: Most commonly used consumables
 

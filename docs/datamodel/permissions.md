@@ -76,7 +76,7 @@ Project
 ├── Subject
 │   ├── Subject Logs
 │   └── Procedure
-│       └── Action Logs
+│       └── Procedure Logs
 ├── Session
 │   ├── Behavior
 │   ├── Manipulation
@@ -90,7 +90,7 @@ Project
 | Parent Level | Inheritance Pattern | Inheriting Components |
 |:-------------|:-------------------|:-------------------|
 | **Project** | All project components inherit base permissions | Subjects, Sessions, Collections, Cohorts |
-| **Subject** | Direct inheritance with cascading effects | Subject Logs, Procedures, Action Logs (via Procedures) |
+| **Subject** | Direct inheritance with cascading effects | Subject Logs, Procedures, Procedure Logs (via Procedures) |
 | **Session** | Module-level inheritance | Behaviors, Data acquisitions, Manipulations |
 
 ### Personal Attributes Inheritance

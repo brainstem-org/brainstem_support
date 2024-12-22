@@ -47,7 +47,7 @@ Please see the dedicated page describing the [Procedure data model]({{"datamodel
 
 Subjects inherit permissions from projects associated with them. Procedures, Subject logs, and Procedure logs all inherit permissions through the subject.
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
 ## Subject API access
 

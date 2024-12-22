@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Environment type
+title: Setup type
 parent: Taxonomies
 grand_parent: API
 nav_order: 7
 ---
 
-# Environment type API endpoint
+# Setup type API endpoint
 {: .no_toc}
 
 ## Table of contents
@@ -28,7 +28,7 @@ nav_order: 7
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/environmenttype
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -36,14 +36,14 @@ nav_order: 7
 {: .no_toc}
 
 ```
-resp = client.load_model('environmenttype')
+resp = client.load_model('setuptype')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'environment_types': [
+{'setup_types': [
     {
         'id': '531b2a21-ab1f-4aa8-8eaf-905421168d6b',
         'name': 'Barnes maze',
@@ -66,18 +66,18 @@ resp = client.load_model('environmenttype')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/taxonomies/environmenttype
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
-**Note**: Environment Types submissions go through an approval process.
+**Note**: Setup Types submissions go through an approval process.
 
 ### Use example (using Python API)
 {: .no_toc}
 
 ```
-resp = client.save_model("environmenttype",  data={
-        "name": "MyNewEnvironmentType",
+resp = client.save_model("setuptype",  data={
+        "name": "MyNewSetupType",
         "description": "",
     }
 )
@@ -87,9 +87,9 @@ resp = client.save_model("environmenttype",  data={
 {: .no_toc}
 
 ```
-{'environment_type_approval': {'
+{'setup_type_approval': {'
     id': '725ef635-09b7-4817-98f7-d58e598b445e',
-    'name': 'MyNewEnvironmentType',
+    'name': 'MyNewSetupType',
     'description': '',
     'comments': ''}
 }
@@ -99,7 +99,7 @@ resp = client.save_model("environmenttype",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/environmenttype/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -107,16 +107,16 @@ resp = client.save_model("environmenttype",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('environmenttype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
+resp = client.load_model('setuptype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'environment_type': {
+{'setup_type': {
     'id': 'a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6',
-    'name': 'MyNewEnvironmentType',
+    'name': 'MyNewSetupType',
     'description': ''}
 }
 ```
@@ -125,26 +125,26 @@ resp = client.load_model('environmenttype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fb
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/environmenttype/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
-**Note**: environmenttypes changes go through an approval process.
+**Note**: setuptypes changes go through an approval process.
 
 ### Use example (using Python API)
 {: .no_toc}
 
 ```
-resp = client.save_model("environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6", data={"description": "new text"})
+resp = client.save_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6", data={"description": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'environment_type_approval': {
+{'setup_type_approval': {
     'id': '511f5736-5c34-46c5-b4d2-d7bb0727b5fe',
-    'name': 'MyNewEnvironmentType',
+    'name': 'MyNewSetupType',
     'description': 'new text',
     'comments': ''}
 }
@@ -154,24 +154,24 @@ resp = client.save_model("environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fb
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/taxonomies/environmenttype/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
-**Note**: only administrators can delete Environment Types.
+**Note**: only administrators can delete Setup Types.
 
 ### Use example (using Python API)
 {: .no_toc}
 
 ```
-resp = client.delete_model("environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6")
+resp = client.delete_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6")
 ``` 
 
 
 ## List approvals
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/environmenttype_approvals
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -179,17 +179,17 @@ resp = client.delete_model("environmenttype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3
 {: .no_toc}
 
 ```
-resp = client.load_model('environmenttypeapproval')
+resp = client.load_model('setuptypeapproval')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'environment_type_approvals': [
+{'setup_type_approvals': [
     {
         'id': '725ef635-09b7-4817-98f7-d58e598b445e',
-        'name': 'MyNewEnvironmentType',
+        'name': 'MyNewSetupType',
         'description': '',
         'comments': '',
         'instance_id': None,
@@ -214,7 +214,7 @@ resp = client.load_model('environmenttypeapproval')
 ## Detail approval
 - **Allowed portals:** private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/environmenttype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -222,16 +222,16 @@ resp = client.load_model('environmenttypeapproval')
 {: .no_toc}
 
 ```
-resp = client.load_model('environmenttypeapproval', id='725ef635-09b7-4817-98f7-d58e598b445e')
+resp = client.load_model('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e598b445e')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'environment_type_approval': {
+{'setup_type_approval': {
     'id': '725ef635-09b7-4817-98f7-d58e598b445e',
-    'name': 'MyNewEnvironmentType',
+    'name': 'MyNewSetupType',
     'description': '',
     'comments': '',
     'instance_id': None,
@@ -245,7 +245,7 @@ resp = client.load_model('environmenttypeapproval', id='725ef635-09b7-4817-98f7-
 ## Accept approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/environmenttype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -253,14 +253,14 @@ resp = client.load_model('environmenttypeapproval', id='725ef635-09b7-4817-98f7-
 {: .no_toc}
 
 ```
-resp = client.save_model("environmenttypeapproval", id="725ef635-09b7-4817-98f7-d58e598b445e", options="accept")
+resp = client.save_model("setuptypeapproval", id="725ef635-09b7-4817-98f7-d58e598b445e", options="accept")
 ```
 
 
 ## Reject approval
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/environmenttype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -268,5 +268,5 @@ resp = client.save_model("environmenttypeapproval", id="725ef635-09b7-4817-98f7-
 {: .no_toc}
 
 ```
-resp = client.save_model("environmenttypeapproval", id="511f5736-5c34-46c5-b4d2-d7bb0727b5fe", options="reject")
+resp = client.save_model("setuptypeapproval", id="511f5736-5c34-46c5-b4d2-d7bb0727b5fe", options="reject")
 ```

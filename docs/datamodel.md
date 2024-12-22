@@ -40,8 +40,7 @@ Extracellular recording during a behavioral session from a rat.
 [![data_model_example](https://support.brainstem.org/assets/images/data_model_example_v6.png)](https://support.brainstem.org/assets/images/data_model_example_v6.png)
 
 # Permissions implementation and inheritance
-Permissions are implemented on an object level, inheriting permissions from users, groups, and projects. Subjects, datasets and collections inherits permissions from projects and modules inheits permissions from subjects and datasets. The personal attributes inherits permissions from groups.
-
+Permissions are implemented on an object level, inheriting permissions from users, groups, and projects. Subjects, sessions and collections inherits permissions from projects and modules inheits permissions from subjects, sessions and personal attributes. The personal attributes inherits permissions from users and groups.
 
 [![permissions](https://support.brainstem.org/assets/images/permissions_v3.png)](https://support.brainstem.org/assets/images/permissions_v3.png)
 
@@ -49,7 +48,7 @@ Permissions are implemented on an object level, inheriting permissions from user
 {: .no_toc }
 
 Projects have four permission levels that can be defined for individual groups and users:
-- Members: have read access to project-related subjects, datasets, and modules.
+- Members: have read access to project-related subjects, sessions, and modules.
 - Change permissions: allows for creation, editing and deletion of project related models.
 - Managers: can add and remove project members and project groups.
 - Owners: can manage project details and add and remove managers.
@@ -70,7 +69,7 @@ New entries in Taxonomies and Resources can be submitted by users. Any submissio
 ### Expansion of the modules structures
 {: .no_toc }
 
-The available modules the user can select between in procedures, experiment data, manipulations, and subject state changes, can be expanded by our admin team. If you wish for this, please submit a request through the issue/discussion forum. 
+The available modules the user can select between in procedures, data acquisitions, consumable stocks, equipment, and manipulations, can be expanded by our admin team. If you wish for this, please submit a request through the issue/discussion forum. 
 
 ### Personal attributes
 {: .no_toc }

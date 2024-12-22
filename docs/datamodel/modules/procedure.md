@@ -55,7 +55,7 @@ These are the available *Type* options for Procedure:
 ### Injection and Infusion Procedures
 - Virus injection
 
-A detailed list of the type-specific fields can be found on the [procedure types page]({{"datamodel/schemas/procedures/"|absolute_url}}).
+A detailed list of the type-specific fields can be found on the [procedure types page]({{"datamodel/schemas/procedure/"|absolute_url}}).
 
 ## Coordinate system options
 
@@ -77,7 +77,7 @@ A detailed list of the fields in Coordinate system can be found on the [Coordina
 
 Procedures inherit permissions through the subject associated with them.
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
 ## Procedure API access
 The API allows for programmable access to procedures. Learn more about the procedures' fields and data structure on the [Procedure API page]({{"api/modules/procedure/"|absolute_url}}).

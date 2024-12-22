@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Action Log
+title: Procedure Log
 parent: Modules
 grand_parent: API
 nav_order: 7
 ---
 
-# Action Log API endpoint
+# Procedure Log API endpoint
 {: .no_toc}
 
 ## Table of contents
@@ -25,7 +25,7 @@ nav_order: 7
 | `procedure` | related procedure ID formatted as a string **[required]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
 
-These are the available `type` options for Action Log:
+These are the available `type` options for Procedure Log:
 - `Impedances`
 - `LinearDisplacement`
 
@@ -43,7 +43,7 @@ A detailed list of the accepted schemas for the `details` field, related to each
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/modules/actionlog
+- **URL:** https://www.brainstem.org/api/private/modules/procedurelog
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -51,14 +51,14 @@ A detailed list of the accepted schemas for the `details` field, related to each
 {: .no_toc}
 
 ```
-resp = client.load_model('actionlog')
+resp = client.load_model('procedurelog')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'action_logs': [
+{'procedure_logs': [
     {
         'id': '6a24ec67-59df-4da2-beae-c138102e69b1',
         'type': 'Impedances',
@@ -102,7 +102,7 @@ resp = client.load_model('actionlog')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/modules/actionlog
+- **URL:** https://www.brainstem.org/api/private/modules/procedurelog
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -110,7 +110,7 @@ resp = client.load_model('actionlog')
 {: .no_toc}
 
 ```
-resp = client.save_model("actionlog",  data={
+resp = client.save_model("procedurelog",  data={
     "type": "LinearDisplacement",
     "procedure": "61da7e53-1066-42de-a1a2-3db96bb7cba2"})
 ```
@@ -119,7 +119,7 @@ resp = client.save_model("actionlog",  data={
 {: .no_toc}
 
 ```
-{'action_log': {
+{'procedure_log': {
     'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
     'type': 'LinearDisplacement',
     'description': None,
@@ -133,7 +133,7 @@ resp = client.save_model("actionlog",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/modules/actionlog/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -141,14 +141,14 @@ resp = client.save_model("actionlog",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('actionlog', id='43d3d060-4606-4e95-bd7e-79dcb910cf27')
+resp = client.load_model('procedurelog', id='43d3d060-4606-4e95-bd7e-79dcb910cf27')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'action_log': {
+{'procedure_log': {
     'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
     'type': 'LinearDisplacement',
     'description': None,
@@ -161,7 +161,7 @@ resp = client.load_model('actionlog', id='43d3d060-4606-4e95-bd7e-79dcb910cf27')
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/modules/actionlog/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -170,14 +170,14 @@ resp = client.load_model('actionlog', id='43d3d060-4606-4e95-bd7e-79dcb910cf27')
 {: .no_toc}
 
 ```
-resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", data={"description": "new text"})
+resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", data={"description": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'action_log': {
+{'procedure_log': {
     'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
     'type': 'LinearDisplacement',
     'description': "new text",
@@ -190,7 +190,7 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/modules/actionlog/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -199,14 +199,14 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
 {: .no_toc}
 
 ```
-resp = client.delete_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27")
+resp = client.delete_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27")
 ```
 
 
 ## Add entry
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/modules/actionlog/<id\>/add_entry/
+- **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/add_entry/
 - **Data:** dictionary with the entry data
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -215,7 +215,7 @@ resp = client.delete_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27
 {: .no_toc}
 
 ```
-resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="add_entry", data={
+resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
             'details': {'displacement': 9.0}
@@ -227,7 +227,7 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
 {: .no_toc}
 
 ```
-{'action_log': {
+{'procedure_log': {
         'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
         'type': 'LinearDisplacement',
         'description': 'new text',
@@ -245,7 +245,7 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
 ## Change entry
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/modules/actionlog/<id\>/change_entry/
+- **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/change_entry/
 - **Data:** dictionary with the entry data
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -254,14 +254,14 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
 {: .no_toc}
 
 ```
-resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
+resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'action_log': {
+{'procedure_log': {
         'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
         'type': 'LinearDisplacement',
         'description': 'new text',
@@ -280,7 +280,7 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
 ## Remove entry
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/modules/actionlog/<id\>/remove_entry/
+- **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/remove_entry/
 - **Data:** dictionary with the entry data
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -289,14 +289,14 @@ resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27",
 {: .no_toc}
 
 ```
-resp = client.save_model("actionlog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
+resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'action_log': {
+{'procedure_log': {
         'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
         'type': 'LinearDisplacement',
         'description': 'new text',

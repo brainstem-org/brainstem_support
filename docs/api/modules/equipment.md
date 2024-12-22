@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Installation
+title: Equipment
 parent: Modules
 grand_parent: API
 nav_order: 3
 ---
 
-# Installation API endpoint
+# Equipment API endpoint
 {: .no_toc}
 
 ## Table of contents
@@ -20,7 +20,7 @@ nav_order: 3
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
-| `experimentalsetup` | related experimental setup ID formatted as a string **[required]** |
+| `setup` | related experimental setup ID formatted as a string **[required]** |
 | `type` | string **[required]**. *See options below* |
 | `description` | string [max length: 500] |
 | `date_time` | string containing date (e.g. "2023-03-22") |
@@ -30,18 +30,18 @@ nav_order: 3
 | `coordinates_details` | JSON object. *See accepted schemas below* |
 
 
-These are the available `type` options for Installation:
-- `CameraInstallation`
+These are the available `type` options for Equipment:
+- `CameraEquipment`
 - `InfraredCamera`
 - `Microphone`
 - `PressureSensor`
 - `Thermostat`
 
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the [installation schemas page]({{"/api/schemas/installations/"|absolute_url}}).
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the [equipment schemas page]({{"/api/schemas/equipment/"|absolute_url}}).
 
 
-These are the available `coordinates_system` options for Installation:
+These are the available `coordinates_system` options for Equipment:
 - `External_XYZ_Absolute`
 
 A detailed list of the accepted schemas for the `coordinates_details` field, related to each `coordinates_system`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
@@ -50,7 +50,7 @@ A detailed list of the accepted schemas for the `coordinates_details` field, rel
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/modules/installation
+- **URL:** https://www.brainstem.org/api/private/modules/equipment
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -58,19 +58,19 @@ A detailed list of the accepted schemas for the `coordinates_details` field, rel
 {: .no_toc}
 
 ```
-resp = client.load_model('installation')
+resp = client.load_model('equipment')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'installations': [
+{'equipment': [
     {
         'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
         'type': 'TetrodeWireElectrode',
         'description': 'First implant',
-        'experimentalsetup': '0f87c229-6769-4854-83a5-c71e154246b8',
+        'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
         'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
         'hardwaredevice': None,
@@ -89,7 +89,7 @@ resp = client.load_model('installation')
         'id': 'a18dd2b1-6393-468c-9424-1bc77b9e4976',
         'type': 'TetrodeWireElectrode',
         'description': 'Second implant',
-        'experimentalsetup': '0f87c229-6769-4854-83a5-c71e154246b8',
+        'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
         'consumable': None,
         'hardwaredevice': None,
@@ -113,7 +113,7 @@ resp = client.load_model('installation')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/modules/installation
+- **URL:** https://www.brainstem.org/api/private/modules/equipment
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -121,9 +121,9 @@ resp = client.load_model('installation')
 {: .no_toc}
 
 ```
-resp = client.save_model("installation",  data={
+resp = client.save_model("equipment",  data={
     "type": "OpticFiberImplant",
-    "experimentalsetup": "0f87c229-6769-4854-83a5-c71e154246b8",
+    "setup": "0f87c229-6769-4854-83a5-c71e154246b8",
     "description": "some text",
     "details": {"fiberTipShape": "flat"},
     "coordinates_system": "External_XYZ_Absolute",
@@ -143,11 +143,11 @@ resp = client.save_model("installation",  data={
 {: .no_toc}
 
 ```
-{'installation': {
+{'equipment': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'description': 'some text',
-    'experimentalsetup': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
     'hardwaredevice': None,
@@ -169,7 +169,7 @@ resp = client.save_model("installation",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/modules/installation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/equipment/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -177,18 +177,18 @@ resp = client.save_model("installation",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('installation', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
+resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'installation': {
+{'equipment': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'description': 'some text',
-    'experimentalsetup': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
     'hardwaredevice': None,
@@ -210,7 +210,7 @@ resp = client.load_model('installation', id='d37c9255-d5ae-47d9-b6e1-4ec760c200f
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/modules/installation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/equipment/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -219,18 +219,18 @@ resp = client.load_model('installation', id='d37c9255-d5ae-47d9-b6e1-4ec760c200f
 {: .no_toc}
 
 ```
-resp = client.save_model("installation", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"description": "new text"})
+resp = client.save_model("equipment", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"description": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'installation': {
+{'equipment': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'description': 'new text',
-    'experimentalsetup': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
     'hardwaredevice': None,
@@ -251,7 +251,7 @@ resp = client.save_model("installation", id="d37c9255-d5ae-47d9-b6e1-4ec760c200f
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/modules/installation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/equipment/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -259,5 +259,5 @@ resp = client.save_model("installation", id="d37c9255-d5ae-47d9-b6e1-4ec760c200f
 {: .no_toc}
 
 ```
-resp = client.delete_model("installation", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
+resp = client.delete_model("equipment", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 ```

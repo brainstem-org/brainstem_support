@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Experiment data
+title: Data acquisition
 parent: Schemas
 grand_parent: API
 nav_order: 1
 ---
 
-# Experiment data schemas
+# Data acquisition schemas
 {: .no_toc}
 
 ## Table of contents

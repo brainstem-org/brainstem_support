@@ -22,7 +22,7 @@ nav_order: 1
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 200; must be unique]|
 | `description` | string |
-| `datasets` | list of related datasets IDs formatted as strings **[read-only]** |
+| `sessions` | list of related sessions IDs formatted as strings **[read-only]** |
 | `subjects` | list of related subjects IDs formatted as strings **[read-only]** |
 | `publications` | list of related publications IDs formatted as strings **[read-only]** |
 | `extra_fields` | list of JSON dictionaries. *See structure below* |
@@ -85,7 +85,7 @@ resp = client.load_model('project')
         "id": "c4b8a90b-2963-4d13-aa07-b6f497252dde",
         "name": "project2",
         "description": "",
-        "datasets": [
+        "sessions": [
             "1a827c68-19b4-4cec-8ae5-e13c8f1de900",
             "d8e72f9d-eb25-4280-a241-3317d5914055",
             "3865d613-a9a4-419b-80de-ae07cc754a2a"
@@ -117,7 +117,7 @@ resp = client.load_model('project')
             }
         },
         "links": {
-            "datasets": "datasets/",
+            "sessions": "sessions/",
             "subjects": "subjects/"
         }
     },
@@ -125,7 +125,7 @@ resp = client.load_model('project')
         "id": "e7475834-7733-48cf-9e3b-f4f2d2d0305a",
         "name": "Test project1",
         "description": "<p>My first project1</p>",
-        "datasets": [
+        "sessions": [
             "eba7ed4b-44a9-4626-ae6f-09bccfa553fb",
             "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
             "ef9ef292-4757-44c1-b8f7-9dc8cb36e8f1",
@@ -156,7 +156,7 @@ resp = client.load_model('project')
         },
         "groups": {},
         "links": {
-            "datasets": "datasets/",
+            "sessions": "sessions/",
             "subjects": "subjects/"
         }
     }
@@ -187,7 +187,7 @@ resp = client.save_model("project",  data={"name": "NewRestProject", "descriptio
 {'project': {'id': 'd7de95c0-eb63-40e8-ac90-7573b58f6033',
     'name': 'NewRestProject',
     'description': 'some text',
-    'datasets': [],
+    'sessions': [],
     'subjects': [],
     'publications': [],
     'extra_fields': [],
@@ -227,7 +227,7 @@ resp = client.load_model('project', id='d7de95c0-eb63-40e8-ac90-7573b58f6033')
 {'project': {'id': 'd7de95c0-eb63-40e8-ac90-7573b58f6033',
     'name': 'NewRestProject',
     'description': 'some text',
-    'datasets': ["eba7ed4b-44a9-4626-ae6f-09bccfa553fb"],
+    'sessions': ["eba7ed4b-44a9-4626-ae6f-09bccfa553fb"],
     'subjects': [],
     'publications': [],
     'extra_fields': {
@@ -288,7 +288,7 @@ resp = client.save_model("project",
 {'project': {'id': 'd7de95c0-eb63-40e8-ac90-7573b58f6033',
   'name': 'NewRestProject',
   'description': 'new text',
-  'datasets': [],
+  'sessions': [],
   'subjects': [],
   'publications': [],
   'extra_fields': [],

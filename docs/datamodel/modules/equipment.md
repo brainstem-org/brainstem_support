@@ -24,7 +24,7 @@ Equipments refer to the setup and utilization of various devices and sensors des
 | Field | Description |
 |:------|:------------|
 | `Type` | Type of equipments (**required**). Selected from predefined types. Example: "Video camera", "Microphone". *See options below* |
-| `Setup` | The setup the equipments is installed in (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/experiment_setups/"|absolute_url}}). Example: "Behavior room A setup" |
+| `Setup` | The setup the equipments is installed in (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior room A setup" |
 | `Notes` | Notes about the equipments (string). Example: "Camera positioned at 45-degree angle" |
 | `Date and time` | Date and time the equipments was performed. Example: "2024-03-22 09:00:00" |
 | `Consumable` | Consumable used for the equipments. Example: "HD webcam model XYZ" |
@@ -59,8 +59,8 @@ A detailed list of the fields in Coordinate system can be found on the [Coordina
 
 Equipments inherit permissions through the setup associated with them.
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
 ## Equipments API access
 
-The API allows for programmable access to equipments. Learn more about the equipments' fields and data structure on the [Equipments API page]({{"api/modules/installation/"|absolute_url}}).
+The API allows for programmable access to equipments. Learn more about the equipments' fields and data structure on the [Equipments API page]({{"api/modules/equipment/"|absolute_url}}).

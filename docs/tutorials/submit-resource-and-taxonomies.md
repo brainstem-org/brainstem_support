@@ -21,16 +21,15 @@ BrainSTEM maintains controlled lists of resources and taxonomies that can be exp
 ## Available Resources & Taxonomies
 
 Resources that can be submitted:
-- [Consumables]({{"datamodel/resources/consumables/"|absolute_url}})
-- [Hardware devices]({{"datamodel/resources/hardware_devices/"|absolute_url}}) 
-- [Suppliers]({{"datamodel/resources/suppliers/"|absolute_url}})
+- [Consumables]({{"datamodel/resources/consumable/"|absolute_url}})
+- [Hardware devices]({{"datamodel/resources/hardwaredevice/"|absolute_url}}) 
+- [Suppliers]({{"datamodel/resources/supplier/"|absolute_url}})
 
 Taxonomies that can be submitted:
-- [Brain regions]({{"datamodel/taxonomies/brain_regions/"|absolute_url}})
-- [Environment types]({{"datamodel/taxonomies/environment_types/"|absolute_url}})
-- [Sensory stimulus types]({{"datamodel/taxonomies/sensory_stimulus_types/"|absolute_url}})
+- [Brain regions]({{"datamodel/taxonomies/brainregion/"|absolute_url}})
+- [Setup types]({{"datamodel/taxonomies/setuptype/"|absolute_url}})
 - [Species]({{"datamodel/taxonomies/species/"|absolute_url}})
-- [Strains]({{"datamodel/taxonomies/strains/"|absolute_url}})
+- [Strains]({{"datamodel/taxonomies/strain/"|absolute_url}})
 
 ## Submission Process
 

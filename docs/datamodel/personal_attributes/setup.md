@@ -19,7 +19,7 @@ nav_order: 3
 
 Setups describe where experiments, procedures, or manipulations takes place. It also describes the environment of a recorded subject. Setups has physical dimensions and equipments associate with it.
 
-## Dataset fields
+## Session fields
 
 | Field                | Description |
 |:---------------------|:------------|
@@ -59,8 +59,8 @@ Setups define the overall permissions level for equipments. You manage permissio
 
 Equipments inherit permissions from their associated setup.
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Dataset API access
+## Session API access
 
-The API allows for programmable access to setups, enabling you to read, edit, and delete Setups through the API. Learn more about the datasets' fields and data structure on the [Dataset API page]({{"api/personal_attributes/experimentalsetup/"|absolute_url}}).
+The API allows for programmable access to setups, enabling you to read, edit, and delete Setups through the API. Learn more about the sessions' fields and data structure on the [Session API page]({{"api/personal_attributes/setup/"|absolute_url}}).

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Experimental setup
+title: Setup
 parent: Personal attributes
 grand_parent: API
 nav_order: 5
 ---
 
-# Experimental setup API endpoint
+# Setup API endpoint
 {: .no_toc}
 
 ## Table of contents
@@ -23,7 +23,7 @@ nav_order: 5
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 50] |
 | `description` | string [max length: 500]|
-| `environment_type` | related environment type ID formatted as a string **[required]** |
+| `setup_type` | related environment type ID formatted as a string **[required]** |
 | `physical_dimensions_json` | JSON dictionary |
 | `is_public` | boolean |
 
@@ -31,7 +31,7 @@ nav_order: 5
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/experimentalsetup
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/setup
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -39,19 +39,19 @@ nav_order: 5
 {: .no_toc}
 
 ```
-resp = client.load_model('experimentalsetup')
+resp = client.load_model('setup')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'experimentalsetups': [
+{'setups': [
     {
         'id': '58e0003d-16c2-4264-913d-288463c0356d',
         'name': 'Head-fixed wheel',
         'description': '',
-        'environment_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
+        'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
         'physical_dimensions_json': [
             {'name': 'Radius', 'value': 12, 'description': 'cm'}
         ],
@@ -61,7 +61,7 @@ resp = client.load_model('experimentalsetup')
         'id': '3e9ec0e0-d685-42ec-8386-0fa24602a73e',
         'name': "Mino's Maze",
         'description': '',
-        'environment_type': 'e1f14b91-e507-48c1-bfec-c68d7db9c166',
+        'setup_type': 'e1f14b91-e507-48c1-bfec-c68d7db9c166',
         'physical_dimensions_json': [],
         'is_public': True
     }
@@ -73,7 +73,7 @@ resp = client.load_model('experimentalsetup')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/experimentalsetup
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/setup
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -82,11 +82,11 @@ resp = client.load_model('experimentalsetup')
 {: .no_toc}
 
 ```
-resp = client.save_model("experimentalsetup",  data=
+resp = client.save_model("setup",  data=
     {
         'name': 'MyNewEnv',
         'description': '',
-        'environment_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
+        'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
         'physical_dimensions_json': [
             {'name': 'Length', 'value': 100, 'description': 'yards'}
         ],
@@ -99,11 +99,11 @@ resp = client.save_model("experimentalsetup",  data=
 {: .no_toc}
 
 ```
-{'experimentalsetup': {
+{'setup': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'MyNewEnv',
     'description': '',
-    'environment_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
+    'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
     'physical_dimensions_json': [
         {'name': 'Length', 'value': 100, 'description': 'yards'}
     ],
@@ -116,7 +116,7 @@ resp = client.save_model("experimentalsetup",  data=
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/experimentalsetup/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/setup/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -124,18 +124,18 @@ resp = client.save_model("experimentalsetup",  data=
 {: .no_toc}
 
 ```
-resp = client.load_model('experimentalsetup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
+resp = client.load_model('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'experimentalsetup': {
+{'setup': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'MyNewEnv',
     'description': '',
-    'environment_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
+    'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
     'physical_dimensions_json': [
         {'name': 'Length', 'value': 100, 'description': 'yards'}
     ],
@@ -147,7 +147,7 @@ resp = client.load_model('experimentalsetup', id='d0ada97d-8607-48da-817b-bdd54b
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/experimentalsetup/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/setup/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -156,18 +156,18 @@ resp = client.load_model('experimentalsetup', id='d0ada97d-8607-48da-817b-bdd54b
 {: .no_toc}
 
 ```
-resp = client.save_model("experimentalsetup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"description": "new text"})
+resp = client.save_model("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"description": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'experimentalsetup': {
+{'setup': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'MyNewEnv',
     'description': 'new text',
-    'environment_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
+    'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
     'physical_dimensions_json': [
         {'name': 'Length', 'value': 100, 'description': 'yards'}
     ],
@@ -179,7 +179,7 @@ resp = client.save_model("experimentalsetup", id="d0ada97d-8607-48da-817b-bdd54b
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/experimentalsetup/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/setup/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -188,5 +188,5 @@ resp = client.save_model("experimentalsetup", id="d0ada97d-8607-48da-817b-bdd54b
 {: .no_toc}
 
 ```
-resp = client.delete_model("experimentalsetup", id="d0ada97d-8607-48da-817b-bdd54bc9077b")
+resp = client.delete_model("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b")
 ``` 

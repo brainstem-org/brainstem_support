@@ -43,7 +43,7 @@ BrainSTEM groups have three levels of membership:
    - Can modify group settings
    - Can grant manager/owner privileges to members
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
 ## Accessing Group Management
 

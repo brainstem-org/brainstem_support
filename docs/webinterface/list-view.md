@@ -11,7 +11,7 @@ The list view provides a detailed overview of your data entries with several fea
 
 - __Search and filters__: Search bar with filters for permissions, sex, public access, and projects
 - __Time filters__: Filter entries by creation or update time (Any date, Today, Past 7 days, This month, This year)
-- __Table columns__: Include essential information like Name, Strain, Sex, Genetic line, Projects, and Module actions
+- __Table columns__: Include essential information like Name, Strain, Sex, Genetic line, Projects, and Modules
 - __Quick actions__: View details and duplicate entries through hovering popups
 - __Documentation access__: View field descriptions through the question mark icon next to the page title
 

@@ -34,7 +34,7 @@ You manage permissions through the management tab, where you can assign individu
 
 Consumable stocks inherit permissions from their associated inventory.
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
 ## Inventory API access
 

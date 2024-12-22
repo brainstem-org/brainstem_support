@@ -63,4 +63,4 @@ Similar to the log for four tetrodes, this log pertains to experiments involving
 
 ## Procedure log API access
 
-The API allows for programmable access to Procedure logs, enabling you to read, edit, and delete procedure logs through the API. Learn more about the procedure logs' fields and data structure on the [Procedure log API page]({{"api/modules/actionlog/"|absolute_url}}).
+The API allows for programmable access to Procedure logs, enabling you to read, edit, and delete procedure logs through the API. Learn more about the procedure logs' fields and data structure on the [Procedure log API page]({{"api/modules/procedurelog/"|absolute_url}}).

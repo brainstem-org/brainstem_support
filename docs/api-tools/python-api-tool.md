@@ -18,30 +18,30 @@ Please see the dedicated [tutorial]({{"/tutorials/python-api-tool/"|absolute_url
 
 
 ### Filters
-You can use filters, using fields and relationships by providing cell array with paired filters. Below example will just load the dataset with the name:
+You can use filters, using fields and relationships by providing cell array with paired filters. Below example will just load the session with the name:
 
 ```
 from brainstem_api_client import BrainstemClient
 
 client = BrainstemClient()
 
-output1 = client.load_model('dataset', filters={'name': 'yeah'}).json()
+output1 = client.load_model('session', filters={'name': 'yeah'}).json()
 ```
 
 ### Change sorting
-Loaded models can be sorted by different criteria applying to their fields. In below example, datasets will be sorted in descending order according to their name.
+Loaded models can be sorted by different criteria applying to their fields. In below example, sessions will be sorted in descending order according to their name.
 
 ```
-output1 = client.load_model('dataset', sort=['-name']).json()
+output1 = client.load_model('session', sort=['-name']).json()
 ```
 
 ### Include related models
 
 In some cases models contain relations with other models, and they can be also loaded with the models if requested. 
 
-In below example, all the projects, experiment data, behaviors and manipulations related to each dataset will be included.
+In below example, all the projects, data acquisition, behaviors and manipulations related to each session will be included.
 
 ```
-output1 = client.load_model('dataset', include=['projects', 'experimentdata', 'behaviors', 'manipulations']).json()
+output1 = client.load_model('session', include=['projects', 'dataacquisition', 'behaviors', 'manipulations']).json()
 
 ```
