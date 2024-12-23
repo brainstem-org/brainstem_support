@@ -32,31 +32,7 @@ The manipulation model describes temporal manipulations performed in a session. 
 
 ## Types of manipulations
 
-These are the available *Type* options for manipulations:
-
-### Electrical and Magnetic Stimulation
-- Deep brain stimulation (DBS)
-- Electrical stimulation
-- Electromagnetic field stimulation
-- Transcranial Electrical Stimulation
-- Transcranial Magnetic Stimulation (TMS)
-
-### Optical, Thermal, and Ultrasound Stimulation
-- Optogenetic stimulation
-- Thermal perturbation
-- Ultrasound stimulation
-
-### Chemical and Pharmacological Perturbations
-- Liquid perturbation
-- Micro perfusion
-- Pharmacological injection
-- Pharmacological superfusion
-- Pharmacological inhalation
-
-### Sensory Stimulation
-- Sound stimulation
-
-A detailed list of the type-specific fields can be found on the [manipulation types page]({{"datamodel/schemas/manipulation/"|absolute_url}}).
+{% include manipulation_types.md %}
 
 ## Permissions
 

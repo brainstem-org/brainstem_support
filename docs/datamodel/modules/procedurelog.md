@@ -31,16 +31,9 @@ Procedure logs refer to systematic records that track specific parameters or out
 | `Notes` | Notes about the procedure logs for each entry in the log (string). Example: "Observed slight increase in impedance values" |
 
 
-## Types of procedure logss
+## Types of procedure logs
 
-These are the available *Type* options for Procedure logs:
-
-- Impedances log
-- Linear displacement log
-- Tetrode log (4 tetrodes)
-- Tetrode log (8 tetrodes)
-
-A detailed list of the type-specific fields can be found on the [procedure logs types page]({{"datamodel/schemas/procedurelog/"|absolute_url}}).
+{% include procedurelog_types.md %}
 
 ## Submission form
 

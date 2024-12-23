@@ -37,19 +37,7 @@ Consumable stocks refer to the various components and materials essential for co
 
 ## Types of consumable stocks
 
-These are the available *Type* options for Consumable stocks:
-
-### Optic Fiber
-A flexible light guide used primarily in optogenetic experiments to deliver light to specific brain regions. Optic fibers are essential in neuroscience for manipulating neural circuits using light.
-
-### Silicon Probe
-A specialized tool for recording electrical signals from neurons. Silicon probes are vital for experiments focused on understanding brain function through electrophysiological recordings.
-
-### Virus Solution
-A viral vector preparation used for introducing genes into cells. Virus solutions are important for studies involving gene expression, neural circuit tracing, and optogenetics.
-
-### Single Wire Electrode
-A simple yet effective tool for measuring electrical activity at a single site. Single wire electrodes are commonly used in studies examining neural or muscular electrical activity.
+{% include consumablestock_types.md %}
 
 ## Permissions
 

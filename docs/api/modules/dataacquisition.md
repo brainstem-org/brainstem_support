@@ -21,22 +21,16 @@ nav_order: 2
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
-| `description` | string [max length: 500] |
+| `notes` | string [max length: 500] |
 | `session` | related session ID formatted as a string **[required]** |
 | `procedures` | list of related procedures IDs formatted as strings **[required]** |
 | `hardwaredevice` | related hardware device ID formatted as a string |
 | `details` | JSON object. *See accepted schemas below* |
 
 
-These are the available `type` options for Data acquisition:
-- `Audio`
-- `BehavioralTracking`
-- `Electroneurogram`
-- `Extracellular`
-- `GeneralTimeSeries`
-- `Intracellular`
+## Types of data acquisition
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
+{% include dataacquisition_types.md %}
 
 
 ## List view
@@ -60,7 +54,7 @@ resp = client.load_model('dataacquisition')
 {'dataacquisition': [
     {
         'id': 'b3a6f43b-63f9-41cf-8fc2-5303e958d521',
-        'description': None,
+        'notes': None,
         'hardwaredevice': None,
         'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
         'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
@@ -75,7 +69,7 @@ resp = client.load_model('dataacquisition')
     },
     {
         'id': '6b7d3eb1-0360-4c40-944b-83e285f8f8a7',
-        'description': None,
+        'notes': None,
         'hardwaredevice': None,
         'procedures': ['dedef2d7-00ae-4967-8e93-a9d65a20dfce'],
         'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
@@ -108,7 +102,7 @@ resp = client.save_model("dataacquisition",  data={
     "type": "Extracellular",
     "procedures": ["087b71c4-6785-437c-b8ef-e35a82a8463e"],
     "session": "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
-    "description": "some text",
+    "notes": "some text",
     "details": {
             "type": "int16",
             "nChannels": 32,
@@ -147,7 +141,7 @@ resp = client.save_model("dataacquisition",  data={
 ```
 {'dataacquisition': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
-    'description': 'some text',
+    'notes': 'some text',
     'hardwaredevice': None,
     'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
     'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
@@ -204,7 +198,7 @@ resp = client.load_model('dataacquisition', id='b0e4ed13-f2f1-4845-8772-24978539
 ```
 {'dataacquisition': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
-    'description': 'some text',
+    'notes': 'some text',
     'hardwaredevice': None,
     'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
     'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
@@ -254,7 +248,7 @@ resp = client.load_model('dataacquisition', id='b0e4ed13-f2f1-4845-8772-24978539
 {: .no_toc}
 
 ```
-resp = client.save_model("dataacquisition", id="b0e4ed13-f2f1-4845-8772-24978539d0bd", data={"description": "new text"})
+resp = client.save_model("dataacquisition", id="b0e4ed13-f2f1-4845-8772-24978539d0bd", data={"notes": "new text"})
 ```
 
 ### Response example
@@ -263,7 +257,7 @@ resp = client.save_model("dataacquisition", id="b0e4ed13-f2f1-4845-8772-24978539
 ```
 {'dataacquisition': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
-    'description': 'new text',
+    'notes': 'new text',
     'hardwaredevice': None,
     'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
     'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Equipment
+title: Consumable stock
 parent: Modules
 grand_parent: API
 nav_order: 3
 ---
 
-# Equipment API endpoint
+# Consumable stock API endpoint
 {: .no_toc}
 
 ## Table of contents
@@ -21,31 +21,27 @@ nav_order: 3
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
-| `setup` | related experimental setup ID formatted as a string **[required]** |
 | `notes` | string [max length: 500] |
-| `date_time` | string containing date (e.g. "2023-03-22") |
+| `inventory` | related inventory ID formatted as a string **[required]** |
+| `acquisition_date` | string containing date (e.g. "2023-03-22") |
+| `expiration_date` | string containing date (e.g. "2023-03-22") |
+| `storage_location` | string describing where the location of the consumable [max length: 100] |
+| `storage_conditions` | string describing the conditions the consumable string [max length: 100] |
+| `intended_use` | string [max length: 100] |
+| `cost` | string [max length: 100] |
 | `consumable` | related consumable ID formatted as a string |
-| `hardwaredevice` | related hardware device ID formatted as a string |
-| `coordinates_system` | string **[required]**. *See options below* |
-| `coordinates_details` | JSON object. *See accepted schemas below* |
+| `details` | JSON object. *See accepted schemas below* |
 
 
-## Types of equipment
+## Types of consumable stock
 
-{% include equipment_types.md %}
-
-
-### Coordinates system options
-These are the available `coordinates_system` options for Equipment:
-- `External_XYZ_Absolute`
-
-A detailed list of the accepted schemas for the `coordinates_details` field, related to each `coordinates_system`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
+{% include consumablestock_types.md %}
 
 
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/modules/equipment
+- **URL:** https://www.brainstem.org/api/private/modules/consumablestock
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -53,14 +49,14 @@ A detailed list of the accepted schemas for the `coordinates_details` field, rel
 {: .no_toc}
 
 ```
-resp = client.load_model('equipment')
+resp = client.load_model('consumablestock')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'equipment': [
+{'consumablestock': [
     {
         'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
         'type': 'TetrodeWireElectrode',
@@ -74,10 +70,6 @@ resp = client.load_model('equipment')
             'nWiresTetrode': 4,
             'wireDiameter': 33.9,
             'wireMaterial': 'tunsgten'
-        },
-        'coordinates_system': 'External_XYZ_Absolute',
-        'coordinates_details': {
-            'apCoordinate': 1.0
         }
     },
     {
@@ -108,7 +100,7 @@ resp = client.load_model('equipment')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/modules/equipment
+- **URL:** https://www.brainstem.org/api/private/modules/consumablestock
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -116,21 +108,11 @@ resp = client.load_model('equipment')
 {: .no_toc}
 
 ```
-resp = client.save_model("equipment",  data={
+resp = client.save_model("consumablestock",  data={
     "type": "OpticFiberImplant",
     "setup": "0f87c229-6769-4854-83a5-c71e154246b8",
     "notes": "some text",
-    "details": {"fiberTipShape": "flat"},
-    "coordinates_system": "External_XYZ_Absolute",
-    "coordinates_details": {
-                "x": 1.0,
-                "y": 2.0,
-                "z": 3.0,
-                "xAngle": 4.0,
-                "yAngle": 5.0,
-                "zAngle": 6.0
-            }
-    }
+    "details": {"fiberTipShape": "flat"}
 )
 ```
 
@@ -138,7 +120,7 @@ resp = client.save_model("equipment",  data={
 {: .no_toc}
 
 ```
-{'equipment': {
+{'consumablestock': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'notes': 'some text',
@@ -146,17 +128,7 @@ resp = client.save_model("equipment",  data={
     'date_time': None,
     'consumable': None,
     'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'},
-    'coordinates_system': 'External_XYZ_Absolute',
-    'coordinates_details': {
-                "x": 1.0,
-                "y": 2.0,
-                "z": 3.0,
-                "xAngle": 4.0,
-                "yAngle": 5.0,
-                "zAngle": 6.0
-            }
-    }
+    'details': {'fiberTipShape': 'flat'}
 }
 ```
 
@@ -164,7 +136,7 @@ resp = client.save_model("equipment",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/modules/equipment/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/consumablestock/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -172,14 +144,14 @@ resp = client.save_model("equipment",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
+resp = client.load_model('consumablestock', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'equipment': {
+{'consumablestock': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'notes': 'some text',
@@ -187,17 +159,7 @@ resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
     'date_time': None,
     'consumable': None,
     'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'},
-    'coordinates_system': 'External_XYZ_Absolute',
-    'coordinates_details': : {
-                "x": 1.0,
-                "y": 2.0,
-                "z": 3.0,
-                "xAngle": 4.0,
-                "yAngle": 5.0,
-                "zAngle": 6.0
-            }
-    }
+    'details': {'fiberTipShape': 'flat'}
 }
 ```
 
@@ -205,7 +167,7 @@ resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/modules/equipment/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/consumablestock/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -214,14 +176,14 @@ resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 {: .no_toc}
 
 ```
-resp = client.save_model("equipment", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"notes": "new text"})
+resp = client.save_model("consumablestock", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"notes": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'equipment': {
+{'consumablestock': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
     'notes': 'new text',
@@ -229,24 +191,14 @@ resp = client.save_model("equipment", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
     'date_time': None,
     'consumable': None,
     'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'},
-    'coordinates_system': 'External_XYZ_Absolute',
-    'coordinates_details': : {
-                "x": 1.0,
-                "y": 2.0,
-                "z": 3.0,
-                "xAngle": 4.0,
-                "yAngle": 5.0,
-                "zAngle": 6.0
-            }
-    }
+    'details': {'fiberTipShape': 'flat'}
 }
 ```
 
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/modules/equipment/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/consumablestock/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -254,5 +206,5 @@ resp = client.save_model("equipment", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
 {: .no_toc}
 
 ```
-resp = client.delete_model("equipment", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
+resp = client.delete_model("consumablestock", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 ```

@@ -25,10 +25,12 @@ nav_order: 7
 | `procedure` | related procedure ID formatted as a string **[required]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
 
-These are the available `type` options for Procedure Log:
-- `Impedances`
-- `LinearDisplacement`
+## Types of procedure logs
 
+{% include procedurelog_types.md %}
+
+
+## Log entries
 
 Each entry in the `entries` list is a dictionary with the following fields:
 

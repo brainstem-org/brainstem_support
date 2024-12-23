@@ -35,27 +35,7 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 
 ## Types of procedures
 
-These are the available *Type* options for Procedure:
-
-### Surgical Procedures
-- Craniectomy
-- Craniotomy
-
-### Implant Procedures
-- Optic fiber implant
-- Silicon probe implant
-- Single wire electrode
-- Tetrode wire electrode
-
-### Brain and Tissue Procedures
-- Brain lesion
-- Brain perfusion fixation
-- Brain slice
-
-### Injection and Infusion Procedures
-- Virus injection
-
-A detailed list of the type-specific fields can be found on the [procedure types page]({{"datamodel/schemas/procedure/"|absolute_url}}).
+{% include procedure_types.md %}
 
 ## Coordinate system options
 

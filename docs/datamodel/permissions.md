@@ -26,8 +26,8 @@ BrainSTEM implements a hierarchical permission system that governs access contro
 | Permission levels | Groups | Projects | Personal Attributes |
 |:-----------------|:-------|:---------|:-------------------|
 | Permission scope | 3 levels, users only | 4 levels for groups & users | 4 levels for groups & users |
-| Members | Inherit project permissions | Read access to:<br>- subjects<br>- sessions<br>- modules | Read access to:<br>- attributes<br>- equipments |
-| Contributors | - | Create/edit/delete models | Create/edit/delete equipments |
+| Members | Inherit project permissions | Read access to:<br>- subjects<br>- sessions<br>- modules | Read access to:<br>- attributes<br>- equipment |
+| Contributors | - | Create/edit/delete models | Create/edit/delete equipment |
 | Managers | Add/remove members | Add/remove members & groups | Add/remove members & groups |
 | Owners | Manage group details<br>Add/remove managers | Edit project details<br>Add/remove managers | Edit attribute details<br>Add/remove managers |
 
@@ -99,7 +99,7 @@ Personal attributes follow their own inheritance structure from groups:
 ```
 Personal Attributes
 ├── Setups
-│   └── Equipments
+│   └── Equipment
 ├── Inventories
 │   └── Consumable Stocks
 ├── Data Repositories
@@ -111,7 +111,7 @@ Personal Attributes
 | Parent Level | Inheritance Pattern | Inheriting Components |
 |:-------------|:-------------------|:-------------------|
 | **Group** | Direct inheritance from associated groups | Personal Attributes (Behavioral Paradigms, Data Storage, Setups, Inventories) |
-| **Experimental Setup** | Direct inheritance with module-level access | Equipments |
+| **Experimental Setup** | Direct inheritance with module-level access | Equipment |
 | **Inventory** | Direct inheritance with module-level access | Consumable Stocks |
 
 * All personal attributes inherit permissions directly from their associated groups

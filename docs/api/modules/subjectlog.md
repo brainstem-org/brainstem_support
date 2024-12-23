@@ -25,11 +25,12 @@ nav_order: 8
 | `subject` | related subject ID formatted as a string **[required]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
 
-These are the available `type` options for Subject Log:
-- `FoodConsumption`
-- `WaterConsumption`
-- `Weighing`
+## Types of subject logs
 
+{% include subjectlog_types.md %}
+
+
+## Log entries
 
 Each entry in the `entries` list is a dictionary with the following fields:
 

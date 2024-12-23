@@ -109,4 +109,4 @@ Focuses on two-dimensional positioning on the brain's surface, using X and Y coo
 | `Rotation (degrees)` | Rotation around the vertical axis through the point of interest (floating-point number; range: -180° to 360°). Used for device orientation. |
 
 ## Coordinates API access
-The API allows for programmable access to Coordinates, enabling you to read, edit, and delete coordinates through the API. Learn more about the coordinates' fields and data structure on the [Coordinates API page]({{"api/modules/coordinates/"|absolute_url}}).
+The API allows for programmable access to Coordinates, enabling you to read, edit, and delete coordinates through the API. Learn more about the coordinates' fields and data structure on the [Coordinates API page]({{"api/schemas/coordinates/"|absolute_url}}).

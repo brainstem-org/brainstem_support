@@ -21,7 +21,7 @@ nav_order: 5
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
-| `description` | string [max length: 500] |
+| `notes` | string [max length: 500] |
 | `subject` | related subject ID formatted as a string **[required]** |
 | `date_time` | string containing date (e.g. "2023-03-22") |
 | `consumable` | related consumable ID formatted as a string |
@@ -31,16 +31,12 @@ nav_order: 5
 | `coordinates_system` | string **[required]**. *See options below* |
 | `coordinates_details` | JSON object. *See accepted schemas below* |
 
+## Types of procedure
 
-These are the available `type` options for Procedure:
-- `OpticFiberImplant`
-- `SingleWireElectrode`
-- `SiliconProbeImplant`
-- `TetrodeWireElectrode`
-- `VirusInjection`
+{% include procedure_types.md %}
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the [procedure schemas page]({{"/api/schemas/procedures/"|absolute_url}}).
 
+## Coordinates system options
 
 These are the available `coordinates_system` options for Procedure:
 - `External_XYZ_Absolute`
@@ -76,7 +72,7 @@ resp = client.load_model('procedure')
     {
         'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
         'type': 'TetrodeWireElectrode',
-        'description': 'First implant',
+        'notes': 'First implant',
         'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
         'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
@@ -96,7 +92,7 @@ resp = client.load_model('procedure')
     {
         'id': 'a18dd2b1-6393-468c-9424-1bc77b9e4976',
         'type': 'TetrodeWireElectrode',
-        'description': 'Second implant',
+        'notes': 'Second implant',
         'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
         'consumable': None,
@@ -133,7 +129,7 @@ resp = client.load_model('procedure')
 resp = client.save_model("procedure",  data={
     "type": "OpticFiberImplant",
     "subject": "0f87c229-6769-4854-83a5-c71e154246b8",
-    "description": "some text",
+    "notes": "some text",
     "details": {"fiberTipShape": "flat"},
     "coordinates_system": "Stereotaxic_BregmaAbsolute",
     "coordinates_details": {
@@ -155,7 +151,7 @@ resp = client.save_model("procedure",  data={
 {'procedure': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
-    'description': 'some text',
+    'notes': 'some text',
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
@@ -198,7 +194,7 @@ resp = client.load_model('procedure', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 {'procedure': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
-    'description': 'some text',
+    'notes': 'some text',
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
@@ -231,7 +227,7 @@ resp = client.load_model('procedure', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 {: .no_toc}
 
 ```
-resp = client.save_model("procedure", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"description": "new text"})
+resp = client.save_model("procedure", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"notes": "new text"})
 ```
 
 ### Response example
@@ -241,7 +237,7 @@ resp = client.save_model("procedure", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
 {'procedure': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
-    'description': 'new text',
+    'notes': 'new text',
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,

@@ -125,7 +125,7 @@ Personal Attributes:
 - [Behavioral paradigms]({{site.baseurl}}/datamodel/personal_attributes/behavioralparadigm/)
 - [Data storages]({{site.baseurl}}/datamodel/personal_attributes/datastorage/)
 - [Setups]({{site.baseurl}}/datamodel/personal_attributes/setup/)
-   - [Equipments]({{site.baseurl}}/datamodel/modules/equipment/)
+   - [Equipment]({{site.baseurl}}/datamodel/modules/equipment/)
 - [Inventories]({{site.baseurl}}/datamodel/personal_attributes/inventory/)
    - [Consumable stocks]({{site.baseurl}}/datamodel/modules/consumablestock/)
 
@@ -133,7 +133,7 @@ Personal Attributes:
 
 1. Create/Join a group
 2. Create a project
-3. Next, create personal attribures relevant to your experiments
+3. Next, create personal attributes relevant to your experiments
    1. Define behavioral paradigms to describe the behavioral conditions of your subjects
    2. Set up data storage locations to link to your data files
    3. Create setups to define your physical experimental environments
@@ -153,4 +153,4 @@ Personal Attributes:
 
 {: .important }
 > This order ensures dependent components are created first. For example, behaviors need setups and behavioral paradigms to be defined first.
-> Data acquisition are linked to subjects through procedures, and to setups through equipments, which should be created first.
+> Data acquisition are linked to subjects through procedures, and to setups through equipment, which should be created first.
