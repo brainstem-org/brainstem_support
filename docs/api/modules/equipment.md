@@ -32,12 +32,74 @@ nav_order: 3
 
 ## Types of equipment
 
-{% include equipment_types.md %}
+### Data acquisition
+- `Amplifier`: Amplifier
+- `Camera`, Camera
+- `DataAcquisitionSystem`: Data acquisition system
+- `ElectroencephalographySystem`: Electroencephalography system (EEG)
+- `ElectromyographyMachine`: Electromyography machine
+- `EphysRig`: Ephys rig
+- `FiberPhotometrySystem`: Fiber photometry system
+- `ForcePlate`: Force plate
+- `HumiditySensor`: Humidity sensor
+- `LightSensor`: Light sensor
+- `MagneticResonanceImagingSystem`: Magnetic resonance imaging (MRI) system
+- `MagnetoencephalographySystem`: Magnetoencephalography (MEG) system
+- `Magnetometer`: Magnetometer
+- `Microphone`: Microphone
+- `Miniscope`: Miniscope
+- `MotionTrackingSystem`: Motion tracking system
+- `OphysRig`: Ophys rig
+- `OpticalCoherenceTomography`: Optical Coherence Tomography (OCT)
+- `Oscilloscope`: Oscilloscope
+- `Photodetector`: Photodetector
+- `SignalProcessingUnit`: Signal processing unit
+- `SinglePhotonEmissionComputedTomography`: Single-photon emission computed tomography (SPECT)
+- `TemperatureSensor`: Temperature sensor
+- `UltrasoundImagingSystem`: Ultrasound imaging system
+
+### Behavioral and stimulation tools
+- `BehaviorRig`: Behavior rig
+- `IontophoresisStimulator`: Iontophoresis stimulator
+- `Laser`: Laser
+- `LedDriver`: LED Driver
+- `LightEmitter`: Light emitter
+- `RunningWheel`: Running Wheel
+- `Speaker`: Speaker
+- `StimulationDevice`: Stimulation device
+- `Treadmill`: Treadmill
+
+### Environmental controllers
+- `AntiVibrationTable`: Anti-vibration table
+- `FloatingAirPlatform`: Floating air platform
+- `HumidityController`: Humidity controller
+- `NoiseIsolationChamber`: Noise isolation chamber
+- `ThermalController`: Thermal controller
+
+### Surgical equipment
+- `AnesthesiaSystem`: Anesthesia system
+- `InjectionSystem`: Injection system
+- `Micromanipulator`: Micromanipulator
+- `Microscope`: Microscope
+- `StereotaxicFrame`: Stereotaxic frame
+- `SurgicalPowerTool`: Surgical power tool
+- `PerfusionSystem`: Perfusion system
+
+### Miscellaneous
+- `BiosafetyCabinet`: Biosafety cabinet
+- `Computer`: Computer
+- `ElectronicComponent`: Electronic component
+- `FumeHood`: Fume hood
+- `GlassMicropipettePuller`: Glass micropipette puller
+- `Microcontroller`: Microcontroller (e.g. Arduino)
+- `Monitor`: Monitor
+- `SingleBoardComputer`: Single-board computer (e.g. Raspberry Pi)
 
 
 ### Coordinates system options
 These are the available `coordinates_system` options for Equipment:
-- `External_XYZ_Absolute`
+
+- `External_XYZ_Absolute`: External XYZ Coordinates with Angles
 
 A detailed list of the accepted schemas for the `coordinates_details` field, related to each `coordinates_system`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
 

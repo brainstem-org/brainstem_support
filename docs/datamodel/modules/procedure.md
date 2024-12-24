@@ -35,7 +35,7 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 
 ## Types of procedures
 
-{% include procedure_types.md %}
+{% include_relative type_descriptions/procedure_types.md %}
 
 ## Coordinate system options
 

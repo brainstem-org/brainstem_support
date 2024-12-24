@@ -30,7 +30,29 @@ nav_order: 4
 
 ## Types of manipulation
 
-{% include manipulation_types.md %}
+### Electrical and Magnetic Stimulation
+- `DeepBrainStimulation`: Deep brain stimulation (DBS)
+- `ElectricalStimulation`: Electrical stimulation
+- `ElectromagneticFieldStimulation`: Electromagnetic field stimulation
+- `TranscranialElectricalStimulation`: Transcranial Electrical Stimulation
+- `TranscranialMagneticStimulation`: Transcranial Magnetic Stimulation (TMS)
+
+### Optical, Thermal and Ultrasound Stimulation
+- `OptogeneticalStimulation`: Optogenetical stimulation
+- `ThermalPerturbation`: Thermal perturbation
+- `UltrasoundStimulation`: Ultrasound stimulation
+
+### Chemical and Pharmacological Perturbations
+- `LiquidPerturbation`: Liquid perturbation
+- `Microperfusion`: Micro perfusion
+- `PharmacologicalInjection`: Pharmacological injection
+- `PharmacologicalSuperfusion`: Pharmacological superfusion
+- `PharmacologicalInhalation`: Pharmacological inhalation
+
+### Odor and Sound Stimulation
+- `OdorStimulation`: Odor stimulation
+- `SoundStimulation`: Sound stimulation
+
 
 ## List view
 - **Allowed portals:** public, private, super

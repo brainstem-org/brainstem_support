@@ -34,7 +34,7 @@ Equipment refer to the setup and utilization of various devices and sensors desi
 
 ## Types of equipment
 
-{% include equipment_types.md %}
+{% include_relative type_descriptions/equipment_types.md %}
 
 
 ## Coordinate system options

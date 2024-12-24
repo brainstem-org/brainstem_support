@@ -33,19 +33,39 @@ nav_order: 5
 
 ## Types of procedure
 
-{% include procedure_types.md %}
+### Surgical Procedures
+- `Craniectomy`: Craniectomy
+- `Craniotomy`: Craniotomy
+- `CranialWindow`: Cranial window
+
+### Implant Procedures
+- `OpticFiberImplant`: Optic fiber implant
+- `SiliconProbeImplant`: Silicon probe implant
+- `TetrodeWireElectrode`: Tetrode wire electrode
+- `SingleWireElectrode`: Single wire electrode
+
+### Injection and Infusion Procedures
+- `Injection`: Injection
+- `VirusInjection`: Virus injection
+
+### Brain and Tissue Procedures
+- `BrainLesion`: Brain lesion
+- `PerfusionFixation`: Brain perfusion fixation
+- `Slice`: Brain slice
 
 
 ## Coordinates system options
 
 These are the available `coordinates_system` options for Procedure:
-- `External_XYZ_Absolute`
-- `Stereotaxic_BregmaAbsolute`
-- `Stereotaxic_BregmaBrainSurface`
-- `Stereotaxic_LambdaAbsolute`
-- `Stereotaxic_LambdaBrainSurface`
-- `Stereotaxic_XYZ_Absolute`
-- `Stereotaxic_XY_Surface`
+
+- `External_XYZ_Absolute`: External XYZ Coordinates with Angles
+- `Stereotaxic_BregmaAbsolute`: Stereotaxic Bregma-Based Absolute Coordinates
+- `Stereotaxic_BregmaBrainSurface`: Stereotaxic Bregma-Based Surface Coordinates with Depth
+- `Stereotaxic_LambdaAbsolute`: Stereotaxic Lambda-Based Absolute Coordinates
+- `Stereotaxic_LambdaBrainSurface`: Stereotaxic Lambda-Based Surface Coordinates with Depth
+- `Stereotaxic_XYZ_Absolute`: Stereotaxic XYZ Absolute Coordinates
+- `Stereotaxic_XY_Surface`: Stereotaxic Surface XY Surface Coordinates with Depth
+
 
 A detailed list of the accepted schemas for the `coordinates_details` field, related to each `coordinates_system`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
 

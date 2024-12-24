@@ -25,17 +25,3 @@ These are the available *Type* options for manipulations:
 
 A detailed list of the type-specific fields can be found on the [manipulation types page]({{"datamodel/schemas/manipulation/"|absolute_url}}).
 
-
-These are the available `type` options for Manipulation:
-- `ElectromagneticFieldStimulation`
-- `ElectricalStimulation`
-- `LiquidPerturbation`
-- `Microperfusion`
-- `OptogeneticalStimulation`
-- `PharmacologicalInhalation`
-- `PharmacologicalInjection`
-- `PharmacologicalSuperfusion`
-- `SoundStimulation`
-- `ThermalPerturbation`
-- `TranscranialElectricalStimulation`
-- `UltraSoundStimulation`

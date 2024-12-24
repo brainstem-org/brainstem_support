@@ -35,8 +35,10 @@ nav_order: 3
 
 ## Types of consumable stock
 
-{% include consumablestock_types.md %}
-
+- `OpticFiber`: Optic fiber
+- `SiliconProbe`: Silicon probe
+- `VirusSolution`: Virus solution
+- `SingleWireElectrode`: Single wire electrode
 
 ## List view
 - **Allowed portals:** public, private, super

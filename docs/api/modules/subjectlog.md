@@ -27,7 +27,20 @@ nav_order: 8
 
 ## Types of subject logs
 
-{% include subjectlog_types.md %}
+### Diet and Consumption Logs
+- `FoodConsumption`: Food consumption log
+- `WaterConsumption`: Water consumption log
+
+### Deprivation Logs, [
+- `FoodDeprivation`: Food deprivation log
+- `WaterDeprivation`: Water deprivation log
+
+### Housing and Environment Logs
+- `Housing`: Housing log
+
+### Physical and Health Logs
+- `Weighing`: Weighing log
+- `Wellness`: Wellness log
 
 
 ## Log entries

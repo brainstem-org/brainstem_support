@@ -33,7 +33,7 @@ Subject logs refers to records that track various aspects of the subjects' livin
 
 ## Types of subject logs
 
-{% include subjectlog_types.md %}
+{% include_relative type_descriptions/subjectlog_types.md %}
 
 ## Submission form
 

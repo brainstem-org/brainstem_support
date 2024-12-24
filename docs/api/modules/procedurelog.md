@@ -27,7 +27,10 @@ nav_order: 7
 
 ## Types of procedure logs
 
-{% include procedurelog_types.md %}
+- `Impedances`: Impedances log
+- `LinearDisplacement`: Linear displacement log
+- `Tetrodes4`: Tetrode log (4 tetrodes)
+- `Tetrodes8`: Tetrode log (8 tetrodes)
 
 
 ## Log entries

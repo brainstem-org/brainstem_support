@@ -32,7 +32,8 @@ The manipulation model describes temporal manipulations performed in a session. 
 
 ## Types of manipulations
 
-{% include manipulation_types.md %}
+{% include_relative type_descriptions/manipulation_types.md %}
+
 
 ## Permissions
 

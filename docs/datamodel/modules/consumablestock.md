@@ -37,7 +37,7 @@ Consumable stocks refer to the various components and materials essential for co
 
 ## Types of consumable stocks
 
-{% include consumablestock_types.md %}
+{% include_relative type_descriptions/consumablestock_types.md %}
 
 ## Permissions
 
