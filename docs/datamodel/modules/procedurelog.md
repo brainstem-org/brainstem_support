@@ -33,7 +33,15 @@ Procedure logs refer to systematic records that track specific parameters or out
 
 ## Types of procedure logs
 
-{% include_relative ../../type_descriptions/procedurelog_types.md %}
+These are the available *Type* options for Procedure logs:
+
+- `Impedances log`: This log records the electrical impedance of electrodes implanted in the brain or other tissues over time. Impedance measurement is crucial for assessing the quality of the electrical connection between the electrode and the surrounding tissue, which can affect the clarity and reliability of recorded neural signals. Impedances logs help in monitoring the condition and functionality of electrodes throughout the course of an experiment.
+- `Linear displacement log`: A linear displacement log tracks the movement or position of an object or device in a straight line, often related to the precise placement of electrodes, probes, or other surgical tools during an experiment. This type of log is essential for documenting the depth and location adjustments of devices within neural tissue, ensuring that recordings or stimulations are made at consistent and intended sites.
+- `Tetrode log (4 tetrodes)`: This log keeps records related to the use and performance of a set of four tetrodes, which are specialized electrodes used for recording the electrical activity of neurons. A tetrode log would typically include information about the positioning, adjustments, impedance levels, and potentially the signal quality obtained from each of the four tetrodes. This information is crucial for analyzing neural data accurately and understanding the spatial context of the recordings.
+- `Tetrode log (8 tetrodes)`: Similar to the log for four tetrodes, this log pertains to experiments involving a set of eight tetrodes. It provides detailed records for each tetrode, including their placement, electrical properties, and the quality of neural recordings. Keeping a separate log for eight tetrodes might be necessary for experiments that require more extensive neural coverage or when comparing different regions or aspects of neural activity simultaneously.
+
+A detailed list of the type-specific fields can be found on the [procedure logs types page]({{"datamodel/schemas/procedurelog/"|absolute_url}}).
+
 
 ## Submission form
 
