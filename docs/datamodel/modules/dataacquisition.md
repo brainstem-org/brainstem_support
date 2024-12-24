@@ -33,7 +33,7 @@ Data acquisition encompasses the diverse range of data types acquired during sci
 
 ## Types of Data acquisition
 
-{% include_relative type_descriptions/dataacquisition_types.md %}
+{% include_relative ../../type_descriptions/dataacquisition_types.md %}
 
 ## Permissions
 

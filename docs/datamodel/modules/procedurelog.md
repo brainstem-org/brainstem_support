@@ -33,7 +33,7 @@ Procedure logs refer to systematic records that track specific parameters or out
 
 ## Types of procedure logs
 
-{% include_relative type_descriptions/procedurelog_types.md %}
+{% include_relative ../../type_descriptions/procedurelog_types.md %}
 
 ## Submission form
 
