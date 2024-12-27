@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 8
 ---
 
-# Consumable stock
+# Consumable stock types
 {: .no_toc}
 
 Various consumable stock types are available for tracking and managing laboratory supplies and materials used in neuroscience research.
