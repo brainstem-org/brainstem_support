@@ -51,7 +51,7 @@ A session is a modular construction that provides flexible and standardized desc
 
 ### Data acquisition fields
 
-Please see the dedicated page describing the [Data acquisition model]({{"datamodel/modules/dataacquisition"|absolute_url}}).
+Please see the dedicated page describing the [Data acquisition data model]({{"datamodel/modules/dataacquisition"|absolute_url}}).
 
 ### Manipulation data fields
 
