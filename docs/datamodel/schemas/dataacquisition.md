@@ -35,7 +35,7 @@ Audio data acquisition captures sound recordings related to the experiment. Used
 
 ### Behavioral Tracking
 
-Behavioral tracking data records the movement and actions of subjects during experiments. This method monitors and records the movements or behaviors of subjects in response to specific conditions or stimuli, essential for understanding the neural basis of behavior, learning, and memory.
+Behavioral tracking data records the movement and procedures of subjects during experiments. This method monitors and records the movements or behaviors of subjects in response to specific conditions or stimuli, essential for understanding the neural basis of behavior, learning, and memory.
 
 | Field | Description |
 |:------|:------------|
@@ -344,4 +344,4 @@ General time series data represents any sequential measurements indexed by time.
 
 ## Data acquisition API access
 
-The API allows for programmable access to Data acquisition, enabling you to read, edit, and delete Data acquisition through the API. Learn more about the Data acquisition' fields and data structure on the [Data acquisition API page]({{"api/modules/experimentdata/"|absolute_url}}).
+The API allows for programmable access to Data acquisition, enabling you to read, edit, and delete Data acquisition through the API. Learn more about the Data acquisition' fields and data structure on the [Data acquisition API page]({{"api/modules/dataacquisition/"|absolute_url}}).

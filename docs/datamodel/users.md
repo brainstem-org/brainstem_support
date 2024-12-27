@@ -32,7 +32,7 @@ Organizational units that are tied to groups in a one-to-one relationship. Linki
 
 ## Permission Inheritance
 
-For detailed information about permission levels and inheritance, please visit the [permissions documentation]({{site.baseurl}}/datamodel/permission).
+For detailed information about permission levels and inheritance, please visit the [permissions documentation]({{site.baseurl}}/datamodel/permissions/).
 
 ## User Management API
 

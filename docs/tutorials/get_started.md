@@ -14,6 +14,8 @@ nav_order: 1
 1. TOC
 {:toc}
 
+## Create an account
+
 ## Create or Join a Group
 
 Before you can start using BrainSTEM, you need to either create a new group for your lab or join an existing one. Groups in BrainSTEM help organize lab members and manage permissions for projects and resources.
@@ -57,7 +59,7 @@ For group managers:
 
 ## Create Your First Project
 
-After joining or creating a group, you can start creating projects. Projects in BrainSTEM are containers that help organize your research data, including subjects, datasets, and collections.
+After joining or creating a group, you can start creating projects. Projects in BrainSTEM are containers that help organize your research data, including subjects, sessions, and collections.
 
 1. Click on *Projects* in the left navigation menu
 2. Click the *Add project* button in the top right corner
@@ -95,7 +97,7 @@ After adding subjects, you can create sessions to record your experimental data.
 ![First session]({{site.baseurl}}/assets/images/tutorials/first_session.gif)
 
 {: .note }
-> For detailed information about session fields and options, see the [Session data model]({{site.baseurl}}/datamodel/stem/dataset/).
+> For detailed information about session fields and options, see the [Session data model]({{site.baseurl}}/datamodel/stem/session/).
 
 {: .important }
 > Sessions inherit permissions from their associated projects. Make sure to select the correct project to enable proper access for your team members.
@@ -108,38 +110,47 @@ BrainSTEM uses Personal Attributes and Modules to document your experimental pro
 
 ### Available Components
 
+STEM models
+- [Subjects]({{site.baseurl}}/datamodel/stem/subject/)
+   - [Procedures]({{site.baseurl}}/datamodel/modules/procedure/)
+   - [Procedure logs]({{site.baseurl}}/datamodel/modules/procedurelog/)
+   - [Subject logs]({{site.baseurl}}/datamodel/modules/subjectlog/)
+
+- [Sessions]({{site.baseurl}}/datamodel/stem/session/)
+   - [Behaviors]({{site.baseurl}}/datamodel/modules/behavior/)
+   - [Data acquisitions]({{site.baseurl}}/datamodel/modules/dataacquisition/)
+   - [Manipulations]({{site.baseurl}}/datamodel/modules/manipulation/)
+
 Personal Attributes:
-- [Behavioral paradigms]({{site.baseurl}}/datamodel/personal_attributes/behavioral_paradigm/)
-- [Data storage]({{site.baseurl}}/datamodel/personal_attributes/data_storage/)
-- [Experimental setups]({{site.baseurl}}/datamodel/personal_attributes/experiment_setups/)
-- [Inventories]({{site.baseurl}}/datamodel/personal_attributes/inventories/)
+- [Behavioral paradigms]({{site.baseurl}}/datamodel/personal_attributes/behavioralparadigm/)
+- [Data storages]({{site.baseurl}}/datamodel/personal_attributes/datastorage/)
+- [Setups]({{site.baseurl}}/datamodel/personal_attributes/setup/)
+   - [Equipment]({{site.baseurl}}/datamodel/modules/equipment/)
+- [Inventories]({{site.baseurl}}/datamodel/personal_attributes/inventory/)
+   - [Consumable stocks]({{site.baseurl}}/datamodel/modules/consumablestock/)
 
-Modules:
-- [Behavior]({{site.baseurl}}/datamodel/modules/behavior/)
-- [Data acquisition]({{site.baseurl}}/datamodel/modules/experiment_data/)
-- [Equipments]({{site.baseurl}}/datamodel/modules/installation/)
-- [Consumable stocks]({{site.baseurl}}/datamodel/modules/consumable_stock/)
-- [Manipulation]({{site.baseurl}}/datamodel/modules/manipulation/)
-- [Procedure]({{site.baseurl}}/datamodel/modules/procedure/)
-- [Action logs]({{site.baseurl}}/datamodel/modules/actionlog/)
-- [Subject logs]({{site.baseurl}}/datamodel/modules/subjectlog/)
+### Recommended workflow
 
-### Recommended Setup Order
-
-1. Create experimental setups to define your physical experiment environment
-2. Define behavioral paradigms for your experimental tasks
-3. Set up data storage locations to organize your data files
-4. Set up inventories to track your lab resources
-5. Add procedures (e.g., surgeries, implants, injections)
-6. Configure equipment installations in your setups
-7. Set up behaviors to describe subject tasks
-8. Define manipulations for experimental interventions
-9. Configure data acquisition parameters
-10. Begin tracking with action logs and subject logs
+1. Create/Join a group
+2. Create a project
+3. Next, create personal attributes relevant to your experiments
+   1. Define behavioral paradigms to describe the behavioral conditions of your subjects
+   2. Set up data storage locations to link to your data files
+   3. Create setups to define your physical experimental environments
+   - Configure the equipment in your setups
+   4. Set up inventories to track your lab resources
+   - Add consumable stocks to your inventories
+4. Create your first subject
+   - Add procedures to the subject (e.g., implants and injections)
+   - Begin tracking with procedure logs and subject logs
+5. Create your first session
+   - Set up behaviors to describe subject tasks
+   - Configure data acquisition parameters
+   - Define manipulations for experimental interventions
 
 {: .note }
 > The exact order may vary based on your specific experimental needs. Some components can be set up in parallel or may not be needed for every experiment.
 
 {: .important }
-> This order ensures dependent components are created first. For example, behaviors need experimental setups and behavioral paradigms to be defined first.
-
+> This order ensures dependent components are created first. For example, behaviors need setups and behavioral paradigms to be defined first.
+> Data acquisition are linked to subjects through procedures, and to setups through equipment, which should be created first.

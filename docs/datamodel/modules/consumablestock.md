@@ -24,7 +24,7 @@ Consumable stocks refer to the various components and materials essential for co
 | Field | Description |
 |:------|:------------|
 | `Type` | Type of consumable stock (**required**). Selected from predefined types. Example: "Silicon probe", "Optic fiber". *See options below* |
-| `Inventory` | The inventory record that tracks the consumable stock (**required**). Must reference an existing [inventory]({{"datamodel/personal_attributes/inventories/"|absolute_url}}). Example: "Lab supplies inventory" |
+| `Inventory` | The inventory record that tracks the consumable stock (**required**). Must reference an existing [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}). Example: "Lab supplies inventory" |
 | `Notes` | Additional information or special considerations for the consumable stock (string). Example: "Handle with care, fragile components" |
 | `Consumable` | The specific consumable associated with the consumable stock. Example: "32-channel silicon probe" |
 | `Acquisition date` | The date when the consumable was acquired. Example: "2024-01-15" |
@@ -37,25 +37,21 @@ Consumable stocks refer to the various components and materials essential for co
 
 ## Types of consumable stocks
 
-These are the available *Type* options for Consumable stocks:
+These are the available `type` options for Consumable stock:
 
-### Optic Fiber
-A flexible light guide used primarily in optogenetic experiments to deliver light to specific brain regions. Optic fibers are essential in neuroscience for manipulating neural circuits using light.
+- `OpticFiber`: A flexible light guide used primarily in optogenetic experiments to deliver light to specific brain regions. Optic fibers are essential in neuroscience for manipulating neural circuits using light.
+- `SiliconProbe`: A specialized tool for recording electrical signals from neurons. Silicon probes are vital for experiments focused on understanding brain function through electrophysiological recordings.
+- `VirusSolution`: A viral vector preparation used for introducing genes into cells. Virus solutions are important for studies involving gene expression, neural circuit tracing, and optogenetics.
+- `SingleWireElectrode`: A simple yet effective tool for measuring electrical activity at a single site. Single wire electrodes are commonly used in studies examining neural or muscular electrical activity.
 
-### Silicon Probe
-A specialized tool for recording electrical signals from neurons. Silicon probes are vital for experiments focused on understanding brain function through electrophysiological recordings.
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the [Consumable stock schemas page]({{"/api/schemas/consumablestock/"|absolute_url}}).
 
-### Virus Solution
-A viral vector preparation used for introducing genes into cells. Virus solutions are important for studies involving gene expression, neural circuit tracing, and optogenetics.
-
-### Single Wire Electrode
-A simple yet effective tool for measuring electrical activity at a single site. Single wire electrodes are commonly used in studies examining neural or muscular electrical activity.
 
 ## Permissions
 
 Consumable stocks inherit permissions through the inventory associated with them.
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
 ## Consumable stocks API access
 

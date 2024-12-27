@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Experiment Data
+title: Data acquisition
 parent: Modules
 grand_parent: API
 nav_order: 2
 ---
 
-# Experiment Data API endpoint
+# Data acquisition API endpoint
 {: .no_toc}
 
 ## Table of contents
@@ -21,28 +21,54 @@ nav_order: 2
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
-| `description` | string [max length: 500] |
-| `dataset` | related dataset ID formatted as a string **[required]** |
+| `notes` | string [max length: 500] |
+| `session` | related session ID formatted as a string **[required]** |
 | `procedures` | list of related procedures IDs formatted as strings **[required]** |
 | `hardwaredevice` | related hardware device ID formatted as a string |
 | `details` | JSON object. *See accepted schemas below* |
 
 
-These are the available `type` options for Experiment Data:
-- `Audio`
-- `BehavioralTracking`
-- `Electroneurogram`
-- `Extracellular`
-- `GeneralTimeSeries`
-- `Intracellular`
+## Types of data acquisition
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
+
+### Audio and Behavior Tracking
+- `Audio`: Audio
+- `BehavioralTracking`: Behavioral Tracking
+
+### Electrophysiology
+- `Electroencephalography`: Electroencephalography (EEG)
+- `Electroneurogram`: Electroneurogram (ENG)
+- `ExtracellularEphys`: Extracellular Electrophysiology
+- `IntracellularEphys`:Intracellular Electrophysiology
+
+### Optical Imaging
+- `FiberPhotometry`: Fiber Photometry
+- `Miniscope`: Miniscope Microscopy
+- `ConfocalMicroscopy`: Confocal Microscopy
+- `LightFieldMicroscopy`: Light Field Microscopy
+- `SinglePhotonMicroscopy`: Single-Photon Microscopy
+- `TwoPhotonMicroscopy`: Two-Photon Microscopy
+- `ThreePhotonMicroscopy`: Three-Photon Microscopy
+
+### Magnetic and Functional Imaging
+- `MagneticResonanceImaging`: Magnetic Resonance Imaging (MRI)
+- `FunctionalMagneticResonanceImaging`: Functional Magnetic Resonance Imaging (fMRI)
+- `Magnetoencephalography`: Magnetoencephalography (MEG)
+
+### Tomography and Ultrasound
+- `ComputedTomography`: Computed Tomography (CT)
+- `PositronEmissionTomography`: Positron Emission Tomography (PET)
+- `SinglePhotonEmissionComputedTomography`: Single-Photon Emission Computed Tomography (SPECT)
+- `FunctionalUltrasoundImaging`: Functional Ultrasound Imaging (fUS)
+
+### General and Time-Series Data
+- `GeneralTimeSeries`: General time-series
 
 
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/modules/experimentdata
+- **URL:** https://www.brainstem.org/api/private/modules/dataacquisition
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -50,20 +76,20 @@ A detailed list of the accepted schemas for the `details` field, related to each
 {: .no_toc}
 
 ```
-resp = client.load_model('experimentdata')
+resp = client.load_model('dataacquisition')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'experimentdata': [
+{'dataacquisition': [
     {
         'id': 'b3a6f43b-63f9-41cf-8fc2-5303e958d521',
-        'description': None,
+        'notes': None,
         'hardwaredevice': None,
         'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
-        'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
+        'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
         'type': 'BehavioralTracking',
         'details': {
             'fileName': 'myfile.txt',
@@ -75,10 +101,10 @@ resp = client.load_model('experimentdata')
     },
     {
         'id': '6b7d3eb1-0360-4c40-944b-83e285f8f8a7',
-        'description': None,
+        'notes': None,
         'hardwaredevice': None,
         'procedures': ['dedef2d7-00ae-4967-8e93-a9d65a20dfce'],
-        'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
+        'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
         'type': 'Extracellular',
         'details': {
             'type': 'int16',
@@ -96,7 +122,7 @@ resp = client.load_model('experimentdata')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/modules/experimentdata
+- **URL:** https://www.brainstem.org/api/private/modules/dataacquisition
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -104,11 +130,11 @@ resp = client.load_model('experimentdata')
 {: .no_toc}
 
 ```
-resp = client.save_model("experimentdata",  data={
+resp = client.save_model("dataacquisition",  data={
     "type": "Extracellular",
     "procedures": ["087b71c4-6785-437c-b8ef-e35a82a8463e"],
-    "dataset": "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
-    "description": "some text",
+    "session": "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
+    "notes": "some text",
     "details": {
             "type": "int16",
             "nChannels": 32,
@@ -145,12 +171,12 @@ resp = client.save_model("experimentdata",  data={
 {: .no_toc}
 
 ```
-{'experimentdata': {
+{'dataacquisition': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
-    'description': 'some text',
+    'notes': 'some text',
     'hardwaredevice': None,
     'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
-    'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
+    'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
     'type': 'Extracellular',
     'details': {
             'type': 'int16',
@@ -187,7 +213,7 @@ resp = client.save_model("experimentdata",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/modules/experimentdata/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/dataacquisition/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -195,19 +221,19 @@ resp = client.save_model("experimentdata",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('experimentdata', id='b0e4ed13-f2f1-4845-8772-24978539d0bd')
+resp = client.load_model('dataacquisition', id='b0e4ed13-f2f1-4845-8772-24978539d0bd')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'experimentdata': {
+{'dataacquisition': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
-    'description': 'some text',
+    'notes': 'some text',
     'hardwaredevice': None,
     'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
-    'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
+    'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
     'type': 'Extracellular',
     'details': {
             'type': 'int16',
@@ -245,7 +271,7 @@ resp = client.load_model('experimentdata', id='b0e4ed13-f2f1-4845-8772-24978539d
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/modules/experimentdata/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/dataacquisition/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -254,19 +280,19 @@ resp = client.load_model('experimentdata', id='b0e4ed13-f2f1-4845-8772-24978539d
 {: .no_toc}
 
 ```
-resp = client.save_model("experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d0bd", data={"description": "new text"})
+resp = client.save_model("dataacquisition", id="b0e4ed13-f2f1-4845-8772-24978539d0bd", data={"notes": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'experimentdata': {
+{'dataacquisition': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
-    'description': 'new text',
+    'notes': 'new text',
     'hardwaredevice': None,
     'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
-    'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
+    'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
     'type': 'Extracellular',
     'details': {
             'type': 'int16',
@@ -304,7 +330,7 @@ resp = client.save_model("experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/modules/experimentdata/<id\>/
+- **URL:** https://www.brainstem.org/api/private/modules/dataacquisition/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -313,5 +339,5 @@ resp = client.save_model("experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d
 {: .no_toc}
 
 ```
-resp = client.delete_model("experimentdata", id="b0e4ed13-f2f1-4845-8772-24978539d0bd")
+resp = client.delete_model("dataacquisition", id="b0e4ed13-f2f1-4845-8772-24978539d0bd")
 ``` 

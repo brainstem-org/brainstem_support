@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Dataset
+title: Session
 parent: STEM
 grand_parent: API
 nav_order: 3
 ---
 
-# Dataset API endpoint
+# Session API endpoint
 {: .no_toc}
 
 ## Table of contents
@@ -28,7 +28,7 @@ nav_order: 3
 | `datastorage` | list of related data storage IDs formatted as strings **[read-only]** |
 | `extra_fields` | list of JSON dictionaries. *See structure below* |
 | `download_links` | list of JSON dictionaries. *See structure below* |
-| `experimentdata` | list of related experiment data IDs formatted as strings **[read-only]** |
+| `dataacquisition` | list of related data acquisition IDs formatted as strings **[read-only]** |
 | `behaviors` | list of related behaviors IDs formatted as strings **[read-only]** |
 | `manipulations` | list of related manipulations IDs formatted as strings **[read-only]** |
 | `name_used_in_storage` | string [max length: 200]|
@@ -58,7 +58,7 @@ nav_order: 3
 ## List view
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/stem/dataset
+- **URL:** https://www.brainstem.org/api/private/stem/session
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -66,17 +66,17 @@ nav_order: 3
 {: .no_toc}
 
 ```
-resp = client.load_model('dataset')
+resp = client.load_model('session')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'datasets': [
+{'sessions': [
     {
         'id': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
-        'name': 'dataset1',
+        'name': 'session1',
         'description': '',
         'epochs': [],
         'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
@@ -84,7 +84,7 @@ resp = client.load_model('dataset')
         'datastorage': [],
         'extra_fields': [],
         'download_links': [],
-        'experimentdata': [],
+        'dataacquisition': [],
         'behaviors': [],
         'manipulations': ['20387176-5f3c-433a-8bf9-34a0f2c431f7'],
         'tags': [],
@@ -92,7 +92,7 @@ resp = client.load_model('dataset')
     },
     {
         'id': 'd8e72f9d-eb25-4280-a241-3317d5914055',
-        'name': 'dataset2',
+        'name': 'session2',
         'description': '',
         'epochs': [],
         'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
@@ -100,7 +100,7 @@ resp = client.load_model('dataset')
         'datastorage': [],
         'extra_fields': [],
         'download_links': [],
-        'experimentdata': ['1c77ae53-6f83-4398-bfe5-6eb95ff00610'],
+        'dataacquisition': ['1c77ae53-6f83-4398-bfe5-6eb95ff00610'],
         'behaviors': [],
         'manipulations': [],
         'tags': [],
@@ -113,7 +113,7 @@ resp = client.load_model('dataset')
 ## Add
 - **Allowed portals:** private, super
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/stem/dataset
+- **URL:** https://www.brainstem.org/api/private/stem/session
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -122,8 +122,8 @@ resp = client.load_model('dataset')
 {: .no_toc}
 
 ```
-resp = client.save_model("dataset",  data={
-	"name": "NewDataset", 
+resp = client.save_model("session",  data={
+	"name": "NewSession", 
 	"description": "some text",  
 	"projects": ["c4b8a90b-2963-4d13-aa07-b6f497252dde"]
 })
@@ -133,8 +133,8 @@ resp = client.save_model("dataset",  data={
 {: .no_toc}
 
 ```
-{'dataset': {'id': '13bdd793-86d4-428e-9708-167bbc26f6d2',
-    'name': 'NewDataset',
+{'session': {'id': '13bdd793-86d4-428e-9708-167bbc26f6d2',
+    'name': 'NewSession',
     'description': 'some text',
     'epochs': [],
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
@@ -142,7 +142,7 @@ resp = client.save_model("dataset",  data={
     'datastorage': [],
     'extra_fields': [],
     'download_links': [],
-    'experimentdata': [],
+    'dataacquisition': [],
     'behaviors': [],
     'manipulations': [],
     'tags': [],
@@ -154,7 +154,7 @@ resp = client.save_model("dataset",  data={
 ## Detail
 - **Allowed portals:** public, private, super
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/stem/dataset/<id\>/
+- **URL:** https://www.brainstem.org/api/private/stem/session/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -162,15 +162,15 @@ resp = client.save_model("dataset",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('dataset', id='13bdd793-86d4-428e-9708-167bbc26f6d2')
+resp = client.load_model('session', id='13bdd793-86d4-428e-9708-167bbc26f6d2')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'dataset': {'id': '13bdd793-86d4-428e-9708-167bbc26f6d2',
-    'name': 'NewDataset',
+{'session': {'id': '13bdd793-86d4-428e-9708-167bbc26f6d2',
+    'name': 'NewSession',
     'description': 'some text',
     'epochs': [],
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
@@ -184,7 +184,7 @@ resp = client.load_model('dataset', id='13bdd793-86d4-428e-9708-167bbc26f6d2')
         {"Repository": "DANDI", "URL": "https://dandiarchive.org/dandiset/123456?pos=1"}, 
         {"Repository": "GitHub", "URL": "https://github.com/my_user/my_code"}
     ],
-    'experimentdata': [],
+    'dataacquisition': [],
     'behaviors': [],
     'manipulations': [],
     'tags': [],
@@ -196,7 +196,7 @@ resp = client.load_model('dataset', id='13bdd793-86d4-428e-9708-167bbc26f6d2')
 ## Change
 - **Allowed portals:** private, super
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/stem/dataset/<id\>/
+- **URL:** https://www.brainstem.org/api/private/stem/session/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -205,15 +205,15 @@ resp = client.load_model('dataset', id='13bdd793-86d4-428e-9708-167bbc26f6d2')
 {: .no_toc}
 
 ```
-resp = client.save_model("dataset", id="13bdd793-86d4-428e-9708-167bbc26f6d2", data={"description": "new text"})
+resp = client.save_model("session", id="13bdd793-86d4-428e-9708-167bbc26f6d2", data={"description": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'dataset': {'id': '13bdd793-86d4-428e-9708-167bbc26f6d2',
-    'name': 'NewDataset',
+{'session': {'id': '13bdd793-86d4-428e-9708-167bbc26f6d2',
+    'name': 'NewSession',
     'description': 'new text',
     'epochs': [],
     'projects': ['c4b8a90b-2963-4d13-aa07-b6f497252dde'],
@@ -221,7 +221,7 @@ resp = client.save_model("dataset", id="13bdd793-86d4-428e-9708-167bbc26f6d2", d
     'datastorage': [],
     'extra_fields': [],
     'download_links': [],
-    'experimentdata': [],
+    'dataacquisition': [],
     'behaviors': [],
     'manipulations': [],
     'tags': [],
@@ -233,7 +233,7 @@ resp = client.save_model("dataset", id="13bdd793-86d4-428e-9708-167bbc26f6d2", d
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/stem/dataset/<id\>/
+- **URL:** https://www.brainstem.org/api/private/stem/session/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -242,5 +242,5 @@ resp = client.save_model("dataset", id="13bdd793-86d4-428e-9708-167bbc26f6d2", d
 {: .no_toc}
 
 ```
-resp = client.delete_model("dataset", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
+resp = client.delete_model("session", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
 ``` 

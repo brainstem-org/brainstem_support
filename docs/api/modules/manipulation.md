@@ -14,35 +14,44 @@ nav_order: 4
 
 1. TOC
 {:toc}
+
 ## Fields
 
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
-| `description` | string [max length: 500] |
+| `notes` | string [max length: 500] |
 | `procedures` | list of related procedure IDs formatted as a string **[required]** |
-| `dataset` | related dataset ID formatted as a string **[required]** |
+| `session` | related session ID formatted as a string **[required]** |
 | `hardwaredevice` | related hardware device ID formatted as a string |
 | `details` | JSON object. *See accepted schemas below* |
 
 
-These are the available `type` options for Manipulation:
-- `ElectromagneticFieldStimulation`
-- `ElectricalStimulation`
-- `LiquidPerturbation`
-- `Microperfusion`
-- `OptogeneticalStimulation`
-- `PharmacologicalInhalation`
-- `PharmacologicalInjection`
-- `PharmacologicalSuperfusion`
-- `SoundStimulation`
-- `ThermalPerturbation`
-- `TranscranialElectricalStimulation`
-- `UltraSoundStimulation`
+## Types of manipulation
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
+### Electrical and Magnetic Stimulation
+- `DeepBrainStimulation`: Deep brain stimulation (DBS)
+- `ElectricalStimulation`: Electrical stimulation
+- `ElectromagneticFieldStimulation`: Electromagnetic field stimulation
+- `TranscranialElectricalStimulation`: Transcranial Electrical Stimulation
+- `TranscranialMagneticStimulation`: Transcranial Magnetic Stimulation (TMS)
 
+### Optical, Thermal and Ultrasound Stimulation
+- `OptogeneticalStimulation`: Optogenetical stimulation
+- `ThermalPerturbation`: Thermal perturbation
+- `UltrasoundStimulation`: Ultrasound stimulation
+
+### Chemical and Pharmacological Perturbations
+- `LiquidPerturbation`: Liquid perturbation
+- `Microperfusion`: Micro perfusion
+- `PharmacologicalInjection`: Pharmacological injection
+- `PharmacologicalSuperfusion`: Pharmacological superfusion
+- `PharmacologicalInhalation`: Pharmacological inhalation
+
+### Odor and Sound Stimulation
+- `OdorStimulation`: Odor stimulation
+- `SoundStimulation`: Sound stimulation
 
 
 ## List view
@@ -67,10 +76,10 @@ resp = client.load_model('manipulation')
     {
         'id': '63a9caa1-620e-4ac5-8bf2-c2525a4b9e89',
         'type': 'ElectricalStimulation',
-        'description': None,
+        'notes': None,
         'procedures': ['43bd31cd-7122-42b8-b82e-b391fdfdad9e'],
         'hardwaredevice': None,
-        'dataset': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
+        'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
         'details': {
             'amplitude': '0',
             'duration': '0',
@@ -84,10 +93,10 @@ resp = client.load_model('manipulation')
     {
         'id': '1102d210-362e-4b8e-b434-8d3b60c7d535',
         'type': 'LiquidPerturbation',
-        'description': None,
+        'notes': None,
         'procedures': ['64b6ae70-d07f-4fbc-ac04-cdfcfe27936f'],
         'hardwaredevice': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
-        'dataset': 'ef7ae22f-143a-4a5e-adf6-1c623531dd63',
+        'session': 'ef7ae22f-143a-4a5e-adf6-1c623531dd63',
         'details': {
             'liquidAgent': '1',
             'concentration': 2,
@@ -115,10 +124,10 @@ resp = client.load_model('manipulation')
 ```
 resp = client.save_model("manipulation",  data={
     'type': 'LiquidPerturbation',
-    'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
+    'session': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
     'procedures': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
     'hardwaredevice': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
-    'description': 'some text',
+    'notes': 'some text',
     'details': {
             'liquidAgent': 'Water',
             'concentration': 7,
@@ -138,10 +147,10 @@ resp = client.save_model("manipulation",  data={
 {'manipulation': {
     'id': 'd05f56c6-9aea-4c38-a1cb-8680e015cad0',
     'type': 'LiquidPerturbation',
-    'description': 'some text',
+    'notes': 'some text',
     'procedures': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
     'hardwaredevice': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
-    'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
+    'session': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
     'details': {
         'liquidAgent': 'Water',
         'concentration': 7,
@@ -177,10 +186,10 @@ resp = client.load_model('manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad
 {'manipulation': {
     'id': 'd05f56c6-9aea-4c38-a1cb-8680e015cad0',
     'type': 'LiquidPerturbation',
-    'description': 'some text',
+    'notes': 'some text',
     'procedures': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
     'hardwaredevice': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
-    'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
+    'session': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
     'details': {
         'liquidAgent': 'Water',
         'concentration': 7,
@@ -206,7 +215,7 @@ resp = client.load_model('manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad
 {: .no_toc}
 
 ```
-resp = client.save_model("manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad0", data={"description": "new text"})
+resp = client.save_model("manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad0", data={"notes": "new text"})
 ```
 
 ### Response example
@@ -216,10 +225,10 @@ resp = client.save_model("manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad
 {'manipulation': {
     'id': 'd05f56c6-9aea-4c38-a1cb-8680e015cad0',
     'type': 'LiquidPerturbation',
-    'description': 'new text',
+    'notes': 'new text',
     'procedures': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
     'hardwaredevice': 'b2e44346-70e0-4c19-8d50-3b0f3a7021b0',
-    'dataset': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
+    'session': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
     'details': {
         'liquidAgent': 'Water',
         'concentration': 7,

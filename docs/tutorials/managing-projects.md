@@ -19,7 +19,7 @@ nav_order: 4
 BrainSTEM projects implement four distinct permission levels that can be assigned to both individual users and groups:
 
 1. **Members (Basic)**
-   - Read access to project-related subjects, datasets, and modules
+   - Read access to project-related subjects, sessions, and modules
    - Can view but not modify project content
    - Can leave the project voluntarily
 
@@ -41,7 +41,7 @@ BrainSTEM projects implement four distinct permission levels that can be assigne
    - Can add/remove managers
    - Full control over project settings
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
 ## Accessing Project Management
 

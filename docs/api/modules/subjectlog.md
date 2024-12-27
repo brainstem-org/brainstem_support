@@ -25,11 +25,25 @@ nav_order: 8
 | `subject` | related subject ID formatted as a string **[required]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
 
-These are the available `type` options for Subject Log:
-- `FoodConsumption`
-- `WaterConsumption`
-- `Weighing`
+## Types of subject logs
 
+### Diet and Consumption Logs
+- `FoodConsumption`: Food consumption log
+- `WaterConsumption`: Water consumption log
+
+### Deprivation Logs, [
+- `FoodDeprivation`: Food deprivation log
+- `WaterDeprivation`: Water deprivation log
+
+### Housing and Environment Logs
+- `Housing`: Housing log
+
+### Physical and Health Logs
+- `Weighing`: Weighing log
+- `Wellness`: Wellness log
+
+
+## Log entries
 
 Each entry in the `entries` list is a dictionary with the following fields:
 

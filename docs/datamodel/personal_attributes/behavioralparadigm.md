@@ -19,7 +19,7 @@ nav_order: 1
 
 Behavioral paradigms describe the paradigm a subject performs in details. The paradigm belongs to a type of environment.
 
-## Dataset fields
+## Session fields
 
 | Field                | Description |
 |:---------------------|:------------|
@@ -55,8 +55,8 @@ Behavioral paradigms describe the paradigm a subject performs in details. The pa
 
 You manage permissions through the management tab, where you can assign individual users and groups access levels to a Behavioral paradigm. Behavioral paradigm have four permission levels: membership (read access), contributors, managers, and owners.
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Dataset API access
+## Session API access
 
-The API allows for programmable access to Behavioral paradigms, enabling you to read, edit, and delete Behavioral paradigms through the API. Learn more about the datasets' fields and data structure on the [Dataset API page]({{"api/personal_attributes/behavioralparadigm/"|absolute_url}}). 
+The API allows for programmable access to Behavioral paradigms, enabling you to read, edit, and delete Behavioral paradigms through the API. Learn more about the sessions' fields and data structure on the [Session API page]({{"api/personal_attributes/behavioralparadigm/"|absolute_url}}). 

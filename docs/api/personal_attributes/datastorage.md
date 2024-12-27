@@ -61,7 +61,7 @@ resp = client.load_model('datastorage')
         'is_public': False,
         'data_organization_json': [
                 {
-                    "elements": "Datasets"
+                    "elements": "Sessions"
                 },
                 {
                     "elements": "Subjects"
@@ -101,7 +101,7 @@ resp = client.save_model("datastorage",  data=
         'name': "MyNewRepo",
         'data_organization_json': [
                 {
-                    "elements": "Datasets"
+                    "elements": "Sessions"
                 },
                 {
                     "elements": "Subjects"
@@ -134,7 +134,7 @@ resp = client.save_model("datastorage",  data=
     'is_public': False,
     'data_organization_json': [
                 {
-                    "elements": "Datasets"
+                    "elements": "Sessions"
                 },
                 {
                     "elements": "Subjects"
@@ -182,7 +182,7 @@ resp = client.load_model('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2
     'is_public': False,
     'data_organization_json': [
                 {
-                    "elements": "Datasets"
+                    "elements": "Sessions"
                 },
                 {
                     "elements": "Subjects"
@@ -230,7 +230,7 @@ resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2
     'is_public': False,
     'data_organization_json': [
                 {
-                    "elements": "Datasets"
+                    "elements": "Sessions"
                 },
                 {
                     "elements": "Subjects"

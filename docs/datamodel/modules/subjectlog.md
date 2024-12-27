@@ -17,45 +17,47 @@ nav_order: 8
 
 ## Introduction
 
-Subject logs refer to records that track various aspects of the subjects' living conditions, physiological states, and behaviors over time. These logs are essential for ensuring the welfare of subjects, maintaining consistent experimental conditions, and accurately interpreting the effects of interventions.
+Subject logs refers to records that track various aspects of the subjects' living conditions, physiological states, and behaviors over time. These logs are essential for ensuring the welfare of subjects, maintaining consistent experimental conditions, and accurately interpreting the effects of interventions.
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
-| `Type` | Type of subject log (**required**). Selected from predefined types. Example: "Weighing log", "Water consumption log". *See options below* |
-| `Subject` | The subject associated with the log (**required**). Must reference an existing [subject]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
-| `Description` | Description of the subject log (string). Example: "Daily weight monitoring during water restriction" |
-| `Notes` | Notes about the subject log (for each log entry). Example: "Subject appears healthy and active" |
-| `Date and time` | Timestamp for each log entry (for simple timestamp logs). Example: "2024-03-15 09:00:00" |
-| `Type details` | Type-specific fields for each log entry. Fields vary by log type. Example: For weighing log - weight in grams. *See options below* |
+| `Type` | Type of subject logs (**required**). Selected from predefined types. Example: "Food consumption log", "Housing log". *See options below* |
+| `Subject` | The subject of the log (**required**). Must reference a [subject]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Silicon probe implant #A123" |
+| `Description` | Description of the subject logs. Can be left empty (string). Example: "Daily food consumption" |
+| `Date and time` | Timestamp for each log-entry. There are two types of subject logs with either simple timestamps or time period defined by a start and an end timestamps. Example: "2024-03-15 14:30:00" |
+| `Start and end time` | Start and stop timestamp of each log-entry. Example: "2024-03-15 14:30:00" |
+| `Type details` | Type-specific fields for each entry in the log. Fields vary by type. Example: For impedance log - impedance values in kOhm. *See options below* |
+| `Notes` | Notes about the subject logs for each entry in the log (string). Example: "Observed slight increase in impedance values" |
 
 ## Types of subject logs
 
 These are the available *Type* options for Subject logs:
 
-- Food consumption log
-- Food deprivation log
-- Housing log
-- Water consumption log
-- Water deprivation log
-- Weighing log
-- Wellness log
+- `Food consumption log`: Records the amount and type of food consumed by the subject. This information is crucial for studies examining the effects of diet on health, behavior, or disease progression.
+- `Food deprivation log`: Documents periods when food is withheld from the subject. Food deprivation can be used as a motivational tool in behavioral experiments or to study the physiological and psychological effects of fasting.
+- `Housing log`: Keeps track of the subject's living conditions, including the cage type, housing, location, light cycle, and any environmental enrichment. This log helps ensure that housing conditions remain consistent and meet ethical standards.
+- `Water consumption log`: Details the amount of water consumed by the subject. Monitoring water intake is essential for studies related to hydration, kidney function, or the effects of various substances on thirst and water balance.
+- `Water deprivation log`: Notes periods during which water is withheld from the subject. Similar to food deprivation, water deprivation can be used to study the effects of hydration status on various physiological and behavioral outcomes.
+- `Weighing log`: Records the subject's body weight over time. Regular weighing is critical for monitoring health, growth, and the effects of experimental treatments on body mass.
+- `Wellness log`: Documents observations related to the subject's general health and well-being, including behavior, physical appearance, signs of distress, or illness. This log is essential for ensuring the ethical treatment of research subjects and for interpreting the effects of experimental manipulations on overall health.
 
-A detailed list of the type-specific fields can be found on the [subject log types page]({{"datamodel/schemas/subject_logs/"|absolute_url}}).
+A detailed list of the type-specific fields can be found on the [subject logs types page]({{"datamodel/schemas/subjectlog/"|absolute_url}}).
+
 
 ## Submission form
 
-The subject log submission form consists of two parts:
-1. First part: Fill in the required fields, including the subject and the type of log.
-2. Second part: After clicking "Create and continue," you can edit all fields of the log entry.
+The subject logs submission form consists of two parts:
+1. First part: Fill in the required fields.
+2. Second part: After clicking "Create and continue," you can edit all fields of the entry.
 
 ## Permissions
 
-Subject logs inherit permissions from projects via the subject associated with the entry.
+Subject logs inherit permissions from projects via the subject and then the subject associated with the entry.
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
 ## Subject log API access
 
-The API allows for programmable access to Subject logs, enabling you to read, edit, and delete subject logs through the API. Learn more about the subject logs' fields and data structure on the [Subject log API page]({{"api/modules/subjectlog/"|absolute_url}}).
+The API allows for programmable access to Subject logs, enabling you to read, edit, and delete subject logss through the API. Learn more about the subject logs' fields and data structure on the [Subject logs API page]({{"api/modules/subjectlog/"|absolute_url}}).

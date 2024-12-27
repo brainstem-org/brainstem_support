@@ -25,7 +25,7 @@ A collaborative electronic lab notebook for FAIR experimental neuroscience.
 ## Introduction
 {: .no_toc}
 
-BrainSTEM (Brain STructured Experimental Metadata) is designed as an electronic notebook to capture a range of electrophysiological-, imaging-, and behavioral data. It is built on a modular, standardized data model that is extendable to capture future types of data as well. Granular permissions enables collaborations within and across labs, and one-click public sharing of datasets. It has a customizable web interface that allows for the organization of experiments and raw data. BrainSTEM also has an API, for programmable access, with toolsets being built for Matlab and Python.
+BrainSTEM (Brain STructured Experimental Metadata) is designed as an electronic notebook to capture a range of electrophysiological-, imaging-, and behavioral data. It is built on a modular, standardized data model that is extendable to capture future types of data as well. Granular permissions enables collaborations within and across labs, and one-click public sharing of sessions. It has a customizable web interface that allows for the organization of experiments and raw data. BrainSTEM also has an API, for programmable access, with toolsets being built for Matlab and Python.
 
 BrainSTEM is in a pilot stage, so feel free to create an account and start using it, and reach out if you are interested in helping advancing and shaping it. Report bug through the issue system on this GitHub repository and use the GitHub discussion forum to suggest new features.
 
@@ -37,8 +37,8 @@ If you are new to BrainSTEM, we provide comprehensive tutorials to help you begi
 
 Through our platform, you can share data publicly, submit resources and taxonomies, manage projects and groups, and utilize our API tools for programmatic access. Check out our tutorials for detailed guidance on all these features.
 
-[Start here]({{ "/tutorials/get_started/"|absolute_url}}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2}
-[View all tutorials]({{ "/tutorials/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[Get started tutorial]({{ "/tutorials/get_started/"|absolute_url}}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2}
+[All tutorials]({{ "/tutorials/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
 
 ## We are looking for pilot groups
 

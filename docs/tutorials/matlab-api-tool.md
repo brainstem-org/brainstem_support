@@ -17,42 +17,42 @@ get_token
 
 The token is saved to a mat file (`brainstem_authentication.mat`) in the Matlab API tool folder.
 
-### 1. Loading datasets
+### 1. Loading sessions
 
 `load_model` can be used to load any model: We just need to set the name of the model.
 
 ```m
-output1 = load_model('model','dataset');
+output1 = load_model('model','session');
 ```
 
-We can fetch a single dataset entry from the loaded models.
+We can fetch a single session entry from the loaded models.
 
 ```m
-dataset = output1.datasets(1);
+session = output1.sessions(1);
 ```
 
-We can also filter the models by providing cell array with paired filters In this example, it will just load datasets whose name is "yeah".
+We can also filter the models by providing cell array with paired filters In this example, it will just load sessions whose name is "yeah".
 
 ```m
-output1_1 = load_model('model','dataset','filter',{'name','yeah'});
+output1_1 = load_model('model','session','filter',{'name','yeah'});
 ```
 
-Loaded models can be sorted by different criteria applying to their fields. In this example, datasets will be sorted in descending ording according to their name.
+Loaded models can be sorted by different criteria applying to their fields. In this example, sessions will be sorted in descending ording according to their name.
 
 ```m
-output1_2 = load_model('model','dataset','sort',{'-name'});
+output1_2 = load_model('model','session','sort',{'-name'});
 ```
 
-In some cases models contain relations with other models, and they can be also loaded with the models if requested. In this example, all the projects, experiment data, behaviors and  manipulations related to each dataset will be included.
+In some cases models contain relations with other models, and they can be also loaded with the models if requested. In this example, all the projects, data acquisition, behaviors and  manipulations related to each session will be included.
 
 ```m
-output1_3 = load_model('model','dataset','include',{'projects','experimentdata','behaviors','manipulations'});
+output1_3 = load_model('model','session','include',{'projects','dataacquisition','behaviors','manipulations'});
 ```
 
-The list of related experiment data can be retrieved from the returned dictionary.
+The list of related data acquisition can be retrieved from the returned dictionary.
 
 ```m
-experimentdata = output1_3.experimentdata;
+dataacquisition = output1_3.dataacquisition;
 ```
 
 Get all subjects with related procedures and subject state changes
@@ -61,43 +61,43 @@ Get all subjects with related procedures and subject state changes
 output1_4 = load_model('model','subject','include',{'procedures'});
 ```
 
-Get all projects with related subjects and datasets
+Get all projects with related subjects and sessions
 
 ```m
-output1_5 = load_model('model','project','include',{'datasets','subjects'});
+output1_5 = load_model('model','project','include',{'sessions','subjects'});
 ```
 
-All these options can be combined to suit the requirements of the users. For example, we can get only the dataset that contain the word "Rat" in their name, sorted in descending order by their name and including the related projects.
+All these options can be combined to suit the requirements of the users. For example, we can get only the session that contain the word "Rat" in their name, sorted in descending order by their name and including the related projects.
 
 ```m
-output1_6 = load_model('model','dataset', 'filter',{'name.icontains', 'Rat'}, 'sort',{'-name'}, 'include',{'projects'});
+output1_6 = load_model('model','session', 'filter',{'name.icontains', 'Rat'}, 'sort',{'-name'}, 'include',{'projects'});
 ```
 
-### 2. Updating a dataset
+### 2. Updating a session
 
-We can make changes to a model and update it in the database. In this case, we change the description of one of the previously loaded datasets.
+We can make changes to a model and update it in the database. In this case, we change the description of one of the previously loaded sessions.
 
 ```m
-dataset = output1.datasets(1);
-dataset.description = 'new description';
-output2 = save_model('data',dataset,'model','dataset');
+session = output1.sessions(1);
+session.description = 'new description';
+output2 = save_model('data',session,'model','session');
 ```
 
-### 3. Creating a new dataset
+### 3. Creating a new session
 
 We can submit a new entry by defining a struct with the required fields.
 
 ```m
-dataset = {};
-dataset.name = 'New dataset85';
-dataset.description = 'new dataset description';
-dataset.projects = {'0c894095-2d16-4bde-ad50-c33b7680417d'};
+session = {};
+session.name = 'New session85';
+session.description = 'new session description';
+session.projects = {'0c894095-2d16-4bde-ad50-c33b7680417d'};
 ```
 
-Submitting dataset
+Submitting session
 
 ```m
-output3 = save_model('data',dataset,'model','dataset');
+output3 = save_model('data',session,'model','session');
 ```
 
 ### 4. Load public projects

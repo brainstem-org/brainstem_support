@@ -17,9 +17,9 @@ nav_order: 2
 
 ## Introduction 
 
-Data storages describe the storage solution for datasets. A data storage can be accessible with multiple protocols. You must also defined how data is organized in the Data storage.
+Data storages describe the storage solution for sessions. A data storage can be accessible with multiple protocols. You must also defined how data is organized in the Data storage.
 
-## Dataset fields
+## Session fields
 
 | Field                | Description |
 |:---------------------|:------------|
@@ -33,8 +33,8 @@ Data storages describe the storage solution for datasets. A data storage can be 
 
 You manage permissions through the management tab, where you can assign individual users and groups access levels to a data storage. Data storage have four permission levels: membership (read access), contributors, managers, and owners.
 
-Visit the [permissions page]({{"datamodel/permission/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Dataset API access
+## Session API access
 
-The API allows for programmable access to Data storage, enabling you to read, edit, and delete data storage through the API. Learn more about the datasets' fields and data structure on the [Dataset API page]({{"api/personal_attributes/datastorage/"|absolute_url}}). 
+The API allows for programmable access to Data storage, enabling you to read, edit, and delete data storage through the API. Learn more about the sessions' fields and data structure on the [Session API page]({{"api/personal_attributes/datastorage/"|absolute_url}}). 
