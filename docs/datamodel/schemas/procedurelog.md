@@ -33,7 +33,7 @@ A linear displacement log tracks the movement or position of an object or device
 
 | Field | Description |
 |:------|:------------|
-| `Displacement` | The distance moved from a reference position (**required**; floating-point number; measured in μm). Records the linear movement of the device, typically representing depth in brain tissue or position along a track |
+| `Displacement` | The distance moved from a reference position (**required**; float; measured in μm). Records the linear movement of the device, typically representing depth in brain tissue or position along a track |
 
 ## Tetrode log (4 tetrodes)
 
@@ -41,10 +41,10 @@ This log keeps records related to the use and performance of a set of four tetro
 
 | Field | Description |
 |:------|:------------|
-| `Tetrode #1` | Position measurement for the first tetrode (floating-point number; measured in μm) |
-| `Tetrode #2` | Position measurement for the second tetrode (floating-point number; measured in μm) |
-| `Tetrode #3` | Position measurement for the third tetrode (floating-point number; measured in μm) |
-| `Tetrode #4` | Position measurement for the fourth tetrode (floating-point number; measured in μm) |
+| `Tetrode #1` | Position measurement for the first tetrode (float; measured in μm) |
+| `Tetrode #2` | Position measurement for the second tetrode (float; measured in μm) |
+| `Tetrode #3` | Position measurement for the third tetrode (float; measured in μm) |
+| `Tetrode #4` | Position measurement for the fourth tetrode (float; measured in μm) |
 
 ## Tetrode log (8 tetrodes)
 
@@ -52,14 +52,14 @@ Similar to the log for four tetrodes, this log pertains to experiments involving
 
 | Field | Description |
 |:------|:------------|
-| `Tetrode #1` | Position measurement for the first tetrode (floating-point number; measured in μm) |
-| `Tetrode #2` | Position measurement for the second tetrode (floating-point number; measured in μm) |
-| `Tetrode #3` | Position measurement for the third tetrode (floating-point number; measured in μm) |
-| `Tetrode #4` | Position measurement for the fourth tetrode (floating-point number; measured in μm) |
-| `Tetrode #5` | Position measurement for the fifth tetrode (floating-point number; measured in μm) |
-| `Tetrode #6` | Position measurement for the sixth tetrode (floating-point number; measured in μm) |
-| `Tetrode #7` | Position measurement for the seventh tetrode (floating-point number; measured in μm) |
-| `Tetrode #8` | Position measurement for the eighth tetrode (floating-point number; measured in μm) |
+| `Tetrode #1` | Position measurement for the first tetrode (float; measured in μm) |
+| `Tetrode #2` | Position measurement for the second tetrode (float; measured in μm) |
+| `Tetrode #3` | Position measurement for the third tetrode (float; measured in μm) |
+| `Tetrode #4` | Position measurement for the fourth tetrode (float; measured in μm) |
+| `Tetrode #5` | Position measurement for the fifth tetrode (float; measured in μm) |
+| `Tetrode #6` | Position measurement for the sixth tetrode (float; measured in μm) |
+| `Tetrode #7` | Position measurement for the seventh tetrode (float; measured in μm) |
+| `Tetrode #8` | Position measurement for the eighth tetrode (float; measured in μm) |
 
 ## Procedure log API access
 

@@ -30,7 +30,7 @@ Audio data acquisition captures sound recordings related to the experiment. Used
 | `Bit depth` | Number of bits per audio sample (non-negative integer; default: 8 bits). Determines dynamic range and noise level of audio |
 | `Codec` | Audio codec used for encoding (string). Affects compatibility and audio quality |
 | `Number of channels` | Number of separate audio channels (non-negative integer ≥ 1; default: 2). Represents audio configuration (e.g., mono, stereo) |
-| `Sampling rate (Hz)` | Frequency of audio sampling (floating-point number; measured in Hz). Determines temporal resolution of recording |
+| `Sampling rate (Hz)` | Frequency of audio sampling (float; measured in Hz). Determines temporal resolution of recording |
 | `Number of samples` | Total count of audio samples (non-negative integer). Used with sampling rate to determine duration |
 
 ### Behavioral Tracking
@@ -41,7 +41,7 @@ Behavioral tracking data records the movement and procedures of subjects during 
 |:------|:------------|
 | `Format` | Digital video/data format (string). Determines compatibility and features |
 | `Compression` | Type of data compression used (string). Affects file size and quality |
-| `Frame rate (Hz)` | Rate of behavioral data capture (floating-point number; measured in Hz). Affects smoothness and accuracy of motion analysis |
+| `Frame rate (Hz)` | Rate of behavioral data capture (float; measured in Hz). Affects smoothness and accuracy of motion analysis |
 | `Number of frames` | Total captured frames (non-negative integer). Determines recording duration |
 | `Vertical resolution` | Number of vertical pixels (non-negative integer). Affects vertical detail in tracking video |
 | `Horizontal resolution` | Number of horizontal pixels (non-negative integer). Affects horizontal detail in tracking video |
@@ -57,9 +57,9 @@ EEG data records electrical activity of the brain. The biosignals detected by EE
 | `Format` | Digital file format (string; e.g., EDF, BDF). Affects compatibility with analysis software |
 | `Data-type` | Format of stored data (string; default: 'int16'). Affects precision and size |
 | `Number of channels` | Count of EEG recording channels (non-negative integer). Determines spatial coverage |
-| `Sampling rate (Hz)` | Sample frequency (floating-point number; default: 20000 Hz). Critical for temporal resolution |
+| `Sampling rate (Hz)` | Sample frequency (float; default: 20000 Hz). Critical for temporal resolution |
 | `Number of samples` | Total data points per channel (non-negative integer). Defines recording duration |
-| `Least significant bit (μV/bit)` | Smallest detectable voltage change (floating-point number; measured in μV/bit). Affects amplitude resolution |
+| `Least significant bit (μV/bit)` | Smallest detectable voltage change (float; measured in μV/bit). Affects amplitude resolution |
 | `Electrode groups` | Groups of electrodes (array of objects with channels list and label). Organizes recording setup |
 | `Channel tags` | Channel metadata (array of objects with tag name, channels, and groups). Enhanced data organization |
 
@@ -72,9 +72,9 @@ ENG data records electrical activity from peripheral nerves. An electroneurogram
 | `Format` | Digital file format (string). Determines data organization and software compatibility |
 | `Data-type` | Format of stored data (string; default: 'int16'). Affects precision and storage requirements |
 | `Number of channels` | Count of recording channels (non-negative integer). Determines coverage of neural tissue |
-| `Sampling rate (Hz)` | Sample frequency (floating-point number; default: 20000 Hz). Essential for capturing rapid neural signals |
+| `Sampling rate (Hz)` | Sample frequency (float; default: 20000 Hz). Essential for capturing rapid neural signals |
 | `Number of samples` | Total data points per channel (non-negative integer). Determines recording duration |
-| `Least significant bit (μV/bit)` | Smallest detectable voltage change (floating-point number; measured in μV/bit). Critical for signal resolution |
+| `Least significant bit (μV/bit)` | Smallest detectable voltage change (float; measured in μV/bit). Critical for signal resolution |
 | `Electrode groups` | Groups of electrodes (array of objects with channels list and label). Organizes recording configuration |
 | `Channel tags` | Channel metadata (array of objects with tag name, channels, and groups). Enhances data organization |
 
@@ -87,9 +87,9 @@ Extracellular electrophysiology data records electrical activity from outside ce
 | `Format` | Digital file format (string; e.g., Binary, HDF5). Affects data organization and compatibility |
 | `Data-type` | Format of stored data (string; default: 'int16'). Affects precision and storage requirements |
 | `Number of channels` | Count of recording channels (non-negative integer). Determines spatial sampling of neural tissue |
-| `Sampling rate (Hz)` | Sample frequency (floating-point number; default: 20000 Hz). Critical for capturing neural spike timing |
+| `Sampling rate (Hz)` | Sample frequency (float; default: 20000 Hz). Critical for capturing neural spike timing |
 | `Number of samples` | Total data points per channel (non-negative integer). Defines total recording duration |
-| `Least significant bit (μV/bit)` | Smallest detectable voltage change (floating-point number; measured in μV/bit). Influences signal resolution |
+| `Least significant bit (μV/bit)` | Smallest detectable voltage change (float; measured in μV/bit). Influences signal resolution |
 | `Electrode groups` | Groups of electrodes (array of objects with channels list and label). Organizes recording setup |
 | `Channel tags` | Channel metadata (array of objects). Includes tag name, channels, and group information |
 
@@ -101,10 +101,10 @@ Intracellular electrophysiology data records electrical activity from inside cel
 |:------|:------------|
 | `Format` | Digital file format (string; e.g., ABF, DAT). Determines data organization and compatibility |
 | `Data-type` | Format of stored data (string; default: 'int16'). Determines precision and file size |
-| `Sampling rate (Hz)` | Sample frequency (floating-point number). Essential for capturing membrane potential changes |
+| `Sampling rate (Hz)` | Sample frequency (float). Essential for capturing membrane potential changes |
 | `Number of channels` | Count of recording channels (non-negative integer). Typically fewer than extracellular |
 | `Number of samples` | Total data points per channel (non-negative integer). Determines recording length |
-| `Least significant bit (μV/bit)` | Smallest detectable voltage change (floating-point number; measured in μV/bit). Critical for signal resolution |
+| `Least significant bit (μV/bit)` | Smallest detectable voltage change (float; measured in μV/bit). Critical for signal resolution |
 
 ## Optical Imaging
 
@@ -116,10 +116,10 @@ Fiber photometry data records fluorescence signals from specific neural populati
 |:------|:------------|
 | `Format` | Digital format (string; e.g., CSV). Determines data organization and compatibility |
 | `Compression` | Data compression type (string). Affects file size and processing speed |
-| `Frame rate (Hz)` | Signal sampling frequency (floating-point number; measured in Hz). Critical for temporal resolution |
+| `Frame rate (Hz)` | Signal sampling frequency (float; measured in Hz). Critical for temporal resolution |
 | `Number of frames` | Total recorded frames (non-negative integer). Determines recording duration |
-| `Laser power (mW)` | Excitation laser strength (floating-point number; measured in mW). Affects signal strength |
-| `Excitation wavelength (nm)` | Excitation light wavelength (floating-point number; measured in nm). Matches fluorophore properties |
+| `Laser power (mW)` | Excitation laser strength (float; measured in mW). Affects signal strength |
+| `Excitation wavelength (nm)` | Excitation light wavelength (float; measured in nm). Matches fluorophore properties |
 
 ### Miniscope Microscopy
 
@@ -129,12 +129,12 @@ Miniscope microscopy data captures neural activity in freely behaving animals us
 |:------|:------------|
 | `Format` | Digital format (string; e.g., AVI). Determines compatibility and features |
 | `Compression` | Video compression type (string). Affects file size and quality |
-| `Frame rate (Hz)` | Image capture frequency (floating-point number; measured in Hz). Critical for neural dynamics |
+| `Frame rate (Hz)` | Image capture frequency (float; measured in Hz). Critical for neural dynamics |
 | `Number of frames` | Total recorded frames (non-negative integer). Defines recording duration |
 | `Vertical resolution` | Pixels in vertical dimension (non-negative integer). Affects image detail |
 | `Horizontal resolution` | Pixels in horizontal dimension (non-negative integer). Determines image clarity |
-| `Laser power (mW)` | LED/laser illumination power (floating-point number; measured in mW). Affects image brightness |
-| `Imaging depth (μm)` | Maximum imaging depth (floating-point number; measured in μm). Important for targeting |
+| `Laser power (mW)` | LED/laser illumination power (float; measured in mW). Affects image brightness |
+| `Imaging depth (μm)` | Maximum imaging depth (float; measured in μm). Important for targeting |
 
 ### Confocal Microscopy
 
@@ -146,14 +146,14 @@ Confocal microscopy data captures high-resolution optical sections of samples. M
 | `Compression` | Data compression method (string). Affects file size and quality |
 | `Vertical resolution` | Number of pixels in vertical dimension (non-negative integer). Affects image clarity |
 | `Horizontal resolution` | Number of pixels in horizontal dimension (non-negative integer). Determines image sharpness |
-| `Frame rate (Hz)` | Image capture frequency (floating-point number; measured in Hz). Important for time-lapse imaging |
+| `Frame rate (Hz)` | Image capture frequency (float; measured in Hz). Important for time-lapse imaging |
 | `Number of frames` | Total captured frames (non-negative integer). Defines recording duration |
-| `Laser power (mW)` | Laser illumination strength (floating-point number; measured in mW). Affects image quality |
-| `Excitation wavelength (nm)` | Wavelength of excitation light (floating-point number; measured in nm). Critical for fluorophore excitation |
-| `Imaging depth (μm)` | Maximum imaging depth (floating-point number; measured in μm). Important for thick specimens |
-| `Voxel size (X dimension)` | X-axis voxel size (floating-point number; measured in μm). Affects spatial resolution |
-| `Voxel size (Y dimension)` | Y-axis voxel size (floating-point number; measured in μm). Impacts structural detail |
-| `Voxel size (Z dimension)` | Z-axis voxel size (floating-point number; measured in μm). Critical for 3D reconstruction |
+| `Laser power (mW)` | Laser illumination strength (float; measured in mW). Affects image quality |
+| `Excitation wavelength (nm)` | Wavelength of excitation light (float; measured in nm). Critical for fluorophore excitation |
+| `Imaging depth (μm)` | Maximum imaging depth (float; measured in μm). Important for thick specimens |
+| `Voxel size (X dimension)` | X-axis voxel size (float; measured in μm). Affects spatial resolution |
+| `Voxel size (Y dimension)` | Y-axis voxel size (float; measured in μm). Impacts structural detail |
+| `Voxel size (Z dimension)` | Z-axis voxel size (float; measured in μm). Critical for 3D reconstruction |
 
 ### Light Field Microscopy (LFM)
 
@@ -165,14 +165,14 @@ LFM data captures 3D information in a single shot using an array of microlenses.
 | `Compression` | Data compression method (string). Impacts file size and quality |
 | `Vertical resolution` | Number of pixels in vertical dimension (non-negative integer). Affects image detail |
 | `Horizontal resolution` | Number of pixels in horizontal dimension (non-negative integer). Impacts image clarity |
-| `Frame rate (Hz)` | Image capture frequency (floating-point number; measured in Hz). Critical for dynamic studies |
+| `Frame rate (Hz)` | Image capture frequency (float; measured in Hz). Critical for dynamic studies |
 | `Number of frames` | Total captured frames (non-negative integer). Determines acquisition duration |
-| `Laser power (mW)` | Laser illumination power (floating-point number; measured in mW). Affects penetration depth |
-| `Excitation wavelength (nm)` | Excitation light wavelength (floating-point number; measured in nm). Optimized for sample properties |
-| `Imaging depth (μm)` | Maximum imaging depth (floating-point number; measured in μm). Important for thick specimens |
-| `Voxel size (X dimension)` | X-axis voxel size (floating-point number; measured in μm). Determines spatial resolution |
-| `Voxel size (Y dimension)` | Y-axis voxel size (floating-point number; measured in μm). Affects structural detail |
-| `Voxel size (Z dimension)` | Z-axis voxel size (floating-point number; measured in μm). Critical for 3D reconstruction |
+| `Laser power (mW)` | Laser illumination power (float; measured in mW). Affects penetration depth |
+| `Excitation wavelength (nm)` | Excitation light wavelength (float; measured in nm). Optimized for sample properties |
+| `Imaging depth (μm)` | Maximum imaging depth (float; measured in μm). Important for thick specimens |
+| `Voxel size (X dimension)` | X-axis voxel size (float; measured in μm). Determines spatial resolution |
+| `Voxel size (Y dimension)` | Y-axis voxel size (float; measured in μm). Affects structural detail |
+| `Voxel size (Z dimension)` | Z-axis voxel size (float; measured in μm). Critical for 3D reconstruction |
 
 
 ### Single-Photon Microscopy
@@ -185,14 +185,14 @@ Single-photon microscopy data captures fluorescence images using single-photon e
 | `Compression` | Data compression method (string). Impacts file size and quality |
 | `Vertical resolution` | Number of pixels vertically (non-negative integer). Affects image detail |
 | `Horizontal resolution` | Number of pixels horizontally (non-negative integer). Impacts image clarity |
-| `Frame rate (Hz)` | Image capture frequency (floating-point number; measured in Hz). Important for time-lapse |
+| `Frame rate (Hz)` | Image capture frequency (float; measured in Hz). Important for time-lapse |
 | `Number of frames` | Total captured frames (non-negative integer). Determines recording length |
-| `Laser power (mW)` | Excitation laser strength (floating-point number; measured in mW). Critical for signal |
-| `Excitation wavelength (nm)` | Excitation light wavelength (floating-point number; measured in nm). Matches fluorophores |
-| `Imaging depth (μm)` | Maximum imaging depth (floating-point number; measured in μm). Limited by scattering |
-| `Voxel size (X dimension)` | X-axis voxel size (floating-point number; measured in μm). Affects resolution |
-| `Voxel size (Y dimension)` | Y-axis voxel size (floating-point number; measured in μm). Determines detail |
-| `Voxel size (Z dimension)` | Z-axis voxel size (floating-point number; measured in μm). Important for 3D |
+| `Laser power (mW)` | Excitation laser strength (float; measured in mW). Critical for signal |
+| `Excitation wavelength (nm)` | Excitation light wavelength (float; measured in nm). Matches fluorophores |
+| `Imaging depth (μm)` | Maximum imaging depth (float; measured in μm). Limited by scattering |
+| `Voxel size (X dimension)` | X-axis voxel size (float; measured in μm). Affects resolution |
+| `Voxel size (Y dimension)` | Y-axis voxel size (float; measured in μm). Determines detail |
+| `Voxel size (Z dimension)` | Z-axis voxel size (float; measured in μm). Important for 3D |
 
 ### Two-Photon Microscopy
 
@@ -204,14 +204,14 @@ Two-photon microscopy data captures high-resolution images of living tissue usin
 | `Compression` | Data compression type (string). Affects storage efficiency |
 | `Vertical resolution` | Number of pixels vertically (non-negative integer). Affects image clarity |
 | `Horizontal resolution` | Number of pixels horizontally (non-negative integer). Determines detail |
-| `Frame rate (Hz)` | Image capture frequency (floating-point number; measured in Hz). For dynamic imaging |
+| `Frame rate (Hz)` | Image capture frequency (float; measured in Hz). For dynamic imaging |
 | `Number of frames` | Total captured frames (non-negative integer). Recording duration |
-| `Laser power (mW)` | Two-photon laser power (floating-point number; measured in mW). Critical for excitation |
-| `Excitation wavelength (nm)` | Excitation wavelength (floating-point number; measured in nm). Typically infrared |
-| `Imaging depth (μm)` | Maximum imaging depth (floating-point number; measured in μm). Superior to single-photon |
-| `Voxel size (X dimension)` | X-axis voxel size (floating-point number; measured in μm). Spatial resolution |
-| `Voxel size (Y dimension)` | Y-axis voxel size (floating-point number; measured in μm). Detail level |
-| `Voxel size (Z dimension)` | Z-axis voxel size (floating-point number; measured in μm). Depth resolution |
+| `Laser power (mW)` | Two-photon laser power (float; measured in mW). Critical for excitation |
+| `Excitation wavelength (nm)` | Excitation wavelength (float; measured in nm). Typically infrared |
+| `Imaging depth (μm)` | Maximum imaging depth (float; measured in μm). Superior to single-photon |
+| `Voxel size (X dimension)` | X-axis voxel size (float; measured in μm). Spatial resolution |
+| `Voxel size (Y dimension)` | Y-axis voxel size (float; measured in μm). Detail level |
+| `Voxel size (Z dimension)` | Z-axis voxel size (float; measured in μm). Depth resolution |
 
 ### Three-Photon Microscopy
 
@@ -223,14 +223,14 @@ Three-photon microscopy data captures high-resolution images of living tissue us
 | `Compression` | Data compression type (string). Affects storage efficiency |
 | `Vertical resolution` | Number of pixels vertically (non-negative integer). Affects image detail |
 | `Horizontal resolution` | Number of pixels horizontally (non-negative integer). Determines clarity |
-| `Frame rate (Hz)` | Image capture frequency (floating-point number; measured in Hz). For dynamic studies |
+| `Frame rate (Hz)` | Image capture frequency (float; measured in Hz). For dynamic studies |
 | `Number of frames` | Total captured frames (non-negative integer). Defines recording duration |
-| `Laser power (mW)` | Three-photon laser power (floating-point number; measured in mW). Critical for deep imaging |
-| `Excitation wavelength (nm)` | Excitation wavelength (floating-point number; measured in nm). Typically far infrared |
-| `Imaging depth (μm)` | Maximum imaging depth (floating-point number; measured in μm). Superior penetration |
-| `Voxel size (X dimension)` | X-axis voxel size (floating-point number; measured in μm). Spatial resolution |
-| `Voxel size (Y dimension)` | Y-axis voxel size (floating-point number; measured in μm). Detail level |
-| `Voxel size (Z dimension)` | Z-axis voxel size (floating-point number; measured in μm). Depth resolution |
+| `Laser power (mW)` | Three-photon laser power (float; measured in mW). Critical for deep imaging |
+| `Excitation wavelength (nm)` | Excitation wavelength (float; measured in nm). Typically far infrared |
+| `Imaging depth (μm)` | Maximum imaging depth (float; measured in μm). Superior penetration |
+| `Voxel size (X dimension)` | X-axis voxel size (float; measured in μm). Spatial resolution |
+| `Voxel size (Y dimension)` | Y-axis voxel size (float; measured in μm). Detail level |
+| `Voxel size (Z dimension)` | Z-axis voxel size (float; measured in μm). Depth resolution |
 
 ## Magnetic and Functional Imaging
 
@@ -242,7 +242,7 @@ MRI data provides detailed anatomical images of the brain and body. MRI scanners
 |:------|:------------|
 | `Format` | Digital format (string; e.g., DICOM). Data organization |
 | `Compression` | Compression method (string). Storage efficiency |
-| `Frame rate (Hz)` | Image acquisition speed (floating-point number; measured in Hz). For dynamic studies |
+| `Frame rate (Hz)` | Image acquisition speed (float; measured in Hz). For dynamic studies |
 | `Number of frames` | Total image frames (non-negative integer). Scan duration |
 | `Vertical resolution` | Vertical pixels (non-negative integer). Image detail |
 | `Horizontal resolution` | Horizontal pixels (non-negative integer). Spatial clarity |
@@ -255,7 +255,7 @@ fMRI data measures brain activity by detecting changes in blood flow. This techn
 |:------|:------------|
 | `Format` | Digital format (string; e.g., NIfTI, DICOM). Affects compatibility |
 | `Compression` | Data compression method (string). Impacts file size |
-| `Frame rate (Hz)` | Image acquisition rate (floating-point number; measured in Hz). Temporal resolution |
+| `Frame rate (Hz)` | Image acquisition rate (float; measured in Hz). Temporal resolution |
 | `Number of frames` | Total acquired frames (non-negative integer). Experiment duration |
 | `Vertical resolution` | Vertical pixels (non-negative integer). Affects image detail |
 | `Horizontal resolution` | Horizontal pixels (non-negative integer). Determines image clarity |
@@ -268,7 +268,7 @@ MEG data records magnetic fields produced by electrical currents in the brain. I
 |:------|:------------|
 | `Format` | Digital format (string; e.g., FIFF). Data organization |
 | `Compression` | Data compression (string). Storage efficiency |
-| `Frame rate (Hz)` | Sampling frequency (floating-point number; measured in Hz). Temporal resolution |
+| `Frame rate (Hz)` | Sampling frequency (float; measured in Hz). Temporal resolution |
 | `Number of frames` | Total data points (non-negative integer). Recording duration |
 
 ## Tomography and Ultrasound
@@ -281,11 +281,11 @@ CT data provides detailed cross-sectional images of the subject. A computed tomo
 |:------|:------------|
 | `Format` | Digital format (string; e.g., DICOM). Determines compatibility |
 | `Compression` | Data compression method (string). Storage efficiency |
-| `Frame rate (Hz)` | Scan acquisition rate (floating-point number; measured in Hz). Temporal resolution |
+| `Frame rate (Hz)` | Scan acquisition rate (float; measured in Hz). Temporal resolution |
 | `Number of frames` | Total scan frames (non-negative integer). Acquisition duration |
 | `Vertical resolution` | Vertical pixels (non-negative integer). Image detail level |
 | `Horizontal resolution` | Horizontal pixels (non-negative integer). Spatial resolution |
-| `Imaging depth (μm)` | Depth measurement (floating-point number; measured in μm). Penetration capability |
+| `Imaging depth (μm)` | Depth measurement (float; measured in μm). Penetration capability |
 
 ### Positron Emission Tomography (PET)
 
@@ -295,7 +295,7 @@ PET data provides functional images of metabolic processes in the body. This fun
 |:------|:------------|
 | `Format` | Digital format (string; e.g., DICOM). Data organization standard |
 | `Compression` | Compression method (string). Affects storage size |
-| `Frame rate (Hz)` | Acquisition rate (floating-point number; measured in Hz). For dynamic studies |
+| `Frame rate (Hz)` | Acquisition rate (float; measured in Hz). For dynamic studies |
 | `Number of frames` | Total data frames (non-negative integer). Scan duration |
 | `Vertical resolution` | Vertical pixels (non-negative integer). Image detail |
 | `Horizontal resolution` | Horizontal pixels (non-negative integer). Spatial clarity |
@@ -308,7 +308,7 @@ SPECT data provides 3D images of radioactive tracer distribution in the body. It
 |:------|:------------|
 | `Format` | Digital format (string; e.g., DICOM). Data structure standard |
 | `Compression` | Compression method (string). File size optimization |
-| `Frame rate (Hz)` | Image acquisition rate (floating-point number; measured in Hz). Temporal detail |
+| `Frame rate (Hz)` | Image acquisition rate (float; measured in Hz). Temporal detail |
 | `Number of frames` | Total acquired frames (non-negative integer). Study duration |
 | `Vertical resolution` | Vertical pixels (non-negative integer). Image resolution |
 | `Horizontal resolution` | Horizontal pixels (non-negative integer). Spatial detail |
@@ -321,11 +321,11 @@ fUS data captures brain activity through changes in blood flow using ultrasound.
 |:------|:------------|
 | `Format` | Digital format (string). Data organization standard |
 | `Compression` | Compression type (string). Storage optimization |
-| `Frame rate (Hz)` | Ultrasound acquisition rate (floating-point number; measured in Hz). Temporal resolution |
+| `Frame rate (Hz)` | Ultrasound acquisition rate (float; measured in Hz). Temporal resolution |
 | `Number of frames` | Total recorded frames (non-negative integer). Recording duration |
 | `Vertical resolution` | Vertical pixels (non-negative integer). Image detail |
 | `Horizontal resolution` | Horizontal pixels (non-negative integer). Spatial clarity |
-| `Imaging depth (μm)` | Penetration depth (floating-point number; measured in μm). Tissue reach |
+| `Imaging depth (μm)` | Penetration depth (float; measured in μm). Tissue reach |
 
 ## General Time Series
 
@@ -336,9 +336,9 @@ General time series data represents any sequential measurements indexed by time.
 | `Format` | Digital format (string; e.g., CSV, JSON). Determines data organization and compatibility |
 | `Data-type` | Format of stored data (string; default: 'int16'). Affects precision and storage |
 | `Number of channels` | Count of recording channels (non-negative integer). Multidimensional data streams |
-| `Sampling rate (Hz)` | Sample frequency (floating-point number; default: 20000 Hz). Temporal resolution |
+| `Sampling rate (Hz)` | Sample frequency (float; default: 20000 Hz). Temporal resolution |
 | `Number of samples` | Total data points per channel (non-negative integer). Recording duration |
-| `Least significant bit (μV/bit)` | Smallest detectable change (floating-point number; measured in μV/bit). Signal resolution |
+| `Least significant bit (μV/bit)` | Smallest detectable change (float; measured in μV/bit). Signal resolution |
 | `Electrode groups` | Groups of channels (array of objects with channels list and label). Data organization |
 | `Channel tags` | Channel metadata (array of objects with tag name and channels). Enhanced organization |
 
