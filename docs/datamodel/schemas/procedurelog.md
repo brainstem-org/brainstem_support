@@ -61,6 +61,6 @@ Similar to the log for four tetrodes, this log pertains to experiments involving
 | `Tetrode #7` | Position measurement for the seventh tetrode (float; measured in μm) |
 | `Tetrode #8` | Position measurement for the eighth tetrode (float; measured in μm) |
 
-## Procedure log API access
+## Procedure log schemas API access
 
-The API allows for programmable access to Procedure logs, enabling you to read, edit, and delete procedure logs through the API. Learn more about the procedure logs' fields and data structure on the [Procedure log API page]({{"api/modules/procedurelog/"|absolute_url}}).
+The API allows for programmable access to Procedure logs, enabling you to read, edit, and delete procedure logs through the API. Learn more about the procedure logs' schema fields on the [Procedure log schemas API page]({{"api/schemas/procedurelog/"|absolute_url}}).

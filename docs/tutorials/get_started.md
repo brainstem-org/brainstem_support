@@ -5,7 +5,7 @@ parent: Tutorials
 nav_order: 1
 ---
 
-# Getting Started with BrainSTEM
+# Get Started with BrainSTEM
 {: .no_toc}
 
 ## Table of contents
@@ -15,10 +15,11 @@ nav_order: 1
 {:toc}
 
 ## Create an account
+First thing to do is [create an account](https://www.brainstem.org/register/). Provide your name, email, and a secure password. Once you have created an account you can visit your profile from the top menu to add a profile image, and link to your orcid account, your google scholar profile, and your website.
 
 ## Create or Join a Group
 
-Before you can start using BrainSTEM, you need to either create a new group for your lab or join an existing one. Groups in BrainSTEM help organize lab members and manage permissions for projects and resources.
+Next, you need to either create a new group for your lab or join an existing one. Groups in BrainSTEM help organize lab members and manage permissions for projects and resources.
 
 ### Accessing Groups
 1. From your dashboard, locate and click the Users icon in the top right corner of the screen
@@ -70,9 +71,22 @@ After joining or creating a group, you can start creating projects. Projects in 
 {: .note }
 > For detailed information about project fields and structure, see the [Project data model]({{site.baseurl}}/datamodel/stem/project/).
 
+## Add your personal attributes
+
+Next, create personal attributes relevant to your experiments. 
+
+### Define behavioral paradigms to describe the behavioral conditions of your subjects
+### Set up data storage locations to link to your data files
+### Create setups to define your physical experimental environments
+   - Configure the equipment in your setups
+### Set up inventories to track your lab resources
+   - Add consumable stocks to your inventories
+
+Now that all your personal attributes are in place, you can continue and add your first subject.
+
 ## Create Your First Subject
 
-Once you have created a project, you can start adding research subjects. Subjects in BrainSTEM represent the experimental animals in your studies.
+ Subjects in BrainSTEM represent the experimental animals in your studies. Subject can be created without creating personal attributes but if you want to describe procedures performed on the subject, it is recommended to add relevant setups with equipment, and inventories with consumable stocks.
 
 1. Click on *Subjects* in the left navigation menu
 2. Click the *Add subject* button in the top right corner

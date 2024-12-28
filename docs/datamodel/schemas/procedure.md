@@ -155,6 +155,6 @@ Involves injecting a virus into the brain, typically to deliver genetic material
 
 For all procedure types, coordinates are specified using the following system: [Coordinates systems page]({{"datamodel/schemas/coordinates/"|absolute_url}})
 
-## Procedure API access
+## Procedure schemas API access
 
-The API allows for programmable access to Procedures, enabling you to read, edit, and delete procedures through the API. Learn more about the procedures' fields and data structure on the [Procedure API page]({{"api/modules/procedure/"|absolute_url}}).
+The API allows for programmable access to Procedures, enabling you to read, edit, and delete procedures through the API. Learn more about the procedures' fields and data structure on the [Procedure API page]({{"api/schemas/procedure/"|absolute_url}}).

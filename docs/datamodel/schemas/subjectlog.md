@@ -108,6 +108,6 @@ Documents observations related to the subject's general health and well-being, i
 | `Wellness` | Description of the subject's health status (string). Required field documenting overall condition |
 | `Notes` | Additional health-related observations (string). Captures detailed observations |
 
-## Subject log API access
+## Subject log schemas API access
 
-The API allows for programmable access to Subject logs, enabling you to read, edit, and delete subject logs through the API. Learn more about the subject logs' fields and data structure on the [Subject log API page]({{"api/modules/subjectlog/"|absolute_url}}).
+The API allows for programmable access to Subject logs, enabling you to read, edit, and delete subject logs through the API. Learn more about the subject logs' fields and data structure on the [Subject log API page]({{"api/schemas/subjectlog/"|absolute_url}}).
