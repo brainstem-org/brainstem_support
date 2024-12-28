@@ -23,12 +23,12 @@ A three-dimensional Cartesian coordinate system using absolute positions relativ
 
 | Field  | Description |
 |:-------|-------------|
-| `X coordinate (m)` | Absolute X coordinate in meters, representing horizontal positioning along a local reference frame (floating-point number) |
-| `Y coordinate (m)` | Absolute Y coordinate in meters, representing vertical positioning along a local reference frame (floating-point number) |
-| `Z coordinate (m)` | Absolute Z coordinate in meters, representing height (floating-point number) |
-| `X angle (degrees)` | Rotational angle around the X axis, indicating tilt or elevation relative to the horizontal plane (floating-point number; range: -180° to 360°) |
-| `Y angle (degrees)` | Rotational angle around the Y axis, indicating roll or sideways tilt relative to the vertical axis (floating-point number; range: -180° to 360°) |
-| `Z angle (degrees)` | Rotational angle around the Z axis, indicating azimuth or orientation facing around the vertical axis (floating-point number; range: -180° to 360°) |
+| `X coordinate (m)` | Absolute X coordinate in meters, representing horizontal positioning along a local reference frame (float) |
+| `Y coordinate (m)` | Absolute Y coordinate in meters, representing vertical positioning along a local reference frame (float) |
+| `Z coordinate (m)` | Absolute Z coordinate in meters, representing height (float) |
+| `X angle (degrees)` | Rotational angle around the X axis, indicating tilt or elevation relative to the horizontal plane (float; range: -180° to 360°) |
+| `Y angle (degrees)` | Rotational angle around the Y axis, indicating roll or sideways tilt relative to the vertical axis (float; range: -180° to 360°) |
+| `Z angle (degrees)` | Rotational angle around the Z axis, indicating azimuth or orientation facing around the vertical axis (float; range: -180° to 360°) |
 
 ## Stereotaxic Bregma-Based Absolute Coordinates
 
@@ -36,12 +36,12 @@ Utilizes the Bregma point as a primary reference for absolute positioning within
  
 | Field  | Description |
 |:-------|-------------|
-| `AP coordinate (mm)` | Absolute Anterior-Posterior coordinate from a fixed point, in millimeters (floating-point number) |
-| `ML coordinate (mm)` | Absolute Medial-Lateral coordinate from a fixed point, in millimeters (floating-point number) |
-| `DV coordinate (mm)` | Dorsal-Ventral coordinate from a reference point, typically the brain surface, in millimeters (floating-point number) |
-| `AP angle (degrees)` | Angle of the device or probe in the Anterior-Posterior direction (floating-point number; range: -180° to 360°) |
-| `ML angle (degrees)` | Angle of the device or probe in the Medial-Lateral direction (floating-point number; range: -180° to 360°) |
-| `DV angle (degrees)` | Angle of the device or probe in the Dorsal-Ventral direction (floating-point number; range: -180° to 360°) |
+| `AP coordinate (mm)` | Absolute Anterior-Posterior coordinate from a fixed point, in millimeters (float) |
+| `ML coordinate (mm)` | Absolute Medial-Lateral coordinate from a fixed point, in millimeters (float) |
+| `DV coordinate (mm)` | Dorsal-Ventral coordinate from a reference point, typically the brain surface, in millimeters (float) |
+| `AP angle (degrees)` | Angle of the device or probe in the Anterior-Posterior direction (float; range: -180° to 360°) |
+| `ML angle (degrees)` | Angle of the device or probe in the Medial-Lateral direction (float; range: -180° to 360°) |
+| `DV angle (degrees)` | Angle of the device or probe in the Dorsal-Ventral direction (float; range: -180° to 360°) |
 
 ## Stereotaxic Bregma-Based Surface Coordinates with Depth
 
@@ -49,12 +49,12 @@ Measures coordinates from the surface of the brain at the Bregma point, incorpor
 
 | Field  | Description |
 |:-------|-------------|
-| `AP coordinate (mm)` | Anterior-Posterior coordinate relative to Bregma, in millimeters (floating-point number) |
-| `ML coordinate (mm)` | Medial-Lateral coordinate relative to Bregma, in millimeters (floating-point number) |
-| `Depth (mm)` | Depth of the implant in the brain, measured from the surface (floating-point number) |
-| `Rotation (degrees)` | Rotation of the implant around the insertion axis (floating-point number; range: -180° to 360°) |
-| `AP angle (degrees)` | Angle adjustment in the Anterior-Posterior direction (floating-point number; range: -180° to 360°) |
-| `ML angle (degrees)` | Angle adjustment in the Medial-Lateral direction (floating-point number; range: -180° to 360°) |
+| `AP coordinate (mm)` | Anterior-Posterior coordinate relative to Bregma, in millimeters (float) |
+| `ML coordinate (mm)` | Medial-Lateral coordinate relative to Bregma, in millimeters (float) |
+| `Depth (mm)` | Depth of the implant in the brain, measured from the surface (float) |
+| `Rotation (degrees)` | Rotation of the implant around the insertion axis (float; range: -180° to 360°) |
+| `AP angle (degrees)` | Angle adjustment in the Anterior-Posterior direction (float; range: -180° to 360°) |
+| `ML angle (degrees)` | Angle adjustment in the Medial-Lateral direction (float; range: -180° to 360°) |
 
 ## Stereotaxic Lambda-Based Absolute Coordinates
 
@@ -62,12 +62,12 @@ Anchors measurements to the Lambda, a secondary cranial landmark, providing a se
 
 | Field  | Description |
 |:-------|-------------|
-| `AP coordinate (mm)` | Anterior-Posterior coordinate measured from Lambda (floating-point number). Lambda serves as a posterior reference point on the skull in rodent brain mappings. |
-| `ML coordinate (mm)` | Medial-Lateral coordinate measured from the central line crossing Lambda (floating-point number). Used for precise lateral positioning of instruments. |
-| `DV coordinate (mm)` | Dorsal-Ventral coordinate measured from the skull's surface at Lambda (floating-point number). Indicates depth for vertical placement of instruments. |
-| `AP angle (degrees)` | Tilting angle in the Anterior-Posterior axis from Lambda (floating-point number; range: -180° to 360°). Used to adjust the probe or electrode's approach angle relative to the skull. |
-| `ML angle (degrees)` | Tilting angle in the Medial-Lateral direction from Lambda (floating-point number; range: -180° to 360°). Adjusts for lateral tilt relative to the skull's central line. |
-| `DV angle (degrees)` | Angular adjustment in the Dorsal-Ventral plane from Lambda (floating-point number; range: -180° to 360°). Used to orient instruments vertically. |
+| `AP coordinate (mm)` | Anterior-Posterior coordinate measured from Lambda (float). Lambda serves as a posterior reference point on the skull in rodent brain mappings. |
+| `ML coordinate (mm)` | Medial-Lateral coordinate measured from the central line crossing Lambda (float). Used for precise lateral positioning of instruments. |
+| `DV coordinate (mm)` | Dorsal-Ventral coordinate measured from the skull's surface at Lambda (float). Indicates depth for vertical placement of instruments. |
+| `AP angle (degrees)` | Tilting angle in the Anterior-Posterior axis from Lambda (float; range: -180° to 360°). Used to adjust the probe or electrode's approach angle relative to the skull. |
+| `ML angle (degrees)` | Tilting angle in the Medial-Lateral direction from Lambda (float; range: -180° to 360°). Adjusts for lateral tilt relative to the skull's central line. |
+| `DV angle (degrees)` | Angular adjustment in the Dorsal-Ventral plane from Lambda (float; range: -180° to 360°). Used to orient instruments vertically. |
 
 ## Stereotaxic Lambda-Based Surface Coordinates with Depth
 
@@ -75,12 +75,12 @@ Similar to the Bregma brain surface system, but using Lambda as the reference. I
 
 | Field  | Description |
 |:-------|-------------|
-| `AP coordinate (mm)` | Anterior-Posterior coordinate measured from the Lambda landmark (floating-point number). Lambda is used as a reference point at the posterior aspect of the skull. |
-| `ML coordinate (mm)` | Medial-Lateral coordinate measured from the midline crossing Lambda (floating-point number). This measurement helps in positioning equipment laterally across the brain's hemisphere. |
-| `Depth (mm)` | Vertical depth measured from the surface at the Lambda reference point (floating-point number). Indicates how deep into the brain tissue the instrument penetrates. |
-| `Rotation (degrees)` | Rotation around the vertical axis through Lambda (floating-point number; range: -180° to 360°). This controls the azimuthal orientation of the probe or surgical tool. |
-| `AP angle (degrees)` | Medial-Lateral tilting angle from Lambda (floating-point number; range: -180° to 360°). Used to adjust the lateral orientation of devices or surgical tools. |
-| `ML angle (degrees)` | Rotation around the vertical axis through Lambda (floating-point number; range: -180° to 360°). Used to adjust the orientation of the instrument or device. |
+| `AP coordinate (mm)` | Anterior-Posterior coordinate measured from the Lambda landmark (float). Lambda is used as a reference point at the posterior aspect of the skull. |
+| `ML coordinate (mm)` | Medial-Lateral coordinate measured from the midline crossing Lambda (float). This measurement helps in positioning equipment laterally across the brain's hemisphere. |
+| `Depth (mm)` | Vertical depth measured from the surface at the Lambda reference point (float). Indicates how deep into the brain tissue the instrument penetrates. |
+| `Rotation (degrees)` | Rotation around the vertical axis through Lambda (float; range: -180° to 360°). This controls the azimuthal orientation of the probe or surgical tool. |
+| `AP angle (degrees)` | Medial-Lateral tilting angle from Lambda (float; range: -180° to 360°). Used to adjust the lateral orientation of devices or surgical tools. |
+| `ML angle (degrees)` | Rotation around the vertical axis through Lambda (float; range: -180° to 360°). Used to adjust the orientation of the instrument or device. |
 
 ## Stereotaxic XYZ Absolute Coordinates
 
@@ -88,12 +88,12 @@ A comprehensive three-dimensional coordinate system based on stereotaxic princip
 
 | Field  | Description |
 |:-------|-------------|
-| `X coordinate (mm)` | Position along the left-right axis relative to a standardized reference point (floating-point number) |
-| `Y coordinate (mm)` | Anterior-posterior position from a fixed reference point in the setup (floating-point number) |
-| `Z coordinate (mm)` | Depth or vertical position relative to a surface or base level (floating-point number) |
-| `X angle (degrees)` | Rotational angle about the X-axis (floating-point number; range: -180° to 360°). Adjusts the tilt of the instrument horizontally. |
-| `Y angle (degrees)` | Rotational angle about the Y-axis (floating-point number; range: -180° to 360°). Used to orient the device in the anterior-posterior plane. |
-| `Z angle (degrees)` | Rotational angle about the Z-axis (floating-point number; range: -180° to 360°). Adjusts the azimuth or directional facing of the setup. |
+| `X coordinate (mm)` | Position along the left-right axis relative to a standardized reference point (float) |
+| `Y coordinate (mm)` | Anterior-posterior position from a fixed reference point in the setup (float) |
+| `Z coordinate (mm)` | Depth or vertical position relative to a surface or base level (float) |
+| `X angle (degrees)` | Rotational angle about the X-axis (float; range: -180° to 360°). Adjusts the tilt of the instrument horizontally. |
+| `Y angle (degrees)` | Rotational angle about the Y-axis (float; range: -180° to 360°). Used to orient the device in the anterior-posterior plane. |
+| `Z angle (degrees)` | Rotational angle about the Z-axis (float; range: -180° to 360°). Adjusts the azimuth or directional facing of the setup. |
 
 ## Stereotaxic Surface XY Surface Coordinates with Depth
 
@@ -101,12 +101,12 @@ Focuses on two-dimensional positioning on the brain's surface, using X and Y coo
 
 | Field  | Description |
 |:-------|-------------|
-| `X coordinate (mm)` | Horizontal position across the surface from a fixed central point (floating-point number) |
-| `Y coordinate (mm)` | Vertical position along the surface from a fixed central point (floating-point number) |
-| `X angle (degrees)` | Angle of tilt around the X-axis (floating-point number; range: -180° to 360°). Indicates inclination relative to the flat surface. |
-| `Y angle (degrees)` | Angle of tilt around the Y-axis (floating-point number; range: -180° to 360°). Indicates lateral tilt relative to the central axis. |
-| `Depth (mm)` | Perpendicular distance below the surface plane (floating-point number). Used for setting penetration depth. |
-| `Rotation (degrees)` | Rotation around the vertical axis through the point of interest (floating-point number; range: -180° to 360°). Used for device orientation. |
+| `X coordinate (mm)` | Horizontal position across the surface from a fixed central point (float) |
+| `Y coordinate (mm)` | Vertical position along the surface from a fixed central point (float) |
+| `X angle (degrees)` | Angle of tilt around the X-axis (float; range: -180° to 360°). Indicates inclination relative to the flat surface. |
+| `Y angle (degrees)` | Angle of tilt around the Y-axis (float; range: -180° to 360°). Indicates lateral tilt relative to the central axis. |
+| `Depth (mm)` | Perpendicular distance below the surface plane (float). Used for setting penetration depth. |
+| `Rotation (degrees)` | Rotation around the vertical axis through the point of interest (float; range: -180° to 360°). Used for device orientation. |
 
 ## Coordinates API access
 The API allows for programmable access to Coordinates, enabling you to read, edit, and delete coordinates through the API. Learn more about the coordinates' fields and data structure on the [Coordinates API page]({{"api/schemas/coordinates/"|absolute_url}}).
