@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Behavioral paradigm
+title: Behavioral paradigms
 parent: Personal attributes
 grand_parent: Data model
 nav_order: 1
 ---
 
-# Behavior paradigm model
+# Behavior paradigms model
 {: .no_toc}
 
 ## Table of contents
@@ -57,6 +57,6 @@ You manage permissions through the management tab, where you can assign individu
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Session API access
+## Behavioral paradigms API access
 
-The API allows for programmable access to Behavioral paradigms, enabling you to read, edit, and delete Behavioral paradigms through the API. Learn more about the sessions' fields and data structure on the [Session API page]({{"api/personal_attributes/behavioralparadigm/"|absolute_url}}). 
+The API allows for programmable access to Behavioral paradigms, enabling you to read, edit, and delete Behavioral paradigms through the API. Learn more about the sessions' fields and data structure on the [Behavioral paradigms API page]({{"api/personal_attributes/behavioralparadigm/"|absolute_url}}). 

@@ -36,6 +36,6 @@ Consumable stocks inherit permissions from their associated inventory.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Inventory API access
+## Inventories API access
 
-The API allows for programmable access to inventories, enabling you to read, edit, and delete inventories through the API. Learn more about the inventories' fields and data structure on the [Inventory API page]({{"api/personal_attributes/inventory/"|absolute_url}}).
+The API allows for programmable access to inventories, enabling you to read, edit, and delete inventories through the API. Learn more about the inventories' fields and data structure on the [Inventories API page]({{"api/personal_attributes/inventory/"|absolute_url}}).

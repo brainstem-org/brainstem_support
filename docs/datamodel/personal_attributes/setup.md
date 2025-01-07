@@ -61,6 +61,6 @@ Equipment inherit permissions from their associated setup.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Session API access
+## Setups API access
 
-The API allows for programmable access to setups, enabling you to read, edit, and delete Setups through the API. Learn more about the sessions' fields and data structure on the [Session API page]({{"api/personal_attributes/setup/"|absolute_url}}).
+The API allows for programmable access to setups, enabling you to read, edit, and delete Setups through the API. Learn more about the sessions' fields and data structure on the [Setups API page]({{"api/personal_attributes/setup/"|absolute_url}}).

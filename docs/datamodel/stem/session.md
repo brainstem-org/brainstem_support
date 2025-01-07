@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Session
+title: Sessions
 parent: STEM
 grand_parent: Data model
 nav_order: 3
@@ -17,9 +17,9 @@ nav_order: 3
 
 ## Introduction 
 
-A session is a modular construction that provides flexible and standardized descriptions of various aspects of experiments. The session has several direct fields but is primarily described by below modules:
+Sessions are modular structures that provide flexible and standardized descriptions of various aspects of experiments. Sessions have several direct fields but are primarily described by the following modules:
 
-1. Behavior: Description of the animal subject(s) behavior during the session collection. A behavior is described by two personal attributes: the setup and the behavioral paradigm.
+1. Behaviors: Description of the animal subject(s) behavior during the session collection. A behavior is described by two personal attributes: the setup and the behavioral paradigm.
 2. Data acquisition: Description of the data acquisition files. This module is highly flexible and can describe many types of experimental data, such as Extracellular and Intracellular Electrophysiology, 2-photon microscopy, Miniscope, Audio Recordings, and Behavioral Video Recordings. Details are tailored to each experiment type.
 3. Manipulations: Description of any manipulations performed during an experiment. This crucial module documents alterations to the physiological conditions of a recording. It can describe various types of manipulations, such as Optogenetic Stimulation, Micro Perfusion, Pharmacological Injection, Thermal Perturbation, Transcranial Electrical Stimulation, and Ultrasound Stimulation. A manipulation is described by a protocol, typically consisting of the manipulation profile, power, duration, duty cycle, and number of repetitions.
 4. Epochs: Temporal aspects of a session. An epoch is characterized by a name, start and end times relative to the session's start. Other modules (Data acquisition, Manipulations, and Behavior) can be linked to epochs, allowing for temporal segmentation of a session.
@@ -32,7 +32,7 @@ A session is a modular construction that provides flexible and standardized desc
 | `Projects` | Projects the session belongs to (**required**). Learn more about project inheritance [here]({{"datamodel/stem/project/"|absolute_url}}). Example: "Hippocampal Memory Project" |
 | `Description` | A text description of the session. Pictures can be uploaded and inserted through rich text formatting. Example: "Recording session during novel object recognition task..." |
 | `Date and time onset` | Date and time of the session onset (YYYY-MM-DD format, e.g., "2023-03-22 14:30:00"). Can be left empty |
-| `Tags` | Tags for the session. Great for organizational purposes, quick labeling, and filtering. Tags are shared across all users. Example: "behavior", "recording", "morning-session" |
+| `Tags` | Tags for the session. Great for organizational purposes and quick labeling, quick labeling, and filtering. Tags are shared across all users. Example: "behavior", "recording", "morning-session" |
 | `Data storage` | Describes where the data is stored. Example: "Lab Server", "External Drive 1" |
 | `Name used in storage` | Custom name for the session used in local data storage (string; max length: 200). Example: "ses01_mem_2024" |
 | `Extra fields` | Allows you to add extra fields to the session. Values can be strings or numeric. Saved as key-value pairs. Example: {"Room": "B115", "Temperature": "22C"} |
@@ -45,21 +45,21 @@ A session is a modular construction that provides flexible and standardized desc
 | `Name` | Name of the epoch (**required**; string; max length: 100 characters). Example: "Baseline", "Stimulus_Period" |
 | `Start` | Start time of the epoch, relative to the session onset. Example: "0:00:00" |
 | `End` | End time of the epoch, relative to the session onset. Example: "0:05:00" |
-| `Behavior` | Behavior associated with the epoch. Example: "Open field exploration" |
+| `Behaviors` | Behaviors associated with the epoch. Example: "Open field exploration" |
 | `Data acquisition` | Data acquisition associated with the epoch. Example: "Calcium imaging" |
-| `Manipulation` | Manipulation associated with the epoch. Example: "Optogenetic stimulation" |
+| `Manipulations` | Manipulations associated with the epoch. Example: "Optogenetic stimulation" |
 
 ### Data acquisition fields
 
 Please see the dedicated page describing the [Data acquisition data model]({{"datamodel/modules/dataacquisition"|absolute_url}}).
 
-### Manipulation data fields
+### Manipulations data fields
 
 Please see the dedicated page describing the [Manipulations data model]({{"datamodel/modules/manipulation"|absolute_url}}).
 
-### Behavior data fields
+### Behaviors data fields
 
-Please see the dedicated page describing the [Behavior data model]({{"datamodel/modules/behavior"|absolute_url}}).
+Please see the dedicated page describing the [Behaviors data model]({{"datamodel/modules/behavior"|absolute_url}}).
 
 ## Permissions
 
@@ -67,6 +67,6 @@ The session inherits permissions from its associated projects. Data storage is s
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Session API access
+## Sessions API access
 
-The API allows for programmable access to sessions. Learn more about the sessions' fields and data structure on the [Session API page]({{"api/stem/session/"|absolute_url}}).
+The API allows for programmable access to sessions. Learn more about the sessions' fields and data structure on the [Sessions API page]({{"api/stem/session/"|absolute_url}}).
