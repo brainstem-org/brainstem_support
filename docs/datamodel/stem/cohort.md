@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cohort
+title: Cohorts
 parent: STEM
 grand_parent: Data model
 nav_order: 5
@@ -35,6 +35,6 @@ Cohorts inherit permissions from their associated project. You can only add subj
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Cohort API access
+## Cohorts API access
 
-The API allows for programmable access to cohorts. Learn more about the cohorts' fields and data structure on the [Cohort API page]({{"api/stem/cohort/"|absolute_url}}).
+The API allows for programmable access to cohorts. Learn more about the cohorts' fields and data structure on the [Cohorts API page]({{"api/stem/cohort/"|absolute_url}}).

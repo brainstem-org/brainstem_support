@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Procedure
+title: Procedures
 parent: Modules
 grand_parent: Data model
 nav_order: 6
 ---
 
-# Procedure model
+# Procedures model
 {: .no_toc}
 
 ## Table of contents
@@ -24,10 +24,10 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 | Field | Description |
 |:------|:------------|
 | `Type` | Type of procedure (**required**). Selected from predefined types. Example: "Optic fiber implant". *See options below* |
-| `Subject` | The subject the procedure was performed on (**required**). Must reference an existing [subject]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
+| `Subject` | The subject the procedure was performed on (**required**). Must reference an existing [subjects]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
 | `Notes` | Notes about the procedure (string). Example: "Implant placed successfully with minimal bleeding" |
 | `Date and time` | Date and time the procedure was performed. Example: "2024-03-22 10:30:00" |
-| `Consumable` | Consumable used for the procedure. Example: "200µm core diameter fiber" |
+| `Consumables` | Consumable used for the procedure. Example: "200µm core diameter fiber" |
 | `Hardware device` | Hardware device used to perform the procedure. Example: "Stereotaxic frame #3" |
 | `Brain region` | Target brain region where the procedure was performed. Example: "Hippocampus CA1" |
 | `Coordinates system` | Coordinate system (**required**). Selected from predefined systems. Example: "Stereotaxic Bregma-Based". *See options below* |
@@ -82,5 +82,5 @@ Procedures inherit permissions through the subject associated with them.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Procedure API access
-The API allows for programmable access to procedures. Learn more about the procedures' fields and data structure on the [Procedure API page]({{"api/modules/procedure/"|absolute_url}}).
+## Procedures API access
+The API allows for programmable access to procedures. Learn more about the procedures' fields and data structure on the [Procedures API page]({{"api/modules/procedure/"|absolute_url}}).

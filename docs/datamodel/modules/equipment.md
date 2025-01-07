@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Equipment
+title: Equipments
 parent: Modules
 grand_parent: Data model
 nav_order: 3
 ---
 
-# Equipment model
+# Equipments model
 {: .no_toc}
 
 ## Table of contents
@@ -17,14 +17,14 @@ nav_order: 3
 
 ## Introduction
 
-Equipment refer to the setup and utilization of various devices and sensors designed to monitor, record, or manipulate environmental variables or subject responses. These equipment are critical for creating controlled experimental conditions, collecting data, and delivering stimuli. Each equipment type has specific applications and functions within setups. While equipment types share relationships, fields are tailored to the various equipment types. The types of equipment currently supported by BrainSTEM are listed below.
+Equipments refer to the setup and utilization of various devices and sensors designed to monitor, record, or manipulate environmental variables or subject responses. These equipment are critical for creating controlled experimental conditions, collecting data, and delivering stimuli. Each equipment type has specific applications and functions within setups. While equipment types share relationships, fields are tailored to the various equipment types. The types of equipment currently supported by BrainSTEM are listed below.
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
 | `Type` | Type of equipment (**required**). Selected from predefined types. Example: "Video camera", "Microphone". *See options below* |
-| `Setup` | The setup the equipment is installed in (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior room A setup" |
+| `Setup` | The setup the equipment is installed in (**required**). Must reference an existing [setups]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior room A setup" |
 | `Notes` | Notes about the equipment (string). Example: "Camera positioned at 45-degree angle" |
 | `Date and time` | Date and time the equipment was performed. Example: "2024-03-22 09:00:00" |
 | `Consumable` | Consumable used for the equipment. Example: "HD webcam model XYZ" |
@@ -80,7 +80,7 @@ These are the available *Type* options for equipment:
 - `Noise Isolation Chamber`: Minimizes external noise, ensuring controlled experimental conditions for sensitive studies.
 - `Thermal Controller`: Regulates temperature in experimental environments or for subject maintenance, ensuring optimal conditions.
 
-### Surgical Equipment
+### Surgical Equipments
 - `Anesthesia System`: Ensures safe and controlled administration of anesthesia to experimental subjects during procedures.
 - `Injection System`: Delivers precise volumes of substances into biological tissues or cells.
 - `Micromanipulator`: Precisely positions electrodes or devices during surgeries or neural recordings, ensuring accurate placement.
@@ -99,7 +99,7 @@ These are the available *Type* options for equipment:
 - `Monitor`: Displays visual stimuli for subjects or experimental data for researchers.
 - `Single-Board Computer`: Lightweight, versatile computers like Raspberry Pi that run custom software for experimental control, automation, and localized data processing.
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the [Equipment schemas page]({{"/api/schemas/equipment/"|absolute_url}}).
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the [Equipments schemas page]({{"/api/schemas/equipment/"|absolute_url}}).
 
 
 ## Coordinate system options
@@ -114,10 +114,10 @@ A detailed list of the fields in Coordinate system can be found on the [Coordina
 
 ## Permissions
 
-Equipment inherit permissions through the setup associated with them.
+Equipments inherit permissions through the setup associated with them.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Equipment API access
+## Equipments API access
 
-The API allows for programmable access to equipment. Learn more about the equipment' fields and data structure on the [Equipment API page]({{"api/modules/equipment/"|absolute_url}}).
+The API allows for programmable access to equipment. Learn more about the equipment' fields and data structure on the [Equipments API page]({{"api/modules/equipment/"|absolute_url}}).

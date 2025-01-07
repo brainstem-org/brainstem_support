@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Subject
+title: Subjects
 parent: STEM
 grand_parent: Data model
 nav_order: 2
@@ -17,7 +17,7 @@ nav_order: 2
 
 ## Introduction
 
-The subject model describes your animal subject through a set of standard fields. Flexibility is built in through a rich text description field, extra fields, and tags. Procedures offer a modular framework that can be used to describe processes related to your subject.
+The subjects model describes your animal subject through a set of standard fields. Flexibility is built in through a rich text description field, extra fields, and tags. Procedures offer a modular framework that can be used to describe processes related to your subject.
 
 ## Fields
 
@@ -32,15 +32,15 @@ The subject model describes your animal subject through a set of standard fields
 | `Genetic line` | Genetic line of the subject. Could also be wild type (string; maximum length: 100 characters). Example: "Wild type" or "PV-Cre" |
 | `Birth date` | Birth date of the animal subject. Can be left empty. Example: "2023-03-22" |
 | `Death date` | Death date of the animal subject. Can be left empty. Example: "2024-03-25" |
-| `Tags` | Tags for the subject. Great for organizational purposes, quick labeling, and filtering. Example: control-group", "lesion" |
+| `Tags` | Tags for the subject. Great for organizational purposes, quick labeling, and filtering. Example: "control-group", "lesion" |
 | `Subject identifier` | Any identifier used for this subject outside of BrainSTEM, such as an ear tag or RFID number (string; maximum length: 100 characters). Example: "Ear tag #A1234" |
 | `Source` | Source of the subject. Can be left empty (string; maximum length: 100 characters). Example: "Charles River", "In-house breeding" |
 | `Name used in storage` | Use this field if you have another name for your subject in your local data storage (string; maximum length: 200 characters). Example: "M01_2024_exp3" |
 | `Extra fields` | Allows you to add extra fields to the subject. Values can be strings or numeric. Example: {"Weight": "25g", "Litter": "A3"} |
 
-### Procedure data fields
+### Procedures data fields
 
-Please see the dedicated page describing the [Procedure data model]({{"datamodel/modules/procedure"|absolute_url}}).
+Please see the dedicated page describing the [Procedures data model]({{"datamodel/modules/procedure"|absolute_url}}).
 
 
 ## Permissions
