@@ -24,7 +24,7 @@ Consumable stocks refer to the various components and materials essential for co
 | Field | Description |
 |:------|:------------|
 | `Type` | Type of consumable stock (**required**). Selected from predefined types. Example: "Silicon probe", "Optic fiber". *See options below* |
-| `Inventory` | The inventory record that tracks the consumable stock (**required**). Must reference an existing [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}). Example: "Lab supplies inventory" |
+| `Inventory` | The inventory record that tracks the consumable stocks (**required**). Must reference an existing [inventories]({{"datamodel/personal_attributes/inventory/"|absolute_url}}). Example: "Lab supplies inventory" |
 | `Notes` | Additional information or special considerations for the consumable stock (string). Example: "Handle with care, fragile components" |
 | `Consumable` | The specific consumable associated with the consumable stock. Example: "32-channel silicon probe" |
 | `Acquisition date` | The date when the consumable was acquired. Example: "2024-01-15" |

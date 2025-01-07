@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Collection
+title: Collections
 parent: STEM
 grand_parent: Data model
 nav_order: 4
@@ -35,6 +35,6 @@ Collections inherit permissions from their associated project. You can only add 
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Collection API access
+## Collections API access
 
-The API allows for programmable access to collections. Learn more about the collections' fields and data structure on the [Collection API page]({{"api/stem/collection/"|absolute_url}}).
+The API allows for programmable access to collections. Learn more about the collections' fields and data structure on the [Collections API page]({{"api/stem/collection/"|absolute_url}}).
