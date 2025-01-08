@@ -7,13 +7,20 @@ nav_order: 2
 # Python API tool
 {: .no_toc}
 
+### Installation
+
 Python toolset for interacting with the BrainSTEM API. You can get it from GitHub at [github.com/brainstem-org/brainstem_python_api_tools](https://github.com/brainstem-org/brainstem_python_api_tools).
 
+You can also install the package using `pip`:
+
+	pip install brainstem_python_api_tools
+
+### Tutorial
 Please see the dedicated [tutorial]({{"/tutorials/python-api-tool/"|absolute_url}}) with examples on usage. The main functions are described below.
 
 | Function        | Description  |
 |:-------------|:-------------|
-| `brainstem_api_client` | main function |
+| `BrainstemClient` | The Brainstem API client |
 | `brainstem_api_tutorial` | Tutorial script |
 
 

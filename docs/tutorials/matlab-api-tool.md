@@ -7,7 +7,11 @@ nav_order: 5
 # Tutorial for the Matlab API tool
 {: .no_toc}
 
-### 0. Setup credentials/token: 
+### Installation
+
+Download it from GitHub at [github.com/brainstem-org/brainstem_matlab_api_tools](https://github.com/brainstem-org/brainstem_matlab_api_tools) and add it to your Matlab setpath.
+
+### Setup credentials/token: 
 
 Email and password will be requested
 
@@ -17,7 +21,7 @@ get_token
 
 The token is saved to a mat file (`brainstem_authentication.mat`) in the Matlab API tool folder.
 
-### 1. Loading sessions
+### Loading sessions
 
 `load_model` can be used to load any model: We just need to set the name of the model.
 
@@ -73,7 +77,7 @@ All these options can be combined to suit the requirements of the users. For exa
 output1_6 = load_model('model','session', 'filter',{'name.icontains', 'Rat'}, 'sort',{'-name'}, 'include',{'projects'});
 ```
 
-### 2. Updating a session
+### Updating a session
 
 We can make changes to a model and update it in the database. In this case, we change the description of one of the previously loaded sessions.
 
@@ -83,7 +87,7 @@ session.description = 'new description';
 output2 = save_model('data',session,'model','session');
 ```
 
-### 3. Creating a new session
+### Creating a new session
 
 We can submit a new entry by defining a struct with the required fields.
 
@@ -100,7 +104,7 @@ Submitting session
 output3 = save_model('data',session,'model','session');
 ```
 
-### 4. Load public projects
+### Load public projects
 
 Request the public data by defining the portal to be public
 
