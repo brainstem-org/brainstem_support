@@ -3,6 +3,7 @@ layout: default
 title: Home
 nav_order: 1
 has_children: false
+has_toc: false
 ---
 
 # BrainSTEM Documentation
@@ -12,7 +13,7 @@ has_children: false
 A collaborative electronic lab notebook for FAIR experimental neuroscience.
 {: .fs-6 .fw-300}
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2} [Visit www.BrainSTEM.org](https://www.brainstem.org/){: .btn .fs-5 .mb-4 .mb-md-0}
+[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2} [Visit BrainSTEM.org](https://www.brainstem.org/){: .btn .fs-5 .mb-4 .mb-md-0}
 
 ![website screenshot](/assets/images/website_screenshot_v2.jpg)
 
