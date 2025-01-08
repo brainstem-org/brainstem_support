@@ -5,8 +5,6 @@ nav_order: 2
 has_children: true
 has_toc: false
 ---
-# Data model
-{: .no_toc}
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -14,7 +12,7 @@ has_toc: false
 1. TOC
 {:toc}
 
-# Relational data model
+# Data model
 The relational model can be separated into three levels:
 1. Organization and permissions level
 2. Modules
@@ -28,19 +26,26 @@ Below pages describe the relational data model behind BrainSTEM, the table eleme
 - [__Modules__](/datamodel/modules/) Modules are standardized yet flexible containers for describing various aspects of experimental conditions and data, including procedures, equipment, data acquisition, consumable stocks. 
 - [__Personal attributes__](/datamodel/personal_attributes/) Personal attributes are model elements that are typically shared within individual laboratories or research groups and includes setups, inventories, behavioral paradigms and data storage.
 - [__Resources__](/datamodel/resources/) Resources represent the various materials, equipment, and entities involved in neuroscience research. These include consumables, hardware devices, and suppliers.
-- [____Taxonomies__](/datamodel/taxonomies/) Taxonomies provide standardized vocabularies and classification systems for various aspects of neuroscience research.
+- [__Taxonomies__](/datamodel/taxonomies/) Taxonomies provide standardized vocabularies and classification systems for various aspects of neuroscience research.
 - [__Dissemination__](/datamodel/dissemination/) Dissemination focuses on capturing information related to the publication and sharing of research findings.
 - [__Users__](/datamodel/users/) The Users models manages the authentication, authorization, and organizational aspects of the platform.
 
 ## Example usage of the flexible modular design
 {: .no_toc }
 
-Extracellular recording during a behavioral session from a rat. 
+Extracellular recording during a behavioral session from a rat. The subject related models are green, and the session related models are blue.
 
 [![data_model_example](https://support.brainstem.org/assets/images/data_model_example_v6.png)](https://support.brainstem.org/assets/images/data_model_example_v6.png)
 
 # Permissions implementation and inheritance
-Permissions are implemented on an object level, inheriting permissions from users, groups, and projects and personal attributes. Please see the dedicated page on [permissions](/datamodel/permissions/).
+Permissions are implemented on an object level, inheriting permissions from users, groups, and projects and personal attributes. Please see the dedicated page on permissions.
+
+[Permissions]({{"/datamodel/permissions/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4}
+
+# Schemas
+The Schemas in BrainSTEM define the structure and organization of data for various components of the platform. They ensure consistency and standardization across different types of information. The main schema categories are: modules, consumables resources, coordinates-systems and relationships between models. Learn more on the schema page below.
+
+[Schemas]({{"/datamodel/schemas/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4}
 
 # Expandability
 The data model is built around a standardized structure that maintains expandability allowing for incorporation of new methods, techniques, data types, resources and expanded taxonomies.

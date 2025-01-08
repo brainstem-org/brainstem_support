@@ -9,7 +9,7 @@ nav_order: 5
 
 ### Installation
 
-Download it from GitHub at [github.com/brainstem-org/brainstem_matlab_api_tools](https://github.com/brainstem-org/brainstem_matlab_api_tools) and add it to your Matlab setpath.
+Download the BrainSTEM Matlab API tools repository from GitHub at [github.com/brainstem-org/brainstem_matlab_api_tools](https://github.com/brainstem-org/brainstem_matlab_api_tools) and add it to your Matlab setpath.
 
 ### Setup credentials/token: 
 

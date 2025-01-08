@@ -17,12 +17,6 @@ A collaborative electronic lab notebook for FAIR experimental neuroscience.
 
 ![website screenshot](/assets/images/website_screenshot_v2.jpg)
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
 ## Introduction
 {: .no_toc}
 

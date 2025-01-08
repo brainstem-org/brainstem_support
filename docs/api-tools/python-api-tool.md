@@ -9,7 +9,7 @@ nav_order: 2
 
 ### Installation
 
-Python toolset for interacting with the BrainSTEM API. You can get it from GitHub at [github.com/brainstem-org/brainstem_python_api_tools](https://github.com/brainstem-org/brainstem_python_api_tools).
+Download the BrainSTEM Python API tools repository from GitHub at [github.com/brainstem-org/brainstem_python_api_tools](https://github.com/brainstem-org/brainstem_python_api_tools).
 
 You can also install the package using `pip`:
 
