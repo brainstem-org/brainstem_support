@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 6
 ---
 
-# Procedures model
+# Procedure model
 {: .no_toc}
 
 ## Table of contents
@@ -27,8 +27,11 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 | `Subject` | The subject the procedure was performed on (**required**). Must reference an existing [subjects]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
 | `Notes` | Notes about the procedure (string). Example: "Implant placed successfully with minimal bleeding" |
 | `Date and time` | Date and time the procedure was performed. Example: "2024-03-22 10:30:00" |
-| `Consumables` | Consumable used for the procedure. Example: "200µm core diameter fiber" |
-| `Hardware device` | Hardware device used to perform the procedure. Example: "Stereotaxic frame #3" |
+| `Inventory` | The inventory record that tracks the consumable stocks (**required**). Must reference an existing [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}). Example: "Lab supplies inventory" |
+| `Consumable stock` | Records and tracks laboratory supplies and materials used in experiments (**required**). Must be associated with an [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}) and have a specific type (Optic fiber, Silicon probe, Single wire electrode, or Virus solution). Example: "32-channel silicon probe in Lab A inventory" |
+| `Setup` | The setup the equipment is installed in (**required**). Must reference an existing [setups]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior room A setup" |
+| `Equipment` | Equipment used in the procedure (**required**). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
+| `Atlas` | The brain atlas used for anatomical reference (**required** if brain region is specified). Must reference an existing brain atlas. Example: "Allen Mouse Brain Atlas" |
 | `Brain region` | Target brain region where the procedure was performed. Example: "Hippocampus CA1" |
 | `Coordinates system` | Coordinate system (**required**). Selected from predefined systems. Example: "Stereotaxic Bregma-Based". *See options below* |
 | `Type details` | Type-specific fields. Fields vary by procedure type. Example: For fiber implant - fiber tip shape. *See options below* |
@@ -82,5 +85,5 @@ Procedures inherit permissions through the subject associated with them.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Procedures API access
+## API access
 The API allows for programmable access to procedures. Learn more about the procedures' fields and data structure on the [Procedures API page]({{"api/modules/procedure/"|absolute_url}}).

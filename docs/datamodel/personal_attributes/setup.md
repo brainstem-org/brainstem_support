@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 3
 ---
 
-# Setups model
+# Setup model
 {: .no_toc}
 
 ## Table of contents
@@ -61,6 +61,6 @@ Equipment inherit permissions from their associated setup.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Setups API access
+## API access
 
 The API allows for programmable access to setups, enabling you to read, edit, and delete Setups through the API. Learn more about the sessions' fields and data structure on the [Setups API page]({{"api/personal_attributes/setup/"|absolute_url}}).

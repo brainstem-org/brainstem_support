@@ -57,6 +57,6 @@ Management system for viral constructs used in genetic manipulation experiments.
 | `Aliquot count` | Number of separate aliquots (integer, ≥ 0; required). Tracks sample divisions |
 | `Aliquot volume (µL)` | Volume per aliquot (float, ≥ 0; required; measured in microliters). Important for usage |
 
-## Consumable Stock API access
+## API access
 
 The API allows for programmable access to Consumable Stock, enabling you to read, edit, and delete stock entries through the API. Learn more about the stock fields and data structure on the [Consumable Stock API page]({{"api/modules/consumablestock/"|absolute_url}}).

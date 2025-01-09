@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 5
 ---
 
-# Manipulations model
+# Manipulation model
 {: .no_toc}
 
 ## Table of contents
@@ -23,11 +23,12 @@ The manipulations model describes temporal manipulations performed in a session.
 
 | Field | Description |
 |:------|:------------|
-| `Session` | Session of the manipulation (**required**). Must reference an existing [sessions]({{"datamodel/stem/session/"|absolute_url}}). Example: "Optogenetic stimulation session #2" |
+| `Session` | Session of the manipulation (**required**). Must reference an existing [session]({{"datamodel/stem/session/"|absolute_url}}). Example: "Optogenetic stimulation session #2" |
 | `Type` | Type of manipulation (**required**). Selected from predefined types. Example: "Optogenetic stimulation". *See options below* |
 | `Procedures` | Related subject procedures (**required**). Must reference existing [procedures]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Optic fiber implant #B789" |
+| `Setup` | The setup where the manipulation was performed (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior Room A" |
+| `Equipment` | Equipment used for the manipulation (**required**). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "LED driver #1" |
 | `Notes` | Notes about the manipulation (string). Example: "20Hz stimulation protocol completed successfully" |
-| `Hardware device` | Hardware device used to perform the manipulation. Example: "470nm LED driver" |
 | `Type details` | Type-specific fields. Fields vary by manipulation type. Example: For optogenetics - power, frequency, duration. *See options below* |
 
 ## Types of manipulations
@@ -68,6 +69,6 @@ Manipulations inherit permissions through the session associated with them.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Manipulation API access
+## API access
 
 The API allows for programmable access to manipulations. Learn more about the manipulations' fields and data structure on the [Manipulation API page]({{"api/modules/manipulation/"|absolute_url}}).

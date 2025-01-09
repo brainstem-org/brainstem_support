@@ -32,7 +32,7 @@ Sessions are modular structures that provide flexible and standardized descripti
 | `Projects` | Projects the session belongs to (**required**). Learn more about project inheritance [here]({{"datamodel/stem/project/"|absolute_url}}). Example: "Hippocampal Memory Project" |
 | `Description` | A text description of the session. Pictures can be uploaded and inserted through rich text formatting. Example: "Recording session during novel object recognition task..." |
 | `Date and time onset` | Date and time of the session onset (YYYY-MM-DD format, e.g., "2023-03-22 14:30:00"). Can be left empty |
-| `Tags` | Tags for the session. Great for organizational purposes and quick labeling, quick labeling, and filtering. Tags are shared across all users. Example: "behavior", "recording", "morning-session" |
+| `Tags` | Tags for the session. Great for organizational purposes, quick labeling and filtering. Tags are shared across all users. Example: "behavior", "recording", "morning-session" |
 | `Data storage` | Describes where the data is stored. Example: "Lab Server", "External Drive 1" |
 | `Name used in storage` | Custom name for the session used in local data storage (string; max length: 200). Example: "ses01_mem_2024" |
 | `Extra fields` | Allows you to add extra fields to the session. Values can be strings or numeric. Saved as key-value pairs. Example: {"Room": "B115", "Temperature": "22C"} |
@@ -45,9 +45,9 @@ Sessions are modular structures that provide flexible and standardized descripti
 | `Name` | Name of the epoch (**required**; string; max length: 100 characters). Example: "Baseline", "Stimulus_Period" |
 | `Start` | Start time of the epoch, relative to the session onset. Example: "0:00:00" |
 | `End` | End time of the epoch, relative to the session onset. Example: "0:05:00" |
-| `Behaviors` | Behaviors associated with the epoch. Example: "Open field exploration" |
+| `Behavior` | Behaviors associated with the epoch. Example: "Open field exploration" |
 | `Data acquisition` | Data acquisition associated with the epoch. Example: "Calcium imaging" |
-| `Manipulations` | Manipulations associated with the epoch. Example: "Optogenetic stimulation" |
+| `Manipulation` | Manipulations associated with the epoch. Example: "Optogenetic stimulation" |
 
 ### Data acquisition fields
 
@@ -67,6 +67,6 @@ The session inherits permissions from its associated projects. Data storage is s
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Sessions API access
+## API access
 
 The API allows for programmable access to sessions. Learn more about the sessions' fields and data structure on the [Sessions API page]({{"api/stem/session/"|absolute_url}}).
