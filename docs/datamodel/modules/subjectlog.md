@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 8
 ---
 
-# Subject logs model
+# Subject log model
 {: .no_toc}
 
 ## Table of contents
@@ -58,6 +58,6 @@ Subject logs inherit permissions from projects via the subject and then the subj
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Subject log API access
+## API access
 
 The API allows for programmable access to Subject logs, enabling you to read, edit, and delete subject logss through the API. Learn more about the subject logs' fields and data structure on the [Subject logs API page]({{"api/modules/subjectlog/"|absolute_url}}).

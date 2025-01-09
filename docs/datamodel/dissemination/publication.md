@@ -41,6 +41,6 @@ Any user can submit new publication entries or propose changes to existing ones.
 
 Once a publication entry has been approved, it becomes accessible to all users.
 
-## Publications API access
+## API access
 
 The API provides programmable access to publication data, allowing you to read, edit, and delete entries. For more information about the fields and data structure of publication entries, please consult the [Publications API page]({{"api/dissemination/publication/"|absolute_url}}).

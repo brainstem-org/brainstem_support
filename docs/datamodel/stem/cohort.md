@@ -35,6 +35,6 @@ Cohorts inherit permissions from their associated project. You can only add subj
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Cohorts API access
+## API access
 
 The API allows for programmable access to cohorts. Learn more about the cohorts' fields and data structure on the [Cohorts API page]({{"api/stem/cohort/"|absolute_url}}).

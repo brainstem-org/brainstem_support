@@ -79,6 +79,6 @@ A simple yet effective tool for measuring electrical activity at a single site. 
 | `Diameter` | Core wire diameter (float, mm). Determines tissue impact and signal quality |
 | `Insulation diameter` | Total diameter including insulation (float, mm). Important for insertion planning |
 
-## Consumable types API access
+## API access
 
 The API allows for programmable access to Consumable types, enabling you to read, edit, and delete consumable type data through the API. Learn more about the consumable types' fields and data structure on the [Consumable types API page]({{"api/resources/consumable/"|absolute_url}}).

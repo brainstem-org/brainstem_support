@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 4
 ---
 
-# Inventories model
+# Inventory model
 {: .no_toc}
 
 ## Table of contents
@@ -36,6 +36,6 @@ Consumable stocks inherit permissions from their associated inventory.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Inventories API access
+## API access
 
 The API allows for programmable access to inventories, enabling you to read, edit, and delete inventories through the API. Learn more about the inventories' fields and data structure on the [Inventories API page]({{"api/personal_attributes/inventory/"|absolute_url}}).
