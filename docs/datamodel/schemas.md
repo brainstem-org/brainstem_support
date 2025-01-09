@@ -3,7 +3,7 @@ layout: default
 title: Schemas
 parent: Data model
 has_children: true
-nav_order: 7
+nav_order: 10
 has_toc: false
 ---
 
