@@ -3,7 +3,7 @@ layout: default
 title: Data acquisition
 parent: Modules
 grand_parent: API
-nav_order: 2
+nav_order: 3
 ---
 
 # Data acquisition API endpoint

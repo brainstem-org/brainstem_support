@@ -238,4 +238,4 @@ The use of auditory stimuli to influence brain activity and study the neural mec
 
 ## API access
 
-The API allows for programmable access to Manipulations, enabling you to read, edit, and delete manipulations through the API. Learn more about the manipulations' fields and data structure on the [Manipulation API page]({{"api/modules/manipulation/"|absolute_url}}).
+The API allows for programmable access to Manipulations, enabling you to read, edit, and delete manipulations through the API. Learn more about the manipulations' fields and data structure on the [Manipulation API page]({{"api/schemas/manipulation/"|absolute_url}}).

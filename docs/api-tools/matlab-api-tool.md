@@ -7,7 +7,7 @@ nav_order: 1
 # Matlab API tool
 {: .no_toc}
 
-Matlab toolset for interacting with the BrainSTEM API. You can get it from GitHub at [github.com/brainstem-org/brainstem_matlab_api_tools](https://github.com/brainstem-org/brainstem_matlab_api_tools).
+You can download the BrainSTEM Matlab API tools repository from GitHub at [github.com/brainstem-org/brainstem_matlab_api_tools](https://github.com/brainstem-org/brainstem_matlab_api_tools) and add it to your Matlab setpath.
 
 Please see the dedicated [tutorial]({{"/tutorials/matlab-api-tool/"|absolute_url}}) with examples on usage. The main functions are described below.
 

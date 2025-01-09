@@ -7,15 +7,22 @@ nav_order: 6
 # Tutorial for the Python API tool
 {: .no_toc}
 
+### Installation
 
-###  0. Load the client. User email and password will be requested.
+Download the BrainSTEM Python API tools repository from GitHub at [github.com/brainstem-org/brainstem_python_api_tools](https://github.com/brainstem-org/brainstem_python_api_tools).
+
+You can also install the package using `pip`:
+
+	pip install brainstem_python_api_tools
+
+### Load the client. User email and password will be requested.
 ```
 from brainstem_api_client import BrainstemClient
 
 client = BrainstemClient()
 ```
 
-###  1. Loading sessions.
+### Loading sessions.
 
 load_model can be used to load any model: We just need to pass our settings and the name of the model.
 
@@ -59,7 +66,7 @@ All these options can be combined to suit the requirements of the users. For exa
 output1 = client.load_model('session', filters={'name.icontains': 'Rat'}, sort=["-name"], include=['projects']).json()
 ```
 
-###  2. Updating a session
+### Updating a session
 
 We can make changes to a model and update it in the database. In this case, we changed the description of one of the previously loaded sessions.
 
@@ -69,7 +76,7 @@ session["description"] = 'new description'
 output2 = client.save_model("session", id="0e39c1fd-f413-4142-95f7-f50185e81fa4", data=session).json()
 ```
 
-###  3. Creating a new session
+### Creating a new session
 
 We can submit a new entry by defining a dictionary with the required fields.
 
@@ -85,7 +92,7 @@ Submitting session
 output3 = client.save_model("session", data=session).json()
 ```
 
-###  4. Load public projects
+### Load public projects
 
 Request the public data by defining the portal to be public
 ```
