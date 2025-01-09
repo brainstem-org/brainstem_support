@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 2
 ---
 
-# Hardware devices model
+# Hardware device model
 {: .no_toc}
 
 ## Table of contents
@@ -35,6 +35,6 @@ Anyone can submit hardware devices or submit changes to existing ones, but all s
 
 Once an entry has been approved, it becomes available to everyone.
 
-## Hardware devices API access
+## API access
 
 The API allows for programmable access to hardware devices, enabling you to read, edit, and delete entries through the API. Learn more about the hardware devices' fields and data structure on the [Hardware devices API page]({{"api/resources/hardwaredevice/"|absolute_url}}).

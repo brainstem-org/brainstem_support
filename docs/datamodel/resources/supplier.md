@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 3
 ---
 
-# Suppliers model
+# Supplier model
 {: .no_toc}
 
 ## Table of contents
@@ -35,6 +35,6 @@ Anyone can submit a supplier or suggest changes to an existing one, but all subm
 
 Once an entry has been approved, it becomes available to everyone.
 
-## Suppliers API access
+## API access
 
 The API allows for programmable access to suppliers, enabling you to read, edit, and delete entries through the API. Learn more about the suppliers' fields and data structure on the [Suppliers API page]({{"api/resources/supplier/"|absolute_url}}).

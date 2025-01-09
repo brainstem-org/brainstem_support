@@ -236,6 +236,6 @@ The use of auditory stimuli to influence brain activity and study the neural mec
 | `Repetitions` | Number of sound presentations (integer, ≥ 0). Critical for studying repeated exposure |
 | `Closed loop` | Whether parameters adjust with feedback (boolean). Enables adaptive sound delivery |
 
-## Manipulation API access
+## API access
 
 The API allows for programmable access to Manipulations, enabling you to read, edit, and delete manipulations through the API. Learn more about the manipulations' fields and data structure on the [Manipulation API page]({{"api/modules/manipulation/"|absolute_url}}).

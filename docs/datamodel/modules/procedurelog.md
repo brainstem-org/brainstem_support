@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 7
 ---
 
-# Procedure logs model
+# Procedure log model
 {: .no_toc}
 
 ## Table of contents
@@ -55,6 +55,6 @@ Procedure logs inherit permissions from projects via the subject and then the pr
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Procedure log API access
+## API access
 
 The API allows for programmable access to Procedure logs, enabling you to read, edit, and delete procedure logss through the API. Learn more about the procedure logss' fields and data structure on the [Procedure logs API page]({{"api/modules/procedurelog/"|absolute_url}}).

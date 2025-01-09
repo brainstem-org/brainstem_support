@@ -34,6 +34,6 @@ Organizational units that are tied to groups in a one-to-one relationship. Linki
 
 For detailed information about permission levels and inheritance, please visit the [permissions documentation]({{site.baseurl}}/datamodel/permissions/).
 
-## User Management API
+## API
 
 The API provides programmatic access to user management functions. Learn more about the available endpoints and data structures on the [Users API page]({{site.baseurl}}/api/users).

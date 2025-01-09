@@ -49,6 +49,6 @@ Subjects inherit permissions from projects associated with them. Procedures, Sub
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Subject API access
+## API access
 
 The API allows for programmable access to subjects. Learn more about the subjects' fields and data structure on the [Subject API page]({{"api/stem/subject/"|absolute_url}}).

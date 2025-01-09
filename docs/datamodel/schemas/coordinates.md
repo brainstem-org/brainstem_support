@@ -108,5 +108,5 @@ Focuses on two-dimensional positioning on the brain's surface, using X and Y coo
 | `Depth (mm)` | Perpendicular distance below the surface plane (float). Used for setting penetration depth. |
 | `Rotation (degrees)` | Rotation around the vertical axis through the point of interest (float; range: -180° to 360°). Used for device orientation. |
 
-## Coordinates API access
+## API access
 The API allows for programmable access to Coordinates, enabling you to read, edit, and delete coordinates through the API. Learn more about the coordinates' fields and data structure on the [Coordinates API page]({{"api/schemas/coordinates/"|absolute_url}}).

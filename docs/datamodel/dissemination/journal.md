@@ -35,6 +35,6 @@ Any user can submit new journal entries or propose changes to existing ones. How
 
 Once a journal entry has been approved, it becomes accessible to all users.
 
-## Journals API access
+## API access
 
 The API provides programmable access to journal data, allowing you to read, edit, and delete entries. For more information about the fields and data structure of journal entries, please consult the [Journals API page]({{"api/dissemination/journal/"|absolute_url}}).

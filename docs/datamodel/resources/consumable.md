@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 1
 ---
 
-# Session model
+# Consumable model
 {: .no_toc}
 
 ## Table of contents
@@ -47,6 +47,6 @@ For detailed information about the specific fields for each type of consumable, 
 
 Once a entry has been approved it becomes available to everyone.
 
-## Session API access
+## API access
 
 The API allows for programmable access to Data storage, enabling you to read, edit, and delete data storage through the API. Learn more about the sessions' fields and data structure on the [Session API page]({{"api/resources/consumable/"|absolute_url}}). 

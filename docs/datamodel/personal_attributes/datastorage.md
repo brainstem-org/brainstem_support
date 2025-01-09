@@ -35,6 +35,6 @@ You manage permissions through the management tab, where you can assign individu
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Data storage API access
+## API access
 
 The API allows for programmable access to Data storage, enabling you to read, edit, and delete data storage through the API. Learn more about the sessions' fields and data structure on the [Data storage API page]({{"api/personal_attributes/datastorage/"|absolute_url}}). 

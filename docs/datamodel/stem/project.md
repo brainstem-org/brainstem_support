@@ -40,6 +40,6 @@ Projects have four permission levels: membership (read access), contributors, ma
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
-## Projects API access
+## API access
 
 The API allows for programmable access to projects. Learn more about the projects' fields and data structure on the [Projects API page]({{"api/stem/project/"|absolute_url}}).
