@@ -110,4 +110,4 @@ Documents observations related to the subject's general health and well-being, i
 
 ## API access
 
-The API allows for programmable access to Subject logs, enabling you to read, edit, and delete subject logs through the API. Learn more about the subject logs' fields and data structure on the [Subject log API page]({{"api/modules/subjectlog/"|absolute_url}}).
+The API allows for programmable access to Subject logs, enabling you to read, edit, and delete subject logs through the API. Learn more about the subject logs' fields and data structure on the [Subject log API page]({{"api/schemas/subjectlog/"|absolute_url}}).

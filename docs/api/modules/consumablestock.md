@@ -3,7 +3,7 @@ layout: default
 title: Consumable stock
 parent: Modules
 grand_parent: API
-nav_order: 3
+nav_order: 2
 ---
 
 # Consumable stock API endpoint

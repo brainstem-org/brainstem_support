@@ -344,4 +344,4 @@ General time series data represents any sequential measurements indexed by time.
 
 ## API access
 
-The API allows for programmable access to Data acquisition, enabling you to read, edit, and delete Data acquisition through the API. Learn more about the Data acquisition' fields and data structure on the [Data acquisition API page]({{"api/modules/dataacquisition/"|absolute_url}}).
+The API allows for programmable access to Data acquisition, enabling you to read, edit, and delete Data acquisition through the API. Learn more about the Data acquisition' fields and data structure on the [Data acquisition API page]({{"api/schemas/dataacquisition/"|absolute_url}}).
