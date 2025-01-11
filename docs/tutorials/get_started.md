@@ -97,6 +97,7 @@ Next, create personal attributes relevant to your experiments.
 {: .no_toc}
 
    - Configure the equipment in your setups
+   
 ### Set up inventories to track your lab resources
 {: .no_toc}
 
@@ -153,7 +154,7 @@ STEM models
 
 - [Sessions]({{site.baseurl}}/datamodel/stem/session/)
    - [Behaviors]({{site.baseurl}}/datamodel/modules/behavior/)
-   - [Data acquisitions]({{site.baseurl}}/datamodel/modules/dataacquisition/)
+   - [Data acquisition]({{site.baseurl}}/datamodel/modules/dataacquisition/)
    - [Manipulations]({{site.baseurl}}/datamodel/modules/manipulation/)
 
 Personal Attributes:

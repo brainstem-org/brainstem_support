@@ -42,4 +42,4 @@ Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn
 
 ## API access
 
-The API allows for programmable access to projects. Learn more about the projects' fields and data structure on the [Projects API page]({{"api/stem/project/"|absolute_url}}).
+The API allows for programmable access to projects. Learn more about the projects' fields and data structure on the [Project API page]({{"api/stem/project/"|absolute_url}}).

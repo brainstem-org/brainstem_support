@@ -37,4 +37,4 @@ Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn
 
 ## API access
 
-The API allows for programmable access to cohorts. Learn more about the cohorts' fields and data structure on the [Cohorts API page]({{"api/stem/cohort/"|absolute_url}}).
+The API allows for programmable access to cohorts. Learn more about the cohorts' fields and data structure on the [Cohort API page]({{"api/stem/cohort/"|absolute_url}}).
