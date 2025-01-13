@@ -2,7 +2,7 @@
 layout: default
 title: Expandability
 parent: Data model
-has_children: true
+has_children: false
 nav_order: 8
 has_toc: false
 ---
@@ -14,7 +14,7 @@ New entries in Taxonomies and Resources can be submitted by users. Any submissio
 ### Expansion of the modules structures
 {: .no_toc }
 
-The available modules the user can select between in procedures, data acquisitions, consumable stocks, equipment, and manipulations, can be expanded by our admin team. If you wish for this, please submit a request through the issue/discussion forum.
+The available modules the user can select between in procedures, data acquisition, consumable stocks, equipment, and manipulations, can be expanded by our admin team. If you wish for this, please submit a request through the issue/discussion forum.
 
 ### Personal attributes
 {: .no_toc }

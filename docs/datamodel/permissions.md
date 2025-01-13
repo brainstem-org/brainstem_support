@@ -17,9 +17,9 @@ nav_order: 9
 
 ## Introduction
 
-BrainSTEM implements a hierarchical permission system that governs access control across the platform. This system enables flexible collaboration while maintaining data security through inheritance-based permissions.
+BrainSTEM has a hierarchical permission system that governs access control across the platform. This system enables flexible collaboration while maintaining data security through inheritance-based permissions.
 
-![permissions]({{site.baseurl}}/assets/images/permission.png)
+![permissions]({{site.baseurl}}/assets/images/permissions_v3.png)
 
 ## Permission Levels Overview
 
@@ -68,32 +68,33 @@ When applied to groups, these permissions extend to all group members automatica
 
 ## Permission Inheritance
 
-### STEM Branch Inheritance
+### Projects
 
 The STEM branch follows this hierarchical pattern:
 ```
 Project
-├── Subject
+├── Subjects
 │   ├── Subject Logs
-│   └── Procedure
+│   └── Procedures
 │       └── Procedure Logs
-├── Session
-│   ├── Behavior
-│   ├── Manipulation
+├── Sessions
+│   ├── Behaviors
+│   ├── Manipulations
 │   └── Data acquisition
-├── Collection
-└── Cohort
+├── Collections
+└── Cohorts
 ```
 
 #### Inheritance Rules
+{: .no_toc}
 
 | Parent Level | Inheritance Pattern | Inheriting Components |
 |:-------------|:-------------------|:-------------------|
 | **Project** | All project components inherit base permissions | Subjects, Sessions, Collections, Cohorts |
 | **Subject** | Direct inheritance with cascading effects | Subject Logs, Procedures, Procedure Logs (via Procedures) |
-| **Session** | Module-level inheritance | Behaviors, Data acquisitions, Manipulations |
+| **Session** | Module-level inheritance | Behaviors, Data acquisition, Manipulations |
 
-### Personal Attributes Inheritance
+### Personal Attributes
 
 Personal attributes follow their own inheritance structure from groups:
 ```
@@ -101,12 +102,13 @@ Personal Attributes
 ├── Setups
 │   └── Equipment
 ├── Inventories
-│   └── Consumable Stocks
-├── Data Repositories
+│   └── Consumable stocks
+├── Data storages
 └── Behavioral Paradigms
 ```
 
 #### Group Level Inheritance
+{: .no_toc}
 
 | Parent Level | Inheritance Pattern | Inheriting Components |
 |:-------------|:-------------------|:-------------------|
@@ -119,17 +121,17 @@ Personal Attributes
 
 ## Public Sharing
 
-### Project Public Sharing
+### Public Sharing of Projects
 {: .note }
-> When a project is made public:
+> When a Project is made public:
 > - All associated components become publicly accessible
 > - Only project owners can make a project public
 > - Public access is read-only for anonymous users
 > - Authorized users retain their edit capabilities
 
-### Personal Attributes Public Sharing
+### Public Sharing of Personal Attributes
 {: .important }
-> - Each personal attribute requires individual public sharing settings
+> - Each Personal Attribute requires individual public sharing settings
 > - Only owners can modify public access settings
 > - Public status required for behavioral paradigms, data storage, and setups used in public projects
 
