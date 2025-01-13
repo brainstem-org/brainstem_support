@@ -19,6 +19,7 @@ nav_order: 1
 
 Projects serve as a primary means to group subjects, sessions, and collections together. A project can be used to relate experiments for publications, describe day-to-day experiments, or share experimental data with collaborators. Projects define the overall permissions level of most other content.
 
+
 ## Fields
 
 | Field | Description |
