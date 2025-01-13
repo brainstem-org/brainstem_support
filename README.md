@@ -10,8 +10,8 @@ The documentation is built using the [Just the Docs](https://just-the-docs.githu
 ## Contribution and Feedback
 We encourage dialog, feedback, and contributions to improve BrainSTEM and the documentation and tutorials. Please use the following systems for collaboration:
 
-- **Issues:** Report bugs, suggest improvements, or request new documentation content.
-- **Discussions:** Engage with the community, ask questions, or propose ideas for the platform.
+- **[Issues](https://github.com/brainstem-org/brainstem_support/issues):** Report bugs, suggest improvements, or request new documentation content.
+- **[Discussions](https://github.com/brainstem-org/brainstem_support/discussions):** Engage with the community, ask questions, or propose ideas for the platform.
 
 ## Local Development
 To run the documentation site locally:
