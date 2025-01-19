@@ -11,7 +11,7 @@ has_toc: false
 
 The STEM models form the core models and provide a flexible and comprehensive framework for organizing and describing neuroscience experiments.
 
-- [**Projects**]({{site.baseurl}}/datamodel/stem/project): Projects serve as the highest-level organizational unit, grouping related subjects, sessions, and collections. They define overall permissions and can be used to organize experiments for publications or day-to-day research activities.
+- [**Projects**]({{site.baseurl}}/datamodel/stem/project): Projects serve as the highest-level organizational unit, grouping related subjects, sessions, cohorts, and collections. They define overall permissions and can be used to organize experiments for publications or day-to-day research activities.
 
 - [**Subjects**]({{site.baseurl}}/datamodel/stem/subject): Subjects are described by essential attributes such as name, sex, species, and strain.
 

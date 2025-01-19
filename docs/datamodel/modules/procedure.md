@@ -6,7 +6,7 @@ grand_parent: Data model
 nav_order: 6
 ---
 
-# Procedures model
+# Procedure model
 {: .no_toc}
 
 ## Table of contents
@@ -86,5 +86,4 @@ Procedures inherit permissions through the subject associated with them.
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 
 ## API access
-
 The API allows for programmable access to procedures. Learn more about the procedures' fields and data structure on the [Procedures API page]({{"api/modules/procedure/"|absolute_url}}).

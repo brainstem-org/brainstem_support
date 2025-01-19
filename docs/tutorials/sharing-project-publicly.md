@@ -31,7 +31,7 @@ When a project is made public, all associated components become publicly accessi
 - Subjects and their procedures
 - Sessions and associated modules
 - Collections and cohorts
-- Related modules (behaviors, data acquisitions, manipulations)
+- Related modules (behaviors, data acquisition, manipulations)
 
 ### Making a Project Public
 
@@ -55,7 +55,7 @@ the public (subjects, sessions, and modules associated with the project).
 > Once a project is made public, anyone can access:
 > - All subjects in the project
 > - All sessions in the project
-> - All modules (behaviors, data acquisitions, manipulations) associated with these sessions
+> - All modules (behaviors, data acquisition, manipulations) associated with these sessions
 > - All collections and cohorts within the project
 
 ## Personal Attributes Public Sharing
@@ -84,7 +84,7 @@ If you make the project public but forget to make the behavioral paradigm and se
 {: .important }
 > This is why it's essential to make both your project AND its associated personal attributes public. Remember:
 > - Behaviors in sessions require both behavioral paradigms and setups to be public
-> - Data acquisitions in sessions require data storage to be public
+> - Data acquisition in sessions require data storage to be public
 > - The relationships between sessions and personal attributes determine which attributes need to be made public
 
 

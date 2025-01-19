@@ -19,10 +19,10 @@ nav_order: 3
 
 Sessions are modular structures that provide flexible and standardized descriptions of various aspects of experiments. Sessions have several direct fields but are primarily described by the following modules:
 
-1. Behaviors: Description of the animal subject(s) behavior during the session collection. A behavior is described by two personal attributes: the setup and the behavioral paradigm.
-2. Data acquisition: Description of the data acquisition files. This module is highly flexible and can describe many types of experimental data, such as Extracellular and Intracellular Electrophysiology, 2-photon microscopy, Miniscope, Audio Recordings, and Behavioral Video Recordings. Details are tailored to each experiment type.
-3. Manipulations: Description of any manipulations performed during an experiment. This crucial module documents alterations to the physiological conditions of a recording. It can describe various types of manipulations, such as Optogenetic Stimulation, Micro Perfusion, Pharmacological Injection, Thermal Perturbation, Transcranial Electrical Stimulation, and Ultrasound Stimulation. A manipulation is described by a protocol, typically consisting of the manipulation profile, power, duration, duty cycle, and number of repetitions.
-4. Epochs: Temporal aspects of a session. An epoch is characterized by a name, start and end times relative to the session's start. Other modules (Data acquisition, Manipulations, and Behavior) can be linked to epochs, allowing for temporal segmentation of a session.
+1. __Behaviors__: Description of the animal subject(s) behavior during the session collection. A behavior is described by two personal attributes: the setup and the behavioral paradigm.
+2. __Data acquisition__: Description of the data acquisition files. This module is highly flexible and can describe many types of experimental data, such as Extracellular and Intracellular Electrophysiology, 2-photon microscopy, Miniscope, Audio Recordings, and Behavioral Video Recordings. Details are tailored to each experiment type.
+3. __Manipulations__: Description of any manipulations performed during an experiment. This crucial module documents alterations to the physiological conditions of a recording. It can describe various types of manipulations, such as Optogenetic Stimulation, Micro Perfusion, Pharmacological Injection, Thermal Perturbation, Transcranial Electrical Stimulation, and Ultrasound Stimulation. A manipulation is described by a protocol, typically consisting of the manipulation profile, power, duration, duty cycle, and number of repetitions.
+4. __Epochs__: Temporal aspects of a session. An epoch is characterized by a name, start and end times relative to the session's start. Other modules (Data acquisition, Manipulations, and Behavior) can be linked to epochs, allowing for temporal segmentation of a session.
 
 ## Session fields
 
@@ -38,7 +38,20 @@ Sessions are modular structures that provide flexible and standardized descripti
 | `Extra fields` | Allows you to add extra fields to the session. Values can be strings or numeric. Saved as key-value pairs. Example: {"Room": "B115", "Temperature": "22C"} |
 | `Online repositories` | If this session has been shared in a public repository, link it here. Example: "DANDI:123456" |
 
+### Data acquisition fields
+{: .no_toc }
+Please see the dedicated page describing the [Data acquisition data model]({{"datamodel/modules/dataacquisition"|absolute_url}}).
+
+### Manipulations data fields
+{: .no_toc }
+Please see the dedicated page describing the [Manipulations data model]({{"datamodel/modules/manipulation"|absolute_url}}).
+
+### Behaviors data fields
+{: .no_toc }
+Please see the dedicated page describing the [Behaviors data model]({{"datamodel/modules/behavior"|absolute_url}}).
+
 ### Epoch fields
+{: .no_toc }
 
 | Field | Description |
 |:------|:------------|
@@ -49,18 +62,6 @@ Sessions are modular structures that provide flexible and standardized descripti
 | `Data acquisition` | Data acquisition associated with the epoch. Example: "Calcium imaging" |
 | `Manipulation` | Manipulations associated with the epoch. Example: "Optogenetic stimulation" |
 
-### Data acquisition fields
-
-Please see the dedicated page describing the [Data acquisition data model]({{"datamodel/modules/dataacquisition"|absolute_url}}).
-
-### Manipulations data fields
-
-Please see the dedicated page describing the [Manipulations data model]({{"datamodel/modules/manipulation"|absolute_url}}).
-
-### Behaviors data fields
-
-Please see the dedicated page describing the [Behaviors data model]({{"datamodel/modules/behavior"|absolute_url}}).
-
 ## Permissions
 
 The session inherits permissions from its associated projects. Data storage is shared through the project groups, and you can only add data storage associated with the same groups as the selected projects. The relationships in modules also depend on the selected projects.
@@ -69,4 +70,4 @@ Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn
 
 ## API access
 
-The API allows for programmable access to sessions. Learn more about the sessions' fields and data structure on the [Sessions API page]({{"api/stem/session/"|absolute_url}}).
+The API allows for programmable access to sessions. Learn more about the sessions' fields and data structure on the [Session API page]({{"api/stem/session/"|absolute_url}}).

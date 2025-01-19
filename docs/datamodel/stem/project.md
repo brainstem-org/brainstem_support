@@ -19,6 +19,7 @@ nav_order: 1
 
 Projects serve as a primary means to group subjects, sessions, and collections together. A project can be used to relate experiments for publications, describe day-to-day experiments, or share experimental data with collaborators. Projects define the overall permissions level of most other content.
 
+
 ## Fields
 
 | Field | Description |
@@ -42,4 +43,4 @@ Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn
 
 ## API access
 
-The API allows for programmable access to projects. Learn more about the projects' fields and data structure on the [Projects API page]({{"api/stem/project/"|absolute_url}}).
+The API allows for programmable access to projects. Learn more about the projects' fields and data structure on the [Project API page]({{"api/stem/project/"|absolute_url}}).
