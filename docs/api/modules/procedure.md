@@ -63,8 +63,7 @@ These are the available `coordinates_system` options for Procedure:
 - `Stereotaxic_BregmaBrainSurface`: Stereotaxic Bregma-Based Surface Coordinates with Depth
 - `Stereotaxic_LambdaAbsolute`: Stereotaxic Lambda-Based Absolute Coordinates
 - `Stereotaxic_LambdaBrainSurface`: Stereotaxic Lambda-Based Surface Coordinates with Depth
-- `Stereotaxic_XYZ_Absolute`: Stereotaxic XYZ Absolute Coordinates
-- `Stereotaxic_XY_Surface`: Stereotaxic Surface XY Surface Coordinates with Depth
+- `CCF_XYZ_Absolute`: Common Coordinate Framework XYZ Absolute Coordinates
 
 
 A detailed list of the accepted schemas for the `coordinates_details` field, related to each `coordinates_system`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
