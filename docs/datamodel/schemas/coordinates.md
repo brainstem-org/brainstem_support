@@ -19,20 +19,15 @@ Several coordinate systems are available for flexibly describing targets of proc
 
 ## Anatomical Reference Points
 
-{: .important }
-Understanding these reference points is crucial for accurate stereotaxic targeting and reproducible experimental procedures.
+In neurosurgery or in research, it is important to know where in the brain a surgical intervention will take place. Ideally, the skull should remain as together as possible, so drilling a small hole is preferable. We use a set of three dimensional coordinates in order to know where the hole should be drilled.
+
+These coordinates rely on anatomical markers that are uniform across individuals. There are two major anatomical markers on the dorsal surface of the brain that are formed when the plates of the skull fuse during development, and these markers are used to identify the location of various anatomical structures of the brain.
 
 <img src="/assets/images/bregma_and_lambda.png" width="80%">
 
-### Bregma
-A skull landmark defined by the intersection of two sutures:
-* The coronal suture (between frontal and parietal bones)
-* The sagittal suture (between left and right parietal bones)
+**Bregma**: the anatomical point on the skull at which the coronal suture (between frontal and parietal bones) is intersected perpendicularly by the sagittal suture (between left and right parietal bones).
 
-### Lambda
-A skull landmark defined by the intersection of:
-* The extension of the sagittal suture (between left and right parietal bones)
-* The lambdoid suture (between parietal and occipital bones)
+**Lambda**: the meeting point of the sagittal suture (between left and right parietal bones) and the lambdoid suture (between parietal and occipital bones).
 
 {: .note }
 Both points serve as standard reference points for stereotaxic coordinates in neuroscience research.
@@ -67,16 +62,20 @@ Proper understanding and application of these angles is critical for accurate pr
 All stereotaxic measurements use three angles to specify orientation:
 
 **ML angle (Medial-Lateral tilt):**
+
 <img src="/assets/images/ML_angle_v2.png" width="50%">
+
    * Measured as tilt from vertical in coronal plane
    * 0° represents vertical along DV axis
    * Range: -180° to +180°
-   * Positive values indicate rightward tilt
-   * Negative values indicate leftward tilt
+   * Positive values indicate rightward tilt (as seen from behind)
+   * Negative values indicate leftward tilt (as seen from behind)
    * Example: +20° indicates probe tilts 20° to the right from vertical
 
 **AP angle (Anterior-Posterior tilt):**
+
 <img src="/assets/images/AP_angle2.png" width="50%">
+
    * Measured as tilt from vertical in sagittal plane
    * 0° represents vertical along DV axis
    * Range: -180° to +180°
@@ -85,7 +84,9 @@ All stereotaxic measurements use three angles to specify orientation:
    * Example: +15° indicates probe tilts 15° anteriorly from vertical
 
 **Rotation angle (around probe axis):**
+
 <img src="/assets/images/rotation2.png" width="50%">
+
    * 0° when probe features align with coronal plane
    * Range: -180° to +180° (or 0° to 360°)
    * Positive rotation is clockwise when viewed from above
@@ -163,7 +164,7 @@ Uses Lambda reference with depth from surface. Same AP and ML axes as Lambda-Bas
 
 ## Common Coordinate Framework XYZ Absolute Coordinates
 
-The Common Coordinate Framework (CCF) is defined in a basic image coordinate system, using the top-left-rear pixel as its origin, and incrementing in the X, Y and Z axes up to the number of pixels in each dimension (ML, DV, AP respectively). It was not designed as a targeting coordinate system. Using some transformations the CCF can be roughly aligned to the stereotactic atlas, however, since it was not it’s intended purpose one should take caution when using the CCF for targeting, even after applying these transformations.
+The Common Coordinate Framework (CCF) is defined in a basic image coordinate system, using the top-left-rear pixel as its origin, and incrementing in the X, Y and Z axes up to the number of pixels in each dimension (ML, DV, AP respectively). It was not designed as a targeting coordinate system. Using some transformations the CCF can be roughly aligned to the stereotaxic atlas, however, since it was not it’s intended purpose one should take caution when using the CCF for targeting, even after applying these transformations.
 
 <img src="/assets/images/CCF_AI.jpeg" width="50%">
 
