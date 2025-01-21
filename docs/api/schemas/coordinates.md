@@ -20,8 +20,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "External XYZ Coordinates with Angles",
-    "options": {"compact": true},
-    "additionalProperties": false,
     "properties": {
         "x": {
             "title": "X coordinate (m)",
@@ -106,8 +104,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "Stereotaxic Bregma-Based Absolute Coordinates",
-    "options": {"compact": true},
-    "additionalProperties": false,
     "properties": {
         "apCoordinate": {
             "title": "AP coordinate (mm)",
@@ -192,8 +188,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "Stereotaxic Bregma-Based Surface Coordinates with Depth",
-    "options": {"compact": true},
-    "additionalProperties": false,
     "properties": {
         "apCoordinate": {
             "title": "AP coordinate (mm)",
@@ -278,8 +272,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "Stereotaxic Lambda-Based Absolute Coordinates",
-    "options": {"compact": true},
-    "additionalProperties": false,
     "properties": {
         "apCoordinate": {
             "title": "AP coordinate (mm)",
@@ -364,8 +356,6 @@ nav_order: 1
 {
     "type": "object",
     "title": "Stereotaxic Lambda-Based Surface Coordinates with Depth",
-    "options": {"compact": true},
-    "additionalProperties": false,
     "properties": {
         "apCoordinate": {
             "title": "AP coordinate (mm)",
@@ -445,13 +435,11 @@ nav_order: 1
 ```
 
 
-## Stereotaxic_XYZ_Absolute: Stereotaxic XYZ Absolute Coordinates
+## CCF_XYZ_Absolute: Common Coordinate Framework XYZ Absolute Coordinates
 ```
 {
     "type": "object",
-    "title": "Stereotaxic XYZ Absolute Coordinates",
-    "options": {"compact": true},
-    "additionalProperties": false,
+    "title": "Common Coordinate Framework XYZ Absolute Coordinates",
     "properties": {
         "x": {
             "title": "X coordinate (mm)",
@@ -515,6 +503,7 @@ nav_order: 1
         }
     }
 }
+
 ```
 
 ### Example of JSON according to this schema
@@ -527,91 +516,5 @@ nav_order: 1
     "xAngle": 37,
     "yAngle": 21,
     "zAngle": 23
-}
-```
-
-
-## Stereotaxic_XY_Surface: Stereotaxic Surface XY Surface Coordinates with Depth
-```
-{
-    "type": "object",
-    "title": "Stereotaxic Surface XY Surface Coordinates with Depth",
-    "options": {"compact": true},
-    "additionalProperties": false,
-    "properties": {
-        "x": {
-            "title": "X coordinate (mm)",
-            "brief": "X",
-            "units": "mm",
-            "type": "number",
-            "options": {
-                "infoText": "X coordinate in millimeters, measuring horizontal position across the surface from a fixed central or reference point."
-            }
-        },
-        "xAngle": {
-            "title": "X angle (°)",
-            "brief": "X angle",
-            "units": "°",
-            "type": "number",
-            "minimum": -180,
-            "maximum": 360,
-            "options": {
-                "infoText": "Angle of tilt around the X-axis, in degrees, indicating the inclination or elevation relative to the flat surface."
-            }
-        },
-        "y": {
-            "title": "Y coordinate (mm)",
-            "brief": "Y",
-            "units": "mm",
-            "type": "number",
-            "options": {
-                "infoText": "Y coordinate in millimeters, measuring vertical position along the surface from a fixed central or reference point."
-            }
-        },
-        "yAngle": {
-            "title": "Y angle (°)",
-            "brief": "Y angle",
-            "units": "°",
-            "type": "number",
-            "minimum": -180,
-            "maximum": 360,
-            "options": {
-                "infoText": "Angle of tilt around the Y-axis, in degrees, indicating the lateral tilt relative to the central axis of the surface."
-            }
-        },
-        "depth": {
-            "title": "Depth (mm)",
-            "brief": "depth",
-            "units": "mm",
-            "type": "number",
-            "options": {
-                "infoText": "Depth in millimeters, measuring the perpendicular distance below the surface plane, used for setting the penetration depth of an instrument."
-            }
-        },
-        "rotation": {
-            "title": "Rotation (°)",
-            "brief": "rotation",
-            "units": "°",
-            "type": "number",
-            "minimum": -180,
-            "maximum": 360,
-            "options": {
-                "infoText": "Rotation around the vertical axis through the point of interest, in degrees, used to adjust the orientation of the instrument or device."
-            }
-        }
-    }
-}
-```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "x": 0, 
-    "y": 4,
-    "depth": 0.1,  
-    "xAngle": 30, 
-    "yAngle": 15,    
-    "rotation": 10
 }
 ```
