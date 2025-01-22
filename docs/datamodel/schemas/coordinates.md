@@ -19,11 +19,9 @@ Several coordinate systems are available for flexibly describing targets of proc
 
 ## Anatomical Reference Points
 
-In neurosurgery or in research, it is important to know where in the brain a surgical intervention will take place. Ideally, the skull should remain as together as possible, so drilling a small hole is preferable. We use a set of three dimensional coordinates in order to know where the hole should be drilled.
+In neurosurgery or in research, it is important to define coordinates for where in the brain a surgical intervention will take place. These coordinates rely on anatomical markers that are uniform across individuals. There are two major anatomical markers on the dorsal surface of the brain that are formed when the plates of the skull fuse during development, and these markers are used to identify the location of various anatomical structures of the brain.
 
-These coordinates rely on anatomical markers that are uniform across individuals. There are two major anatomical markers on the dorsal surface of the brain that are formed when the plates of the skull fuse during development, and these markers are used to identify the location of various anatomical structures of the brain.
-
-<img src="/assets/images/bregma_and_lambda.png" width="80%">
+<img src="/assets/images/coordinates/bregma_and_lambda2.png" width="80%">
 
 **Bregma**: the anatomical point on the skull at which the coronal suture (between frontal and parietal bones) is intersected perpendicularly by the sagittal suture (between left and right parietal bones).
 
@@ -39,55 +37,54 @@ Both points serve as standard reference points for stereotaxic coordinates in ne
 {: .important }
 All stereotaxic coordinate systems in BrainSTEM follow a right-handed coordinate system with the following conventions:
 
-<img src="/assets/images/coordinates2.png" width="50%">
+<img src="/assets/images/coordinates/coordinates2.png" width="60%">
 
 * **AP (Anterior-Posterior) axis:**
    * Primary reference axis
    * Positive values are anterior to reference point
-   * Negative values are posterior to reference point
 * **ML (Medial-Lateral) axis:**
    * Following right-hand rule relative to AP axis
-   * Positive values are to the right
-   * Negative values are to the left
+   * Positive values are to the right (as seen from behind)
 * **DV (Dorsal-Ventral) axis:**
    * Following right-hand rule
    * Positive values are ventral
-   * Negative values are dorsal
 
 ### Angle Measurement System
+By default, angles are defined by three rotations:
+        1. The AP angle, rotating clockwise around ML
+        2. The ML angle, rotating clockwise around AP
+        3. The rotation angle, rotating clockwise around the object's depth axis
 
 {: .warning }
 Proper understanding and application of these angles is critical for accurate probe placement and experimental reproducibility.
 
 All stereotaxic measurements use three angles to specify orientation:
 
-**ML angle (Medial-Lateral tilt):**
+**AP angle (Anterior-Posterior rotation):**
 
-<img src="/assets/images/ML_angle_v2.png" width="50%">
+<img src="/assets/images/coordinates/AP_angle3.png" width="90%">
 
-   * Measured as tilt from vertical in coronal plane
+   * Measured as rotation from the vertical axis in the sagittal plane
    * 0° represents vertical along DV axis
    * Range: -180° to +180°
-   * Positive values indicate rightward tilt (as seen from behind)
-   * Negative values indicate leftward tilt (as seen from behind)
-   * Example: +20° indicates probe tilts 20° to the right from vertical
+   * Positive values indicate anterior rotation
+   * Example: +15° indicates probe tiltet 15° anteriorly from vertical
 
-**AP angle (Anterior-Posterior tilt):**
+**ML angle (Medial-Lateral rotation):**
 
-<img src="/assets/images/AP_angle2.png" width="50%">
+<img src="/assets/images/coordinates/ML_angle3.png" width="90%">
 
-   * Measured as tilt from vertical in sagittal plane
+   * Measured as rotation from the vertical axis in the coronal plane
    * 0° represents vertical along DV axis
    * Range: -180° to +180°
-   * Positive values indicate anterior tilt
-   * Negative values indicate posterior tilt
-   * Example: +15° indicates probe tilts 15° anteriorly from vertical
+   * Positive values indicate rightward/clockwise rotation (as seen from behind)
+   * Example: +20° indicates probe tiltet 20° to the right from vertical
 
 **Rotation angle (around probe axis):**
 
-<img src="/assets/images/rotation2.png" width="50%">
+<img src="/assets/images/coordinates/rotation3.png" width="45%">
 
-   * 0° when probe features align with coronal plane
+   * 0° when probe features align with the coronal plane
    * Range: -180° to +180° (or 0° to 360°)
    * Positive rotation is clockwise when viewed from above
 
@@ -119,8 +116,8 @@ Uses Bregma as reference point in stereotaxic right-hand coordinate system:
 | `AP coordinate (mm)` | Anterior-Posterior coordinate from Bregma (float) |
 | `ML coordinate (mm)` | Medial-Lateral coordinate from Bregma (float) |
 | `DV coordinate (mm)` | Dorsal-Ventral coordinate from Bregma (float) |
-| `AP angle (degrees)` | AP tilt in sagittal plane (float; range: -180° to +180°) |
-| `ML angle (degrees)` | ML tilt in coronal plane (float; range: -180° to +180°) |
+| `AP angle (degrees)` | AP angle in sagittal plane (float; range: -180° to +180°) |
+| `ML angle (degrees)` | ML angle in coronal plane (float; range: -180° to +180°) |
 | `Rotation (degrees)` | Rotation around probe axis (float; range: -180° to +180°) |
 
 ## Stereotaxic Bregma-Based Surface Coordinates with Depth
@@ -132,8 +129,8 @@ Uses Bregma reference with depth from surface instead of DV coordinates. Same AP
 | `AP coordinate (mm)` | Anterior-Posterior coordinate from Bregma (float) |
 | `ML coordinate (mm)` | Medial-Lateral coordinate from Bregma (float) |
 | `Depth (mm)` | Depth from brain surface (float) |
-| `AP angle (degrees)` | AP tilt in sagittal plane (float; range: -180° to +180°) |
-| `ML angle (degrees)` | ML tilt in coronal plane (float; range: -180° to +180°) |
+| `AP angle (degrees)` | AP angle in sagittal plane (float; range: -180° to +180°) |
+| `ML angle (degrees)` | ML angle in coronal plane (float; range: -180° to +180°) |
 | `Rotation (degrees)` | Rotation around probe axis (float; range: -180° to +180°) |
 
 ## Stereotaxic Lambda-Based Absolute Coordinates
@@ -145,8 +142,8 @@ Uses Lambda as reference point with same coordinate system conventions as Bregma
 | `AP coordinate (mm)` | Anterior-Posterior coordinate from Lambda (float) |
 | `ML coordinate (mm)` | Medial-Lateral coordinate from Lambda (float) |
 | `DV coordinate (mm)` | Dorsal-Ventral coordinate from Lambda (float) |
-| `AP angle (degrees)` | AP tilt in sagittal plane (float; range: -180° to +180°) |
-| `ML angle (degrees)` | ML tilt in coronal plane (float; range: -180° to +180°) |
+| `AP angle (degrees)` | AP angle in sagittal plane (float; range: -180° to +180°) |
+| `ML angle (degrees)` | ML angle in coronal plane (float; range: -180° to +180°) |
 | `Rotation (degrees)` | Rotation around probe axis (float; range: -180° to +180°) |
 
 ## Stereotaxic Lambda-Based Surface Coordinates with Depth
@@ -158,28 +155,29 @@ Uses Lambda reference with depth from surface. Same AP and ML axes as Lambda-Bas
 | `AP coordinate (mm)` | Anterior-Posterior coordinate from Lambda (float) |
 | `ML coordinate (mm)` | Medial-Lateral coordinate from Lambda (float) |
 | `Depth (mm)` | Depth from brain surface at Lambda (float) |
-| `AP angle (degrees)` | AP tilt in sagittal plane (float; range: -180° to +180°) |
-| `ML angle (degrees)` | ML tilt in coronal plane (float; range: -180° to +180°) |
+| `AP angle (degrees)` | AP angle in sagittal plane (float; range: -180° to +180°) |
+| `ML angle (degrees)` | ML angle in coronal plane (float; range: -180° to +180°) |
 | `Rotation (degrees)` | Rotation around probe axis (float; range: -180° to +180°) |
 
 ## Common Coordinate Framework XYZ Absolute Coordinates
 
-The Common Coordinate Framework (CCF) is defined in a basic image coordinate system, using the top-left-rear pixel as its origin, and incrementing in the X, Y and Z axes up to the number of pixels in each dimension (ML, DV, AP respectively). It was not designed as a targeting coordinate system. Using some transformations the CCF can be roughly aligned to the stereotaxic atlas, however, since it was not it’s intended purpose one should take caution when using the CCF for targeting, even after applying these transformations.
+The Common Coordinate Framework (CCF) is defined in a basic image coordinate system, using the top-left-front pixel as its origin, and incrementing in the X, Y and Z axes up to the number of pixels in each dimension (AP, DV, ML respectively). Superior-Inferior (SI) is used instead of DV in below figure, and Left-Right (LR) instead of ML. It was not designed as a targeting coordinate system. Using some transformations the CCF can be roughly aligned to the stereotaxic atlas, however, since it was not it’s intended purpose one should take caution when using the CCF for targeting, even after applying these transformations.
 
-<img src="/assets/images/CCF_AI.jpeg" width="50%">
+<img src="/assets/images/coordinates/CCF_AI2.png" width="70%">
 
 CCF can be mapped to the stereotaxic axes:
-- X = ML axis (right positive)
-- Y = AP axis (anterior positive)
-- Z = DV axis (ventral positive)
+- X = AP axis (posterior positive)
+- Y = DV or SI axis (ventral/inferior positive)
+- Z = ML axis (right positive)
+
 
 | Field  | Description |
 |:-------|-------------|
-| `X coordinate (mm)` | Position along ML axis (float) |
-| `Y coordinate (mm)` | Position along AP axis (float) |
-| `Z coordinate (mm)` | Position along DV axis (float) |
-| `ML angle (degrees)` | ML tilt in coronal plane (float; range: -180° to +180°) |
-| `AP angle (degrees)` | AP tilt in sagittal plane (float; range: -180° to +180°) |
+| `X coordinate (mm)` | Position along AP axis (float) |
+| `Y coordinate (mm)` | Position along DV axis (float) |
+| `Z coordinate (mm)` | Position along ML axis (float) |
+| `X angle (degrees)` | X/AP angle in sagittal plane (float; range: -180° to +180°) |
+| `Z angle (degrees)` | Z/ ML angle in coronal plane (float; range: -180° to +180°) |
 | `Rotation (degrees)` | Rotation around probe axis (float; range: -180° to +180°) |
 
 ## API access

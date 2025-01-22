@@ -151,9 +151,9 @@ Involves injecting a virus into the brain, typically to deliver genetic material
 | `Titer unit` | Unit of titer measurement (string; enum: [vg/mL, TU/mL, pfu/mL]). Specifies concentration type |
 | `Injection profile` | Delivery method (string; enum: [Bolus Injection, Continuous Infusion, etc]). Defines administration pattern |
 
-### Coordinates
+## Coordinates
 
-For all procedure types, coordinates are specified using the following system: [Coordinates systems page]({{"datamodel/schemas/coordinates/"|absolute_url}})
+For all procedure types, coordinates are specified using the following [Coordinates systems]({{"datamodel/schemas/coordinates/"|absolute_url}}).
 
 ## API access
 
