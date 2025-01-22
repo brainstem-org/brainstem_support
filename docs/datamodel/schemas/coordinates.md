@@ -88,6 +88,22 @@ All stereotaxic measurements use three angles to specify orientation:
    * Range: -180° to +180° (or 0° to 360°)
    * Positive rotation is clockwise when viewed from above
 
+## Stereotaxic Bregma-Based Absolute Coordinates
+
+Uses Bregma as reference point in stereotaxic right-hand coordinate system:
+- AP axis: Anterior positive, posterior negative
+- ML axis: Right positive, left negative
+- DV axis: Ventral positive, dorsal negative
+
+| Field  | Description |
+|:-------|-------------|
+| `AP coordinate (mm)` | Anterior-Posterior coordinate from Bregma (float) |
+| `ML coordinate (mm)` | Medial-Lateral coordinate from Bregma (float) |
+| `DV coordinate (mm)` | Dorsal-Ventral coordinate from Bregma (float) |
+| `AP angle (degrees)` | AP angle in sagittal plane (float; range: -180° to +180°) |
+| `ML angle (degrees)` | ML angle in coronal plane (float; range: -180° to +180°) |
+| `Rotation (degrees)` | Rotation around probe axis (float; range: -180° to +180°) |
+
 ## Stereotaxic Bregma-Based Surface Coordinates with Depth
 
 Uses Bregma reference with depth from surface instead of DV coordinates. Same AP and ML axes as Bregma-Based Absolute.
@@ -163,22 +179,6 @@ A three-dimensional Cartesian coordinate system using absolute positions relativ
 | `X angle (degrees)` | Rotational angle around X axis (float; range: -180° to 360°) |
 | `Y angle (degrees)` | Rotational angle around Y axis (float; range: -180° to 360°) |
 | `Z angle (degrees)` | Rotational angle around Z axis (float; range: -180° to 360°) |
-
-## Stereotaxic Bregma-Based Absolute Coordinates
-
-Uses Bregma as reference point in stereotaxic right-hand coordinate system:
-- AP axis: Anterior positive, posterior negative
-- ML axis: Right positive, left negative
-- DV axis: Ventral positive, dorsal negative
-
-| Field  | Description |
-|:-------|-------------|
-| `AP coordinate (mm)` | Anterior-Posterior coordinate from Bregma (float) |
-| `ML coordinate (mm)` | Medial-Lateral coordinate from Bregma (float) |
-| `DV coordinate (mm)` | Dorsal-Ventral coordinate from Bregma (float) |
-| `AP angle (degrees)` | AP angle in sagittal plane (float; range: -180° to +180°) |
-| `ML angle (degrees)` | ML angle in coronal plane (float; range: -180° to +180°) |
-| `Rotation (degrees)` | Rotation around probe axis (float; range: -180° to +180°) |
 
 ## API access
 The API allows for programmable access to Coordinates, enabling you to read, edit, and delete coordinates through the API. Learn more about the coordinates' fields and data structure on the [Coordinates API page]({{"api/schemas/coordinates/"|absolute_url}}).
