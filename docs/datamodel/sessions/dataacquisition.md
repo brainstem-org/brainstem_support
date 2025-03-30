@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data acquisition
-parent: Modules
+parent: Sessions
 grand_parent: Data model
 nav_order: 2
 ---
@@ -23,11 +23,11 @@ Data acquisition encompasses the diverse range of data types acquired during sci
 
 | Field | Description |
 |:------|:------------|
-| `Session` | Session of the data acquisition (**required**). Must reference an existing [session]({{"datamodel/stem/session/"|absolute_url}}). Example: "Recording session #3" |
+| `Session` | Session of the data acquisition (**required**). Must reference an existing [session]({{"datamodel/session/"|absolute_url}}). Example: "Recording session #3" |
 | `Type` | Type of data acquisition (**required**). Selected from predefined types. Example: "Extracellular Electrophysiology". *See options below* |
-| `Procedures` | Related subject procedures (**required**). Must reference existing [procedures]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Silicon probe implant #A123" |
+| `Procedures` | Related subject procedures (**required**). Must reference existing [procedures]({{"datamodel/subjects/procedure/"|absolute_url}}). Example: "Silicon probe implant #A123" |
 | `Setup` | Setup of the data acquisition (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Linear track A" |
-| `Equipment` | Equipment used to acquire the data (**required**). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
+| `Equipment` | Equipment used to acquire the data (**required**). Must reference existing [equipment]({{"datamodel/personal_attributes/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
 | `Notes` | Notes about the data acquisition (string). Example: "Good signal quality throughout recording" |
 | `Type details` | Type-specific fields. Fields vary by acquisition type. Example: For electrophysiology - sampling rate, number of channels. *See options below* |
 

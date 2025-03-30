@@ -3,7 +3,7 @@ layout: default
 title: Inventories
 parent: Personal attributes
 grand_parent: Data model
-nav_order: 4
+nav_order: 3
 ---
 
 # Inventory model

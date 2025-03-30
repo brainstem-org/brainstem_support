@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Procedure logs
-parent: Modules
-grand_parent: Data model
-nav_order: 7
+parent: Procedure
+grand_parent: Subjects
+nav_order: 1
 ---
 
 # Procedure log model
@@ -24,7 +24,7 @@ Procedure logs refer to systematic records that track specific parameters or out
 | Field | Description |
 |:------|:------------|
 | `Type` | Type of procedure logs (**required**). Selected from predefined types. Example: "Impedances log", "Linear displacement log". *See options below* |
-| `Procedure` | The procedure of the log (**required**). Must reference an existing [procedure]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Silicon probe implant #A123" |
+| `Procedure` | The procedure of the log (**required**). Must reference an existing [procedure]({{"datamodel/subjects/procedure/"|absolute_url}}). Example: "Silicon probe implant #A123" |
 | `Description` | Description of the procedure logs. Can be left empty (string). Example: "Daily impedance measurements for tetrode array" |
 | `Date and time` | Timestamp for each entry in the log. Example: "2024-03-15 14:30:00" |
 | `Type details` | Type-specific fields for each entry in the log. Fields vary by type. Example: For impedance log - impedance values in kOhm. *See options below* |

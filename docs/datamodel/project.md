@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Projects
-parent: STEM
-grand_parent: Data model
+parent: Data model
 nav_order: 1
 ---
 

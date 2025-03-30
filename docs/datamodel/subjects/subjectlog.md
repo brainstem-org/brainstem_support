@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Subject logs
-parent: Modules
+parent: Subjects
 grand_parent: Data model
-nav_order: 8
+nav_order: 2
 ---
 
 # Subject log model
@@ -24,7 +24,7 @@ Subject logs refers to records that track various aspects of the subjects' livin
 | Field | Description |
 |:------|:------------|
 | `Type` | Type of subject logs (**required**). Selected from predefined types. Example: "Food consumption log", "Housing log". *See options below* |
-| `Subject` | The subject of the log (**required**). Must reference a [subject]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Silicon probe implant #A123" |
+| `Subject` | The subject of the log (**required**). Must reference a [subject]({{"datamodel/subject/"|absolute_url}}). Example: "Silicon probe implant #A123" |
 | `Description` | Description of the subject logs. Can be left empty (string). Example: "Daily food consumption" |
 | `Date and time` | Timestamp for each log-entry. There are two types of subject logs with either simple timestamps or time period defined by a start and an end timestamps. Example: "2024-03-15 14:30:00" |
 | `Start and end time` | Start and stop timestamp of each log-entry. Example: "2024-03-15 14:30:00" |
