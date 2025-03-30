@@ -18,9 +18,9 @@ nav_order: 2
 
 The subjects model describes your animal subject through a set of standard fields. Flexibility is built in through a rich text description field, extra fields, and tags. Subjects are primarily described by the following modules:
 
-1. __Procedures__({{site.baseurl}}/datamodel/subjects/procedure): Description of processes and interventions performed on the subject. This module allows standardized documentation of various procedures such as surgeries, weight measurements, health assessments, and experimental preparations. Each procedure includes details about the protocol used, outcome, start and end times, and can be linked to relevant files and notes.
+1. [__Procedures__]({{site.baseurl}}/datamodel/subjects/procedure): Description of processes and interventions performed on the subject. This module allows standardized documentation of various procedures such as surgeries, weight measurements, health assessments, and experimental preparations. Each procedure includes details about the protocol used, outcome, start and end times, and can be linked to relevant files and notes.
 
-2. __Subject logs__({{site.baseurl}}/datamodel/subjects/subjectlog): Chronological records of observations and notes about the subject. Subject logs serve as a digital notebook for documenting regular checks, behavioral observations, health status changes, and any other relevant information about the subject over time.
+2. [__Subject logs__]({{site.baseurl}}/datamodel/subjects/subjectlog): Chronological records of observations and notes about the subject. Subject logs serve as a digital notebook for documenting regular checks, behavioral observations, health status changes, and any other relevant information about the subject over time.
 
 ## Fields
 
