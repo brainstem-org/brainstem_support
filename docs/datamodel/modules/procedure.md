@@ -24,13 +24,13 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 | Field | Description |
 |:------|:------------|
 | `Type` | Type of procedure (**required**). Selected from predefined types. Example: "Optic fiber implant". *See options below* |
-| `Subject` | The subject the procedure was performed on (**required**). Must reference an existing [subjects]({{"datamodel/subject/"|absolute_url}}). Example: "Mouse_01" |
+| `Subject` | The subject the procedure was performed on (**required**). Must reference an existing [subjects]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
 | `Notes` | Notes about the procedure (string). Example: "Implant placed successfully with minimal bleeding" |
 | `Date and time` | Date and time the procedure was performed. Example: "2024-03-22 10:30:00" |
 | `Inventory` | The inventory record that tracks the consumable stocks (**required**). Must reference an existing [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}). Example: "Lab supplies inventory" |
 | `Consumable stock` | Records and tracks laboratory supplies and materials used in experiments (**required**). Must be associated with an [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}) and have a specific type (Optic fiber, Silicon probe, Single wire electrode, or Virus solution). Example: "32-channel silicon probe in Lab A inventory" |
 | `Setup` | The setup the equipment is installed in (**required**). Must reference an existing [setups]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior room A setup" |
-| `Equipment` | Equipment used in the procedure (**required**). Must reference existing [equipment]({{"datamodel/personal_attributes/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
+| `Equipment` | Equipment used in the procedure (**required**). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
 | `Atlas` | The brain atlas used for anatomical reference (**required** if brain region is specified). Must reference an existing brain atlas. Example: "Allen Mouse Brain Atlas" |
 | `Brain region` | Target brain region where the procedure was performed. Example: "Hippocampus CA1" |
 | `Coordinates system` | Coordinate system (**required**). Selected from predefined systems. Example: "Stereotaxic Bregma-Based". *See options below* |
