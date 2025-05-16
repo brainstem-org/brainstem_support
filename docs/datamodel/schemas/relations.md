@@ -3,7 +3,7 @@ layout: default
 title: Relations
 parent: Schemas
 grand_parent: Data model
-nav_order: 10
+nav_order: 9
 ---
 
 # Relations

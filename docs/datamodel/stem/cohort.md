@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Cohorts
-parent: STEM
+parent: Subjects
 grand_parent: Data model
-nav_order: 5
+nav_order: 3
 ---
 
 # Cohort model

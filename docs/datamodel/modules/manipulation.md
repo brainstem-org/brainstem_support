@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Manipulations
-parent: Modules
+parent: Sessions
 grand_parent: Data model
-nav_order: 5
+nav_order: 3
 ---
 
 # Manipulation model

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Consumable stock
+title: Consumable stock types
 parent: Schemas
 grand_parent: Data model
 nav_order: 8

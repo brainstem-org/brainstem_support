@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Equipment
-parent: Modules
-grand_parent: Data model
-nav_order: 3
+parent: Setups
+grand_parent: Personal attributes
+nav_order: 1
 ---
 
 # Equipment model

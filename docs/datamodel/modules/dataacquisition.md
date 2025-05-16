@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data acquisition
-parent: Modules
+parent: Sessions
 grand_parent: Data model
 nav_order: 2
 ---

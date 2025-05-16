@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Collections
-parent: STEM
+parent: Sessions
 grand_parent: Data model
 nav_order: 4
 ---

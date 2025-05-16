@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Sessions
-parent: STEM
-grand_parent: Data model
+parent: Data model
 nav_order: 3
+has_toc: false
 ---
 
 # Session model
@@ -19,9 +19,9 @@ nav_order: 3
 
 Sessions are modular structures that provide flexible and standardized descriptions of various aspects of experiments. Sessions have several direct fields but are primarily described by the following modules:
 
-1. __Behaviors__: Description of the animal subject(s) behavior during the session collection. A behavior is described by two personal attributes: the setup and the behavioral paradigm.
-2. __Data acquisition__: Description of the data acquisition files. This module is highly flexible and can describe many types of experimental data, such as Extracellular and Intracellular Electrophysiology, 2-photon microscopy, Miniscope, Audio Recordings, and Behavioral Video Recordings. Details are tailored to each experiment type.
-3. __Manipulations__: Description of any manipulations performed during an experiment. This crucial module documents alterations to the physiological conditions of a recording. It can describe various types of manipulations, such as Optogenetic Stimulation, Micro Perfusion, Pharmacological Injection, Thermal Perturbation, Transcranial Electrical Stimulation, and Ultrasound Stimulation. A manipulation is described by a protocol, typically consisting of the manipulation profile, power, duration, duty cycle, and number of repetitions.
+1. [__Behaviors__]({{"datamodel/modules/behavior"|absolute_url}}): Description of the animal subject(s) behavior during the session collection. A behavior is described by two personal attributes: the setup and the behavioral paradigm.
+2. [__Data acquisition__]({{"datamodel/modules/dataacquisition"|absolute_url}}): Description of the data acquisition files. This module is highly flexible and can describe many types of experimental data, such as Extracellular and Intracellular Electrophysiology, 2-photon microscopy, Miniscope, Audio Recordings, and Behavioral Video Recordings. Details are tailored to each experiment type.
+3. [__Manipulations__]({{"datamodel/modules/manipulation"|absolute_url}}): Description of any manipulations performed during an experiment. This crucial module documents alterations to the physiological conditions of a recording. It can describe various types of manipulations, such as Optogenetic Stimulation, Micro Perfusion, Pharmacological Injection, Thermal Perturbation, Transcranial Electrical Stimulation, and Ultrasound Stimulation. A manipulation is described by a protocol, typically consisting of the manipulation profile, power, duration, duty cycle, and number of repetitions.
 4. __Epochs__: Temporal aspects of a session. An epoch is characterized by a name, start and end times relative to the session's start. Other modules (Data acquisition, Manipulations, and Behavior) can be linked to epochs, allowing for temporal segmentation of a session.
 
 ## Session fields

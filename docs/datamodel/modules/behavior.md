@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Behaviors
-parent: Modules
+parent: Sessions
 grand_parent: Data model
 nav_order: 1
 ---

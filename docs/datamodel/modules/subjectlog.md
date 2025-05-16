@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Subject logs
-parent: Modules
+parent: Subjects
 grand_parent: Data model
-nav_order: 8
+nav_order: 2
 ---
 
 # Subject log model

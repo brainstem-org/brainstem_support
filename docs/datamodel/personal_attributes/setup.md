@@ -3,7 +3,8 @@ layout: default
 title: Setups
 parent: Personal attributes
 grand_parent: Data model
-nav_order: 3
+nav_order: 4
+has_toc: false
 ---
 
 # Setup model

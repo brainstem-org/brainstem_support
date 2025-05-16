@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Procedures
-parent: Modules
+parent: Subjects
 grand_parent: Data model
-nav_order: 6
+nav_order: 1
 ---
 
 # Procedure model

@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Consumable stocks
-parent: Modules
-grand_parent: Data model
-nav_order: 4
+parent: Inventories
+grand_parent: Personal attributes
+nav_order: 1
 ---
 
 # Consumable stock model

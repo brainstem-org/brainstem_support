@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Subjects
-parent: STEM
-grand_parent: Data model
+parent: Data model
 nav_order: 2
+has_toc: false
 ---
 
 # Subject model

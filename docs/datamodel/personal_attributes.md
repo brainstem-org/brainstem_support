@@ -15,6 +15,7 @@ Personal attributes are model elements that are typically shared within individu
 
 - [**Data storages**]({{site.baseurl}}/datamodel/personal_attributes/datastorage): Information about local data storage solutions and practices used within a lab. This can include details about file systems, naming conventions, and data organization strategies specific to the research group.
 
-- [**Setups**]({{site.baseurl}}/datamodel/personal_attributes/setup): Descriptions of the physical arrangements and equipment configurations used for experiments. Setups may be unique to a particular lab or research question.
 
 - [**Inventories**]({{site.baseurl}}/datamodel/personal_attributes/inventory): Manages comprehensive lists of laboratory consumables. Each inventory can be associated with specific groups and users, enabling efficient resource tracking and sharing across the laboratory.
+
+- [**Setups**]({{site.baseurl}}/datamodel/personal_attributes/setup): Descriptions of the physical arrangements and equipment configurations used for experiments. Setups may be unique to a particular lab or research question.

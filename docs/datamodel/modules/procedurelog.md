@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Procedure logs
-parent: Modules
-grand_parent: Data model
-nav_order: 7
+parent: Procedure
+grand_parent: Subjects
+nav_order: 1
 ---
 
 # Procedure log model
