@@ -137,7 +137,7 @@ nav_order: 1
         },
         "horizontalResolution": {
             "title": "Horizontal resolution",
-            "brief": "horzontal pixels",
+            "brief": "horizontal pixels",
             "type": "number",
             "minimum": 0
         }

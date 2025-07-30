@@ -42,7 +42,7 @@ We can also filter the models by providing a dictionary where the keys are the f
 output1 = client.load_model('session', filters={'name': 'yeah'}).json()
 ```
 
-Loaded models can be sorted by different criteria applying to their fields. In this example, sessions will be sorted in descending ording according to their name.
+Loaded models can be sorted by different criteria applying to their fields. In this example, sessions will be sorted in descending ordering according to their name.
 
 ```
 output1 = client.load_model('session', sort=['-name']).json()
@@ -54,7 +54,7 @@ In some cases models contain relations with other models, and they can be also l
 output1 = client.load_model('session', include=['projects', 'dataacquisition', 'behaviors', 'manipulations']).json()
 ```
 
-The list of related data acquisition can be retrived from the returned dictionary.
+The list of related data acquisition can be retrieved from the returned dictionary.
 
 ```
 dataacquisition = output1["sessions"][0]["dataacquisition"]
