@@ -15,89 +15,6 @@ nav_order: 1
 1. TOC
 {:toc}
 
-## External_XYZ_Absolute: External XYZ Coordinates with Angles
-```
-{
-    "type": "object",
-    "title": "External XYZ Coordinates with Angles",
-    "properties": {
-        "x": {
-            "title": "X coordinate (m)",
-            "brief": "X",
-            "units": "m",
-            "type": "number",
-            "options": {
-                "infoText": "Absolute X coordinate in meters, representing horizontal positioning along a local reference frame."
-            }
-        },
-        "xAngle": {
-            "title": "X angle (°)",
-            "brief": "X angle",
-            "units": "°",
-            "type": "number",
-            "minimum": -180,
-            "maximum": 360,
-            "options": {
-                "infoText": "Rotational angle around the X axis, in degrees, indicating tilt or elevation relative to the horizontal plane."
-            }
-        },
-        "y": {
-            "title": "Y coordinate (m)",
-            "brief": "Y",
-            "units": "m",
-            "type": "number",
-            "options": {
-                "infoText": "Absolute Y coordinate in meters, representing vertical positioning along a local reference frame."
-            }
-        },
-        "yAngle": {
-            "title": "Y angle (°)",
-            "brief": "Y angle",
-            "units": "°",
-            "type": "number",
-            "minimum": -180,
-            "maximum": 360,
-            "options": {
-                "infoText": "Rotational angle around the Y axis, in degrees, indicating roll or sideways tilt relative to the vertical axis."
-            }
-        },
-        "z": {
-            "title": "Z coordinate (m)",
-            "brief": "Z",
-            "units": "m",
-            "type": "number",
-            "options": {
-                "infoText": "Absolute Z coordinate in meters,representing height."
-            }
-        },
-         "zAngle": {
-            "title": "Z angle (°)",
-            "brief": "Z angle",
-            "units": "°",
-            "type": "number",
-            "minimum": -180,
-            "maximum": 360,
-            "options": {
-                "infoText": "Rotational angle around the Z axis, in degrees, indicating azimuth or orientation facing around the vertical axis."
-            }
-        }
-    }
-}
-```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "x": 0,
-    "y": 0,
-    "z": 1,
-    "xAngle": 37,
-    "yAngle": 21,
-    "zAngle": 23
-}
-```
-
 
 ## Stereotaxic_BregmaAbsolute: Stereotaxic Bregma-Based Absolute Coordinates
 ```
@@ -434,7 +351,6 @@ nav_order: 1
 }
 ```
 
-
 ## CCF_XYZ_Absolute: Common Coordinate Framework XYZ Absolute Coordinates
 ```
 {
@@ -504,6 +420,89 @@ nav_order: 1
     }
 }
 
+```
+
+### Example of JSON according to this schema
+{: .no_toc}
+```
+{
+    "x": 0,
+    "y": 0,
+    "z": 1,
+    "xAngle": 37,
+    "yAngle": 21,
+    "zAngle": 23
+}
+```
+
+## External_XYZ_Absolute: External XYZ Coordinates with Angles
+```
+{
+    "type": "object",
+    "title": "External XYZ Coordinates with Angles",
+    "properties": {
+        "x": {
+            "title": "X coordinate (m)",
+            "brief": "X",
+            "units": "m",
+            "type": "number",
+            "options": {
+                "infoText": "Absolute X coordinate in meters, representing horizontal positioning along a local reference frame."
+            }
+        },
+        "xAngle": {
+            "title": "X angle (°)",
+            "brief": "X angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotational angle around the X axis, in degrees, indicating tilt or elevation relative to the horizontal plane."
+            }
+        },
+        "y": {
+            "title": "Y coordinate (m)",
+            "brief": "Y",
+            "units": "m",
+            "type": "number",
+            "options": {
+                "infoText": "Absolute Y coordinate in meters, representing vertical positioning along a local reference frame."
+            }
+        },
+        "yAngle": {
+            "title": "Y angle (°)",
+            "brief": "Y angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotational angle around the Y axis, in degrees, indicating roll or sideways tilt relative to the vertical axis."
+            }
+        },
+        "z": {
+            "title": "Z coordinate (m)",
+            "brief": "Z",
+            "units": "m",
+            "type": "number",
+            "options": {
+                "infoText": "Absolute Z coordinate in meters,representing height."
+            }
+        },
+         "zAngle": {
+            "title": "Z angle (°)",
+            "brief": "Z angle",
+            "units": "°",
+            "type": "number",
+            "minimum": -180,
+            "maximum": 360,
+            "options": {
+                "infoText": "Rotational angle around the Z axis, in degrees, indicating azimuth or orientation facing around the vertical axis."
+            }
+        }
+    }
+}
 ```
 
 ### Example of JSON according to this schema

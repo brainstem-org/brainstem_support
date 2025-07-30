@@ -11,7 +11,7 @@ has_toc: false
 
 The Schemas in BrainSTEM define the structure and organization of data for various components of the platform. They ensure consistency and standardization across different types of information. The main schema categories include:
 
-- [**Coordinates systems**]({{site.baseurl}}/datamodel/schemas/coordinates): Defines the structure for representing spatial locations within the brain across different coordinate systems and species.
+- [**Coordinates systems**]({{site.baseurl}}/datamodel/schemas/coordinates): Defines the coordinate systems for representing spatial locations within and outside the brain.
 
 - [**Data acquisition types**]({{site.baseurl}}/datamodel/schemas/dataacquisition): Specifies the data fields and organization for various types of experimental data, such as electrophysiology, imaging, and behavioral measurements.
 

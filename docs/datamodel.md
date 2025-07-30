@@ -22,13 +22,13 @@ The model is structured into the following main categories:
 - [__Taxonomies__](/datamodel/taxonomies/): Standardized vocabularies and classification systems for neuroscience research.
 - [__Dissemination__](/datamodel/dissemination/): Capturing information related to the publication and sharing of research findings.
 - [__Users__](/datamodel/users/): Managing authentication, authorization, and organizational structure on the platform.
-- [__Schemas__](/datamodel/schemas/): Defining the structure and organization of data components.
 
 ### Expandability, permissions, schemas
 The data model is designed for expandability with structured permissions and standardized schemas to support flexible data integration.
 
 - [__Expandability__](/datamodel/expandability/): The model can incorporate new methods, techniques, data types, resources, and taxonomies while maintaining a standardized structure.
 - [__Permissions implementation and inheritance__](/datamodel/permissions/): Permissions are applied at the object level, inheriting from users, groups, projects, and personal attributes.
+- [__Schemas__](/datamodel/schemas/): Defining the structure and organization of data components.
 
 ### Elements of the graph
 Tables represent models, while lines represent connections between them. A fork indicates a one-to-many relationship, while forks on both ends indicate a many-to-many relationship. Some models, such as modules and consumables, have subtypes with shared relationships and fields but additional type-specific details.

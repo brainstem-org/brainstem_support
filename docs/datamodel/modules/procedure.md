@@ -69,15 +69,14 @@ Available Coordinate system options for Procedure:
 
 | Type | Description |
 |:-----|:------------|
-| `External X-Y-Z Coordinates with Angles` | Three-dimensional Cartesian system with absolute positions (X, Y, Z) and angles relative to an external reference point. Ideal for precise global positioning. |
-| `Stereotaxic Bregma-Based Absolute` | Stereotaxic coordinates using Bregma on the skull as origin. Uses AP, ML, DV coordinates and angles for precise skull-based targeting. |
-| `Stereotaxic Bregma-Based Surface with Depth` | Stereotaxic coordinates measuring from brain surface beneath Bregma. Uses AP, ML coordinates, depth, and rotation. Accommodates brain surface curvature. |
-| `Stereotaxic Lambda-Based Absolute` | Stereotaxic coordinates using Lambda on the skull as origin. Uses AP, ML, DV coordinates and angles. Alternative skull-based reference point for varied setups. |
-| `Stereotaxic Lambda-Based Surface with Depth` | Stereotaxic coordinates measuring from brain surface beneath Lambda. Uses AP, ML coordinates, depth, and rotation. Useful for targeting occipital brain areas. |
-| `Stereotaxic X-Y-Z Absolute` | Stereotaxic coordinates using X, Y, Z absolute positions and angles. Enables precise navigation within stereotaxic frame. |
-| `Stereotaxic X-Y Surface with Depth` | Stereotaxic coordinates using X, Y positions on brain surface, plus depth and rotation. For experiments needing lateral and anteroposterior precision. |
+| `Stereotaxic Bregma-Based Absolute Coordinates` | Stereotaxic coordinates using Bregma on the skull as origin. Uses AP, ML, DV coordinates and angles for precise skull-based targeting. |
+| `Stereotaxic Bregma-Based Surface Coordinates with Depth` | Stereotaxic coordinates measuring from brain surface beneath Bregma. Uses AP, ML coordinates, depth, and rotation. Accommodates brain surface curvature. |
+| `Stereotaxic Lambda-Based Absolute Coordinates` | Stereotaxic coordinates using Lambda on the skull as origin. Uses AP, ML, DV coordinates and angles. Alternative skull-based reference point for varied setups. |
+| `Stereotaxic Lambda-Based Surface Coordinates with Depth` | Stereotaxic coordinates measuring from brain surface beneath Lambda. Uses AP, ML coordinates, depth, and rotation. Useful for targeting occipital brain areas. |
+| `Common Coordinate Framework XYZ Absolute Coordinates` | Common Coordinate Framework using X, Y, Z absolute positions and angles. |
+| `External XYZ Coordinates with Angles` | Three-dimensional Cartesian system with absolute positions (X, Y, Z) and angles relative to an external reference point. Ideal for precise global positioning. |
 
-A detailed list of the fields in Coordinate system can be found on the [Coordinate system page]({{"datamodel/schemas/coordinates/"|absolute_url}}).
+A detailed description of the coordinate systems can be found on the [Coordinate systems page]({{"datamodel/schemas/coordinates/"|absolute_url}}).
 
 ## Permissions
 
