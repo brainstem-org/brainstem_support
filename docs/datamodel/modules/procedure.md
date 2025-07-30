@@ -50,10 +50,17 @@ These are the available *Type* options for Procedure:
 - `Silicon probe implant`: The insertion of a silicon-based probe equipped with multiple recording sites. These probes enable high-density recordings from many neurons simultaneously, facilitating detailed studies of neural circuits.
 - `Single wire electrode`: The implantation of a thin wire electrode into the brain for recording electrical activity or stimulating neurons. This targeted approach aids in understanding single-neuron contributions to brain function.
 - `Tetrode wire electrode`: The introduction of a four-wire electrode (tetrode) bundle into the brain. Tetrodes allow researchers to monitor and differentiate signals from multiple adjacent neurons, greatly enhancing the resolution of neural recordings.
+- `Generic implant`: A flexible implant category for various devices not covered by specific types. This includes sensors, optical devices, mechanical devices, and custom research tools with configurable anchoring and power options.
+- `GRIN lens implant`: The insertion of a gradient-index (GRIN) lens for deep-brain optical imaging. These miniature lenses enable high-resolution imaging of neural activity in deep brain structures that are otherwise inaccessible to conventional microscopy.
+- `Blood pressure sensor implant`: The surgical placement of pressure monitoring devices within the cardiovascular system. These sensors enable continuous, real-time monitoring of blood pressure changes during experimental procedures.
+- `Breathing sensor implant`: The implantation of respiratory monitoring devices to track breathing patterns and respiratory function. These sensors provide critical physiological data during experiments involving anesthesia or respiratory challenges.
 
 ### Injection and Infusion Procedures:
 - `Injection`: The delivery of solutions, often containing genetic or pharmacological agents, directly into targeted brain areas. This method is commonly performed using a small glass capillary and can be used to alter gene expression or modulate neural activity.
 - `Virus injection`: Similar to the above, but specifically involves injecting viral vectors to introduce or manipulate genetic material in targeted neuronal populations. This approach is key for studying gene function and developing gene therapies.
+
+### Fixation and Positioning Procedures:
+- `Head fixation`: The physical restraint of the head to ensure stable positioning during recording or experimental procedures. This technique enables precise control over head movement, facilitating high-quality data acquisition and consistent experimental conditions.
 
 ### Brain and Tissue Procedures:
 - `Brain lesion`: A deliberate injury or destruction of a specific brain region to investigate its role in behavior, cognition, and physiological processes. Lesion studies help map functions to particular brain areas.
