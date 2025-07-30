@@ -42,6 +42,9 @@ These are the available *Type* options for Subject logs:
 - `Water deprivation log`: Notes periods during which water is withheld from the subject. Similar to food deprivation, water deprivation can be used to study the effects of hydration status on various physiological and behavioral outcomes.
 - `Weighing log`: Records the subject's body weight over time. Regular weighing is critical for monitoring health, growth, and the effects of experimental treatments on body mass.
 - `Wellness log`: Documents observations related to the subject's general health and well-being, including behavior, physical appearance, signs of distress, or illness. This log is essential for ensuring the ethical treatment of research subjects and for interpreting the effects of experimental manipulations on overall health.
+- `Von Frey test`: Records mechanical sensitivity testing using Von Frey filaments. This standardized test measures withdrawal responses to graded mechanical stimuli and is commonly used to assess pain sensitivity, tactile thresholds, and the effects of analgesic treatments.
+- `Hargreaves test`: Documents thermal sensitivity testing using the Hargreaves method. This test measures withdrawal latencies to radiant heat stimuli applied to the paw and is a standard assessment for thermal pain sensitivity and hyperalgesia.
+- `Generic observation`: Captures flexible behavioral and welfare observations not covered by specific log types. This includes pain scoring, grooming behaviors, exploration patterns, and other custom observations important for research protocols.
 
 A detailed list of the type-specific fields can be found on the [subject logs types page]({{"datamodel/schemas/subjectlog/"|absolute_url}}).
 
