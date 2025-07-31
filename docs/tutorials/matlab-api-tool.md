@@ -41,7 +41,7 @@ We can also filter the models by providing cell array with paired filters In thi
 output1_1 = load_model('model','session','filter',{'name','yeah'});
 ```
 
-Loaded models can be sorted by different criteria applying to their fields. In this example, sessions will be sorted in descending ording according to their name.
+Loaded models can be sorted by different criteria applying to their fields. In this example, sessions will be sorted in descending ordering according to their name.
 
 ```m
 output1_2 = load_model('model','session','sort',{'-name'});
