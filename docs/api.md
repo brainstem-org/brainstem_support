@@ -41,7 +41,7 @@ Once you have your token, include it in the Authorization header for all API req
 
 ```bash
 curl \
-  -H "Authorization: Token 38d541204dc8c932c563ee472511e6afdcacaa71" \
+  -H "Authorization: Bearer 38d541204dc8c932c563ee472511e6afdcacaa71" \
   https://www.brainstem.org/api/private/stem/session/
 ```
 
