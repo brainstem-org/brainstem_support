@@ -108,3 +108,11 @@ After making items public, verify their accessibility:
 1. Visit the public dashboard at [www.brainstem.org/public](https://www.brainstem.org/public)
 2. Search for your shared project or attributes
 3. Verify that all components are accessible as expected
+
+## Next Steps
+
+After making your data publicly available, consider these additional steps:
+
+- **Enhance discoverability**: Use [Submit Resources & Taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies) to contribute standardized resources that make your data more findable and usable by the research community
+- **Document methodologies**: Ensure your [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) are well-documented and publicly accessible for protocol reproducibility
+- **Optimize data accessibility**: Review your [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) configuration to ensure public data has appropriate access protocols

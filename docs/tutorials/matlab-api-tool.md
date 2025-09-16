@@ -13,21 +13,34 @@ Download the BrainSTEM Matlab API tools repository from GitHub at [github.com/br
 
 ### Setup credentials/token: 
 
-Email and password will be requested
+Email and password will be requested when running this function:
 
-```m
+```matlab
 get_token
 ```
 
 The token is saved to a mat file (`brainstem_authentication.mat`) in the Matlab API tool folder.
 
+{: .note }
+> The authentication token expires periodically. If you encounter authentication errors, run `get_token` again to refresh your credentials.
+
+### Troubleshooting Authentication
+
+If authentication fails:
+- Verify your email and password are correct
+- Check that the API tools are properly added to your MATLAB path
+- Ensure you have an active internet connection
+
 ### Loading sessions
 
 `load_model` can be used to load any model: We just need to set the name of the model.
 
-```m
+```matlab
 output1 = load_model('model','session');
 ```
+
+{: .important }
+> Always check the returned structure for errors before accessing data. Failed requests will return error information in the output structure.
 
 We can fetch a single session entry from the loaded models.
 
@@ -114,3 +127,10 @@ output4 = load_model('model','project','portal','public');
 
 This tutorial in also available in the [Matlab API tool Github repository](https://github.com/brainstem-org/brainstem_matlab_api_tools).
 
+## Next Steps
+
+After mastering the MATLAB API basics, consider these logical progressions:
+
+- **Complete Experimental Documentation**: Review the [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow) or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) tutorials to understand how API data access fits into complete experimental workflows
+- **Cross-Platform Integration**: If you work in mixed programming environments, check out the [Python API tool tutorial]({{site.baseurl}}/tutorials/python-api-tool) to learn complementary data access patterns
+- **Data Management**: Learn about [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to optimize your MATLAB-based analysis workflows with proper data organization
