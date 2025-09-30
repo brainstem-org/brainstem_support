@@ -93,6 +93,7 @@ After creating subjects, document their housing conditions and initial weights u
    - Click *Add subject log*
 
 **Housing Log Configuration:**
+
 | Field | Value |
 |-------|-------|
 | **Type** | Housing log |
@@ -100,6 +101,7 @@ After creating subjects, document their housing conditions and initial weights u
 | **Description** | Initial housing assignment for experimental cohort |
 
 **Type-specific Details:**
+
 | Field | Value |
 |-------|-------|
 | **Start and end time** | 2024-08-01 08:00:00 to 2024-12-31 18:00:00 |
@@ -116,12 +118,14 @@ After creating subjects, document their housing conditions and initial weights u
 2. **Create Initial Weighing Log**:
 
 **Weighing Log Configuration:**
+
 | Field | Value |
 |-------|-------|
 | **Type** | Weighing log |
 | **Subject** | Select: TM_R001 |
 
 **Type-specific Details:**
+
 | Field | Value |
 |-------|-------|
 | **Weight (grams)** | 385 |
@@ -178,6 +182,7 @@ Document the surgical procedure for Neuropixels probe implantation.
 2. **Procedure Configuration**:
 
 **Basic Information:**
+
 | Field | Value |
 |-------|-------|
 | **Type** | Silicon probe implant |
@@ -193,6 +198,7 @@ Document the surgical procedure for Neuropixels probe implantation.
 | **Coordinates System** | Stereotaxic Bregma-Based Surface Coordinates with Depth |
 
 **Coordinate Details (Type-specific fields):**
+
 | Field | Value |
 |-------|-------|
 | **AP coordinate (mm)** | -3.5 |
@@ -203,10 +209,7 @@ Document the surgical procedure for Neuropixels probe implantation.
 | **Rotation** | 0° |
 
 {: .note }
-> Probe specifications (Neuropixels 1.0: 960 total sites, 384 recording sites, 20 μm spacing, etc.) are documented in the consumable stock entry, not in the procedure record. You can also document the Isoflurance anesthesia, Head fixation, Craniotomy, and the Headcap, but we will leave that out for brevity.
-
-```
-```
+> Probe specifications (Neuropixels 1.0: 960 total sites, 384 recording sites, 20 μm spacing, etc.) are documented in the consumable stock entry, not in the procedure record. You can also document the Isoflurane anesthesia, Head fixation, Craniotomy, and the Headcap, but we will leave that out for brevity.
 
 **[ILLUSTRATION NEEDED: Brain atlas diagram showing electrode placement coordinates]**
 
@@ -225,6 +228,7 @@ After recovery, we begin with a baseline sleep recording.
 2. **Sleep Session Configuration**:
 
 **Basic Session Information:**
+
 | Field | Value |
 |-------|-------|
 | **Name** | TM_R001_Day1_PreSleep_Baseline |
@@ -237,6 +241,7 @@ After recovery, we begin with a baseline sleep recording.
 > Sessions don't have subject, setup, duration, or behavioral paradigm fields directly. These are specified in the Behavior, Data acquisition and Epoch tabs within the session.
 
 **Data Acquisition - Extracellular Recording:**
+
 | Setting | Value |
 |---------|-------|
 | **Type** | Extracellular Electrophysiology |
@@ -251,6 +256,7 @@ After recovery, we begin with a baseline sleep recording.
 | **Least significant bit (μV/bit)** | 0.195 |
 
 **Data Acquisition - Video:**
+
 | Setting | Value |
 |---------|-------|
 | **Session** | Select: TM_R001_Day1_PreSleep |
@@ -261,6 +267,7 @@ After recovery, we begin with a baseline sleep recording.
 | **Notes** | Sleep state monitoring |
 
 **Session Epochs:**
+
 | Epoch Name | Start (min) | Duration (min) | Description |
 |------------|-------------|----------------|-------------|
 | **Habituation** | 0 | 30 | Adaptation to recording environment |
@@ -287,6 +294,7 @@ The main experimental session combining behavior with neural recording.
 2. **Complete Session Configuration**:
 
 **Basic Session Information:**
+
 | Field | Value |
 |-------|-------|
 | **Name** | TM_R001_Day1_ThetaMaze_Training1 |
@@ -297,6 +305,7 @@ The main experimental session combining behavior with neural recording.
 | **Data_storage** | /data/neuropixels/tm_r001/ |
 
 **Data Acquisition - Extracellular Recording:**
+
 | Setting | Value |
 |---------|-------|
 | **Session** | Select: TM_R001_Day1_Behavior |
@@ -312,6 +321,7 @@ The main experimental session combining behavior with neural recording.
 | **Least significant bit (μV/bit)** | 0.195 |
 
 **Data Acquisition - Video:**
+
 | Setting | Value |
 |---------|-------|
 | **Session** | Select: TM_R001_Day1_Behavior |
@@ -322,6 +332,7 @@ The main experimental session combining behavior with neural recording.
 | **Notes** | Behavioral video recording with LED tracking |
 
 **Data Acquisition - Position Tracking:**
+
 | Setting | Value |
 |---------|-------|
 | **Session** | Select: TM_R001_Day1_Behavior |
@@ -332,6 +343,7 @@ The main experimental session combining behavior with neural recording.
 | **Notes** | Head and body position tracking with LED markers |
 
 **Session Epochs:**
+
 | Epoch Name | Start (min) | Duration (min) | Description |
 |------------|-------------|----------------|-------------|
 | **Pre_task_baseline** | 0 | 10 | Open field exploration before task |
@@ -350,16 +362,18 @@ For experiments with optogenetic or pharmacological manipulations.
 **Manipulation Configuration:**
 
 **Basic Information:**
+
 | Field | Value |
 |-------|-------|
 | **Session** | Select: TM_R001_Day1_Behavior |
-| **Type** | Optogenetical stimulation |
+| **Type** | Optogenetic stimulation |
 | **Procedures** | Select: Neuropixels Implantation |
 | **Setup** | Select: Theta Maze Rig |
 | **Equipment** | Select: Yellow Laser System |
 | **Notes** | PV interneuron silencing during choice trials |
 
 **Type-specific Details:**
+
 | Parameter | Value |
 |-----------|-------|
 | **Power (mW)** | 10.0 |
@@ -378,6 +392,7 @@ Capture sleep-dependent replay and consolidation.
 **Post-Sleep Session Configuration:**
 
 **Basic Session Information:**
+
 | Field | Value |
 |-------|-------|
 | **Name** | TM_R001_Day1_PostSleep_Consolidation |
@@ -388,6 +403,7 @@ Capture sleep-dependent replay and consolidation.
 | **Data_storage** | /data/neuropixels/tm_r001/ |
 
 **Data Acquisition - Extracellular Recording:**
+
 | Setting | Value |
 |---------|-------|
 | **Session** | Select: TM_R001_Day1_PostSleep_Consolidation |
@@ -402,6 +418,7 @@ Capture sleep-dependent replay and consolidation.
 | **Number of samples** | 648000000 |
 
 **Session Epochs:**
+
 | Epoch Name | Start (min) | Duration (min) | Description |
 |------------|-------------|----------------|-------------|
 | **Post_behavior_rest** | 0 | 60 | Immediate post-behavior period |
