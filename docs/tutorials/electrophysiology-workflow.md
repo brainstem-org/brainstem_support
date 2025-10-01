@@ -1,18 +1,12 @@
 ---
 layout: default
-title: Complete Electrophysiology Workflow - Theta Maze with Sleep Sessions
+title: Ephys Workflow
 parent: Tutorials
 nav_order: 9
 ---
 
-# Complete Electrophysiology Workflow: Theta Maze with Sleep Sessions
+# Ephys Workflow: Theta Maze with Sleep Sessions
 {: .no_toc}
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ## Introduction
 
@@ -32,7 +26,7 @@ This tutorial walks through a complete electrophysiology experiment in BrainSTEM
 
 ### Step 1: Creating the Research Project
 
-First, we'll create a project to organize and provide context for our experimental work.
+First, we'll create a project to organize and provide context for our experimental work. The project submission is split in two steps. First, you fill in required details, after which you can add other details. Required fields are highlighted with an asterix (*) in the web interface and this tutorial. 
 
 1. **Navigate to Projects**:
    - Go to *Projects*
@@ -44,13 +38,13 @@ First, we'll create a project to organize and provide context for our experiment
 
 | Field | Value |
 |-------|-------|
-| **Name** | Theta Maze Spatial Learning Study |
+| **Name** * | Theta Maze Spatial Learning Study |
 | **Description** | Investigating hippocampal place cell dynamics and memory consolidation during spatial learning using theta maze behavioral paradigm with simultaneous Neuropixels recordings in freely moving rats. |
 | **Authenticated Groups** | Select groups that should have access to this project |
 | **Public Access** | No (keep project private to lab) |
 
 {: .note }
-> Additional project details like PI name, funding source, IACUC protocol numbers, and timeline information can be included in the project description or managed through your lab's separate project management systems. Authenticated groups will get contribute permissions. You can add additional groups or change permissions in the manage page: Go to *Project detail page* → *Manage*
+> Once submitted other details can be added. Additional project details like PI name, funding source, IACUC protocol numbers, and timeline information can be included in the project description or managed through your lab's separate project management systems. Authenticated groups will get contribute permissions. You can add additional groups or change permissions in the manage page: Go to *Project detail page* → *Manage*
 
 ### Step 2: Adding Individual Subjects
 
@@ -66,11 +60,11 @@ Now we'll add individual rats that will participate in our study.
 
 | Field | Value |
 |-------|-------|
-| **Name** | TM_R001 |
-| **Projects** | Select: Theta Maze Spatial Learning Study |
-| **Sex** | Male |
-| **Species** | Select: Rattus norvegicus |
-| **Strain** | Select: Long-Evans |
+| **Name** * | TM_R001 |
+| **Projects** * | Select: Theta Maze Spatial Learning Study |
+| **Sex** * | Male |
+| **Species** * | Select: Rattus norvegicus |
+| **Strain** * | Select: Long-Evans |
 | **Description** | Male Long-Evans rat for theta maze spatial learning study with Neuropixels recordings |
 | **Genetic Line** | Wild type |
 | **Birth Date** | 2024-05-01 |
@@ -161,21 +155,17 @@ Verify your theta maze setup includes all necessary equipment:
 **[SCREENSHOT NEEDED: Equipment list view filtered by setup]**
 
 **Required Equipment**:
-- Neuropixels recording system (IMEC basestation)
-- Open Ephys acquisition board
-- Ceiling-mounted behavior camera (Basler)
-- OptiTrack motion capture system (6+ cameras)
-- Theta maze apparatus
-- Reward delivery system
-- LED position markers
+- Neuropixels data acquisition system (IMEC - Neuropixels OneBox)
+- Ceiling-mounted camera for behavioral tracking (Basler - acA640-90uc)
+- OptiTrack motion capture system for 3D head tracking (6+ cameras OptiTrack - Flex 13)
 
 ### Step 5: Neuropixels Probe Implantation Procedure
 
 Document the surgical procedure for Neuropixels probe implantation.
 
 1. **Navigate to Procedures**:
-   - Go to *Procedures* (below Subjects)
-   - Click *Add procedure*
+   - Go to *Subjects* (below Subjects)
+   - Click Edit for subject *TM_R001*
 
 **[SCREENSHOT NEEDED: Procedure creation interface]**
 
@@ -191,13 +181,13 @@ Document the surgical procedure for Neuropixels probe implantation.
 | **Setup** | Select: Surgical Station |
 | **Equipment** | Select: Stereotaxic Frame |
 | **Inventory** | Select: Neural Electrode Inventory |
-| **Consumable Stock** | Select: Neuropixels 1.0 probe (#001) |
+| **Consumable Stock** | Select: Neuropixels 2.0 probe |
 | **Atlas** | Allen Mouse Brain Atlas |
 | **Brain Region** | HIP: Hippocampal region |
 | **Notes** | Chronic Neuropixels probe implantation targeting CA1/CA3 hippocampus. |
 | **Coordinates System** | Stereotaxic Bregma-Based Surface Coordinates with Depth |
 
-**Coordinate Details (Type-specific fields):**
+**Coordinate Details:**
 
 | Field | Value |
 |-------|-------|
@@ -209,7 +199,7 @@ Document the surgical procedure for Neuropixels probe implantation.
 | **Rotation** | 0° |
 
 {: .note }
-> Probe specifications (Neuropixels 1.0: 960 total sites, 384 recording sites, 20 μm spacing, etc.) are documented in the consumable stock entry, not in the procedure record. You can also document the Isoflurane anesthesia, Head fixation, Craniotomy, and the Headcap, but we will leave that out for brevity.
+> Probe specifications (Neuropixels 2.0: 960 total sites, 384 recording sites, 20 μm spacing, etc.) are documented in the consumable stock entry, not in the procedure record. You can also document the Isoflurane anesthesia, Head fixation, Craniotomy, and the Headcap, but we will leave that out for brevity.
 
 **[ILLUSTRATION NEEDED: Brain atlas diagram showing electrode placement coordinates]**
 

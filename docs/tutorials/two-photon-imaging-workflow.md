@@ -1,20 +1,14 @@
 ---
 layout: default
-title: Two-Photon Imaging Workflow - Visual Cortex Population Dynamics
+title: 2P Imaging Workflow
 parent: Tutorials
 nav_order: 10
 ---
 
-# Complete Two-Photon Imaging Workflow: Visual Cortex Population Dynamics
+# Draft: Two-Photon Workflow: Visual Cortex Population Dynamics
 {: .no_toc}
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
-## Introduction
+## Introduction - Note: this tutorial is still in a drafting state
 
 This comprehensive tutorial walks through a complete two-photon calcium imaging experiment in BrainSTEM, from subject preparation to data analysis. We'll document a visual cortex population dynamics study with head-fixed mice, demonstrating how to integrate subjects, procedures, behavioral paradigms, data acquisition, manipulations, and collections in a realistic research workflow.
 
