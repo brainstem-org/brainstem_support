@@ -20,7 +20,7 @@ nav_order: 6
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
-| `invitee` | invited user ID |
+| `invitee` | invited user ID formatted as an integer |
 | `project` | related project ID formatted as a string |
 | `can_change` | boolean |
 | `manage_project` | boolean |

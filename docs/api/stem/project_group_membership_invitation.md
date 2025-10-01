@@ -21,7 +21,7 @@ nav_order: 5
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
-| `invitee` | invited group ID |
+| `invitee` | invited group ID formatted as an integer |
 | `project` | related project ID formatted as a string |
 | `can_change` | boolean |
 | `manage_project` | boolean |
