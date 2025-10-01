@@ -20,10 +20,10 @@ nav_order: 4
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
-| `name` | string **[required]** [max length: 200]|
+| `name` | string **[required]** [max length: 100]|
 | `description` | string |
 | `project` | related project ID formatted as a string **[required]** |
-| `subjects` | list of related subjects IDs formatted as strings **[required]** |
+| `subjects` | list of related subjects IDs formatted as strings |
 | `tags` | list of strings |
 
 ## List view
@@ -74,8 +74,6 @@ resp = client.load_model('cohort')
 - **URL:** https://www.brainstem.org/api/private/stem/cohort
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
-
-**Additional notes:** when a user creates a project they become its owner and only member. Any other user or group will not be added at this point. Perform a change request to add more users or groups.
 
 ### Use example (using Python API)
 {: .no_toc}
