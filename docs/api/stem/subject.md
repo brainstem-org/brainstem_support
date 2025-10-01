@@ -263,7 +263,7 @@ resp = client.save_model(
 ## Delete
 - **Allowed portals:** private, super
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/stem/subjectsubject/<id\>/
+- **URL:** https://www.brainstem.org/api/private/stem/subject/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
