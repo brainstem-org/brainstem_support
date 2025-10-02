@@ -90,6 +90,8 @@ Set up access methods for your data storage. Each protocol defines how to access
 {: .important }
 > You can configure multiple protocols for the same data storage. This allows flexibility in how different users or systems access the same data.
 
+Protocol names must match the options provided in the BrainSTEM UI (e.g., "Local harddrive", "Dropbox (Cloud solution)", "Web").
+
 ## Assigning Data Storage to Sessions
 
 ### During Session Creation
@@ -132,7 +134,7 @@ When you associate a data storage with a session, BrainSTEM can automatically co
 | **Organization** | Projects → Subjects → Sessions → Data files |
 
 {: .note }
-> Data files are implied be stored in the session folder.
+> Data files are implied to be stored in the session folder.
 
 **Session Information:**
 | Field | Value |
@@ -179,7 +181,10 @@ def construct_data_path(session_data):
     Construct full path to session data based on BrainSTEM metadata
     """
     storage = session_data['datastorage']
-    base_path = storage['data_protocols_json'][0]['path']  # First protocol
+
+    # Use the first configured protocol by default.
+    # Update this selection if your storage relies on a specific protocol.
+    base_path = storage['data_protocols_json'][0]['path']
     
     # Extract organization elements
     organization = storage['data_organization_json']
@@ -309,6 +314,8 @@ function data_info = load_session_data(session_id)
     
     % Extract data storage information
     storage = session_data.datastorage;
+
+    % Use the first configured protocol; adjust if a specific protocol is required.
     base_path = storage.data_protocols_json{1}.path;
     
     % Construct full path (simplified example)

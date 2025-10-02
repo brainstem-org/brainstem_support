@@ -4,8 +4,15 @@ title: Behavioral Paradigms
 parent: Tutorials
 nav_order: 20
 ---
-
 # Behavioral Paradigms in BrainSTEM
+{: .no_toc}
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+
+## Introduction
 
 Behavioral paradigms are standardized experimental protocols or tasks (such as T-maze alternation, open field exploration, or Morris water maze) that are performed within a specific setup environment. Defining paradigms in BrainSTEM ensures consistency, reproducibility, and clear documentation of behavioral experiments across your lab.
 
