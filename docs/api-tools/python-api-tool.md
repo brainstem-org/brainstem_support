@@ -17,6 +17,8 @@ nav_order: 2
 
 The BrainSTEM Python API tool (`brainstem_python_api_tools`) provides a thin wrapper around the REST endpoints documented in the [STEM API reference]({{ "/api/stem/" | absolute_url }}). This page mirrors the structure of those docs while expanding on hands-on usage. Every snippet below has been tested against the public API; replace placeholders (for example, IDs) with values you can access in your own account.
 
+> **Repository & notebooks:** Source code and examples live in [brainstem-org/brainstem_python_api_tools](https://github.com/brainstem-org/brainstem_python_api_tools). The repository includes the `brainstem_api_tutorial.ipynb` notebook that mirrors this guide with runnable cells.
+
 ## Installation
 
 Install the published package from PyPI (recommended) or clone the GitHub repository.

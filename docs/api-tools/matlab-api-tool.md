@@ -13,6 +13,14 @@ nav_order: 1
 1. TOC
 {:toc}
 
+## Overview
+
+The BrainSTEM MATLAB API tool (`brainstem_matlab_api_tools`) provides a thin wrapper around the REST endpoints documented in the [STEM API reference]({{ "/api/stem/" | absolute_url }}). This page mirrors the structure of those docs while expanding on hands-on usage. Every snippet below has been tested against the public API; replace placeholders (for example, IDs) with values available to your account.
+
+Helper functions such as `get_token`, `load_model`, `load_project`, `load_session`, and `save_model` streamline typical MATLAB workflows while mapping their arguments directly onto the underlying HTTP parameters.
+
+> **Repository & tutorial:** Source code and examples live in [brainstem-org/brainstem_matlab_api_tools](https://github.com/brainstem-org/brainstem_matlab_api_tools). The repository includes the `brainstem_api_tutorial.m` script that mirrors this guide with runnable sections.
+
 ## Installation
 
 Clone the MATLAB helper package and add it to your MATLAB path:
@@ -73,6 +81,16 @@ Multiple filter conditions can be specified as pairs in the same cell array:
 filtered = load_model(
     'model', 'session', ...
     'filter', {'name.icontains', 'Rat', 'description.icontains', 'demo'});
+```
+
+The convenience functions also support multiple filter conditions through their shorthand parameters:
+
+```matlab
+% Filter projects by name and tags
+project = load_project('name', 'Allen', 'tags', '1');
+
+% Filter subjects by name and sex
+subject = load_subject('name', 'Mouse', 'sex', 'M');
 ```
 
 ## Sorting
