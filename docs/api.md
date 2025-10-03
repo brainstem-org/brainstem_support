@@ -15,41 +15,113 @@ The BrainSTEM API provides programmatic access to the complete data model, enabl
 1. TOC
 {:toc}
 
-## Token-based API Authentication
-To access the API, you must authenticate using a token. The API token can be obtained from the endpoint `https://www.brainstem.org/api/token/` by sending a POST request with your username and password. Once acquired, the token does not expire and can be reused for all subsequent API requests.
+## API Token Management
 
-### Getting Your API Token
+BrainSTEM supports multiple token types for secure API access. Choose the authentication method that best fits your use case - from long-lived tokens for scripts to short-lived tokens for web applications.
+
+### Token Types Overview
 {: .no_toc}
-**Example cURL request to get an API token:**
 
+| Token Type | Duration | Renewal | Best For |
+|------------|----------|---------|----------|
+| **Personal Access Token** | 1 year (auto-refresh) | Automatic when used | Scripts, integrations, automation |
+| **Access Token** | 1 hour (fixed expiry) | Refresh token required | Web applications, temporary access |
+| **Refresh Token** | 30 days (fixed expiry) | Re-authenticate with credentials | Renewing access tokens |
+
+### 1. Personal Access Tokens (Recommended)
+{: .no_toc}
+
+Personal access tokens are sliding tokens that automatically refresh themselves and last for 1 year. They're perfect for scripts and integrations since they don't require manual renewal.
+
+**Creating Personal Access Tokens:**
+1. Visit your [API Token Management page](https://www.brainstem.org/private/users/tokens/)
+2. Enter a descriptive name (e.g., "My API Integration", "Data Export Script")
+3. Click "Create Personal Access"
+4. Save the token immediately - it's only shown once when created
+
+**Using Personal Access Tokens:**
 ```bash
-curl \
-  -X POST https://www.brainstem.org/api/token/ \
+curl -H "Authorization: Bearer YOUR_PERSONAL_TOKEN" \
+     https://www.brainstem.org/api/private/stem/project/
+```
+
+{: .important }
+> Personal access tokens are shown only once when created. Save them immediately in a secure location.
+
+### 2. Short-lived Access Tokens
+{: .no_toc}
+
+For temporary access or when you need fresh tokens regularly. These tokens expire after 1 hour (3600 seconds) and must be renewed using a refresh token which can be used for 30 days.
+
+**Get Access + Refresh Token Pair:**
+```bash
+curl -X POST https://www.brainstem.org/api/auth/token/ \
   -H "Content-Type: application/json" \
-  -d '{"username": "user@email.com", "password": "password"}'
+  -d '{"email": "your-email", "password": "your-password"}'
 ```
 
-**Example response:**
-
+**Response:**
 ```json
-{"token":"38d541204dc8c932c563ee472511e6afdcacaa71"}
+{
+    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...", 
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "token_type": "bearer",
+    "expires_in": 3600
+}
 ```
 
-### Using Your Token
+**Renew Access Token (before it expires):**
+```bash
+curl -X POST https://www.brainstem.org/api/auth/token/refresh/ \
+  -H "Content-Type: application/json" \
+  -d '{"refresh": "YOUR_REFRESH_TOKEN"}'
+```
+
+{: .important }
+> When renewing the access token, a new refresh token will also be provided and the previous refresh token becomes invalid.
+
+**Use Access Token:**
+```bash
+curl -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+     https://www.brainstem.org/api/private/stem/project/
+```
+
+### 3. Backward Compatible Method
 {: .no_toc}
-Once you have your token, include it in the Authorization header for all API requests:
+
+Direct username/password authentication that returns a long-lived sliding token (equivalent to a Personal Access Token):
 
 ```bash
-curl \
-  -H "Authorization: Bearer 38d541204dc8c932c563ee472511e6afdcacaa71" \
-  https://www.brainstem.org/api/private/stem/session/
+curl -X POST https://www.brainstem.org/api/token/ \
+  -H "Content-Type: application/json" \
+  -d '{"username": "your-email", "password": "your-password"}'
 ```
+
+**Response:**
+```json
+{
+    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "token_id": 1,
+    "message": "Token created successfully"
+}
+```
+
+{: .note }
+> The created token will be listed in your Personal Access Token management page and can be deleted manually.
 
 ### Authentication in API Tools
 {: .no_toc}
 The token acquisition process is built into the official API tools:
 - **MATLAB and Python tools**: Automatically handle token requests and management
 - **Web API tool**: Uses your regular credentials (email and password) for browser-based access
+
+### Security Best Practices
+{: .no_toc}
+
+- **Keep tokens secure**: Never share them in public repositories or logs
+- **Save immediately**: Personal access tokens are shown only once when created  
+- **Monitor expiration**: Access tokens (1 hour) and refresh tokens (30 days) have fixed lifetimes
+- **Clean up regularly**: Delete unused tokens and monitor usage in your [token management page](https://www.brainstem.org/private/users/tokens/)
 
 ## Available API Endpoints
 
@@ -237,26 +309,6 @@ For large datasets, the API automatically paginates results:
 /?limit=10&offset=30  # Get records 31-40
 ```
 
-## Response Format
-
-All API responses return JSON data with a consistent structure:
-
-```json
-{
-  "count": 150,
-  "next": "https://www.brainstem.org/api/private/stem/session/?offset=20",
-  "previous": null,
-  "results": [
-    {
-      "id": "12345678-1234-1234-1234-123456789abc",
-      "name": "Experiment Session 1",
-      "description": "Description of the session...",
-      "created_date": "2024-01-15T10:30:00Z"
-    }
-  ]
-}
-```
-
 ## Error Handling
 
 The API returns standard HTTP status codes:
@@ -268,12 +320,3 @@ The API returns standard HTTP status codes:
 - **403**: Forbidden (insufficient permissions)
 - **404**: Not Found
 - **500**: Internal Server Error
-
-Error responses include detailed messages:
-
-```json
-{
-  "error": "Invalid filter parameter",
-  "detail": "Field 'invalid_field' does not exist on model 'Session'"
-}
-```
