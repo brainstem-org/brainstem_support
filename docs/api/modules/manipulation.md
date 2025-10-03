@@ -25,7 +25,7 @@ nav_order: 5
 | `procedures` | list of related procedure IDs formatted as strings **[required]** |
 | `session` | related session ID formatted as a string **[required]** |
 | `equipment` | list of related equipment IDs formatted as strings |
-| `details` | JSON array mapped to the internal `type_json` field. *See accepted schemas below* |
+| `details` | JSON data (object or array) whose structure depends on the selected manipulation type |
 | `order` | optional positive integer controlling display order within a session |
 
 
