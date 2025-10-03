@@ -25,6 +25,8 @@ nav_order: 7
 | `procedure` | related procedure ID formatted as a string **[required]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
 
+`type` is writable on creation but treated as read-only on subsequent updates.
+
 ## Types of procedure logs
 
 - `Impedances`: Impedances log
@@ -43,7 +45,9 @@ Each entry in the `entries` list is a dictionary with the following fields:
 | `notes` | string |
 | `details` | JSON object. *See accepted schemas below* |
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the JSON schema files under `modules/static/json/ProcedureLog/` in the repository.
+
+Use the dedicated endpoints `/add_entry/`, `/change_entry/`, and `/remove_entry/` on an existing log to manage entries while the main PATCH endpoint updates the log metadata.
 
 ## List view
 - **Allowed portals:** public, private, super

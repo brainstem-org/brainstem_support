@@ -25,19 +25,31 @@ nav_order: 2
 | `inventory` | related inventory ID formatted as a string **[required]** |
 | `acquisition_date` | string containing date (e.g. "2023-03-22") |
 | `expiration_date` | string containing date (e.g. "2023-03-22") |
-| `storage_location` | string describing where the location of the consumable [max length: 100] |
-| `storage_conditions` | string describing the conditions the consumable string [max length: 100] |
+| `storage_location` | string describing where the consumable is stored [max length: 100] |
+| `storage_conditions` | string describing the consumable storage conditions [max length: 100] |
 | `intended_use` | string [max length: 100] |
 | `cost` | string [max length: 100] |
 | `consumable` | related consumable ID formatted as a string |
-| `details` | JSON object. *See accepted schemas below* |
+| `details` | JSON object mapped to the internal `type_json` field. *See accepted schemas below* |
 
 
 ## Types of consumable stock
 
+Consumable stock `type` values are grouped as follows:
+
+### Reagents and Solutions
+- `ChemicalReagent`: Chemical reagent
+- `ImmunoReagent`: Antibody or immunoreagent
+- `PharmacologicalAgent`: Pharmacological agent
+- `PhysiologicalSolution`: Physiological solution
+- `TracerDye`: Tracer or dye
+- `VirusSolution`: Virus solution
+
+### Device-Linked Consumables
+- `ConsumableDevice`: Consumable device
+- `OpticalComponent`: Optical component
 - `OpticFiber`: Optic fiber
 - `SiliconProbe`: Silicon probe
-- `VirusSolution`: Virus solution
 - `SingleWireElectrode`: Single wire electrode
 
 ## List view
@@ -61,38 +73,36 @@ resp = client.load_model('consumablestock')
 {'consumablestock': [
     {
         'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
-        'type': 'TetrodeWireElectrode',
-        'notes': 'First implant',
-        'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
-        'date_time': None,
+        'type': 'OpticFiber',
+        'notes': 'Backup spool',
+        'inventory': '6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e',
+        'acquisition_date': '2024-03-01',
+        'expiration_date': None,
+        'storage_location': 'Cabinet A',
+        'storage_conditions': 'Room temperature',
+        'intended_use': 'Optogenetics',
+        'cost': '120 USD',
         'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-        'hardwaredevice': None,
         'details': {
-            'tetrodeCount': 1,
-            'nWiresTetrode': 4,
-            'wireDiameter': 33.9,
-            'wireMaterial': 'tunsgten'
+            'fiberIds': 'OF-2024-03-A',
+            'quantity': 12
         }
     },
     {
         'id': 'a18dd2b1-6393-468c-9424-1bc77b9e4976',
-        'type': 'TetrodeWireElectrode',
-        'notes': 'Second implant',
-        'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
-        'date_time': None,
+        'type': 'SiliconProbe',
+        'notes': 'Quarterly order',
+        'inventory': '6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e',
+        'acquisition_date': '2024-02-15',
+        'expiration_date': None,
+        'storage_location': 'Freezer shelf 2',
+        'storage_conditions': '4C',
+        'intended_use': 'Acute recordings',
+        'cost': '3400 USD',
         'consumable': None,
-        'hardwaredevice': None,
         'details': {
-            'tetrodeCount': 1,
-            'nWiresTetrode': 4,
-            'wireDiameter': 33.9,
-            'wireMaterial': 'tunsgten'
-        },
-        'coordinates_system': 'External_XYZ_Absolute',
-        'coordinates_details': {
-            'x': 1.0,
-            'y': 0.0,
-            'xAngle': 2.0
+            'probeIds': 'SP-64A,SP-64B',
+            'quantity': 2
         }
     }
 ]}
@@ -110,11 +120,17 @@ resp = client.load_model('consumablestock')
 {: .no_toc}
 
 ```
-resp = client.save_model("consumablestock",  data={
-    "type": "OpticFiberImplant",
-    "setup": "0f87c229-6769-4854-83a5-c71e154246b8",
-    "notes": "some text",
-    "details": {"fiberTipShape": "flat"}
+resp = client.save_model(
+    "consumablestock",
+    data={
+        "type": "OpticFiber",
+        "inventory": "6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e",
+        "consumable": "a5f29099-2758-4163-a8e4-e5e2898e57b2",
+        "notes": "Initial batch",
+        "acquisition_date": "2024-03-01",
+        "storage_location": "Cabinet A",
+        "details": {"fiberIds": "OF-2024-03-A", "quantity": 12}
+    }
 )
 ```
 
@@ -124,14 +140,18 @@ resp = client.save_model("consumablestock",  data={
 ```
 {'consumablestock': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
-    'type': 'OpticFiberImplant',
-    'notes': 'some text',
-    'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
-    'date_time': None,
-    'consumable': None,
-    'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'}
-}
+    'type': 'OpticFiber',
+    'notes': 'Initial batch',
+    'inventory': '6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e',
+    'acquisition_date': '2024-03-01',
+    'expiration_date': None,
+    'storage_location': 'Cabinet A',
+    'storage_conditions': None,
+    'intended_use': None,
+    'cost': None,
+    'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+    'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12}
+}}
 ```
 
 
@@ -155,14 +175,18 @@ resp = client.load_model('consumablestock', id='d37c9255-d5ae-47d9-b6e1-4ec760c2
 ```
 {'consumablestock': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
-    'type': 'OpticFiberImplant',
-    'notes': 'some text',
-    'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
-    'date_time': None,
-    'consumable': None,
-    'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'}
-}
+    'type': 'OpticFiber',
+    'notes': 'Initial batch',
+    'inventory': '6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e',
+    'acquisition_date': '2024-03-01',
+    'expiration_date': None,
+    'storage_location': 'Cabinet A',
+    'storage_conditions': None,
+    'intended_use': None,
+    'cost': None,
+    'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+    'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12}
+}}
 ```
 
 
@@ -178,7 +202,11 @@ resp = client.load_model('consumablestock', id='d37c9255-d5ae-47d9-b6e1-4ec760c2
 {: .no_toc}
 
 ```
-resp = client.save_model("consumablestock", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"notes": "new text"})
+resp = client.save_model(
+    "consumablestock",
+    id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
+    data={"notes": "Updated notes"}
+)
 ```
 
 ### Response example
@@ -187,14 +215,18 @@ resp = client.save_model("consumablestock", id="d37c9255-d5ae-47d9-b6e1-4ec760c2
 ```
 {'consumablestock': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
-    'type': 'OpticFiberImplant',
-    'notes': 'new text',
-    'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
-    'date_time': None,
-    'consumable': None,
-    'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'}
-}
+    'type': 'OpticFiber',
+    'notes': 'Updated notes',
+    'inventory': '6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e',
+    'acquisition_date': '2024-03-01',
+    'expiration_date': None,
+    'storage_location': 'Cabinet A',
+    'storage_conditions': None,
+    'intended_use': None,
+    'cost': None,
+    'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+    'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12}
+}}
 ```
 
 ## Delete

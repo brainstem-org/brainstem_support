@@ -23,35 +23,70 @@ nav_order: 6
 | `type` | string **[required]**. *See options below* |
 | `notes` | string [max length: 500] |
 | `subject` | related subject ID formatted as a string **[required]** |
-| `date_time` | string containing date (e.g. "2023-03-22") |
-| `consumable` | related consumable ID formatted as a string |
-| `hardwaredevice` | related hardware device ID formatted as a string |
+| `date_time` | string containing date and time (ISO 8601) |
+| `consumablestock` | related consumable stock ID formatted as a string |
+| `equipment` | list of related equipment IDs formatted as strings |
 | `brain_region` | related brain region ID formatted as a string |
-| `details` | JSON object. *See accepted schemas below* |
+| `details` | JSON object mapped to the internal `type_json` field. *See accepted schemas below* |
 | `coordinates_system` | string **[required]**. *See options below* |
-| `coordinates_details` | JSON object. *See accepted schemas below* |
+| `coordinates_details` | JSON object mapped to the internal `coordinates_json` field. *See accepted schemas below* |
 
 ## Types of procedure
 
 ### Surgical Procedures
+- `Anesthesia`: Anesthesia
+- `BurrHole`: Burr hole
+- `CranialWindow`: Cranial window
 - `Craniectomy`: Craniectomy
 - `Craniotomy`: Craniotomy
-- `CranialWindow`: Cranial window
+- `Headcap`: Headcap
+- `HeadFixation`: Head fixation
+- `Headpost`: Headpost
 
 ### Implant Procedures
+- `BloodPressureSensorImplant`: Blood pressure sensor implant
+- `BreathingSensorImplant`: Breathing sensor implant
+- `CatheterImplant`: Catheter implant
+- `EcgImplant`: ECG implant (Electrocardiography)
+- `EegImplant`: EEG implant (Electroencephalography)
+- `EmgImplant`: EMG implant (Electromyography)
+- `GrinLensImplant`: GRIN (Gradient Index) lens implant
+- `NerveCuffImplant`: Nerve cuff implant
 - `OpticFiberImplant`: Optic fiber implant
+- `PrismImplant`: Prism implant
+- `ReferenceElectrodeImplant`: Reference electrode implant
 - `SiliconProbeImplant`: Silicon probe implant
-- `TetrodeWireElectrode`: Tetrode wire electrode
-- `SingleWireElectrode`: Single wire electrode
+- `SingleWireElectrodeImplant`: Single wire electrode implant
+- `TemperatureSensorImplant`: Temperature sensor implant
+- `TetrodeWireElectrodeImplant`: Tetrode wire electrode implant
+- `GenericImplant`: Generic implant
 
 ### Injection and Infusion Procedures
 - `Injection`: Injection
 - `VirusInjection`: Virus injection
 
 ### Brain and Tissue Procedures
+- `BrainExtraction`: Brain extraction
 - `BrainLesion`: Brain lesion
+- `BrainSlice`: Brain slice
+- `Cryosectioning`: Cryosectioning
 - `PerfusionFixation`: Brain perfusion fixation
-- `Slice`: Brain slice
+- `TissueClearing`: Tissue clearing
+- `VibratomeSectioning`: Vibratome sectioning
+
+### Endpoint Procedures (Euthanasia)
+- `BarbiturateInjection`: Barbiturate injection
+- `CervicalDislocation`: Cervical dislocation
+- `Co2ChamberEuthanasia`: CO₂ chamber euthanasia
+- `Decapitation`: Decapitation
+- `InhalantOverdose`: Inhalant overdose
+
+### Abstract Procedures
+- `AuditoryStimulation`: Auditory stimulation
+- `BehavioralTracking`: Behavioral tracking
+- `OdorStimulation`: Odor stimulation
+- `TactileStimulation`: Tactile stimulation
+- `VisualStimulation`: Visual stimulation
 
 
 ## Coordinates system options
@@ -90,44 +125,48 @@ resp = client.load_model('procedure')
 {'procedures': [
     {
         'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
-        'type': 'TetrodeWireElectrode',
-        'notes': 'First implant',
+        'type': 'SiliconProbeImplant',
+        'notes': 'acute implant',
         'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
-        'date_time': None,
-        'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-        'hardwaredevice': None,
+        'date_time': '2024-03-12T09:00:00Z',
+        'consumablestock': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+        'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
         'details': {
-            'tetrodeCount': 1,
-            'nWiresTetrode': 4,
-            'wireDiameter': 33.9,
-            'wireMaterial': 'tunsgten'
+            'probeId': 'SP-64A',
+            'sterilizationMethod': 'Ethylene Oxide'
         },
         'brain_region': '15f9aef5-2d46-4ff2-a0db-ac6be759c05c',
         'coordinates_system': 'Stereotaxic_BregmaAbsolute',
         'coordinates_details': {
-            'apCoordinate': 1.0
+            'apCoordinate': -2.5,
+            'mlCoordinate': 1.5,
+            'dvCoordinate': -1.0,
+            'apAngle': 0.0,
+            'mlAngle': 10.0,
+            'dvAngle': 0.0
         }
     },
     {
         'id': 'a18dd2b1-6393-468c-9424-1bc77b9e4976',
-        'type': 'TetrodeWireElectrode',
-        'notes': 'Second implant',
+        'type': 'OpticFiberImplant',
+        'notes': 'bilateral implant',
         'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
-        'consumable': None,
-        'hardwaredevice': None,
+        'consumablestock': None,
+        'equipment': [],
         'details': {
-            'tetrodeCount': 1,
-            'nWiresTetrode': 4,
-            'wireDiameter': 33.9,
-            'wireMaterial': 'tunsgten'
+            'fiberTipShape': 'flat',
+            'fiberId': 'OF-L-2024-07',
+            'sterilizationMethod': 'Autoclave'
         },
         'brain_region': '15f9aef5-2d46-4ff2-a0db-ac6be759c05c',
-        'coordinates_system': 'Stereotaxic_BregmaAbsolute',
+        'coordinates_system': 'Stereotaxic_BregmaBrainSurface',
         'coordinates_details': {
-            'apCoordinate': 1.0,
-            'mlCoordinate': 0.0,
-            'dvAngle': 2.0
+            'apCoordinate': -2.8,
+            'mlCoordinate': 1.2,
+            'surfaceDepth': -0.5,
+            'apAngle': 0.0,
+            'mlAngle': 5.0
         }
     }
 ]}
@@ -145,20 +184,24 @@ resp = client.load_model('procedure')
 {: .no_toc}
 
 ```
-resp = client.save_model("procedure",  data={
-    "type": "OpticFiberImplant",
-    "subject": "0f87c229-6769-4854-83a5-c71e154246b8",
-    "notes": "some text",
-    "details": {"fiberTipShape": "flat"},
-    "coordinates_system": "Stereotaxic_BregmaAbsolute",
-    "coordinates_details": {
-                "apCoordinate": 1.0,
-                "mlCoordinate": 2.0,
-                "dvCoordinate": 3.0,
-                "apAngle": 4.0,
-                "mlAngle": 5.0,
-                "dvAngle": 6.0
-            }
+resp = client.save_model(
+    "procedure",
+    data={
+        "type": "OpticFiberImplant",
+        "subject": "0f87c229-6769-4854-83a5-c71e154246b8",
+        "consumablestock": "a5f29099-2758-4163-a8e4-e5e2898e57b2",
+        "equipment": ["5b032f95-3f5b-4a27-9680-5f8f671dba22"],
+        "notes": "bilateral implant",
+        "details": {"fiberTipShape": "flat", "fiberId": "OF-L-2024-07", "sterilizationMethod": "Autoclave"},
+        "coordinates_system": "Stereotaxic_BregmaAbsolute",
+        "coordinates_details": {
+            "apCoordinate": -2.8,
+            "mlCoordinate": 1.2,
+            "dvCoordinate": -2.5,
+            "apAngle": 0.0,
+            "mlAngle": 5.0,
+            "dvAngle": 0.0
+        }
     }
 )
 ```
@@ -170,24 +213,23 @@ resp = client.save_model("procedure",  data={
 {'procedure': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
-    'notes': 'some text',
+    'notes': 'bilateral implant',
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
-    'consumable': None,
-    'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'},
+    'consumablestock': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'details': {'fiberTipShape': 'flat', 'fiberId': 'OF-L-2024-07', 'sterilizationMethod': 'Autoclave'},
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
     'coordinates_details': {
-                "apCoordinate": 1.0,
-                "mlCoordinate": 2.0,
-                "dvCoordinate": 3.0,
-                "apAngle": 4.0,
-                "mlAngle": 5.0,
-                "dvAngle": 6.0
-            }
+        "apCoordinate": -2.8,
+        "mlCoordinate": 1.2,
+        "dvCoordinate": -2.5,
+        "apAngle": 0.0,
+        "mlAngle": 5.0,
+        "dvAngle": 0.0
     }
-}
+}}
 ```
 
 
@@ -213,24 +255,23 @@ resp = client.load_model('procedure', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 {'procedure': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
-    'notes': 'some text',
+    'notes': 'bilateral implant',
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
-    'consumable': None,
-    'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'},
+    'consumablestock': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'details': {'fiberTipShape': 'flat', 'fiberId': 'OF-L-2024-07', 'sterilizationMethod': 'Autoclave'},
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
-    'coordinates_details': : {
-                "apCoordinate": 1.0,
-                "mlCoordinate": 2.0,
-                "dvCoordinate": 3.0,
-                "apAngle": 4.0,
-                "mlAngle": 5.0,
-                "dvAngle": 6.0
-            }
+    'coordinates_details': {
+        "apCoordinate": -2.8,
+        "mlCoordinate": 1.2,
+        "dvCoordinate": -2.5,
+        "apAngle": 0.0,
+        "mlAngle": 5.0,
+        "dvAngle": 0.0
     }
-}
+}}
 ```
 
 
@@ -246,7 +287,11 @@ resp = client.load_model('procedure', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 {: .no_toc}
 
 ```
-resp = client.save_model("procedure", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"notes": "new text"})
+resp = client.save_model(
+    "procedure",
+    id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
+    data={"notes": "implant tightened"}
+)
 ```
 
 ### Response example
@@ -256,24 +301,23 @@ resp = client.save_model("procedure", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
 {'procedure': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
     'type': 'OpticFiberImplant',
-    'notes': 'new text',
+    'notes': 'implant tightened',
     'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
-    'consumable': None,
-    'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'},
+    'consumablestock': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'details': {'fiberTipShape': 'flat', 'fiberId': 'OF-L-2024-07', 'sterilizationMethod': 'Autoclave'},
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
-    'coordinates_details': : {
-                "apCoordinate": 1.0,
-                "mlCoordinate": 2.0,
-                "dvCoordinate": 3.0,
-                "apAngle": 4.0,
-                "mlAngle": 5.0,
-                "dvAngle": 6.0
-            }
+    'coordinates_details': {
+        "apCoordinate": -2.8,
+        "mlCoordinate": 1.2,
+        "dvCoordinate": -2.5,
+        "apAngle": 0.0,
+        "mlAngle": 5.0,
+        "dvAngle": 0.0
     }
-}
+}}
 ```
 
 
