@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Import tool
-parent: API tools
-nav_order: 4
+parent: Web interface
+nav_order: 6
 ---
 # Import tool
 {: .no_toc}
@@ -17,7 +17,7 @@ nav_order: 4
 
 The BrainSTEM import tool helps you add data to BrainSTEM by uploading CSV files. Instead of creating CSV files from scratch, you download pre-built templates for each data type, edit them with your data, and upload them.
 
-**🎯 How it works**: Download template → Edit with your data → Upload → Review results
+**How it works**: Download template → Edit with your data → Upload → Review results
 
 ## Getting Started
 
@@ -32,11 +32,11 @@ The BrainSTEM import tool helps you add data to BrainSTEM by uploading CSV files
 
 ### Why Use Templates?
 
-✅ **No mistakes** - Templates have correct column names and formatting
+**No mistakes** - Templates have correct column names and formatting
 
-✅ **Faster** - All required fields are already included
+**Faster** - All required fields are already included
 
-✅ **Better examples** - Shows you exactly how to format your data
+**Better examples** - Shows you exactly how to format your data
 
 ### Finding Your UUIDs
 
@@ -145,7 +145,6 @@ The importer finds or creates a `SubjectLog` for the subject/type pair, then add
 | `behavior__setup` | Yes | Setup UUID (e.g. `d3d0...`) | No | Validated via the Setup endpoint. |
 | `behavior__behavioral_paradigm` | Yes | Behavioral paradigm UUID (e.g. `f6d4...`) | No | Validated via the Behavioral Paradigm endpoint. |
 
-
 ## Data Acquisition CSV
 
 | Field | Required | Accepted Input | Multiple? | Notes |
@@ -189,6 +188,7 @@ The importer finds or creates a `SubjectLog` for the subject/type pair, then add
 | `collection__tags` | No | Comma-separated tags (e.g. `baseline, imaging`) | Yes | Split into a tag list. |
 
 ## Error handling
+
 - Missing required fields stop the current row and record an error; later rows are still evaluated.
 - Lookup failures on required relationships raise errors; missing optional lookups generate warnings and skip only the unresolved relationship.
 - Invalid JSON, date, or datetime values raise warnings and the affected field is removed before the API call.

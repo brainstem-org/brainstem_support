@@ -162,6 +162,24 @@ After adding subjects, you can create sessions to record your experimental data.
 {: .important }
 > Sessions inherit permissions from their associated projects. Make sure to select the correct project to enable proper access for your team members.
 
+## Already Have Data? Import It Quickly!
+
+**Don't want to enter everything manually?** If you already have your research data in spreadsheets, our powerful import tool can save you hours of manual data entry!
+
+**Why use the import tool?**
+
+- **Save time** - Import dozens or hundreds of records at once
+- **Easy to use** - Download a template, fill in your data, and upload
+- **Comprehensive** - Supports all major data types (subjects, sessions, procedures, and more!)
+
+**Get started in 3 simple steps:**
+
+1. **Download a template** for your data type
+2. **Fill in your data** following the provided examples
+3. **Upload and review** - we'll check for errors and show you the results
+
+**Ready to import?** Check out our complete [Import Tool Guide]({{site.baseurl}}/webinterface/import-tool/) for detailed instructions and templates!
+
 ## Build Your Own Experiment
 
 BrainSTEM uses Personal Attributes and Modules to document your experimental procedures. Below is a recommended order for setting up your experiment components.
