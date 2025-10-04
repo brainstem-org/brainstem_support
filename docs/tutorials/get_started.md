@@ -85,23 +85,48 @@ After joining or creating a group, you can start creating projects. Projects in 
 
 ## Add your personal attributes
 
-Next, create personal attributes relevant to your experiments. 
+Before creating subjects and sessions, set up personal attributes that describe your setups, inventories and behavioral paradigms. These provide standardized options for your experiments.
 
 ### Define behavioral paradigms to describe the behavioral conditions of your subjects
 {: .no_toc}
 
+1. Navigate to *Personal Attributes* → *Behavioral paradigms* in the left menu
+2. Click *Add behavioral paradigm*
+3. Fill in the paradigm details (e.g., "Open Field Test", "Novel Object Recognition")
+4. Add a description of the experimental protocol
+
 ### Set up data storage locations to link to your data files
 {: .no_toc}
+
+1. Go to *Personal Attributes* → *Data storage*
+2. Click *Add data storage*
+3. Define storage locations where your raw data files are kept (e.g., "Lab Server", "External Drive A")
+4. Include relevant path information and access details
 
 ### Create setups to define your physical experimental environments
 {: .no_toc}
 
-   - Configure the equipment in your setups
+1. Navigate to *Personal Attributes* → *Setups*
+2. Click *Add setup*
+3. Describe your experimental setups (e.g., "Theta behavior maze", "Surgical table", "Head-fixed 2P Virtual environment", "Home cage")
+4. **Configure the equipment in your setups:**
+   - Go to *Modules* → *Equipment*
+   - Add devices like "Intan RHD2000", "Behavior Camera", "LED Arrays"
+   - Associate equipment with appropriate setups
    
 ### Set up inventories to track your lab resources
 {: .no_toc}
 
-   - Add consumable stocks to your inventories
+1. Go to *Personal Attributes* → *Inventories*
+2. Click *Add inventory*
+3. Create inventory categories (e.g., "Silicon Probes", "Virus stocks")
+4. **Add consumable stocks to your inventories:**
+   - Navigate to *Modules* → *Consumable stocks*
+   - Add specific items like probe models, virus batches, drug concentrations
+   - Link them to appropriate inventories
+
+{: .note }
+> These personal attributes will appear as selectable options when creating sessions, subjects, and experiments. Setting them up first streamlines your data entry process.
 
 Now that all your personal attributes are in place, you can continue and add your first subject.
 
@@ -136,6 +161,24 @@ After adding subjects, you can create sessions to record your experimental data.
 
 {: .important }
 > Sessions inherit permissions from their associated projects. Make sure to select the correct project to enable proper access for your team members.
+
+## Already Have Data? Import It Quickly!
+
+**Don't want to enter everything manually?** If you already have your research data in spreadsheets, our powerful import tool can save you hours of manual data entry!
+
+**Why use the import tool?**
+
+- **Save time** - Import dozens or hundreds of records at once
+- **Easy to use** - Download a template, fill in your data, and upload
+- **Comprehensive** - Supports all major data types (subjects, sessions, procedures, and more!)
+
+**Get started in 3 simple steps:**
+
+1. **Download a template** for your data type
+2. **Fill in your data** following the provided examples
+3. **Upload and review** - we'll check for errors and show you the results
+
+**Ready to import?** Check out our complete [Import Tool Guide]({{site.baseurl}}/webinterface/import-tool/) for detailed instructions and templates!
 
 ## Build Your Own Experiment
 
@@ -191,3 +234,13 @@ Personal Attributes:
 {: .important }
 > This order ensures dependent components are created first. For example, behaviors need setups and behavioral paradigms to be defined first.
 > Data acquisition are linked to subjects through procedures, and to setups through equipment, which should be created first.
+
+## Next Steps
+
+Now that you've completed the basic setup, here are the recommended next steps:
+
+- **Set up your lab infrastructure**: Follow the [Setting Up Lab Infrastructure tutorial]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) to properly configure your lab's setups, equipment, inventories, and consumable stocks
+- **Learn project management**: Read [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) to understand how to effectively organize and collaborate on research projects
+- **Configure team access**: Review [Managing Groups]({{site.baseurl}}/tutorials/managing-groups) to set up proper permissions and team collaboration
+- **Plan your experiments**: Explore [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) to define standardized experimental protocols for your studies
+- **Set up data storage**: Follow [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to link your metadata to actual data files for seamless analysis workflows

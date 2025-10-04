@@ -88,9 +88,32 @@ Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn
 
 ### Associating with Laboratory
 
+Group owners can link their group to a laboratory:
+
+1. Access your group's settings page
+2. Click the "Add Laboratory" button
+3. Fill in details about the lab, including the PI, Institution, Website, City and Country
+4. Click Save to apply the association
+
 ### Renaming the Group
 
-1. Access group settings
-2. Locate the group name field
-3. Enter the new name
-4. Save the changes
+Group owners can change the group name:
+
+1. Go to your group's main page
+2. Click the "Edit" button 
+3. Locate the "Name" field at the top of the form
+4. Enter the new group name
+5. Click Save to confirm the changes
+
+{: .important }
+> Choose group names carefully as they should clearly identify your lab or research team. Other users will see this name when collaborating on projects.
+
+## Next Steps
+
+After setting up your research groups, you're ready to organize your research:
+
+- **Create collaborative projects**: Use [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) to organize your research and enable team collaboration
+- **Set up your lab infrastructure**: Follow [Setting Up Lab Infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) to configure equipment, setups, and inventories that your group can access
+- **Configure data storage**: Set up [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) locations that your team can use for data management
+- **Start documenting experiments**: Begin with [Get Started]({{site.baseurl}}/tutorials/get_started) to create your first subjects and sessions with proper group permissions
+- **Plan for data sharing**: Learn about [Share Data Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) when you're ready to make research openly accessible
