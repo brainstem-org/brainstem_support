@@ -3,7 +3,7 @@ layout: default
 title: Manipulation
 parent: Schemas
 grand_parent: API
-nav_order: 1
+nav_order: 4
 ---
 
 # Manipulation schemas

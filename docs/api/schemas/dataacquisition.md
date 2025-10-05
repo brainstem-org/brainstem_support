@@ -3,7 +3,7 @@ layout: default
 title: Data acquisition
 parent: Schemas
 grand_parent: API
-nav_order: 1
+nav_order: 2
 ---
 
 # Data acquisition schemas

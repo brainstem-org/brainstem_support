@@ -3,7 +3,7 @@ layout: default
 title: Subject log
 parent: Schemas
 grand_parent: API
-nav_order: 1
+nav_order: 7
 ---
 
 # Subject log schemas
