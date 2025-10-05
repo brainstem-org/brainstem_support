@@ -80,7 +80,7 @@ Entries are returned in one of two formats depending on the log `type`:
 A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the JSON schema files under `modules/static/json/SubjectLog/` in the repository.
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/subjectlog
 - **Data:** None
@@ -135,7 +135,7 @@ resp = client.load_model('subjectlog')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/modules/subjectlog
 - **Data:** JSON dictionary containing at least the required fields.
@@ -172,7 +172,7 @@ resp = client.save_model(
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/subjectlog/<id\>/
 - **Data:** None
@@ -201,7 +201,7 @@ resp = client.load_model('subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105c3'
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/subjectlog/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -235,7 +235,7 @@ resp = client.save_model(
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/modules/subjectlog/<id\>/
 - **Data:** None
@@ -251,7 +251,7 @@ resp = client.delete_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c
 
 
 ## Add entry
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/subjectlog/<id\>/add_entry/
 - **Data:** dictionary with the entry data
@@ -290,7 +290,7 @@ resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3"
 ```
 
 ## Change entry
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/subjectlog/<id\>/change_entry/
 - **Data:** dictionary with the entry data
@@ -331,7 +331,7 @@ resp = client.save_model(
 
 
 ## Remove entry
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/subjectlog/<id\>/remove_entry/
 - **Data:** dictionary with the entry data

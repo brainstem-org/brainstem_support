@@ -22,13 +22,14 @@ nav_order: 5
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 100]|
+| `location` | string describing the location of the data storage |
 | `description` | string [max length: 500] |
 | `is_public` | boolean |
-| `data_organization_json` | JSON dictionary |
-| `data_protocols_json` | JSON dictionary |
+| `data_organization` | JSON dictionary describing data organization |
+| `data_protocols` | JSON dictionary describing data access protocols |
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/datastorage
 - **Data:** None
@@ -48,18 +49,20 @@ resp = client.load_model('datastorage')
 {'datastorage': [
     {
         'id': '2ba92d91-349d-4e8c-9785-fc941ddd8868',
-        'name': 'Peters testdata',
+        'name': 'Test dataset',
+        'location': '/data/test',
         'description': '',
         'is_public': False,
-        'data_organization_json': [],
-        'data_protocols_json': []
+        'data_organization': [],
+        'data_protocols': []
     },
     {
         'id': 'c2197dea-eab6-4bbc-8257-3f05537ffdb6',
-        'name': "Rodrigo's data",
+        'name': 'Project data repository',
+        'location': '/data/project',
         'description': '',
         'is_public': False,
-        'data_organization_json': [
+        'data_organization': [
                 {
                     "elements": "Sessions"
                 },
@@ -67,7 +70,7 @@ resp = client.load_model('datastorage')
                     "elements": "Subjects"
                 }
             ],
-        'data_protocols_json': [
+        'data_protocols': [
                 {
                     "protocol": "Dropbox (Cloud solution)",
                     "path": "data/myproject",
@@ -85,7 +88,7 @@ resp = client.load_model('datastorage')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/datastorage
 - **Data:** JSON dictionary containing at least the required fields.
@@ -99,7 +102,8 @@ resp = client.load_model('datastorage')
 resp = client.save_model("datastorage",  data=
     {
         'name': "MyNewRepo",
-        'data_organization_json': [
+        'location': '/data/newrepo',
+        'data_organization': [
                 {
                     "elements": "Sessions"
                 },
@@ -107,7 +111,7 @@ resp = client.save_model("datastorage",  data=
                     "elements": "Subjects"
                 }
             ],
-        'data_protocols_json': [
+        'data_protocols': [
                 {
                     "protocol": "Dropbox (Cloud solution)",
                     "path": "data/myproject",
@@ -130,9 +134,10 @@ resp = client.save_model("datastorage",  data=
 {'datastorage': {
     'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
     'name': 'MyNewRepo',
+    'location': '/data/newrepo',
     'description': '',
     'is_public': False,
-    'data_organization_json': [
+    'data_organization': [
                 {
                     "elements": "Sessions"
                 },
@@ -140,7 +145,7 @@ resp = client.save_model("datastorage",  data=
                     "elements": "Subjects"
                 }
             ],
-    'data_protocols_json': [
+    'data_protocols': [
                 {
                     "protocol": "Dropbox (Cloud solution)",
                     "path": "data/myproject",
@@ -158,7 +163,7 @@ resp = client.save_model("datastorage",  data=
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/datastorage/<id\>/
 - **Data:** None
@@ -178,9 +183,10 @@ resp = client.load_model('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2
 {'datastorage': {
     'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
     'name': 'MyNewRepo',
+    'location': '/data/newrepo',
     'description': '',
     'is_public': False,
-    'data_organization_json': [
+    'data_organization': [
                 {
                     "elements": "Sessions"
                 },
@@ -188,7 +194,7 @@ resp = client.load_model('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2
                     "elements": "Subjects"
                 }
             ],
-    'data_protocols_json': [
+    'data_protocols': [
                 {
                     "protocol": "Dropbox (Cloud solution)",
                     "path": "data/myproject",
@@ -205,7 +211,7 @@ resp = client.load_model('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/datastorage/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -253,7 +259,7 @@ resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/datastorage/<id\>/
 - **Data:** None

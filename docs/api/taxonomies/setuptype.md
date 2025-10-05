@@ -21,12 +21,13 @@ nav_order: 7
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 200]|
-| `description` | string [max length: 500] |
+| `description` | string [max length: 2000] |
+| `category` | string categorizing the setup type |
 | `comments` | string |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype
 - **Data:** None
@@ -64,7 +65,7 @@ resp = client.load_model('setuptype')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype
 - **Data:** JSON dictionary containing at least the required fields.
@@ -97,7 +98,7 @@ resp = client.save_model("setuptype",  data={
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype/<id\>/
 - **Data:** None
@@ -123,7 +124,7 @@ resp = client.load_model('setuptype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -152,7 +153,7 @@ resp = client.save_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6",
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype/<id\>/
 - **Data:** None
@@ -169,7 +170,7 @@ resp = client.delete_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6
 
 
 ## List approvals
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals
 - **Data:** None
@@ -212,7 +213,7 @@ resp = client.load_model('setuptypeapproval')
 
 
 ## Detail approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals/<id\>/
 - **Data:** None
@@ -243,7 +244,7 @@ resp = client.load_model('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e59
 
 
 ## Accept approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals/<id\>/
 - **Data:** None
@@ -258,7 +259,7 @@ resp = client.save_model("setuptypeapproval", id="725ef635-09b7-4817-98f7-d58e59
 
 
 ## Reject approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals/<id\>/
 - **Data:** None

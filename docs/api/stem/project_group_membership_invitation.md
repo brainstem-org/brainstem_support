@@ -30,7 +30,7 @@ nav_order: 5
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/projectgroupmembershipinvitation
 - **Data:** None
@@ -69,7 +69,7 @@ resp = client.load_model('projectgroupmembershipinvitation')
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/projectgroupmembershipinvitation/<id\>/
 - **Data:** None
@@ -98,7 +98,7 @@ resp = client.load_model('projectgroupmembershipinvitation', id='b6529885-e670-4
 
 
 ## Accept
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/projectgroupmembershipinvitation/<id\>/
 - **Data:** None
@@ -114,7 +114,7 @@ resp = client.load_model("projectgroupmembershipinvitation", id="b6529885-e670-4
 
 
 ## Reject
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/projectgroupmembershipinvitation/<id\>/
 - **Data:** None
@@ -129,7 +129,7 @@ resp = client.load_model("projectgroupmembershipinvitation", id="540a69bd-7a6b-4
 
 
 ## Cancel
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/projectgroupmembershipinvitation/<id\>/
 - **Data:** None

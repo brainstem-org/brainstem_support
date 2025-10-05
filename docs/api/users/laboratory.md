@@ -31,7 +31,7 @@ nav_order: 4
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/laboratory
 - **Data:** None
@@ -76,7 +76,7 @@ resp = client.load_model('laboratory')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/users/laboratory
 - **Data:** JSON dictionary containing at least the required fields.
@@ -114,7 +114,7 @@ resp = client.save_model("laboratory",  data={
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/laboratory/<id\>/
 - **Data:** None
@@ -146,7 +146,7 @@ resp = client.load_model('laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff'
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/users/laboratory/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -179,7 +179,7 @@ resp = client.save_model("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff"
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/users/laboratory/<id\>/
 - **Data:** None

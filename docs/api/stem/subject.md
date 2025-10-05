@@ -48,7 +48,7 @@ nav_order: 2
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/stem/subject
 - **Data:** None
@@ -118,7 +118,7 @@ resp = client.load_model('subject')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/stem/subject
 - **Data:** JSON dictionary containing at least the required fields.
@@ -171,7 +171,7 @@ resp = client.save_model(
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/stem/subject/<id\>/
 - **Data:** None
@@ -215,7 +215,7 @@ resp = client.load_model('subject', id='b4ae1f92-5260-4605-8d21-25ac5c3fce91')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/stem/subject/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -261,7 +261,7 @@ resp = client.save_model(
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/stem/subject/<id\>/
 - **Data:** None

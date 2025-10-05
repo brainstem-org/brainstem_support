@@ -23,11 +23,14 @@ nav_order: 6
 | `name` | string **[required]** [max length: 100; must be unique] |
 | `description` | string [max length: 500] |
 | `supplier` | related supplier ID formatted as a string **[required]** |
+| `rrid` | Research Resource Identifier (RRID) |
+| `rrid_url` | URL to RRID lookup page **[read-only]** |
+| `external_identifiers` | JSON object containing external identifier information |
 | `comments` | string |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice
 - **Data:** None
@@ -74,7 +77,7 @@ resp = client.load_model('hardwaredevice')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice
 - **Data:** JSON dictionary containing at least the required fields.
@@ -109,7 +112,7 @@ resp = client.save_model("hardwaredevice",  data={
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice/<id\>/
 - **Data:** None
@@ -136,7 +139,7 @@ resp = client.load_model('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -166,7 +169,7 @@ resp = client.save_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice/<id\>/
 - **Data:** None
@@ -186,7 +189,7 @@ resp = client.delete_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae
 
 
 ## List approvals
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals
 - **Data:** None
@@ -235,7 +238,7 @@ resp = client.load_model('hardwaredeviceapproval')
 
 
 ## Detail approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
 - **Data:** None
@@ -267,7 +270,7 @@ resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0
 
 
 ## Accept approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
 - **Data:** None
@@ -282,7 +285,7 @@ resp = client.save_model("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0
 
 
 ## Reject approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
 - **Data:** None

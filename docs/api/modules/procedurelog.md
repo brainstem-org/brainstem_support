@@ -50,7 +50,7 @@ A detailed list of the accepted schemas for the `details` field, related to each
 Use the dedicated endpoints `/add_entry/`, `/change_entry/`, and `/remove_entry/` on an existing log to manage entries while the main PATCH endpoint updates the log metadata.
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/procedurelog
 - **Data:** None
@@ -109,7 +109,7 @@ resp = client.load_model('procedurelog')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/modules/procedurelog
 - **Data:** JSON dictionary containing at least the required fields.
@@ -140,7 +140,7 @@ resp = client.save_model("procedurelog",  data={
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/
 - **Data:** None
@@ -168,7 +168,7 @@ resp = client.load_model('procedurelog', id='43d3d060-4606-4e95-bd7e-79dcb910cf2
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -197,7 +197,7 @@ resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf2
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/
 - **Data:** None
@@ -213,7 +213,7 @@ resp = client.delete_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910c
 
 
 ## Add entry
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/add_entry/
 - **Data:** dictionary with the entry data
@@ -252,7 +252,7 @@ resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf2
 ```
 
 ## Change entry
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/change_entry/
 - **Data:** dictionary with the entry data
@@ -287,7 +287,7 @@ resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf2
 
 
 ## Remove entry
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/procedurelog/<id\>/remove_entry/
 - **Data:** dictionary with the entry data

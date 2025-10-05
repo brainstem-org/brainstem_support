@@ -29,7 +29,7 @@ Each entry in the `users` dictionary has the user `email` as key and the followi
 ```
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/group
 - **Data:** None
@@ -69,7 +69,7 @@ resp = client.load_model('group')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/users/group
 - **Data:** JSON dictionary containing at least the required fields.
@@ -103,7 +103,7 @@ resp = client.save_model("group",  data={
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/group/<id\>/
 - **Data:** None
@@ -132,7 +132,7 @@ resp = client.load_model('group', id='48')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/users/group/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -182,7 +182,7 @@ resp = client.save_model("group", id="48", data={
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/users/group/<id\>/
 - **Data:** None
@@ -199,7 +199,7 @@ resp = client.delete_model("group", id="3654964e-1bf7-40c7-a376-9dcec4c125cd")
 
 
 ## Join
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/group/<id\>/
 - **Data:** None
@@ -217,7 +217,7 @@ resp = client.load_model("group", id="9", options="join")
 
 
 ## Leave
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/group/<id\>/
 - **Data:** None

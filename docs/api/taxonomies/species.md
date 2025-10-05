@@ -21,12 +21,15 @@ nav_order: 7
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 100; must be unique]|
-| `description` | string [max length: 500] |
+| `description` | string [max length: 2000] |
+| `rrid` | Research Resource Identifier (RRID) |
+| `rrid_url` | URL to RRID lookup page **[read-only]** |
+| `external_identifiers` | JSON object containing external identifier information |
 | `comments` | string |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species
 - **Data:** None
@@ -59,7 +62,7 @@ resp = client.load_model('species')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species
 - **Data:** JSON dictionary containing at least the required fields.
@@ -91,7 +94,7 @@ resp = client.save_model("species",  data={
 ```
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species/<id\>/
 - **Data:** None
@@ -117,7 +120,7 @@ resp = client.load_model('species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -146,7 +149,7 @@ resp = client.save_model("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f", d
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species/<id\>/
 - **Data:** None
@@ -163,7 +166,7 @@ resp = client.delete_model("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f")
 
 
 ## List approvals
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species_approvals
 - **Data:** None
@@ -206,7 +209,7 @@ resp = client.load_model('speciesapproval')
 
 
 ## Detail approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species_approvals/<id\>/
 - **Data:** None
@@ -237,7 +240,7 @@ resp = client.load_model('speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988
 
 
 ## Accept approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species_approvals/<id\>/
 - **Data:** None
@@ -252,7 +255,7 @@ resp = client.save_model("speciesapproval", id="529efb3b-99f9-4e42-90e3-f5990988
 
 
 ## Reject approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species_approvals/<id\>/
 - **Data:** None

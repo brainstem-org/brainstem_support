@@ -21,7 +21,7 @@ nav_order: 7
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 200]|
-| `description` | string [max length: 500] |
+| `description` | string [max length: 2000] |
 | `acronym` | string **[required]** [max length: 15]|
 | `atlas` | string **[required]**. *See options below* [max length: 7]|
 
@@ -41,7 +41,7 @@ These are the available `atlas` options for Brain Region:
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/brainregion
 - **Data:** None
@@ -85,7 +85,7 @@ resp = client.load_model('brainregion')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/taxonomies/brainregion
 - **Data:** JSON dictionary containing at least the required fields.
@@ -122,7 +122,7 @@ resp = client.save_model("brainregion",  data={
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/brainregion/<id\>/
 - **Data:** None
@@ -150,7 +150,7 @@ resp = client.load_model('brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee31a9
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/brainregion/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -180,7 +180,7 @@ resp = client.save_model("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/taxonomies/brainregion/<id\>/
 - **Data:** None

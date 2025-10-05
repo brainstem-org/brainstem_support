@@ -21,13 +21,16 @@ nav_order: 7
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 100; must be unique] |
-| `description` | string [max length: 500] |
+| `description` | string [max length: 2000] |
 | `species` | related species ID formatted as a string **[required]** |
+| `rrid` | Research Resource Identifier (RRID) |
+| `rrid_url` | URL to RRID lookup page **[read-only]** |
+| `external_identifiers` | JSON object containing external identifier information |
 | `comments` | string |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/strain
 - **Data:** None
@@ -62,7 +65,7 @@ resp = client.load_model('strain')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/taxonomies/strain
 - **Data:** JSON dictionary containing at least the required fields.
@@ -96,7 +99,7 @@ resp = client.save_model("strain", data={
 ```
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/strain/<id\>/
 - **Data:** None
@@ -123,7 +126,7 @@ resp = client.load_model('strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/strain/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -153,7 +156,7 @@ resp = client.save_model("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", da
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/taxonomies/strain/<id\>/
 - **Data:** None
@@ -170,9 +173,9 @@ resp = client.delete_model("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02")
 
 
 ## List approvals
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/strain_approvals
+- **URL:** https://www.brainstem.org/api/private/taxonomies/strainapproval
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -215,9 +218,9 @@ resp = client.load_model('strainapproval')
 
 
 ## Detail approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/strain_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/strainapproval/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -247,9 +250,9 @@ resp = client.load_model('strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832
 
 
 ## Accept approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/strain_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/strainapproval/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -262,9 +265,9 @@ resp = client.save_model("strainapproval", id="b460dfbc-79bb-499e-87ed-57df02832
 
 
 ## Reject approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/strain_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/strainapproval/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

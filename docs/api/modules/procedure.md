@@ -105,7 +105,7 @@ A detailed list of the accepted schemas for the `coordinates_details` field, rel
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/procedure
 - **Data:** None
@@ -174,7 +174,7 @@ resp = client.load_model('procedure')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/modules/procedure
 - **Data:** JSON dictionary containing at least the required fields.
@@ -235,7 +235,7 @@ resp = client.save_model(
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/procedure/<id\>/
 - **Data:** None
@@ -276,7 +276,7 @@ resp = client.load_model('procedure', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/procedure/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -322,7 +322,7 @@ resp = client.save_model(
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/modules/procedure/<id\>/
 - **Data:** None

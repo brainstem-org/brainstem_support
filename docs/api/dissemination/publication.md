@@ -26,14 +26,13 @@ nav_order: 4
 | `journal` | related journal ID formatted as a string **[required]** |
 | `abstract` | string **[required]** |
 | `doi` | string [max length: 200] |
-| `volume` | string [max length: 100] |
 | `publication_url` | string [max length: 300] |
 | `pdf_url` | string [max length: 300] |
 | `publication_date` | string containing date (e.g. "2023-03-22") **[required]** |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/dissemination/publication
 - **Data:** None
@@ -78,7 +77,7 @@ resp = client.load_model('publication')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/dissemination/publication
 - **Data:** JSON dictionary containing at least the required fields.
@@ -122,7 +121,7 @@ resp = client.save_model("publication",  data=
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/dissemination/publication/<id\>/
 - **Data:** None
@@ -153,7 +152,7 @@ resp = client.load_model('publication', id='da3359b7-e380-4dc6-ba9d-04831d3082d9
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/dissemination/publication/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -185,7 +184,7 @@ resp = client.save_model("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/dissemination/publication/<id\>/
 - **Data:** None

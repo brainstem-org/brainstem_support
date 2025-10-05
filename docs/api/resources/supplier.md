@@ -27,7 +27,7 @@ nav_order: 6
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/supplier
 - **Data:** None
@@ -62,7 +62,7 @@ resp = client.load_model('supplier')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/resources/supplier
 - **Data:** JSON dictionary containing at least the required fields.
@@ -97,7 +97,7 @@ resp = client.save_model("supplier",  data={
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/supplier/<id\>/
 - **Data:** None
@@ -124,7 +124,7 @@ resp = client.load_model('supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/supplier/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -154,7 +154,7 @@ resp = client.save_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", 
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/resources/supplier/<id\>/
 - **Data:** None
@@ -172,7 +172,7 @@ resp = client.delete_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e"
 
 
 ## List approvals
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals
 - **Data:** None
@@ -217,7 +217,7 @@ resp = client.load_model('supplierapproval')
 
 
 ## Detail approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals/<id\>/
 - **Data:** None
@@ -249,7 +249,7 @@ resp = client.load_model('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a
 
 
 ## Accept approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals/<id\>/
 - **Data:** None
@@ -264,7 +264,7 @@ resp = client.save_model("supplierapproval", id="1af72008-d203-4bea-9766-f692b8a
 
 
 ## Reject approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals/<id\>/
 - **Data:** None
