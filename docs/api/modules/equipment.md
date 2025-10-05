@@ -20,22 +20,27 @@ nav_order: 4
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
+| `name` | descriptive name for the equipment |
 | `type` | string **[required]**. *See options below* |
 | `setup` | related experimental setup ID formatted as a string **[required]** |
 | `notes` | string [max length: 500] |
-| `date_time` | string containing date (e.g. "2023-03-22") |
+| `date_time` | string containing date and time (ISO 8601) |
 | `consumable` | related consumable ID formatted as a string |
 | `hardwaredevice` | related hardware device ID formatted as a string |
+| `details` | JSON object mapped to the internal `type_json` field. *See accepted schemas below* |
 | `coordinates_system` | string **[required]**. *See options below* |
-| `coordinates_details` | JSON object. *See accepted schemas below* |
+| `coordinates_details` | JSON object mapped to the internal `coordinates_json` field. *See accepted schemas below* |
+
+Most equipment schemas currently expose no additional fields, so the API may return an empty `{}` for `details` unless new properties are defined.
 
 
 ## Types of equipment
 
 ### Data acquisition
 - `Amplifier`: Amplifier
-- `Camera`, Camera
+- `Camera`: Camera
 - `DataAcquisitionSystem`: Data acquisition system
+- `DrugDeliverySystem`: Drug delivery system
 - `ElectroencephalographySystem`: Electroencephalography system (EEG)
 - `ElectromyographyMachine`: Electromyography machine
 - `EphysRig`: Ephys rig
@@ -50,12 +55,16 @@ nav_order: 4
 - `Miniscope`: Miniscope
 - `MotionTrackingSystem`: Motion tracking system
 - `OphysRig`: Ophys rig
+- `OnePhotonMicroscope`: One-photon microscope
 - `OpticalCoherenceTomography`: Optical Coherence Tomography (OCT)
 - `Oscilloscope`: Oscilloscope
 - `Photodetector`: Photodetector
+- `PressureSensor`: Pressure sensor
 - `SignalProcessingUnit`: Signal processing unit
 - `SinglePhotonEmissionComputedTomography`: Single-photon emission computed tomography (SPECT)
 - `TemperatureSensor`: Temperature sensor
+- `ThreePhotonMicroscopy`: Three-photon microscopy
+- `TwoPhotonMicroscope`: Two-photon microscope
 - `UltrasoundImagingSystem`: Ultrasound imaging system
 
 ### Behavioral and stimulation tools
@@ -100,6 +109,11 @@ nav_order: 4
 These are the available `coordinates_system` options for Equipment:
 
 - `External_XYZ_Absolute`: External XYZ Coordinates with Angles
+- `Stereotaxic_BregmaAbsolute`: Stereotaxic Bregma-Based Absolute Coordinates
+- `Stereotaxic_BregmaBrainSurface`: Stereotaxic Bregma-Based Surface Coordinates with Depth
+- `Stereotaxic_LambdaAbsolute`: Stereotaxic Lambda-Based Absolute Coordinates
+- `Stereotaxic_LambdaBrainSurface`: Stereotaxic Lambda-Based Surface Coordinates with Depth
+- `CCF_XYZ_Absolute`: Common Coordinate Framework XYZ Absolute Coordinates
 
 A detailed list of the accepted schemas for the `coordinates_details` field, related to each `coordinates_system`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
 
@@ -125,42 +139,42 @@ resp = client.load_model('equipment')
 {'equipment': [
     {
         'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
-        'type': 'TetrodeWireElectrode',
-        'notes': 'First implant',
+        'name': 'Headstage amplifier',
+        'type': 'Amplifier',
+        'notes': '32-channel preamp',
         'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
-        'date_time': None,
-        'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-        'hardwaredevice': None,
-        'details': {
-            'tetrodeCount': 1,
-            'nWiresTetrode': 4,
-            'wireDiameter': 33.9,
-            'wireMaterial': 'tunsgten'
-        },
+        'date_time': '2024-03-05T10:00:00Z',
+        'consumable': None,
+        'hardwaredevice': 'c18df269-5d38-4f3d-9509-1431d0f5d4ff',
+        'details': {},
         'coordinates_system': 'External_XYZ_Absolute',
         'coordinates_details': {
-            'apCoordinate': 1.0
+            'x': 0.0,
+            'y': 0.0,
+            'z': 0.0,
+            'xAngle': 0.0,
+            'yAngle': 0.0,
+            'zAngle': 0.0
         }
     },
     {
         'id': 'a18dd2b1-6393-468c-9424-1bc77b9e4976',
-        'type': 'TetrodeWireElectrode',
-        'notes': 'Second implant',
+        'name': 'Two-photon rig',
+        'type': 'TwoPhotonMicroscope',
+        'notes': 'Imaging setup',
         'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
         'date_time': None,
         'consumable': None,
         'hardwaredevice': None,
-        'details': {
-            'tetrodeCount': 1,
-            'nWiresTetrode': 4,
-            'wireDiameter': 33.9,
-            'wireMaterial': 'tunsgten'
-        },
+        'details': {},
         'coordinates_system': 'External_XYZ_Absolute',
         'coordinates_details': {
-            'x': 1.0,
-            'y': 0.0,
-            'xAngle': 2.0
+            'x': 120.0,
+            'y': 45.0,
+            'z': 0.0,
+            'xAngle': 0.0,
+            'yAngle': 0.0,
+            'zAngle': 0.0
         }
     }
 ]}
@@ -178,20 +192,24 @@ resp = client.load_model('equipment')
 {: .no_toc}
 
 ```
-resp = client.save_model("equipment",  data={
-    "type": "OpticFiberImplant",
-    "setup": "0f87c229-6769-4854-83a5-c71e154246b8",
-    "notes": "some text",
-    "details": {"fiberTipShape": "flat"},
-    "coordinates_system": "External_XYZ_Absolute",
-    "coordinates_details": {
-                "x": 1.0,
-                "y": 2.0,
-                "z": 3.0,
-                "xAngle": 4.0,
-                "yAngle": 5.0,
-                "zAngle": 6.0
-            }
+resp = client.save_model(
+    "equipment",
+    data={
+        "name": "Fiber photometry console",
+        "type": "FiberPhotometrySystem",
+        "setup": "0f87c229-6769-4854-83a5-c71e154246b8",
+        "hardwaredevice": "c18df269-5d38-4f3d-9509-1431d0f5d4ff",
+        "notes": "Main recording rig",
+        "details": {},
+        "coordinates_system": "External_XYZ_Absolute",
+        "coordinates_details": {
+            "x": 1.0,
+            "y": 2.0,
+            "z": 3.0,
+            "xAngle": 4.0,
+            "yAngle": 5.0,
+            "zAngle": 6.0
+        }
     }
 )
 ```
@@ -202,24 +220,24 @@ resp = client.save_model("equipment",  data={
 ```
 {'equipment': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
-    'type': 'OpticFiberImplant',
-    'notes': 'some text',
+    'name': 'Fiber photometry console',
+    'type': 'FiberPhotometrySystem',
+    'notes': 'Main recording rig',
     'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
-    'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'},
+    'hardwaredevice': 'c18df269-5d38-4f3d-9509-1431d0f5d4ff',
+    'details': {},
     'coordinates_system': 'External_XYZ_Absolute',
     'coordinates_details': {
-                "x": 1.0,
-                "y": 2.0,
-                "z": 3.0,
-                "xAngle": 4.0,
-                "yAngle": 5.0,
-                "zAngle": 6.0
-            }
+        'x': 1.0,
+        'y': 2.0,
+        'z': 3.0,
+        'xAngle': 4.0,
+        'yAngle': 5.0,
+        'zAngle': 6.0
     }
-}
+}}
 ```
 
 
@@ -243,24 +261,24 @@ resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ```
 {'equipment': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
-    'type': 'OpticFiberImplant',
-    'notes': 'some text',
+    'name': 'Fiber photometry console',
+    'type': 'FiberPhotometrySystem',
+    'notes': 'Main recording rig',
     'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
-    'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'},
+    'hardwaredevice': 'c18df269-5d38-4f3d-9509-1431d0f5d4ff',
+    'details': {},
     'coordinates_system': 'External_XYZ_Absolute',
-    'coordinates_details': : {
-                "x": 1.0,
-                "y": 2.0,
-                "z": 3.0,
-                "xAngle": 4.0,
-                "yAngle": 5.0,
-                "zAngle": 6.0
-            }
+    'coordinates_details': {
+        'x': 1.0,
+        'y': 2.0,
+        'z': 3.0,
+        'xAngle': 4.0,
+        'yAngle': 5.0,
+        'zAngle': 6.0
     }
-}
+}}
 ```
 
 
@@ -276,7 +294,11 @@ resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 {: .no_toc}
 
 ```
-resp = client.save_model("equipment", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb", data={"notes": "new text"})
+resp = client.save_model(
+    "equipment",
+    id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
+    data={"notes": "Updated calibration complete"}
+)
 ```
 
 ### Response example
@@ -285,24 +307,24 @@ resp = client.save_model("equipment", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
 ```
 {'equipment': {
     'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
-    'type': 'OpticFiberImplant',
-    'notes': 'new text',
+    'name': 'Fiber photometry console',
+    'type': 'FiberPhotometrySystem',
+    'notes': 'Updated calibration complete',
     'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
     'date_time': None,
     'consumable': None,
-    'hardwaredevice': None,
-    'details': {'fiberTipShape': 'flat'},
+    'hardwaredevice': 'c18df269-5d38-4f3d-9509-1431d0f5d4ff',
+    'details': {},
     'coordinates_system': 'External_XYZ_Absolute',
-    'coordinates_details': : {
-                "x": 1.0,
-                "y": 2.0,
-                "z": 3.0,
-                "xAngle": 4.0,
-                "yAngle": 5.0,
-                "zAngle": 6.0
-            }
+    'coordinates_details': {
+        'x': 1.0,
+        'y': 2.0,
+        'z': 3.0,
+        'xAngle': 4.0,
+        'yAngle': 5.0,
+        'zAngle': 6.0
     }
-}
+}}
 ```
 
 ## Delete

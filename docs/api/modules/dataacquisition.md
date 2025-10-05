@@ -23,9 +23,11 @@ nav_order: 3
 | `type` | string **[required]**. *See options below* |
 | `notes` | string [max length: 500] |
 | `session` | related session ID formatted as a string **[required]** |
-| `procedures` | list of related procedures IDs formatted as strings **[required]** |
-| `hardwaredevice` | related hardware device ID formatted as a string |
-| `details` | JSON object. *See accepted schemas below* |
+| `procedures` | list of related procedure IDs formatted as strings |
+| `equipment` | list of related equipment IDs formatted as strings |
+| `details` | JSON object mapped to the internal `type_json` field. *See accepted schemas below* |
+| `image` | URL string pointing to an uploaded image (read-only) |
+| `order` | optional positive integer controlling display order within a session |
 
 
 ## Types of data acquisition
@@ -33,13 +35,14 @@ nav_order: 3
 
 ### Audio and Behavior Tracking
 - `Audio`: Audio
-- `BehavioralTracking`: Behavioral Tracking
+- `BehavioralTracking`: Behavioral tracking
+- `VideoTracking`: Video tracking
 
 ### Electrophysiology
 - `Electroencephalography`: Electroencephalography (EEG)
 - `Electroneurogram`: Electroneurogram (ENG)
 - `ExtracellularEphys`: Extracellular Electrophysiology
-- `IntracellularEphys`:Intracellular Electrophysiology
+- `IntracellularEphys`: Intracellular Electrophysiology
 
 ### Optical Imaging
 - `FiberPhotometry`: Fiber Photometry
@@ -57,6 +60,7 @@ nav_order: 3
 
 ### Tomography and Ultrasound
 - `ComputedTomography`: Computed Tomography (CT)
+- `OpticalCoherenceTomography`: Optical Coherence Tomography (OCT)
 - `PositronEmissionTomography`: Positron Emission Tomography (PET)
 - `SinglePhotonEmissionComputedTomography`: Single-Photon Emission Computed Tomography (SPECT)
 - `FunctionalUltrasoundImaging`: Functional Ultrasound Imaging (fUS)
@@ -86,34 +90,46 @@ resp = client.load_model('dataacquisition')
 {'dataacquisition': [
     {
         'id': 'b3a6f43b-63f9-41cf-8fc2-5303e958d521',
-        'notes': None,
-        'hardwaredevice': None,
-        'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+        'notes': 'main arena cameras',
         'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
+        'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+        'equipment': ['2f68c9ad-9b4e-49b3-947a-47a4feae0d70'],
         'type': 'BehavioralTracking',
         'details': {
-            'fileName': 'myfile.txt',
-            'format': '111',
-            'frameRate': 0,
-            'nFrames': 222,
-            'horizontalResolution': 0
-        }
+            'fileName': 'session1_tracking.mp4',
+            'format': 'mp4',
+            'compression': 'h264',
+            'frameRate': 60,
+            'nFrames': 54000,
+            'verticalResolution': 1080,
+            'horizontalResolution': 1920
+        },
+        'image': 'https://images.brainstem.org/tracking.png',
+        'order': 0
     },
     {
         'id': '6b7d3eb1-0360-4c40-944b-83e285f8f8a7',
-        'notes': None,
-        'hardwaredevice': None,
-        'procedures': ['dedef2d7-00ae-4967-8e93-a9d65a20dfce'],
+        'notes': 'acute probe recording',
         'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-        'type': 'Extracellular',
+        'procedures': ['dedef2d7-00ae-4967-8e93-a9d65a20dfce'],
+        'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+        'type': 'ExtracellularEphys',
         'details': {
+            'fileName': 'session1_probe.dat',
+            'format': 'binary',
             'type': 'int16',
-            'nChannels': 45,
-            'sr': 20000.0,
-            'nSamples': 122,
-            'electrodeGroups': [],
-            'channelTags': []
-        }
+            'nChannels': 64,
+            'sr': 30000,
+            'nSamples': 180000000,
+            'electrodeGroups': [
+                {'channels': [0, 2, 4], 'label': 'anterior'}
+            ],
+            'channelTags': [
+                {'tag': 'good', 'channels': [0, 2], 'groups': [0]}
+            ]
+        },
+        'image': None,
+        'order': 1
     }
 ]}
 ```
@@ -130,38 +146,29 @@ resp = client.load_model('dataacquisition')
 {: .no_toc}
 
 ```
-resp = client.save_model("dataacquisition",  data={
-    "type": "Extracellular",
-    "procedures": ["087b71c4-6785-437c-b8ef-e35a82a8463e"],
-    "session": "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
-    "notes": "some text",
-    "details": {
+resp = client.save_model(
+    "dataacquisition",
+    data={
+        "type": "ExtracellularEphys",
+        "session": "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
+        "procedures": ["087b71c4-6785-437c-b8ef-e35a82a8463e"],
+        "equipment": ["5b032f95-3f5b-4a27-9680-5f8f671dba22"],
+        "notes": "acute probe recording",
+        "details": {
+            "fileName": "session1_probe.dat",
+            "format": "binary",
             "type": "int16",
-            "nChannels": 32,
-            "sr": 1250,
-            "nSamples": 3000,
+            "nChannels": 64,
+            "sr": 30000,
+            "nSamples": 180000000,
             "electrodeGroups": [
-                    {
-                        "channels": "0,2",
-                        "label": "group1"
-                    },
-                    {
-                        "channels": "1,3,5",
-                        "label": "group2"
-                    }
-                ],
+                {"channels": [0, 2, 4], "label": "anterior"},
+                {"channels": [1, 3, 5], "label": "posterior"}
+            ],
             "channelTags": [
-                    {
-                        "tag": "tag2",
-                        "channels": "1,3,5",
-                        "electrodeGroups": "group2"
-                    },
-                    {
-                        "tag": "tag1",
-                        "channels": "0,2",
-                        "electrodeGroups": "group1"
-                    }
-                ]
+                {"tag": "artifact", "channels": [1, 5], "groups": [1]},
+                {"tag": "good", "channels": [0, 2], "groups": [0]}
+            ]
         }
     }
 )
@@ -173,41 +180,30 @@ resp = client.save_model("dataacquisition",  data={
 ```
 {'dataacquisition': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
-    'notes': 'some text',
-    'hardwaredevice': None,
-    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+    'notes': 'acute probe recording',
     'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-    'type': 'Extracellular',
+    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'type': 'ExtracellularEphys',
     'details': {
-            'type': 'int16',
-            'nChannels': 32,
-            'sr': 1250,
-            'nSamples': 3000,
-            'electrodeGroups': [
-                    {
-                        "channels": "0,2",
-                        "label": "group1"
-                    },
-                    {
-                        "channels": "1,3,5",
-                        "label": "group2"
-                    }
-                ],
-            'channelTags': [
-                    {
-                        "tag": "tag2",
-                        "channels": "1,3,5",
-                        "electrodeGroups": "group2"
-                    },
-                    {
-                        "tag": "tag1",
-                        "channels": "0,2",
-                        "electrodeGroups": "group1"
-                    }
-                ]
-        }
-    }
-}
+        'fileName': 'session1_probe.dat',
+        'format': 'binary',
+        'type': 'int16',
+        'nChannels': 64,
+        'sr': 30000,
+        'nSamples': 180000000,
+        'electrodeGroups': [
+            {'channels': [0, 2, 4], 'label': 'anterior'},
+            {'channels': [1, 3, 5], 'label': 'posterior'}
+        ],
+        'channelTags': [
+            {'tag': 'artifact', 'channels': [1, 5], 'groups': [1]},
+            {'tag': 'good', 'channels': [0, 2], 'groups': [0]}
+        ]
+    },
+    'image': None,
+    'order': 0
+}}
 ```
 
 ## Detail
@@ -230,41 +226,30 @@ resp = client.load_model('dataacquisition', id='b0e4ed13-f2f1-4845-8772-24978539
 ```
 {'dataacquisition': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
-    'notes': 'some text',
-    'hardwaredevice': None,
-    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+    'notes': 'acute probe recording',
     'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-    'type': 'Extracellular',
+    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'type': 'ExtracellularEphys',
     'details': {
-            'type': 'int16',
-            'nChannels': 32,
-            'sr': 1250,
-            'nSamples': 3000,
-            'electrodeGroups': [
-                    {
-                        "channels": "0,2",
-                        "label": "group1"
-                    },
-                    {
-                        "channels": "1,3,5",
-                        "label": "group2"
-                    }
-                ],
-            'channelTags': [
-                    {
-                        "tag": "tag2",
-                        "channels": "1,3,5",
-                        "electrodeGroups": "group2"
-                    },
-                    {
-                        "tag": "tag1",
-                        "channels": "0,2",
-                        "electrodeGroups": "group1"
-                    }
-                ]
-        }
-    }
-}
+        'fileName': 'session1_probe.dat',
+        'format': 'binary',
+        'type': 'int16',
+        'nChannels': 64,
+        'sr': 30000,
+        'nSamples': 180000000,
+        'electrodeGroups': [
+            {'channels': [0, 2, 4], 'label': 'anterior'},
+            {'channels': [1, 3, 5], 'label': 'posterior'}
+        ],
+        'channelTags': [
+            {'tag': 'artifact', 'channels': [1, 5], 'groups': [1]},
+            {'tag': 'good', 'channels': [0, 2], 'groups': [0]}
+        ]
+    },
+    'image': None,
+    'order': 0
+}}
 ```
 
 
@@ -280,7 +265,11 @@ resp = client.load_model('dataacquisition', id='b0e4ed13-f2f1-4845-8772-24978539
 {: .no_toc}
 
 ```
-resp = client.save_model("dataacquisition", id="b0e4ed13-f2f1-4845-8772-24978539d0bd", data={"notes": "new text"})
+resp = client.save_model(
+    "dataacquisition",
+    id="b0e4ed13-f2f1-4845-8772-24978539d0bd",
+    data={"notes": "re-run with higher gain", "equipment": ["5b032f95-3f5b-4a27-9680-5f8f671dba22"]}
+)
 ```
 
 ### Response example
@@ -289,41 +278,30 @@ resp = client.save_model("dataacquisition", id="b0e4ed13-f2f1-4845-8772-24978539
 ```
 {'dataacquisition': {
     'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
-    'notes': 'new text',
-    'hardwaredevice': None,
-    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+    'notes': 're-run with higher gain',
     'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-    'type': 'Extracellular',
+    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
+    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'type': 'ExtracellularEphys',
     'details': {
-            'type': 'int16',
-            'nChannels': 32,
-            'sr': 1250,
-            'nSamples': 3000,
-            'electrodeGroups': [
-                    {
-                        "channels": "0,2",
-                        "label": "group1"
-                    },
-                    {
-                        "channels": "1,3,5",
-                        "label": "group2"
-                    }
-                ],
-            'channelTags': [
-                    {
-                        "tag": "tag2",
-                        "channels": "1,3,5",
-                        "electrodeGroups": "group2"
-                    },
-                    {
-                        "tag": "tag1",
-                        "channels": "0,2",
-                        "electrodeGroups": "group1"
-                    }
-                ]
-        }
-    }
-}
+        'fileName': 'session1_probe.dat',
+        'format': 'binary',
+        'type': 'int16',
+        'nChannels': 64,
+        'sr': 30000,
+        'nSamples': 180000000,
+        'electrodeGroups': [
+            {'channels': [0, 2, 4], 'label': 'anterior'},
+            {'channels': [1, 3, 5], 'label': 'posterior'}
+        ],
+        'channelTags': [
+            {'tag': 'artifact', 'channels': [1, 5], 'groups': [1]},
+            {'tag': 'good', 'channels': [0, 2], 'groups': [0]}
+        ]
+    },
+    'image': None,
+    'order': 0
+}}
 ```
 
 
@@ -332,7 +310,9 @@ resp = client.save_model("dataacquisition", id="b0e4ed13-f2f1-4845-8772-24978539
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/modules/dataacquisition/<id\>/
 - **Data:** None
-- **Responses:** `204` OK; `403` Not allowed; `404` Not found
+- **Responses:** `204` OK; `400` Bad request; `403` Not allowed; `404` Not found
+
+`400` is returned when the data acquisition is still referenced by an epoch in the same session.
 
 
 ### Use example (using Python API)

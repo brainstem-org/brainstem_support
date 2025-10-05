@@ -21,9 +21,12 @@ nav_order: 8
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
-| `description` | string [max length: 500]|
+| `description` | string [max length: 500] |
 | `subject` | related subject ID formatted as a string **[required]** |
+| `user` | ID of the user who created the log **[read-only]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
+
+`type` is writable on creation and becomes read-only afterwards. The `user` is automatically set to the authenticated user when the log is created.
 
 ## Types of subject logs
 
@@ -31,21 +34,33 @@ nav_order: 8
 - `FoodConsumption`: Food consumption log
 - `WaterConsumption`: Water consumption log
 
-### Deprivation Logs, [
+### Deprivation Logs
 - `FoodDeprivation`: Food deprivation log
 - `WaterDeprivation`: Water deprivation log
 
 ### Housing and Environment Logs
 - `Housing`: Housing log
 
+### Observation Logs
+- `VonFreyTest`: Von Frey mechanical sensitivity test
+- `HargreavesTest`: Hargreaves thermal sensitivity test
+- `GenericObservation`: Generic observation
+
 ### Physical and Health Logs
 - `Weighing`: Weighing log
 - `Wellness`: Wellness log
 
+### Experimental Preparation Logs
+- `Habituation`: Habituation log
+- `Handling`: Handling log
+- `TrainingSession`: Training session log
+
 
 ## Log entries
 
-Each entry in the `entries` list is a dictionary with the following fields:
+Entries are returned in one of two formats depending on the log `type`:
+
+**Instantaneous entries** (most log types):
 
 | Field        | Description  |
 |:-------------|:-------------|
@@ -53,7 +68,16 @@ Each entry in the `entries` list is a dictionary with the following fields:
 | `notes` | string |
 | `details` | JSON object. *See accepted schemas below* |
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
+**Interval entries** (`Housing`, `FoodDeprivation`, `WaterDeprivation`, `Habituation`, `Handling`, `TrainingSession`):
+
+| Field             | Description |
+|:------------------|:------------|
+| `start_date_time` | start of the interval (ISO 8601) **[required]** |
+| `end_date_time`   | end of the interval (ISO 8601) **[required]** |
+| `notes`           | string |
+| `details`         | JSON object. *See accepted schemas below* |
+
+A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the JSON schema files under `modules/static/json/SubjectLog/` in the repository.
 
 ## List view
 - **Allowed portals:** public, private, super
@@ -79,6 +103,7 @@ resp = client.load_model('subjectlog')
         'type': 'Weighing',
         'description': None,
         'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
+        'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
         'entries': [
             {'date_time': '2023-03-26T04:05:00Z',
              'notes': None,
@@ -94,6 +119,7 @@ resp = client.load_model('subjectlog')
         'type': 'FoodConsumption',
         'description': None,
         'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
+        'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
         'entries': [
             {'date_time': '2023-03-09T07:10:00Z',
              'notes': None,
@@ -102,7 +128,8 @@ resp = client.load_model('subjectlog')
              'notes': None,
              'details': {'foodAmount': 2.0}}
          ],
-        'links': {'entries': 'entries/'}}
+        'links': {'entries': 'entries/'}
+    }
 ]}
 ```
 
@@ -118,9 +145,14 @@ resp = client.load_model('subjectlog')
 {: .no_toc}
 
 ```
-resp = client.save_model("subjectlog",  data={
-    "type": "WaterConsumption",
-    "subject": "0cdaf69d-63cf-429f-b549-fc0cc163d046"})
+resp = client.save_model(
+    "subjectlog",
+    data={
+        "type": "WaterConsumption",
+        "subject": "0cdaf69d-63cf-429f-b549-fc0cc163d046",
+        "description": "Baseline water access"
+    }
+)
 ```
 
 ### Response example
@@ -130,10 +162,11 @@ resp = client.save_model("subjectlog",  data={
 {'subject_log': {
     'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
     'type': 'WaterConsumption',
-    'description': None,
+    'description': 'Baseline water access',
     'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-    'entries': []}
-}
+    'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+    'entries': []
+}}
 ```
 
 
@@ -159,10 +192,11 @@ resp = client.load_model('subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105c3'
 {'subject_log': {
     'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
     'type': 'WaterConsumption',
-    'description': None,
+    'description': 'Baseline water access',
     'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-    'entries': []}
-}
+    'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+    'entries': []
+}}
 ```
 
 
@@ -178,7 +212,11 @@ resp = client.load_model('subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105c3'
 {: .no_toc}
 
 ```
-resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", data={"description": "new text"})
+resp = client.save_model(
+    "subjectlog",
+    id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3",
+    data={"description": "Post-deprivation monitoring"}
+)
 ```
 
 ### Response example
@@ -188,10 +226,11 @@ resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3"
 {'subject_log': {
     'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
     'type': 'WaterConsumption',
-    'description': "new text",
+    'description': 'Post-deprivation monitoring',
     'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-    'entries': []}
-}
+    'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+    'entries': []
+}}
 ```
 
 
@@ -235,20 +274,19 @@ resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3"
 {: .no_toc}
 
 ```
-{'subject_log': 
-    {
-        'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
-        'type': 'WaterConsumption',
-        'description': 'new text',
-        'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-        'entries': [
-            {'date_time': '2023-04-05T13:45:00Z',
-            'notes': None,
-            'details': {'waterAmount': 9.0}}
-        ],
-        'links': {'entries': 'entries/'}
-    }
-}
+{'subject_log': {
+    'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
+    'type': 'WaterConsumption',
+    'description': 'Post-deprivation monitoring',
+    'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
+    'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+    'entries': [
+        {'date_time': '2023-04-05T13:45:00Z',
+         'notes': None,
+         'details': {'waterAmount': 9.0}}
+    ],
+    'links': {'entries': 'entries/'}
+}}
 ```
 
 ## Change entry
@@ -263,27 +301,31 @@ resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3"
 {: .no_toc}
 
 ```
-resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
+resp = client.save_model(
+    "subjectlog",
+    id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3",
+    options="change_entry",
+    data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'Replaced drip line'}
+)
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'subject_log': 
-    {
-        'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
-        'type': 'WaterConsumption',
-        'description': 'new text',
-        'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-        'entries': [
-            {'date_time': '2023-04-05T13:45:00Z',
-            'notes': 'new text',
-            'details': {'waterAmount': 9.0}}
-        ],
-        'links': {'entries': 'entries/'}
-    }
-}
+{'subject_log': {
+    'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
+    'type': 'WaterConsumption',
+    'description': 'Post-deprivation monitoring',
+    'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
+    'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+    'entries': [
+        {'date_time': '2023-04-05T13:45:00Z',
+         'notes': 'Replaced drip line',
+         'details': {'waterAmount': 9.0}}
+    ],
+    'links': {'entries': 'entries/'}
+}}
 ```
 
 
