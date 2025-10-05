@@ -20,160 +20,137 @@ nav_order: 1
 {
     "type": "object",
     "title": "Impedances",
+    "options": {
+        "compact": "true"
+    },
+    "additionalProperties": false,
     "properties": {
         "impedances": {
             "title": "Impedances (kOhm)",
-            "type": "number",
-            "minimum": 0
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "number",
+                "minimum": 0
+            }
         },
         "phases": {
             "title": "Phases (degrees)",
-            "type": ["number", "null"]
+            "type": "array",
+            "items": {
+                "type": "number",
+                "minimum": 0
+            }
         },
         "channels": {
             "title": "List of channels",
-            "type": "number",
-            "minimum": 0
+            "type": "array",
+            "items": {
+                "type": "number",
+                "minimum": 0
+            }
         }
     },
-    "required": ["impedances"]
+    "required": [
+        "impedances"
+    ]
 }
 ```
 
-*Impedances* is a **required** field.
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "impedances": 2,
-    "phases": [15],
-    "channels": [0,2,3]
-}
-```
-
-
-## Linear displacement
+## LinearDisplacement
 ```
 {
     "type": "object",
     "title": "Linear displacement",
+    "options": {
+        "compact": "true"
+    },
+    "additionalProperties": false,
     "properties": {
         "displacement": {
-            "title": "Displacement (µm)",
+            "title": "Displacement (\u00b5m)",
             "type": "number"
         }
     },
-    "required": ["displacement"]
+    "required": [
+        "displacement"
+    ]
 }
 ```
-
-*Displacement* is a **required** field.
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "displacement": 12
-}
-```
-
 
 ## Tetrodes4
 ```
 {
     "type": "object",
     "title": "Tetrode log (4 tetrodes)",
-    "options": {"compact": "true"},
+    "options": {
+        "compact": "true"
+    },
     "additionalProperties": false,
     "properties": {
         "tetrode_1": {
-            "title": "Tetrode #1 (µm)",
+            "title": "Tetrode #1 (\u00b5m)",
             "type": "number"
         },
         "tetrode_2": {
-            "title": "Tetrode #2 (µm)",
+            "title": "Tetrode #2 (\u00b5m)",
             "type": "number"
         },
         "tetrode_3": {
-            "title": "Tetrode #3 (µm)",
+            "title": "Tetrode #3 (\u00b5m)",
             "type": "number"
         },
         "tetrode_4": {
-            "title": "Tetrode #4 (µm)",
+            "title": "Tetrode #4 (\u00b5m)",
             "type": "number"
         }
     }
 }
 ```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "tetrode_1": 1000,
-    "tetrode_2": 1050,
-    "tetrode_3": 1100,
-    "tetrode_4": 1150
-}
-```
-
 
 ## Tetrodes8
 ```
 {
     "type": "object",
-    "title": "Tetrode log (8 tetrodes)",
-    "options": {"compact": "true"},
+    "title": "Tetrode log (4 tetrodes)",
+    "options": {
+        "compact": "true"
+    },
     "additionalProperties": false,
     "properties": {
         "tetrode_1": {
-            "title": "Tetrode #1 (µm)",
+            "title": "Tetrode #1 (\u00b5m)",
             "type": "number"
         },
         "tetrode_2": {
-            "title": "Tetrode #2 (µm)",
+            "title": "Tetrode #2 (\u00b5m)",
             "type": "number"
         },
         "tetrode_3": {
-            "title": "Tetrode #3 (µm)",
+            "title": "Tetrode #3 (\u00b5m)",
             "type": "number"
         },
         "tetrode_4": {
-            "title": "Tetrode #4 (µm)",
+            "title": "Tetrode #4 (\u00b5m)",
             "type": "number"
         },
         "tetrode_5": {
-            "title": "Tetrode #5 (µm)",
+            "title": "Tetrode #5 (\u00b5m)",
             "type": "number"
         },
         "tetrode_6": {
-            "title": "Tetrode #6 (µm)",
+            "title": "Tetrode #6 (\u00b5m)",
             "type": "number"
         },
         "tetrode_7": {
-            "title": "Tetrode #7 (µm)",
+            "title": "Tetrode #7 (\u00b5m)",
             "type": "number"
         },
         "tetrode_8": {
-            "title": "Tetrode #8 (µm)",
+            "title": "Tetrode #8 (\u00b5m)",
             "type": "number"
         }
     }
 }
 ```
 
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "tetrode_1": 1000,
-    "tetrode_2": 1050,
-    "tetrode_3": 1100,
-    "tetrode_4": 1150,
-    "tetrode_5": 1200,
-    "tetrode_6": 1250,
-    "tetrode_7": 1300,
-    "tetrode_8": 1350
-}
-```

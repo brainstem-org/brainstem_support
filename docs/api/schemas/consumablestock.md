@@ -20,7 +20,9 @@ nav_order: 1
 {
     "type": "object",
     "title": "Chemical Reagent",
-    "options": { "compact": true },
+    "options": {
+        "compact": true
+    },
     "additionalProperties": false,
     "properties": {
         "productId": {
@@ -36,7 +38,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'Triton X-100', 'Paraformaldehyde'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'Triton X-100', 'Paraformaldehyde'"
+                },
                 "infoText": "Name of the chemical (e.g., 'Triton X-100', 'Paraformaldehyde')."
             }
         },
@@ -65,8 +69,10 @@ nav_order: 1
             "type": "number",
             "minimum": 0,
             "options": {
-                "inputAttributes": { "placeholder": "numeric" },
-                  "infoText": "Molecular weight (measured in gram per mol')."
+                "inputAttributes": {
+                    "placeholder": "numeric"
+                },
+                "infoText": "Molecular weight (measured in gram per mol')."
             }
         },
         "amount": {
@@ -74,7 +80,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., '500 mL', '2 gram', '50 tablets'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., '500 mL', '2 gram', '50 tablets'"
+                },
                 "infoText": "Amount of the agent (e.g., '500 mL', '2 gram', '50 tablets')."
             }
         },
@@ -83,7 +91,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., '4%', '1 M', '10X'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., '4%', '1 M', '10X'"
+                },
                 "infoText": "If supplied in solution (e.g., '4%', '1 M', '10X')."
             }
         },
@@ -92,7 +102,7 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "infoText": "E.g., '≥99%', 'Analytical grade', 'ACS reagent'."
+                "infoText": "E.g., '\u226599%', 'Analytical grade', 'ACS reagent'."
             }
         },
         "hazardInfo": {
@@ -100,22 +110,16 @@ nav_order: 1
             "type": "string",
             "format": "textarea",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'Toxic', 'Corrosive', 'Flammable'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'Toxic', 'Corrosive', 'Flammable'"
+                },
                 "infoText": "Optional summary of safety hazards or GHS classification."
             }
         }
     },
-    "required": ["chemicalType"]
-}
-```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "chemicalType": "Detergent",
-    "compoundName": "Triton X-100",
-    "amount": "500 mL"
+    "required": [
+        "chemicalType"
+    ]
 }
 ```
 
@@ -124,7 +128,9 @@ nav_order: 1
 {
     "type": "object",
     "title": "Consumable Device",
-    "options": { "compact": true },
+    "options": {
+        "compact": true
+    },
     "additionalProperties": false,
     "properties": {
         "productId": {
@@ -161,7 +167,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'Neuropixels', 'Inscopix'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'Neuropixels', 'Inscopix'"
+                },
                 "infoText": "E.g., 'Neuropixels', 'Inscopix', 'Open Ephys', 'Doric'."
             }
         },
@@ -170,7 +178,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., '1.25 mm ferrule, 5 mm length'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., '1.25 mm ferrule, 5 mm length'"
+                },
                 "infoText": "Key geometry (e.g., '1.25 mm ferrule, 5 mm length')."
             }
         },
@@ -179,7 +189,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'Stainless Steel', 'Zirconia', 'PEEK'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'Stainless Steel', 'Zirconia', 'PEEK'"
+                },
                 "infoText": "Main material (e.g., stainless steel, zirconia, PEEK, plastic)."
             }
         },
@@ -188,7 +200,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'LC/PC', 'Omnetics', 'pin header'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'LC/PC', 'Omnetics', 'pin header'"
+                },
                 "infoText": "Connector/interface type (e.g., 'LC/PC', 'Omnetics', 'pin header')."
             }
         },
@@ -199,12 +213,12 @@ nav_order: 1
             "items": {
                 "type": "string",
                 "enum": [
-                  "Chronic Implantation",
-                  "Acute Recording",
-                  "Optogenetics",
-                  "Imaging",
-                  "Behavioral Interface",
-                  "Other"
+                    "Chronic Implantation",
+                    "Acute Recording",
+                    "Optogenetics",
+                    "Imaging",
+                    "Behavioral Interface",
+                    "Other"
                 ]
             },
             "uniqueItems": true,
@@ -213,17 +227,9 @@ nav_order: 1
             }
         }
     },
-    "required": ["deviceClass"]
-}
-```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "deviceClass": "Headstage",
-    "compatibleWith": "Neuropixels",
-    "dimensions": "1.25 mm ferrule, 5 mm length"
+    "required": [
+        "deviceClass"
+    ]
 }
 ```
 
@@ -232,7 +238,9 @@ nav_order: 1
 {
     "type": "object",
     "title": "Antibody or Immunoreagent",
-    "options": { "compact": true },
+    "options": {
+        "compact": true
+    },
     "additionalProperties": false,
     "properties": {
         "productId": {
@@ -261,7 +269,9 @@ nav_order: 1
             "title": "Host Species",
             "type": "string",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'Rabbit', 'Mouse'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'Rabbit', 'Mouse'"
+                },
                 "infoText": "Host in which the antibody was raised (e.g., 'Rabbit', 'Mouse')."
             }
         },
@@ -269,7 +279,9 @@ nav_order: 1
             "title": "Reactivity Species",
             "type": "string",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'Rat', 'Mouse', 'Human'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'Rat', 'Mouse', 'Human'"
+                },
                 "infoText": "Species the antibody is reactive against (e.g., 'Rat', 'Mouse', 'Human')."
             }
         },
@@ -278,14 +290,21 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'GFAP', 'c-Fos', 'NeuN'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'GFAP', 'c-Fos', 'NeuN'"
+                },
                 "infoText": "What the reagent binds to (e.g., 'GFAP', 'c-Fos', 'NeuN')."
             }
         },
         "clonality": {
             "title": "Clonality",
             "type": "string",
-            "enum": ["Monoclonal", "Polyclonal", "Recombinant", "Unknown"],
+            "enum": [
+                "Monoclonal",
+                "Polyclonal",
+                "Recombinant",
+                "Unknown"
+            ],
             "options": {
                 "infoText": "Whether the antibody is monoclonal or polyclonal."
             }
@@ -295,7 +314,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'Alexa Fluor 488', 'HRP', 'None'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'Alexa Fluor 488', 'HRP', 'None'"
+                },
                 "infoText": "E.g., 'Alexa Fluor 488', 'HRP', 'None'."
             }
         },
@@ -304,7 +325,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., '500 mL', '2 gram', '50 tablets'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., '500 mL', '2 gram', '50 tablets'"
+                },
                 "infoText": "Amount of the agent (e.g., '500 mL', '2 gram', '50 tablets')."
             }
         },
@@ -314,8 +337,10 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., '1:500', '2 µg/mL'" },
-                "infoText": "Dilution (e.g., '1:500', '2 µg/mL')."
+                "inputAttributes": {
+                    "placeholder": "e.g., '1:500', '2 \u00b5g/mL'"
+                },
+                "infoText": "Dilution (e.g., '1:500', '2 \u00b5g/mL')."
             }
         },
         "application": {
@@ -324,12 +349,12 @@ nav_order: 1
             "items": {
                 "type": "string",
                 "enum": [
-                  "IHC",
-                  "ICC",
-                  "Western Blot",
-                  "Flow Cytometry",
-                  "Immunoprecipitation",
-                  "Other"
+                    "IHC",
+                    "ICC",
+                    "Western Blot",
+                    "Flow Cytometry",
+                    "Immunoprecipitation",
+                    "Other"
                 ]
             },
             "uniqueItems": true,
@@ -338,65 +363,20 @@ nav_order: 1
             }
         }
     },
-    "required": ["reagentType"]
+    "required": [
+        "reagentType"
+    ]
 }
 ```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "reagentType": "Primary Antibody",
-    "hostSpecies": "Rabbit",
-    "targetAntigen": "GFAP"
-}
-```
-
-## OpticFiber
-```
-{
-    "type": "object",
-    "title": "Optic fiber",
-    "properties": {
-        "fiberIds": {
-            "title": "Fiber IDs",
-            "type": "string",
-            "format": "text",
-            "brief": "fiber IDs",
-            "options": {"infoText": "A unique identifier for each optic fiber."}
-        },
-        "quantity": {
-            "title": "Quantity of optic fibers",
-            "type": "integer",
-            "minimum": 0,
-            "brief": "quantity",
-            "units": "",
-            "options": {
-                "inputAttributes": {"placeholder": "integer"},
-                "infoText": "The quantity of optic fibers in the batch."
-            }
-        }
-    }
-}
-
-```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "fiberIds": "id1",
-    "quantity": 4
-}
-```
-
 
 ## OpticalComponent
 ```
 {
     "type": "object",
     "title": "Optical Component",
-    "options": { "compact": true },
+    "options": {
+        "compact": true
+    },
     "additionalProperties": false,
     "properties": {
         "productId": {
@@ -429,7 +409,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'glass', 'quartz'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'glass', 'quartz'"
+                },
                 "infoText": "E.g., glass, quartz, sapphire, polymer."
             }
         },
@@ -438,8 +420,10 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., '1.0 mm diameter × 4 mm length'" },
-                "infoText": "E.g., '1.0 mm diameter × 4 mm length', '3×3×1 mm prism'."
+                "inputAttributes": {
+                    "placeholder": "e.g., '1.0 mm diameter \u00d7 4 mm length'"
+                },
+                "infoText": "E.g., '1.0 mm diameter \u00d7 4 mm length', '3\u00d73\u00d71 mm prism'."
             }
         },
         "coating": {
@@ -447,7 +431,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'anti-reflective', 'hydrophobic'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'anti-reflective', 'hydrophobic'"
+                },
                 "infoText": "E.g., anti-reflective, hydrophobic, no coating."
             }
         },
@@ -458,7 +444,9 @@ nav_order: 1
             "minimum": 0,
             "brief": "wavelength min",
             "options": {
-                "inputAttributes": { "placeholder": "numeric" },
+                "inputAttributes": {
+                    "placeholder": "numeric"
+                },
                 "infoText": "The minimum wavelength of light (in nanometers) that the optic component is designed to handle."
             }
         },
@@ -469,7 +457,9 @@ nav_order: 1
             "minimum": 0,
             "brief": "wavelength max",
             "options": {
-                "inputAttributes": { "placeholder": "numeric" },
+                "inputAttributes": {
+                    "placeholder": "numeric"
+                },
                 "infoText": "The maximum wavelength of light (in nanometers) that the optic component can handle."
             }
         },
@@ -486,12 +476,12 @@ nav_order: 1
             "items": {
                 "type": "string",
                 "enum": [
-                  "Chronic Imaging",
-                  "Widefield Imaging",
-                  "Two-Photon Imaging",
-                  "Optogenetics",
-                  "Histology",
-                  "Other"
+                    "Chronic Imaging",
+                    "Widefield Imaging",
+                    "Two-Photon Imaging",
+                    "Optogenetics",
+                    "Histology",
+                    "Other"
                 ]
             },
             "uniqueItems": true,
@@ -500,17 +490,45 @@ nav_order: 1
             }
         }
     },
-    "required": ["componentType"]
+    "required": [
+        "componentType"
+    ]
 }
 ```
 
-### Example of JSON according to this schema
-{: .no_toc}
+## OpticFiber
 ```
 {
-    "componentType": "GRIN Lens",
-    "material": "glass",
-    "dimensions": "1.0 mm diameter × 4 mm length"
+    "type": "object",
+    "title": "Optic fiber",
+    "options": {
+        "compact": true
+    },
+    "additionalProperties": false,
+    "properties": {
+        "fiberIds": {
+            "title": "Fiber IDs",
+            "type": "string",
+            "format": "text",
+            "brief": "fiber IDs",
+            "options": {
+                "infoText": "A unique identifier for each optic fiber."
+            }
+        },
+        "quantity": {
+            "title": "Quantity of optic fibers",
+            "type": "integer",
+            "minimum": 0,
+            "brief": "quantity",
+            "units": "",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "integer"
+                },
+                "infoText": "The quantity of optic fibers in the batch."
+            }
+        }
+    }
 }
 ```
 
@@ -519,7 +537,9 @@ nav_order: 1
 {
     "type": "object",
     "title": "Pharmacological Agent",
-    "options": { "compact": true },
+    "options": {
+        "compact": true
+    },
     "additionalProperties": false,
     "properties": {
         "productId": {
@@ -535,7 +555,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'Ketamine', 'Buprenorphine', 'Isoflurane'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'Ketamine', 'Buprenorphine', 'Isoflurane'"
+                },
                 "infoText": "Primary pharmacologically active substance (e.g., 'Ketamine', 'Buprenorphine','Isoflurane')."
             }
         },
@@ -544,7 +566,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., '500 mL', '2 gram', '50 tablets'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., '500 mL', '2 gram', '50 tablets'"
+                },
                 "infoText": "Amount of the agent (e.g., '500 mL', '2 gram', '50 tablets')."
             }
         },
@@ -553,8 +577,10 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., '10 mg/mL', '0.1%', '50 µg/tablet'" },
-                "infoText": "Stated strength of the active ingredient (e.g., '10 mg/mL', '0.1%', '50 µg/tablet')."
+                "inputAttributes": {
+                    "placeholder": "e.g., '10 mg/mL', '0.1%', '50 \u00b5g/tablet'"
+                },
+                "infoText": "Stated strength of the active ingredient (e.g., '10 mg/mL', '0.1%', '50 \u00b5g/tablet')."
             }
         },
         "dosageForm": {
@@ -614,7 +640,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'NSAID', 'GABA agonist', 'NMDA antagonist'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'NSAID', 'GABA agonist', 'NMDA antagonist'"
+                },
                 "infoText": "Mechanistic or therapeutic class (e.g., 'NSAID', 'GABA agonist', 'NMDA antagonist')."
             }
         },
@@ -631,7 +659,7 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "infoText": "E.g., '≥98%', 'USP', 'Analytical grade'."
+                "infoText": "E.g., '\u226598%', 'USP', 'Analytical grade'."
             }
         },
         "experimentalUse": {
@@ -640,12 +668,12 @@ nav_order: 1
             "items": {
                 "type": "string",
                 "enum": [
-                  "Surgical",
-                  "Behavioral",
-                  "Electrophysiology",
-                  "Histology",
-                  "Imaging",
-                  "Other"
+                    "Surgical",
+                    "Behavioral",
+                    "Electrophysiology",
+                    "Histology",
+                    "Imaging",
+                    "Other"
                 ]
             },
             "uniqueItems": true,
@@ -654,17 +682,9 @@ nav_order: 1
             }
         }
     },
-    "required": ["pharmacologicalCategory"]
-}
-```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "pharmacologicalCategory": "Anesthetic",
-    "activeIngredient": "Ketamine",
-    "dosageForm": "Injection"
+    "required": [
+        "pharmacologicalCategory"
+    ]
 }
 ```
 
@@ -673,7 +693,9 @@ nav_order: 1
 {
     "type": "object",
     "title": "Physiological Solution",
-    "options": { "compact": true },
+    "options": {
+        "compact": true
+    },
     "additionalProperties": false,
     "properties": {
         "solutionName": {
@@ -697,7 +719,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., '500 mL', '2 gram', '50 tablets'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., '500 mL', '2 gram', '50 tablets'"
+                },
                 "infoText": "Amount of the agent (e.g., '500 mL', '2 gram', '50 tablets')."
             }
         },
@@ -708,7 +732,9 @@ nav_order: 1
             "units": "",
             "minimum": 0,
             "options": {
-                "inputAttributes": { "placeholder": "numeric" },
+                "inputAttributes": {
+                    "placeholder": "numeric"
+                },
                 "infoText": "Target pH value as numeric value (e.g., '7.4')."
             }
         },
@@ -743,14 +769,14 @@ nav_order: 1
             "items": {
                 "type": "string",
                 "enum": [
-                  "Vehicle",
-                  "Perfusion",
-                  "Fixation",
-                  "Dissection",
-                  "Buffering",
-                  "Storage",
-                  "Slice Preparation",
-                  "Other"
+                    "Vehicle",
+                    "Perfusion",
+                    "Fixation",
+                    "Dissection",
+                    "Buffering",
+                    "Storage",
+                    "Slice Preparation",
+                    "Other"
                 ]
             },
             "uniqueItems": true,
@@ -763,28 +789,24 @@ nav_order: 1
 }
 ```
 
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "solutionName": "PBS",
-    "amount": "500 mL",
-    "pH": 7.4
-}
-```
-
 ## SiliconProbe
 ```
 {
     "type": "object",
     "title": "Silicon probe",
+    "options": {
+        "compact": true
+    },
+    "additionalProperties": false,
     "properties": {
         "probeIds": {
             "title": "Probe IDs",
             "type": "string",
             "format": "text",
             "brief": "probe IDs",
-            "options": {"infoText": "A unique identifier for each silicon probe."}
+            "options": {
+                "infoText": "A unique identifier for each silicon probe."
+            }
         },
         "quantity": {
             "title": "Quantity of probes",
@@ -793,21 +815,13 @@ nav_order: 1
             "brief": "quantity",
             "units": "",
             "options": {
-                "inputAttributes": {"placeholder": "integer"},
+                "inputAttributes": {
+                    "placeholder": "integer"
+                },
                 "infoText": "The quantity of probes in the batch."
             }
         }
     }
-}
-
-```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "probeIds": "probe_id1",
-    "quantity": 4
 }
 ```
 
@@ -816,13 +830,19 @@ nav_order: 1
 {
     "type": "object",
     "title": "Single wire electrode",
+    "options": {
+        "compact": true
+    },
+    "additionalProperties": false,
     "properties": {
         "wireIds": {
             "title": "Wire IDs",
             "type": "string",
             "format": "text",
             "brief": "wire IDs",
-            "options": {"infoText": "A unique identifier for the wire electrode as defined by the supplier."}
+            "options": {
+                "infoText": "A unique identifier for the wire electrode as defined by the supplier."
+            }
         },
         "quantity": {
             "title": "Quantity of electrodes",
@@ -831,7 +851,9 @@ nav_order: 1
             "brief": "quantity",
             "units": "",
             "options": {
-                "inputAttributes": {"placeholder": "integer"},
+                "inputAttributes": {
+                    "placeholder": "integer"
+                },
                 "infoText": "The quantity of electrodes."
             }
         },
@@ -840,20 +862,14 @@ nav_order: 1
             "type": "number",
             "brief": "length",
             "units": "mm",
-            "options": {"infoText": "The length of the wire."}
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "numeric"
+                },
+                "infoText": "The length of the wire in millimeters."
+            }
         }
     }
-}
-
-```
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "wireIds": "wireid1",
-    "quantity": 2,
-    "length": 4
 }
 ```
 
@@ -862,7 +878,9 @@ nav_order: 1
 {
     "type": "object",
     "title": "Tracer or Dye",
-    "options": { "compact": true },
+    "options": {
+        "compact": true
+    },
     "additionalProperties": false,
     "properties": {
         "productId": {
@@ -895,7 +913,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'Alexa Fluor 555', 'FITC'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'Alexa Fluor 555', 'FITC'"
+                },
                 "infoText": "Fluorophore or spectral tag used (e.g., 'Alexa Fluor 555', 'FITC')."
             }
         },
@@ -920,7 +940,9 @@ nav_order: 1
             "minimum": 0,
             "brief": "excitation",
             "options": {
-                "inputAttributes": { "placeholder": "numeric" },
+                "inputAttributes": {
+                    "placeholder": "numeric"
+                },
                 "infoText": "Peak wavelength for excitation (e.g., 550 nm)."
             }
         },
@@ -931,7 +953,9 @@ nav_order: 1
             "minimum": 0,
             "brief": "emission",
             "options": {
-                "inputAttributes": { "placeholder": "numeric" },
+                "inputAttributes": {
+                    "placeholder": "numeric"
+                },
                 "infoText": "Peak wavelength for emission (e.g., 665 nm)."
             }
         },
@@ -940,7 +964,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., '500 mL', '2 gram'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., '500 mL', '2 gram'"
+                },
                 "infoText": "Amount of the agent (e.g., '500 mL', '2 gram')."
             }
         },
@@ -949,7 +975,9 @@ nav_order: 1
             "type": "string",
             "format": "text",
             "options": {
-                "inputAttributes": { "placeholder": "e.g., 'DMSO', 'Saline', 'Ethanol'" },
+                "inputAttributes": {
+                    "placeholder": "e.g., 'DMSO', 'Saline', 'Ethanol'"
+                },
                 "infoText": "Solvent used for preparation (e.g., 'DMSO', 'Saline', 'Ethanol')."
             }
         },
@@ -968,11 +996,11 @@ nav_order: 1
             "items": {
                 "type": "string",
                 "enum": [
-                  "Circuit Tracing",
-                  "Histology",
-                  "Injection Visualization",
-                  "Vital Staining",
-                  "Other"
+                    "Circuit Tracing",
+                    "Histology",
+                    "Injection Visualization",
+                    "Vital Staining",
+                    "Other"
                 ]
             },
             "uniqueItems": true,
@@ -981,25 +1009,21 @@ nav_order: 1
             }
         }
     },
-    "required": ["dyeType"]
+    "required": [
+        "dyeType"
+    ]
 }
 ```
 
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "dyeType": "Fluorescent Tracer",
-    "fluorophore": "Alexa Fluor 555",
-    "amount": "500 mL"
-}
-```
-
-## VirusConstruct
+## VirusSolution
 ```
 {
     "type": "object",
     "title": "Virus construct",
+    "options": {
+        "compact": true
+    },
+    "additionalProperties": false,
     "properties": {
         "titer": {
             "title": "Titer of virus solution (units/mL)",
@@ -1008,13 +1032,20 @@ nav_order: 1
             "brief": "titer",
             "units": "units/mL",
             "options": {
+                "inputAttributes": {
+                    "placeholder": "numeric"
+                },
                 "infoText": "The titer of the virus solution. In units per milliliter"
             }
         },
         "titerUnit": {
             "title": "Titer unit of virus solution",
             "type": "string",
-            "enum": ["vg/mL", "TU/mL", "pfu/mL"],
+            "enum": [
+                "vg/mL",
+                "TU/mL",
+                "pfu/mL"
+            ],
             "brief": "titer unit",
             "options": {
                 "infoText": "vg/mL: Viral genomes per milliliter; TU/mL: Transducing units per milliliter; pfu/mL: Plaque forming units per milliliter."
@@ -1026,7 +1057,12 @@ nav_order: 1
             "minimum": 0,
             "brief": "volume",
             "units": "mL",
-            "options": {"infoText": "The volume of the virus solution."}
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "numeric"
+                },
+                "infoText": "The volume of the virus solution."
+            }
         },
         "aliquotCount": {
             "title": "The number of aliquots",
@@ -1035,30 +1071,26 @@ nav_order: 1
             "brief": "aliquots",
             "units": "",
             "options": {
-                "inputAttributes": {"placeholder": "integer"},
+                "inputAttributes": {
+                    "placeholder": "integer"
+                },
                 "infoText": "The number of aliquots."
             }
         },
         "aliquotVolume": {
-            "title": "The volume per aliquot (µL)",
+            "title": "The volume per aliquot (\u00b5L)",
             "type": "number",
             "minimum": 0,
             "brief": "volume",
-            "units": "µL",
-            "options": {"infoText": "The volume of each aliquot in micro liters."}
+            "units": "\u00b5L",
+            "options": {
+                "inputAttributes": {
+                    "placeholder": "integer"
+                },
+                "infoText": "The volume of each aliquot in micro liters."
+            }
         }
     }
 }
 ```
 
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-        "titer": 0.0001,
-        "titerUnit": "TU/mL",
-        "volume": 1,
-        "aliquotCount": 20,
-        "aliquotVolume": 5
-    }
-```
