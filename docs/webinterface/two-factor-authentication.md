@@ -7,85 +7,57 @@ nav_order: 7
 
 # Two-Factor Authentication (2FA)
 
-2FA adds an extra layer of security to your BrainSTEM account by requiring a second verification step beyond your password.
+2FA adds an extra layer of security by requiring a second verification step beyond your password. BrainSTEM supports email verification and authenticator apps.
 
-## Quick Setup (3 steps)
+## Setup & Methods
 
-1. **Avatar → Two-factor authentication** (or visit `/account/two_factor/`)
-2. **Choose your method:**
-   - **Email** – Instant setup, receive 6-digit codes via email
-   - **Authenticator app** – Scan QR code with Google Authenticator, etc.
-3. **Important:** Log out and log back in using 2FA before generating backup tokens
-
-## Method Details
+### Quick Setup
+1. **Avatar → Two-factor authentication** ([www.brainstem.org/account/two_factor/](https://www.brainstem.org/account/two_factor/))
+2. **Choose method:** Email (instant) or Authenticator app (scan QR code)
+3. **Generate backup tokens** after completing your first 2FA login
 
 ### Email Verification
-- **Setup:** Click **Activate Email Authentication** → Done
-- **Login:** Check email from `noreply@mg.brainstem.org` for 6-digit code (5-minute expiry)
-- **Good for:** Quick setup, no app required
+- **Setup:** Click **Activate Email Authentication**
+- **Use:** Enter 6-digit code received from `noreply@mg.brainstem.org` (expires in 5 minutes)
 
-### Authenticator Apps (TOTP)
-- **Setup:** Click **Add Authentication App** → Scan QR code OR click secret key to copy → Enter 6-digit code
-- **Login:** Open app, enter current 6-digit code (changes every 30 seconds)
-- **Supported apps:** Google Authenticator, Microsoft Authenticator, Authy, 1Password
-- **Good for:** Most secure, works offline
+### Authenticator Apps
+- **Setup:** Click **Add Authentication App** → Scan QR code → Enter verification code
+- **Use:** Enter current 6-digit code from app (refreshes every 30 seconds)
+- **Apps:** Google Authenticator, Duo Mobile, Authy, or Microsoft Authenticator
 
 ### Backup Tokens
-- **Setup:** Requires completing at least one 2FA login first → Click **Generate Tokens** → Save securely
-- **Use:** Click **Use Backup Token** at login when locked out
-- **Important:** Each token works once, automatically deleted if you remove all primary methods
+- **Generate:** After first successful 2FA login → **Generate Tokens** → Save securely
+- **Use:** Click **Use Backup Token** when locked out
+- **Note:** Single-use only, auto-deleted when all primary methods removed
 
-## Using 2FA
+## Usage & Management
 
-**Normal login:** Username/password → Enter code from your default method → Done
+### Login Process
+1. Enter username/password
+2. Enter code from default method (or click alternate method/backup token)
 
-**Switch methods:** Click alternate method button or **Use Backup Token** at login
+### Managing Methods
+- **Add/Remove:** Visit [www.brainstem.org/account/two_factor/](https://www.brainstem.org/account/two_factor/)
+- **Multiple apps:** Add new method before removing old
+- **Default:** First enabled method (green badge)
+- **Organization restrictions:** Some domains require at least one 2FA method and limit email disable
 
-**Troubleshooting:**
-- **Email codes expired?** Wait 1 minute before requesting new code
-- **Too many attempts?** Switch to backup token or alternate method
-- **Locked out?** Contact administrator after trying all recovery options
+### Troubleshooting
+- **Expired codes:** Wait 1 minute before requesting new email code
+- **Locked out:** Try backup tokens or alternate methods first
+- **Need help:** Use [contact form](https://brainstem.org/#Get-in-touch)
 
-## Managing Methods
+## Security & Best Practices
 
-**Add/Remove:** Visit `/account/two_factor/`
-- **Email:** Activate/Disable (may be restricted by organization)
-- **Apps:** Add multiple, Delete individually (add new before removing old)
-- **Tokens:** Generate new set anytime (requires verified 2FA session)
+### Security Features
+- **Rate limiting:** Prevents brute-force attacks
+- **Time limits:** Email codes expire in 5 minutes, 1-minute cooldown between requests
+- **Auto-cleanup:** Backup tokens are deleted when all primary methods are removed
 
-**Default method:** First method you enable becomes default, shown with green badge
+### Organization Policies
+Some organizations policy required 2FA and prevent complete disabling. You can still switch between email and authenticator methods.
 
-## Security Features
-
-| Feature | Details |
-|---------|----------|
-| **Email code expiry** | 5 minutes |
-| **Cooldown period** | 1 minute between email requests |
-| **Rate limiting** | Prevents brute-force attacks |
-| **Automatic cleanup** | Backup tokens deleted when last primary method removed |
-
-## Organization Policies
-
-**Restricted domains** (e.g., @company.org):
-- 2FA automatically enabled when you verify email
-- Cannot disable 2FA completely
-- Can still switch between email and authenticator apps
-
-**Check if affected:** Try disabling all 2FA methods – if blocked by policy, your domain requires 2FA
-
-## Best Practices
-
-✅ **DO:**
-- Use authenticator apps (more secure than email)
-- Set up multiple methods for backup
-- Save backup tokens securely offline
-- Test new methods before removing old ones
-
-❌ **DON'T:**
-- Share backup tokens
-- Rely on only one authentication method
-- Ignore emails from `noreply@mg.brainstem.org`
-
-## Need Help?
-
-**Locked out of all methods?** Use the [contact form on the landing page](https://brainstem.org/#Get-in-touch) for assistance. Our IT team will help verify your identity and reset your access.
+### Best Practices
+- **Recommended:** Use authenticator apps for enhanced security
+- **Backup:** Set up multiple methods and save backup tokens offline
+- **Safety:** Test new methods before removing old ones, never share backup tokens

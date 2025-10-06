@@ -32,6 +32,8 @@ First, we'll create a project to organize and provide context for our experiment
    - Go to *Projects*
    - Click *Add project*
 
+![Project creation interface](/assets/images/tutorials/ephys/add_project.png)
+
 **[SCREENSHOT NEEDED: Project creation interface]**
 
 2. **Configure Project Details**:
@@ -54,7 +56,7 @@ Now we'll add individual rats that will participate in our study.
    - Go to *Subjects* 
    - Click *Add subject*
 
-**[SCREENSHOT NEEDED: Subject creation form]**
+![Subject creation form](/assets/images/tutorials/ephys/add_subject.png)
 
 2. **Subject Configuration Example**:
 
@@ -134,7 +136,7 @@ After creating individual subjects, we can group them into a cohort for experime
    - Go to *Cohorts* (below Subjects)
    - Click *Add cohort*
 
-**[SCREENSHOT NEEDED: Cohort creation interface]**
+![Cohort creation form](/assets/images/tutorials/ephys/add_cohort.png)
 
 2. **Configure Cohort Details**:
 
@@ -152,7 +154,7 @@ After creating individual subjects, we can group them into a cohort for experime
 
 Verify your theta maze setup includes all necessary equipment:
 
-**[SCREENSHOT NEEDED: Equipment list view filtered by setup]**
+![Equipment list view filtered by setup](/assets/images/tutorials/ephys/equipment_list.png)
 
 **Required Equipment**:
 - Neuropixels data acquisition system (IMEC - Neuropixels OneBox)
@@ -167,7 +169,7 @@ Document the surgical procedure for Neuropixels probe implantation.
    - Go to *Subjects* (below Subjects)
    - Click Edit for subject *TM_R001*
 
-**[SCREENSHOT NEEDED: Procedure creation interface]**
+![Procedure view](/assets/images/tutorials/ephys/subject_procedure_view.png)
 
 2. **Procedure Configuration**:
 
