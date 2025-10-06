@@ -3,7 +3,7 @@ layout: default
 title: Behavioral paradigm
 parent: Personal attributes
 grand_parent: API
-nav_order: 5
+nav_order: 1
 ---
 
 # Behavioral paradigm API endpoint

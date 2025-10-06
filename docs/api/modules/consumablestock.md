@@ -35,22 +35,7 @@ nav_order: 2
 
 ## Types of consumable stock
 
-Consumable stock `type` values are grouped as follows:
-
-### Reagents and Solutions
-- `ChemicalReagent`: Chemical reagent
-- `ImmunoReagent`: Antibody or immunoreagent
-- `PharmacologicalAgent`: Pharmacological agent
-- `PhysiologicalSolution`: Physiological solution
-- `TracerDye`: Tracer or dye
-- `VirusSolution`: Virus solution
-
-### Device-Linked Consumables
-- `ConsumableDevice`: Consumable device
-- `OpticalComponent`: Optical component
-- `OpticFiber`: Optic fiber
-- `SiliconProbe`: Silicon probe
-- `SingleWireElectrode`: Single wire electrode
+A detailed list of the available `type` options and accepted schemas for the `details` field can be found in the [Consumable stock schemas documentation](/api/schemas/consumablestock).
 
 ## List view
 - **Allowed portals:** public, private

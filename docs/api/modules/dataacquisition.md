@@ -33,40 +33,12 @@ nav_order: 3
 ## Types of data acquisition
 
 
-### Audio and Behavior Tracking
-- `Audio`: Audio
-- `BehavioralTracking`: Behavioral tracking
-- `VideoTracking`: Video tracking
+A detailed list of the available `type` options and accepted schemas for the `details` field can be found in the [Data acquisition schemas documentation](/api/schemas/dataacquisition).
 
-### Electrophysiology
-- `Electroencephalography`: Electroencephalography (EEG)
-- `Electroneurogram`: Electroneurogram (ENG)
-- `ExtracellularEphys`: Extracellular Electrophysiology
-- `IntracellularEphys`: Intracellular Electrophysiology
 
-### Optical Imaging
-- `FiberPhotometry`: Fiber Photometry
-- `Miniscope`: Miniscope Microscopy
-- `ConfocalMicroscopy`: Confocal Microscopy
-- `LightFieldMicroscopy`: Light Field Microscopy
-- `SinglePhotonMicroscopy`: Single-Photon Microscopy
-- `TwoPhotonMicroscopy`: Two-Photon Microscopy
-- `ThreePhotonMicroscopy`: Three-Photon Microscopy
 
-### Magnetic and Functional Imaging
-- `MagneticResonanceImaging`: Magnetic Resonance Imaging (MRI)
-- `FunctionalMagneticResonanceImaging`: Functional Magnetic Resonance Imaging (fMRI)
-- `Magnetoencephalography`: Magnetoencephalography (MEG)
 
-### Tomography and Ultrasound
-- `ComputedTomography`: Computed Tomography (CT)
-- `OpticalCoherenceTomography`: Optical Coherence Tomography (OCT)
-- `PositronEmissionTomography`: Positron Emission Tomography (PET)
-- `SinglePhotonEmissionComputedTomography`: Single-Photon Emission Computed Tomography (SPECT)
-- `FunctionalUltrasoundImaging`: Functional Ultrasound Imaging (fUS)
 
-### General and Time-Series Data
-- `GeneralTimeSeries`: General time-series
 
 
 ## List view

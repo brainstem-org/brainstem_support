@@ -30,30 +30,7 @@ nav_order: 8
 
 ## Types of subject logs
 
-### Diet and Consumption Logs
-- `FoodConsumption`: Food consumption log
-- `WaterConsumption`: Water consumption log
-
-### Deprivation Logs
-- `FoodDeprivation`: Food deprivation log
-- `WaterDeprivation`: Water deprivation log
-
-### Housing and Environment Logs
-- `Housing`: Housing log
-
-### Observation Logs
-- `VonFreyTest`: Von Frey mechanical sensitivity test
-- `HargreavesTest`: Hargreaves thermal sensitivity test
-- `GenericObservation`: Generic observation
-
-### Physical and Health Logs
-- `Weighing`: Weighing log
-- `Wellness`: Wellness log
-
-### Experimental Preparation Logs
-- `Habituation`: Habituation log
-- `Handling`: Handling log
-- `TrainingSession`: Training session log
+A detailed list of the available `type` options and accepted schemas for the `details` field can be found in the [Subject log schemas documentation](/api/schemas/subjectlog).
 
 
 ## Log entries

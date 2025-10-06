@@ -45,9 +45,7 @@ Each entry in the `entries` list is a dictionary with the following fields:
 | `notes` | string |
 | `details` | JSON object. *See accepted schemas below* |
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the JSON schema files under `modules/static/json/ProcedureLog/` in the repository.
-
-Use the dedicated endpoints `/add_entry/`, `/change_entry/`, and `/remove_entry/` on an existing log to manage entries while the main PATCH endpoint updates the log metadata.
+A detailed list of the available `type` options and accepted schemas for the `details` and `coordinates_details` fields can be found in the [Procedure log schemas documentation](/api/schemas/procedurelog).
 
 ## List view
 - **Allowed portals:** public, private

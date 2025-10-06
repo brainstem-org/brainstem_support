@@ -3,7 +3,7 @@ layout: default
 title: Data storage
 parent: Personal attributes
 grand_parent: API
-nav_order: 5
+nav_order: 2
 ---
 
 # Data storage API endpoint

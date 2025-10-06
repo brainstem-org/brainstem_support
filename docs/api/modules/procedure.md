@@ -33,75 +33,9 @@ nav_order: 6
 
 ## Types of procedure
 
-### Surgical Procedures
-- `Anesthesia`: Anesthesia
-- `BurrHole`: Burr hole
-- `CranialWindow`: Cranial window
-- `Craniectomy`: Craniectomy
-- `Craniotomy`: Craniotomy
-- `Headcap`: Headcap
-- `HeadFixation`: Head fixation
-- `Headpost`: Headpost
-
-### Implant Procedures
-- `BloodPressureSensorImplant`: Blood pressure sensor implant
-- `BreathingSensorImplant`: Breathing sensor implant
-- `CatheterImplant`: Catheter implant
-- `EcgImplant`: ECG implant (Electrocardiography)
-- `EegImplant`: EEG implant (Electroencephalography)
-- `EmgImplant`: EMG implant (Electromyography)
-- `GrinLensImplant`: GRIN (Gradient Index) lens implant
-- `NerveCuffImplant`: Nerve cuff implant
-- `OpticFiberImplant`: Optic fiber implant
-- `PrismImplant`: Prism implant
-- `ReferenceElectrodeImplant`: Reference electrode implant
-- `SiliconProbeImplant`: Silicon probe implant
-- `SingleWireElectrodeImplant`: Single wire electrode implant
-- `TemperatureSensorImplant`: Temperature sensor implant
-- `TetrodeWireElectrodeImplant`: Tetrode wire electrode implant
-- `GenericImplant`: Generic implant
-
-### Injection and Infusion Procedures
-- `Injection`: Injection
-- `VirusInjection`: Virus injection
-
-### Brain and Tissue Procedures
-- `BrainExtraction`: Brain extraction
-- `BrainLesion`: Brain lesion
-- `BrainSlice`: Brain slice
-- `Cryosectioning`: Cryosectioning
-- `PerfusionFixation`: Brain perfusion fixation
-- `TissueClearing`: Tissue clearing
-- `VibratomeSectioning`: Vibratome sectioning
-
-### Endpoint Procedures (Euthanasia)
-- `BarbiturateInjection`: Barbiturate injection
-- `CervicalDislocation`: Cervical dislocation
-- `Co2ChamberEuthanasia`: CO₂ chamber euthanasia
-- `Decapitation`: Decapitation
-- `InhalantOverdose`: Inhalant overdose
-
-### Abstract Procedures
-- `AuditoryStimulation`: Auditory stimulation
-- `BehavioralTracking`: Behavioral tracking
-- `OdorStimulation`: Odor stimulation
-- `TactileStimulation`: Tactile stimulation
-- `VisualStimulation`: Visual stimulation
+A detailed list of the available `type` options and accepted schemas for the `details` and `coordinates_details` fields can be found in the [Procedure schemas documentation](/api/schemas/procedure) and [Coordinates schemas documentation](/api/schemas/coordinates).
 
 
-## Coordinates system options
-
-These are the available `coordinates_system` options for Procedure:
-
-- `External_XYZ_Absolute`: External XYZ Coordinates with Angles
-- `Stereotaxic_BregmaAbsolute`: Stereotaxic Bregma-Based Absolute Coordinates
-- `Stereotaxic_BregmaBrainSurface`: Stereotaxic Bregma-Based Surface Coordinates with Depth
-- `Stereotaxic_LambdaAbsolute`: Stereotaxic Lambda-Based Absolute Coordinates
-- `Stereotaxic_LambdaBrainSurface`: Stereotaxic Lambda-Based Surface Coordinates with Depth
-- `CCF_XYZ_Absolute`: Common Coordinate Framework XYZ Absolute Coordinates
-
-
-A detailed list of the accepted schemas for the `coordinates_details` field, related to each `coordinates_system`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
 
 
 ## List view

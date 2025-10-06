@@ -30,13 +30,7 @@ nav_order: 6
 | `external_identifiers` | JSON object containing external identifier information |
 | `comments` | string |
 
-These are the available `type` options for Consumable:
-- `OpticFiberDesign`
-- `SiliconProbeDesign`
-- `VirusConstruct`
-- `WireElectrode`
-
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
+A detailed list of the available `type` options and accepted schemas for the `details` field can be found in the [Consumable schemas documentation](/api/schemas/consumable.md).
 
 
 ## List view

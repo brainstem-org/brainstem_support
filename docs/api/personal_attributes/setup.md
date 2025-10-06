@@ -3,7 +3,7 @@ layout: default
 title: Setup
 parent: Personal attributes
 grand_parent: API
-nav_order: 5
+nav_order: 4
 ---
 
 # Setup API endpoint
