@@ -66,7 +66,7 @@ Each entry in the `groups` object follows the structure:
 
 ## List view
 
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL (private portal):** <https://www.brainstem.org/api/private/stem/project/>
 - **URL (public portal):** <https://www.brainstem.org/api/public/stem/project/>
@@ -172,7 +172,7 @@ resp = client.load_model("project")
 
 ## Add
 
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** <https://www.brainstem.org/api/private/stem/project/>
 - **Data:** JSON dictionary containing at least the required fields.
@@ -220,7 +220,7 @@ resp = client.save_model("project",  data={"name": "NewRestProject", "descriptio
 
 ## Detail
 
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL (private portal):** `https://www.brainstem.org/api/private/stem/project/<id>/`
 - **URL (public portal):** `https://www.brainstem.org/api/public/stem/project/<id>/`
@@ -274,7 +274,7 @@ resp = client.load_model("project", id="d7de95c0-eb63-40e8-ac90-7573b58f6033")
 
 ## Change
 
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** `https://www.brainstem.org/api/private/stem/project/<id>/`
 - **Data:** dictionary containing the fields to be updated
@@ -359,7 +359,7 @@ resp = client.save_model(
 
 ## Delete
 
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** `https://www.brainstem.org/api/private/stem/project/<id>/`
 - **Data:** None

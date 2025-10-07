@@ -27,7 +27,7 @@ nav_order: 4
 | `tags` | list of strings |
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/stem/collection
 - **Data:** None
@@ -69,7 +69,7 @@ resp = client.load_model('collection')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/stem/collection
 - **Data:** JSON dictionary containing at least the required fields.
@@ -99,7 +99,7 @@ resp = client.save_model("collection", data={"name": "NewRestCollection", "proje
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/stem/collection/<id\>/
 - **Data:** None
@@ -128,7 +128,7 @@ resp = client.load_model('collection', id='54d5bab2-e520-4f1a-b518-6f66d28ee7ee'
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/stem/collection/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -158,7 +158,7 @@ resp = client.save_model("collection", id="54d5bab2-e520-4f1a-b518-6f66d28ee7ee"
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/stem/collection/<id\>/
 - **Data:** None

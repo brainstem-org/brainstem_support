@@ -22,8 +22,8 @@ nav_order: 4
 | `id` | UUID identificator formatted as a string |
 | `name` | descriptive name for the equipment |
 | `type` | string **[required]**. *See options below* |
-| `setup` | related experimental setup ID formatted as a string **[required]** |
 | `notes` | string [max length: 500] |
+| `setup` | related experimental setup ID formatted as a string **[required]** |
 | `date_time` | string containing date and time (ISO 8601) |
 | `consumable` | related consumable ID formatted as a string |
 | `hardwaredevice` | related hardware device ID formatted as a string |
@@ -36,90 +36,13 @@ Most equipment schemas currently expose no additional fields, so the API may ret
 
 ## Types of equipment
 
-### Data acquisition
-- `Amplifier`: Amplifier
-- `Camera`: Camera
-- `DataAcquisitionSystem`: Data acquisition system
-- `DrugDeliverySystem`: Drug delivery system
-- `ElectroencephalographySystem`: Electroencephalography system (EEG)
-- `ElectromyographyMachine`: Electromyography machine
-- `EphysRig`: Ephys rig
-- `FiberPhotometrySystem`: Fiber photometry system
-- `ForcePlate`: Force plate
-- `HumiditySensor`: Humidity sensor
-- `LightSensor`: Light sensor
-- `MagneticResonanceImagingSystem`: Magnetic resonance imaging (MRI) system
-- `MagnetoencephalographySystem`: Magnetoencephalography (MEG) system
-- `Magnetometer`: Magnetometer
-- `Microphone`: Microphone
-- `Miniscope`: Miniscope
-- `MotionTrackingSystem`: Motion tracking system
-- `OphysRig`: Ophys rig
-- `OnePhotonMicroscope`: One-photon microscope
-- `OpticalCoherenceTomography`: Optical Coherence Tomography (OCT)
-- `Oscilloscope`: Oscilloscope
-- `Photodetector`: Photodetector
-- `PressureSensor`: Pressure sensor
-- `SignalProcessingUnit`: Signal processing unit
-- `SinglePhotonEmissionComputedTomography`: Single-photon emission computed tomography (SPECT)
-- `TemperatureSensor`: Temperature sensor
-- `ThreePhotonMicroscopy`: Three-photon microscopy
-- `TwoPhotonMicroscope`: Two-photon microscope
-- `UltrasoundImagingSystem`: Ultrasound imaging system
-
-### Behavioral and stimulation tools
-- `BehaviorRig`: Behavior rig
-- `IontophoresisStimulator`: Iontophoresis stimulator
-- `Laser`: Laser
-- `LedDriver`: LED Driver
-- `LightEmitter`: Light emitter
-- `RunningWheel`: Running Wheel
-- `Speaker`: Speaker
-- `StimulationDevice`: Stimulation device
-- `Treadmill`: Treadmill
-
-### Environmental controllers
-- `AntiVibrationTable`: Anti-vibration table
-- `FloatingAirPlatform`: Floating air platform
-- `HumidityController`: Humidity controller
-- `NoiseIsolationChamber`: Noise isolation chamber
-- `ThermalController`: Thermal controller
-
-### Surgical equipment
-- `AnesthesiaSystem`: Anesthesia system
-- `InjectionSystem`: Injection system
-- `Micromanipulator`: Micromanipulator
-- `Microscope`: Microscope
-- `StereotaxicFrame`: Stereotaxic frame
-- `SurgicalPowerTool`: Surgical power tool
-- `PerfusionSystem`: Perfusion system
-
-### Miscellaneous
-- `BiosafetyCabinet`: Biosafety cabinet
-- `Computer`: Computer
-- `ElectronicComponent`: Electronic component
-- `FumeHood`: Fume hood
-- `GlassMicropipettePuller`: Glass micropipette puller
-- `Microcontroller`: Microcontroller (e.g. Arduino)
-- `Monitor`: Monitor
-- `SingleBoardComputer`: Single-board computer (e.g. Raspberry Pi)
+A detailed list of the available `type` options and accepted schemas for the `details` and `coordinates_details` fields can be found in the [Equipment schemas documentation](/api/schemas/equipment) and [Coordinates schemas documentation](/api/schemas/coordinates).
 
 
-### Coordinates system options
-These are the available `coordinates_system` options for Equipment:
-
-- `External_XYZ_Absolute`: External XYZ Coordinates with Angles
-- `Stereotaxic_BregmaAbsolute`: Stereotaxic Bregma-Based Absolute Coordinates
-- `Stereotaxic_BregmaBrainSurface`: Stereotaxic Bregma-Based Surface Coordinates with Depth
-- `Stereotaxic_LambdaAbsolute`: Stereotaxic Lambda-Based Absolute Coordinates
-- `Stereotaxic_LambdaBrainSurface`: Stereotaxic Lambda-Based Surface Coordinates with Depth
-- `CCF_XYZ_Absolute`: Common Coordinate Framework XYZ Absolute Coordinates
-
-A detailed list of the accepted schemas for the `coordinates_details` field, related to each `coordinates_system`, can be found in the [Coordinates schemas page]({{"api/schemas/coordinates/"|absolute_url}}).
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/equipment
 - **Data:** None
@@ -182,7 +105,7 @@ resp = client.load_model('equipment')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/modules/equipment
 - **Data:** JSON dictionary containing at least the required fields.
@@ -242,7 +165,7 @@ resp = client.save_model(
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/equipment/<id\>/
 - **Data:** None
@@ -283,7 +206,7 @@ resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/equipment/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -328,7 +251,7 @@ resp = client.save_model(
 ```
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/modules/equipment/<id\>/
 - **Data:** None

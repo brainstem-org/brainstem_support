@@ -48,7 +48,7 @@ Each dictionary in the `groups_own_json` list contains the group's `id` and `nam
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/user
 - **Data:** None
@@ -102,7 +102,7 @@ Users can only be added through the website Register form.
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/user/<id\>/
 - **Data:** None
@@ -135,7 +135,7 @@ resp = client.load_model('user', id='16')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/users/user/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -172,7 +172,7 @@ resp = client.save_model("user", id="16", data={"website": "www.someweb.com"})
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/users/user/<id\>/
 - **Data:** None

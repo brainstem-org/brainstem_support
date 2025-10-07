@@ -23,11 +23,10 @@ nav_order: 4
 | `name` | string **[required]** [max length: 500] |
 | `description` | string [max length: 500] |
 | `website` | string [max length: 200]|
-| `comments` | string |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal
 - **Data:** None
@@ -68,7 +67,7 @@ resp = client.load_model('journal')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal
 - **Data:** JSON dictionary containing at least the required fields.
@@ -95,8 +94,7 @@ resp = client.save_model("journal",  data={
         'id': '549b9e4f-5253-44f8-93ee-f18f08a39a36',
         'name': 'MyNewJournal',
         'description': '',
-        'website': 'http://newjournal.com',
-        'comments': ''
+        'website': 'http://newjournal.com'
     }
 }
 ```
@@ -104,7 +102,7 @@ resp = client.save_model("journal",  data={
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal/<id\>/
 - **Data:** None
@@ -131,7 +129,7 @@ resp = client.load_model('journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -154,14 +152,13 @@ resp = client.save_model("journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", d
     'id': '640ea107-cf9e-413a-b0b8-562082654481',
     'name': 'SomeJournal',
     'description': 'new text',
-    'website': '',
-    'comments': ''}
+    'website': ''}
 }
 ```
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal/<id\>/
 - **Data:** None
@@ -177,7 +174,7 @@ resp = client.delete_model("journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 
 
 ## List approvals
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals
 - **Data:** None
@@ -200,7 +197,6 @@ resp = client.load_model('journalapproval')
         'name': 'SomeJournal',
         'description': 'new text',
         'website': '',
-        'comments': '',
         'instance_id': 'da3359b7-e380-4dc6-ba9d-04831d3082d9',
         'action': 'Change',
         'reviewer': None,
@@ -211,7 +207,6 @@ resp = client.load_model('journalapproval')
         'name': 'MyNewJournal',
         'description': '',
         'website': 'http://newjournal.com',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -222,7 +217,7 @@ resp = client.load_model('journalapproval')
 
 
 ## Detail approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
 - **Data:** None
@@ -244,7 +239,6 @@ resp = client.load_model('journalapproval', id='549b9e4f-5253-44f8-93ee-f18f08a3
     'name': 'MyNewJournal',
     'description': '',
     'website': 'http://newjournal.com',
-    'comments': '',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,
@@ -254,7 +248,7 @@ resp = client.load_model('journalapproval', id='549b9e4f-5253-44f8-93ee-f18f08a3
 
 
 ## Accept approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
 - **Data:** None
@@ -269,7 +263,7 @@ resp = client.save_model("journalapproval", id="549b9e4f-5253-44f8-93ee-f18f08a3
 
 
 ## Reject approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
 - **Data:** None

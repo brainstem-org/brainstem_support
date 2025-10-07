@@ -3,7 +3,7 @@ layout: default
 title: Setup
 parent: Personal attributes
 grand_parent: API
-nav_order: 5
+nav_order: 4
 ---
 
 # Setup API endpoint
@@ -22,14 +22,15 @@ nav_order: 5
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 50] |
+| `location` | string describing the location of the setup |
 | `description` | string [max length: 500]|
 | `setup_type` | related environment type ID formatted as a string **[required]** |
-| `physical_dimensions_json` | JSON dictionary |
+| `specifications` | JSON dictionary describing setup specifications |
 | `is_public` | boolean |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/setup
 - **Data:** None
@@ -50,19 +51,21 @@ resp = client.load_model('setup')
     {
         'id': '58e0003d-16c2-4264-913d-288463c0356d',
         'name': 'Head-fixed wheel',
+        'location': 'Lab Room 101',
         'description': '',
         'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-        'physical_dimensions_json': [
+        'specifications': [
             {'name': 'Radius', 'value': 12, 'description': 'cm'}
         ],
         'is_public': False
     },
     {
         'id': '3e9ec0e0-d685-42ec-8386-0fa24602a73e',
-        'name': "Mino's Maze",
+        'name': 'Maze setup',
+        'location': 'Lab Room 102',
         'description': '',
         'setup_type': 'e1f14b91-e507-48c1-bfec-c68d7db9c166',
-        'physical_dimensions_json': [],
+        'specifications': [],
         'is_public': True
     }
 ]}
@@ -71,7 +74,7 @@ resp = client.load_model('setup')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/setup
 - **Data:** JSON dictionary containing at least the required fields.
@@ -85,9 +88,10 @@ resp = client.load_model('setup')
 resp = client.save_model("setup",  data=
     {
         'name': 'MyNewEnv',
+        'location': 'Lab Room 103',
         'description': '',
         'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-        'physical_dimensions_json': [
+        'specifications': [
             {'name': 'Length', 'value': 100, 'description': 'yards'}
         ],
         'is_public': False
@@ -102,9 +106,10 @@ resp = client.save_model("setup",  data=
 {'setup': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'MyNewEnv',
+    'location': 'Lab Room 103',
     'description': '',
     'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-    'physical_dimensions_json': [
+    'specifications': [
         {'name': 'Length', 'value': 100, 'description': 'yards'}
     ],
     'is_public': False}
@@ -114,7 +119,7 @@ resp = client.save_model("setup",  data=
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/setup/<id\>/
 - **Data:** None
@@ -134,9 +139,10 @@ resp = client.load_model('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 {'setup': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'MyNewEnv',
+    'location': 'Lab Room 103',
     'description': '',
     'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-    'physical_dimensions_json': [
+    'specifications': [
         {'name': 'Length', 'value': 100, 'description': 'yards'}
     ],
     'is_public': False}
@@ -145,7 +151,7 @@ resp = client.load_model('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/setup/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -177,7 +183,7 @@ resp = client.save_model("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", dat
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/setup/<id\>/
 - **Data:** None

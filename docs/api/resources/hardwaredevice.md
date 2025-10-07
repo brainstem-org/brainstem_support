@@ -23,11 +23,13 @@ nav_order: 6
 | `name` | string **[required]** [max length: 100; must be unique] |
 | `description` | string [max length: 500] |
 | `supplier` | related supplier ID formatted as a string **[required]** |
-| `comments` | string |
+| `rrid` | Research Resource Identifier (RRID) |
+| `rrid_url` | URL to RRID lookup page **[read-only]** |
+| `external_identifiers` | JSON object containing external identifier information |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice
 - **Data:** None
@@ -74,7 +76,7 @@ resp = client.load_model('hardwaredevice')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice
 - **Data:** JSON dictionary containing at least the required fields.
@@ -101,15 +103,14 @@ resp = client.save_model("hardwaredevice",  data={
     'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
     'name': 'MyNewHardwareDevice',
     'description': '',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
-    'comments': ''}
+    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'}
 }
 ```
 
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice/<id\>/
 - **Data:** None
@@ -136,7 +137,7 @@ resp = client.load_model('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -159,14 +160,13 @@ resp = client.save_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e
     'id': 'd10aaf4c-be23-45b2-9f81-ef1d65ca6c32',
     'name': 'MyNewHardwareDevice',
     'description': 'new text',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
-    'comments': ''}
+    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'}
 }
 ```
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice/<id\>/
 - **Data:** None
@@ -186,7 +186,7 @@ resp = client.delete_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae
 
 
 ## List approvals
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals
 - **Data:** None
@@ -213,7 +213,6 @@ resp = client.load_model('hardwaredeviceapproval')
         'name': 'MyNewHardwareDevice',
         'description': '',
         'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -224,7 +223,6 @@ resp = client.load_model('hardwaredeviceapproval')
         'name': '16-Ch Extracellular Differential AC Amplifier Model 3500',
         'description': '123',
         'supplier': '866fda99-0ae7-4aeb-a163-5c2e8a3ed4af',
-        'comments': '',
         'instance_id': '56854ab5-708b-48b2-92a8-3bd84439c1e0',
         'action': 'Change',
         'reviewer': 15,
@@ -235,7 +233,7 @@ resp = client.load_model('hardwaredeviceapproval')
 
 
 ## Detail approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
 - **Data:** None
@@ -257,7 +255,6 @@ resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0
     'name': 'MyNewHardwareDevice',
     'description': '',
     'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
-    'comments': '',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,
@@ -267,7 +264,7 @@ resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0
 
 
 ## Accept approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
 - **Data:** None
@@ -282,7 +279,7 @@ resp = client.save_model("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0
 
 
 ## Reject approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
 - **Data:** None

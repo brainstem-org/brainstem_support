@@ -25,19 +25,15 @@ nav_order: 6
 | `supplier` | related supplier ID formatted as a string **[required]** |
 | `type` | string **[required]**. *See options below* |
 | `details` | JSON object. *See accepted schemas below* |
-| `comments` | string |
+| `rrid` | Research Resource Identifier (RRID) |
+| `rrid_url` | URL to RRID lookup page **[read-only]** |
+| `external_identifiers` | JSON object containing external identifier information |
 
-These are the available `type` options for Consumable:
-- `OpticFiberDesign`
-- `SiliconProbeDesign`
-- `VirusConstruct`
-- `WireElectrode`
-
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in
+A detailed list of the available `type` options and accepted schemas for the `details` field can be found in the [Consumable schemas documentation](/api/schemas/consumable.md).
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/consumable
 - **Data:** None
@@ -89,7 +85,7 @@ resp = client.load_model('consumable')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/resources/consumable
 - **Data:** JSON dictionary containing at least the required fields.
@@ -133,8 +129,7 @@ resp = client.save_model("consumable",  data={
             'coreDiameter': 0,
             'outerDiameter': 100,
             'aperture': 0.2
-        },
-        'comments': ''
+        }
     }
 }
 ```
@@ -142,7 +137,7 @@ resp = client.save_model("consumable",  data={
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/consumable/<id\>/
 - **Data:** None
@@ -178,7 +173,7 @@ resp = client.load_model('consumable', id='67f263cd-5960-406f-a879-c1f259140979'
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/consumable/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -209,15 +204,14 @@ resp = client.save_model("consumable", id="67f263cd-5960-406f-a879-c1f259140979"
             'coreDiameter': 0,
             'outerDiameter': 100,
             'aperture': 0.2
-        },
-        'comments': ''
+        }
     }
 }
 ```
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/resources/consumable/<id\>/
 - **Data:** None
@@ -234,7 +228,7 @@ resp = client.delete_model("consumable", id="67f263cd-5960-406f-a879-c1f25914097
 
 
 ## List approvals
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/consumable_approvals
 - **Data:** None
@@ -265,7 +259,6 @@ resp = client.load_model('consumableapproval')
             "outerDiameter": 100,
             "aperture": 0.2
         },
-        "comments": "",
         "instance_id": null,
         "action": "Add",
         "reviewer": null,
@@ -276,7 +269,7 @@ resp = client.load_model('consumableapproval')
 
 
 ## Detail approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/consumable_approvals/<id\>/
 - **Data:** None
@@ -306,7 +299,6 @@ resp = client.load_model('consumableapproval', id='b7595523-5578-45c0-b7ef-c1f14
             'outerDiameter': 100,
             'aperture': 0.2
         },
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -317,7 +309,7 @@ resp = client.load_model('consumableapproval', id='b7595523-5578-45c0-b7ef-c1f14
 
 
 ## Accept approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/consumable_approvals/<id\>/
 - **Data:** None
@@ -332,7 +324,7 @@ resp = client.save_model("consumableapproval", id="b7595523-5578-45c0-b7ef-c1f14
 
 
 ## Reject approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/consumable_approvals/<id\>/
 - **Data:** None
