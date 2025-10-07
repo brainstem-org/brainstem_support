@@ -23,7 +23,6 @@ nav_order: 7
 | `name` | string **[required]** [max length: 200]|
 | `description` | string [max length: 2000] |
 | `category` | string categorizing the setup type |
-| `comments` | string |
 
 
 ## List view
@@ -91,8 +90,7 @@ resp = client.save_model("setuptype",  data={
 {'setup_type_approval': {'
     id': '725ef635-09b7-4817-98f7-d58e598b445e',
     'name': 'MyNewSetupType',
-    'description': '',
-    'comments': ''}
+    'description': ''}
 }
 ```
 
@@ -146,8 +144,7 @@ resp = client.save_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6",
 {'setup_type_approval': {
     'id': '511f5736-5c34-46c5-b4d2-d7bb0727b5fe',
     'name': 'MyNewSetupType',
-    'description': 'new text',
-    'comments': ''}
+    'description': 'new text'}
 }
 ```
 
@@ -192,7 +189,6 @@ resp = client.load_model('setuptypeapproval')
         'id': '725ef635-09b7-4817-98f7-d58e598b445e',
         'name': 'MyNewSetupType',
         'description': '',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -202,7 +198,6 @@ resp = client.load_model('setuptypeapproval')
         'id': '97b70a5e-52f9-4358-8b27-0a886248e749',
         'name': 'MyNewMaze',
         'description': '',
-        'comments': '',
         'instance_id': 'e10ea8ab-9afa-4060-8382-dc9d9e1763f8',
         'action': 'Add',
         'reviewer': 3,
@@ -234,7 +229,6 @@ resp = client.load_model('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e59
     'id': '725ef635-09b7-4817-98f7-d58e598b445e',
     'name': 'MyNewSetupType',
     'description': '',
-    'comments': '',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,

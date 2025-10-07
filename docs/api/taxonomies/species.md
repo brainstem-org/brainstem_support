@@ -25,7 +25,6 @@ nav_order: 7
 | `rrid` | Research Resource Identifier (RRID) |
 | `rrid_url` | URL to RRID lookup page **[read-only]** |
 | `external_identifiers` | JSON object containing external identifier information |
-| `comments` | string |
 
 
 ## List view
@@ -88,8 +87,7 @@ resp = client.save_model("species",  data={
 {'species_approval': {
     'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
     'name': 'MyNewSpecies',
-    'description': '',
-    'comments': ''}
+    'description': ''}
 }
 ```
 
@@ -142,8 +140,7 @@ resp = client.save_model("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f", d
 {'species_approval': {
     'id': '5ccb907c-520a-4c67-baf1-ac23a71ab710',
     'name': 'MyNewSpecies',
-    'description': 'new text',
-    'comments': ''}
+    'description': 'new text'}
 }
 ```
 
@@ -188,7 +185,6 @@ resp = client.load_model('speciesapproval')
         'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
         'name': 'MyNewSpecies',
         'description': '',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -198,7 +194,6 @@ resp = client.load_model('speciesapproval')
         'id': '0e03a0f2-3b11-47bf-acc1-8b4b6d005692',
         'name': 'Digimon',
         'description': 'aaa',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': 3,
@@ -230,7 +225,6 @@ resp = client.load_model('speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988
     'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
     'name': 'MyNewSpecies',
     'description': '',
-    'comments': '',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,

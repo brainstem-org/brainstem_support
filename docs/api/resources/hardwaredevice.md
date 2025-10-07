@@ -26,7 +26,6 @@ nav_order: 6
 | `rrid` | Research Resource Identifier (RRID) |
 | `rrid_url` | URL to RRID lookup page **[read-only]** |
 | `external_identifiers` | JSON object containing external identifier information |
-| `comments` | string |
 
 
 ## List view
@@ -104,8 +103,7 @@ resp = client.save_model("hardwaredevice",  data={
     'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
     'name': 'MyNewHardwareDevice',
     'description': '',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
-    'comments': ''}
+    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'}
 }
 ```
 
@@ -162,8 +160,7 @@ resp = client.save_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e
     'id': 'd10aaf4c-be23-45b2-9f81-ef1d65ca6c32',
     'name': 'MyNewHardwareDevice',
     'description': 'new text',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
-    'comments': ''}
+    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'}
 }
 ```
 
@@ -216,7 +213,6 @@ resp = client.load_model('hardwaredeviceapproval')
         'name': 'MyNewHardwareDevice',
         'description': '',
         'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -227,7 +223,6 @@ resp = client.load_model('hardwaredeviceapproval')
         'name': '16-Ch Extracellular Differential AC Amplifier Model 3500',
         'description': '123',
         'supplier': '866fda99-0ae7-4aeb-a163-5c2e8a3ed4af',
-        'comments': '',
         'instance_id': '56854ab5-708b-48b2-92a8-3bd84439c1e0',
         'action': 'Change',
         'reviewer': 15,
@@ -260,7 +255,6 @@ resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0
     'name': 'MyNewHardwareDevice',
     'description': '',
     'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
-    'comments': '',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,

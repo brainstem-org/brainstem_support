@@ -26,7 +26,6 @@ nav_order: 7
 | `rrid` | Research Resource Identifier (RRID) |
 | `rrid_url` | URL to RRID lookup page **[read-only]** |
 | `external_identifiers` | JSON object containing external identifier information |
-| `comments` | string |
 
 
 ## List view
@@ -93,8 +92,7 @@ resp = client.save_model("strain", data={
     'id': 'b460dfbc-79bb-499e-87ed-57df02832d88',
     'name': 'MyNewStrain',
     'description': '',
-    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
-    'comments': ''}
+    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f'}
 }
 ```
 
@@ -149,8 +147,7 @@ resp = client.save_model("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", da
     'id': '6403fdaf-7896-4ef7-9b30-ee12d69aa408',
     'name': 'MyNewStrain',
     'description': 'new text',
-    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
-    'comments': ''}
+    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f'}
 }
 ```
 
@@ -196,7 +193,6 @@ resp = client.load_model('strainapproval')
         'name': 'MyNewStrain',
         'description': '',
         'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -207,7 +203,6 @@ resp = client.load_model('strainapproval')
         'name': 'Agumon',
         'description': '',
         'species': '7a224fef-df3f-4b4e-aa52-7ae743b7bf58',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': 3,
@@ -240,7 +235,6 @@ resp = client.load_model('strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832
     'name': 'MyNewStrain',
     'description': '',
     'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
-    'comments': '',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,

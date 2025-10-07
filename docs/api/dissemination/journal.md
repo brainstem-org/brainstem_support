@@ -23,7 +23,6 @@ nav_order: 4
 | `name` | string **[required]** [max length: 500] |
 | `description` | string [max length: 500] |
 | `website` | string [max length: 200]|
-| `comments` | string |
 
 
 ## List view
@@ -95,8 +94,7 @@ resp = client.save_model("journal",  data={
         'id': '549b9e4f-5253-44f8-93ee-f18f08a39a36',
         'name': 'MyNewJournal',
         'description': '',
-        'website': 'http://newjournal.com',
-        'comments': ''
+        'website': 'http://newjournal.com'
     }
 }
 ```
@@ -154,8 +152,7 @@ resp = client.save_model("journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", d
     'id': '640ea107-cf9e-413a-b0b8-562082654481',
     'name': 'SomeJournal',
     'description': 'new text',
-    'website': '',
-    'comments': ''}
+    'website': ''}
 }
 ```
 
@@ -200,7 +197,6 @@ resp = client.load_model('journalapproval')
         'name': 'SomeJournal',
         'description': 'new text',
         'website': '',
-        'comments': '',
         'instance_id': 'da3359b7-e380-4dc6-ba9d-04831d3082d9',
         'action': 'Change',
         'reviewer': None,
@@ -211,7 +207,6 @@ resp = client.load_model('journalapproval')
         'name': 'MyNewJournal',
         'description': '',
         'website': 'http://newjournal.com',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -244,7 +239,6 @@ resp = client.load_model('journalapproval', id='549b9e4f-5253-44f8-93ee-f18f08a3
     'name': 'MyNewJournal',
     'description': '',
     'website': 'http://newjournal.com',
-    'comments': '',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,

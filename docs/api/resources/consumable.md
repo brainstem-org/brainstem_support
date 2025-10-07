@@ -28,7 +28,6 @@ nav_order: 6
 | `rrid` | Research Resource Identifier (RRID) |
 | `rrid_url` | URL to RRID lookup page **[read-only]** |
 | `external_identifiers` | JSON object containing external identifier information |
-| `comments` | string |
 
 A detailed list of the available `type` options and accepted schemas for the `details` field can be found in the [Consumable schemas documentation](/api/schemas/consumable.md).
 
@@ -130,8 +129,7 @@ resp = client.save_model("consumable",  data={
             'coreDiameter': 0,
             'outerDiameter': 100,
             'aperture': 0.2
-        },
-        'comments': ''
+        }
     }
 }
 ```
@@ -206,8 +204,7 @@ resp = client.save_model("consumable", id="67f263cd-5960-406f-a879-c1f259140979"
             'coreDiameter': 0,
             'outerDiameter': 100,
             'aperture': 0.2
-        },
-        'comments': ''
+        }
     }
 }
 ```
@@ -262,7 +259,6 @@ resp = client.load_model('consumableapproval')
             "outerDiameter": 100,
             "aperture": 0.2
         },
-        "comments": "",
         "instance_id": null,
         "action": "Add",
         "reviewer": null,
@@ -303,7 +299,6 @@ resp = client.load_model('consumableapproval', id='b7595523-5578-45c0-b7ef-c1f14
             'outerDiameter': 100,
             'aperture': 0.2
         },
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
