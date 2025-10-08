@@ -21,15 +21,28 @@ Subject logs refers to records that track various aspects of the subjects' livin
 
 ## Fields
 
+### Main Log Fields
+
 | Field | Description |
 |:------|:------------|
 | `Type` | Type of subject logs (**required**). Selected from predefined types. Example: "Food consumption log", "Housing log". *See options below* |
 | `Subject` | The subject of the log (**required**). Must reference a [subject]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Silicon probe implant #A123" |
-| `Description` | Description of the subject logs. Can be left empty (string). Example: "Daily food consumption" |
-| `Date and time` | Timestamp for each log-entry. There are two types of subject logs with either simple timestamps or time period defined by a start and an end timestamps. Example: "2024-03-15 14:30:00" |
-| `Start and end time` | Start and stop timestamp of each log-entry. Example: "2024-03-15 14:30:00" |
-| `Type details` | Type-specific fields for each entry in the log. Fields vary by type. Example: For impedance log - impedance values in kOhm. *See options below* |
-| `Notes` | Notes about the subject logs for each entry in the log (string). Example: "Observed slight increase in impedance values" |
+| `Description` | Description of the subject logs. Can be left empty (string, max 500 characters). Example: "Daily food consumption" |
+| `User` | User who created the log entry (**auto-assigned**). Automatically set to the current user who created the log. |
+| `Created at` | Date and time when the log entry was initially created (**auto-generated**). Example: "2024-03-15 14:30:00" |
+| `Updated at` | Date and time when the log entry was last modified (**auto-updated**). Updates whenever the log is changed. |
+
+### Log Entry Fields
+
+Each subject log contains one or more log entries with the following fields:
+
+| Field | Description |
+|:------|:------------|
+| `Date and time` | Timestamp for each log entry. Used for simple timestamp logs (datetime). Format: YYYY-MM-DD HH:mm:ss. Example: "2024-03-15 14:30:00" |
+| `Start and end time` | Start and stop timestamps for duration-based logs (datetime). Used for Housing, Deprivation, Habituation, Handling, and Training logs. Format: YYYY-MM-DD HH:mm:ss. Example: Start: "2024-03-15 14:30:00", End: "2024-03-15 15:30:00" |
+| `Type details` | Type-specific fields for each entry in the log. Fields vary by type. Example: For food consumption log - food amount in grams. *See options below* |
+| `Notes` | Notes about the subject logs for each entry in the log (string, max 500 characters). Example: "Subject appeared healthy during feeding" |
+| `Performed by` | User who performed the action recorded in this entry (optional). Can be different from the user who created the log. Example: "Dr. Smith" |
 
 ## Types of subject logs
 

@@ -28,30 +28,26 @@ Sessions are modular structures that provide flexible and standardized descripti
 
 | Field | Description |
 |:------|:------------|
-| `Name` | Name of the session (**required**; string; max length: 100 characters; must be unique across BrainSTEM). Example: "Memory_Task_Session1", "PV_Recording_20240313" |
+| `Session name` | Name of the session (**required**; string; max length: 100 characters; must be unique across BrainSTEM). Example: "Memory_Task_Session1", "PV_Recording_20240313" |
 | `Projects` | Projects the session belongs to (**required**). Learn more about project inheritance [here]({{"datamodel/stem/project/"|absolute_url}}). Example: "Hippocampal Memory Project" |
 | `Description` | A text description of the session. Pictures can be uploaded and inserted through rich text formatting. Example: "Recording session during novel object recognition task..." |
 | `Date and time onset` | Date and time of the session onset (YYYY-MM-DD format, e.g., "2023-03-22 14:30:00"). Can be left empty |
 | `Tags` | Tags for the session. Great for organizational purposes, quick labeling and filtering. Tags are shared across all users. Example: "behavior", "recording", "morning-session" |
 | `Data storage` | Describes where the data is stored. Example: "Lab Server", "External Drive 1" |
-| `Name used in storage` | Custom name for the session used in local data storage (string; max length: 200). Example: "ses01_mem_2024" |
-| `Extra fields` | Allows you to add extra fields to the session. Values can be strings or numeric. Saved as key-value pairs. Example: {"Room": "B115", "Temperature": "22C"} |
-| `Online repositories` | If this session has been shared in a public repository, link it here. Example: "DANDI:123456" |
+| `Session name in data storage` | Custom name for the session used in local data storage (string; max length: 200; optional). Example: "ses01_mem_2024" |
+| `Additional fields` | Allows you to add extra fields to the session. Values can be strings or numeric. Saved as key-value pairs. Example: {"Room": "B115", "Temperature": "22C"} |
+| `Public repositories` | If this session has been shared in a public repository, link it here. Example: "DANDI:123456" |
 
-### Data acquisition fields
-{: .no_toc }
+### Behaviors data fields
+Please see the dedicated page describing the [Behaviors data model]({{"datamodel/modules/behavior"|absolute_url}}).
+
+### Data acquisition data fields
 Please see the dedicated page describing the [Data acquisition data model]({{"datamodel/modules/dataacquisition"|absolute_url}}).
 
 ### Manipulations data fields
-{: .no_toc }
 Please see the dedicated page describing the [Manipulations data model]({{"datamodel/modules/manipulation"|absolute_url}}).
 
-### Behaviors data fields
-{: .no_toc }
-Please see the dedicated page describing the [Behaviors data model]({{"datamodel/modules/behavior"|absolute_url}}).
-
 ### Epoch fields
-{: .no_toc }
 
 | Field | Description |
 |:------|:------------|
@@ -61,6 +57,9 @@ Please see the dedicated page describing the [Behaviors data model]({{"datamodel
 | `Behavior` | Behaviors associated with the epoch. Example: "Open field exploration" |
 | `Data acquisition` | Data acquisition associated with the epoch. Example: "Calcium imaging" |
 | `Manipulation` | Manipulations associated with the epoch. Example: "Optogenetic stimulation" |
+
+### Collections data fields
+Please see the dedicated page describing the [Collections data model]({{"datamodel/stem/collection"|absolute_url}}).
 
 ## Permissions
 
