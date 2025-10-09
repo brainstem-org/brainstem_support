@@ -23,42 +23,64 @@ The manipulations model describes temporal manipulations performed in a session.
 
 | Field | Description |
 |:------|:------------|
-| `Session` | Session of the manipulation (**required**). Must reference an existing [session]({{"datamodel/stem/session/"|absolute_url}}). Example: "Optogenetic stimulation session #2" |
-| `Type` | Type of manipulation (**required**). Selected from predefined types. Example: "Optogenetic stimulation". *See options below* |
-| `Procedures` | Related subject procedures (**required**). Must reference existing [procedures]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Optic fiber implant #B789" |
-| `Setup` | The setup where the manipulation was performed (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior Room A" |
-| `Equipment` | Equipment used for the manipulation (**required**). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "LED driver #1" |
-| `Notes` | Notes about the manipulation (string). Example: "20Hz stimulation protocol completed successfully" |
-| `Type details` | Type-specific fields. Fields vary by manipulation type. Example: For optogenetics - power, frequency, duration. *See options below* |
+| ``Session`` | Session of the manipulation (**required**). Must reference an existing [session]({{"datamodel/stem/session/"|absolute_url}}). Example: "Optogenetic stimulation session #2" |
+| ``Type of manipulation`` | Type of manipulation (**required**). Selected from predefined types. Example: "Optogenetic stimulation". *See options below* |
+| ``Subject procedures`` | Related subject procedures (**required**). Must reference existing [procedures]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Optic fiber implant #B789" |
+| ``Setup`` | Setup filter for equipment (optional). Used to filter available equipment by setup. |
+| ``Equipment`` | Equipment used for the manipulation (optional). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "LED driver #1" |
+| ``Notes`` | Notes about the manipulation (string). Example: "20Hz stimulation protocol completed successfully" |
 
 ## Types of manipulations
 
-These are the available *Type* options for manipulations:
+These are the available type options for manipulations:
 
-### Electrical and Magnetic Stimulation:
-- `Deep brain stimulation (DBS)`: A neurosurgical procedure that involves implanting electrodes in specific areas of the brain to deliver electrical impulses. It's used to treat a variety of neurological conditions, including Parkinson's disease and essential tremor.
-- `Electrical stimulation`: The application of electrical currents to neurons or neural tissues to activate or inhibit neural activity. This broad category can include invasive methods like intracortical microstimulation or non-invasive approaches like transcranial direct current stimulation (tDCS).
-- `Electromagnetic field stimulation`: Involves the use of magnetic or electric fields to modulate neuronal activity. This non-invasive method can influence brain function and is studied for therapeutic potential in psychiatric and neurological disorders.
-- `Transcranial Electrical Stimulation`: A non-invasive method that applies electrical currents through the scalp and skull to modulate neuronal activity in the brain, used for research and therapeutic purposes.
-- `Transcranial Magnetic Stimulation (TMS)`: A non-invasive technique that uses magnetic fields to induce electrical currents in the brain, capable of modulating neural activity and used for both research and treatment of various neurological and psychiatric conditions.
+See the schema for field details: [Manipulation types]({{"datamodel/schemas/manipulation/"|absolute_url}}).
 
-### Optical, Thermal, and Ultrasound Stimulation:
-- `Optogenetical stimulation`: Uses light to control neurons that have been genetically modified to express light-sensitive ion channels. This precise method enables the activation or inhibition of specific neuronal populations with high temporal resolution.
-- `Thermal perturbation`: The application of heat or cold to neural tissue to study the effects of temperature changes on neural activity, function, or structural integrity.
-- `Ultrasound stimulation`: Utilizes high-frequency sound waves to non-invasively modulate neural activity. This method has potential applications in both research and clinical settings for mapping brain function and treating neurological disorders.
+### Electrical and Magnetic Stimulation
 
-### Chemical and Pharmacological Perturbations:
-- `Liquid perturbation`: Introduces liquids into the brain environment to study the effects of various substances or to physically disrupt brain activity. This can include the injection of drugs, solutions, or other compounds.
-- `Micro perfusion`: A technique that allows the localized delivery of substances directly to a targeted area of the brain through a fine cannula, enabling the study of the effects of drugs or other agents on specific brain regions.
-- `Pharmacological injection`: The direct injection of drugs or other substances into the body or directly into brain tissue to study their effects on neural activity, brain function, or behavior.
-- `Pharmacological superfusion`: A technique where drugs are applied directly to neural tissues or cells in a controlled manner, often using a perfusion system, allowing for the study of drug effects on neural activity in vitro.
-- `Pharmacological inhalation`: Involves the administration of drugs in vapor form so that they are inhaled and absorbed through the lungs, affecting the brain. This method is used to study the effects of inhaled substances on neural activity and behavior.
+`Deep brain stimulation (DBS)`: Implanted electrodes deliver electrical pulses to targeted brain areas to modulate neural activity.
 
-### Odor and Sound Stimulation:
-- `Odor stimulation`: The presentation of controlled olfactory stimuli to study sensory processing, neural activity, and behavior influenced by smells.
-- `Sound stimulation`: The use of auditory stimuli to influence brain activity and study the neural mechanisms of hearing, perception, and cognition, as well as the therapeutic effects of sound.
+`Electrical stimulation`: Application of electrical currents to neural tissue (invasive or non‑invasive) to activate or inhibit activity.
 
-A detailed list of the type-specific fields can be found on the [manipulation types page]({{"datamodel/schemas/manipulation/"|absolute_url}}).
+`Electromagnetic field stimulation`: Modulation of neural activity using magnetic or electric fields in a non‑invasive manner.
+
+`Transcranial Electrical Stimulation`: Scalp‑applied electrical currents (e.g., tDCS/tACS) to modulate brain activity.
+
+`Transcranial Magnetic Stimulation (TMS)`: Magnetic fields induce cortical currents non‑invasively to modulate neural activity.
+
+### Optical, Thermal and Ultrasound Stimulation
+
+`Optogenetic stimulation`: Light control of genetically targeted neurons to activate or inhibit specific populations with high temporal precision.
+
+`Thermal perturbation`: Heating or cooling neural tissue to probe temperature effects on activity and function.
+
+`Ultrasound stimulation`: Non‑invasive modulation of neural activity using focused high‑frequency sound.
+
+### Chemical and Pharmacological Perturbations
+
+`Liquid perturbation`: Introduction of liquids (e.g., drugs/solutions) to alter brain environment or activity.
+
+`Microperfusion`: Localized delivery of substances to targeted brain regions via fine cannula.
+
+`Pharmacological injection`: Direct drug delivery into the body or brain tissue to study effects on activity and behavior.
+
+`Pharmacological superfusion`: Controlled drug application onto neural tissues or cells, often via perfusion systems.
+
+`Pharmacological inhalation`: Administration of vaporized drugs for pulmonary absorption and CNS effects.
+
+### Sensory Stimulation
+
+`Auditory stimulation`: Presentation of sound stimuli to study hearing, perception, cognition, and therapeutic effects.
+
+`Multisensory stimulation`: Concurrent stimuli from multiple modalities to study sensory integration.
+
+`Odor stimulation`: Controlled olfactory stimuli to probe sensory processing, neural activity, and behavior.
+
+`Tactile stimulation`: Touch/pressure stimuli to study somatosensory processing and responses.
+
+`Visual stimulation`: Visual stimuli to study visual processing from perception to complex cognition.
+
+
 
 
 
@@ -67,7 +89,7 @@ A detailed list of the type-specific fields can be found on the [manipulation ty
 
 Manipulations inherit permissions through the session associated with them.
 
-Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more.
 
 ## API access
 

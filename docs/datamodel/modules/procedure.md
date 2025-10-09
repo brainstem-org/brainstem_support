@@ -23,65 +23,136 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 
 | Field | Description |
 |:------|:------------|
-| `Type` | Type of procedure (**required**). Selected from predefined types. Example: "Optic fiber implant". *See options below* |
-| `Subject` | The subject the procedure was performed on (**required**). Must reference an existing [subjects]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
-| `Notes` | Notes about the procedure (string). Example: "Implant placed successfully with minimal bleeding" |
-| `Date and time` | Date and time the procedure was performed. Example: "2024-03-22 10:30:00" |
-| `Inventory` | The inventory record that tracks the consumable stocks (**required**). Must reference an existing [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}). Example: "Lab supplies inventory" |
-| `Consumable stock` | Records and tracks laboratory supplies and materials used in experiments (**required**). Must be associated with an [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}) and have a specific type (Optic fiber, Silicon probe, Single wire electrode, or Virus solution). Example: "32-channel silicon probe in Lab A inventory" |
-| `Setup` | The setup the equipment is installed in (**required**). Must reference an existing [setups]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior room A setup" |
-| `Equipment` | Equipment used in the procedure (**required**). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
-| `Atlas` | The brain atlas used for anatomical reference (**required** if brain region is specified). Must reference an existing brain atlas. Example: "Allen Mouse Brain Atlas" |
-| `Brain region` | Target brain region where the procedure was performed. Example: "Hippocampus CA1" |
-| `Coordinates system` | Coordinate system (**required**). Selected from predefined systems. Example: "Stereotaxic Bregma-Based". *See options below* |
-| `Type details` | Type-specific fields. Fields vary by procedure type. Example: For fiber implant - fiber tip shape. *See options below* |
+| ``Type of procedure`` | Type of procedure (**required**). Selected from predefined types. Example: "Optic fiber implant". *See options below* |
+| ``Subject`` | The subject the procedure was performed on (**required**). Must reference an existing [subjects]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
+| ``Date and time of the procedure`` | Date and time the procedure was performed. Example: "2024-03-22 10:30:00" |
+| ``Inventory`` | Inventory filter for consumable stocks (optional). Used to filter available consumable stocks by inventory. |
+| ``Consumable stock`` | Consumable stock used in the procedure (optional). Must reference an existing [consumable stock]({{"datamodel/modules/consumablestock/"|absolute_url}}). Example: "32-channel silicon probe" |
+| ``Setup`` | Setup filter for equipment (optional). Used to filter available equipment by setup. |
+| ``Equipment`` | Equipment used in the procedure (optional). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
+| ``Atlas`` | Brain atlas filter for brain regions (optional). Used to filter available brain regions by atlas. |
+| ``Brain region`` | Target brain region of the procedure (optional). Must reference an existing [brain region]({{"datamodel/taxonomies/brainregion/"|absolute_url}}). Example: "Hippocampus CA1" |
+| ``Notes`` | Notes about the procedure (string). Example: "Implant placed successfully with minimal bleeding" |
 
 ## Types of procedures
 
-These are the available *Type* options for Procedure:
+These are the available type options for procedures:
 
-### Surgical Procedures:
-- `Craniectomy`: The surgical removal of a portion of the skull that is not replaced afterward. This approach provides prolonged, direct access to the brain or helps relieve increased intracranial pressure following injury.
-- `Craniotomy`: A procedure in which part of the skull is temporarily removed to expose the brain. After surgery or research activities are completed, the bone flap is typically replaced, restoring the skull’s integrity.
-- `Cranial window`: A surgical technique where a small section of skull is replaced with a transparent window. This allows for direct, long-term optical access to the brain’s surface for imaging and other optical investigations.
+See the schema for field details: [Procedure types]({{"datamodel/schemas/procedure/"|absolute_url}}).
 
-### Implant Procedures:
-- `Optic fiber implant`: The surgical placement of a tiny optic fiber into brain tissue, commonly used in optogenetics. By delivering or detecting light, researchers can modulate or record neuronal activity in precise brain regions.
-- `Silicon probe implant`: The insertion of a silicon-based probe equipped with multiple recording sites. These probes enable high-density recordings from many neurons simultaneously, facilitating detailed studies of neural circuits.
-- `Single wire electrode`: The implantation of a thin wire electrode into the brain for recording electrical activity or stimulating neurons. This targeted approach aids in understanding single-neuron contributions to brain function.
-- `Tetrode wire electrode`: The introduction of a four-wire electrode (tetrode) bundle into the brain. Tetrodes allow researchers to monitor and differentiate signals from multiple adjacent neurons, greatly enhancing the resolution of neural recordings.
-- `Generic implant`: A flexible implant category for various devices not covered by specific types. This includes sensors, optical devices, mechanical devices, and custom research tools with configurable anchoring and power options.
-- `GRIN lens implant`: The insertion of a gradient-index (GRIN) lens for deep-brain optical imaging. These miniature lenses enable high-resolution imaging of neural activity in deep brain structures that are otherwise inaccessible to conventional microscopy.
-- `Blood pressure sensor implant`: The surgical placement of pressure monitoring devices within the cardiovascular system. These sensors enable continuous, real-time monitoring of blood pressure changes during experimental procedures.
-- `Breathing sensor implant`: The implantation of respiratory monitoring devices to track breathing patterns and respiratory function. These sensors provide critical physiological data during experiments involving anesthesia or respiratory challenges.
+### Surgical Procedures
 
-### Injection and Infusion Procedures:
-- `Injection`: The delivery of solutions, often containing genetic or pharmacological agents, directly into targeted brain areas. This method is commonly performed using a small glass capillary and can be used to alter gene expression or modulate neural activity.
-- `Virus injection`: Similar to the above, but specifically involves injecting viral vectors to introduce or manipulate genetic material in targeted neuronal populations. This approach is key for studying gene function and developing gene therapies.
+`Anesthesia`: Administration of anesthetic agents to provide analgesia and sedation during procedures.
 
-### Fixation and Positioning Procedures:
-- `Head fixation`: The physical restraint of the head to ensure stable positioning during recording or experimental procedures. This technique enables precise control over head movement, facilitating high-quality data acquisition and consistent experimental conditions.
+`Burr hole`: Drilling small openings in the skull to access brain tissue or place probes/electrodes.
 
-### Brain and Tissue Procedures:
-- `Brain lesion`: A deliberate injury or destruction of a specific brain region to investigate its role in behavior, cognition, and physiological processes. Lesion studies help map functions to particular brain areas.
-- `Brain perfusion fixation`: A tissue-preservation method in which a fixative solution is perfused through the circulatory system, stabilizing the brain’s structure for microscopic examination. This technique ensures that cellular and tissue-level details are well-preserved.
-- `Brain slice`: The preparation of thin, ex vivo sections of brain tissue for detailed examination. Brain slices can be used for electrophysiological recordings, imaging, and testing pharmacological agents, providing insights into local circuit properties.
+`Cranial window`: Replacing a skull section with a transparent window for optical access to the cortical surface.
 
-A detailed list of the type-specific fields can be found on the [procedure types page]({{"datamodel/schemas/procedure/"|absolute_url}}).
+`Craniectomy`: Permanent removal of a skull portion to provide extended access to brain tissue.
+
+`Craniotomy`: Temporary removal of a skull flap to expose brain, with the bone replaced afterwards.
+
+`Headcap`: Protective cap applied to the skull to cover and secure implants post‑surgery.
+
+`Head fixation`: Stabilizing the head mechanically to ensure immobility during recordings or procedures.
+
+`Headpost`: Implanting a post to secure the head during procedures or behavioral tasks.
+
+### Implant Procedures
+
+`Blood pressure sensor implant`: Implanting a device to continuously monitor blood pressure within the cardiovascular system.
+
+`Breathing sensor implant`: Implanting sensors to monitor respiratory rate, pattern, and function.
+
+`GRIN (Gradient Index) lens implant`: Implanting a gradient‑index lens to enable deep‑brain optical imaging.
+
+`Catheter implant`: Placing a catheter for drug delivery or physiological fluid access/monitoring.
+
+`ECG implant (Electrocardiography)`: Implanting electrodes to record the heart’s electrical activity.
+
+`EEG implant (Electroencephalography)`: Implanting electrodes to record electrical activity of the brain.
+
+`EMG implant (Electromyography)`: Implanting electrodes to record muscle electrical activity.
+
+`Nerve cuff implant`: Placing a cuff electrode around a nerve for recording or stimulation.
+
+`Optic fiber implant`: Implanting an optical fiber into brain tissue for optogenetic light delivery or collection.
+
+`Prism implant`: Implanting a prism to redirect light paths for optical imaging experiments.
+
+`Reference electrode implant`: Implanting a reference electrode to stabilize electrical recordings.
+
+`Silicon probe implant`: Implanting silicon probes with multiple sites for high‑density neural recordings.
+
+`Single wire electrode implant`: Implanting a thin wire electrode for recording or stimulation.
+
+`Temperature sensor implant`: Implanting a device to monitor physiological temperature changes.
+
+`Tetrode wire electrode implant`: Implanting a four‑wire (tetrode) bundle to record from nearby neurons simultaneously.
+
+`Generic implant`: Flexible category for implants not covered above (e.g., sensors, optical devices, custom tools).
+
+### Injection and Infusion Procedures
+
+`Injection`: Delivering pharmacological or genetic solutions directly into targeted brain areas.
+
+`Virus injection`: Injecting viral vectors to introduce or manipulate genes in targeted cell populations.
+
+### Brain and Tissue Procedures
+
+`Brain extraction`: Removing the brain for ex vivo processing and analysis.
+
+`Brain lesion`: Creating a targeted injury to a brain region to study its function.
+
+`Brain slice`: Preparing thin tissue sections for ex vivo recordings, imaging, and testing.
+
+`Cryosectioning`: Sectioning frozen tissue into thin slices for histology.
+
+`Brain perfusion fixation`: Preserving tissue by perfusing fixative through the circulatory system.
+
+`Tissue clearing`: Chemically rendering tissue transparent for deep imaging.
+
+`Vibratome sectioning`: Cutting tissue slices with a vibrating blade to preserve structure.
+
+### Endpoint Procedures (Euthanasia)
+
+`Cervical dislocation`: Euthanasia by dislocation of the cervical vertebrae.
+
+`Decapitation`: Euthanasia by removal of the head.
+
+`CO₂ chamber euthanasia`: Euthanasia using a controlled carbon dioxide chamber.
+
+`Barbiturate injection`: Euthanasia by barbiturate overdose injection.
+
+`Inhalant overdose`: Euthanasia by overdose of inhalant anesthetics.
+
+### Abstract procedures
+
+`Auditory stimulation`: Presenting controlled auditory stimuli to probe sensory processing and neural responses.
+
+`Behavioral tracking`: Monitoring and quantifying behavior and movement during experiments.
+
+`Odor stimulation`: Presenting controlled olfactory stimuli to study sensory processing and behavior.
+
+`Tactile stimulation`: Applying touch or pressure stimuli to study somatosensory processing.
+
+`Visual stimulation`: Presenting visual stimuli to study visual processing and neural activity.
+
+
 
 
 ## Coordinate system options
 
-Available Coordinate system options for Procedure:
+Available coordinate system options for procedures:
 
 | Type | Description |
 |:-----|:------------|
-| `Stereotaxic Bregma-Based Absolute Coordinates` | Stereotaxic coordinates using Bregma on the skull as origin. Uses AP, ML, DV coordinates and angles for precise skull-based targeting. |
-| `Stereotaxic Bregma-Based Surface Coordinates with Depth` | Stereotaxic coordinates measuring from brain surface beneath Bregma. Uses AP, ML coordinates, depth, and rotation. Accommodates brain surface curvature. |
-| `Stereotaxic Lambda-Based Absolute Coordinates` | Stereotaxic coordinates using Lambda on the skull as origin. Uses AP, ML, DV coordinates and angles. Alternative skull-based reference point for varied setups. |
-| `Stereotaxic Lambda-Based Surface Coordinates with Depth` | Stereotaxic coordinates measuring from brain surface beneath Lambda. Uses AP, ML coordinates, depth, and rotation. Useful for targeting occipital brain areas. |
-| `Common Coordinate Framework XYZ Absolute Coordinates` | Common Coordinate Framework using X, Y, Z absolute positions and angles. |
-| `External XYZ Coordinates with Angles` | Three-dimensional Cartesian system with absolute positions (X, Y, Z) and angles relative to an external reference point. Ideal for precise global positioning. |
+| External XYZ Coordinates with Angles | Three-dimensional Cartesian system with absolute positions (X, Y, Z) and angles relative to an external reference point. Ideal for precise global positioning. |
+| Stereotaxic Bregma-Based Absolute Coordinates | Stereotaxic coordinates using Bregma on the skull as origin. Uses AP, ML, DV coordinates and angles for precise skull-based targeting. |
+| Stereotaxic Bregma-Based Surface Coordinates with Depth | Stereotaxic coordinates measuring from brain surface beneath Bregma. Uses AP, ML coordinates, depth, and rotation. Accommodates brain surface curvature. |
+| Stereotaxic Lambda-Based Absolute Coordinates | Stereotaxic coordinates using Lambda on the skull as origin. Uses AP, ML, DV coordinates and angles. Alternative skull-based reference point for varied setups. |
+| Stereotaxic Lambda-Based Surface Coordinates with Depth | Stereotaxic coordinates measuring from brain surface beneath Lambda. Uses AP, ML coordinates, depth, and rotation. Useful for targeting occipital brain areas. |
+| Common Coordinate Framework XYZ Absolute Coordinates | Common Coordinate Framework using X, Y, Z absolute positions and angles. |
 
 A detailed description of the coordinate systems can be found on the [Coordinate systems page]({{"datamodel/schemas/coordinates/"|absolute_url}}).
 
@@ -89,7 +160,9 @@ A detailed description of the coordinate systems can be found on the [Coordinate
 
 Procedures inherit permissions through the subject associated with them.
 
-Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more.
 
+ 
 ## API access
+
 The API allows for programmable access to procedures. Learn more about the procedures' fields and data structure on the [Procedures API page]({{"api/modules/procedure/"|absolute_url}}).
