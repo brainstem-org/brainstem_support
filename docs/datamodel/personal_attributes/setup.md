@@ -20,39 +20,19 @@ has_toc: false
 
 Setups describe where experiments, procedures, or manipulations takes place. It also describes the environment of a recorded subject. Setups has physical dimensions and equipment associate with it.
 
-## Session fields
+## Fields
 
-| Field                | Description |
-|:---------------------|:------------|
-| `Name`                 | Name of the setup (**required**; string; maximum length: 50 characters). Example: "Behavior Room A - Setup 1" |
-| `Environment type`     | The type of environment the setup is of (**required**). Example: "Linear track"|
-| `Authenticated groups` | Groups that have change permissions for this setup (**required**). Example: "Behavior Core Team" |
-| `Description`          | Rich text description of the setup. Can include uploaded images. Example: "Linear track setup with two reward ports and tracking cameras..." |
-| `Image`				   | Image of the setup. Example: "setup1_overview.jpg"|
-| `Public access`        | Determines if the setup is public or private. Example: "False" for private access |
-| `Physical dimensions`  | Any physical dimensions used to describe the setup. Each dimension is a name value pair with any associated units or description. Example: {"length": "200 cm", "width": "10 cm", "height": "15 cm"} |
-
-## Types of environment type
-
-- Barnes maze
-- Circular track
-- Elevated plus maze
-- Elevated zero maze
-- Figure eight maze
-- Forced swim test
-- Head-fixed disc
-- Homecage
-- Linear Track
-- Morris water maze
-- Open field environment
-- Radial arm maze
-- Running wheel
-- Sleepbox
-- Square cage
-- Theta maze
-- T-maze
-- Y-maze
-- Other
+| Field | Description |
+|:------|:------------|
+| ``Setup name`` | Name of the setup (**required**; string; maximum length: 50 characters). Example: "Behavior Room A - Setup 1" |
+| ``Location`` | Location of the setup (optional). Example: "Room 302B, Neuroscience Building" or "Room 201, Surgery room" |
+| ``Setup category`` | Category of the setup type (required filter). This category filters the available setup types. Example: "Behavioral Environments" |
+| ``Setup type`` | The type of environment the setup is (**required**). Must reference an existing [setup type]({{"datamodel/taxonomies/setuptype/"|absolute_url}}). Example: "Linear track" |
+| ``Authenticated groups`` | Groups that have change permissions for this setup (**required**). Example: "Behavior Core Team" |
+| ``Description`` | Rich text description of the setup (optional). Can include uploaded images. Example: "Linear track setup with two reward ports and tracking cameras..." |
+| ``Image`` | Image of the setup (optional). Uploaded images remain completely private. Example: "setup1_overview.jpg" |
+| ``Public access`` | Determines if the setup is public or private. Example: "False" for private access |
+| ``Specifications`` | Physical specifications of the setup in key-value format (optional). Example: {"length": "200 cm", "width": "10 cm", "height": "15 cm"} |
 
 ## Permissions
 

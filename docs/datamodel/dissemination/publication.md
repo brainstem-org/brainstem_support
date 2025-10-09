@@ -23,15 +23,16 @@ Publications refer to articles, papers, or studies in scientific journals. They 
 
 | Field | Description |
 |:------|:------------|
-| `Title` | The title of the publication (**required**) |
-| `Authors` | The authors of the publication (**required**) |
-| `Journal` | The journal in which the publication appears (**required**) |
-| `Abstract` | A summary of the publication's content (**required**) |
-| `DOI` | Digital Object Identifier for the publication |
-| `Volume` | The journal volume in which the publication appears |
-| `Publication URL` | Direct link to the publication |
-| `PDF URL` | Direct link to a publicly accessible PDF version of the publication |
-| `Publication date` | Date when the publication was officially released |
+| ``Title`` | The title of the publication (**required**; string; maximum length: 200 characters; must be unique). Example: "Neural mechanisms of spatial memory in hippocampal circuits" |
+| ``Authors`` | The authors of the publication (**required**; string; maximum length: 500 characters). Example: "Smith J, Johnson A, Brown B" |
+| ``Journal`` | The journal in which the publication appears (**required**). Must reference an existing [journal]({{"datamodel/dissemination/journal/"|absolute_url}}). Example: "Nature Neuroscience" |
+| ``Abstract`` | A summary of the publication's content (**required**; text field). Example: "This study investigates the role of hippocampal place cells in spatial memory formation..." |
+| ``Publication date`` | Date when the publication was officially released (**required**; date). Example: "2024-03-15" |
+| ``DOI`` | Digital Object Identifier for the publication (optional; string; maximum length: 200 characters). Example: "10.1038/s41593-024-01567-2" |
+| ``Volume`` | The journal volume in which the publication appears (optional; string; maximum length: 100 characters). Example: "27" |
+| ``Publication URL`` | Direct link to the publication (optional; URL; maximum length: 300 characters). Example: "https://www.nature.com/articles/example" |
+| ``PDF URL`` | Direct link to a publicly accessible PDF version of the publication (optional; URL; maximum length: 300 characters). Example: "https://www.nature.com/articles/example.pdf" |
+| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
 
 ## Submission process
 

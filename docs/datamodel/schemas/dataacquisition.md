@@ -25,6 +25,7 @@ Audio data acquisition captures sound recordings related to the experiment. Used
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the audio file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital file format (string; e.g., MP3, WAV). Determines features and compatibility |
 | `Compression` | Type of audio compression applied (string). Affects file size and quality |
 | `Bit depth` | Number of bits per audio sample (non-negative integer; default: 8 bits). Determines dynamic range and noise level of audio |
@@ -39,12 +40,27 @@ Behavioral tracking data records the movement and procedures of subjects during 
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the tracking file, including extension (string). Identifies the recording on disk |
 | `Format` | Digital video/data format (string). Determines compatibility and features |
 | `Compression` | Type of data compression used (string). Affects file size and quality |
 | `Frame rate (Hz)` | Rate of behavioral data capture (float; measured in Hz). Affects smoothness and accuracy of motion analysis |
 | `Number of frames` | Total captured frames (non-negative integer). Determines recording duration |
 | `Vertical resolution` | Number of vertical pixels (non-negative integer). Affects vertical detail in tracking video |
 | `Horizontal resolution` | Number of horizontal pixels (non-negative integer). Affects horizontal detail in tracking video |
+
+### Video Tracking
+
+Video tracking captures high-frame-rate footage for pose estimation, gait analysis, or closed-loop behavioral control.
+
+| Field | Description |
+|:------|:------------|
+| `File name` | Video file name including extension (string). Identifies the recording |
+| `Format` | Video container or data format (string; e.g., MP4, AVI) |
+| `Compression` | Compression codec or method (string). Influences file size and fidelity |
+| `Frame rate (Hz)` | Frames captured per second (float; measured in Hz). Critical for motion fidelity |
+| `Number of frames` | Total frames recorded (non-negative integer). Determines session duration |
+| `Vertical resolution` | Vertical pixel count per frame (non-negative integer) |
+| `Horizontal resolution` | Horizontal pixel count per frame (non-negative integer) |
 
 ## Electrophysiology
 
@@ -174,6 +190,28 @@ LFM data captures 3D information in a single shot using an array of microlenses.
 | `Voxel size (Y dimension)` | Y-axis voxel size (float; measured in μm). Affects structural detail |
 | `Voxel size (Z dimension)` | Z-axis voxel size (float; measured in μm). Critical for 3D reconstruction |
 
+
+### Optical Coherence Tomography (OCT)
+
+Optical coherence tomography provides interferometric cross-sectional imaging with micrometer axial resolution, ideal for structural assessment of tissue.
+
+| Field | Description |
+|:------|:------------|
+| `File name` | Name of the OCT data file (string; includes extension) |
+| `Format` | Digital format used to store the scan (string; e.g., DICOM, TIFF) |
+| `Compression` | Compression applied to reduce file size (string) |
+| `Vertical resolution` | Vertical pixel count per frame (non-negative integer) |
+| `Horizontal resolution` | Horizontal pixel count per frame (non-negative integer) |
+| `Frame rate (Hz)` | Acquisition rate in frames per second (float; measured in Hz) |
+| `Number of frames` | Total frames captured during the scan (non-negative integer) |
+| `Center wavelength (nm)` | Central wavelength of the OCT light source (float, nm) |
+| `Bandwidth (nm)` | Spectral bandwidth of the source (float, nm). Influences axial resolution |
+| `Imaging depth (µm)` | Maximum penetration depth achieved (float, µm) |
+| `Axial resolution (µm)` | Depth resolution of the OCT system (float, µm) |
+| `Lateral resolution (µm)` | Lateral resolution within the scan plane (float, µm) |
+| `Scan pattern` | Scanning strategy used (string; e.g., raster, radial) |
+| `Scan area (mm²)` | Field of view covered by the scan (float, mm²) |
+| `Number of averages` | Repeat measurements averaged to improve SNR (non-negative integer) |
 
 ### Single-Photon Microscopy
 
@@ -333,12 +371,15 @@ General time series data represents any sequential measurements indexed by time.
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the time-series file, including extension (string; e.g., CSV) |
 | `Format` | Digital format (string; e.g., CSV, JSON). Determines data organization and compatibility |
 | `Data-type` | Format of stored data (string; default: 'int16'). Affects precision and storage |
 | `Number of channels` | Count of recording channels (non-negative integer). Multidimensional data streams |
 | `Sampling rate (Hz)` | Sample frequency (float; default: 20000 Hz). Temporal resolution |
 | `Number of samples` | Total data points per channel (non-negative integer). Recording duration |
 | `Least significant bit (μV/bit)` | Smallest detectable change (float; measured in μV/bit). Signal resolution |
+| `Electrode groups` | Table listing channel groups and labels (array of objects). Organises related channels |
+| `Channel tags` | Table of tags mapping to channels and groups (array of objects). Adds semantic metadata |
 | `Electrode groups` | Groups of channels (array of objects with channels list and label). Data organization |
 | `Channel tags` | Channel metadata (array of objects with tag name and channels). Enhanced organization |
 

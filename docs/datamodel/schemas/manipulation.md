@@ -149,7 +149,7 @@ Introduces liquids into the brain environment to study the effects of various su
 | `Flow rate (µL/min)` | Rate of liquid agent administration (float; measured in µL/min). Influences spread and effect timing |
 | `Closed loop` | Whether delivery adjusts based on feedback (boolean). Enables automated flow adjustment |
 
-### Micro perfusion
+### Microperfusion
 
 A technique that allows the localized delivery of substances directly to a targeted area of the brain through a fine cannula, enabling the study of the effects of drugs or other agents on specific brain regions.
 
@@ -158,7 +158,7 @@ A technique that allows the localized delivery of substances directly to a targe
 | `Liquid agent` | Type or name of the perfusion agent (string). Specifies the drug, dye, or solution used |
 | `Concentration (mg/mL)` | Concentration of the agent (float, ≥ 0; measured in mg/mL). Critical for physiological impact |
 | `Volume (µL)` | Total volume perfused (float, ≥ 0; measured in microliters). Determines extent of tissue exposure |
-| `Perturbation profile` | Method of perfusion delivery (string; enum). Options include: Continuous, Pulsed, etc. Affects distribution |
+| `Perturbation profile` | Method of perfusion delivery (string; enum). Options include: Bolus Injection, Continuous Infusion, etc. Affects distribution |
 | `Repetitions` | Number of perfusion cycles (integer, ≥ 0). Important for repeated exposure studies |
 | `Flow rate (µL/min)` | Rate of agent delivery (float; measured in µL/min). Controls speed and spread of agent |
 | `Closed loop` | Whether perfusion adjusts with feedback (boolean). Enables automated delivery control |
@@ -209,6 +209,31 @@ Involves the administration of drugs in vapor form so that they are inhaled and 
 
 ## Sensory Stimulation
 
+### Auditory stimulation
+
+The use of auditory stimuli to influence brain activity and study the neural mechanisms of hearing, perception, and cognition, as well as the therapeutic effects of sound.
+
+| Field | Description |
+|:------|:------------|
+| `Amplitude (dB)` | Sound pressure level (float; measured in decibels). Determines stimulus loudness |
+| `Duration (s)` | Length of sound presentation (float, ≥ 0; measured in seconds). Affects exposure time |
+| `Stimulation profile` | Pattern of sound delivery (string; enum). Options include: Pure Tone, White Noise, etc. Affects neural response |
+| `Duty cycle` | Ratio of sound-on to total period (float, ≥ 0; fraction). Important for patterned stimuli |
+| `Repetitions` | Number of sound presentations (integer, ≥ 0). Critical for studying repeated exposure |
+| `Closed loop` | Whether parameters adjust with feedback (boolean). Enables adaptive sound delivery |
+
+### Multisensory stimulation
+
+Multisensory stimulation combines multiple sensory modalities to evoke complex percepts or to study integration across sensory systems.
+
+| Field | Description |
+|:------|:------------|
+| `Modalities` | Array of sensory modalities presented together (visual, auditory, tactile, etc.). Multiple selections allowed |
+| `Temporal relationship` | Timing relationship between modalities (string; synchronous, asynchronous, randomized, or unknown) |
+| `Duration (s)` | Overall duration of the multisensory sequence (float, ≥ 0; measured in seconds) |
+| `Repetitions` | Number of times the combined stimulus was repeated (integer, ≥ 0) |
+| `Closed loop` | Indicates whether stimulus timing was adapted based on behavioral or physiological feedback (boolean) |
+
 ### Odor stimulation
 
 Odor stimulation is the controlled application of olfactory stimuli to investigate neural mechanisms of smell perception, cognitive processing, and brain activity. This technique explores how chemical compounds interact with sensory systems, providing insights into olfactory perception, memory.
@@ -222,19 +247,32 @@ Odor stimulation is the controlled application of olfactory stimuli to investiga
 | `Inhalation phase` | Specific respiratory cycle for odor delivery (string; enum). Allows precise timing |
 | `Closed loop` | Whether parameters adjust with physiological feedback (boolean). Enables adaptive delivery |
 
+### Tactile stimulation
 
-### Sound stimulation
-
-The use of auditory stimuli to influence brain activity and study the neural mechanisms of hearing, perception, and cognition, as well as the therapeutic effects of sound.
+Tactile stimulation delivers mechanical contact, vibration, or air puffs to study somatosensory responses and behavior.
 
 | Field | Description |
 |:------|:------------|
-| `Amplitude (dB)` | Sound pressure level (float; measured in decibels). Determines stimulus loudness |
-| `Duration (s)` | Length of sound presentation (float, ≥ 0; measured in seconds). Affects exposure time |
-| `Stimulation profile` | Pattern of sound delivery (string; enum). Options include: Pure Tone, White Noise, etc. Affects neural response |
-| `Duty cycle` | Ratio of sound-on to total period (float, ≥ 0; fraction). Important for patterned stimuli |
-| `Repetitions` | Number of sound presentations (integer, ≥ 0). Critical for studying repeated exposure |
-| `Closed loop` | Whether parameters adjust with feedback (boolean). Enables adaptive sound delivery |
+| `Contact type` | Mode of tactile stimulation (string; enum includes mechanical contact, mechanical vibration, air puff, brush, etc.) |
+| `Stimulation site` | Anatomical target receiving the stimulus (string) |
+| `Force (mN)` | Applied mechanical force (float; measured in mN) |
+| `Duration (s)` | Length of tactile contact (float, ≥ 0; measured in seconds) |
+| `Stimulation profile` | Temporal delivery pattern (string; enum such as single pulse, pulse train, sinusoidal, ramp) |
+| `Repetitions` | Number of stimulus deliveries (integer, ≥ 0) |
+| `Closed loop` | Whether delivery was gated by behavioural or physiological feedback (boolean) |
+
+### Visual stimulation
+
+Visual stimulation presents structured optical stimuli to probe visual processing pathways or drive visually guided behaviors.
+
+| Field | Description |
+|:------|:------------|
+| `Stimulus types` | One or more visual stimulus classes (array of strings; e.g., gratings, natural images, LED flashes) |
+| `Presentation device` | Hardware used to present the stimuli (string; enum includes monitor, LED panel, projector, head-mounted display, etc.) |
+| `Stimulus position` | Position of the stimulus relative to the subject’s visual field (string; enum like contralateral, ipsilateral, centered) |
+| `Duration (s)` | Length of each presentation (float, ≥ 0; measured in seconds) |
+| `Repetitions` | Number of times the stimulus was presented (integer, ≥ 0) |
+| `Closed loop` | Indicates whether presentation parameters were adapted in real time (boolean) |
 
 ## API access
 

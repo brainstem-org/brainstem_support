@@ -19,13 +19,13 @@ nav_order: 4
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | UUID identificator formatted as a string|
+| `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 500] |
-| `description` | string [max length: 500] |
-| `website` | string [max length: 200]|
-
+| `description` | string [max length: 2000] |
+| `website` | string [max length: 200] |
 
 ## List view
+
 - **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal
@@ -67,6 +67,7 @@ resp = client.load_model('journal')
 
 
 ## Add
+
 - **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal
@@ -99,9 +100,8 @@ resp = client.save_model("journal",  data={
 }
 ```
 
-
-
 ## Detail
+
 - **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal/<id\>/
@@ -129,6 +129,7 @@ resp = client.load_model('journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 
 
 ## Change
+
 - **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal/<id\>/
@@ -158,6 +159,7 @@ resp = client.save_model("journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", d
 
 
 ## Delete
+
 - **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal/<id\>/
@@ -170,10 +172,10 @@ resp = client.save_model("journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", d
 
 ```
 resp = client.delete_model("journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
-``` 
-
+```
 
 ## List approvals
+
 - **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals
@@ -217,6 +219,7 @@ resp = client.load_model('journalapproval')
 
 
 ## Detail approval
+
 - **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
@@ -248,6 +251,7 @@ resp = client.load_model('journalapproval', id='549b9e4f-5253-44f8-93ee-f18f08a3
 
 
 ## Accept approval
+
 - **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
@@ -263,6 +267,7 @@ resp = client.save_model("journalapproval", id="549b9e4f-5253-44f8-93ee-f18f08a3
 
 
 ## Reject approval
+
 - **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/

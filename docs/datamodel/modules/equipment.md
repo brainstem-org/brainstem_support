@@ -23,94 +23,154 @@ Equipment refer to the setup and utilization of various devices and sensors desi
 
 | Field | Description |
 |:------|:------------|
-| `Type` | Type of equipment (**required**). Selected from predefined types. Example: "Video camera", "Microphone". *See options below* |
-| `Setup` | The setup the equipment is installed in (**required**). Must reference an existing [setups]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior room A setup" |
-| `Notes` | Notes about the equipment (string). Example: "Camera positioned at 45-degree angle" |
-| `Date and time` | Date and time the equipment was performed. Example: "2024-03-22 09:00:00" |
-| `Supplier` | The supplier of the consumable (**required** if consumable is specified). Must reference an existing [supplier]({{"datamodel/resources/supplier/"|absolute_url}}). Example: "Logitech" |
-| `Consumable` | Consumable used for the equipment. Example: "HD webcam model XYZ" |
-| `Hardware device supplier` | The supplier of the hardware device (**required** if hardware device is specified). Must reference an existing [supplier]({{"datamodel/resources/supplier/"|absolute_url}}). Example: "Dell" |
-| `Hardware device` | Hardware device used to perform the equipment. Example: "Recording computer #2" |
-| `Coordinates system` | Coordinate system (**required**). Selected from predefined systems. Example: "External X-Y-Z Absolute". *See options below* |
-| `Type details` | Type-specific fields. Fields vary by equipment type. Example: For camera - resolution, frame rate. *See options below* |
+| ``Equipment name`` | Name of the equipment (**required**). Example: "Ephys amplifier" or "Ceiling mounted camera" |
+| ``Type of equipment`` | Type of equipment (**required**). Selected from predefined types. Example: "Camera", "Microphone". *See options below* |
+| ``Setup`` | The setup the equipment is installed in (**required**). Must reference an existing [setups]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior room A setup" |
+| ``Date and time of the installation of the equipment`` | Date and time the equipment was installed. Example: "2024-03-22 09:00:00" |
+| ``Supplier`` | Supplier filter for consumables (optional). Used to filter available consumables by supplier. |
+| ``Consumable`` | Consumable used as part of the equipment installation (optional). Example: "HD webcam model XYZ" |
+| ``Hardware device supplier`` | Supplier filter for hardware devices (optional). Used to filter available hardware devices by supplier. |
+| ``Hardware device`` | Hardware device used as part of the equipment (optional). Example: "Recording computer #2" |
+| ``Notes`` | Notes about the equipment (string). Example: "Camera positioned at 45-degree angle" |
+| ``Coordinates`` | Coordinate system for equipment positioning (**required**). Selected from predefined systems. Example: "External XYZ Coordinates with Angles". *See options below* |
 
 ## Types of equipment
 
-These are the available *Type* options for equipment:
+These are the available type options for equipment:
 
-### Data Acquisition
-- `Amplifier`: Amplifies electrical signals from biological sources such as neurons or muscles, making them suitable for processing and analysis. Essential for electrophysiological studies to ensure signal clarity.
-- `Camera`: Captures video or still images to monitor subject behavior, movement, or environmental changes, supporting behavioral analysis and motion tracking.
-- `Data Acquisition System`: Integrates hardware and software to collect, process, and store data from multiple sources in real-time.
-- `Electroencephalography System (EEG)`: Records electrical activity from the scalp to study brain function and neural dynamics in humans or animals.
-- `Electromyography Machine (EMG)`: Measures muscle electrical activity, aiding in studies of motor control and neuromuscular disorders.
-- `Ephys Rig`: A comprehensive setup for electrophysiological recordings, including extracellular and intracellular methods for studying neural activity.
-- `Fiber Photometry System`: Monitors neural activity by measuring calcium or neurotransmitter dynamics in vivo using fluorescence-based techniques.
-- `Force Plate`: Measures forces exerted by subjects, commonly used in motor control, biomechanics, and locomotion studies.
-- `Humidity Sensor`: Monitors humidity levels in experimental setups to ensure stable environmental conditions.
-- `Light Sensor`: Detects and measures light intensity, often used in studies involving photosensitivity or optogenetics.
-- `Magnetic Resonance Imaging System (MRI)`: Produces detailed anatomical and functional images of the brain using magnetic fields.
-- `Magnetoencephalography System (MEG)`: Detects magnetic fields produced by neural activity, providing high temporal resolution for brain studies.
-- `Magnetometer`: Measures magnetic fields, often used in studies involving brain stimulation or motion tracking.
-- `Microphone`: Records audio data, including vocalizations or environmental sounds, supporting auditory and behavioral studies.
-- `Miniscope`: Miniature fluorescence microscopes designed for imaging neural activity in freely moving animals.
-- `Motion Tracking System`: Tracks subject movement in real-time for behavioral or neural experiments.
-- `Ophys Rig`: Combines optical imaging with physiological recordings for simultaneous monitoring of neural activity.
-- `Optical Coherence Tomography (OCT)`: Uses light waves to capture detailed cross-sectional images of tissues, such as brain slices.
-- `Oscilloscope`: Visualizes electrical signals in real-time, aiding in diagnostics and monitoring.
-- `Photodetector`: Measures light intensity in fluorescence or optical experiments.
-- `Signal Processing Unit`: Processes and filters raw data from recording devices for analysis.
-- `Single Photon Emission Computed Tomography (SPECT)`: Functional imaging method using gamma rays for studying metabolic activity.
-- `Temperature Sensor`: Monitors thermal conditions in experimental setups to ensure stability and accuracy.
-- `Ultrasound Imaging System`: Captures high-resolution internal images using sound waves, useful for structural studies.
+See the schema for field details: [Equipment types]({{"/api/schemas/equipment/"|absolute_url}}).
 
-### Behavioral and Stimulation Tools
-- `Behavior Rig`: Designed for studying animal behavior under controlled conditions, often equipped with cameras, sensors, and stimulus delivery systems.
-- `Iontophoresis Stimulator`: Applies electrical currents to deliver charged molecules to tissues with high precision.
-- `Laser`: Provides focused light for stimulation, imaging, or tissue ablation in experimental setups.
-- `LED Driver`: Controls light-emitting diodes (LEDs) for visual experiments or optogenetics, enabling precise light modulation.
-- `Light Emitter`: Provides controlled light stimuli, often used in optogenetics or photosensitivity studies.
-- `Running Wheel`: Tracks locomotor activity or provides exercise for experimental subjects.
-- `Speaker`: Delivers auditory stimuli, such as tones or sounds, for auditory research or conditioning experiments.
-- `Stimulation Device`: Delivers controlled electrical, magnetic, or mechanical stimulation to tissues.
-- `Treadmill`: Used for locomotion studies, often combined with virtual reality setups for precise tracking.
+### Data acquisition
 
-### Environmental Controllers
-- `Anti-Vibration Table`: Provides a stable, vibration-free platform for precision experiments, such as microscopy or electrophysiology setups.
-- `Floating Air Platform`: Minimizes external vibrations for highly sensitive experiments, ensuring precise and reliable measurements.
-- `Humidity Controller`: Monitors and adjusts humidity levels in experimental setups, critical for environmental studies and tissue preservation.
-- `Noise Isolation Chamber`: Minimizes external noise, ensuring controlled experimental conditions for sensitive studies.
-- `Thermal Controller`: Regulates temperature in experimental environments or for subject maintenance, ensuring optimal conditions.
+`Amplifier`: Amplifies bioelectrical signals (neural or muscular) for recording and analysis in electrophysiology.
 
-### Surgical Equipment
-- `Anesthesia System`: Ensures safe and controlled administration of anesthesia to experimental subjects during procedures.
-- `Injection System`: Delivers precise volumes of substances into biological tissues or cells.
-- `Micromanipulator`: Precisely positions electrodes or devices during surgeries or neural recordings, ensuring accurate placement.
-- `Microscope`: Provides high-resolution imaging of biological samples, with specialized models for fluorescence, confocal, or two-photon imaging.
-- `Stereotaxic Frame`: Stabilizes subjects during surgeries or recordings, enabling precise targeting of brain regions.
-- `Surgical Power Tool`: Includes drills or other tools used for cranial surgeries or electrode implantations.
-- `Perfusion System`: Maintains tissue viability by providing oxygenated solutions during experiments.
+`Camera`: Captures video or still images to monitor behavior, movement, and experimental context.
+
+`Data acquisition system`: Acquires, synchronizes, and stores signals from multiple sources in real time.
+
+`Electroencephalography system (EEG)`: Records scalp electrical activity to study large‑scale brain dynamics and function.
+
+`Electromyography machine`: Measures muscle electrical activity for motor control and neuromuscular studies.
+
+`Ephys rig`: Integrated setup for extra‑/intracellular electrophysiological recordings of neural activity.
+
+`Fiber photometry system`: Measures population fluorescence (e.g., calcium or neuromodulators) in vivo via fiber‑coupled optics.
+
+`Force plate`: Measures ground reaction forces for locomotion, biomechanics, and motor control.
+
+`Humidity sensor`: Monitors ambient humidity in experimental environments.
+
+`Light sensor`: Measures light intensity for stimulus calibration and environmental monitoring.
+
+`Magnetic resonance imaging (MRI) system`: Generates anatomical or functional images using magnetic fields and radiofrequency pulses.
+
+`Magnetoencephalography (MEG) system`: Detects magnetic fields generated by neural activity with high temporal resolution.
+
+`Magnetometer`: Measures magnetic fields for stimulation alignment, motion tracking, or environmental monitoring.
+
+`Microphone`: Records audio (vocalizations, stimuli, ambient) for auditory and behavioral studies.
+
+`Miniscope`: Head‑mounted fluorescence microscope for imaging neural activity in freely moving animals.
+
+`Motion tracking system`: Tracks 2D/3D movement and pose in real time.
+
+`Ophys rig`: Optical physiology setup combining imaging with physiological readouts.
+
+`Optical Coherence Tomography (OCT)`: Micrometer‑scale, cross‑sectional imaging of tissue using low‑coherence interferometry.
+
+`Oscilloscope`: Displays and analyzes electrical waveforms in real time for diagnostics and monitoring.
+
+`Photodetector`: Detects and quantifies light intensity in optical experiments.
+
+`Signal processing unit`: Conditions, filters, and digitizes signals prior to analysis.
+
+`Single-photon emission computed tomography (SPECT)`: Gamma‑ray functional imaging for metabolic and physiological activity.
+
+`Temperature sensor`: Monitors temperature of environments, apparatus, or subjects.
+
+`Ultrasound imaging system`: Produces internal images using high‑frequency sound for structural and functional studies.
+
+### Behavioral and stimulation tools
+
+`Behavior rig`: Controlled environment with sensors and actuators for behavioral experiments.
+
+`Iontophoresis stimulator`: Delivers charged molecules into tissue via controlled electrical current.
+
+`Laser`: Provides focused light for stimulation, ablation, or imaging.
+
+`LED Driver`: Controls LEDs for visual stimuli or optogenetic protocols with precise intensity and timing.
+
+`Light emitter`: Delivers controlled light stimuli to subjects or preparations.
+
+`Running Wheel`: Measures locomotion and provides voluntary exercise.
+
+`Speaker`: Delivers auditory stimuli (tones, noise, vocalizations) for research and conditioning.
+
+`Stimulation device`: Applies controlled electrical, magnetic, or mechanical stimulation to tissue.
+
+`Treadmill`: Enables controlled locomotion, often combined with VR or tracking systems.
+
+### Environmental controllers
+
+`Anti-vibration table`: Isolates setups from external vibrations for precision experiments.
+
+`Floating air platform`: Actively isolates against vibrations for highly sensitive measurements.
+
+`Humidity controller`: Regulates humidity to maintain stable environmental conditions.
+
+`Noise isolation chamber`: Reduces acoustic noise to protect sensitive recordings and experiments.
+
+`Thermal controller`: Regulates temperature of environments, equipment, or subjects.
+
+### Surgical equipment
+
+`Anesthesia system`: Delivers and monitors anesthesia safely during procedures.
+
+`Injection system`: Dispenses precise volumes into tissues or cells.
+
+`Micromanipulator`: Precisely positions tools or electrodes during surgery and recordings.
+
+`Stereotaxic frame`: Immobilizes subjects and enables atlas‑based, precise targeting of brain regions.
+
+`Surgical power tool`: Powered instruments (e.g., drills) for cranial procedures and implantations.
+
+`Perfusion system`: Provides oxygenated or conditioned solutions to maintain tissue viability.
 
 ### Miscellaneous
-- `Biosafety Cabinet`: Creates a sterile environment for handling biological materials, ensuring the safety of users and samples.
-- `Computer`: Runs software for data collection, analysis, and control of experimental equipment. Includes desktop workstations or high-performance servers configured for specialized tasks.
-- `Electronic Component`: Fundamental building blocks of electronic systems, including resistors, capacitors, transistors, and modules. Used for custom hardware solutions in signal processing, device control, or stimulation systems.
-- `Fume Hood`: Provides a controlled environment to handle volatile chemicals safely, protecting users from hazardous fumes.
-- `Glass Micropipette Puller`: Creates fine-tipped glass micropipettes for use in microinjections or electrophysiological recordings.
-- `Microcontroller`: Compact devices designed to control specific operations, such as managing stimuli delivery or data acquisition. Popular examples include Arduino, used for rapid prototyping and custom experiment control systems.
-- `Monitor`: Displays visual stimuli for subjects or experimental data for researchers.
-- `Single-Board Computer`: Lightweight, versatile computers like Raspberry Pi that run custom software for experimental control, automation, and localized data processing.
 
-A detailed list of the accepted schemas for the `details` field, related to each `type`, can be found in the [Equipment schemas page]({{"/api/schemas/equipment/"|absolute_url}}).
+`Biosafety cabinet`: Provides a sterile, contained workspace for handling biological materials.
+
+`Computer`: Runs acquisition, control, and analysis software within the setup.
+
+`Electronic component`: Discrete parts or modules (e.g., resistors, sensors, drivers) for custom hardware and integration.
+
+`Fume hood`: Vented enclosure for safe handling of volatile chemicals.
+
+`Glass micropipette puller`: Fabricates fine‑tipped glass micropipettes for injections or recordings.
+
+`Microcontroller (e.g. Arduino)`: Embedded controller for stimulus delivery, device control, or data acquisition (e.g., Arduino).
+
+`Microscope`: Optical instrument for high‑resolution imaging (e.g., brightfield, fluorescence, confocal, two‑photon).
+
+`Monitor`: Displays visual stimuli to subjects or experimental data to researchers.
+
+`Single-board computer (e.g. Raspberry Pi)`: Compact computer for control, automation, and edge processing (e.g., Raspberry Pi).
+
+
 
 
 ## Coordinate system options
 
-Available Coordinate system options for equipment:
+Available coordinate system options for equipment:
 
 | Type | Description |
 |:-----|:------------|
-| External X-Y-Z Absolute | Absolute external coordinates. This can be used to describe, e.g., a camera's position in a room |
+| External XYZ Coordinates with Angles | Absolute external coordinates. This can be used to describe, e.g., a camera's position in a room |
+| Stereotaxic Bregma-Based Absolute Coordinates | Stereotaxic coordinates referenced to the bregma point with absolute positioning |
+| Stereotaxic Bregma-Based Surface Coordinates with Depth | Stereotaxic coordinates referenced to bregma with surface positioning and depth measurement |
+| Stereotaxic Lambda-Based Absolute Coordinates | Stereotaxic coordinates referenced to the lambda point with absolute positioning |
+| Stereotaxic Lambda-Based Surface Coordinates with Depth | Stereotaxic coordinates referenced to lambda with surface positioning and depth measurement |
+| Common Coordinate Framework XYZ Absolute Coordinates | Coordinates based on the Common Coordinate Framework for standardized brain mapping |
 
 A detailed list of the fields in Coordinate system can be found on the [Coordinate systems page]({{"datamodel/schemas/coordinates/"|absolute_url}}).
 
@@ -118,8 +178,8 @@ A detailed list of the fields in Coordinate system can be found on the [Coordina
 
 Equipment inherit permissions through the setup associated with them.
 
-Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more.
 
 ## API access
 
-The API allows for programmable access to equipment. Learn more about the equipment' fields and data structure on the [Equipment API page]({{"api/modules/equipment/"|absolute_url}}).
+The API allows for programmable access to equipment. Learn more about the equipment fields and data structure on the [Equipment API page]({{"api/modules/equipment/"|absolute_url}}).
