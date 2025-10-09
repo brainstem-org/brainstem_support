@@ -23,10 +23,13 @@ A biological species is a group of organisms that can reproduce with one another
 
 | Field | Description |
 |:------|:------------|
-| `Name` | The scientific name of the species (**required**; must be unique) |
-| `Popular name` | Common or colloquial name of the species |
-| `Appearance` | A description of the physical characteristics of the species |
-| `Description` | A general description of the species, including its biological and ecological attributes |
+| ``Name of species`` | The scientific name of the species (**required**; string; maximum length: 100 characters; must be unique). Example: "Homo sapiens", "Mus musculus" |
+| ``Popular name`` | Common or colloquial name of the species (optional; maximum length: 100 characters). Example: "Human", "House mouse" |
+| ``Appearance`` | A description of the physical characteristics of the species (**required**; maximum length: 500 characters). Example: "Small, quadrupedal mammal with fur, whiskers, and a long tail" |
+| ``Description`` | A general description of the species, including its biological and ecological attributes (optional; maximum length: 2000 characters). Example: "Small rodent commonly used in laboratory research due to its well-characterized genetics and physiology" |
+| ``RRID`` | Research Resource Identifier (optional). Must start with "RRID:". Example: "RRID:NCBI_txid9606" |
+| ``External identifiers`` | External identifiers from databases like NCBI, Ensembl, etc. (optional). Include URLs when available. |
+| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
 
 ## Submission process
 

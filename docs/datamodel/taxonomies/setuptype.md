@@ -23,8 +23,10 @@ Setup types are fundamentally categories of setups and also serve as categories 
 
 | Field | Description |
 |:------|:------------|
-| `Name` | The name of the setup type (**required**; must be unique) |
-| `Description` | A general description of the setup type |
+| ``Name of setup type`` | The name of the setup type (**required**; string; maximum length: 200 characters; must be unique) |
+| ``Category of the setup type`` | The category of the setup type (**required**). Selected from predefined categories (In Vitro, Ex Vivo, Anesthetized In Vivo, Head-Fixed Awake, Voluntarily Stationary Awake, Freely Moving Awake, Unknown) |
+| ``Description`` | A general description of the setup type (optional; maximum length: 2000 characters) |
+| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
 
 ## Submission process
 
