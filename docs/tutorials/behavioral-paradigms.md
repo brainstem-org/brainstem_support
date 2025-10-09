@@ -2,15 +2,10 @@
 layout: default
 title: Behavioral Paradigms
 parent: Tutorials
-nav_order: 20
+nav_order: 5
 ---
 # Behavioral Paradigms in BrainSTEM
 {: .no_toc}
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
 
 ## Introduction
 
@@ -61,7 +56,7 @@ A behavioral paradigm defines:
 
 Now that you have behavioral paradigms defined, you can begin documenting complete experiments:
 
-- **Document complete experiments**: Follow either the [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow) or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) tutorials to see how behavioral paradigms integrate with full experimental documentation
+- **Document complete experiments**: Follow the [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow)<!-- or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow)--> tutorial to see how behavioral paradigms integrate with full experimental documentation
 - **Set up your infrastructure**: Configure the physical setups and equipment using [Setting Up Lab Infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) to create the experimental environments where your behavioral paradigms will be executed
 - **Set up data storage**: Configure [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to link your behavioral sessions to actual data files for analysis
 - **Expand your resources**: Visit [Submit Resources & Taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies) to contribute new behavioral equipment or paradigm types to the BrainSTEM platform

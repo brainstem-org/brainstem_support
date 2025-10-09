@@ -2,10 +2,10 @@
 layout: default
 title: Managing Data Storage
 parent: Tutorials
-nav_order: 7
+nav_order: 6
 ---
 
-# Managing Data Storage in BrainSTEM
+# Managing Data Storage
 {: .no_toc}
 
 ## Table of contents
@@ -29,20 +29,22 @@ BrainSTEM's data storage system consists of three key components:
 ## Creating a Data Storage Location
 
 ### Step 1: Navigate to Data Storage
+{: .no_toc}
 
-1. From your BrainSTEM dashboard, go to *Personal Attributes* → *Data storage* in the left navigation menu
+1. From the dashboard, go to *Personal Attributes* → *Data storage* in the left navigation menu
 2. Click the *Add data storage* button in the top right corner
 
 ### Step 2: Configure Basic Information
+{: .no_toc}
 
-**Fill in the basic details:**
+Fill in the basic details:
 
-| Field | Value/Instructions |
-|-------|-------------------|
-| **Name** | Give your data storage a descriptive name (e.g., "Lab Server 01", "Cloud Storage Main") |
-| **Authenticated groups** | Select the groups that should have access to this data storage (**required**) |
-| **Description** | Add details about what type of data is stored here and any access requirements |
-| **Public access** | Set whether this data storage should be publicly accessible |
+| Field | Description |
+|-------|-------------|
+| **Name** | Descriptive name for your data storage (e.g., "Lab Server 01", "Cloud Storage Main") |
+| **Authenticated groups** | Groups that can access this data storage **(required)** |
+| **Description** | Details about stored data types and access requirements |
+| **Public access** | Whether this storage should be publicly accessible |
 
 {: .important }
 > Permissions are directly set on data storages. Data storage has four permission levels: membership (read access), contributors, managers, and owners.
@@ -51,6 +53,7 @@ BrainSTEM's data storage system consists of three key components:
 > Choose names that clearly identify the storage location and its purpose. Other lab members will see these names when creating sessions.
 
 ### Step 3: Define Data Organization
+{: .no_toc}
 
 Configure how your data is organized within the storage location. This defines the hierarchy of folders/directories:
 
@@ -65,42 +68,41 @@ Configure how your data is organized within the storage location. This defines t
 **Example organization structures:**
 
 ```
-Subjects → Sessions → Data files
+Subjects → Sessions
 ```
 
 ```
-Projects → Subjects → Sessions → Data files
+Projects → Subjects → Sessions
 ```
 
 Add organization elements that match your lab's file structure conventions using the available element types.
 
 ### Step 4: Configure Data Storage Protocols
+{: .no_toc}
 
-Set up access methods for your data storage. Each protocol defines how to access the same data storage location:
+Set up how to access your data storage. You can configure multiple protocols for the same storage location, e.g.:
 
-**Protocol Configuration Options:**
-
-| Storage Type | Protocol | Path Example | Public Status |
-|--------------|----------|--------------|---------------|
-| **Network/Server Storage** | Local harddrive | `/mnt/labserver/data/` or local mount path | false (internal lab access) |
-| **Cloud Storage** | Dropbox (Cloud solution) | `data/myproject` or cloud folder path | Choose based on data sensitivity |
-| **Local Storage** | Local harddrive | `/Users/researcher/data/` or `D:\Lab_Data\` | false |
-| **Public Repositories** | Web | `https://dandiarchive.org/dandiset/123456/` or repository URL | true |
+| Storage Type | Protocol | Path Example | Public |
+|--------------|----------|--------------|--------|
+| **Network/Server** | SMB/CIFS | `/mnt/labserver/data/` | No |
+| **Cloud Storage** | Dropbox | `data/myproject` | No |
+| **Local Drive** | Local Storage | `/Users/researcher/data/` | No |
+| **Public Repository** | HTTPS/Web | `https://dandiarchive.org/dandiset/123456/` | Yes |
 
 {: .important }
 > You can configure multiple protocols for the same data storage. This allows flexibility in how different users or systems access the same data.
 
-Protocol names must match the options provided in the BrainSTEM UI (e.g., "Local harddrive", "Dropbox (Cloud solution)", "Web").
-
 ## Assigning Data Storage to Sessions
 
 ### During Session Creation
+{: .no_toc}
 
 1. When creating a new session, locate the **Data storage** field
 2. Select from your configured data storage locations in the dropdown
 3. Optionally, specify a **Name used in storage** - this is the folder/file name used in your actual storage system
 
 ### For Existing Sessions
+{: .no_toc}
 
 1. Navigate to the session you want to update
 2. Click the *Edit* button
@@ -116,6 +118,7 @@ Protocol names must match the options provided in the BrainSTEM UI (e.g., "Local
 BrainSTEM's data storage system enables dynamic construction of file paths based on your metadata and organization structure.
 
 ### How Dynamic Linking Works
+{: .no_toc}
 
 When you associate a data storage with a session, BrainSTEM can automatically construct file paths based on:
 
@@ -125,18 +128,26 @@ When you associate a data storage with a session, BrainSTEM can automatically co
 4. **Custom storage name**: The specific name you've assigned for storage
 
 ### Example Dynamic Path Construction
+{: .no_toc}
 
 **Data Storage Configuration:**
+
 | Field | Value |
 |-------|-------|
 | **Name** | Lab Server Main |
 | **Base path** | `/mnt/labserver/data/` |
-| **Organization** | Projects → Subjects → Sessions → Data files |
+| **Organization** | Projects → Subjects → Sessions |
+
+**Dynamic Path:**
+```
+/mnt/labserver/data/{projects}/{subjects}/{sessions}/
+```
 
 {: .note }
-> Data files are implied to be stored in the session folder.
+> Data files should be stored in the session folder based on this organization structure.
 
 **Session Information:**
+
 | Field | Value |
 |-------|-------|
 | **Project** | Memory_Study_2024 |
@@ -144,12 +155,13 @@ When you associate a data storage with a session, BrainSTEM can automatically co
 | **Session** | Baseline_Recording |
 | **Name used in storage** | ses01_baseline |
 
-**Resulting Dynamic Path:**
+**Resulting Path:**
 ```
 /mnt/labserver/data/Memory_Study_2024/Mouse_001/ses01_baseline/
 ```
 
 ### API Access to Dynamic Paths
+{: .no_toc}
 
 Use the Python or MATLAB API to programmatically access your data paths:
 
@@ -174,6 +186,7 @@ for protocol in storage_info['data_protocols_json']:
 ```
 
 ### Constructing Full Paths in Your Analysis Code
+{: .no_toc}
 
 ```python
 def construct_data_path(session_data):
@@ -212,40 +225,38 @@ print(f"Data location: {full_path}")
 ## Best Practices
 
 ### Naming Conventions
+{: .no_toc}
 
 - **Data Storage Names**: Use descriptive names that indicate location and purpose
 - **Storage Names**: Keep file/folder names consistent with your lab's conventions
 - **Avoid Special Characters**: Use underscores or hyphens instead of spaces
 
 ### Organization Strategies
+{: .no_toc}
 
 - **Standardize Early**: Establish organization patterns before accumulating lots of data
 - **Document Conventions**: Create lab protocols for file naming and organization
 - **Plan for Growth**: Design structures that scale with increasing data volumes
 
 ### Security and Access
+{: .no_toc}
 
-- **Authenticated Groups**: Data storage requires authenticated groups (required field)
-- **Public/Private Settings**: Use the `is_public` field appropriately for your data sensitivity
-- **Project Permissions**: Data storage is shared through project groups - you can only add data storage associated with the same groups as the selected projects
-
-### Backup and Redundancy
-
-- **Multiple Protocols**: Configure both local and cloud access for important data
-- **Document Locations**: Maintain clear records of where different data types are stored
-- **Test Access**: Regularly verify that configured paths are accessible
+- **Authenticated Groups**: Required - only users in these groups can access the data storage
+- **Public/Private Settings**: Configure based on data sensitivity needs
+- **Group Matching**: Data storage can only be added to sessions in projects that share at least one authenticated group
 
 ## Troubleshooting Common Issues
 
 ### Cannot Access Data Storage in Sessions
+{: .no_toc}
 
-**Problem**: Data storage doesn't appear in session dropdown
+**Problem**: Data storage doesn't appear in the session dropdown
 
 **Solutions**:
-- Verify your user is a member of one of the authenticated groups for the data storage
-- Check that the data storage is properly saved and configured
+- Verify you're a member of at least one authenticated group for the data storage
 
 ### Path Construction Errors
+{: .no_toc}
 
 **Problem**: Generated paths don't match actual file locations
 
@@ -255,6 +266,7 @@ print(f"Data location: {full_path}")
 - Check that "Name used in storage" matches your actual file/folder names
 
 ### API Access Issues
+{: .no_toc}
 
 **Problem**: Cannot access data storage information via API
 
@@ -267,6 +279,7 @@ print(f"Data location: {full_path}")
 ## Integration with Analysis Workflows
 
 ### Loading Data in Python
+{: .no_toc}
 
 ```python
 import os
@@ -302,6 +315,7 @@ def load_session_data(session_id):
 ```
 
 ### MATLAB Integration
+{: .no_toc}
 
 ```matlab
 function data_info = load_session_data(session_id)
@@ -334,8 +348,9 @@ end
 ## Advanced Configuration
 
 ### Multiple Protocol Setup
+{: .no_toc}
 
-For labs with complex data access needs:
+Configure multiple access methods for the same data storage to support different use cases:
 
 ```json
 {
@@ -359,9 +374,12 @@ For labs with complex data access needs:
 }
 ```
 
-### Custom Organization Patterns
+This allows users to access data via local mount, cloud backup, or public repository depending on their needs.
 
-For specialized data organization:
+### Custom Organization Patterns
+{: .no_toc}
+
+Configure your organization structure to match your lab's file hierarchy:
 
 ```json
 {
@@ -373,18 +391,18 @@ For specialized data organization:
 }
 ```
 
-This configuration would create paths like:
+**Example resulting path:**
 ```
-/base_path/Memory_Study/Mouse_001/Baseline_Recording/
+/mnt/labserver/data/Memory_Study/Mouse_001/Baseline_Recording/
 ```
 
-By following this tutorial, you'll be able to effectively manage your data storage in BrainSTEM, creating seamless links between your metadata and actual data files for more efficient analysis workflows.
+By following this tutorial, you can effectively manage data storage in BrainSTEM, creating seamless links between your metadata and actual data files for efficient analysis workflows.
 
 ## Next Steps
 
 With data storage configured, you can now effectively manage and analyze your research data:
 
-- **Start experimental workflows**: Follow complete experimental documentation with [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow) or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) tutorials that demonstrate data storage integration
+- **Start experimental workflows**: Follow complete experimental documentation with [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow)<!-- or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow)--> tutorial that demonstrates data storage integration
 - **Use API tools**: Access your data programmatically with [Python API tool]({{site.baseurl}}/tutorials/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/tutorials/matlab-api-tool) for seamless integration with analysis workflows
 - **Organize experiments**: Create structured [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) that integrate with your data storage system for organized behavioral data
 - **Enable collaboration**: Set up proper [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) to share your organized data storage with lab members and collaborators

@@ -24,7 +24,7 @@ nav_order: 5
 | `name` | string **[required]** [max length: 50] |
 | `description` | string [max length: 500]|
 | `setup_type` | related environment type ID formatted as a string **[required]** |
-| `physical_dimensions_json` | JSON dictionary |
+| `specifications` | JSON dictionary |
 | `is_public` | boolean |
 
 
@@ -52,7 +52,7 @@ resp = client.load_model('setup')
         'name': 'Head-fixed wheel',
         'description': '',
         'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-        'physical_dimensions_json': [
+        'specifications': [
             {'name': 'Radius', 'value': 12, 'description': 'cm'}
         ],
         'is_public': False
@@ -62,7 +62,7 @@ resp = client.load_model('setup')
         'name': "Mino's Maze",
         'description': '',
         'setup_type': 'e1f14b91-e507-48c1-bfec-c68d7db9c166',
-        'physical_dimensions_json': [],
+        'specifications': [],
         'is_public': True
     }
 ]}
@@ -87,7 +87,7 @@ resp = client.save_model("setup",  data=
         'name': 'MyNewEnv',
         'description': '',
         'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-        'physical_dimensions_json': [
+        'specifications': [
             {'name': 'Length', 'value': 100, 'description': 'yards'}
         ],
         'is_public': False
@@ -104,7 +104,7 @@ resp = client.save_model("setup",  data=
     'name': 'MyNewEnv',
     'description': '',
     'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-    'physical_dimensions_json': [
+    'specifications': [
         {'name': 'Length', 'value': 100, 'description': 'yards'}
     ],
     'is_public': False}
@@ -136,7 +136,7 @@ resp = client.load_model('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
     'name': 'MyNewEnv',
     'description': '',
     'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-    'physical_dimensions_json': [
+    'specifications': [
         {'name': 'Length', 'value': 100, 'description': 'yards'}
     ],
     'is_public': False}
@@ -168,7 +168,7 @@ resp = client.save_model("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", dat
     'name': 'MyNewEnv',
     'description': 'new text',
     'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-    'physical_dimensions_json': [
+    'specifications': [
         {'name': 'Length', 'value': 100, 'description': 'yards'}
     ],
     'is_public': False}

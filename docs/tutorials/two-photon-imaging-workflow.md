@@ -2,10 +2,11 @@
 layout: default
 title: 2P Imaging Workflow
 parent: Tutorials
-nav_order: 10
+nav_order: 9
+nav_exclude: true
 ---
 
-# Draft: Two-Photon Workflow: Visual Cortex Population Dynamics
+# [Draft] Two-Photon Workflow: Visual Cortex Population Dynamics
 {: .no_toc}
 
 ## Introduction - Note: this tutorial is still in a drafting state

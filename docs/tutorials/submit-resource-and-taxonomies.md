@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Submit Resources & Taxonomies
+title: Resources & Taxonomies
 parent: Tutorials
-nav_order: 8
+nav_order: 7
 ---
 
-# Submitting Resources & Taxonomies
+# Resources & Taxonomies
 {: .no_toc}
 
 ## Table of contents
@@ -101,6 +101,6 @@ After successfully contributing resources and taxonomies to BrainSTEM, consider 
 
 - **Set Up Your Lab Infrastructure**: Use your newly approved resources in the [Setting Up Lab Infrastructure tutorial]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) to configure your own experimental setups with the equipment and suppliers you've contributed
 - **Begin Experimental Documentation**: Start documenting your research using the [Get Started tutorial]({{site.baseurl}}/tutorials/get_started) and incorporate your approved resources into real experimental workflows
-- **Explore Specific Workflows**: Depending on your research focus, dive into detailed experimental tutorials like [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow) or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) that will use your contributed resources
+- **Explore Specific Workflows**: Depending on your research focus, dive into detailed experimental tutorials like [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow)<!-- or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow)--> that will use your contributed resources
 - **Organize Your Team**: Use [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) and [Managing Groups]({{site.baseurl}}/tutorials/managing-groups) to organize access to your contributed resources across your research team
 - **Continue Contributing**: As you discover new equipment, suppliers, or taxonomic categories in your research, continue expanding the BrainSTEM resource database by submitting additional entries

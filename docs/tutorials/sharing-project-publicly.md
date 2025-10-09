@@ -2,17 +2,11 @@
 layout: default
 title: Share data publicly
 parent: Tutorials
-nav_order: 2
+nav_order: 10
 ---
 
 # Share Data Publicly
 {: .no_toc}
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ## Introduction
 
@@ -34,6 +28,7 @@ When a project is made public, all associated components become publicly accessi
 - Related modules (behaviors, data acquisition, manipulations)
 
 ### Making a Project Public
+{: .no_toc}
 
 {: .important }
 > Only project owners can change the public sharing status of a project.
@@ -58,7 +53,7 @@ the public (subjects, sessions, and modules associated with the project).
 > - All modules (behaviors, data acquisition, manipulations) associated with these sessions
 > - All collections and cohorts within the project
 
-## Personal Attributes Public Sharing
+## Public Sharing of related Personal Attributes
 
 When using personal attributes in public projects, certain components must also be individually shared:
 - Behavioral paradigms
@@ -67,13 +62,15 @@ When using personal attributes in public projects, certain components must also 
 - Inventories
 
 ### Example Scenario
+{: .no_toc}
+
 Let's say you have:
 1. A project called "Mouse Behavior Study"
 2. Sessions in this project involving behavioral experiments
 3. A behavioral paradigm called "Open Field Test" used in the behavior module of these sessions
 4. A setup called "Behavior Room A" also used in the behavior module of these sessions
 
-If you make the project public but forget to make the behavioral paradigm and setup public:
+If you make the project public but don't make the behavioral paradigm and setup public:
 - Users can see your project and its components (subjects, sessions, collections)
 - When they open a session and try to view its behavior module:
   - They can see that there is a behavior module
@@ -89,6 +86,7 @@ If you make the project public but forget to make the behavioral paradigm and se
 
 
 ### Making Personal Attributes Public
+{: .no_toc}
 
 {: .important }
 > Only owners of personal attributes can change their public status.

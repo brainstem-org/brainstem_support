@@ -3,6 +3,7 @@ layout: default
 title: MATLAB API tool
 parent: Tutorials
 nav_order: 5
+nav_exclude: true
 ---
 # MATLAB API tool
 

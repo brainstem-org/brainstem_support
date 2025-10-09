@@ -2,7 +2,7 @@
 layout: default
 title: Ephys Workflow
 parent: Tutorials
-nav_order: 9
+nav_order: 8
 ---
 
 # Ephys Workflow: Theta Maze with Sleep Sessions
@@ -20,7 +20,7 @@ This tutorial walks through a complete electrophysiology experiment in BrainSTEM
 - **Analysis**: Learning curves, replay detection, place cell analysis
 
 {: .note }
-> This tutorial assumes you have already set up your lab infrastructure (setups, equipment, inventories) as described in the [Setting Up Lab Infrastructure tutorial]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure).
+> This tutorial assumes that the lab infrastructure is already set up (setups, equipment, inventories) as described in the [Setting Up Lab Infrastructure tutorial]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure).
 
 ## Part A: Project and Subject Setup
 
@@ -33,8 +33,6 @@ First, we'll create a project to organize and provide context for our experiment
    - Click *Add project*
 
 ![Project creation interface](/assets/images/tutorials/ephys/add_project.png)
-
-**[SCREENSHOT NEEDED: Project creation interface]**
 
 2. **Configure Project Details**:
 
@@ -148,7 +146,7 @@ After creating individual subjects, we can group them into a cohort for experime
 | **Description** | First experimental cohort for theta maze spatial learning study. 4 male Long-Evans rats, age-matched littermates, trained on alternation task with Neuropixels recordings. Pair housed, 12:12 light cycle, food restricted to 85% body weight during training. |
 | **Tags** | theta maze, spatial learning, neuropixels, male rats |
 
-**[ILLUSTRATION NEEDED: Flowchart showing project → subjects → cohort → experiment relationship]**
+<!-- **[ILLUSTRATION NEEDED: Flowchart showing project → subjects → cohort → experiment relationship]** -->
 
 ### Step 4: Equipment and Setup Verification
 
@@ -203,7 +201,7 @@ Document the surgical procedure for Neuropixels probe implantation.
 {: .note }
 > Probe specifications (Neuropixels 2.0: 960 total sites, 384 recording sites, 20 μm spacing, etc.) are documented in the consumable stock entry, not in the procedure record. You can also document the Isoflurane anesthesia, Head fixation, Craniotomy, and the Headcap, but we will leave that out for brevity.
 
-**[ILLUSTRATION NEEDED: Brain atlas diagram showing electrode placement coordinates]**
+<!-- **[ILLUSTRATION NEEDED: Brain atlas diagram showing electrode placement coordinates]** -->
 
 ## Part B: Multi-Session Experimental Workflow
 
@@ -215,7 +213,7 @@ After recovery, we begin with a baseline sleep recording.
    - Go to *Sessions*
    - Click *Add session*
 
-**[SCREENSHOT NEEDED: Session creation form]**
+<!-- **[SCREENSHOT NEEDED: Session creation form]** -->
 
 2. **Sleep Session Configuration**:
 
@@ -265,13 +263,13 @@ After recovery, we begin with a baseline sleep recording.
 | **Habituation** | 0 | 30 | Adaptation to recording environment |
 | **Baseline_recording** | 30 | 210 | Continuous sleep/wake recording (3.5 hours) |
 
-**[SCREENSHOT NEEDED: Session configuration interface showing data acquisition modules]**
+<!-- **[SCREENSHOT NEEDED: Session configuration interface showing data acquisition modules]** -->
 
 ### Step 7: Theta Maze Behavioral Session
 
 The main experimental session combining behavior with neural recording.
 
-**[SCREENSHOT NEEDED: Behavioral paradigm selection interface]**
+<!-- **[SCREENSHOT NEEDED: Behavioral paradigm selection interface]** -->
 
 1. **Behavioral Paradigm Setup**:
 
@@ -343,13 +341,13 @@ The main experimental session combining behavior with neural recording.
 | **Free_choice_trials** | 70 | 40 | Free choice alternation test (longer for rats) |
 | **Post_task_rest** | 110 | 10 | Rest period after task completion |
 
-**[SCREENSHOT NEEDED: Session interface showing multiple data acquisition modules and epochs]**
+<!-- **[SCREENSHOT NEEDED: Session interface showing multiple data acquisition modules and epochs]** -->
 
 ### Step 8: Adding Manipulations (Optional)
 
 For experiments with optogenetic or pharmacological manipulations.
 
-**[SCREENSHOT NEEDED: Manipulation creation interface]**
+<!-- **[SCREENSHOT NEEDED: Manipulation creation interface]** -->
 
 **Manipulation Configuration:**
 
@@ -422,7 +420,7 @@ Capture sleep-dependent replay and consolidation.
 
 Group related sessions for analysis and organization.
 
-**[SCREENSHOT NEEDED: Collection creation interface]**
+<!-- **[SCREENSHOT NEEDED: Collection creation interface]** -->
 
 **Collection Configuration:**
 
@@ -464,7 +462,7 @@ session_data = client.load_model('session', filters={'name': 'tm_r001_day1_behav
 
 After completing this comprehensive electrophysiology workflow, consider these logical progressions:
 
-- **Explore complementary techniques**: Review the [Two-Photon Imaging Workflow tutorial]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) to learn how to combine electrophysiology with optical imaging approaches
+<!-- - **Explore complementary techniques**: Review the [Two-Photon Imaging Workflow tutorial]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) to learn how to combine electrophysiology with optical imaging approaches -->
 - **Access data programmatically**: Master the [Python API tool]({{site.baseurl}}/tutorials/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/tutorials/matlab-api-tool) to automate analysis workflows for your large-scale electrophysiology datasets
 - **Understand behavioral documentation**: Review [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) to understand how behavioral protocols are documented and standardized across experiments
 - **Optimize data management**: Learn about [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to efficiently organize and access your large electrophysiology datasets with proper file linking
