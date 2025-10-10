@@ -403,7 +403,7 @@ By following this tutorial, you can effectively manage data storage in BrainSTEM
 With data storage configured, you can now effectively manage and analyze your research data:
 
 - **Start experimental workflows**: Follow complete experimental documentation with [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow)<!-- or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow)--> tutorial that demonstrates data storage integration
-- **Use API tools**: Access your data programmatically with [Python API tool]({{site.baseurl}}/tutorials/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/tutorials/matlab-api-tool) for seamless integration with analysis workflows
+- **Use API tools**: Access your data programmatically with [Python API tool]({{site.baseurl}}/api-tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/api-tools/matlab-api-tool) for seamless integration with analysis workflows
 - **Organize experiments**: Create structured [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) that integrate with your data storage system for organized behavioral data
 - **Enable collaboration**: Set up proper [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) to share your organized data storage with lab members and collaborators
 - **Enable open data**: Make your data publicly accessible through [Sharing Project Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) to promote open science and collaboration

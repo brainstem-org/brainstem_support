@@ -20,6 +20,6 @@ BrainSTEM provides comprehensive tutorials to help users get started and make th
 - [**Behavioral Paradigms**]({{site.baseurl}}/tutorials/behavioral-paradigms): Complete guide to creating and managing behavioral paradigms for experiments, including environment types, stimulus presentations, and reward systems.
 - [**Electrophysiology Workflow**]({{site.baseurl}}/tutorials/electrophysiology-workflow): Example experimental workflow for electrophysiology studies, from project setup and probe implantation to data collection and spatial analysis.
 - [**Two-Photon Imaging Workflow**]({{site.baseurl}}/tutorials/two-photon-imaging-workflow): Example workflow for two-photon calcium imaging experiments, covering viral injections, surgical procedures, imaging sessions, and visual stimulus analysis.
-- [**Matlab API tool**]({{site.baseurl}}/tutorials/matlab-api-tool): Documentation for using BrainSTEM's Matlab API tools to programmatically access and manage your research data.
-- [**Python API tool**]({{site.baseurl}}/tutorials/python-api-tool): Guide to utilizing BrainSTEM's Python API interface for automated data management and analysis.
+- [**Matlab API tool**]({{site.baseurl}}/api-tools/matlab-api-tool): Documentation for using BrainSTEM's Matlab API tools to programmatically access and manage your research data.
+- [**Python API tool**]({{site.baseurl}}/api-tools/python-api-tool): Guide to utilizing BrainSTEM's Python API interface for automated data management and analysis.
 - [**Submit Resources & Taxonomies**]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies): Instructions for contributing to BrainSTEM's shared resources and taxonomies to enhance the platform's capabilities.

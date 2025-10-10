@@ -463,7 +463,7 @@ session_data = client.load_model('session', filters={'name': 'tm_r001_day1_behav
 After completing this comprehensive electrophysiology workflow, consider these logical progressions:
 
 <!-- - **Explore complementary techniques**: Review the [Two-Photon Imaging Workflow tutorial]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) to learn how to combine electrophysiology with optical imaging approaches -->
-- **Access data programmatically**: Master the [Python API tool]({{site.baseurl}}/tutorials/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/tutorials/matlab-api-tool) to automate analysis workflows for your large-scale electrophysiology datasets
+- **Access data programmatically**: Master the [Python API tool]({{site.baseurl}}/api-tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/api-tools/matlab-api-tool) to automate analysis workflows for your large-scale electrophysiology datasets
 - **Understand behavioral documentation**: Review [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) to understand how behavioral protocols are documented and standardized across experiments
 - **Optimize data management**: Learn about [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to efficiently organize and access your large electrophysiology datasets with proper file linking
 - **Enable data sharing**: Use [Sharing Project Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) to make your electrophysiology datasets available to the research community for collaborative analysis and meta-studies

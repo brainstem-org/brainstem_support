@@ -207,4 +207,4 @@ For a notebook-style walk-through, open `brainstem_api_tutorial.ipynb` in the AP
 
 - **Complete Experimental Workflows**: Review the [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow) or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) tutorials to see how API data fits into complete experimental documentation
 - **Data Storage Integration**: Learn about [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to optimize your API-based analysis workflows with proper data organization
-- **MATLAB Integration**: If you work in mixed programming environments, check out the [MATLAB API tool tutorial]({{site.baseurl}}/tutorials/matlab-api-tool) for cross-platform data access patterns
+- **MATLAB Integration**: If you work in mixed programming environments, check out the [MATLAB API tool tutorial]({{site.baseurl}}/api-tools/matlab-api-tool) for cross-platform data access patterns

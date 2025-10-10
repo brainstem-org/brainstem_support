@@ -158,5 +158,5 @@ The repository ships with `brainstem_api_tutorial.m`, a tutorial script demonstr
 ## Next Steps
 
 - **Complete Experimental Documentation**: Review the [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow) or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) tutorials to understand how API data access fits into complete experimental workflows
-- **Cross-Platform Integration**: If you work in mixed programming environments, explore the [Python API tool tutorial]({{site.baseurl}}/tutorials/python-api-tool) for complementary examples
+- **Cross-Platform Integration**: If you work in mixed programming environments, explore the [Python API tool tutorial]({{site.baseurl}}/api-tools/python-api-tool) for complementary examples
 - **Data Management**: Learn about [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to keep file locations synchronized with metadata returned by the API

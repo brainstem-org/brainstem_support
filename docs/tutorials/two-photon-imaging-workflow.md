@@ -600,6 +600,6 @@ After completing this comprehensive two-photon imaging workflow, consider these 
 
 - **Cross-Modal Experiments**: Review the [Electrophysiology Workflow tutorial]({{site.baseurl}}/tutorials/electrophysiology-workflow) to learn how to combine two-photon imaging with simultaneous electrophysiology recordings for comprehensive neural circuit analysis
 - **Data Storage Optimization**: Learn about [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to efficiently organize and access your large imaging datasets
-- **API Integration**: Master the [Python API tool]({{site.baseurl}}/tutorials/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/tutorials/matlab-api-tool) tutorials to programmatically access your imaging data for automated analysis workflows
+- **API Integration**: Master the [Python API tool]({{site.baseurl}}/api-tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/api-tools/matlab-api-tool) tutorials to programmatically access your imaging data for automated analysis workflows
 - **Behavioral Integration**: Explore [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) to understand how to combine imaging with more complex behavioral tasks
 - **Data Sharing and Collaboration**: Learn about [Sharing Project Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) to make your imaging datasets available to the research community and enable collaborative analysis
