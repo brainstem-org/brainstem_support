@@ -17,7 +17,7 @@ The Web API Tool provides a browser-based interface for exploring, testing, and 
 
 ## Getting Started
 
-Access the Web API Tool by navigating to any BrainSTEM API endpoint in your web browser. You'll need to be logged into your BrainSTEM account to access private data.
+Access the Web API Tool by navigating to any BrainSTEM API endpoint in your web browser. You'll need to be logged into your BrainSTEM account to access private data. The web interface uses your existing browser session for authentication, so no additional API keys or tokens are required for basic exploration.
 
 ### Basic Usage
 {: .no_toc}
@@ -53,7 +53,7 @@ The interface shows the actual API response structure, including:
 - **Metadata**: Pagination information (`"meta"` object with page details)
 - **HTTP status**: Response codes and headers
 
-![web_api_screenshot_v2](/assets/images/web_api_screenshot_v2.png)
+![web_api_screenshot_v3](/assets/images/web_api_screenshot_v3.png)
 
 ### Raw JSON Output
 {: .no_toc}
