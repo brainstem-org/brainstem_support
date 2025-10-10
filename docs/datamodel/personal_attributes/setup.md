@@ -18,7 +18,7 @@ has_toc: false
 
 ## Introduction 
 
-Setups describe where experiments, procedures, or manipulations takes place. It also describes the environment of a recorded subject. Setups has physical dimensions and equipment associate with it.
+Setups describe where experiments, procedures, or manipulations takes place. It also describes the environment of a recorded subject. Setups has specifications and equipment associate with it.
 
 ## Fields
 
@@ -32,7 +32,7 @@ Setups describe where experiments, procedures, or manipulations takes place. It 
 | ``Description`` | Rich text description of the setup (optional). Can include uploaded images. Example: "Linear track setup with two reward ports and tracking cameras..." |
 | ``Image`` | Image of the setup (optional). Uploaded images remain completely private. Example: "setup1_overview.jpg" |
 | ``Public access`` | Determines if the setup is public or private. Example: "False" for private access |
-| ``Specifications`` | Physical specifications of the setup in key-value format (optional). Example: {"length": "200 cm", "width": "10 cm", "height": "15 cm"} |
+| ``Specifications`` | Specifications to the setup in key-value format (optional). Example: {"length": "200 cm", "width": "10 cm", "height": "15 cm"} |
 
 ## Permissions
 

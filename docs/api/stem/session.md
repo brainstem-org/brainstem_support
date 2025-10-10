@@ -72,12 +72,14 @@ Use the Session → Data Storage endpoint (`/api/private/stem/sessiondatastorage
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Example request (list, Python API)
+{: .no_toc}
 
 ```python
 resp = client.load_model("session")
 ```
 
 ### Example response (list)
+{: .no_toc}
 
 ```json
 {
@@ -125,6 +127,7 @@ resp = client.load_model("session")
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Example request (create, Python API)
+{: .no_toc}
 
 ```python
 resp = client.save_model(
@@ -138,6 +141,7 @@ resp = client.save_model(
 ```
 
 ### Example response (create)
+{: .no_toc}
 
 ```json
 {
@@ -168,12 +172,14 @@ resp = client.save_model(
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
 ### Example request (detail, Python API)
+{: .no_toc}
 
 ```python
 resp = client.load_model("session", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
 ```
 
 ### Example response (detail)
+{: .no_toc}
 
 ```json
 {
@@ -210,6 +216,7 @@ resp = client.load_model("session", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
 ### Example request (update, Python API)
+{: .no_toc}
 
 ```python
 resp = client.save_model(
@@ -220,6 +227,7 @@ resp = client.save_model(
 ```
 
 ### Example response (update)
+{: .no_toc}
 
 ```json
 {
@@ -250,6 +258,7 @@ resp = client.save_model(
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
 ### Example request (delete, Python API)
+{: .no_toc}
 
 ```python
 resp = client.delete_model("session", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
