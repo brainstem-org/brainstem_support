@@ -23,11 +23,11 @@ The behaviors model is a module in sessions used to describe the behaviors occur
 
 | Field | Description |
 |:------|:------------|
-| `Session` | Session of the behavior (**required**). Must reference an existing [sessions]({{"datamodel/stem/session/"|absolute_url}}). Example: "Training session #5" |
-| `Subjects` | Subjects taking part in the behavior (**required**). Can include multiple subjects. Example: "Mouse_01", "Mouse_02" |
-| `Setup` | Setup of the behavior (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Linear track A" |
-| `Behavioral paradigm` | Behavioral paradigm of the behavior (**required**). Must reference an existing [behavioral paradigm]({{"datamodel/personal_attributes/behavioralparadigm/"|absolute_url}}). Example: "Spatial alternation task" |
-| `Notes` | Notes about the behavior (string). Example: "Subject performed normally with 85% accuracy" |
+| ``Session`` | Session of the behavior (**required**). Must reference an existing [sessions]({{"datamodel/stem/session/"|absolute_url}}). Example: "Training session #5" |
+| ``Subjects`` | Subjects taking part in the behavior (**required**). Can include multiple subjects. Example: "Mouse_01", "Mouse_02" |
+| ``Setup`` | Setup of the behavior (**required**). Must reference an existing [setup]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Linear track A" |
+| ``Behavioral Paradigm`` | Behavioral paradigm of the behavior (**required**). Must reference an existing [behavioral paradigm]({{"datamodel/personal_attributes/behavioralparadigm/"|absolute_url}}). Example: "Spatial alternation task" |
+| ``Notes`` | Notes about the behavior (string). Example: "Subject performed normally with 85% accuracy" |
 
 ## Permissions
 

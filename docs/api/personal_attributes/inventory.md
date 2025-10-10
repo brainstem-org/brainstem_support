@@ -3,7 +3,7 @@ layout: default
 title: Inventory
 parent: Personal attributes
 grand_parent: API
-nav_order: 5
+nav_order: 3
 ---
 
 # Inventory API endpoint
@@ -22,12 +22,13 @@ nav_order: 5
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 50] |
+| `location` | string describing the location of the inventory |
 | `description` | string [max length: 500]|
 | `is_public` | boolean |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/inventory
 - **Data:** None
@@ -47,13 +48,15 @@ resp = client.load_model('inventory')
 {'inventories': [
     {
         'id': '58e0003d-16c2-4264-913d-288463c0356d',
-        'name': 'My probe inventory',
+        'name': 'Probe inventory',
+        'location': 'Lab Room 101',
         'description': '',
         'is_public': False
     },
     {
         'id': '3e9ec0e0-d685-42ec-8386-0fa24602a73e',
-        'name': "My virus inventory",
+        'name': 'Virus inventory',
+        'location': 'Lab Room 102',
         'description': '',
         'is_public': True
     }
@@ -63,7 +66,7 @@ resp = client.load_model('inventory')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/inventory
 - **Data:** JSON dictionary containing at least the required fields.
@@ -77,6 +80,7 @@ resp = client.load_model('inventory')
 resp = client.save_model("inventory",  data=
     {
         'name': 'My new probe inventory',
+        'location': 'Lab Room 103',
         'description': '',
         'is_public': False
     }
@@ -90,6 +94,7 @@ resp = client.save_model("inventory",  data=
 {'inventory': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'My new probe inventory',
+    'location': 'Lab Room 103',
     'description': '',
     'is_public': False}
 }
@@ -98,7 +103,7 @@ resp = client.save_model("inventory",  data=
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/inventory/<id\>/
 - **Data:** None
@@ -118,6 +123,7 @@ resp = client.load_model('inventory', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 {'inventory': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'My new probe inventory',
+    'location': 'Lab Room 103',
     'description': '',
     'is_public': False}
 }
@@ -125,7 +131,7 @@ resp = client.load_model('inventory', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/inventory/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -153,7 +159,7 @@ resp = client.save_model("inventory", id="d0ada97d-8607-48da-817b-bdd54bc9077b",
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/inventory/<id\>/
 - **Data:** None

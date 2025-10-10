@@ -27,7 +27,7 @@ nav_order: 4
 | `tags` | list of strings |
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/stem/cohort
 - **Data:** None
@@ -69,7 +69,7 @@ resp = client.load_model('cohort')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/stem/cohort
 - **Data:** JSON dictionary containing at least the required fields.
@@ -99,7 +99,7 @@ resp = client.save_model("cohort", data={"name": "NewRestCohort", "project": "e7
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/stem/cohort/<id\>/
 - **Data:** None
@@ -128,7 +128,7 @@ resp = client.load_model('cohort', id='54d5bab2-e520-4f1a-b518-6f66d28ee7ee')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/stem/cohort/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -158,7 +158,7 @@ resp = client.save_model("cohort", id="54d5bab2-e520-4f1a-b518-6f66d28ee7ee", da
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/stem/cohort/<id\>/
 - **Data:** None

@@ -21,12 +21,14 @@ nav_order: 7
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 100; must be unique]|
-| `description` | string [max length: 500] |
-| `comments` | string |
+| `description` | string [max length: 2000] |
+| `rrid` | Research Resource Identifier (RRID) |
+| `rrid_url` | URL to RRID lookup page **[read-only]** |
+| `external_identifiers` | JSON object containing external identifier information |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species
 - **Data:** None
@@ -59,7 +61,7 @@ resp = client.load_model('species')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species
 - **Data:** JSON dictionary containing at least the required fields.
@@ -85,13 +87,12 @@ resp = client.save_model("species",  data={
 {'species_approval': {
     'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
     'name': 'MyNewSpecies',
-    'description': '',
-    'comments': ''}
+    'description': ''}
 }
 ```
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species/<id\>/
 - **Data:** None
@@ -117,7 +118,7 @@ resp = client.load_model('species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -139,14 +140,13 @@ resp = client.save_model("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f", d
 {'species_approval': {
     'id': '5ccb907c-520a-4c67-baf1-ac23a71ab710',
     'name': 'MyNewSpecies',
-    'description': 'new text',
-    'comments': ''}
+    'description': 'new text'}
 }
 ```
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species/<id\>/
 - **Data:** None
@@ -163,7 +163,7 @@ resp = client.delete_model("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f")
 
 
 ## List approvals
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species_approvals
 - **Data:** None
@@ -185,7 +185,6 @@ resp = client.load_model('speciesapproval')
         'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
         'name': 'MyNewSpecies',
         'description': '',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -195,7 +194,6 @@ resp = client.load_model('speciesapproval')
         'id': '0e03a0f2-3b11-47bf-acc1-8b4b6d005692',
         'name': 'Digimon',
         'description': 'aaa',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': 3,
@@ -206,7 +204,7 @@ resp = client.load_model('speciesapproval')
 
 
 ## Detail approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species_approvals/<id\>/
 - **Data:** None
@@ -227,7 +225,6 @@ resp = client.load_model('speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988
     'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
     'name': 'MyNewSpecies',
     'description': '',
-    'comments': '',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,
@@ -237,7 +234,7 @@ resp = client.load_model('speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988
 
 
 ## Accept approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species_approvals/<id\>/
 - **Data:** None
@@ -252,7 +249,7 @@ resp = client.save_model("speciesapproval", id="529efb3b-99f9-4e42-90e3-f5990988
 
 
 ## Reject approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/taxonomies/species_approvals/<id\>/
 - **Data:** None

@@ -29,7 +29,7 @@ nav_order: 1
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/behavior
 - **Data:** None
@@ -73,7 +73,7 @@ resp = client.load_model('behavior')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/modules/behavior
 - **Data:** JSON dictionary containing at least the required fields.
@@ -111,7 +111,7 @@ resp = client.save_model("behavior",  data={
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/behavior/<id\>/
 - **Data:** None
@@ -142,7 +142,7 @@ resp = client.load_model('behavior', id='f9733b12-e2d5-4886-9e00-09ba26b01a16')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/behavior/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -174,7 +174,7 @@ resp = client.save_model("behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16", 
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/modules/behavior/<id\>/
 - **Data:** None

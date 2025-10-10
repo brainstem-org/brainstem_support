@@ -3,7 +3,7 @@ layout: default
 title: Behavioral paradigm
 parent: Personal attributes
 grand_parent: API
-nav_order: 5
+nav_order: 1
 ---
 
 # Behavioral paradigm API endpoint
@@ -23,14 +23,11 @@ nav_order: 5
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 50] |
 | `description` | string [max length: 500] |
-| `task` | string [max length: 100] |
-| `reward` | string [max length: 100] |
-| `sensory_stimulus_type` | related sensory stimulus type ID formatted as a string |
 | `setup_type` | related environment type ID formatted as a string **[required]** |
 | `is_public` | boolean |
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralparadigm
 - **Data:** None
@@ -51,27 +48,23 @@ resp = client.load_model('behavioralparadigm')
     {
         'id': 'febe36f7-4769-496d-bb91-6a8443214b94',
         'name': 'AlternationRunning',
-        'description': '12',
-        'task': "run",
-        'reward': None,
+        'description': 'Alternating running task',
         'setup_type': '531b2a21-ab1f-4aa8-8eaf-905421168d6b',
-        'sensory_stimulus_type': None
+        'is_public': False
     },
     {
         'id': 'f7bc834e-761c-4147-a3d4-da52293a565c',
         'name': 'ContinuousRunning',
-        'description': '',
-        'task': "run",
-        'reward': None,
+        'description': 'Continuous running task',
         'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-        'sensory_stimulus_type': 'b1912fcf-14dd-4b3b-b779-2d076df50150'
+        'is_public': True
     }
 ]}
 ```
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralparadigm
 - **Data:** JSON dictionary containing at least the required fields.
@@ -85,7 +78,7 @@ resp = client.load_model('behavioralparadigm')
 resp = client.save_model("behavioralparadigm",  data=
     {
         'name': 'PlayMarioKart',
-        'task': "Play Mario Kart on GameCube",
+        'description': 'Play Mario Kart on GameCube',
         'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
     }
 )
@@ -98,18 +91,16 @@ resp = client.save_model("behavioralparadigm",  data=
 {'behavioralparadigm': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
     'name': 'PlayMarioKart',
-    'description': '',
-    'task': 'Play Mario Kart on GameCube',
-    'reward': None,
+    'description': 'Play Mario Kart on GameCube',
     'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-    'sensory_stimulus_type': None}
+    'is_public': False}
 }
 ```
 
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralparadigm/<id\>/
 - **Data:** None
@@ -129,17 +120,15 @@ resp = client.load_model('behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b94ac
 {'behavioralparadigm': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
     'name': 'PlayMarioKart',
-    'description': '',
-    'task': 'Play Mario Kart on GameCube',
-    'reward': None,
+    'description': 'Play Mario Kart on GameCube',
     'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-    'sensory_stimulus_type': None}
+    'is_public': False}
 }
 ```
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralparadigm/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -170,7 +159,7 @@ resp = client.save_model("behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralparadigm/<id\>/
 - **Data:** None

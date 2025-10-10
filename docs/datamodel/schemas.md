@@ -23,4 +23,8 @@ The Schemas in BrainSTEM define the structure and organization of data for vario
 
 - [**Procedure log types**]({{site.baseurl}}/datamodel/schemas/procedurelog): Provides a structured system for recording specific parameters or outcomes related to procedures performed during experiments.
 
-- [**Consumables types**]({{site.baseurl}}/datamodel/schemas/consumable): Outlines the data structure for different types of consumable resources used in experiments.
+- [**Consumable stock types**]({{site.baseurl}}/datamodel/schemas/consumablestock): Outlines the data structure for different types of consumable stock items managed in inventory.
+
+- [**Consumables types**]({{site.baseurl}}/datamodel/schemas/consumable): Defines the data structure for different types of consumable resources used in experiments.
+
+- [**Relations**]({{site.baseurl}}/datamodel/schemas/relations): Specifies the structure for defining relationships between different data entities in the system.

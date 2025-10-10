@@ -3,7 +3,7 @@ layout: default
 title: Procedure log
 parent: Schemas
 grand_parent: API
-nav_order: 1
+nav_order: 6
 ---
 
 # Procedure log schemas
@@ -20,60 +20,137 @@ nav_order: 1
 {
     "type": "object",
     "title": "Impedances",
+    "options": {
+        "compact": "true"
+    },
+    "additionalProperties": false,
     "properties": {
         "impedances": {
             "title": "Impedances (kOhm)",
-            "type": "number",
-            "minimum": 0
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "number",
+                "minimum": 0
+            }
         },
         "phases": {
             "title": "Phases (degrees)",
-            "type": ["number", "null"]
+            "type": "array",
+            "items": {
+                "type": "number",
+                "minimum": 0
+            }
         },
         "channels": {
             "title": "List of channels",
-            "type": "number",
-            "minimum": 0
+            "type": "array",
+            "items": {
+                "type": "number",
+                "minimum": 0
+            }
         }
     },
-    "required": ["impedances"]
+    "required": [
+        "impedances"
+    ]
 }
 ```
 
-*Impedances* is a **required** field.
-
-### Example of JSON according to this schema
-{: .no_toc}
-```
-{
-    "impedances": 2,
-    "phases": [15],
-    "channels": [0,2,3]
-}
-```
-
-
-## Linear displacement
+## LinearDisplacement
 ```
 {
     "type": "object",
     "title": "Linear displacement",
+    "options": {
+        "compact": "true"
+    },
+    "additionalProperties": false,
     "properties": {
         "displacement": {
-            "title": "Displacement (µm)",
+            "title": "Displacement (\u00b5m)",
             "type": "number"
         }
     },
-    "required": ["displacement"]
+    "required": [
+        "displacement"
+    ]
 }
 ```
 
-*Displacement* is a **required** field.
-
-### Example of JSON according to this schema
-{: .no_toc}
+## Tetrodes4
 ```
 {
-    "displacement": 12
+    "type": "object",
+    "title": "Tetrode log (4 tetrodes)",
+    "options": {
+        "compact": "true"
+    },
+    "additionalProperties": false,
+    "properties": {
+        "tetrode_1": {
+            "title": "Tetrode #1 (\u00b5m)",
+            "type": "number"
+        },
+        "tetrode_2": {
+            "title": "Tetrode #2 (\u00b5m)",
+            "type": "number"
+        },
+        "tetrode_3": {
+            "title": "Tetrode #3 (\u00b5m)",
+            "type": "number"
+        },
+        "tetrode_4": {
+            "title": "Tetrode #4 (\u00b5m)",
+            "type": "number"
+        }
+    }
 }
 ```
+
+## Tetrodes8
+```
+{
+    "type": "object",
+    "title": "Tetrode log (4 tetrodes)",
+    "options": {
+        "compact": "true"
+    },
+    "additionalProperties": false,
+    "properties": {
+        "tetrode_1": {
+            "title": "Tetrode #1 (\u00b5m)",
+            "type": "number"
+        },
+        "tetrode_2": {
+            "title": "Tetrode #2 (\u00b5m)",
+            "type": "number"
+        },
+        "tetrode_3": {
+            "title": "Tetrode #3 (\u00b5m)",
+            "type": "number"
+        },
+        "tetrode_4": {
+            "title": "Tetrode #4 (\u00b5m)",
+            "type": "number"
+        },
+        "tetrode_5": {
+            "title": "Tetrode #5 (\u00b5m)",
+            "type": "number"
+        },
+        "tetrode_6": {
+            "title": "Tetrode #6 (\u00b5m)",
+            "type": "number"
+        },
+        "tetrode_7": {
+            "title": "Tetrode #7 (\u00b5m)",
+            "type": "number"
+        },
+        "tetrode_8": {
+            "title": "Tetrode #8 (\u00b5m)",
+            "type": "number"
+        }
+    }
+}
+```
+

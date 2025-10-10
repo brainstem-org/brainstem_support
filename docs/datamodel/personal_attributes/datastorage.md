@@ -19,15 +19,16 @@ nav_order: 2
 
 Data storages describe the storage solution for sessions. A data storage can be accessible with multiple protocols. You must also defined how data is organized in the Data storage.
 
-## Session fields
+## Fields
 
-| Field                | Description |
-|:---------------------|:------------|
-| `Name`                 | Name of the data storage (**required**; string; maximum length: 100 characters). Example: "Lab Server 01" |
-| `Authenticated groups` | Groups that have change permissions for this data storage (**required**). Example: "Lab B Data Team" |
-| `Description`          | Rich text description of the data storage. Can include uploaded images. Example: "Primary data storage server for electrophysiology recordings..." |
-| `Data organization`    | How data is organized in the data storage. Example: "Projects/Subjects/Sessions/Data" |
-| `Data storage protocols` | Protocols used (local, network, cloud, web, peer-to-peer). Include path and public status for each. Example: "Network: smb://labserver/data, Private access" |
+| Field | Description |
+|:------|:------------|
+| ``Data storage name`` | Name of the data storage (**required**; string; maximum length: 100 characters; must be unique). Example: "Lab Server 01" |
+| ``Location`` | Location of the data storage (optional). Example: "Cabinet A", "Computer B", "Network storage C" |
+| ``Authenticated groups`` | Groups that have change permissions for this data storage (**required**). Example: "Lab B Data Team" |
+| ``Description`` | Rich text description of the data storage (optional). Can include uploaded images. Example: "Primary data storage server for electrophysiology recordings..." |
+| ``Data organization`` | How data is organized in the data storage in JSON format (optional). Example: "Projects → Subjects → Sessions" |
+| ``Data protocols`` | Protocols used for data access in JSON format (optional). Include path and public status for each protocol type (local, network, cloud, web, peer-to-peer). Example: "Network: smb://labserver/data, Private access" |
 
 ## Permissions
 

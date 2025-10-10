@@ -23,9 +23,10 @@ This log records the electrical impedance of electrodes implanted in the brain o
 
 | Field | Description |
 |:------|:------------|
-| `Impedances` | Array of impedance measurements for the electrodes (**required**; non-negative numbers; measured in kOhm). These values indicate the resistance to electrical current flow between the electrode and surrounding tissue |
-| `Phases` | Array of phase angle measurements (non-negative numbers; measured in degrees). These values represent the phase shift between voltage and current, providing information about the electrode-tissue interface properties |
+| `Impedances` | Array of impedance measurements for the electrodes (**required**; non-negative numbers). These values indicate the resistance to electrical current flow between the electrode and surrounding tissue |
+| `Phases` | Array of phase angle measurements (non-negative numbers). These values represent the phase shift between voltage and current, providing information about the electrode-tissue interface properties |
 | `List of channels` | Array of channel identifiers (non-negative integers) corresponding to the recording channels being measured. Used to track which impedance measurements correspond to which electrode channels |
+| `Permission uids at deletion` | List of permission user IDs at the time of deletion (array). Records which users had permission when the entry was deleted |
 
 ## Linear displacement log
 
@@ -33,7 +34,8 @@ A linear displacement log tracks the movement or position of an object or device
 
 | Field | Description |
 |:------|:------------|
-| `Displacement` | The distance moved from a reference position (**required**; float; measured in μm). Records the linear movement of the device, typically representing depth in brain tissue or position along a track |
+| `Displacement` | The distance moved from a reference position (**required**; float). Records the linear movement of the device, typically representing depth in brain tissue or position along a track |
+| `Permission uids at deletion` | List of permission user IDs at the time of deletion (array). Records which users had permission when the entry was deleted |
 
 ## Tetrode log (4 tetrodes)
 
@@ -41,10 +43,11 @@ This log keeps records related to the use and performance of a set of four tetro
 
 | Field | Description |
 |:------|:------------|
-| `Tetrode #1` | Position measurement for the first tetrode (float; measured in μm) |
-| `Tetrode #2` | Position measurement for the second tetrode (float; measured in μm) |
-| `Tetrode #3` | Position measurement for the third tetrode (float; measured in μm) |
-| `Tetrode #4` | Position measurement for the fourth tetrode (float; measured in μm) |
+| `Tetrode #1` | Position measurement for the first tetrode (float) |
+| `Tetrode #2` | Position measurement for the second tetrode (float) |
+| `Tetrode #3` | Position measurement for the third tetrode (float) |
+| `Tetrode #4` | Position measurement for the fourth tetrode (float) |
+| `Permission uids at deletion` | List of permission user IDs at the time of deletion (array). Records which users had permission when the entry was deleted |
 
 ## Tetrode log (8 tetrodes)
 
@@ -52,14 +55,15 @@ Similar to the log for four tetrodes, this log pertains to experiments involving
 
 | Field | Description |
 |:------|:------------|
-| `Tetrode #1` | Position measurement for the first tetrode (float; measured in μm) |
-| `Tetrode #2` | Position measurement for the second tetrode (float; measured in μm) |
-| `Tetrode #3` | Position measurement for the third tetrode (float; measured in μm) |
-| `Tetrode #4` | Position measurement for the fourth tetrode (float; measured in μm) |
-| `Tetrode #5` | Position measurement for the fifth tetrode (float; measured in μm) |
-| `Tetrode #6` | Position measurement for the sixth tetrode (float; measured in μm) |
-| `Tetrode #7` | Position measurement for the seventh tetrode (float; measured in μm) |
-| `Tetrode #8` | Position measurement for the eighth tetrode (float; measured in μm) |
+| `Tetrode #1` | Position measurement for the first tetrode (float) |
+| `Tetrode #2` | Position measurement for the second tetrode (float) |
+| `Tetrode #3` | Position measurement for the third tetrode (float) |
+| `Tetrode #4` | Position measurement for the fourth tetrode (float) |
+| `Tetrode #5` | Position measurement for the fifth tetrode (float) |
+| `Tetrode #6` | Position measurement for the sixth tetrode (float) |
+| `Tetrode #7` | Position measurement for the seventh tetrode (float) |
+| `Tetrode #8` | Position measurement for the eighth tetrode (float) |
+| `Permission uids at deletion` | List of permission user IDs at the time of deletion (array). Records which users had permission when the entry was deleted |
 
 ## API access
 

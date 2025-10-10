@@ -23,11 +23,10 @@ nav_order: 6
 | `name` | string **[required]** [max length: 100; must be unique] |
 | `description` | string |
 | `website` | string [max length: 200] |
-| `comments` | string |
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/supplier
 - **Data:** None
@@ -62,7 +61,7 @@ resp = client.load_model('supplier')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/resources/supplier
 - **Data:** JSON dictionary containing at least the required fields.
@@ -89,15 +88,14 @@ resp = client.save_model("supplier",  data={
     'id': '1af72008-d203-4bea-9766-f692b8a89df6',
     'name': 'MyNewSupplier',
     'description': '',
-    'website': 'http://newsupplier.com',
-    'comments': ''}
+    'website': 'http://newsupplier.com'}
 }
 ```
 
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/supplier/<id\>/
 - **Data:** None
@@ -124,7 +122,7 @@ resp = client.load_model('supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/supplier/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -147,14 +145,13 @@ resp = client.save_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", 
     'id': 'e52eb599-a42f-4c37-9298-9bc4c9b42ff0',
     'name': 'MyNewSupplier',
     'description': 'new text',
-    'website': 'http://newsupplier.com',
-    'comments': ''}
+    'website': 'http://newsupplier.com'}
 }
 ```
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/resources/supplier/<id\>/
 - **Data:** None
@@ -172,7 +169,7 @@ resp = client.delete_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e"
 
 
 ## List approvals
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals
 - **Data:** None
@@ -195,7 +192,6 @@ resp = client.load_model('supplierapproval')
         'name': 'MyNewSupplier',
         'description': '',
         'website': 'http://newsupplier.com',
-        'comments': '',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -206,7 +202,6 @@ resp = client.load_model('supplierapproval')
         'name': 'NeuroNexus',
         'description': 'bbb',
         'website': '',
-        'comments': 'Update description',
         'instance_id': 'f314f4b0-a51d-45f8-8cda-d9dade2bff66',
         'action': 'Change',
         'reviewer': 3,
@@ -217,7 +212,7 @@ resp = client.load_model('supplierapproval')
 
 
 ## Detail approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals/<id\>/
 - **Data:** None
@@ -239,7 +234,6 @@ resp = client.load_model('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a
     'name': 'MyNewSupplier',
     'description': '',
     'website': 'http://newsupplier.com',
-    'comments': '',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,
@@ -249,7 +243,7 @@ resp = client.load_model('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a
 
 
 ## Accept approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals/<id\>/
 - **Data:** None
@@ -264,7 +258,7 @@ resp = client.save_model("supplierapproval", id="1af72008-d203-4bea-9766-f692b8a
 
 
 ## Reject approval
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals/<id\>/
 - **Data:** None

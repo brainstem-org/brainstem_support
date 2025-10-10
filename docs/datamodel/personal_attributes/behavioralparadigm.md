@@ -19,37 +19,15 @@ nav_order: 1
 
 Behavioral paradigms describe the paradigm a subject performs in details. The paradigm belongs to a type of environment.
 
-## Session fields
+## Fields
 
-| Field                | Description |
-|:---------------------|:------------|
-| `Name`                 | Name of the behavioral paradigm (**required**; string; maximum length: 50 characters). Example: "T-maze alternation task" |
-| `Environment type`     | Type of environment in which the behavioral paradigm is performed (**required**). Example: "T-maze" |
-| `Authenticated groups` | Groups that have change permissions for this behavioral paradigm (**required**). Example: "Lab A", "Neuroscience Department" |
-| `Description`          | Rich text description of the behavioral paradigm. Can include uploaded images. Example: "In this task, rodents alternate between left and right arms of a T-maze to receive rewards..." |
-| `Public access`        | Determines if the behavioral paradigm is publicly available or accessible only through the private portal. Example: "True" for public access |
-
-## Types of environment type
-
-- Barnes maze
-- Circular track
-- Elevated plus maze
-- Elevated zero maze
-- Figure eight maze
-- Forced swim test
-- Head-fixed disc
-- Homecage
-- Linear Track
-- Morris water maze
-- Open field environment
-- Radial arm maze
-- Running wheel
-- Sleepbox
-- Square cage
-- Theta maze
-- T-maze
-- Y-maze
-- Other
+| Field | Description |
+|:------|:------------|
+| ``Name of behavioral paradigm`` | Name of the behavioral paradigm (**required**; string; maximum length: 50 characters). Example: "T-maze alternation task" |
+| ``Setup type`` | Type of environment in which the behavioral paradigm is performed (**required**). Must reference an existing [setup type]({{"datamodel/taxonomies/setuptype/"|absolute_url}}). Example: "T-maze" |
+| ``Authenticated groups`` | Groups that have change permissions for this behavioral paradigm (**required**). Example: "Lab A", "Neuroscience Department" |
+| ``Description`` | Rich text description of the behavioral paradigm. Can include uploaded images. Example: "In this task, rodents alternate between left and right arms of a T-maze to receive rewards..." |
+| ``Public access`` | Determines if the behavioral paradigm is publicly available or accessible only through the private portal. Example: "True" for public access |
 
 ## Permissions
 

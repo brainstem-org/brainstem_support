@@ -31,35 +31,11 @@ nav_order: 5
 
 ## Types of manipulation
 
-### Electrical and Magnetic Stimulation
-- `DeepBrainStimulation`: Deep brain stimulation (DBS)
-- `ElectricalStimulation`: Electrical stimulation
-- `ElectromagneticFieldStimulation`: Electromagnetic field stimulation
-- `TranscranialElectricalStimulation`: Transcranial electrical stimulation
-- `TranscranialMagneticStimulation`: Transcranial magnetic stimulation (TMS)
-
-### Optical, Thermal and Ultrasound Stimulation
-- `OptogeneticStimulation`: Optogenetic stimulation
-- `ThermalPerturbation`: Thermal perturbation
-- `UltrasoundStimulation`: Ultrasound stimulation
-
-### Chemical and Pharmacological Perturbations
-- `LiquidPerturbation`: Liquid perturbation
-- `Microperfusion`: Microperfusion
-- `PharmacologicalInjection`: Pharmacological injection
-- `PharmacologicalSuperfusion`: Pharmacological superfusion
-- `PharmacologicalInhalation`: Pharmacological inhalation
-
-### Sensory Stimulation
-- `AuditoryStimulation`: Auditory stimulation
-- `MultisensoryStimulation`: Multisensory stimulation
-- `OdorStimulation`: Odor stimulation
-- `TactileStimulation`: Tactile stimulation
-- `VisualStimulation`: Visual stimulation
+A detailed list of the available `type` options and accepted schemas for the `details` field can be found in the [Manipulation schemas documentation](/api/schemas/manipulation).
 
 
 ## List view
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/manipulation
 - **Data:** None
@@ -122,7 +98,7 @@ resp = client.load_model('manipulation')
 
 
 ## Add
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** https://www.brainstem.org/api/private/modules/manipulation
 - **Data:** JSON dictionary containing at least the required fields.
@@ -184,7 +160,7 @@ resp = client.save_model(
 
 
 ## Detail
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/modules/manipulation/<id\>/
 - **Data:** None
@@ -225,7 +201,7 @@ resp = client.load_model('manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad
 
 
 ## Change
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** https://www.brainstem.org/api/private/modules/manipulation/<id\>/
 - **Data:** dictionary containing the fields to be updated
@@ -271,7 +247,7 @@ resp = client.save_model(
 
 
 ## Delete
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** https://www.brainstem.org/api/private/modules/manipulation/<id\>/
 - **Data:** None

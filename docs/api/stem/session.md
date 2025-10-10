@@ -65,7 +65,7 @@ Use the Session → Data Storage endpoint (`/api/private/stem/sessiondatastorage
 
 ## List view
 
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** <https://www.brainstem.org/api/private/stem/session>
 - **Data:** None
@@ -120,7 +120,7 @@ resp = client.load_model("session")
 
 ## Add
 
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** POST
 - **URL:** <https://www.brainstem.org/api/private/stem/session>
 - **Data:** JSON dictionary containing at least the required fields. Callers must have `change_project` permission for each project and `change_datastorage` for each data storage referenced.
@@ -165,7 +165,7 @@ resp = client.save_model(
 
 ## Detail
 
-- **Allowed portals:** public, private, super
+- **Allowed portals:** public, private
 - **Request method:** GET
 - **URL:** `https://www.brainstem.org/api/private/stem/session/<id>/`
 - **Data:** None
@@ -209,7 +209,7 @@ resp = client.load_model("session", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
 
 ## Change
 
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** PATCH
 - **URL:** `https://www.brainstem.org/api/private/stem/session/<id>/`
 - **Data:** dictionary containing the fields to be updated. Callers must have `change_project` permission for each project and `change_datastorage` for each data storage referenced.
@@ -251,7 +251,7 @@ resp = client.save_model(
 
 ## Delete
 
-- **Allowed portals:** private, super
+- **Allowed portals:** private
 - **Request method:** DELETE
 - **URL:** `https://www.brainstem.org/api/private/stem/session/<id>/`
 - **Data:** None
