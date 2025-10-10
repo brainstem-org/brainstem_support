@@ -132,4 +132,4 @@ After making your data publicly available, consider these enhancements:
 - **Improve discoverability**: Use [Submit Resources & Taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies) to contribute standardized resources that make your data more findable
 - **Document protocols thoroughly**: Ensure your [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) are well-documented for protocol reproducibility
 - **Optimize data access**: Review [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to ensure public data has appropriate file access protocols
-- **Enable programmatic access**: Share example API scripts in the [Python API tool]({{site.baseurl}}/tutorials/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/tutorials/matlab-api-tool) tutorials
+- **Enable programmatic access**: Share example API scripts in the [Python API tool]({{site.baseurl}}/api-tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/api-tools/matlab-api-tool) tutorials

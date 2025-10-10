@@ -16,84 +16,146 @@ nav_order: 7
 
 ## Introduction
 
-BrainSTEM maintains controlled lists of resources and taxonomies that can be expanded through user submissions. All submissions go through an approval process to maintain data quality and consistency.
+BrainSTEM maintains standardized, controlled vocabularies for resources and taxonomies to ensure data consistency across the platform. As a user, you can contribute new entries when you encounter equipment, consumables, or taxonomic classifications that aren't yet in the system. All submissions undergo an administrative review process to maintain data quality and prevent duplicates.
+
+This tutorial guides you through submitting new resources and taxonomies, tracking their approval status, and using approved entries in your research documentation.
 
 ## Available Resources & Taxonomies
 
-Resources that can be submitted:
-- [Consumables]({{"datamodel/resources/consumable/"|absolute_url}})
-- [Hardware devices]({{"datamodel/resources/hardwaredevice/"|absolute_url}}) 
-- [Suppliers]({{"datamodel/resources/supplier/"|absolute_url}})
+### Resources
+{: .no_toc}
 
-Taxonomies that can be submitted:
-- [Brain regions]({{"datamodel/taxonomies/brainregion/"|absolute_url}})
-- [Setup types]({{"datamodel/taxonomies/setuptype/"|absolute_url}})
-- [Species]({{"datamodel/taxonomies/species/"|absolute_url}})
-- [Strains]({{"datamodel/taxonomies/strain/"|absolute_url}})
+Laboratory materials and equipment that can be submitted:
+
+| Resource Type | Description | Examples |
+|--------------|-------------|----------|
+| **[Consumables]({{"datamodel/resources/consumable/"|absolute_url}})** | Materials used in experiments | Silicon probes, viral vectors, pharmaceutical agents, electrodes |
+| **[Hardware devices]({{"datamodel/resources/hardwaredevice/"|absolute_url}})** | Electronic equipment and instruments | Recording systems, cameras, stimulation devices, microscopes |
+| **[Suppliers]({{"datamodel/resources/supplier/"|absolute_url}})** | Vendors and manufacturers | Equipment manufacturers, chemical suppliers, research distributors |
+
+### Taxonomies
+{: .no_toc}
+
+Standardized classifications for biological and experimental categories:
+
+| Taxonomy Type | Description | Examples |
+|--------------|-------------|----------|
+| **[Brain regions]({{"datamodel/taxonomies/brainregion/"|absolute_url}})** | Anatomical brain structures | Hippocampus CA1, Primary visual cortex, Basal ganglia |
+| **[Setup types]({{"datamodel/taxonomies/setuptype/"|absolute_url}})** | Experimental environment categories | T-maze, Open field, Head-fixed disc, Surgical table |
+| **[Species]({{"datamodel/taxonomies/species/"|absolute_url}})** | Organism species | Mus musculus, Rattus norvegicus, Macaca mulatta |
+| **[Strains]({{"datamodel/taxonomies/strain/"|absolute_url}})** | Genetic strains within species | C57BL/6J, Long-Evans, Sprague-Dawley |
 
 ## Submission Process
 
 ### Before Submitting
 
-1. **Check for existing entries:** Search the current lists to avoid duplicating existing resources or taxonomies
-2. **Gather complete information:** Ensure you have all necessary details like specifications, supplier information, or scientific classifications
-3. **Verify accuracy:** Double-check names, spellings, and technical details
+**Essential pre-submission checklist:**
+
+1. **Search for existing entries:** Check if the resource or taxonomy already exists to avoid duplicates
+2. **Gather complete information:** Collect all necessary details:
+   - For consumables: Product name, catalog number, supplier, specifications
+   - For hardware devices: Manufacturer, model number, technical specifications, interface details
+   - For taxonomies: Scientific names, standard references, descriptions
+3. **Verify accuracy:** Double-check names, spellings, and technical specifications
+4. **Prepare documentation:** Have links to manufacturer pages, datasheets, or scientific references ready
 
 ### Submitting New Entries
 
-1. Navigate to the appropriate section in BrainSTEM:
-   - For resources: Go to *Resources* → select the type (Consumables, Hardware devices, or Suppliers)
-   - For taxonomies: Go to *Taxonomies* → select the type (Setup types, Species, or Strains)
+**To submit a new resource or taxonomy:**
 
-2. Click the *Add* button for the resource or taxonomy type
+1. Navigate to the appropriate section:
+   - **Resources**: Go to **Resources** → Select type (**Consumables**, **Hardware devices**, or **Suppliers**)
+   - **Taxonomies**: Go to **Taxonomies** → Select type (**Brain regions**, **Setup types**, **Species**, or **Strains**)
 
-3. Fill out the submission form with all required fields:
-   - **For consumables:** Include product name, supplier, specifications
-   - **For hardware devices:** Provide manufacturer, model, specifications, interface details
-   - **For species/strains:** Include scientific names, common names, description
+2. Click the **Add** button for the resource or taxonomy type
 
-4. Add detailed descriptions to help other users understand when to use this entry
+3. Fill out the submission form with required information:
 
-5. Submit the form for admin review
+| Resource/Taxonomy | Required Fields | Best Practices |
+|------------------|----------------|----------------|
+| **Consumables** | Product name, consumable type, supplier | Include catalog numbers, specifications, and intended use |
+| **Hardware devices** | Manufacturer, model, device type | Provide technical specs, connectivity details, and compatible systems |
+| **Suppliers** | Name, website, contact information | Include geographic regions served and product specialties |
+| **Setup types** | Environment type name, category | Describe typical experimental use cases |
+| **Species** | Scientific name, common name | Follow NCBI Taxonomy database conventions |
+| **Strains** | Strain name, species, description | Include genetic background and supplier sources |
+
+4. Add detailed **Description** field content to help other users understand when to use this entry
+
+5. Click **Submit** for admin review
 
 {: .note }
-> Provide as much detail as possible in descriptions. This helps admins review submissions faster and helps other users select the correct entries.
+> Detailed descriptions speed up admin review and help other users select the correct entries. Include specifications, use cases, and any relevant technical details.
 
-### Common Submission Guidelines
+### Submission Guidelines
 
-- **Use standard nomenclature:** Follow established scientific naming conventions
-- **Include references:** Add citations for taxonomies based on published atlases or classifications  
-- **Be specific:** "Silicon probe, 32-channel, A1x32-Poly2" is better than just "Silicon probe"
-- **Check spelling:** Typos can lead to rejection or confusion
+**Follow these standards for high-quality submissions:**
+
+- **Use standard nomenclature:** Follow established scientific naming conventions (e.g., NCBI for species)
+- **Be specific and descriptive:** 
+  - Good: "NeuroNexus A1x32-Poly2 silicon probe, 32-channel, 25μm spacing"
+  - Avoid: "Silicon probe"
+- **Include references:** Cite manufacturer datasheets, or scientific classifications
+- **Check spelling carefully:** Typos can cause rejection or create confusion in the database
+- **Avoid abbreviations without context:** Define acronyms and technical terms in descriptions
+- **Provide manufacturer links:** Include URLs to product pages or technical documentation where applicable
 
 ## Tracking Submissions
 
-### Monitoring Status
+### Monitoring Approval Status
 
-1. Go to [https://www.brainstem.org/private/approvals/](https://www.brainstem.org/private/approvals/)
-2. View the status of your submissions:
-   - **Pending:** Under admin review
-   - **Approved:** Accepted and available to all users
-   - **Rejected:** Declined with feedback for revision
-3. Check the "Comments" field for admin feedback or revision requests
+**To check the status of your submissions:**
+
+1. Navigate to [www.brainstem.org/private/approvals/](https://www.brainstem.org/private/approvals/)
+2. Review your submissions and their current status:
+
+| Status | Description | Action Required |
+|--------|-------------|----------------|
+| **Pending** | Under administrative review | Wait for admin feedback; no action needed |
+| **Approved** | Accepted and now available to all users | Entry is live; you can use it in your experiments |
+| **Rejected** | Declined with feedback | Review comments and revise submission |
+| **Revision Requested** | Needs modifications before approval | Address feedback and resubmit |
+
+3. Check the **Comments** field for detailed admin feedback or revision requests
 
 ### Responding to Feedback
 
-If your submission needs revision:
-1. Read the admin comments carefully
-2. Make the suggested changes
-3. Resubmit following the same process
-4. Reference the original submission in your revision notes
+**If your submission requires revisions:**
+
+1. **Read admin comments carefully** to understand specific concerns or needed improvements
+2. **Gather additional information** if specifications, references, or details are requested
+3. **Make suggested changes** to address each point of feedback
+4. **Resubmit** following the same submission process
+5. **Add notes** in the submission referencing the original entry and explaining your revisions
+
+**Common reasons for revision requests:**
+- Missing technical specifications or catalog numbers
+- Unclear or ambiguous naming
+- Duplicate entries (similar item already exists)
+- Need for additional references or documentation
+- Inconsistent formatting or nomenclature
 
 {: .tip }
-> Admins may request clarification on specifications, ask for additional references, or suggest naming improvements. Addressing feedback promptly helps speed up the approval process.
+> Responding promptly to admin feedback speeds up the approval process. Most revisions are simple clarifications that can be addressed quickly.
 
 ## After Approval
 
-Once approved:
-- The entry becomes available in dropdown menus across BrainSTEM
-- All users can select and use the approved entry
-- The entry can be referenced in new submissions
+Once your submission is approved, it becomes part of the BrainSTEM platform:
+
+**Immediate effects:**
+- ✅ The entry appears in dropdown menus across BrainSTEM
+- ✅ All users can select and reference the approved entry
+- ✅ The entry becomes searchable in the resources/taxonomies database
+- ✅ You can use it in your experimental documentation (setups, procedures, sessions)
+
+**Long-term impact:**
+- Your contribution helps standardize data across the research community
+- Other labs can use your submissions, improving data interoperability
+- The entry can be referenced in future resource submissions
+- It becomes part of the permanent BrainSTEM vocabulary
+
+{: .note }
+> Approved entries cannot be deleted but can be marked as deprecated if they become obsolete. Contact administrators if an entry needs updating.
 
 ## Next Steps
 

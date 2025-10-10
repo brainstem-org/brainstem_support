@@ -84,9 +84,9 @@ Set up how to access your data storage. You can configure multiple protocols for
 
 | Storage Type | Protocol | Path Example | Public |
 |--------------|----------|--------------|--------|
-| **Network/Server** | SMB/CIFS | `/mnt/labserver/data/` | No |
-| **Cloud Storage** | Dropbox | `data/myproject` | No |
 | **Local Drive** | Local Storage | `/Users/researcher/data/` | No |
+| **Network/Server** | SMB/CIFS | `smb://uni.domain/group/data/` | No |
+| **Cloud Storage** | Dropbox | `data/myproject` | No |
 | **Public Repository** | HTTPS/Web | `https://dandiarchive.org/dandiset/123456/` | Yes |
 
 {: .important }
@@ -125,7 +125,6 @@ When you associate a data storage with a session, BrainSTEM can automatically co
 1. **Data storage base path**: The root location defined in your data storage protocols
 2. **Organization structure**: How you've defined data should be organized
 3. **Session metadata**: Project names, subject names, session names, dates
-4. **Custom storage name**: The specific name you've assigned for storage
 
 ### Example Dynamic Path Construction
 {: .no_toc}
@@ -135,12 +134,12 @@ When you associate a data storage with a session, BrainSTEM can automatically co
 | Field | Value |
 |-------|-------|
 | **Name** | Lab Server Main |
-| **Base path** | `/mnt/labserver/data/` |
+| **Base path** | `/Volumes/StorageName/Data/` |
 | **Organization** | Projects → Subjects → Sessions |
 
 **Dynamic Path:**
 ```
-/mnt/labserver/data/{projects}/{subjects}/{sessions}/
+/Volumes/StorageName/Data/{projects}/{subjects}/{sessions}/
 ```
 
 {: .note }
@@ -157,7 +156,7 @@ When you associate a data storage with a session, BrainSTEM can automatically co
 
 **Resulting Path:**
 ```
-/mnt/labserver/data/Memory_Study_2024/Mouse_001/ses01_baseline/
+/Volumes/StorageName/Data/Memory_Study_2024/Mouse_001/ses01_baseline/
 ```
 
 ### API Access to Dynamic Paths
@@ -179,7 +178,7 @@ session_data = session_response.json()['sessions'][0]
 storage_info = session_data['datastorage']
 
 # Access configured protocols and paths
-for protocol in storage_info['data_protocols_json']:
+for protocol in storage_info['data_protocols']:
     print(f"Protocol: {protocol['protocol']}")
     print(f"Base path: {protocol['path']}")
     print(f"Public access: {protocol['is_public']}")
@@ -197,10 +196,10 @@ def construct_data_path(session_data):
 
     # Use the first configured protocol by default.
     # Update this selection if your storage relies on a specific protocol.
-    base_path = storage['data_protocols_json'][0]['path']
+    base_path = storage['data_protocols'][0]['path']
     
     # Extract organization elements
-    organization = storage['data_organization_json']
+    organization = storage['data_organization']
     
     # Build path based on organization structure
     path_components = [base_path]
@@ -330,7 +329,7 @@ function data_info = load_session_data(session_id)
     storage = session_data.datastorage;
 
     % Use the first configured protocol; adjust if a specific protocol is required.
-    base_path = storage.data_protocols_json{1}.path;
+    base_path = storage.data_protocols{1}.path;
     
     % Construct full path (simplified example)
     project_name = session_data.projects{1}.name;
@@ -345,35 +344,6 @@ function data_info = load_session_data(session_id)
 end
 ```
 
-## Advanced Configuration
-
-### Multiple Protocol Setup
-{: .no_toc}
-
-Configure multiple access methods for the same data storage to support different use cases:
-
-```json
-{
-  "data_protocols_json": [
-    {
-      "protocol": "Local harddrive",
-      "path": "/mnt/labserver/data",
-      "is_public": false
-    },
-    {
-      "protocol": "Dropbox (Cloud solution)",
-      "path": "lab_backup",
-      "is_public": false
-    },
-    {
-      "protocol": "Web",
-      "path": "https://dandiarchive.org/dandiset/123456",
-      "is_public": true
-    }
-  ]
-}
-```
-
 This allows users to access data via local mount, cloud backup, or public repository depending on their needs.
 
 ### Custom Organization Patterns
@@ -383,17 +353,17 @@ Configure your organization structure to match your lab's file hierarchy:
 
 ```json
 {
-  "data_organization_json": [
-    {"elements": "Projects"},
-    {"elements": "Subjects"},
-    {"elements": "Sessions"}
-  ]
+  "data_organization": [
+    "Projects",
+    "Subjects",
+    "Sessions"
+  ],
 }
 ```
 
 **Example resulting path:**
 ```
-/mnt/labserver/data/Memory_Study/Mouse_001/Baseline_Recording/
+/Volumes/StorageName/Data/Memory_Study/Mouse_001/Baseline_Recording/
 ```
 
 By following this tutorial, you can effectively manage data storage in BrainSTEM, creating seamless links between your metadata and actual data files for efficient analysis workflows.

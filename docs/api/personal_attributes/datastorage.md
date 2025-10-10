@@ -234,7 +234,7 @@ resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2
     'name': 'MyNewRepo',
     'description': 'new text',
     'is_public': False,
-    'data_organization_json': [
+    'data_organization': [
                 {
                     "elements": "Sessions"
                 },
@@ -242,7 +242,7 @@ resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2
                     "elements": "Subjects"
                 }
             ],
-    'data_protocols_json': [
+    'data_protocols': [
                 {
                     "protocol": "Dropbox (Cloud solution)",
                     "path": "data/myproject",

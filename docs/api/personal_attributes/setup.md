@@ -25,7 +25,7 @@ nav_order: 4
 | `location` | string describing the location of the setup |
 | `description` | string [max length: 500]|
 | `setup_type` | related environment type ID formatted as a string **[required]** |
-| `specifications` | JSON dictionary describing setup specifications |
+| `specifications` | JSON array describing setup specifications |
 | `is_public` | boolean |
 
 
@@ -65,7 +65,7 @@ resp = client.load_model('setup')
         'location': 'Lab Room 102',
         'description': '',
         'setup_type': 'e1f14b91-e507-48c1-bfec-c68d7db9c166',
-        'specifications': [],
+        'specifications': {},
         'is_public': True
     }
 ]}
@@ -91,9 +91,10 @@ resp = client.save_model("setup",  data=
         'location': 'Lab Room 103',
         'description': '',
         'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-        'specifications': [
-            {'name': 'Length', 'value': 100, 'description': 'yards'}
-        ],
+        'specifications': {
+            'Length': 100,
+            'Width': '30 cm'
+        },
         'is_public': False
     }
 )
@@ -109,9 +110,10 @@ resp = client.save_model("setup",  data=
     'location': 'Lab Room 103',
     'description': '',
     'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-    'specifications': [
-        {'name': 'Length', 'value': 100, 'description': 'yards'}
-    ],
+    'specifications': {
+        'Length': 100,
+        'Width': '30 cm'
+    },
     'is_public': False}
 }
 ```
@@ -142,9 +144,10 @@ resp = client.load_model('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
     'location': 'Lab Room 103',
     'description': '',
     'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-    'specifications': [
-        {'name': 'Length', 'value': 100, 'description': 'yards'}
-    ],
+    'specifications': {
+        'Length': 100,
+        'Width': '30 cm'
+    },
     'is_public': False}
 }
 ```
@@ -174,9 +177,10 @@ resp = client.save_model("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", dat
     'name': 'MyNewEnv',
     'description': 'new text',
     'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
-    'specifications': [
-        {'name': 'Length', 'value': 100, 'description': 'yards'}
-    ],
+    'specifications': {
+        'Length': 100,
+        'Width': '30 cm'
+    },
     'is_public': False}
 }
 ```
