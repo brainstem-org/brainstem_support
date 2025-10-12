@@ -20,7 +20,7 @@ Documentation, tutorials, and support resources for BrainSTEM.
 ## About BrainSTEM
 {: .no_toc}
 
-This site provides comprehensive documentation and support for BrainSTEM (Brain Structured Experimental Metadata) – a collaborative electronic lab notebook designed specifically for experimental neuroscience. BrainSTEM captures and organizes electrophysiological, imaging, and behavioral data through a modular, standardized data model that can be extended to accommodate future data types.
+This site provides comprehensive documentation and support for BrainSTEM – a collaborative electronic lab notebook designed specifically for experimental neuroscience. BrainSTEM captures and organizes electrophysiological, imaging, and behavioral data through a modular, standardized data model that can be extended to accommodate future data types.
 
 Whether you're running a small lab or managing large-scale collaborative projects, BrainSTEM provides the infrastructure to organize, share, and access your experimental data with standardized metadata and reproducible workflows.
 
