@@ -17,5 +17,7 @@ The interface consists of several main components:
 - [__List Views__]({{"webinterface/list-view"|absolute_url}}): Table views showing individual models with flexible sorting and filtering
 - [__Single Entry Views__]({{"webinterface/single-entry-view"|absolute_url}}): Detailed pages showing comprehensive information about specific entries
 - [__User Profile__]({{"webinterface/user-profile"|absolute_url}}): Personal settings and preferences
+- [__Import Tool__]({{"webinterface/import-tool"|absolute_url}}): Bulk data import using CSV templates
+- [__Two-Factor Authentication__]({{"webinterface/two-factor-authentication"|absolute_url}}): Enhanced account security setup
 
 Each of these components is described in detail in the following sections.

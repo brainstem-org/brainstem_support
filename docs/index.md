@@ -6,21 +6,23 @@ has_children: false
 has_toc: false
 ---
 
-# BrainSTEM Documentation
+# BrainSTEM Documentation & Support
 {: .no_toc}
 {: .fs-9 }
 
-A collaborative electronic lab notebook for experimental neuroscience.
+Documentation, tutorials, and support resources for BrainSTEM.
 {: .fs-6 .fw-300}
 
 [Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2} [Visit BrainSTEM.org](https://www.brainstem.org/){: .btn .fs-5 .mb-4 .mb-md-0}
 
 ![website screenshot](/assets/images/website_screenshot_v2.jpg)
 
-## Introduction
+## About BrainSTEM
 {: .no_toc}
 
-BrainSTEM (Brain Structured Experimental Metadata) is a collaborative electronic lab notebook designed specifically for experimental neuroscience. It captures and organizes a comprehensive range of electrophysiological, imaging, and behavioral data through a modular, standardized data model that can be extended to accommodate future data types.
+This site provides comprehensive documentation and support for BrainSTEM (Brain Structured Experimental Metadata) – a collaborative electronic lab notebook designed specifically for experimental neuroscience. BrainSTEM captures and organizes electrophysiological, imaging, and behavioral data through a modular, standardized data model that can be extended to accommodate future data types.
+
+Whether you're running a small lab or managing large-scale collaborative projects, BrainSTEM provides the infrastructure to organize, share, and access your experimental data with standardized metadata and reproducible workflows.
 
 ### Key Features
 
@@ -31,7 +33,7 @@ BrainSTEM (Brain Structured Experimental Metadata) is a collaborative electronic
 - **Customizable Interface**: Web-based interface tailored for neuroscience research workflows
 - **Standardized Metadata**: Consistent data annotation using controlled vocabularies and taxonomies
 
-BrainSTEM is ready for public use, and encourage researchers to create an account and begin exploring the platform. Your feedback helps us advance and shape the future of collaborative neuroscience data management.
+BrainSTEM is ready for public use, and we encourage researchers to create an account and begin exploring the platform. Your feedback helps us advance and shape the future of collaborative neuroscience data management.
 
 [Data Model]({{"/datamodel/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [Web Interface]({{"/webinterface/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [API]({{"/api/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [API Tools]({{"/api-tools/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4}
 
@@ -51,32 +53,33 @@ Explore advanced features including:
 - Public data sharing and collaboration
 - Resource and taxonomy submission
 - Project and group management
-- API integration for programmatic access
+- Setting up lab infrastructure
 
 [Get Started Tutorial]({{ "/tutorials/get_started/"|absolute_url}}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2}
 [View All Tutorials]({{ "/tutorials/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
 
-## Join Our Pilot Program
+## Join Our Community
 
-We're actively seeking research groups to participate in the BrainSTEM pilot program. As a pilot user, you'll help shape the future of collaborative neuroscience data management while gaining early notice of new features.
+We're actively seeking research groups to join the BrainSTEM community. As an active user, you'll help shape the future of collaborative neuroscience data management while gaining early notice of new features.
 
 ### Benefits of Joining
-- **Early Access**: Get to know about new features and capabilities first
+- **Stay Informed**: Get early notice about new features and capabilities
 - **Direct Impact**: Your feedback directly influences platform development
-- **Collaborative Network**: Connect with other forward-thinking research groups
-- **Support**: Dedicated support during your onboarding and beyond
+- **Dedicated Support**: Assistance during onboarding and beyond
 
-If you're committed to advancing open science and interested in becoming a pilot user, we'd love to hear from you.
+If you're committed to advancing open science and interested in joining the BrainSTEM community, we'd love to hear from you.
 
-[Join Pilot Program](https://docs.google.com/forms/d/e/1FAIpQLSctFj4ek5Ib-1FQoi9KeGzCkg6o-cuM26oggNu8FYeKRqNpwg/viewform){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
+[Join the Community](https://docs.google.com/forms/d/e/1FAIpQLSctFj4ek5Ib-1FQoi9KeGzCkg6o-cuM26oggNu8FYeKRqNpwg/viewform){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
 
 ## Support and Community
 
 ### Get Help
-For technical support, bug reports, and feature requests:
+We're here to assist you with any questions or issues:
 
-- **[GitHub Issues](https://github.com/brainstem-org/brainstem_support/issues)**: Report bugs and technical issues
-- **[GitHub Discussions](https://github.com/brainstem-org/brainstem_support/discussions)**: General questions, feature requests, and community discussion
+- **[GitHub Issues](https://github.com/brainstem-org/brainstem_support/issues)**: Report bugs and technical problems
+- **[GitHub Discussions](https://github.com/brainstem-org/brainstem_support/discussions)**: Ask questions, request features, and engage with the community
+- **[Contact Form](https://brainstem.org/#Get-in-touch)**: For account-specific issues and direct support
+
 
 ### Contributing
 BrainSTEM thrives on community input. Whether you're reporting bugs, suggesting enhancements, or participating in discussions, your contribution helps improve the platform for all users.
