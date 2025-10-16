@@ -243,7 +243,7 @@ Consumable stocks are the specific items within your inventories. These are the 
 
 Proper permission management ensures that the right people have access to the right resources while maintaining security and organization.
 
-BrainSTEM infrastructure uses four permission levels for setups and inventories and therby inherited to equipment and consumable stocks:
+BrainSTEM infrastructure uses four permission levels for setups and inventories and thereby inherited to equipment and consumable stocks:
 
 | Permission Level | Capabilities |
 |-----------------|-------------|
