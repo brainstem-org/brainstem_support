@@ -2373,7 +2373,7 @@ nav_order: 5
                 "infoText": "The alignment achieved in the fixation procedure (e.g. bregma and lambda aligned; slight ML tilt to the left)"
             }
         },
-        "fixatioDetails": {
+        "fixationDetails": {
             "title": "Fixation details",
             "type": "string",
             "brief": "details",
