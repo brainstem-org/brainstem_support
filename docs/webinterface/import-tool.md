@@ -29,8 +29,8 @@ The import tool interface is organized into three main tabs: **Projects**, **Sub
 {: .no_toc}
 
 - **Projects** - Import projects and project-related data
-- **Subjects** - Import subjects, procedures, cohorts, and subject logs  
-- **Sessions** - Import sessions, behaviors, data acquisition, manipulations, and collections
+- **Subjects** - Import subjects, procedures, cohorts, and subject logs
+- **Sessions** - Import sessions, behaviors, data acquisition, manipulations, epochs, and collections
 
 ### Template Downloads
 {: .no_toc}
@@ -39,7 +39,7 @@ Each tab displays relevant template download buttons:
 
 - **Blue template buttons** - Download pre-configured CSV templates for each data type
 - Templates include example data and proper column formatting
-- Multiple templates available per tab (e.g., Subjects tab has Subjects, Procedures, Subject Logs, and Cohorts templates)
+- Multiple templates available per tab (e.g., Subjects tab has Subjects, Procedures, Subject Logs, and Cohorts templates; Sessions tab has Sessions, Behaviors, Data Acquisition, Manipulations, Epochs, and Collections templates)
 
 ### Import Process
 {: .no_toc}
@@ -164,9 +164,8 @@ The importer finds or creates a `SubjectLog` for the subject/type pair, then add
 | `session__description` | Plain text or limited HTML (e.g. `<p>Baseline recording.</p>`) | Stored in the session's rich-text description; avoid interactive markup. |
 | `session__date_time` | Datetime (e.g. `2024-05-10T13:45`) | Parsed and stored as ISO-8601. |
 | `session__tags` | Comma-separated tags (e.g. `baseline, imaging`) | Converted into a tag list. |
-| `session__data_storage` | Data-storage name (e.g. `NAS Array 01`) | Looks up a matching Personal Attribute › Data Storage record; warnings are emitted when not found. |
+| `session__data_storage` | Data storage UUID (e.g. `a1b2c3d4-...`) | Must reference an existing data storage record; warnings are emitted when not found. |
 | `session_name_in_data_storage` | Text (e.g. `2024-05-10_baseline`) | Optional alias for storage systems. |
-
 
 ### Behaviors
 {: .no_toc}
@@ -201,6 +200,20 @@ The importer finds or creates a `SubjectLog` for the subject/type pair, then add
 | `manipulation__equipment` | Comma-separated equipment UUIDs (e.g. `7f1b...,d2c9...`) | Each UUID is validated before linking. |
 | `manipulation__notes` | Plain text (e.g. `Blue light, 20 Hz.`) | Stored as free-form notes (500 characters). |
 | `manipulation__details` | JSON object (e.g. `{"pulseWidthMs": 10}`) | Parsed into `type_json`; schema defaults apply when omitted. |
+
+### Epochs
+{: .no_toc}
+
+| Field | Accepted Input | Notes |
+| --- | --- | --- |
+| `project__name` **\*** | Existing project name (e.g. `Auditory Cortex Project`) | Projects must exist before importing epochs. |
+| `session__name` **\*** | Existing session name (e.g. `Session_001`) | Sessions must exist before importing epochs. |
+| `epoch__name` **\*** | Text (e.g. `Baseline_Recording`) | Epoch names are unique within each session. |
+| `epoch__start` | Time duration or timestamp (e.g. `00:00:00`, `PT0S`) | Start time relative to session beginning. Accepts HH:MM:SS format or ISO 8601 duration (PT#S/M/H). |
+| `epoch__end` | Time duration or timestamp (e.g. `00:05:00`, `PT5M`) | End time relative to session beginning. Accepts HH:MM:SS format or ISO 8601 duration (PT#S/M/H). |
+| `epoch__behavior` | Behavior UUID (e.g. `a8f2...`) | Optional link to behavior record during this epoch. |
+| `epoch__dataacquisition` | Data acquisition UUID (e.g. `b3c7...`) | Optional link to data acquisition record during this epoch. |
+| `epoch__manipulation` | Manipulation UUID (e.g. `c4d8...`) | Optional link to manipulation record during this epoch. |
 
 ### Cohorts
 {: .no_toc}
