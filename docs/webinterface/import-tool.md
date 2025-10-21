@@ -81,11 +81,12 @@ Templates use `YOUR_*_ID` placeholders for existing BrainSTEM data. To find thes
 
 ## Input conventions
 - Column headers must follow the pattern `<entity>__<field>` and match exactly; unrecognised columns are ignored.
-- CSVs are read with `pandas.read_csv`, so values may be wrapped in double quotes or left bare—both are accepted.
+- CSVs are parsed with Python's built-in `csv` module (via our lightweight helpers), so values may be wrapped in double quotes or left bare—both are accepted.
 - Trimming happens automatically, but lookups remain case-sensitive. Keep names ≤200 characters to stay within model limits.
-- Boolean fields accept `true/false`, `yes/no`, `1/0`, `on/off`, or `enabled/disabled` in any casing (for example `TRUE`, `0`). Blank values resolve to `false`.
-- Datetimes accept ISO-8601 (`2024-05-01T14:30`), spaced formats (`2024-05-01 14:30[:45]`), and regional variants (`05/01/2024`, `01/05/2024 14:30`). Dates accept the same patterns without a time component.
-- List-style columns must use comma-separated values with no brackets (for example `behavior, imaging, ephys`). The importer splits on commas and trims whitespace.
+- Boolean fields treat `true`, `yes`, `1`, `on`, and `enabled` (any casing) as `True`; anything else—including blanks—evaluates to `False`.
+- Datetimes accept ISO strings that include seconds (e.g. `2024-05-01T14:30:00` or `2024-05-01T14:30:00Z`) alongside spaced formats (`2024-05-01 14:30`, `2024-05-01 14:30:45`) and their month/day variants.
+- Date-only fields must use ISO `YYYY-MM-DD` (optionally with a time component that is ignored).
+- Fields that expect multiple values (for example `cohort__subjects`, `collection__sessions`) take comma-separated lists; tags are passed through exactly as provided, so keep any desired commas in the single string.
 - JSON columns must contain valid JSON objects; malformed JSON raises a warning and the field is skipped. Example: `{"laserPower": 5, "units": "mW"}`.
 - Rich-text fields (project, subject, session, cohort, collection descriptions) are backed by CKEditor and therefore accept HTML. Because inline scripts and event handlers will render, keep inputs to simple formatting (paragraphs, bold, italics, links) to avoid introducing interactive content.
 
@@ -99,7 +100,7 @@ Templates use `YOUR_*_ID` placeholders for existing BrainSTEM data. To find thes
 | `project__name` **\*** | Text (e.g. `Auditory Cortex Project`) | Must be unique across BrainSTEM; importer creates the project when it does not exist. |
 | `project__description` | Plain text or limited HTML (e.g. `<p>Two-photon recordings.</p>`) | Stored in the rich-text description field; avoid interactive markup. |
 | `project__is_public` | Boolean keywords (e.g. `true`, `no`, `0`) | Parsed via `parse_boolean`; blank values become `false`. |
-| `project__tags` | Comma-separated tags (e.g. `vision, cortex`) | Converted into an array of individual tag names. |
+| `project__tags` | Comma-separated tags (e.g. `vision, cortex`) | Converted into individual tag names. |
 
 ### Subjects
 {: .no_toc}
@@ -115,8 +116,8 @@ Templates use `YOUR_*_ID` placeholders for existing BrainSTEM data. To find thes
 | `subject__subject_identifier` | Text (e.g. `EarTag-123`) | External identifier. |
 | `subject__supplier` | Supplier name (e.g. `Charles River Laboratories`) | Looks up existing suppliers; missing suppliers trigger warnings. |
 | `subject__birth_date` | Date (e.g. `2023-02-14`) | Parsed and serialised to ISO date. |
-| `subject__death_date` | Date (e.g. `2024/03/01`) | Parsed and serialised to ISO date. |
-| `subject__tags` | Comma-separated tags (e.g. `training, cohortA`) | Split into a tag list. |
+| `subject__death_date` | Date (e.g. `2024-03-01`) | Parsed and serialised to ISO date. |
+| `subject__tags` | Comma-separated tags (e.g. `training, cohortA`) | Converted into individual tag names. |
 | `subject__name_used_in_storage` | Text (e.g. `mouse_001_data`) | Optional alternate storage label. |
 
 
@@ -162,8 +163,8 @@ The importer finds or creates a `SubjectLog` for the subject/type pair, then add
 | `project__name` **\*** | Existing project name (e.g. `Auditory Cortex Project`) | Projects must exist before importing sessions. |
 | `session__name` **\*** | Text (e.g. `Session_001`) | Session names are globally unique. |
 | `session__description` | Plain text or limited HTML (e.g. `<p>Baseline recording.</p>`) | Stored in the session's rich-text description; avoid interactive markup. |
-| `session__date_time` | Datetime (e.g. `2024-05-10T13:45`) | Parsed and stored as ISO-8601. |
-| `session__tags` | Comma-separated tags (e.g. `baseline, imaging`) | Converted into a tag list. |
+| `session__date_time` | Datetime (e.g. `2024-05-10T13:45:00`) | Parsed and stored as ISO-8601. |
+| `session__tags` | Comma-separated tags (e.g. `baseline, imaging`) | Converted into individual tag names. |
 | `session__data_storage` | Data storage UUID (e.g. `a1b2c3d4-...`) | Must reference an existing data storage record; warnings are emitted when not found. |
 | `session_name_in_data_storage` | Text (e.g. `2024-05-10_baseline`) | Optional alias for storage systems. |
 
@@ -224,7 +225,7 @@ The importer finds or creates a `SubjectLog` for the subject/type pair, then add
 | `cohort__name` **\*** | Text (e.g. `Training Cohort A`) | Names are enforced per project by the API. |
 | `cohort__subjects` **\*** | Comma-separated subject names (e.g. `Mouse_001, Mouse_002`) | Each subject must already exist; missing subjects trigger warnings. |
 | `cohort__description` | Plain text or limited HTML (e.g. `<p>For pilot sessions.</p>`) | Stored in the cohort's rich-text description; avoid interactive markup. |
-| `cohort__tags` | Comma-separated tags (e.g. `pilot, cohortA`) | Split into a tag list. |
+| `cohort__tags` | Comma-separated tags (e.g. `pilot, cohortA`) | Converted into individual tag names. |
 
 ### Collections
 {: .no_toc}
@@ -235,7 +236,7 @@ The importer finds or creates a `SubjectLog` for the subject/type pair, then add
 | `collection__name` **\*** | Text (e.g. `Baseline Series`) | Names are enforced per project by the API. |
 | `collection__sessions` **\*** | Comma-separated session names (e.g. `Session_001, Session_002`) | Each session must already exist; missing sessions trigger warnings. |
 | `collection__description` | Plain text or limited HTML (e.g. `<p>Includes pilot days.</p>`) | Stored in the collection's rich-text description; avoid interactive markup. |
-| `collection__tags` | Comma-separated tags (e.g. `baseline, imaging`) | Split into a tag list. |
+| `collection__tags` | Comma-separated tags (e.g. `baseline, imaging`) | Converted into individual tag names. |
 
 ## Error handling
 
