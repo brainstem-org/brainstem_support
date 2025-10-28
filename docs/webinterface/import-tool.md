@@ -101,6 +101,10 @@ Templates use `YOUR_*_ID` placeholders for existing BrainSTEM data. To find thes
 | `project__description` | Plain text or limited HTML (e.g. `<p>Two-photon recordings.</p>`) | Stored in the rich-text description field; avoid interactive markup. |
 | `project__is_public` | Boolean keywords (e.g. `true`, `no`, `0`) | Parsed via `parse_boolean`; blank values become `false`. |
 | `project__tags` | Comma-separated tags (e.g. `vision, cortex`) | Converted into individual tag names. |
+| `project__authenticated_groups` | Comma-separated group names (e.g. `"Petersen Lab - UCPH,Neurology Team"`) | Groups start with contributor (`can_change: true`) access. Use quotes for multiple groups. |
+| `project__users__can_change` | Comma-separated emails (e.g. `"user1@uni.edu,user2@uni.edu"`) | Contributor access. Leave blank to rely on the auto-assigned owner created by the importer. |
+| `project__users__is_manager` | Comma-separated emails (e.g. `"pi@uni.edu,postdoc@uni.edu"`) | Manager access (`can_change` + management rights). Entries here don’t need to repeat in the contributor column. |
+| `project__users__is_owner` | Comma-separated emails (e.g. `"admin@lab.edu"`) | Owner access (`can_change`, `is_manager`, `is_owner`). If left blank, the importing user stays owner. |
 
 ### Subjects
 {: .no_toc}
