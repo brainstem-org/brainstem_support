@@ -131,7 +131,7 @@ The following pages provide detailed documentation for each API endpoint, includ
 {: .no_toc}
 - **[STEM](/api/stem/)** - Core experimental data model including projects, sessions, subjects, cohorts, and collections
 - **[Modules](/api/modules/)** - procedures, behaviors, data acquisition, manipulations, subject logs, consumable stocks and equipment
-- **[Personal Attributes](/api/personal_attributes/)** - User-specific configurations of  behavioral paradigms, data storage, inventories and setups
+- **[Personal Attributes](/api/personal_attributes/)** - User-specific configurations of  behavioral assays, data storage, inventories and setups
 
 ### Shared resources, taxonomies and dissemination
 {: .no_toc}

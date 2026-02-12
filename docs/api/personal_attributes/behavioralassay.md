@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Behavioral paradigm
+title: Behavioral Assay
 parent: Personal attributes
 grand_parent: API
 nav_order: 1
 ---
 
-# Behavioral paradigm API endpoint
+# Behavioral Assay API endpoint
 {: .no_toc}
 
 ## Table of contents
@@ -29,7 +29,7 @@ nav_order: 1
 ## List view
 - **Allowed portals:** public, private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralparadigm
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralassay
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -37,14 +37,14 @@ nav_order: 1
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralparadigm')
+resp = client.load_model('behavioralassay')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'behavioralparadigms': [
+{'behavioralassays': [
     {
         'id': 'febe36f7-4769-496d-bb91-6a8443214b94',
         'name': 'AlternationRunning',
@@ -66,7 +66,7 @@ resp = client.load_model('behavioralparadigm')
 ## Add
 - **Allowed portals:** private
 - **Request method:** POST
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralparadigm
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralassay
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -75,7 +75,7 @@ resp = client.load_model('behavioralparadigm')
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralparadigm",  data=
+resp = client.save_model("behavioralassay",  data=
     {
         'name': 'PlayMarioKart',
         'description': 'Play Mario Kart on GameCube',
@@ -88,7 +88,7 @@ resp = client.save_model("behavioralparadigm",  data=
 {: .no_toc}
 
 ```
-{'behavioralparadigm': {
+{'behavioralassay': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
     'name': 'PlayMarioKart',
     'description': 'Play Mario Kart on GameCube',
@@ -102,7 +102,7 @@ resp = client.save_model("behavioralparadigm",  data=
 ## Detail
 - **Allowed portals:** public, private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralparadigm/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralassay/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -110,14 +110,14 @@ resp = client.save_model("behavioralparadigm",  data=
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b94ac2edc7f8')
+resp = client.load_model('behavioralassay', id='22ae80be-e030-4cee-9cd5-b94ac2edc7f8')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'behavioralparadigm': {
+{'behavioralassay': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
     'name': 'PlayMarioKart',
     'description': 'Play Mario Kart on GameCube',
@@ -130,7 +130,7 @@ resp = client.load_model('behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b94ac
 ## Change
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralparadigm/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralassay/<id\>/
 - **Data:** dictionary containing the fields to be updated
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -139,14 +139,14 @@ resp = client.load_model('behavioralparadigm', id='22ae80be-e030-4cee-9cd5-b94ac
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8", data={"description": "new text"})
+resp = client.save_model("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8", data={"description": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'behavioralparadigm': {
+{'behavioralassay': {
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
     'name': 'PlayMarioKart',
     'description': 'new text',
@@ -161,7 +161,7 @@ resp = client.save_model("behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac
 ## Delete
 - **Allowed portals:** private
 - **Request method:** DELETE
-- **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralparadigm/<id\>/
+- **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralassay/<id\>/
 - **Data:** None
 - **Responses:** `204` OK; `403` Not allowed; `404` Not found
 
@@ -170,5 +170,5 @@ resp = client.save_model("behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac
 {: .no_toc}
 
 ```
-resp = client.delete_model("behavioralparadigm", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8")
+resp = client.delete_model("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8")
 ``` 

@@ -29,14 +29,14 @@ BrainSTEM's lab infrastructure consists of four interconnected components:
 
 These components work together to provide the foundation for documenting procedures, behaviors, data acquisition, and manipulations.
 
-## Behavioral Paradigms
+## Behavioral Assays
 
-Behavioral paradigms are standardized experimental protocols (such as T-maze alternation, open field exploration, etc.) that are performed within a specific setup environment. In BrainSTEM, these are managed under *Personal Attributes → Behavioral Paradigms*.
+Behavioral Assays are standardized experimental protocols (such as T-maze alternation, open field exploration, etc.) that are performed within a specific setup environment. In BrainSTEM, these are managed under *Personal Attributes → Behavioral Assays*.
 
-For detailed instructions on creating, managing, and best practices for behavioral paradigms, see the dedicated tutorial: [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms).
+For detailed instructions on creating, managing, and best practices for behavioral assays, see the dedicated tutorial: [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays).
 
 {: .note }
-> When planning your infrastructure, ensure that your setups have the correct environment type for the behavioral paradigms you intend to use.
+> When planning your infrastructure, ensure that your setups have the correct environment type for the behavioral assays you intend to use.
 
 ## Planning Your Infrastructure
 
@@ -307,7 +307,7 @@ When creating procedures, your infrastructure components become available:
 
 Your setup determines available:
 - **Equipment** for data acquisition modules
-- **Behavioral paradigms** compatible with the environment type
+- **Behavioral Assays** compatible with the environment type
 
 ## Troubleshooting
 
@@ -321,7 +321,7 @@ Your setup determines available:
 
 With your lab infrastructure in place, you're ready to move on to experimental workflows:
 
-- **Start with experimental design**: Learn about [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) to define standardized experimental protocols that use your setups
+- **Start with experimental design**: Learn about [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) to define standardized experimental protocols that use your setups
 - **Set up data management**: Configure [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to link your metadata to actual data files stored on your systems
 - **Organize team access**: Set up [Managing Groups]({{site.baseurl}}/tutorials/managing-groups) and [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) to properly organize team access to your infrastructure
 - **Explore complete workflows**: Follow the [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow)<!-- or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow)--> tutorial for end-to-end experimental documentation

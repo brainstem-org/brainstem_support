@@ -15,7 +15,7 @@ The Modules app provides specialized endpoints for managing experimental protoco
 The Modules app includes the following specialized endpoints:
 
 - **[Procedures](/api/modules/procedure/)** - Experimental procedures and protocols
-- **[Behaviors](/api/modules/behavior/)** - Behavioral paradigms and tasks
+- **[Behaviors](/api/modules/behavior/)** - Behavioral Assays and tasks
 - **[Data Acquisition](/api/modules/dataacquisition/)** - Data collection configuration and metadata
 - **[Manipulations](/api/modules/manipulation/)** - Experimental manipulations and interventions
 - **[Equipment](/api/modules/equipment/)** - Laboratory equipment and instrumentation
@@ -28,7 +28,7 @@ Each endpoint supports standard CRUD operations with comprehensive filtering, so
 ## Common Use Cases
 
 - Define and standardize experimental procedures across projects
-- Track behavioral paradigms and experimental manipulations
+- Track behavioral assays and experimental manipulations
 - Log detailed procedure execution and subject observations
 - Manage laboratory equipment and consumable inventory
 - Configure data acquisition systems and parameters
