@@ -122,9 +122,9 @@ See the schema for field details: [Procedure types]({{"datamodel/schemas/procedu
 
 `CO₂ chamber euthanasia`: Euthanasia using a controlled carbon dioxide chamber.
 
-`Barbiturate injection`: Euthanasia by barbiturate overdose injection.
+`Barbiturate Injection`: Euthanasia by barbiturate overdose injection.
 
-`Inhalant overdose`: Euthanasia by overdose of inhalant anesthetics.
+`Inhalant Overdose`: Euthanasia by overdose of inhalant anesthetics.
 
 ### Abstract procedures
 
