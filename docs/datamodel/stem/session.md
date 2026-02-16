@@ -44,6 +44,9 @@ Please see the dedicated page describing the [Behaviors data model]({{"datamodel
 ### Data acquisition data fields
 Please see the dedicated page describing the [Data acquisition data model]({{"datamodel/modules/dataacquisition"|absolute_url}}).
 
+{: .note }
+> Each data acquisition module represents one recording file. Different setups or file separations require separate data acquisition modules.
+
 ### Manipulations data fields
 Please see the dedicated page describing the [Manipulations data model]({{"datamodel/modules/manipulation"|absolute_url}}).
 
@@ -55,7 +58,7 @@ Please see the dedicated page describing the [Manipulations data model]({{"datam
 | `Start` | Start time of the epoch, relative to the session onset. Example: "0:00:00" |
 | `End` | End time of the epoch, relative to the session onset. Example: "0:05:00" |
 | `Behavior` | Behaviors associated with the epoch. Example: "Open field exploration" |
-| `Data acquisition` | Data acquisition associated with the epoch. Example: "Calcium imaging" |
+| `Data acquisition` | Data acquisition associated with the epoch. Each data acquisition can only be assigned to one epoch. Example: "Calcium imaging" |
 | `Manipulation` | Manipulations associated with the epoch. Example: "Optogenetic stimulation" |
 
 ### Collections data fields
