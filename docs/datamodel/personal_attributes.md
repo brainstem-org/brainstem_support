@@ -11,7 +11,7 @@ has_toc: false
 
 Personal attributes are model elements that are typically shared within individual laboratories or research groups. These attributes allow for customization and flexibility in describing experimental setups and protocols that may be specific to a particular lab or research focus. The main categories of personal attributes are:
 
-- [**Behavioral paradigms**]({{site.baseurl}}/datamodel/personal_attributes/behavioralparadigm): Detailed descriptions of specific behavioral tasks and protocols used in a lab.
+- [**Behavioral Assays**]({{site.baseurl}}/datamodel/personal_attributes/behavioralassay): Detailed descriptions of specific behavioral assays used in a lab.
 
 - [**Data storages**]({{site.baseurl}}/datamodel/personal_attributes/datastorage): Information about local data storage solutions and practices used within a lab. This can include details about file systems, naming conventions, and data organization strategies specific to the research group.
 

@@ -11,7 +11,7 @@ nav_exclude: true
 
 ## Introduction - Note: this tutorial is still in a drafting state
 
-This comprehensive tutorial walks through a complete two-photon calcium imaging experiment in BrainSTEM, from subject preparation to data analysis. We'll document a visual cortex population dynamics study with head-fixed mice, demonstrating how to integrate subjects, procedures, behavioral paradigms, data acquisition, manipulations, and collections in a realistic research workflow.
+This comprehensive tutorial walks through a complete two-photon calcium imaging experiment in BrainSTEM, from subject preparation to data analysis. We'll document a visual cortex population dynamics study with head-fixed mice, demonstrating how to integrate subjects, procedures, behavioral assays, data acquisition, manipulations, and collections in a realistic research workflow.
 
 **Experimental Design Overview:**
 - **Subjects**: Mouse cohort for visual cortex population imaging
@@ -268,7 +268,7 @@ Start with habituation to head-fixation and imaging setup.
 | **Tags** | habituation, head-fixation, baseline |
 | **Data_storage** | /data/two-photon/vc_m001/ |
 
-**Behavioral Paradigm - Head Fixation:**
+**Behavioral Assay - Head Fixation:**
 | Field | Value |
 |-------|-------|
 | **Name** | Head Fixation Habituation |
@@ -601,5 +601,5 @@ After completing this comprehensive two-photon imaging workflow, consider these 
 - **Cross-Modal Experiments**: Review the [Electrophysiology Workflow tutorial]({{site.baseurl}}/tutorials/electrophysiology-workflow) to learn how to combine two-photon imaging with simultaneous electrophysiology recordings for comprehensive neural circuit analysis
 - **Data Storage Optimization**: Learn about [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to efficiently organize and access your large imaging datasets
 - **API Integration**: Master the [Python API tool]({{site.baseurl}}/api-tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/api-tools/matlab-api-tool) tutorials to programmatically access your imaging data for automated analysis workflows
-- **Behavioral Integration**: Explore [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) to understand how to combine imaging with more complex behavioral tasks
+- **Behavioral Integration**: Explore [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) to understand how to combine imaging with more complex behavioral tasks
 - **Data Sharing and Collaboration**: Learn about [Sharing Project Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) to make your imaging datasets available to the research community and enable collaborative analysis

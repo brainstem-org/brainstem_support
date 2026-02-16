@@ -10,7 +10,7 @@ nav_order: 8
 
 ## Introduction
 
-This tutorial walks through a complete electrophysiology experiment in BrainSTEM, from subject preparation to data analysis. We'll document a multi-day theta maze learning study with sleep sessions, demonstrating how to integrate subjects, procedures, behavioral paradigms, data acquisition, manipulations, and collections in a realistic research workflow.
+This tutorial walks through a complete electrophysiology experiment in BrainSTEM, from subject preparation to data analysis. We'll document a multi-day theta maze learning study with sleep sessions, demonstrating how to integrate subjects, procedures, behavioral assays, data acquisition, manipulations, and collections in a realistic research workflow.
 
 **Experimental Design Overview:**
 - **Subjects**: Rat cohort for spatial learning study
@@ -39,7 +39,7 @@ First, we'll create a project to organize and provide context for our experiment
 | Field | Value |
 |-------|-------|
 | **Name** * | Theta Maze Spatial Learning Study |
-| **Description** | Investigating hippocampal place cell dynamics and memory consolidation during spatial learning using theta maze behavioral paradigm with simultaneous Neuropixels recordings in freely moving rats. |
+| **Description** | Investigating hippocampal place cell dynamics and memory consolidation during spatial learning using theta maze behavioral assay with simultaneous Neuropixels recordings in freely moving rats. |
 | **Authenticated Groups** | Select groups that should have access to this project |
 | **Public Access** | No (keep project private to lab) |
 
@@ -228,7 +228,7 @@ After recovery, we begin with a baseline sleep recording.
 | **Tags** | baseline, sleep, pre-training, neuropixels |
 
 {: .note }
-> Sessions don't have subject, setup, duration, or behavioral paradigm fields directly. These are specified in the Behavior, Data acquisition and Epoch tabs within the session.
+> Sessions don't have subject, setup, duration, or behavioral assay fields directly. These are specified in the Behavior, Data acquisition and Epoch tabs within the session.
 
 **Data Acquisition - Extracellular Recording:**
 
@@ -269,9 +269,9 @@ After recovery, we begin with a baseline sleep recording.
 
 The main experimental session combining behavior with neural recording.
 
-<!-- **[SCREENSHOT NEEDED: Behavioral paradigm selection interface]** -->
+<!-- **[SCREENSHOT NEEDED: Behavioral Assay selection interface]** -->
 
-1. **Behavioral Paradigm Setup**:
+1. **Behavioral Assay Setup**:
 
 | Field | Value |
 |-------|-------|
@@ -446,7 +446,7 @@ subject_sessions = client.load_model('session',
                                    filters={'subject__name': 'TM_R001'}).json()
 
 # Get behavioral performance data
-behavior_data = client.load_model('behavioralparadigm',
+behavior_data = client.load_model('behavioralassay',
                                 filters={'session__subject__name': 'TM_R001'}).json()
 
 # Get neural data file paths
@@ -464,6 +464,6 @@ After completing this comprehensive electrophysiology workflow, consider these l
 
 <!-- - **Explore complementary techniques**: Review the [Two-Photon Imaging Workflow tutorial]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) to learn how to combine electrophysiology with optical imaging approaches -->
 - **Access data programmatically**: Master the [Python API tool]({{site.baseurl}}/api-tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/api-tools/matlab-api-tool) to automate analysis workflows for your large-scale electrophysiology datasets
-- **Understand behavioral documentation**: Review [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) to understand how behavioral protocols are documented and standardized across experiments
+- **Understand behavioral documentation**: Review [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) to understand how behavioral protocols are documented and standardized across experiments
 - **Optimize data management**: Learn about [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to efficiently organize and access your large electrophysiology datasets with proper file linking
 - **Enable data sharing**: Use [Sharing Project Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) to make your electrophysiology datasets available to the research community for collaborative analysis and meta-studies

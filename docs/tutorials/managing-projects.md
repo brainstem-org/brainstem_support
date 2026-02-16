@@ -125,7 +125,7 @@ Project owners can update fundamental project information and configuration:
 
 With your projects properly configured, you can start documenting your research:
 
-- **Set up experimental protocols**: Define [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) for standardized experimental procedures within your projects
+- **Set up experimental protocols**: Define [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) for standardized experimental procedures within your projects
 - **Configure data management**: Set up [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to link project data to actual files for analysis workflows  
 - **Start documenting experiments**: Follow complete experimental workflows like [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow)<!-- or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow)-->
 - **Enable programmatic access**: Master the [Python API tool]({{site.baseurl}}/api-tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/api-tools/matlab-api-tool) to programmatically access your project data

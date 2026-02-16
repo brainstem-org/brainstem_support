@@ -20,7 +20,7 @@ BrainSTEM enables open science by allowing you to make your research data public
 
 **Key Concepts:**
 - **Projects** are the primary container for public data sharing
-- **Personal Attributes** (behavioral paradigms, setups, data storage, inventories) have independent public settings
+- **Personal Attributes** (behavioral assays, setups, data storage, inventories) have independent public settings
 - Making a project public does NOT automatically make its personal attributes public
 
 The diagram below illustrates how public permissions flow through the BrainSTEM data model:
@@ -28,7 +28,7 @@ The diagram below illustrates how public permissions flow through the BrainSTEM 
 ![permissions]({{site.baseurl}}/assets/images/permission_public.png)
 
 {: .important }
-> Making a project public does NOT automatically share its associated personal attributes. Behavioral paradigms, setups, data storage, and inventories must be made public separately to ensure complete data accessibility.
+> Making a project public does NOT automatically share its associated personal attributes. Behavioral Assays, setups, data storage, and inventories must be made public separately to ensure complete data accessibility.
 
 ## Understanding Public Project Sharing
 
@@ -42,7 +42,7 @@ When you make a project public, the following components become publicly accessi
 | **Cohorts** | Subject cohorts and group assignments |
 
 {: .note }
-> Project-level data becomes public, but the **personal attributes** referenced in sessions (behavioral paradigms, setups, data storage) remain private unless separately shared.
+> Project-level data becomes public, but the **personal attributes** referenced in sessions (behavioral assays, setups, data storage) remain private unless separately shared.
 
 ## Making a Project Public
 
@@ -79,7 +79,7 @@ Personal attributes referenced in your sessions must be shared separately to pro
 
 | Personal Attribute | When to Share Publicly | Why It's Needed |
 |-------------------|----------------------|----------------|
-| **Behavioral Paradigms** | If your sessions include behavior modules | Users need to understand experimental protocols and task parameters |
+| **Behavioral Assays** | If your sessions include behavior modules | Users need to understand experimental protocols and task parameters |
 | **Setups** | If your sessions reference specific experimental environments | Users need to know equipment configuration and environmental conditions |
 | **Data Storage** | If you want users to access raw data files | Users need file paths and access protocols to retrieve actual data |
 | **Inventories** | If procedures reference specific consumables | Users need to know exact materials used (probes, drugs, etc.) |
@@ -92,7 +92,7 @@ Personal attributes referenced in your sessions must be shared separately to pro
 **To make any personal attribute public:**
 
 1. Navigate to the appropriate section:
-   - **Personal Attributes** → **Behavioral Paradigms**
+   - **Personal Attributes** → **Behavioral Assays**
    - **Personal Attributes** → **Setups**
    - **Personal Attributes** → **Data storage**
    - **Personal Attributes** → **Inventories**
@@ -130,6 +130,6 @@ If you need to make data private again:
 After making your data publicly available, consider these enhancements:
 
 - **Improve discoverability**: Use [Submit Resources & Taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies) to contribute standardized resources that make your data more findable
-- **Document protocols thoroughly**: Ensure your [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) are well-documented for protocol reproducibility
+- **Document protocols thoroughly**: Ensure your [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) are well-documented for protocol reproducibility
 - **Optimize data access**: Review [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to ensure public data has appropriate file access protocols
 - **Enable programmatic access**: Share example API scripts in the [Python API tool]({{site.baseurl}}/api-tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/api-tools/matlab-api-tool) tutorials
