@@ -17,7 +17,7 @@ nav_order: 2
 
 ## Introduction
 
-Setup types are fundamentally categories of setups and also serve as categories for behavioral paradigms. In BrainSTEM, setup types are a shared model across users. Behavioral paradigms are linked to a specific setup type, ensuring that each paradigm is defined within a particular type of setup.
+Setup types are fundamentally categories of setups and also serve as categories for behavioral assays. In BrainSTEM, setup types are a shared model across users. Behavioral Assays are linked to a specific setup type, ensuring that each paradigm is defined within a particular type of setup.
 
 ## Fields
 

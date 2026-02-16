@@ -104,7 +104,7 @@ Personal Attributes
 ├── Inventories
 │   └── Consumable stocks
 ├── Data storages
-└── Behavioral Paradigms
+└── Behavioral Assays
 ```
 
 #### Group Level Inheritance
@@ -112,7 +112,7 @@ Personal Attributes
 
 | Parent Level | Inheritance Pattern | Inheriting Components |
 |:-------------|:-------------------|:-------------------|
-| **Group** | Direct inheritance from associated groups | Personal Attributes (Behavioral Paradigms, Data Storage, Setups, Inventories) |
+| **Group** | Direct inheritance from associated groups | Personal Attributes (Behavioral Assays, Data Storage, Setups, Inventories) |
 | **Experimental Setup** | Direct inheritance with module-level access | Equipment |
 | **Inventory** | Direct inheritance with module-level access | Consumable Stocks |
 
@@ -133,7 +133,7 @@ Personal Attributes
 {: .important }
 > - Each Personal Attribute requires individual public sharing settings
 > - Only owners can modify public access settings
-> - Public status required for behavioral paradigms, data storage, and setups used in public projects
+> - Public status required for behavioral assays, data storage, and setups used in public projects
 
 ## Permission Management
 

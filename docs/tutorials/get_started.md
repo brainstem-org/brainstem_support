@@ -85,13 +85,13 @@ After joining or creating a group, you can start creating projects. Projects in 
 
 ## Add your personal attributes
 
-Before creating subjects and sessions, set up personal attributes that describe your setups, inventories and behavioral paradigms. These provide standardized options for your experiments.
+Before creating subjects and sessions, set up personal attributes that describe your setups, inventories and behavioral assays. These provide standardized options for your experiments.
 
-### Define behavioral paradigms to describe the behavioral conditions of your subjects
+### Define behavioral assays to describe the behavioral conditions of your subjects
 {: .no_toc}
 
-1. Navigate to *Personal Attributes* → *Behavioral paradigms* in the left menu
-2. Click *Add behavioral paradigm*
+1. Navigate to *Personal Attributes* → *Behavioral Assays* in the left menu
+2. Click *Add behavioral assay*
 3. Fill in the paradigm details (e.g., "Open Field Test", "Novel Object Recognition")
 4. Add a description of the experimental protocol
 
@@ -201,7 +201,7 @@ STEM models
    - [Manipulations]({{site.baseurl}}/datamodel/modules/manipulation/)
 
 Personal Attributes:
-- [Behavioral paradigms]({{site.baseurl}}/datamodel/personal_attributes/behavioralparadigm/)
+- [Behavioral Assays]({{site.baseurl}}/datamodel/personal_attributes/behavioralassay/)
 - [Data storages]({{site.baseurl}}/datamodel/personal_attributes/datastorage/)
 - [Setups]({{site.baseurl}}/datamodel/personal_attributes/setup/)
    - [Equipment]({{site.baseurl}}/datamodel/modules/equipment/)
@@ -214,7 +214,7 @@ Personal Attributes:
 1. Create/Join a group
 2. Create a project
 3. Next, create personal attributes relevant to your experiments
-   1. Define behavioral paradigms to describe the behavioral conditions of your subjects
+   1. Define behavioral assays to describe the behavioral conditions of your subjects
    2. Set up data storage locations to link to your data files
    3. Create setups to define your physical experimental environments
    - Configure the equipment in your setups
@@ -232,7 +232,7 @@ Personal Attributes:
 > The exact order may vary based on your specific experimental needs. Some components can be set up in parallel or may not be needed for every experiment.
 
 {: .important }
-> This order ensures dependent components are created first. For example, behaviors need setups and behavioral paradigms to be defined first.
+> This order ensures dependent components are created first. For example, behaviors need setups and behavioral assays to be defined first.
 > Data acquisition are linked to subjects through procedures, and to setups through equipment, which should be created first.
 
 ## Next Steps
@@ -242,5 +242,5 @@ Now that you've completed the basic setup, here are the recommended next steps:
 - **Set up your lab infrastructure**: Follow the [Setting Up Lab Infrastructure tutorial]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) to properly configure your lab's setups, equipment, inventories, and consumable stocks
 - **Learn project management**: Read [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) to understand how to effectively organize and collaborate on research projects
 - **Configure team access**: Review [Managing Groups]({{site.baseurl}}/tutorials/managing-groups) to set up proper permissions and team collaboration
-- **Plan your experiments**: Explore [Behavioral Paradigms]({{site.baseurl}}/tutorials/behavioral-paradigms) to define standardized experimental protocols for your studies
+- **Plan your experiments**: Explore [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) to define standardized experimental protocols for your studies
 - **Set up data storage**: Follow [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to link your metadata to actual data files for seamless analysis workflows

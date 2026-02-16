@@ -180,7 +180,7 @@ The importer finds or creates a `SubjectLog` for the subject/type pair, then add
 | `session__name` **\*** | Existing session name (e.g. `Session_001`) | Sessions must exist before importing behaviors. |
 | `subject__name` **\*** | Existing subject name (e.g. `Mouse_001`) | Subjects must exist before importing behaviors. |
 | `behavior__setup` **\*** | Setup UUID (e.g. `d3d0...`) | Validated via the Setup endpoint. |
-| `behavior__behavioral_paradigm` **\*** | Behavioral paradigm UUID (e.g. `f6d4...`) | Validated via the Behavioral Paradigm endpoint. |
+| `behavior__behavioral_paradigm` **\*** | Behavioral Assay UUID (e.g. `f6d4...`) | Validated via the Behavioral Assay endpoint. |
 
 ### Data Acquisition
 {: .no_toc}
