@@ -26,7 +26,7 @@ Consumable stocks refer to the various components and materials essential for co
 | ``Type of consumable stock`` | Type of consumable stock (**required**). Selected from predefined types. Example: "Silicon probe", "Optic fiber". *See options below* |
 | ``Type specific fields`` | Custom fields based on consumable stock type in JSON format. See [Consumable stock types schema]({{"/datamodel/schemas/consumablestock/"|absolute_url}}) for type-specific fields |
 | ``Inventory`` | The inventory record that tracks the consumable stocks (**required**). Must reference an existing [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}). Example: "Lab supplies inventory" |
-| ``Consumable supplier`` | Supplier filter for consumables (optional). Used to filter the available consumables by supplier. |
+| ``Consumable supplier`` | Supplier filter for consumables. Used to filter the available consumables by supplier. |
 | ``Consumable`` | The specific consumable associated with the consumable stock (**required**). Example: "32-channel silicon probe" |
 | ``Acquisition date`` | The date when the consumable was acquired (format: YYYY-MM-DD). Example: "2024-01-15" |
 | ``Expiration date`` | The date when the consumable stock is expected to expire or become unusable (format: YYYY-MM-DD). Example: "2025-01-15" |

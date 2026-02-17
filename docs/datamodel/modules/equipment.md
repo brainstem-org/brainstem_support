@@ -27,10 +27,10 @@ Equipment refer to the setup and utilization of various devices and sensors desi
 | ``Type of equipment`` | Type of equipment (**required**). Selected from predefined types. Example: "Camera", "Microphone". *See options below* |
 | ``Setup`` | The setup the equipment is installed in (**required**). Must reference an existing [setups]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior room A setup" |
 | ``Date and time`` | Date and time the equipment was installed. Example: "2024-03-22 09:00:00" |
-| ``Supplier`` | Supplier filter for consumables (optional). Used to filter available consumables by supplier. |
-| ``Consumable`` | Consumable used as part of the equipment installation (optional). Example: "HD webcam model XYZ" |
-| ``Hardware device supplier`` | Supplier filter for hardware devices (optional). Used to filter available hardware devices by supplier. |
-| ``Hardware device`` | Hardware device used as part of the equipment (optional). Example: "Recording computer #2" |
+| ``Supplier`` | Supplier filter for consumables. Used to filter available consumables by supplier. |
+| ``Consumable`` | Consumable used as part of the equipment installation. Example: "HD webcam model XYZ" |
+| ``Hardware device supplier`` | Supplier filter for hardware devices. Used to filter available hardware devices by supplier. |
+| ``Hardware device`` | Hardware device used as part of the equipment. Example: "Recording computer #2" |
 | ``Notes`` | Notes about the equipment (string). Example: "Camera positioned at 45-degree angle" |
 | ``Coordinates`` | Coordinate system for equipment positioning (**required**). Selected from predefined systems. Example: "External XYZ Coordinates with Angles". *See options below* |
 | ``Type specific fields`` | Custom fields based on equipment type in JSON format. See [Equipment types schema]({{"/api/schemas/equipment/"|absolute_url}}) for type-specific fields |
