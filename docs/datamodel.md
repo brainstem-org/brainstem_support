@@ -15,7 +15,7 @@ BrainSTEM is built upon a relational data model, as shown in the relational grap
 The model is structured into the following main categories:
 
 - [__Projects__](/datamodel/project): Core model for organizing research efforts.
-- [__Subjects__](/datamodel/subject): Representing the organisms or entities being studied. Includes related concepts like [Procedures](/datamodel/subjects/procedure), [Subject Logs](/datamodel/subjects/subjectlog), and [Cohorts](/datamodel/subjects/cohort).
+- [__Subjects__](/datamodel/subject): Representing the organisms or entities being studied. Includes related concepts like [Procedures](/datamodel/subjects/procedure), [Subject Logs](/datamodel/subjects/subjectlog), [Breedings](/datamodel/stem/breedings), and [Cohorts](/datamodel/subjects/cohort).
 - [__Sessions__](/datamodel/session): Detailing experimental sessions. Includes related concepts like [Behaviors](/datamodel/sessions/behavior), [Data Acquisition](/datamodel/sessions/dataacquisition), [Manipulations](/datamodel/sessions/manipulation), and [Collections](/datamodel/sessions/collection).
 - [__Personal attributes__](/datamodel/personal_attributes/): Models for lab-specific elements such as [Setups](/datamodel/personal_attributes/setup), [Inventories](/datamodel/personal_attributes/inventory), [Behavioral Assays](/datamodel/personal_attributes/behavioralassay), and [Data Storage](/datamodel/personal_attributes/datastorage).
 - [__Resources__](/datamodel/resources/): Representing materials, equipment, and entities involved in research, including [Consumables](/datamodel/resources/consumable), [Hardware Devices](/datamodel/resources/hardwaredevice), and [Suppliers](/datamodel/resources/supplier).

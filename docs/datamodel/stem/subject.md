@@ -17,7 +17,12 @@ has_toc: false
 
 ## Introduction
 
-The subjects model describes your animal subject through a set of standard fields. Flexibility is built in through a rich text description field, extra fields, and tags. Procedures offer a modular framework that can be used to describe processes related to your subject.
+The subjects model describes your animal subject through a set of standard fields. Flexibility is built in through a rich text description field, extra fields, and tags. Subject-related records can be further described through:
+
+1. [__Procedures__]({{"datamodel/modules/procedure"|absolute_url}}): Experimental or husbandry interventions associated with a subject (for example surgeries, injections, or handling protocols).
+2. [__Subject logs__]({{"datamodel/modules/subjectlog"|absolute_url}}): Time-stamped notes and tracked observations for a subject (for example weight changes, health checks, and routine monitoring).
+3. [__Breedings__]({{"datamodel/stem/breedings"|absolute_url}}): Parent pairing records (dam/sire) and litter-level metadata linked to offspring subjects.
+4. [__Cohorts__]({{"datamodel/stem/cohort"|absolute_url}}): Project-level groupings of subjects used for organization, filtering, and analysis.
 
 ## Fields
 
@@ -53,6 +58,10 @@ Please see the dedicated page describing the [Subject logs data model]({{"datamo
 ### Cohorts data fields
 
 Please see the dedicated page describing the [Cohorts data model]({{"datamodel/stem/cohort"|absolute_url}}).
+
+### Breedings data fields
+
+Please see the dedicated page describing the [Breedings data model]({{"datamodel/stem/breedings"|absolute_url}}).
 
 
 ## Permissions
