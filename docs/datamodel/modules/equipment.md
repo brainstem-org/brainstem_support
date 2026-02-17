@@ -33,6 +33,7 @@ Equipment refer to the setup and utilization of various devices and sensors desi
 | ``Hardware device`` | Hardware device used as part of the equipment (optional). Example: "Recording computer #2" |
 | ``Notes`` | Notes about the equipment (string). Example: "Camera positioned at 45-degree angle" |
 | ``Coordinates`` | Coordinate system for equipment positioning (**required**). Selected from predefined systems. Example: "External XYZ Coordinates with Angles". *See options below* |
+| ``Type specific fields`` | Custom fields based on equipment type in JSON format. See [Equipment types schema]({{"/api/schemas/equipment/"|absolute_url}}) for type-specific fields |
 
 ## Types of equipment
 

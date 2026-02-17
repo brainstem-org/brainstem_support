@@ -30,8 +30,8 @@ Subject logs refers to records that track various aspects of the subjects' livin
 | ``Date and time`` | Timestamp for each log entry. Used for simple timestamp logs (datetime). Format: YYYY-MM-DD HH:mm:ss. Example: "2024-03-15 14:30:00" |
 | ``Start and end time`` | Start and stop timestamps for duration-based logs (datetime). Used for Housing, Deprivation, Habituation, Handling, and Training logs. Format: YYYY-MM-DD HH:mm:ss. Example: Start: "2024-03-15 14:30:00", End: "2024-03-15 15:30:00" |
 | ``Performed by`` | User who performed the action recorded in this entry (optional). Can be different from the user who created the log. Example: "Dr. Smith" |
-| ``Type details`` | Type-specific fields for each entry in the log. Fields vary by type. Example: For food consumption log - food amount in grams. *See options below* |
 | ``Notes`` | Notes about the subject logs for each entry in the log (string, max 500 characters). Example: "Subject appeared healthy during feeding" |
+| ``Type specific fields`` | Custom fields based on subject log type in JSON format for each entry. See [Subject log types schema]({{"datamodel/schemas/subjectlog/"|absolute_url}}) for type-specific fields |
 
 ## Types of subject logs
 

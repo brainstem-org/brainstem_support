@@ -33,6 +33,7 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 | ``Atlas`` | Brain atlas filter for brain regions (optional). Used to filter available brain regions by atlas. |
 | ``Brain region`` | Target brain region of the procedure (optional). Must reference an existing [brain region]({{"datamodel/taxonomies/brainregion/"|absolute_url}}). Example: "Hippocampus CA1" |
 | ``Notes`` | Notes about the procedure (string). Example: "Implant placed successfully with minimal bleeding" |
+| ``Type specific fields`` | Custom fields based on procedure type in JSON format. See [Procedure types schema]({{"datamodel/schemas/procedure/"|absolute_url}}) for type-specific fields |
 
 ## Types of procedures
 

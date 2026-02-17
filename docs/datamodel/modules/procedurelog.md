@@ -27,9 +27,9 @@ Procedure logs refer to systematic records that track specific parameters or out
 | ``Description`` | Description of the procedure logs (optional). Can be left empty (string). Example: "Daily impedance measurements for tetrode array" |
 | ``Procedure`` | The procedure of the log (**required**). Must reference an existing [procedure]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Silicon probe implant #A123" |
 | **Log Entries** | Multiple log entries can be added, each containing: |
-| ``Date and time`` | Timestamp for each entry in the log. Example: "2024-03-15 14:30:00" |
-| ``Type details`` | Type-specific fields for each entry in the log. Fields vary by type. Example: For impedance log - impedance values in kOhm. *See options below* |
-| ``Notes`` | Notes about the procedure logs for each entry in the log (string). Example: "Observed slight increase in impedance values" |
+| ``Date and time`` | Timestamp for each entry in the log (**required**, datetime). Format: YYYY-MM-DD HH:mm:ss. Example: "2024-03-15 14:30:00" |
+| ``Notes`` | Notes for each entry in the log (optional, string). Example: "Observed slight increase in impedance values" |
+| ``Type specific fields`` | Custom fields based on procedure log type in JSON format for each entry. See [Procedure log types schema]({{"datamodel/schemas/procedurelog/"|absolute_url}}) for type-specific fields |
 
 
 ## Types of procedure logs

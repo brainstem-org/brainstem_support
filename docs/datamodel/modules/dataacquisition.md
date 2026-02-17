@@ -30,6 +30,7 @@ Data acquisition encompasses the diverse range of data types acquired during sci
 | ``Equipment`` | Equipment used to acquire the data (optional). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
 | ``Image`` | Image associated with the data acquisition (optional). |
 | ``Notes`` | Notes about the data acquisition (string). Example: "Good signal quality throughout recording" |
+| ``Type specific fields`` | Custom fields based on data acquisition type in JSON format. See [Data acquisition types schema]({{"datamodel/schemas/dataacquisition/"|absolute_url}}) for type-specific fields |
 
 ## Types of Data acquisition
 

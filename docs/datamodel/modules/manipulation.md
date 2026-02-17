@@ -29,6 +29,7 @@ The manipulations model describes temporal manipulations performed in a session.
 | ``Setup`` | Setup filter for equipment (optional). Used to filter available equipment by setup. |
 | ``Equipment`` | Equipment used for the manipulation (optional). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "LED driver #1" |
 | ``Notes`` | Notes about the manipulation (string). Example: "20Hz stimulation protocol completed successfully" |
+| ``Type specific fields`` | Custom fields based on manipulation type in JSON format. See [Manipulation types schema]({{"datamodel/schemas/manipulation/"|absolute_url}}) for type-specific fields |
 
 ## Types of manipulations
 
