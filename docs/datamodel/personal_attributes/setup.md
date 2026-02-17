@@ -3,7 +3,7 @@ layout: default
 title: Setups
 parent: Personal attributes
 grand_parent: Data model
-nav_order: 4
+nav_order: 5
 has_toc: false
 ---
 
@@ -25,13 +25,12 @@ Setups describe where experiments, procedures, or manipulations takes place. It 
 | Field | Description |
 |:------|:------------|
 | ``Setup name`` | Name of the setup (**required**; string; maximum length: 50 characters). Example: "Behavior Room A - Setup 1" |
-| ``Location`` | Location of the setup (optional). Example: "Room 302B, Neuroscience Building" or "Room 201, Surgery room" |
 | ``Setup category`` | Category of the setup type (required filter). This category filters the available setup types. Example: "Behavioral Environments" |
 | ``Setup type`` | The type of environment the setup is (**required**). Must reference an existing [setup type]({{"datamodel/taxonomies/setuptype/"|absolute_url}}). Example: "Linear track" |
+| ``Location`` | Location of the setup (optional). Example: "Room 302B, Neuroscience Building" or "Room 201, Surgery room" |
 | ``Authenticated groups`` | Groups that have change permissions for this setup (**required**). Example: "Behavior Core Team" |
 | ``Description`` | Rich text description of the setup (optional). Can include uploaded images. Example: "Linear track setup with two reward ports and tracking cameras..." |
 | ``Image`` | Image of the setup (optional). Uploaded images remain completely private. Example: "setup1_overview.jpg" |
-| ``Public access`` | Determines if the setup is public or private. Example: "False" for private access |
 | ``Specifications`` | Specifications to the setup in key-value format (optional). Example: {"length": "200 cm", "width": "10 cm", "height": "15 cm"} |
 
 ## Permissions

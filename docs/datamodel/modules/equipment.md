@@ -26,7 +26,7 @@ Equipment refer to the setup and utilization of various devices and sensors desi
 | ``Equipment name`` | Name of the equipment (**required**). Example: "Ephys amplifier" or "Ceiling mounted camera" |
 | ``Type of equipment`` | Type of equipment (**required**). Selected from predefined types. Example: "Camera", "Microphone". *See options below* |
 | ``Setup`` | The setup the equipment is installed in (**required**). Must reference an existing [setups]({{"datamodel/personal_attributes/setup/"|absolute_url}}). Example: "Behavior room A setup" |
-| ``Date and time of the installation of the equipment`` | Date and time the equipment was installed. Example: "2024-03-22 09:00:00" |
+| ``Date and time`` | Date and time the equipment was installed. Example: "2024-03-22 09:00:00" |
 | ``Supplier`` | Supplier filter for consumables (optional). Used to filter available consumables by supplier. |
 | ``Consumable`` | Consumable used as part of the equipment installation (optional). Example: "HD webcam model XYZ" |
 | ``Hardware device supplier`` | Supplier filter for hardware devices (optional). Used to filter available hardware devices by supplier. |

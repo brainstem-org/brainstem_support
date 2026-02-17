@@ -18,4 +18,6 @@ Personal attributes are model elements that are typically shared within individu
 
 - [**Inventories**]({{site.baseurl}}/datamodel/personal_attributes/inventory): Manages comprehensive lists of laboratory consumables. Each inventory can be associated with specific groups and users, enabling efficient resource tracking and sharing across the laboratory.
 
+- [**Licenses**]({{site.baseurl}}/datamodel/personal_attributes/license): Tracks regulatory and compliance authorizations (for example animal research, biosafety, and controlled substance licenses) used across lab activities.
+
 - [**Setups**]({{site.baseurl}}/datamodel/personal_attributes/setup): Descriptions of the physical arrangements and equipment configurations used for experiments. Setups may be unique to a particular lab or research question.

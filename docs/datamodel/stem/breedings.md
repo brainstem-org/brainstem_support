@@ -26,7 +26,7 @@ Breedings capture parent pairings and litter-level metadata within a project. A 
 | `Breeding name` | Name of the breeding (**required**; string; maximum length: 100 characters; must be unique within a project). Example: "B6J x PV-Cre Spring 2026" |
 | `Project` | Project the breeding belongs to (**required**). A breeding belongs to a single project, and both parent subjects must belong to this same project. |
 | `Maternal Subject (Dam)` | Female parent subject (**required**). Must have sex set to Female and must belong to the selected project. |
-| `Paternal Subject (Sire)` | Male parent subject (**required**). Must have sex set to Male and must belong to the selected project. |
+| `Paternal Subject (Sire)` | Male parent subject (**required**). Must have sex set to Male, must belong to the selected project, and must be different from the maternal subject. |
 | `Description` | Rich text notes for breeding details (optional). Useful for pairing observations, outcomes, and contextual notes. |
 | `Tags` | Tags for organization and filtering (optional). Tags are shared across users and models. |
 | `Birth date` | Date of birth for offspring from this breeding (optional; date format `YYYY-MM-DD`). |
@@ -36,19 +36,6 @@ Breedings capture parent pairings and litter-level metadata within a project. A 
 | `Litter size` | Expected or actual number of offspring (optional; positive integer). |
 | `Expected genotype` | Expected genotype of offspring (optional; string; maximum length: 100 characters). |
 
-
-## Validation rules
-
-- Mother and father must be different subjects.
-- Mother must be Female; father must be Male.
-- Both parents must belong to the selected project.
-- Breeding names are unique per project (same name can be reused in different projects).
-
-## Relationships
-
-- A breeding belongs to one project.
-- A subject can be linked as mother/father in many breedings.
-- Offspring subjects can reference a breeding through the Subject `breeding` field.
 
 ## Permissions
 
