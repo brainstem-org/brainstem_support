@@ -173,6 +173,29 @@ Tracer dyes and fluorophores held in inventory for histology or circuit-tracing 
 | `Preparation Instructions` | Notes on preparation or dilution (string) |
 | `Experimental Use Context` | Application contexts (array of strings; e.g., circuit tracing, histology) |
 
+## Surgical Consumables
+
+### Implant / Fixation Material Stock
+
+Stock tracking for implant and fixation materials such as dental cement, skull anchors, and adhesives.
+
+| Field | Description |
+|:------|:------------|
+| `Batch ID` | Batch or lot identifier (string) |
+| `Amount` | Amount in stock (string; e.g., "500 mL", "2 gram", "50 tablets") |
+| `Preparation Instructions` | Preparation notes before use (string) |
+| `Sterile` | Whether stock is sterile or pre-sterilized (boolean) |
+
+### Surgical Disposable Stock
+
+Stock records for disposable surgical items such as blades, needles, sutures, and drapes.
+
+| Field | Description |
+|:------|:------------|
+| `Batch ID` | Batch or lot identifier (string) |
+| `Quantity` | Number of disposable items in stock (integer, ≥ 0) |
+| `Sterile` | Whether stock is sterile or pre-sterilized (boolean) |
+
 ## API access
 
 The API allows for programmable access to Consumable Stock, enabling you to read, edit, and delete stock entries through the API. Learn more about the stock fields and data structure on the [Consumable Stock API page]({{"api/modules/consumablestock/"|absolute_url}}).

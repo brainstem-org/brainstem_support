@@ -207,6 +207,34 @@ A simple yet effective tool for measuring electrical activity at a single site. 
 | `Diameter` | Core wire diameter (float). Determines tissue impact and signal quality |
 | `Insulation diameter` | Total diameter including insulation (float). Important for insertion planning |
 
+## Surgical Consumables
+
+### Implant / fixation material
+
+Materials used for implant anchoring and fixation, such as dental cement, adhesives, and bone screws.
+
+| Field | Description |
+|:------|:------------|
+| `Product ID` | Catalog number or supplier reference (string) |
+| `Type` | (**required**) Material subtype (enum; e.g., dental cement, adhesive, bone screw, skull anchor, bone wax, silicone elastomer, acrylic polymer, cyanoacrylate glue, other) |
+| `Preparation Instructions` | Steps needed before use (string) |
+| `Storage Conditions` | Recommended storage environment (string; e.g., room temperature, 4°C) |
+| `Biocompatible` | Whether the material is biocompatible for in vivo use (boolean) |
+| `Additional Notes` | Free-text notes on specs or usage (string) |
+
+### Surgical disposable
+
+Single-use surgical items such as blades, sutures, catheters, and drapes.
+
+| Field | Description |
+|:------|:------------|
+| `Product ID` | Catalog number or supplier reference (string) |
+| `Type` | (**required**) Disposable subtype (enum; e.g., scalpel blade, needle, syringe, suture, gauze/swab, surgical drape, catheter, other) |
+| `Material` | Primary material (string; e.g., stainless steel, absorbable polymer) |
+| `Specification` | Short size/format descriptor (string; e.g., 30G x 1/2", 6-0 nylon, No. 11 blade) |
+| `Sterile` | Whether item is sterile (boolean) |
+| `Additional Notes` | Free-text notes on specs or usage (string) |
+
 ## API access
 
 The API allows for programmable access to Consumable types, enabling you to read, edit, and delete consumable type data through the API. Learn more about the consumable types' fields and data structure on the [Consumable types API page]({{"api/resources/consumable/"|absolute_url}}).
