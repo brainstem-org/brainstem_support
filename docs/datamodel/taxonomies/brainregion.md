@@ -3,7 +3,7 @@ layout: default
 title: Brain regions
 parent: Taxonomies
 grand_parent: Data model
-nav_order: 1
+nav_order: 3
 ---
 
 # Brain regions model
@@ -25,8 +25,8 @@ Brain regions are a type of taxonomy defined by brain atlases. In BrainSTEM, bra
 |:------|:------------|
 | ``Name`` | The name of the brain region (**required**; string; maximum length: 200 characters) |
 | ``Acronym`` | Acronym used for the brain region (**required**; string; maximum length: 15 characters) |
-| ``Atlas`` | The brain atlas in which the brain region is defined (**required**). Selected from predefined atlas options |
 | ``Description`` | A general description of the brain region (optional; maximum length: 2000 characters) |
+| ``Atlas`` | The brain atlas in which the brain region is defined (**required**). Selected from predefined atlas options |
 | ``Region id`` | A unique identifier for the brain region within the atlas (optional) |
 | ``Parent acronym`` | The acronym of the parent region in the hierarchical structure of the brain atlas (optional; maximum length: 15 characters) |
 | ``Graph order`` | A numerical value representing the order of the region in the hierarchical graph of the brain atlas (optional) |

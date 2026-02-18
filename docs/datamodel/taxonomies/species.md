@@ -3,7 +3,7 @@ layout: default
 title: Species
 parent: Taxonomies
 grand_parent: Data model
-nav_order: 4
+nav_order: 6
 ---
 
 # Species model

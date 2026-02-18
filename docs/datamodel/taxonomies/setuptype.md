@@ -3,7 +3,7 @@ layout: default
 title: Setup types
 parent: Taxonomies
 grand_parent: Data model
-nav_order: 2
+nav_order: 5
 ---
 
 # Setup types model

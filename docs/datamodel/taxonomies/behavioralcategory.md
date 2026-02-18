@@ -3,7 +3,7 @@ layout: default
 title: Behavioral category
 parent: Taxonomies
 grand_parent: Data model
-nav_order: 4
+nav_order: 1
 ---
 
 # Behavioral category model
@@ -52,6 +52,7 @@ Categories support up to two levels — a parent category and sub-categories. Fo
 | ``Name`` | The name of the behavioral category (**required**; must be unique). |
 | ``Parent category`` | Select a parent category for hierarchical organization. Leave empty for top-level categories (optional). |
 | ``Description`` | A description of what this category encompasses (optional). |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 

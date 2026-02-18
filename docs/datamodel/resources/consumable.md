@@ -62,6 +62,12 @@ See the schema for field details: [Consumable types]({{"datamodel/schemas/consum
 
 `Single wire electrode`: Single‑conductor wires used as recording/stimulation electrodes or as reference/ground leads in electrophysiology.
 
+### Surgical Consumables
+
+`Surgical disposable`: Single-use sterile items used during procedures, such as gloves, drapes, scalpel blades, syringes, sutures, and gauze.
+
+`Implant or fixation material`: Materials used to secure implants or support surgical fixation, such as dental cement, bone screws, adhesive compounds, and anchoring hardware.
+
 ## Submission process
 
 Anyone can submit consumables or submit changes to existing ones, but all submissions must be approved before they are available for usage. Please see existing entries for examples as to what to submit.

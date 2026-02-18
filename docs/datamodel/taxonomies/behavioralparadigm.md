@@ -3,7 +3,7 @@ layout: default
 title: Behavioral paradigm
 parent: Taxonomies
 grand_parent: Data model
-nav_order: 4
+nav_order: 2
 ---
 
 # Behavioral paradigm model
@@ -51,6 +51,7 @@ Categories and paradigms are shared taxonomies — available to all users once a
 | ``Reference URL`` | URL to reference documentation or the original publication (optional). |
 | ``RRID`` | Research Resource Identifier if available (optional). |
 | ``External identifiers`` | External identifiers from various databases (optional). |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 
