@@ -42,12 +42,12 @@ Categories and paradigms are shared taxonomies available to everyone. Assays are
 
 | Field | Description |
 |:------|:------------|
-| ``Behavioral assay name`` | A descriptive name for this assay, ideally indicating the paradigm and key protocol details (e.g., "MWM 4-day acquisition" or "EPM 5-min test") (**required**). |
+| ``Behavioral assay name`` | A descriptive name for this assay, ideally indicating the paradigm and key protocol details (e.g., "MWM 4-day acquisition" or "EPM 5-min test") (**required**; string; maximum length: 50 characters). |
 | ``Setup category`` | Category of setup conditions associated with the selected setup type (e.g., Freely Moving Awake, Head-Fixed Awake). |
 | ``Setup type`` | The standardized apparatus type (e.g., "Elevated Plus Maze", "Open Field Arena") (**required**). Must reference an existing [setup type]({{"datamodel/taxonomies/setuptype/"|absolute_url}}). |
 | ``Behavioral category`` | The taxonomy category that organizes the selected behavioral paradigm (e.g., "Learning & Memory"). |
 | ``Behavioral paradigm`` | The shared paradigm this assay implements (**required**). Must reference an existing [behavioral paradigm]({{"datamodel/taxonomies/behavioralparadigm/"|absolute_url}}). |
-| ``Licenses`` | Licenses that authorize this assay for regulatory and compliance tracking. Can include multiple licenses and can be left empty. |
+| ``Licenses`` | Licenses that authorize this assay for regulatory and compliance tracking. Can include multiple licenses. |
 | ``Description`` | Protocol details — trial structure, timing, parameters, and any lab-specific variations. |
 | ``Authenticated groups`` | Assign one or more groups during creation. Assigned groups receive change permissions; permissions can be adjusted later on the manage page (**required**). |
 

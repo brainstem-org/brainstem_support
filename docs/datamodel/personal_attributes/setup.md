@@ -25,13 +25,13 @@ Setups describe where experiments, procedures, or manipulations takes place. It 
 | Field | Description |
 |:------|:------------|
 | ``Setup name`` | Name of the setup (**required**; string; maximum length: 50 characters). Example: "Behavior Room A - Setup 1" |
-| ``Setup category`` | Category of the setup type (required filter). This category filters the available setup types. Example: "Behavioral Environments" |
+| ``Setup category`` | Category used to filter available setup types. Selected from predefined setup categories (In Vitro, Ex Vivo, Anesthetized In Vivo, Head-Fixed Awake, Voluntarily Stationary Awake, Freely Moving Awake, Unknown). Example: "Freely Moving Awake" |
 | ``Setup type`` | The type of environment the setup is (**required**). Must reference an existing [setup type]({{"datamodel/taxonomies/setuptype/"|absolute_url}}). Example: "Linear track" |
-| ``Location`` | Location of the setup (optional). Example: "Room 302B, Neuroscience Building" or "Room 201, Surgery room" |
+| ``Location`` | Location of the setup (string; maximum length: 100 characters). Example: "Room 302B, Neuroscience Building" or "Room 201, Surgery room" |
 | ``Authenticated groups`` | Groups that have change permissions for this setup (**required**). Example: "Behavior Core Team" |
-| ``Description`` | Rich text description of the setup (optional). Can include uploaded images. Example: "Linear track setup with two reward ports and tracking cameras..." |
-| ``Image`` | Image of the setup (optional). Uploaded images remain completely private. Example: "setup1_overview.jpg" |
-| ``Specifications`` | Specifications to the setup in key-value format (optional). Example: {"length": "200 cm", "width": "10 cm", "height": "15 cm"} |
+| ``Description`` | Rich text description of the setup. Can include uploaded images. Example: "Linear track setup with two reward ports and tracking cameras..." |
+| ``Image`` | Image of the setup. Uploaded images remain completely private. Example: "setup1_overview.jpg" |
+| ``Specifications`` | Specifications to the setup in key-value format. Example: {"length": "200 cm", "width": "10 cm", "height": "15 cm"} |
 
 ## Permissions
 

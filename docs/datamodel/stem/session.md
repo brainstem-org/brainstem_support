@@ -28,13 +28,13 @@ Sessions are modular structures that provide flexible and standardized descripti
 
 | Field | Description |
 |:------|:------------|
-| `Session name` | Name of the session (**required**; string; max length: 100 characters; must be unique across BrainSTEM). Example: "Memory_Task_Session1", "PV_Recording_20240313" |
+| `Session name` | Name of the session (**required**; string; maximum length: 100 characters; must be unique across BrainSTEM). Example: "Memory_Task_Session1", "PV_Recording_20240313" |
 | `Projects` | Projects the session belongs to (**required**). Learn more about project inheritance [here]({{"datamodel/stem/project/"|absolute_url}}). Example: "Hippocampal Memory Project" |
 | `Description` | A text description of the session. Pictures can be uploaded and inserted through rich text formatting. Example: "Recording session during novel object recognition task..." |
-| `Date and time onset` | Date and time of the session onset (YYYY-MM-DD format, e.g., "2023-03-22 14:30:00"). Can be left empty |
+| `Date and time onset` | Date and time of the session onset (datetime format `YYYY-MM-DD HH:mm:ss`, e.g., "2023-03-22 14:30:00"). |
 | `Tags` | Tags for the session. Great for organizational purposes, quick labeling and filtering. Tags are shared across all users. Example: "behavior", "recording", "morning-session" |
 | `Data storage` | Describes where the data is stored. Example: "Lab Server", "External Drive 1" |
-| `Session name in data storage` | Custom name for the session used in local data storage (string; max length: 200; optional). Example: "ses01_mem_2024" |
+| `Session name in data storage` | Custom name for the session used in local data storage (string; maximum length: 200). Example: "ses01_mem_2024" |
 | `Additional fields` | Allows you to add extra fields to the session. Values can be strings or numeric. Saved as key-value pairs. Example: {"Room": "B115", "Temperature": "22C"} |
 | `Public repositories` | If this session has been shared in a public repository, link it here. Example: "DANDI:123456" |
 
@@ -54,7 +54,7 @@ Please see the dedicated page describing the [Manipulations data model]({{"datam
 
 | Field | Description |
 |:------|:------------|
-| `Name` | Name of the epoch (**required**; string; max length: 100 characters). Example: "Baseline", "Stimulus_Period" |
+| `Name` | Name of the epoch (**required**; string; maximum length: 100 characters). Example: "Baseline", "Stimulus_Period" |
 | `Start` | Start time of the epoch, relative to the session onset. Example: "0:00:00" |
 | `End` | End time of the epoch, relative to the session onset. Example: "0:05:00" |
 | `Behavior` | Behaviors associated with the epoch. Example: "Open field exploration" |

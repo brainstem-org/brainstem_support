@@ -34,17 +34,17 @@ The subjects model describes your animal subject through a set of standard field
 | `Status` | Current participation status in research activities. Choices: planned, active, inactive, transferred, deceased, unknown (default: active). |
 | `Species` | Species is derived from the selected strain (not a direct field on Subject). Please add in taxonomies section if not available. Example: "Mus musculus" |
 | `Strain` | Strain of the subject (**required**). Please add in taxonomies section if not available. Example: "C57BL/6J" |
-| `Description` | A rich text description of the subject. Can be left empty. Example: "Male C57BL/6J mouse, exhibits normal behavior..." |
+| `Description` | A rich text description of the subject. Example: "Male C57BL/6J mouse, exhibits normal behavior..." |
 | `Genetic line` | Genetic line of the subject. Could also be wild type (string; maximum length: 100 characters). Example: "Wild type" or "PV-Cre" |
 | `Genotype` | Confirmed genotype of the subject (string; maximum length: 200 characters). Example: "PV-Cre/wt; Ai32/wt" |
-| `Birth date` | Birth date of the animal subject. Can be left empty. Example: "2023-03-22" |
-| `Death date` | Death date of the animal subject. Can be left empty. Example: "2024-03-25" |
-| `Breeding` | The breeding from which this subject was born. Can be left empty. |
+| `Birth date` | Birth date of the animal subject (date format `YYYY-MM-DD`). Example: "2023-03-22" |
+| `Death date` | Death date of the animal subject (date format `YYYY-MM-DD`). Example: "2024-03-25" |
+| `Breeding` | The breeding from which this subject was born. Must reference an existing [breeding]({{"datamodel/stem/breedings/"|absolute_url}}). |
 | `Tags` | Tags for the subject. Great for organizational purposes, quick labeling, and filtering. Example: "control-group", "lesion" |
 | `Subject identifier` | Any identifier used for this subject outside of BrainSTEM, such as an ear tag or RFID number (string; maximum length: 100 characters). Example: "Ear tag #A1234" |
-| `Supplier` | Source/supplier of the subject. Can be left empty. Example: "Charles River", "The Jackson Laboratory", "In-house breeding" |
-| `Licenses` | Licenses covering this subject for regulatory reporting and compliance. Can be left empty and may include multiple licenses. |
-| `Subject name used in data storage` | Use this field if you have another name for your subject in your local data storage (string; maximum length: 200 characters; optional). Example: "M01_2024_exp3" |
+| `Supplier` | Source/supplier of the subject. Must reference an existing [supplier]({{"datamodel/resources/supplier/"|absolute_url}}). Example: "Charles River", "The Jackson Laboratory", "In-house breeding" |
+| `Licenses` | Licenses covering this subject for regulatory reporting and compliance. Can include multiple licenses. |
+| `Subject name used in data storage` | Use this field if you have another name for your subject in your local data storage (string; maximum length: 200 characters). Example: "M01_2024_exp3" |
 | `Additional fields` | Allows you to add additional fields to the subject. Values can be strings or numeric. Example: {"Weight": "25g", "Litter": "A3"} |
 
 ### Procedures data fields

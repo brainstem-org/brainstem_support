@@ -23,12 +23,12 @@ Regulatory authorities are organizations that issue and oversee research approva
 
 | Field | Description |
 |:------|:------------|
-| ``Name of regulatory authority`` | Official name of the authority (**required**). Example: "Institutional Animal Care and Use Committee" |
-| ``Abbreviation`` | Short name or acronym used for the authority. Example: "IACUC" |
-| ``Authority type`` | Type/category of authority. Example: "Animal ethics", "Biosafety", "Drug control", "Import/export" |
-| ``Country`` | Country where the authority operates or issues approvals. |
-| ``Website`` | Official website URL of the authority. |
-| ``Description`` | Description of the authority scope and role in compliance oversight. |
+| ``Name of regulatory authority`` | Official name of the authority (**required**; string; maximum length: 255 characters; must be unique). Example: "Institutional Animal Care and Use Committee" |
+| ``Abbreviation`` | Short name or acronym used for the authority (string; maximum length: 32 characters). Example: "IACUC" |
+| ``Authority type`` | Type/category of authority (string; maximum length: 64 characters). Selected from predefined types: National Regulatory Body, Institutional Committee, Regional/State Authority, International Organization. |
+| ``Country`` | Country where the authority operates or issues approvals. Selected from ISO country options. |
+| ``Website`` | Official website URL of the authority (URL; maximum length: 200 characters). |
+| ``Description`` | Description of the authority scope and role in compliance oversight (text). |
 
 ## Submission process
 

@@ -24,9 +24,9 @@ Suppliers refer to companies, organizations, and individuals that provide the es
 | Field | Description |
 |:------|:------------|
 | ``Name of supplier`` | The name of the supplier (**required**; string; maximum length: 100 characters; must be unique). Example: "IMEC" |
-| ``Description`` | Description of the supplier (optional; maximum length: 2000 characters). Example: "World-leading R&D and innovation hub in nanoelectronics and digital technologies..." |
-| ``Website`` | The website of the supplier (optional; URL). Example: "https://www.imec-int.com" |
-| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
+| ``Description`` | Description of the supplier (maximum length: 2000 characters). Example: "World-leading R&D and innovation hub in nanoelectronics and digital technologies..." |
+| ``Website`` | The website of the supplier (URL). Example: "https://www.imec-int.com" |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 

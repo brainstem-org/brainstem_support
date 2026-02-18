@@ -32,7 +32,7 @@ Chemical reagents cover solvents, fixatives, detergents, and other laboratory ch
 | `Molecular Weight` | Molecular weight of the compound (float, ≥ 0) |
 | `Purity / Grade` | Reported purity or grade designation (string; e.g., "≥99%", "Analytical grade") |
 | `Storage Conditions` | Recommended storage environment (string; e.g., "Room temp", "4°C", "Protect from light") |
-| `Hazard Information` | Optional safety notes or GHS classification (string) |
+| `Hazard Information` | safety notes or GHS classification (string) |
 | `Experimental Use Context` | Typical workflows where the reagent is used (string; e.g., perfusion, fixation, staining) |
 
 ### Consumable device
@@ -58,7 +58,7 @@ Use this table to cross-reference consumables with external databases such as NC
 |:------|:------------|
 | `Source` | (**required**) Database or provider of the identifier (enum; e.g., NCBI, JAX, DOI) |
 | `Identifier` | (**required**) External identifier string (string; e.g., AB_123456) |
-| `URL (optional)` | Direct link to the external record (string; must be a valid URL if provided) |
+| `URL ` | Direct link to the external record (string; must be a valid URL if provided) |
 
 ### Immuno reagent
 

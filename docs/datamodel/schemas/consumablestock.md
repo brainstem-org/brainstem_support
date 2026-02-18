@@ -32,7 +32,7 @@ Inventory record for chemicals held in bulk, including solvents, detergents, buf
 | `Amount` | Amount held in stock (string; e.g., "500 mL", "2 gram") |
 | `Concentration / Strength` | Solution strength if applicable (string; e.g., "1 M", "10X") |
 | `Purity / Grade` | Purity or grade designation (string) |
-| `Hazard Information` | Optional safety notes or GHS classification (string) |
+| `Hazard Information` | safety notes or GHS classification (string) |
 
 ### Consumable Device Stock
 
