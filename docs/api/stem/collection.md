@@ -46,21 +46,21 @@ resp = client.load_model('collection')
 ```
 {'collections': [
         {
-            'id': '8df1fb4e-5fb7-41f1-9494-06c813c5d9f7',
+            'id': '00000000-0000-0000-0000-000000000000',
             'name': 'newcollection1',
-            'project': 'e7475834-7733-48cf-9e3b-f4f2d2d0305a',
+            'project': '00000000-0000-0000-0000-000000000000',
             'sessions': [
-                            '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
-                            'ef7ae22f-143a-4a5e-adf6-1c623531dd63'
+                            '00000000-0000-0000-0000-000000000000',
+                            '00000000-0000-0000-0000-000000000000'
                         ]
         },
         {
-            'id': 'd00de634-3078-442a-bb24-5f4dbbd62983',
+            'id': '00000000-0000-0000-0000-000000000000',
             'name': 'collection2',
-            'project': 'c4b8a90b-2963-4d13-aa07-b6f497252dde',
+            'project': '00000000-0000-0000-0000-000000000000',
             'sessions': [
-                            'd8e72f9d-eb25-4280-a241-3317d5914055',
-                            '3865d613-a9a4-419b-80de-ae07cc754a2a'
+                            '00000000-0000-0000-0000-000000000000',
+                            '00000000-0000-0000-0000-000000000000'
                         ]
         }
     ]
@@ -79,7 +79,7 @@ resp = client.load_model('collection')
 {: .no_toc}
 
 ```
-resp = client.save_model("collection", data={"name": "NewRestCollection", "project": "e7475834-7733-48cf-9e3b-f4f2d2d0305a", "sessions": ["1a827c68-19b4-4cec-8ae5-e13c8f1de900"]})
+resp = client.save_model("collection", data={"name": "NewRestCollection", "project": "00000000-0000-0000-0000-000000000000", "sessions": ["00000000-0000-0000-0000-000000000000"]})
 ```
 
 ### Response example
@@ -87,10 +87,10 @@ resp = client.save_model("collection", data={"name": "NewRestCollection", "proje
 
 ```
 {'collection': {
-    'id': '54d5bab2-e520-4f1a-b518-6f66d28ee7ee',
+    'id': '00000000-0000-0000-0000-000000000000',
     'name': 'NewRestCollection',
-    'project': 'e7475834-7733-48cf-9e3b-f4f2d2d0305a',
-    'sessions': ['1a827c68-19b4-4cec-8ae5-e13c8f1de900'],
+    'project': '00000000-0000-0000-0000-000000000000',
+    'sessions': ['00000000-0000-0000-0000-000000000000'],
     'links': {'sessions': 'sessions/'}
     }
 }
@@ -109,7 +109,7 @@ resp = client.save_model("collection", data={"name": "NewRestCollection", "proje
 {: .no_toc}
 
 ```
-resp = client.load_model('collection', id='54d5bab2-e520-4f1a-b518-6f66d28ee7ee')
+resp = client.load_model('collection', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -117,10 +117,10 @@ resp = client.load_model('collection', id='54d5bab2-e520-4f1a-b518-6f66d28ee7ee'
 
 ```
 {'collection': {
-    'id': '54d5bab2-e520-4f1a-b518-6f66d28ee7ee',
+    'id': '00000000-0000-0000-0000-000000000000',
     'name': 'NewRestCollection',
-    'project': 'e7475834-7733-48cf-9e3b-f4f2d2d0305a',
-    'sessions': ['1a827c68-19b4-4cec-8ae5-e13c8f1de900'],
+    'project': '00000000-0000-0000-0000-000000000000',
+    'sessions': ['00000000-0000-0000-0000-000000000000'],
     'links': {'sessions': 'sessions/'}
     }
 }
@@ -139,7 +139,7 @@ resp = client.load_model('collection', id='54d5bab2-e520-4f1a-b518-6f66d28ee7ee'
 {: .no_toc}
 
 ```
-resp = client.save_model("collection", id="54d5bab2-e520-4f1a-b518-6f66d28ee7ee", data={"name": "new name"})
+resp = client.save_model("collection", id="00000000-0000-0000-0000-000000000000", data={"name": "new name"})
 ```
 
 ### Response example
@@ -147,10 +147,10 @@ resp = client.save_model("collection", id="54d5bab2-e520-4f1a-b518-6f66d28ee7ee"
 
 ```
 {'collection': {
-    'id': '54d5bab2-e520-4f1a-b518-6f66d28ee7ee',
+    'id': '00000000-0000-0000-0000-000000000000',
     'name': 'new name',
-    'project': 'e7475834-7733-48cf-9e3b-f4f2d2d0305a',
-    'sessions': ['1a827c68-19b4-4cec-8ae5-e13c8f1de900'],
+    'project': '00000000-0000-0000-0000-000000000000',
+    'sessions': ['00000000-0000-0000-0000-000000000000'],
     'links': {'sessions': 'sessions/'}
     }
 }
@@ -169,5 +169,5 @@ resp = client.save_model("collection", id="54d5bab2-e520-4f1a-b518-6f66d28ee7ee"
 {: .no_toc}
 
 ```
-resp = client.delete_model("collection", id="54d5bab2-e520-4f1a-b518-6f66d28ee7ee")
+resp = client.delete_model("collection", id="00000000-0000-0000-0000-000000000000")
 ```

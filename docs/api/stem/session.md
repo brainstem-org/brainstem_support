@@ -85,31 +85,31 @@ resp = client.load_model("session")
 {
     "sessions": [
         {
-            "id": "1a827c68-19b4-4cec-8ae5-e13c8f1de900",
+            "id": "00000000-0000-0000-0000-000000000000",
             "name": "session1",
             "description": "",
             "epochs": [],
-            "projects": ["c4b8a90b-2963-4d13-aa07-b6f497252dde"],
+            "projects": ["00000000-0000-0000-0000-000000000000"],
             "date_time": null,
             "datastorage": [],
             "extra_fields": {},
             "download_links": [],
             "dataacquisition": [],
             "behaviors": [],
-            "manipulations": ["20387176-5f3c-433a-8bf9-34a0f2c431f7"],
+            "manipulations": ["00000000-0000-0000-0000-000000000000"],
             "tags": [],
         },
         {
-            "id": "d8e72f9d-eb25-4280-a241-3317d5914055",
+            "id": "00000000-0000-0000-0000-000000000000",
             "name": "session2",
             "description": "",
             "epochs": [],
-            "projects": ["c4b8a90b-2963-4d13-aa07-b6f497252dde"],
+            "projects": ["00000000-0000-0000-0000-000000000000"],
             "date_time": null,
             "datastorage": [],
             "extra_fields": {},
             "download_links": [],
-            "dataacquisition": ["1c77ae53-6f83-4398-bfe5-6eb95ff00610"],
+            "dataacquisition": ["00000000-0000-0000-0000-000000000000"],
             "behaviors": [],
             "manipulations": [],
             "tags": [],
@@ -135,7 +135,7 @@ resp = client.save_model(
     data={
         "name": "NewSession",
         "description": "some text",
-        "projects": ["c4b8a90b-2963-4d13-aa07-b6f497252dde"],
+        "projects": ["00000000-0000-0000-0000-000000000000"],
     },
 )
 ```
@@ -146,11 +146,11 @@ resp = client.save_model(
 ```json
 {
     "session": {
-        "id": "13bdd793-86d4-428e-9708-167bbc26f6d2",
+        "id": "00000000-0000-0000-0000-000000000000",
         "name": "NewSession",
         "description": "some text",
         "epochs": [],
-        "projects": ["c4b8a90b-2963-4d13-aa07-b6f497252dde"],
+        "projects": ["00000000-0000-0000-0000-000000000000"],
         "date_time": null,
         "datastorage": [],
         "extra_fields": {},
@@ -175,7 +175,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```python
-resp = client.load_model("session", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
+resp = client.load_model("session", id="00000000-0000-0000-0000-000000000000")
 ```
 
 ### Example response (detail)
@@ -184,11 +184,11 @@ resp = client.load_model("session", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
 ```json
 {
     "session": {
-        "id": "13bdd793-86d4-428e-9708-167bbc26f6d2",
+        "id": "00000000-0000-0000-0000-000000000000",
         "name": "NewSession",
         "description": "some text",
         "epochs": [],
-        "projects": ["c4b8a90b-2963-4d13-aa07-b6f497252dde"],
+        "projects": ["00000000-0000-0000-0000-000000000000"],
         "date_time": null,
         "datastorage": [],
         "extra_fields": {
@@ -221,7 +221,7 @@ resp = client.load_model("session", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
 ```python
 resp = client.save_model(
     "session",
-    id="13bdd793-86d4-428e-9708-167bbc26f6d2",
+    id="00000000-0000-0000-0000-000000000000",
     data={"description": "new text"},
 )
 ```
@@ -232,11 +232,11 @@ resp = client.save_model(
 ```json
 {
     "session": {
-        "id": "13bdd793-86d4-428e-9708-167bbc26f6d2",
+        "id": "00000000-0000-0000-0000-000000000000",
         "name": "NewSession",
         "description": "new text",
         "epochs": [],
-        "projects": ["c4b8a90b-2963-4d13-aa07-b6f497252dde"],
+        "projects": ["00000000-0000-0000-0000-000000000000"],
         "date_time": null,
         "datastorage": [],
         "extra_fields": {},
@@ -261,5 +261,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```python
-resp = client.delete_model("session", id="13bdd793-86d4-428e-9708-167bbc26f6d2")
+resp = client.delete_model("session", id="00000000-0000-0000-0000-000000000000")
 ```

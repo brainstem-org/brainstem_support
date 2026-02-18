@@ -87,20 +87,20 @@ resp = client.load_model("project")
 {
     "projects": [
         {
-            "id": "c4b8a90b-2963-4d13-aa07-b6f497252dde",
+            "id": "00000000-0000-0000-0000-000000000000",
             "name": "project2",
             "description": "",
             "sessions": [
-                "1a827c68-19b4-4cec-8ae5-e13c8f1de900",
-                "d8e72f9d-eb25-4280-a241-3317d5914055",
-                "3865d613-a9a4-419b-80de-ae07cc754a2a"
+                "00000000-0000-0000-0000-000000000000",
+                "00000000-0000-0000-0000-000000000000",
+                "00000000-0000-0000-0000-000000000000"
             ],
             "subjects": [
-                "0cdaf69d-63cf-429f-b549-fc0cc163d046"
+                "00000000-0000-0000-0000-000000000000"
             ],
             "publications": [],
             "collections": [
-                "63ec20b4-63f7-4427-85ec-785b3f8dcc25"
+                "00000000-0000-0000-0000-000000000000"
             ],
             "cohorts": [],
             "extra_fields": {
@@ -129,17 +129,17 @@ resp = client.load_model("project")
             },
         },
         {
-            "id": "e7475834-7733-48cf-9e3b-f4f2d2d0305a",
+            "id": "00000000-0000-0000-0000-000000000000",
             "name": "Test project1",
             "description": "<p>My first project1</p>",
             "sessions": [
-                "eba7ed4b-44a9-4626-ae6f-09bccfa553fb",
-                "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
-                "ef9ef292-4757-44c1-b8f7-9dc8cb36e8f1",
-                "ef7ae22f-143a-4a5e-adf6-1c623531dd63"
+                "00000000-0000-0000-0000-000000000000",
+                "00000000-0000-0000-0000-000000000000",
+                "00000000-0000-0000-0000-000000000000",
+                "00000000-0000-0000-0000-000000000000"
             ],
             "subjects": [
-                "0f87c229-6769-4854-83a5-c71e154246b8"
+                "00000000-0000-0000-0000-000000000000"
             ],
             "publications": [],
             "collections": [],
@@ -193,7 +193,7 @@ resp = client.save_model("project",  data={"name": "NewRestProject", "descriptio
 ```json
 {
     "project": {
-        "id": "d7de95c0-eb63-40e8-ac90-7573b58f6033",
+        "id": "00000000-0000-0000-0000-000000000000",
         "name": "NewRestProject",
         "description": "some text",
         "sessions": [],
@@ -231,7 +231,7 @@ resp = client.save_model("project",  data={"name": "NewRestProject", "descriptio
 {: .no_toc}
 
 ```python
-resp = client.load_model("project", id="d7de95c0-eb63-40e8-ac90-7573b58f6033")
+resp = client.load_model("project", id="00000000-0000-0000-0000-000000000000")
 ```
 
 **Example response**
@@ -240,11 +240,11 @@ resp = client.load_model("project", id="d7de95c0-eb63-40e8-ac90-7573b58f6033")
 ```json
 {
     "project": {
-        "id": "d7de95c0-eb63-40e8-ac90-7573b58f6033",
+        "id": "00000000-0000-0000-0000-000000000000",
         "name": "NewRestProject",
         "description": "some text",
         "sessions": [
-            "eba7ed4b-44a9-4626-ae6f-09bccfa553fb"
+            "00000000-0000-0000-0000-000000000000"
         ],
         "subjects": [],
         "publications": [],
@@ -285,7 +285,7 @@ resp = client.load_model("project", id="d7de95c0-eb63-40e8-ac90-7573b58f6033")
 {: .no_toc}
 
 ```python
-resp = client.save_model("project", id="d7de95c0-eb63-40e8-ac90-7573b58f6033", data={"description": "new text"})
+resp = client.save_model("project", id="00000000-0000-0000-0000-000000000000", data={"description": "new text"})
 ```
 
 To add new users and/or groups to the project, or modify the permissions of the existing ones, provide their corresponding dictionaries. Missing permissions will default to *False*.
@@ -293,7 +293,7 @@ To add new users and/or groups to the project, or modify the permissions of the 
 ```python
 resp = client.save_model(
     "project",
-    id="d7de95c0-eb63-40e8-ac90-7573b58f6033",
+    id="00000000-0000-0000-0000-000000000000",
     data={
         "description": "new text",
         "users": {"user2@mail.com": {"can_change": True, "is_manager": True}},
@@ -307,7 +307,7 @@ To remove users and/or groups, provide the key-value pair `"remove": True` in th
 ```python
 resp = client.save_model(
     "project",
-    id="d7de95c0-eb63-40e8-ac90-7573b58f6033",
+    id="00000000-0000-0000-0000-000000000000",
     data={
         "description": "new text",
         "users": {"user2@mail.com": {"remove": True}},
@@ -322,7 +322,7 @@ resp = client.save_model(
 ```json
 {
     "project": {
-        "id": "d7de95c0-eb63-40e8-ac90-7573b58f6033",
+        "id": "00000000-0000-0000-0000-000000000000",
         "name": "NewRestProject",
         "description": "new text",
         "sessions": [],
@@ -370,5 +370,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```python
-resp = client.delete_model("project", id="d7de95c0-eb63-40e8-ac90-7573b58f6033")
+resp = client.delete_model("project", id="00000000-0000-0000-0000-000000000000")
 ```
