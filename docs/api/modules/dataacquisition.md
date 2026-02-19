@@ -26,6 +26,7 @@ nav_order: 3
 | `procedures` | list of related procedure IDs formatted as strings |
 | `equipment` | list of related equipment IDs formatted as strings |
 | `details` | JSON object mapped to the internal `type_json` field. *See accepted schemas below* |
+| `type_schema_version` | string schema version for `details` |
 | `image` | URL string pointing to an uploaded image (read-only) |
 | `order` | optional positive integer controlling display order within a session |
 
@@ -59,13 +60,13 @@ resp = client.load_model('dataacquisition')
 {: .no_toc}
 
 ```
-{'dataacquisition': [
+{'data_acquisitions': [
     {
-        'id': 'b3a6f43b-63f9-41cf-8fc2-5303e958d521',
+        'id': '00000000-0000-0000-0000-000000000000',
         'notes': 'main arena cameras',
-        'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-        'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
-        'equipment': ['2f68c9ad-9b4e-49b3-947a-47a4feae0d70'],
+        'session': '00000000-0000-0000-0000-000000000000',
+        'procedures': ['00000000-0000-0000-0000-000000000000'],
+        'equipment': ['00000000-0000-0000-0000-000000000000'],
         'type': 'BehavioralTracking',
         'details': {
             'fileName': 'session1_tracking.mp4',
@@ -76,15 +77,16 @@ resp = client.load_model('dataacquisition')
             'verticalResolution': 1080,
             'horizontalResolution': 1920
         },
+        'type_schema_version': '0.0.0',
         'image': 'https://images.brainstem.org/tracking.png',
         'order': 0
     },
     {
-        'id': '6b7d3eb1-0360-4c40-944b-83e285f8f8a7',
+        'id': '00000000-0000-0000-0000-000000000000',
         'notes': 'acute probe recording',
-        'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-        'procedures': ['dedef2d7-00ae-4967-8e93-a9d65a20dfce'],
-        'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+        'session': '00000000-0000-0000-0000-000000000000',
+        'procedures': ['00000000-0000-0000-0000-000000000000'],
+        'equipment': ['00000000-0000-0000-0000-000000000000'],
         'type': 'ExtracellularEphys',
         'details': {
             'fileName': 'session1_probe.dat',
@@ -100,6 +102,7 @@ resp = client.load_model('dataacquisition')
                 {'tag': 'good', 'channels': [0, 2], 'groups': [0]}
             ]
         },
+        'type_schema_version': '0.0.0',
         'image': None,
         'order': 1
     }
@@ -122,9 +125,9 @@ resp = client.save_model(
     "dataacquisition",
     data={
         "type": "ExtracellularEphys",
-        "session": "1f7f103b-e949-405a-9b01-ddda3b2f10cf",
-        "procedures": ["087b71c4-6785-437c-b8ef-e35a82a8463e"],
-        "equipment": ["5b032f95-3f5b-4a27-9680-5f8f671dba22"],
+        "session": "00000000-0000-0000-0000-000000000000",
+        "procedures": ["00000000-0000-0000-0000-000000000000"],
+        "equipment": ["00000000-0000-0000-0000-000000000000"],
         "notes": "acute probe recording",
         "details": {
             "fileName": "session1_probe.dat",
@@ -150,12 +153,12 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-{'dataacquisition': {
-    'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
+{'data_acquisition': {
+    'id': '00000000-0000-0000-0000-000000000000',
     'notes': 'acute probe recording',
-    'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
-    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'session': '00000000-0000-0000-0000-000000000000',
+    'procedures': ['00000000-0000-0000-0000-000000000000'],
+    'equipment': ['00000000-0000-0000-0000-000000000000'],
     'type': 'ExtracellularEphys',
     'details': {
         'fileName': 'session1_probe.dat',
@@ -173,6 +176,7 @@ resp = client.save_model(
             {'tag': 'good', 'channels': [0, 2], 'groups': [0]}
         ]
     },
+    'type_schema_version': '0.0.0',
     'image': None,
     'order': 0
 }}
@@ -189,19 +193,19 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('dataacquisition', id='b0e4ed13-f2f1-4845-8772-24978539d0bd')
+resp = client.load_model('dataacquisition', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'dataacquisition': {
-    'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
+{'data_acquisition': {
+    'id': '00000000-0000-0000-0000-000000000000',
     'notes': 'acute probe recording',
-    'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
-    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'session': '00000000-0000-0000-0000-000000000000',
+    'procedures': ['00000000-0000-0000-0000-000000000000'],
+    'equipment': ['00000000-0000-0000-0000-000000000000'],
     'type': 'ExtracellularEphys',
     'details': {
         'fileName': 'session1_probe.dat',
@@ -219,6 +223,7 @@ resp = client.load_model('dataacquisition', id='b0e4ed13-f2f1-4845-8772-24978539
             {'tag': 'good', 'channels': [0, 2], 'groups': [0]}
         ]
     },
+    'type_schema_version': '0.0.0',
     'image': None,
     'order': 0
 }}
@@ -239,8 +244,8 @@ resp = client.load_model('dataacquisition', id='b0e4ed13-f2f1-4845-8772-24978539
 ```
 resp = client.save_model(
     "dataacquisition",
-    id="b0e4ed13-f2f1-4845-8772-24978539d0bd",
-    data={"notes": "re-run with higher gain", "equipment": ["5b032f95-3f5b-4a27-9680-5f8f671dba22"]}
+    id="00000000-0000-0000-0000-000000000000",
+    data={"notes": "re-run with higher gain", "equipment": ["00000000-0000-0000-0000-000000000000"]}
 )
 ```
 
@@ -248,12 +253,12 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-{'dataacquisition': {
-    'id': 'b0e4ed13-f2f1-4845-8772-24978539d0bd',
+{'data_acquisition': {
+    'id': '00000000-0000-0000-0000-000000000000',
     'notes': 're-run with higher gain',
-    'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-    'procedures': ['087b71c4-6785-437c-b8ef-e35a82a8463e'],
-    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'session': '00000000-0000-0000-0000-000000000000',
+    'procedures': ['00000000-0000-0000-0000-000000000000'],
+    'equipment': ['00000000-0000-0000-0000-000000000000'],
     'type': 'ExtracellularEphys',
     'details': {
         'fileName': 'session1_probe.dat',
@@ -271,6 +276,7 @@ resp = client.save_model(
             {'tag': 'good', 'channels': [0, 2], 'groups': [0]}
         ]
     },
+    'type_schema_version': '0.0.0',
     'image': None,
     'order': 0
 }}
@@ -291,5 +297,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("dataacquisition", id="b0e4ed13-f2f1-4845-8772-24978539d0bd")
+resp = client.delete_model("dataacquisition", id="00000000-0000-0000-0000-000000000000")
 ``` 

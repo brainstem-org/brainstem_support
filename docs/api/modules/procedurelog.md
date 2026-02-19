@@ -67,10 +67,10 @@ resp = client.load_model('procedurelog')
 ```
 {'procedure_logs': [
     {
-        'id': '6a24ec67-59df-4da2-beae-c138102e69b1',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'Impedances',
         'description': None,
-        'procedure': '6a7c4ef9-f633-4b60-aa21-21d274ebab17',
+        'procedure': '00000000-0000-0000-0000-000000000000',
         'entries': [
             {'date_time': '2023-05-05T06:20:00Z',
              'notes': None,
@@ -84,14 +84,13 @@ resp = client.load_model('procedurelog')
             {'date_time': '2023-03-13T07:10:00Z',
              'notes': None,
              'details': {'impedances': 2.0, 'phases': None, 'channels': ''}}
-        ],
-        'links': {'entries': 'entries/'}
+        ]
     },
     {
-        'id': '88331276-e142-45ec-ae63-45a513881ed7',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'LinearDisplacement',
         'description': None,
-        'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+        'procedure': '00000000-0000-0000-0000-000000000000',
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
              'notes': None,
@@ -99,11 +98,12 @@ resp = client.load_model('procedurelog')
             {'date_time': '2023-03-31T09:05:00Z',
              'notes': None,
              'details': {'displacement': 7.0}}
-        ],
-        'links': {'entries': 'entries/'}
+        ]
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -119,7 +119,7 @@ resp = client.load_model('procedurelog')
 ```
 resp = client.save_model("procedurelog",  data={
     "type": "LinearDisplacement",
-    "procedure": "61da7e53-1066-42de-a1a2-3db96bb7cba2"})
+    "procedure": "00000000-0000-0000-0000-000000000000"})
 ```
 
 ### Response example
@@ -127,10 +127,10 @@ resp = client.save_model("procedurelog",  data={
 
 ```
 {'procedure_log': {
-    'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'LinearDisplacement',
     'description': None,
-    'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+    'procedure': '00000000-0000-0000-0000-000000000000',
     'entries': []}
 }
 ```
@@ -148,7 +148,7 @@ resp = client.save_model("procedurelog",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('procedurelog', id='43d3d060-4606-4e95-bd7e-79dcb910cf27')
+resp = client.load_model('procedurelog', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -156,10 +156,10 @@ resp = client.load_model('procedurelog', id='43d3d060-4606-4e95-bd7e-79dcb910cf2
 
 ```
 {'procedure_log': {
-    'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'LinearDisplacement',
     'description': None,
-    'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+    'procedure': '00000000-0000-0000-0000-000000000000',
     'entries': []}
 }
 ```
@@ -177,7 +177,7 @@ resp = client.load_model('procedurelog', id='43d3d060-4606-4e95-bd7e-79dcb910cf2
 {: .no_toc}
 
 ```
-resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", data={"description": "new text"})
+resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-000000000000", data={"description": "new text"})
 ```
 
 ### Response example
@@ -185,10 +185,10 @@ resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf2
 
 ```
 {'procedure_log': {
-    'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'LinearDisplacement',
     'description': "new text",
-    'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+    'procedure': '00000000-0000-0000-0000-000000000000',
     'entries': []}
 }
 ```
@@ -206,7 +206,7 @@ resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf2
 {: .no_toc}
 
 ```
-resp = client.delete_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27")
+resp = client.delete_model("procedurelog", id="00000000-0000-0000-0000-000000000000")
 ```
 
 
@@ -222,7 +222,7 @@ resp = client.delete_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910c
 {: .no_toc}
 
 ```
-resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="add_entry", data={
+resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-000000000000", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
             'details': {'displacement': 9.0}
@@ -235,10 +235,10 @@ resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf2
 
 ```
 {'procedure_log': {
-        'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'LinearDisplacement',
         'description': 'new text',
-        'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+        'procedure': '00000000-0000-0000-0000-000000000000',
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
@@ -261,7 +261,7 @@ resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf2
 {: .no_toc}
 
 ```
-resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
+resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-000000000000", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
 ```
 
 ### Response example
@@ -269,10 +269,10 @@ resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf2
 
 ```
 {'procedure_log': {
-        'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'LinearDisplacement',
         'description': 'new text',
-        'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+        'procedure': '00000000-0000-0000-0000-000000000000',
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': "new text",
@@ -296,7 +296,7 @@ resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf2
 {: .no_toc}
 
 ```
-resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf27", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
+resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-000000000000", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example
@@ -304,10 +304,10 @@ resp = client.save_model("procedurelog", id="43d3d060-4606-4e95-bd7e-79dcb910cf2
 
 ```
 {'procedure_log': {
-        'id': '43d3d060-4606-4e95-bd7e-79dcb910cf27',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'LinearDisplacement',
         'description': 'new text',
-        'procedure': '61da7e53-1066-42de-a1a2-3db96bb7cba2',
+        'procedure': '00000000-0000-0000-0000-000000000000',
         'entries': []
     }
 }

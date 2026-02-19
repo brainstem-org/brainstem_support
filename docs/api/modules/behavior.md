@@ -48,25 +48,25 @@ resp = client.load_model('behavior')
 ```
 {'behaviors': [
 	{
-		'id': '4ee63327-cb5e-4dc1-99f0-e4bd3c1e0598',
-		'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-		'subjects': ['0f87c229-6769-4854-83a5-c71e154246b8'],
-		'setup': '3e9ec0e0-d685-42ec-8386-0fa24602a73e',
-		'behavioralassay': 'febe36f7-4769-496d-bb91-6a8443214b94'
+		'id': '00000000-0000-0000-0000-000000000000',
+		'session': '00000000-0000-0000-0000-000000000000',
+		'subjects': ['00000000-0000-0000-0000-000000000000'],
+		'setup': '00000000-0000-0000-0000-000000000000',
+		'behavioralassay': '00000000-0000-0000-0000-000000000000'
 	},
 	{
-		'id': 'f99631ef-f7bd-4f79-90b8-e2d790f26e0a',
-		'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-		'subjects': ['35c41e86-dde1-4eb2-a0e2-94dfb1dccd92', '0f87c229-6769-4854-83a5-c71e154246b8'],
-		'setup': 'df63fe54-17e9-4bc2-8409-1c7546a9c19f',
-		'behavioralassay': '1a81b58f-f11d-4beb-81f4-1a7c9ed0b064'
+		'id': '00000000-0000-0000-0000-000000000000',
+		'session': '00000000-0000-0000-0000-000000000000',
+		'subjects': ['00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000000'],
+		'setup': '00000000-0000-0000-0000-000000000000',
+		'behavioralassay': '00000000-0000-0000-0000-000000000000'
 	},
 	{
-		'id': '42fa77fe-c899-422d-815e-d7de230f0faa',
-		'session': 'ef7ae22f-143a-4a5e-adf6-1c623531dd63',
-		'subjects': ['35c41e86-dde1-4eb2-a0e2-94dfb1dccd92'],
-		'setup': 'df63fe54-17e9-4bc2-8409-1c7546a9c19f',
-		'behavioralassay': '1a81b58f-f11d-4beb-81f4-1a7c9ed0b064'
+		'id': '00000000-0000-0000-0000-000000000000',
+		'session': '00000000-0000-0000-0000-000000000000',
+		'subjects': ['00000000-0000-0000-0000-000000000000'],
+		'setup': '00000000-0000-0000-0000-000000000000',
+		'behavioralassay': '00000000-0000-0000-0000-000000000000'
 	}
 ]}
 ```
@@ -84,10 +84,10 @@ resp = client.load_model('behavior')
 
 ```
 resp = client.save_model("behavior",  data={
-	"session": "1f7f103b-e949-405a-9b01-ddda3b2f10cf", 
-	"subjects": ["0f87c229-6769-4854-83a5-c71e154246b8"],
-	"setup": "3e9ec0e0-d685-42ec-8386-0fa24602a73e",
-	"behavioralassay": "febe36f7-4769-496d-bb91-6a8443214b94",
+	"session": "00000000-0000-0000-0000-000000000000", 
+	"subjects": ["00000000-0000-0000-0000-000000000000"],
+	"setup": "00000000-0000-0000-0000-000000000000",
+	"behavioralassay": "00000000-0000-0000-0000-000000000000",
 	"notes": "Optional notes about this behavior"
 })
 ```
@@ -98,11 +98,11 @@ resp = client.save_model("behavior",  data={
 ```
 {'behavior': 
 	{
-		'id': 'f9733b12-e2d5-4886-9e00-09ba26b01a16',
-		'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-		'subjects': ['0f87c229-6769-4854-83a5-c71e154246b8'],
-		'setup': '3e9ec0e0-d685-42ec-8386-0fa24602a73e',
-		'behavioralassay': 'febe36f7-4769-496d-bb91-6a8443214b94',
+		'id': '00000000-0000-0000-0000-000000000000',
+		'session': '00000000-0000-0000-0000-000000000000',
+		'subjects': ['00000000-0000-0000-0000-000000000000'],
+		'setup': '00000000-0000-0000-0000-000000000000',
+		'behavioralassay': '00000000-0000-0000-0000-000000000000',
 		'notes': 'Optional notes about this behavior'
 	}
 }
@@ -121,7 +121,7 @@ resp = client.save_model("behavior",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('behavior', id='f9733b12-e2d5-4886-9e00-09ba26b01a16')
+resp = client.load_model('behavior', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -130,11 +130,11 @@ resp = client.load_model('behavior', id='f9733b12-e2d5-4886-9e00-09ba26b01a16')
 ```
 {'behavior': 
 	{
-		'id': 'f9733b12-e2d5-4886-9e00-09ba26b01a16',
-		'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-		'subjects': ['0f87c229-6769-4854-83a5-c71e154246b8'],
-		'setup': '3e9ec0e0-d685-42ec-8386-0fa24602a73e',
-		'behavioralassay': 'febe36f7-4769-496d-bb91-6a8443214b94',
+		'id': '00000000-0000-0000-0000-000000000000',
+		'session': '00000000-0000-0000-0000-000000000000',
+		'subjects': ['00000000-0000-0000-0000-000000000000'],
+		'setup': '00000000-0000-0000-0000-000000000000',
+		'behavioralassay': '00000000-0000-0000-0000-000000000000',
 		'notes': 'Optional notes about this behavior'
 	}
 }
@@ -153,7 +153,7 @@ resp = client.load_model('behavior', id='f9733b12-e2d5-4886-9e00-09ba26b01a16')
 {: .no_toc}
 
 ```
-resp = client.save_model("behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16", data={'subjects': ['0f87c229-6769-4854-83a5-c71e154246b8', '35c41e86-dde1-4eb2-a0e2-94dfb1dccd92']})
+resp = client.save_model("behavior", id="00000000-0000-0000-0000-000000000000", data={'subjects': ['00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000000']})
 ```
 
 ### Response example
@@ -162,11 +162,11 @@ resp = client.save_model("behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16", 
 ```
 {'behavior': 
 	{
-		'id': 'f9733b12-e2d5-4886-9e00-09ba26b01a16',
-		'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
-		'subjects': ['0f87c229-6769-4854-83a5-c71e154246b8', '35c41e86-dde1-4eb2-a0e2-94dfb1dccd92'],
-		'setup': '3e9ec0e0-d685-42ec-8386-0fa24602a73e',
-		'behavioralassay': 'febe36f7-4769-496d-bb91-6a8443214b94',
+		'id': '00000000-0000-0000-0000-000000000000',
+		'session': '00000000-0000-0000-0000-000000000000',
+		'subjects': ['00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000000'],
+		'setup': '00000000-0000-0000-0000-000000000000',
+		'behavioralassay': '00000000-0000-0000-0000-000000000000',
 		'notes': 'Optional notes about this behavior'
 	}
 }
@@ -185,5 +185,5 @@ resp = client.save_model("behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16", 
 {: .no_toc}
 
 ```
-resp = client.delete_model("behavior", id="f9733b12-e2d5-4886-9e00-09ba26b01a16")
+resp = client.delete_model("behavior", id="00000000-0000-0000-0000-000000000000")
 ```

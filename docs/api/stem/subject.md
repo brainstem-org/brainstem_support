@@ -38,6 +38,7 @@ nav_order: 2
 | `subjectlogs` | list of related subject log IDs formatted as strings **[read-only]** |
 | `name_used_in_storage` | string [max length: 200]|
 | `tags` | list of strings |
+| `links` | object containing related endpoint suffixes **[read-only]** |
 
 
 `extra_fields` is a JSON object where each key/value pair captures additional metadata for the subject. Keys must start with a letter and can only contain letters, numbers, and underscores. Values can be strings or numeric values.
@@ -118,6 +119,8 @@ resp = client.load_model('subject')
     ]
 }
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add

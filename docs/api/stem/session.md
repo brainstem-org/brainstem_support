@@ -33,6 +33,7 @@ nav_order: 3
 | `manipulations` | list of related manipulations IDs formatted as strings **[read-only]** |
 | `name_used_in_storage` | string **[read-only]** [max length: 200]|
 | `tags` | list of strings |
+| `links` | object containing related endpoint suffixes **[read-only]** |
 
 
 Use the Session → Data Storage endpoint (`/api/private/stem/sessiondatastorage/`) to add, remove, or reorder data storage associations. Session responses return `datastorage` IDs in the through-table order saved via this endpoint. You can include a `datastorage` list in Session POST/PATCH payloads (with the required permissions); use the dedicated endpoint when you need to control ordering explicitly.
@@ -117,6 +118,8 @@ resp = client.load_model("session")
     ]
 }
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 ## Add
 

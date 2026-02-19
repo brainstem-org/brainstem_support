@@ -67,6 +67,8 @@ resp = client.load_model('cohort')
 }
 ```
 
+Public list responses also include a `meta` object (pagination/filter metadata).
+
 
 ## Add
 - **Allowed portals:** private
@@ -90,8 +92,7 @@ resp = client.save_model("cohort", data={"name": "NewRestCohort", "project": "00
     'id': '00000000-0000-0000-0000-000000000000',
     'name': 'NewRestCohort',
     'project': '00000000-0000-0000-0000-000000000000',
-    'subjects': ['00000000-0000-0000-0000-000000000000'],
-    'links': {'subjects': 'subjects/'}
+    'subjects': ['00000000-0000-0000-0000-000000000000']
     }
 }
 ```
@@ -120,8 +121,7 @@ resp = client.load_model('cohort', id='00000000-0000-0000-0000-000000000000')
     'id': '00000000-0000-0000-0000-000000000000',
     'name': 'NewRestCohort',
     'project': '00000000-0000-0000-0000-000000000000',
-    'subjects': ['00000000-0000-0000-0000-000000000000'],
-    'links': {'subjects': 'subjects/'}
+    'subjects': ['00000000-0000-0000-0000-000000000000']
     }
 }
 ```
@@ -150,8 +150,7 @@ resp = client.save_model("cohort", id="00000000-0000-0000-0000-000000000000", da
     'id': '00000000-0000-0000-0000-000000000000',
     'name': 'new name',
     'project': '00000000-0000-0000-0000-000000000000',
-    'subjects': ['00000000-0000-0000-0000-000000000000'],
-    'links': {'subjects': 'subjects/'}
+    'subjects': ['00000000-0000-0000-0000-000000000000']
     }
 }
 ```

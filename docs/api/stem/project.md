@@ -30,6 +30,7 @@ nav_order: 1
 | `extra_fields` | JSON object of additional key/value metadata. *See structure below* |
 | `is_public` | boolean |
 | `tags` | list of strings |
+| `links` | object containing related endpoint suffixes **[read-only]** |
 | `users` | JSON object keyed by user email. *See structure below* |
 | `groups` | JSON object keyed by group name. *See structure below* |
 
@@ -168,6 +169,8 @@ resp = client.load_model("project")
     ]
 }
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add

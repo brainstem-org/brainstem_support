@@ -26,6 +26,7 @@ nav_order: 5
 | `session` | related session ID formatted as a string **[required]** |
 | `equipment` | list of related equipment IDs formatted as strings |
 | `details` | JSON data (object or array) whose structure depends on the selected manipulation type |
+| `type_schema_version` | string schema version for `details` |
 | `order` | optional positive integer controlling display order within a session |
 
 
@@ -54,12 +55,12 @@ resp = client.load_model('manipulation')
 ```
 {'manipulations': [
     {
-        'id': '63a9caa1-620e-4ac5-8bf2-c2525a4b9e89',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'ElectricalStimulation',
         'notes': 'motor cortex pulses',
-        'procedures': ['43bd31cd-7122-42b8-b82e-b391fdfdad9e'],
-        'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
-        'session': '1f7f103b-e949-405a-9b01-ddda3b2f10cf',
+        'procedures': ['00000000-0000-0000-0000-000000000000'],
+        'equipment': ['00000000-0000-0000-0000-000000000000'],
+        'session': '00000000-0000-0000-0000-000000000000',
         'details': [
             {
                 'amplitude': 0.15,
@@ -71,15 +72,16 @@ resp = client.load_model('manipulation')
                 'closedLoop': False
             }
         ],
+        'type_schema_version': '0.0.0',
         'order': 0
     },
     {
-        'id': '1102d210-362e-4b8e-b434-8d3b60c7d535',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'LiquidPerturbation',
         'notes': 'saline wash',
-        'procedures': ['64b6ae70-d07f-4fbc-ac04-cdfcfe27936f'],
+        'procedures': ['00000000-0000-0000-0000-000000000000'],
         'equipment': [],
-        'session': 'ef7ae22f-143a-4a5e-adf6-1c623531dd63',
+        'session': '00000000-0000-0000-0000-000000000000',
         'details': [
             {
                 'liquidAgent': 'Saline',
@@ -91,6 +93,7 @@ resp = client.load_model('manipulation')
                 'closedLoop': False
             }
         ],
+        'type_schema_version': '0.0.0',
         'order': 1
     }
 ]}
@@ -112,9 +115,9 @@ resp = client.save_model(
     "manipulation",
     data={
         'type': 'LiquidPerturbation',
-        'session': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
-        'procedures': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
-        'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+        'session': '00000000-0000-0000-0000-000000000000',
+        'procedures': ['00000000-0000-0000-0000-000000000000'],
+        'equipment': ['00000000-0000-0000-0000-000000000000'],
         'notes': 'odorant rinse',
         'details': [
             {
@@ -136,12 +139,12 @@ resp = client.save_model(
 
 ```
 {'manipulation': {
-    'id': 'd05f56c6-9aea-4c38-a1cb-8680e015cad0',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'LiquidPerturbation',
     'notes': 'odorant rinse',
-    'procedures': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
-    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
-    'session': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
+    'procedures': ['00000000-0000-0000-0000-000000000000'],
+    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'session': '00000000-0000-0000-0000-000000000000',
     'details': [
         {
             'liquidAgent': 'Water',
@@ -153,6 +156,7 @@ resp = client.save_model(
             'closedLoop': True
         }
     ],
+    'type_schema_version': '0.0.0',
     'order': 0
 }}
 ```
@@ -170,7 +174,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad0')
+resp = client.load_model('manipulation', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -178,12 +182,12 @@ resp = client.load_model('manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad
 
 ```
 {'manipulation': {
-    'id': 'd05f56c6-9aea-4c38-a1cb-8680e015cad0',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'LiquidPerturbation',
     'notes': 'odorant rinse',
-    'procedures': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
-    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
-    'session': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
+    'procedures': ['00000000-0000-0000-0000-000000000000'],
+    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'session': '00000000-0000-0000-0000-000000000000',
     'details': [
         {
             'liquidAgent': 'Water',
@@ -195,6 +199,7 @@ resp = client.load_model('manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad
             'closedLoop': True
         }
     ],
+    'type_schema_version': '0.0.0',
     'order': 0
 }}
 ```
@@ -214,7 +219,7 @@ resp = client.load_model('manipulation', id='d05f56c6-9aea-4c38-a1cb-8680e015cad
 ```
 resp = client.save_model(
     "manipulation",
-    id="d05f56c6-9aea-4c38-a1cb-8680e015cad0",
+    id="00000000-0000-0000-0000-000000000000",
     data={"notes": "rinse complete"}
 )
 ```
@@ -224,12 +229,12 @@ resp = client.save_model(
 
 ```
 {'manipulation': {
-    'id': 'd05f56c6-9aea-4c38-a1cb-8680e015cad0',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'LiquidPerturbation',
     'notes': 'rinse complete',
-    'procedures': ['61da7e53-1066-42de-a1a2-3db96bb7cba2'],
-    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
-    'session': '1a827c68-19b4-4cec-8ae5-e13c8f1de900',
+    'procedures': ['00000000-0000-0000-0000-000000000000'],
+    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'session': '00000000-0000-0000-0000-000000000000',
     'details': [
         {
             'liquidAgent': 'Water',
@@ -241,6 +246,7 @@ resp = client.save_model(
             'closedLoop': True
         }
     ],
+    'type_schema_version': '0.0.0',
     'order': 0
 }}
 ```
@@ -260,5 +266,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("manipulation", id="d05f56c6-9aea-4c38-a1cb-8680e015cad0")
+resp = client.delete_model("manipulation", id="00000000-0000-0000-0000-000000000000")
 ``` 
