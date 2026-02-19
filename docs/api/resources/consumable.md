@@ -28,6 +28,7 @@ nav_order: 6
 | `rrid` | Research Resource Identifier (RRID) |
 | `rrid_url` | URL to RRID lookup page **[read-only]** |
 | `external_identifiers` | JSON object containing external identifier information |
+| `comments` | string, used when proposing approval changes |
 
 A detailed list of the available `type` options and accepted schemas for the `details` field can be found in the [Consumable schemas documentation](/api/schemas/consumable.md).
 
@@ -57,6 +58,9 @@ resp = client.load_model('consumable')
         "description": "Transsynaptic Tracers: WGA-Cre (AAV2, 5 & 8)",
         "supplier": "4fa1c3b4-f955-47f5-8524-3f1afa3fc657",
         "type": "VirusConstruct",
+        "rrid": "",
+        "rrid_url": "",
+        "external_identifiers": [],
         "details": {
             "virus_type": "AAV",
             "notes": "Transsynaptic Tracers: WGA-Cre (AAV2, 5 & 8)"
@@ -68,6 +72,9 @@ resp = client.load_model('consumable')
         "description": "",
         "supplier": "fba48e24-eebf-4b11-a8b9-ac660854d779",
         "type": "SiliconProbeDesign",
+        "rrid": "",
+        "rrid_url": "",
+        "external_identifiers": [],
         "details": {
             "product_id": "A16x1-2mm-100-177",
             "shanksLength": 2,
@@ -82,6 +89,8 @@ resp = client.load_model('consumable')
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -160,6 +169,9 @@ resp = client.load_model('consumable', id='67f263cd-5960-406f-a879-c1f259140979'
         'description': '',
         'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
         'type': 'OpticFiberDesign',
+        'rrid': '',
+        'rrid_url': '',
+        'external_identifiers': [],
         'details': {
             'productId': '42',
             'tipDescription': '',
@@ -230,7 +242,7 @@ resp = client.delete_model("consumable", id="67f263cd-5960-406f-a879-c1f25914097
 ## List approvals
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/resources/consumable_approvals
+- **URL:** https://www.brainstem.org/api/private/resources/consumableapproval
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -267,11 +279,13 @@ resp = client.load_model('consumableapproval')
 ]}
 ```
 
+Approval list responses also include a `meta` object (pagination/filter metadata).
+
 
 ## Detail approval
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/resources/consumable_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/consumableapproval/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -311,7 +325,7 @@ resp = client.load_model('consumableapproval', id='b7595523-5578-45c0-b7ef-c1f14
 ## Accept approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/consumable_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/consumableapproval/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -326,7 +340,7 @@ resp = client.save_model("consumableapproval", id="b7595523-5578-45c0-b7ef-c1f14
 ## Reject approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/consumable_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/consumableapproval/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
