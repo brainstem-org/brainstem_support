@@ -14,8 +14,8 @@ The Resources app manages laboratory resources, equipment, and supply chain info
 
 The Resources app includes the following resource management endpoints:
 
-- **[Hardware Devices](/api/resources/hardwaredevice/)** - Laboratory equipment and instrumentation catalog
 - **[Consumables](/api/resources/consumable/)** - Laboratory consumable materials and supplies
+- **[Hardware Devices](/api/resources/hardwaredevice/)** - Laboratory equipment and instrumentation catalog
 - **[Suppliers](/api/resources/supplier/)** - Vendor and supplier contact information and relationships
 
 These endpoints facilitate efficient laboratory resource management and procurement tracking.

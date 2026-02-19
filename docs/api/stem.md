@@ -21,9 +21,6 @@ The STEM module includes the following key endpoints:
 - **[Collections](/api/stem/collection/)** - Data collections and groupings of sessions
 - **[Project Group Membership Invitations](/api/stem/project_group_membership_invitation/)** - Group invitation management
 - **[Project Membership Invitations](/api/stem/project_membership_invitation/)** - User invitation management
-- **`SessionDataStorage`** (`/api/private/stem/sessiondatastorage/`) - Session-to-data storage relations and ordering
-- **`CollectionSession`** (`/api/private/stem/collectionsession/`) - Collection-to-session relations and ordering
-- **`CohortSubject`** (`/api/private/stem/cohortsubject/`) - Cohort-to-subject relations and ordering
 
 Each endpoint supports standard CRUD operations (Create, Read, Update, Delete) with consistent authentication and query parameter support.
 
