@@ -79,7 +79,9 @@ resp = client.load_model('subject')
             "strain": "00000000-0000-0000-0000-000000000000",
             "sex": "M",
             "genetic_line": "",
+            "genotype": "",
             "subject_identifier": "",
+            "licenses": [],
             "supplier": null,
             "birth_date": "2023-03-22",
             "death_date": null,
@@ -87,6 +89,10 @@ resp = client.load_model('subject')
             "procedures": ["00000000-0000-0000-0000-000000000000"],
             "subjectlogs": [],
             "tags": [],
+            "links": {
+                "procedures": "procedures/",
+                "subjectlogs": "subjectlogs/"
+            },
             "name_used_in_storage": null,
         },
         {
@@ -97,7 +103,9 @@ resp = client.load_model('subject')
             "strain": "00000000-0000-0000-0000-000000000000",
             "sex": "M",
             "genetic_line": "",
+            "genotype": "",
             "subject_identifier": "",
+            "licenses": [],
             "supplier": null,
             "birth_date": null,
             "death_date": null,
@@ -114,6 +122,10 @@ resp = client.load_model('subject')
             ],
             "subjectlogs": ["00000000-0000-0000-0000-000000000000"],
             "tags": ["cooling"],
+            "links": {
+                "procedures": "procedures/",
+                "subjectlogs": "subjectlogs/"
+            },
             "name_used_in_storage": "subject2_local",
         }
     ]
@@ -162,7 +174,9 @@ resp = client.save_model(
         "strain": "00000000-0000-0000-0000-000000000000",
         "sex": "U",
         "genetic_line": "",
+        "genotype": "",
         "subject_identifier": "WF-123",
+        "licenses": [],
         "supplier": "00000000-0000-0000-0000-000000000000",
         "birth_date": null,
         "death_date": null,
@@ -170,6 +184,10 @@ resp = client.save_model(
         "procedures": [],
         "subjectlogs": [],
         "tags": [],
+        "links": {
+            "procedures": "procedures/",
+            "subjectlogs": "subjectlogs/"
+        },
         "name_used_in_storage": null,
     }
 }
@@ -203,7 +221,9 @@ resp = client.load_model('subject', id='00000000-0000-0000-0000-000000000000')
         "strain": "00000000-0000-0000-0000-000000000000",
         "sex": "U",
         "genetic_line": "",
+        "genotype": "",
         "subject_identifier": "WF-123",
+        "licenses": [],
         "supplier": "00000000-0000-0000-0000-000000000000",
         "birth_date": null,
         "death_date": null,
@@ -214,6 +234,10 @@ resp = client.load_model('subject', id='00000000-0000-0000-0000-000000000000')
         "procedures": [],
         "subjectlogs": [],
         "tags": [],
+        "links": {
+            "procedures": "procedures/",
+            "subjectlogs": "subjectlogs/"
+        },
         "name_used_in_storage": null,
     }
 }
@@ -252,7 +276,9 @@ resp = client.save_model(
         "strain": "00000000-0000-0000-0000-000000000000",
         "sex": "U",
         "genetic_line": "",
+        "genotype": "",
         "subject_identifier": "WF-123",
+        "licenses": [],
         "supplier": "00000000-0000-0000-0000-000000000000",
         "birth_date": null,
         "death_date": null,
@@ -260,6 +286,10 @@ resp = client.save_model(
         "procedures": [],
         "subjectlogs": [],
         "tags": [],
+        "links": {
+            "procedures": "procedures/",
+            "subjectlogs": "subjectlogs/"
+        },
         "name_used_in_storage": null,
     }
 }

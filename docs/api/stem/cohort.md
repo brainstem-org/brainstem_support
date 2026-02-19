@@ -77,6 +77,8 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
+**Additional notes:** every subject in `subjects` must already belong to the same `project` as the cohort.
+
 ### Use example (using Python API)
 {: .no_toc}
 

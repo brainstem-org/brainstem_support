@@ -152,6 +152,12 @@ resp = client.load_model("project")
                 "medial septum",
                 "extracellular"
             ],
+            "links": {
+                "cohorts": "cohorts/",
+                "collections": "collections/",
+                "sessions": "sessions/",
+                "subjects": "subjects/"
+            },
             "users": {
                 "user3@mail.com": {
                     "can_change": true,
@@ -262,6 +268,12 @@ resp = client.load_model("project", id="00000000-0000-0000-0000-000000000000")
             "tag1",
             "tag2"
         ],
+        "links": {
+            "cohorts": "cohorts/",
+            "collections": "collections/",
+            "sessions": "sessions/",
+            "subjects": "subjects/"
+        },
         "users": {
             "user@mail.com": {
                 "can_change": true,
@@ -336,6 +348,12 @@ resp = client.save_model(
         "extra_fields": {},
         "is_public": false,
         "tags": [],
+        "links": {
+            "cohorts": "cohorts/",
+            "collections": "collections/",
+            "sessions": "sessions/",
+            "subjects": "subjects/"
+        },
         "users": {
             "user1@mail.com": {
                 "can_change": true,

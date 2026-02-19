@@ -243,8 +243,7 @@ resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-00000000000
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
             'details': {'displacement': 9.0}}
-        ],
-        'links': {'entries': 'entries/'}
+        ]
     }
 }
 ```
@@ -277,8 +276,7 @@ resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-00000000000
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': "new text",
             'details': {'displacement': 9.0}}
-        ],
-        'links': {'entries': 'entries/'}
+        ]
     }
 }
 ```
