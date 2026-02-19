@@ -25,6 +25,9 @@ nav_order: 1
 | `parent` | related behavioral category ID |
 | `comments` | string, used when proposing approval changes |
 
+Optional fields such as `comments` can be omitted from list/detail responses when empty.
+
+
 
 ## List view
 - **Allowed portals:** public, private

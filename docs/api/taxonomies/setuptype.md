@@ -25,6 +25,9 @@ nav_order: 7
 | `category` | single-character code categorizing the setup type **[required for POST; optional for PATCH]** |
 | `comments` | string, used when proposing approval changes |
 
+Optional fields such as `comments` can be omitted from list/detail responses when empty.
+
+
 These are the available `category` options for Setup Type:
 - `I`: In Vitro
 - `E`: Ex Vivo

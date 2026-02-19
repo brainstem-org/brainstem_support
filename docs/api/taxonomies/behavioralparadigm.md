@@ -30,6 +30,9 @@ nav_order: 2
 | `external_identifiers` | JSON object containing external identifier information |
 | `comments` | string, used when proposing approval changes |
 
+Optional fields such as `comments` can be omitted from list/detail responses when empty.
+
+
 
 ## List view
 - **Allowed portals:** public, private

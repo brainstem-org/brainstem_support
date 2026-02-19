@@ -33,6 +33,7 @@ nav_order: 2
 | `breeding` | breeding ID formatted as a string |
 | `birth_date` | string containing date (e.g. `"2023-03-22"`) |
 | `death_date` | string containing date (e.g. `"2023-03-22"`) |
+| `status` | subject lifecycle status string (e.g. `"active"`) |
 | `extra_fields` | JSON object of additional key/value metadata. *See structure below* |
 | `procedures` | list of related procedures IDs formatted as strings **[read-only]** |
 | `subjectlogs` | list of related subject log IDs formatted as strings **[read-only]** |
@@ -85,6 +86,7 @@ resp = client.load_model('subject')
             "supplier": null,
             "birth_date": "2023-03-22",
             "death_date": null,
+            "status": "active",
             "extra_fields": {},
             "procedures": ["00000000-0000-0000-0000-000000000000"],
             "subjectlogs": [],
@@ -109,6 +111,7 @@ resp = client.load_model('subject')
             "supplier": null,
             "birth_date": null,
             "death_date": null,
+            "status": "active",
             "extra_fields": {},
             "procedures": [
                 "00000000-0000-0000-0000-000000000000",
@@ -180,6 +183,7 @@ resp = client.save_model(
         "supplier": "00000000-0000-0000-0000-000000000000",
         "birth_date": null,
         "death_date": null,
+        "status": "active",
         "extra_fields": null,
         "procedures": [],
         "subjectlogs": [],

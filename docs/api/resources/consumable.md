@@ -30,6 +30,9 @@ nav_order: 6
 | `external_identifiers` | JSON object containing external identifier information |
 | `comments` | string, used when proposing approval changes |
 
+Optional fields such as `comments` can be omitted from list/detail responses when empty.
+
+
 A detailed list of the available `type` options and accepted schemas for the `details` field can be found in the [Consumable schemas documentation](/api/schemas/consumable.md).
 
 
