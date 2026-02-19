@@ -24,13 +24,16 @@ nav_order: 1
 | `first_name` | string |
 | `last_name` | string |
 | `groups_own_json` | list of dictionaries with each group owned by the user. *See structure below* |
-| `profile` | nested object containing user profile fields (`website`, `google_scholar`, `orcid_id`, `atlas_preference`, `active_projects`) |
+| `website` | string [max length: 200] |
+| `google_scholar` | string [max length: 200] |
+| `orcid_id` | string [max length: 100] |
+| `atlas_preference` | string [max length: 7]|
+| `active_projects` | list of related project IDs |
 
 Each dictionary in the `groups_own_json` list contains the group's `id` and `name`:
 ```
 {'id': 8, 'name': 'test_group'}
 ```
-
 
 ## List view
 - **Allowed portals:** public, private
@@ -62,13 +65,11 @@ resp = client.load_model('user')
             {'id': 9, 'name': 'my group1'},
             {'id': 13, 'name': 'Peters group'}
         ],
-        'profile': {
-            'website': 'https://petersenlab.org/',
-            'google_scholar': 'https://scholar.google.dk/citations?user=RywQhd8AAAAJ&hl',
-            'orcid_id': 'https://orcid.org/0000-0002-2092-4791',
-            'atlas_preference': 'AIA',
-            'active_projects': []
-        }
+        'website': 'https://petersenlab.org/',
+        'google_scholar': 'https://scholar.google.dk/citations?user=RywQhd8AAAAJ&hl',
+        'orcid_id': 'https://orcid.org/0000-0002-2092-4791',
+        'atlas_preference': 'AIA',
+        'active_projects': []
     },
     {
         'id': 16,
@@ -76,13 +77,11 @@ resp = client.load_model('user')
         'first_name': 'New',
         'last_name': 'User',
         'groups_own_json': [],
-        'profile': {
-            'website': '',
-            'google_scholar': '',
-            'orcid_id': '',
-            'atlas_preference': 'AIA',
-            'active_projects': []
-        }
+        'website': '',
+        'google_scholar': '',
+        'orcid_id': '',
+        'atlas_preference': 'AIA',
+        'active_projects': []
     }
 ]}
 ```
@@ -119,13 +118,11 @@ resp = client.load_model('user', id='16')
     'first_name': 'New',
     'last_name': 'User',
     'groups_own_json': [],
-    'profile': {
-        'website': '',
-        'google_scholar': '',
-        'orcid_id': '',
-        'atlas_preference': 'AIA',
-        'active_projects': []
-    }}
+    'website': '',
+    'google_scholar': '',
+    'orcid_id': '',
+    'atlas_preference': 'AIA',
+    'active_projects': []}
 }
 ```
 
@@ -145,7 +142,7 @@ resp = client.load_model('user', id='16')
 
 
 ```
-resp = client.save_model("user", id="16", data={"profile": {"website": "www.someweb.com"}})
+resp = client.save_model("user", id="16", data={"website": "www.someweb.com"})
 ```
 
 ### Response example
@@ -159,13 +156,11 @@ resp = client.save_model("user", id="16", data={"profile": {"website": "www.some
     'first_name': 'New',
     'last_name': 'User',
     'groups_own_json': [],
-    'profile': {
-        'website': 'http://www.someweb.com',
-        'google_scholar': '',
-        'orcid_id': '',
-        'atlas_preference': 'AIA',
-        'active_projects': []
-    }}
+    'website': 'http://www.someweb.com',
+    'google_scholar': '',
+    'orcid_id': '',
+    'atlas_preference': 'AIA',
+    'active_projects': []}
 }
 ```
 
