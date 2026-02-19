@@ -111,6 +111,6 @@ All equipment types have the following relations:
 
 | Manipulation Type | Available Procedure Type |
 |:-----------------|:-------------------------|
-| Food Deprivation Log |  |
-| Water Deprivation Log |  |
-| Weighing Log |  |
+| Food Deprivation Log | |
+| Water Deprivation Log | |
+| Weighing Log | |

@@ -28,8 +28,10 @@ nav_order: 4
 | `consumable` | related consumable ID formatted as a string |
 | `hardwaredevice` | related hardware device ID formatted as a string |
 | `details` | JSON object mapped to the internal `type_json` field. *See accepted schemas below* |
+| `type_schema_version` | string schema version for `details` |
 | `coordinates_system` | string **[required]**. *See options below* |
 | `coordinates_details` | JSON object mapped to the internal `coordinates_json` field. *See accepted schemas below* |
+| `coordinates_schema_version` | string schema version for `coordinates_details` |
 
 Most equipment schemas currently expose no additional fields, so the API may return an empty `{}` for `details` unless new properties are defined.
 
@@ -61,15 +63,16 @@ resp = client.load_model('equipment')
 ```
 {'equipment': [
     {
-        'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
+        'id': '00000000-0000-0000-0000-000000000000',
         'name': 'Headstage amplifier',
         'type': 'Amplifier',
         'notes': '32-channel preamp',
-        'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
+        'setup': '00000000-0000-0000-0000-000000000000',
         'date_time': '2024-03-05T10:00:00Z',
         'consumable': None,
-        'hardwaredevice': 'c18df269-5d38-4f3d-9509-1431d0f5d4ff',
+        'hardwaredevice': '00000000-0000-0000-0000-000000000000',
         'details': {},
+        'type_schema_version': '0.0.0',
         'coordinates_system': 'External_XYZ_Absolute',
         'coordinates_details': {
             'x': 0.0,
@@ -78,18 +81,20 @@ resp = client.load_model('equipment')
             'xAngle': 0.0,
             'yAngle': 0.0,
             'zAngle': 0.0
-        }
+        },
+        'coordinates_schema_version': '0.0.0'
     },
     {
-        'id': 'a18dd2b1-6393-468c-9424-1bc77b9e4976',
+        'id': '00000000-0000-0000-0000-000000000000',
         'name': 'Two-photon rig',
         'type': 'TwoPhotonMicroscope',
         'notes': 'Imaging setup',
-        'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
+        'setup': '00000000-0000-0000-0000-000000000000',
         'date_time': None,
         'consumable': None,
         'hardwaredevice': None,
         'details': {},
+        'type_schema_version': '0.0.0',
         'coordinates_system': 'External_XYZ_Absolute',
         'coordinates_details': {
             'x': 120.0,
@@ -98,7 +103,8 @@ resp = client.load_model('equipment')
             'xAngle': 0.0,
             'yAngle': 0.0,
             'zAngle': 0.0
-        }
+        },
+        'coordinates_schema_version': '0.0.0'
     }
 ]}
 ```
@@ -120,8 +126,8 @@ resp = client.save_model(
     data={
         "name": "Fiber photometry console",
         "type": "FiberPhotometrySystem",
-        "setup": "0f87c229-6769-4854-83a5-c71e154246b8",
-        "hardwaredevice": "c18df269-5d38-4f3d-9509-1431d0f5d4ff",
+        "setup": "00000000-0000-0000-0000-000000000000",
+        "hardwaredevice": "00000000-0000-0000-0000-000000000000",
         "notes": "Main recording rig",
         "details": {},
         "coordinates_system": "External_XYZ_Absolute",
@@ -142,15 +148,16 @@ resp = client.save_model(
 
 ```
 {'equipment': {
-    'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
+    'id': '00000000-0000-0000-0000-000000000000',
     'name': 'Fiber photometry console',
     'type': 'FiberPhotometrySystem',
     'notes': 'Main recording rig',
-    'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'setup': '00000000-0000-0000-0000-000000000000',
     'date_time': None,
     'consumable': None,
-    'hardwaredevice': 'c18df269-5d38-4f3d-9509-1431d0f5d4ff',
+    'hardwaredevice': '00000000-0000-0000-0000-000000000000',
     'details': {},
+    'type_schema_version': '0.0.0',
     'coordinates_system': 'External_XYZ_Absolute',
     'coordinates_details': {
         'x': 1.0,
@@ -159,7 +166,8 @@ resp = client.save_model(
         'xAngle': 4.0,
         'yAngle': 5.0,
         'zAngle': 6.0
-    }
+    },
+    'coordinates_schema_version': '0.0.0'
 }}
 ```
 
@@ -175,7 +183,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
+resp = client.load_model('equipment', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -183,15 +191,16 @@ resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 
 ```
 {'equipment': {
-    'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
+    'id': '00000000-0000-0000-0000-000000000000',
     'name': 'Fiber photometry console',
     'type': 'FiberPhotometrySystem',
     'notes': 'Main recording rig',
-    'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'setup': '00000000-0000-0000-0000-000000000000',
     'date_time': None,
     'consumable': None,
-    'hardwaredevice': 'c18df269-5d38-4f3d-9509-1431d0f5d4ff',
+    'hardwaredevice': '00000000-0000-0000-0000-000000000000',
     'details': {},
+    'type_schema_version': '0.0.0',
     'coordinates_system': 'External_XYZ_Absolute',
     'coordinates_details': {
         'x': 1.0,
@@ -200,7 +209,8 @@ resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
         'xAngle': 4.0,
         'yAngle': 5.0,
         'zAngle': 6.0
-    }
+    },
+    'coordinates_schema_version': '0.0.0'
 }}
 ```
 
@@ -219,7 +229,7 @@ resp = client.load_model('equipment', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ```
 resp = client.save_model(
     "equipment",
-    id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
+    id="00000000-0000-0000-0000-000000000000",
     data={"notes": "Updated calibration complete"}
 )
 ```
@@ -229,15 +239,16 @@ resp = client.save_model(
 
 ```
 {'equipment': {
-    'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
+    'id': '00000000-0000-0000-0000-000000000000',
     'name': 'Fiber photometry console',
     'type': 'FiberPhotometrySystem',
     'notes': 'Updated calibration complete',
-    'setup': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'setup': '00000000-0000-0000-0000-000000000000',
     'date_time': None,
     'consumable': None,
-    'hardwaredevice': 'c18df269-5d38-4f3d-9509-1431d0f5d4ff',
+    'hardwaredevice': '00000000-0000-0000-0000-000000000000',
     'details': {},
+    'type_schema_version': '0.0.0',
     'coordinates_system': 'External_XYZ_Absolute',
     'coordinates_details': {
         'x': 1.0,
@@ -246,7 +257,8 @@ resp = client.save_model(
         'xAngle': 4.0,
         'yAngle': 5.0,
         'zAngle': 6.0
-    }
+    },
+    'coordinates_schema_version': '0.0.0'
 }}
 ```
 
@@ -261,5 +273,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("equipment", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
+resp = client.delete_model("equipment", id="00000000-0000-0000-0000-000000000000")
 ```

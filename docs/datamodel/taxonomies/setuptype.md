@@ -3,7 +3,7 @@ layout: default
 title: Setup types
 parent: Taxonomies
 grand_parent: Data model
-nav_order: 2
+nav_order: 5
 ---
 
 # Setup types model
@@ -25,8 +25,8 @@ Setup types are fundamentally categories of setups and also serve as categories 
 |:------|:------------|
 | ``Name of setup type`` | The name of the setup type (**required**; string; maximum length: 200 characters; must be unique) |
 | ``Category of the setup type`` | The category of the setup type (**required**). Selected from predefined categories (In Vitro, Ex Vivo, Anesthetized In Vivo, Head-Fixed Awake, Voluntarily Stationary Awake, Freely Moving Awake, Unknown) |
-| ``Description`` | A general description of the setup type (optional; maximum length: 2000 characters) |
-| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
+| ``Description`` | A general description of the setup type (maximum length: 2000 characters) |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 

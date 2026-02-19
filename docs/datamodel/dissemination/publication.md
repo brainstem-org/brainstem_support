@@ -28,11 +28,11 @@ Publications refer to articles, papers, or studies in scientific journals. They 
 | ``Journal`` | The journal in which the publication appears (**required**). Must reference an existing [journal]({{"datamodel/dissemination/journal/"|absolute_url}}). Example: "Nature Neuroscience" |
 | ``Abstract`` | A summary of the publication's content (**required**; text field). Example: "This study investigates the role of hippocampal place cells in spatial memory formation..." |
 | ``Publication date`` | Date when the publication was officially released (**required**; date). Example: "2024-03-15" |
-| ``DOI`` | Digital Object Identifier for the publication (optional; string; maximum length: 200 characters). Example: "10.1038/s41593-024-01567-2" |
-| ``Volume`` | The journal volume in which the publication appears (optional; string; maximum length: 100 characters). Example: "27" |
-| ``Publication URL`` | Direct link to the publication (optional; URL; maximum length: 300 characters). Example: "https://www.nature.com/articles/example" |
-| ``PDF URL`` | Direct link to a publicly accessible PDF version of the publication (optional; URL; maximum length: 300 characters). Example: "https://www.nature.com/articles/example.pdf" |
-| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
+| ``DOI`` | Digital Object Identifier for the publication (string; maximum length: 200 characters). Example: "10.1038/s41593-024-01567-2" |
+| ``Volume`` | The journal volume in which the publication appears (string; maximum length: 100 characters). Example: "27" |
+| ``Publication URL`` | Direct link to the publication (URL; maximum length: 300 characters). Example: "https://www.nature.com/articles/example" |
+| ``PDF URL`` | Direct link to a publicly accessible PDF version of the publication (URL; maximum length: 300 characters). Example: "https://www.nature.com/articles/example.pdf" |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 

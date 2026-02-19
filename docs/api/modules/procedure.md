@@ -27,9 +27,14 @@ nav_order: 6
 | `consumablestock` | related consumable stock ID formatted as a string |
 | `equipment` | list of related equipment IDs formatted as strings |
 | `brain_region` | related brain region ID formatted as a string |
+| `licenses` | list of related license IDs formatted as strings |
 | `details` | JSON object mapped to the internal `type_json` field. *See accepted schemas below* |
+| `type_schema_version` | string schema version for `details` |
 | `coordinates_system` | string **[required]**. *See options below* |
 | `coordinates_details` | JSON object mapped to the internal `coordinates_json` field. *See accepted schemas below* |
+| `coordinates_schema_version` | string schema version for `coordinates_details` |
+| `created_at` | string containing creation date and time (ISO 8601, read-only) |
+| `updated_at` | string containing last update date and time (ISO 8601, read-only) |
 
 ## Types of procedure
 
@@ -58,18 +63,20 @@ resp = client.load_model('procedure')
 ```
 {'procedures': [
     {
-        'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'SiliconProbeImplant',
         'notes': 'acute implant',
-        'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
+        'subject': '00000000-0000-0000-0000-000000000000',
         'date_time': '2024-03-12T09:00:00Z',
-        'consumablestock': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-        'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+        'consumablestock': '00000000-0000-0000-0000-000000000000',
+        'equipment': ['00000000-0000-0000-0000-000000000000'],
+        'licenses': ['00000000-0000-0000-0000-000000000000'],
         'details': {
             'probeId': 'SP-64A',
             'sterilizationMethod': 'Ethylene Oxide'
         },
-        'brain_region': '15f9aef5-2d46-4ff2-a0db-ac6be759c05c',
+        'type_schema_version': '0.0.0',
+        'brain_region': '00000000-0000-0000-0000-000000000000',
         'coordinates_system': 'Stereotaxic_BregmaAbsolute',
         'coordinates_details': {
             'apCoordinate': -2.5,
@@ -78,22 +85,27 @@ resp = client.load_model('procedure')
             'apAngle': 0.0,
             'mlAngle': 10.0,
             'dvAngle': 0.0
-        }
+        },
+        'coordinates_schema_version': '0.0.0',
+        'created_at': '2024-03-12T09:00:00Z',
+        'updated_at': '2024-03-12T09:00:00Z'
     },
     {
-        'id': 'a18dd2b1-6393-468c-9424-1bc77b9e4976',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'OpticFiberImplant',
         'notes': 'bilateral implant',
-        'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
+        'subject': '00000000-0000-0000-0000-000000000000',
         'date_time': None,
         'consumablestock': None,
         'equipment': [],
+        'licenses': [],
         'details': {
             'fiberTipShape': 'flat',
             'fiberId': 'OF-L-2024-07',
             'sterilizationMethod': 'Autoclave'
         },
-        'brain_region': '15f9aef5-2d46-4ff2-a0db-ac6be759c05c',
+        'type_schema_version': '0.0.0',
+        'brain_region': '00000000-0000-0000-0000-000000000000',
         'coordinates_system': 'Stereotaxic_BregmaBrainSurface',
         'coordinates_details': {
             'apCoordinate': -2.8,
@@ -101,7 +113,10 @@ resp = client.load_model('procedure')
             'surfaceDepth': -0.5,
             'apAngle': 0.0,
             'mlAngle': 5.0
-        }
+        },
+        'coordinates_schema_version': '0.0.0',
+        'created_at': '2024-03-12T09:05:00Z',
+        'updated_at': '2024-03-12T09:05:00Z'
     }
 ]}
 ```
@@ -122,9 +137,9 @@ resp = client.save_model(
     "procedure",
     data={
         "type": "OpticFiberImplant",
-        "subject": "0f87c229-6769-4854-83a5-c71e154246b8",
-        "consumablestock": "a5f29099-2758-4163-a8e4-e5e2898e57b2",
-        "equipment": ["5b032f95-3f5b-4a27-9680-5f8f671dba22"],
+        "subject": "00000000-0000-0000-0000-000000000000",
+        "consumablestock": "00000000-0000-0000-0000-000000000000",
+        "equipment": ["00000000-0000-0000-0000-000000000000"],
         "notes": "bilateral implant",
         "details": {"fiberTipShape": "flat", "fiberId": "OF-L-2024-07", "sterilizationMethod": "Autoclave"},
         "coordinates_system": "Stereotaxic_BregmaAbsolute",
@@ -145,14 +160,16 @@ resp = client.save_model(
 
 ```
 {'procedure': {
-    'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'OpticFiberImplant',
     'notes': 'bilateral implant',
-    'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'subject': '00000000-0000-0000-0000-000000000000',
     'date_time': None,
-    'consumablestock': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'consumablestock': '00000000-0000-0000-0000-000000000000',
+    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'licenses': [],
     'details': {'fiberTipShape': 'flat', 'fiberId': 'OF-L-2024-07', 'sterilizationMethod': 'Autoclave'},
+    'type_schema_version': '0.0.0',
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
     'coordinates_details': {
@@ -162,7 +179,10 @@ resp = client.save_model(
         "apAngle": 0.0,
         "mlAngle": 5.0,
         "dvAngle": 0.0
-    }
+    },
+    'coordinates_schema_version': '0.0.0',
+    'created_at': '2024-03-12T09:00:00Z',
+    'updated_at': '2024-03-12T09:00:00Z'
 }}
 ```
 
@@ -179,7 +199,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('procedure', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
+resp = client.load_model('procedure', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -187,14 +207,16 @@ resp = client.load_model('procedure', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 
 ```
 {'procedure': {
-    'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'OpticFiberImplant',
     'notes': 'bilateral implant',
-    'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'subject': '00000000-0000-0000-0000-000000000000',
     'date_time': None,
-    'consumablestock': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'consumablestock': '00000000-0000-0000-0000-000000000000',
+    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'licenses': [],
     'details': {'fiberTipShape': 'flat', 'fiberId': 'OF-L-2024-07', 'sterilizationMethod': 'Autoclave'},
+    'type_schema_version': '0.0.0',
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
     'coordinates_details': {
@@ -204,7 +226,10 @@ resp = client.load_model('procedure', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
         "apAngle": 0.0,
         "mlAngle": 5.0,
         "dvAngle": 0.0
-    }
+    },
+    'coordinates_schema_version': '0.0.0',
+    'created_at': '2024-03-12T09:00:00Z',
+    'updated_at': '2024-03-12T09:00:00Z'
 }}
 ```
 
@@ -223,7 +248,7 @@ resp = client.load_model('procedure', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
 ```
 resp = client.save_model(
     "procedure",
-    id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
+    id="00000000-0000-0000-0000-000000000000",
     data={"notes": "implant tightened"}
 )
 ```
@@ -233,14 +258,16 @@ resp = client.save_model(
 
 ```
 {'procedure': {
-    'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'OpticFiberImplant',
     'notes': 'implant tightened',
-    'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
+    'subject': '00000000-0000-0000-0000-000000000000',
     'date_time': None,
-    'consumablestock': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-    'equipment': ['5b032f95-3f5b-4a27-9680-5f8f671dba22'],
+    'consumablestock': '00000000-0000-0000-0000-000000000000',
+    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'licenses': [],
     'details': {'fiberTipShape': 'flat', 'fiberId': 'OF-L-2024-07', 'sterilizationMethod': 'Autoclave'},
+    'type_schema_version': '0.0.0',
     'brain_region': None,
     'coordinates_system': 'Stereotaxic_BregmaAbsolute',
     'coordinates_details': {
@@ -250,7 +277,10 @@ resp = client.save_model(
         "apAngle": 0.0,
         "mlAngle": 5.0,
         "dvAngle": 0.0
-    }
+    },
+    'coordinates_schema_version': '0.0.0',
+    'created_at': '2024-03-12T09:00:00Z',
+    'updated_at': '2024-03-12T09:05:00Z'
 }}
 ```
 
@@ -267,5 +297,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("procedure", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
+resp = client.delete_model("procedure", id="00000000-0000-0000-0000-000000000000")
 ```

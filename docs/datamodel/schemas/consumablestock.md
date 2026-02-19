@@ -32,7 +32,7 @@ Inventory record for chemicals held in bulk, including solvents, detergents, buf
 | `Amount` | Amount held in stock (string; e.g., "500 mL", "2 gram") |
 | `Concentration / Strength` | Solution strength if applicable (string; e.g., "1 M", "10X") |
 | `Purity / Grade` | Purity or grade designation (string) |
-| `Hazard Information` | Optional safety notes or GHS classification (string) |
+| `Hazard Information` | safety notes or GHS classification (string) |
 
 ### Consumable Device Stock
 
@@ -172,6 +172,29 @@ Tracer dyes and fluorophores held in inventory for histology or circuit-tracing 
 | `Storage Conditions` | Storage recommendations (string) |
 | `Preparation Instructions` | Notes on preparation or dilution (string) |
 | `Experimental Use Context` | Application contexts (array of strings; e.g., circuit tracing, histology) |
+
+## Surgical Consumables
+
+### Implant / Fixation Material Stock
+
+Stock tracking for implant and fixation materials such as dental cement, skull anchors, and adhesives.
+
+| Field | Description |
+|:------|:------------|
+| `Batch ID` | Batch or lot identifier (string) |
+| `Amount` | Amount in stock (string; e.g., "500 mL", "2 gram", "50 tablets") |
+| `Preparation Instructions` | Preparation notes before use (string) |
+| `Sterile` | Whether stock is sterile or pre-sterilized (boolean) |
+
+### Surgical Disposable Stock
+
+Stock records for disposable surgical items such as blades, needles, sutures, and drapes.
+
+| Field | Description |
+|:------|:------------|
+| `Batch ID` | Batch or lot identifier (string) |
+| `Quantity` | Number of disposable items in stock (integer, ≥ 0) |
+| `Sterile` | Whether stock is sterile or pre-sterilized (boolean) |
 
 ## API access
 

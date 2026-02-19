@@ -26,10 +26,11 @@ Data acquisition encompasses the diverse range of data types acquired during sci
 | ``Type of data acquisition`` | Type of data acquisition (**required**). Selected from predefined types. Example: "Extracellular Electrophysiology". *See options below* |
 | ``Session`` | Session of the data acquisition (**required**). Must reference an existing [session]({{"datamodel/stem/session/"|absolute_url}}). Example: "Recording session #3" |
 | ``Subject procedures`` | Related subject procedures (**required**). Must reference existing [procedures]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Silicon probe implant #A123" |
-| ``Setup`` | Setup filter for equipment (optional). Used to filter available equipment by setup. |
-| ``Equipment`` | Equipment used to acquire the data (optional). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
-| ``Image`` | Image associated with the data acquisition (optional). |
+| ``Setup`` | Setup filter for equipment. Used to filter available equipment by setup. |
+| ``Equipment`` | Equipment used to acquire the data. Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
+| ``Image`` | Image associated with the data acquisition. |
 | ``Notes`` | Notes about the data acquisition (string). Example: "Good signal quality throughout recording" |
+| ``Type specific fields`` | Custom fields based on data acquisition type in JSON format. See [Data acquisition types schema]({{"datamodel/schemas/dataacquisition/"|absolute_url}}) for type-specific fields |
 
 ## Types of Data acquisition
 

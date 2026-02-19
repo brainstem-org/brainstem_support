@@ -32,4 +32,3 @@ Each endpoint supports standard CRUD operations (Create, Read, Update, Delete) w
 - Control project access through membership invitations
 - Track collaborative research projects with multiple users
 - Export session and subject metadata for analysis workflows
-

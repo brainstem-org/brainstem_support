@@ -2,36 +2,35 @@
 layout: default
 title: Schemas
 parent: API
-has_children: true
 nav_order: 8
+has_children: true
 has_toc: false
 ---
-# JSON Schemas
 
-JSON schemas provide formal validation and documentation for complex data structures used throughout the BrainSTEM API. These schemas ensure data consistency, enable validation, and provide clear documentation for developers working with structured data fields.
+# Schemas
 
-## Available Schema Documentation
+Use this section when an endpoint asks for `type`/`details` or `coordinates_system`/`coordinates_details`.
 
-The following pages describe the JSON schema specifications used across BrainSTEM:
+## How schemas relate to API calls
+- A module endpoint validates the JSON fragment in `details` (or `coordinates_details`) against a schema chosen by `type` (or `coordinates_system`).
+- If fields do not match the selected schema, the API returns `400 Bad request` with validation errors.
+- Always send the selector and payload pair together in create/update calls.
 
-### Core Schemas
-- **[Coordinates](/api/schemas/coordinates/)** - Spatial coordinate system schemas for anatomical positioning
+## Schema groups
 
-### Module Schemas
-- **[Data Acquisition](/api/schemas/dataacquisition/)** - Data acquisition configuration and metadata schemas
-- **[Equipment](/api/schemas/equipment/)** - Laboratory equipment specification schemas
-- **[Procedures](/api/schemas/procedure/)** - Experimental procedure definition schemas
-- **[Manipulations](/api/schemas/manipulation/)** - Experimental manipulation specification schemas
-- **[Procedure Logs](/api/schemas/procedurelog/)** - Procedure logging schemas
-- **[Subject Logs](/api/schemas/subjectlog/)** - Subject observation and activity logging schemas
-- **[Consumable Stock](/api/schemas/consumablestock/)** - Inventory management schemas
+| Group | Used by endpoint(s) | Selector field | Payload field |
+|:------|:--------------------|:---------------|:--------------|
+| [Coordinates](/api/schemas/coordinates/) | `/api/private/modules/procedure/` | `coordinates_system` | `coordinates_details` |
+| [ConsumableStock](/api/schemas/consumablestock/) | `/api/private/modules/consumablestock/` | `type` | `details` |
+| [DataAcquisition](/api/schemas/dataacquisition/) | `/api/private/modules/dataacquisition/` | `type` | `details` |
+| [Equipment](/api/schemas/equipment/) | `/api/private/modules/equipment/` | `type` | `details` |
+| [Manipulation](/api/schemas/manipulation/) | `/api/private/modules/manipulation/` | `type` | `details` |
+| [Procedure](/api/schemas/procedure/) | `/api/private/modules/procedure/` | `type` | `details` |
+| [ProcedureLog](/api/schemas/procedurelog/) | `/api/private/modules/procedurelog/` | `type` | `details` |
+| [SubjectLog](/api/schemas/subjectlog/) | `/api/private/modules/subjectlog/` | `type` | `details` |
 
-## Common Use Cases
-
-- Validate structured data before submission to the API
-- Understand expected data formats for complex fields
-- Generate client-side validation for data entry forms
-- Ensure consistency across different data acquisition systems
-- Document equipment specifications and configurations
-- Standardize experimental procedure definitions
-- Enable automated data processing and validation workflows
+## Validation troubleshooting
+- `type` or `coordinates_system` not recognized: use one value from the target schema page quick map.
+- Missing required field: add all fields listed under `Required fields` for that schema.
+- Wrong nested shape: check whether field expects scalar (`string`, `number`) vs object (`value` + `unit`) or array rows.
+- Unit mismatch: use one of the unit enum values documented in constraints.

@@ -26,11 +26,11 @@ Consumables are items used in scientific experiments that have a limited lifespa
 | ``Type of consumable`` | Type of consumable (**required**). Example: "Silicon probe design" |
 | ``Name`` | Name of the consumable (**required**; string; maximum length: 100 characters; must be unique). Example: "Neuropixels 1.0 - 384 channels - Option 3" |
 | ``Supplier`` | Supplier of the consumable (**required**). Must reference an existing [supplier]({{"datamodel/resources/supplier/"|absolute_url}}). Example: "IMEC" |
-| ``Description`` | Description of the consumable (optional; maximum length: 2000 characters). Example: "High-density silicon probe with 384 recording sites distributed across a 10 mm shank..." |
-| ``RRID`` | Research Resource Identifier (optional). Must start with "RRID:". Example: "RRID:AB_123456" |
-| ``External identifiers`` | External identifiers from databases like NCBI, JAX, DOI, etc. (optional). Include URLs when available. |
+| ``Description`` | Description of the consumable (maximum length: 2000 characters). Example: "High-density silicon probe with 384 recording sites distributed across a 10 mm shank..." |
+| ``RRID`` | Research Resource Identifier. Must start with "RRID:". Example: "RRID:AB_123456" |
+| ``External identifiers`` | External identifiers from databases like NCBI, JAX, DOI, etc.. Include URLs when available. |
 | ``Type specific fields`` | Custom fields based on consumable type in JSON format. See [Consumable types schema]({{"datamodel/schemas/consumable/"|absolute_url}}) for type-specific fields |
-| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Types of consumable
 
@@ -61,6 +61,12 @@ See the schema for field details: [Consumable types]({{"datamodel/schemas/consum
 `Silicon probe design`: Silicon microelectrode arrays for high‑density extracellular recordings.
 
 `Single wire electrode`: Single‑conductor wires used as recording/stimulation electrodes or as reference/ground leads in electrophysiology.
+
+### Surgical Consumables
+
+`Surgical disposable`: Single-use sterile items used during procedures, such as gloves, drapes, scalpel blades, syringes, sutures, and gauze.
+
+`Implant or fixation material`: Materials used to secure implants or support surgical fixation, such as dental cement, bone screws, adhesive compounds, and anchoring hardware.
 
 ## Submission process
 

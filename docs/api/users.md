@@ -16,9 +16,9 @@ The Users app includes the following user management endpoints:
 
 - **[Users](/api/users/user/)** - Individual user accounts and profiles
 - **[Groups](/api/users/group/)** - Research groups and team organization
-- **[Laboratories](/api/users/laboratory/)** - Laboratory affiliations and institutional information
 - **[Group Membership Invitations](/api/users/group_membership_invitation/)** - Group invitation management
 - **[Group Membership Requests](/api/users/group_membership_request/)** - User-initiated group join requests
+- **[Laboratories](/api/users/laboratory/)** - Laboratory affiliations and institutional information
 
 These endpoints enable comprehensive management of user relationships and collaborative research environments.
 

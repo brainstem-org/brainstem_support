@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Procedure log
+title: ProcedureLog
 parent: Schemas
 grand_parent: API
-nav_order: 6
+nav_order: 7
 ---
 
-# Procedure log schemas
+# ProcedureLog schemas
 {: .no_toc}
 
 ## Table of contents
@@ -15,142 +15,159 @@ nav_order: 6
 1. TOC
 {:toc}
 
-## Impedances
-```
+## How to use this page
+
+- Use this page when calling `/api/private/modules/procedurelog/`.
+- Set `type` to one schema name from the list below.
+- Send `details` that matches that schema exactly.
+- Schema controls shape of per-log-type measurements.
+
+## Quick type map
+
+| Type value | Schema version | Required fields | Schema shape |
+|:-----------|:---------------|:----------------|:-------------|
+| `Impedances` | `1.0.1` | `impedances` | `object` |
+| `LinearDisplacement` | `1.1.0` | `displacement` | `object` |
+| `Tetrodes4` | `1.1.0` | none | `object` |
+| `Tetrodes8` | `1.1.0` | none | `object` |
+
+## Examples
+
+### ProcedureLog payload fragment
+```json
 {
-    "type": "object",
-    "title": "Impedances",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "impedances": {
-            "title": "Impedances (kOhm)",
-            "type": "array",
-            "minItems": 1,
-            "items": {
-                "type": "number",
-                "minimum": 0
-            }
-        },
-        "phases": {
-            "title": "Phases (degrees)",
-            "type": "array",
-            "items": {
-                "type": "number",
-                "minimum": 0
-            }
-        },
-        "channels": {
-            "title": "List of channels",
-            "type": "array",
-            "items": {
-                "type": "number",
-                "minimum": 0
-            }
-        }
-    },
-    "required": [
-        "impedances"
-    ]
+  "type": "Impedances",
+  "details": {
+    "impedances": []
+  }
 }
 ```
 
-## LinearDisplacement
-```
+## Request pattern
+```json
 {
-    "type": "object",
-    "title": "Linear displacement",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "displacement": {
-            "title": "Displacement (\u00b5m)",
-            "type": "number"
-        }
-    },
-    "required": [
-        "displacement"
-    ]
+  "type": "Impedances",
+  "details": {
+    "impedances": []
+  }
 }
 ```
 
-## Tetrodes4
-```
+## Schema reference
+
+### `Impedances`
+- **Schema title:** Impedances
+- **Schema version:** `1.0.1`
+- **Source:** `brainstem/schemas/ProcedureLog/Impedances.json`
+- **Schema shape:** `object`
+- **Required fields:** `impedances`
+
+Example payload for this type:
+```json
 {
-    "type": "object",
-    "title": "Tetrode log (4 tetrodes)",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "tetrode_1": {
-            "title": "Tetrode #1 (\u00b5m)",
-            "type": "number"
-        },
-        "tetrode_2": {
-            "title": "Tetrode #2 (\u00b5m)",
-            "type": "number"
-        },
-        "tetrode_3": {
-            "title": "Tetrode #3 (\u00b5m)",
-            "type": "number"
-        },
-        "tetrode_4": {
-            "title": "Tetrode #4 (\u00b5m)",
-            "type": "number"
-        }
-    }
+  "impedances": []
 }
 ```
 
-## Tetrodes8
-```
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `channels` | `array` | no | — |
+| `impedances` | `array` | yes | minItems=1 |
+| `phases` | `array` | no | — |
+
+### `LinearDisplacement`
+- **Schema title:** Linear displacement
+- **Schema version:** `1.1.0`
+- **Source:** `brainstem/schemas/ProcedureLog/LinearDisplacement.json`
+- **Schema shape:** `object`
+- **Required fields:** `displacement`
+
+Example payload for this type:
+```json
 {
-    "type": "object",
-    "title": "Tetrode log (4 tetrodes)",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "tetrode_1": {
-            "title": "Tetrode #1 (\u00b5m)",
-            "type": "number"
-        },
-        "tetrode_2": {
-            "title": "Tetrode #2 (\u00b5m)",
-            "type": "number"
-        },
-        "tetrode_3": {
-            "title": "Tetrode #3 (\u00b5m)",
-            "type": "number"
-        },
-        "tetrode_4": {
-            "title": "Tetrode #4 (\u00b5m)",
-            "type": "number"
-        },
-        "tetrode_5": {
-            "title": "Tetrode #5 (\u00b5m)",
-            "type": "number"
-        },
-        "tetrode_6": {
-            "title": "Tetrode #6 (\u00b5m)",
-            "type": "number"
-        },
-        "tetrode_7": {
-            "title": "Tetrode #7 (\u00b5m)",
-            "type": "number"
-        },
-        "tetrode_8": {
-            "title": "Tetrode #8 (\u00b5m)",
-            "type": "number"
-        }
-    }
+  "displacement": {
+    "unit": "µm",
+    "value": 0
+  }
 }
 ```
 
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `displacement` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | yes | format="numberUnit"; default={"unit": "µm"} |
+
+### `Tetrodes4`
+- **Schema title:** Tetrode log (4 tetrodes)
+- **Schema version:** `1.1.0`
+- **Source:** `brainstem/schemas/ProcedureLog/Tetrodes4.json`
+- **Schema shape:** `object`
+- **Required fields:** none
+
+Example payload for this type:
+```json
+{
+  "tetrode_1": {
+    "unit": "µm",
+    "value": 0
+  },
+  "tetrode_2": {
+    "unit": "µm",
+    "value": 0
+  },
+  "tetrode_3": {
+    "unit": "µm",
+    "value": 0
+  },
+  "tetrode_4": {
+    "unit": "µm",
+    "value": 0
+  }
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `tetrode_1` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+| `tetrode_2` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+| `tetrode_3` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+| `tetrode_4` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+
+### `Tetrodes8`
+- **Schema title:** Tetrode log (8 tetrodes)
+- **Schema version:** `1.1.0`
+- **Source:** `brainstem/schemas/ProcedureLog/Tetrodes8.json`
+- **Schema shape:** `object`
+- **Required fields:** none
+
+Example payload for this type:
+```json
+{
+  "tetrode_1": {
+    "unit": "µm",
+    "value": 0
+  },
+  "tetrode_2": {
+    "unit": "µm",
+    "value": 0
+  },
+  "tetrode_3": {
+    "unit": "µm",
+    "value": 0
+  },
+  "tetrode_4": {
+    "unit": "µm",
+    "value": 0
+  }
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `tetrode_1` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+| `tetrode_2` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+| `tetrode_3` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+| `tetrode_4` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+| `tetrode_5` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+| `tetrode_6` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+| `tetrode_7` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |
+| `tetrode_8` | `object(value:number, unit:enum[nm, µm, mm, cm, m])` | no | format="numberUnit"; default={"unit": "µm"} |

@@ -64,6 +64,8 @@ resp = client.load_model('inventory')
 
 ```
 
+Public list responses also include a `meta` object (pagination/filter metadata).
+
 
 ## Add
 - **Allowed portals:** private
@@ -152,6 +154,7 @@ resp = client.save_model("inventory", id="d0ada97d-8607-48da-817b-bdd54bc9077b",
 {'inventory': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'My new probe inventory',
+    'location': 'Lab Room 103',
     'description': 'new text',
     'is_public': False}
 }

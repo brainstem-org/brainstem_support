@@ -26,13 +26,14 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 | ``Type of procedure`` | Type of procedure (**required**). Selected from predefined types. Example: "Optic fiber implant". *See options below* |
 | ``Subject`` | The subject the procedure was performed on (**required**). Must reference an existing [subjects]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
 | ``Date and time of the procedure`` | Date and time the procedure was performed. Example: "2024-03-22 10:30:00" |
-| ``Inventory`` | Inventory filter for consumable stocks (optional). Used to filter available consumable stocks by inventory. |
-| ``Consumable stock`` | Consumable stock used in the procedure (optional). Must reference an existing [consumable stock]({{"datamodel/modules/consumablestock/"|absolute_url}}). Example: "32-channel silicon probe" |
-| ``Setup`` | Setup filter for equipment (optional). Used to filter available equipment by setup. |
-| ``Equipment`` | Equipment used in the procedure (optional). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
-| ``Atlas`` | Brain atlas filter for brain regions (optional). Used to filter available brain regions by atlas. |
-| ``Brain region`` | Target brain region of the procedure (optional). Must reference an existing [brain region]({{"datamodel/taxonomies/brainregion/"|absolute_url}}). Example: "Hippocampus CA1" |
+| ``Inventory`` | Inventory filter for consumable stocks. Used to filter available consumable stocks by inventory. |
+| ``Consumable stock`` | Consumable stock used in the procedure. Must reference an existing [consumable stock]({{"datamodel/modules/consumablestock/"|absolute_url}}). Example: "32-channel silicon probe" |
+| ``Setup`` | Setup filter for equipment. Used to filter available equipment by setup. |
+| ``Equipment`` | Equipment used in the procedure. Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
+| ``Atlas`` | Brain atlas filter for brain regions. Used to filter available brain regions by atlas. |
+| ``Brain region`` | Target brain region of the procedure. Must reference an existing [brain region]({{"datamodel/taxonomies/brainregion/"|absolute_url}}). Example: "Hippocampus CA1" |
 | ``Notes`` | Notes about the procedure (string). Example: "Implant placed successfully with minimal bleeding" |
+| ``Type specific fields`` | Custom fields based on procedure type in JSON format. See [Procedure types schema]({{"datamodel/schemas/procedure/"|absolute_url}}) for type-specific fields |
 
 ## Types of procedures
 
@@ -122,9 +123,9 @@ See the schema for field details: [Procedure types]({{"datamodel/schemas/procedu
 
 `CO₂ chamber euthanasia`: Euthanasia using a controlled carbon dioxide chamber.
 
-`Barbiturate injection`: Euthanasia by barbiturate overdose injection.
+`Barbiturate Injection`: Euthanasia by barbiturate overdose injection.
 
-`Inhalant overdose`: Euthanasia by overdose of inhalant anesthetics.
+`Inhalant Overdose`: Euthanasia by overdose of inhalant anesthetics.
 
 ### Abstract procedures
 

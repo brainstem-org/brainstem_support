@@ -95,7 +95,7 @@ Uses Bregma as reference point in stereotaxic right-hand coordinate system:
 - ML axis: Right positive, left negative
 - DV axis: Ventral positive, dorsal negative
 
-| Field  | Description |
+| Field | Description |
 |:-------|-------------|
 | `AP coordinate (mm)` | Anterior-Posterior coordinate from Bregma (float) |
 | `ML coordinate (mm)` | Medial-Lateral coordinate from Bregma (float) |
@@ -108,7 +108,7 @@ Uses Bregma as reference point in stereotaxic right-hand coordinate system:
 
 Uses Bregma reference with depth from surface instead of DV coordinates. Same AP and ML axes as Bregma-Based Absolute.
 
-| Field  | Description |
+| Field | Description |
 |:-------|-------------|
 | `AP coordinate (mm)` | Anterior-Posterior coordinate from Bregma (float) |
 | `ML coordinate (mm)` | Medial-Lateral coordinate from Bregma (float) |
@@ -121,7 +121,7 @@ Uses Bregma reference with depth from surface instead of DV coordinates. Same AP
 
 Uses Lambda as reference point with same coordinate system conventions as Bregma-Based Absolute.
 
-| Field  | Description |
+| Field | Description |
 |:-------|-------------|
 | `AP coordinate (mm)` | Anterior-Posterior coordinate from Lambda (float) |
 | `ML coordinate (mm)` | Medial-Lateral coordinate from Lambda (float) |
@@ -134,7 +134,7 @@ Uses Lambda as reference point with same coordinate system conventions as Bregma
 
 Uses Lambda reference with depth from surface. Same AP and ML axes as Lambda-Based Absolute.
 
-| Field  | Description |
+| Field | Description |
 |:-------|-------------|
 | `AP coordinate (mm)` | Anterior-Posterior coordinate from Lambda (float) |
 | `ML coordinate (mm)` | Medial-Lateral coordinate from Lambda (float) |
@@ -155,7 +155,7 @@ CCF can be mapped to the stereotaxic axes:
 - Z = ML axis (right positive)
 
 
-| Field  | Description |
+| Field | Description |
 |:-------|-------------|
 | `X coordinate (mm)` | Position along AP axis (float) |
 | `Y coordinate (mm)` | Position along DV axis (float) |
@@ -171,7 +171,7 @@ This system provides an absolute reference frame independent of anatomical landm
 
 A three-dimensional Cartesian coordinate system using absolute positions relative to an external reference point.
 
-| Field  | Description |
+| Field | Description |
 |:-------|-------------|
 | `X coordinate (m)` | Absolute X coordinate in meters, horizontal positioning in local reference frame (float) |
 | `Y coordinate (m)` | Absolute Y coordinate in meters, vertical positioning in local reference frame (float) |

@@ -19,7 +19,7 @@ nav_order: 1
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | UUID identificator formatted as a string |
+| `id` | integer user ID |
 | `email` | string [must be unique]|
 | `first_name` | string |
 | `last_name` | string |
@@ -28,24 +28,12 @@ nav_order: 1
 | `google_scholar` | string [max length: 200] |
 | `orcid_id` | string [max length: 100] |
 | `atlas_preference` | string [max length: 7]|
-
-The following fields are only accessible for administrators:
-
-| Field        | Description  |
-|:-------------|:-------------|
-| `is_superuser` | boolean |
-| `is_project_admin` | boolean |
-| `is_group_admin` | boolean |
-| `is_taxonomies_admin` | boolean |
-| `is_resources_admin` | boolean |
-| `is_attributes_admin` | boolean |
-| `is_contact_form_email_receiver` | boolean |
+| `active_projects` | list of related project IDs |
 
 Each dictionary in the `groups_own_json` list contains the group's `id` and `name`:
 ```
 {'id': 8, 'name': 'test_group'}
 ```
-
 
 ## List view
 - **Allowed portals:** public, private
@@ -80,7 +68,8 @@ resp = client.load_model('user')
         'website': 'https://petersenlab.org/',
         'google_scholar': 'https://scholar.google.dk/citations?user=RywQhd8AAAAJ&hl',
         'orcid_id': 'https://orcid.org/0000-0002-2092-4791',
-        'atlas_preference': 'AIA'
+        'atlas_preference': 'AIA',
+        'active_projects': []
     },
     {
         'id': 16,
@@ -91,10 +80,13 @@ resp = client.load_model('user')
         'website': '',
         'google_scholar': '',
         'orcid_id': '',
-        'atlas_preference': 'AIA'
+        'atlas_preference': 'AIA',
+        'active_projects': []
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -129,7 +121,8 @@ resp = client.load_model('user', id='16')
     'website': '',
     'google_scholar': '',
     'orcid_id': '',
-    'atlas_preference': 'AIA'}
+    'atlas_preference': 'AIA',
+    'active_projects': []}
 }
 ```
 
@@ -166,7 +159,8 @@ resp = client.save_model("user", id="16", data={"website": "www.someweb.com"})
     'website': 'http://www.someweb.com',
     'google_scholar': '',
     'orcid_id': '',
-    'atlas_preference': 'AIA'}
+    'atlas_preference': 'AIA',
+    'active_projects': []}
 }
 ```
 

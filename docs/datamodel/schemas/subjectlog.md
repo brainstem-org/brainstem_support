@@ -153,6 +153,18 @@ Records training sessions conducted to prepare subjects for experimental tasks o
 | `Reinforcement type` | Type of reinforcement used during training (string). Examples include: food, water, open-loop/closed loop |
 | `The performance level` | Assessment of subject's performance during training (string). Describes how well the subject performs the task |
 
+### Genotyping log
+
+Records genotype assay outcomes and interpretation for a subject.
+
+| Field | Description |
+|:------|:------------|
+| `Sample` | (**required**) Biological sample used for genotyping (string; e.g., right ear punch, tail tip) |
+| `Genotype result` | (**required**) Interpreted genotype result (string; e.g., "PV-Cre/wt; Ai32/wt") |
+| `Assay / panel name` | Name of the assay or panel used (string; e.g., "PV-Cre panel v2") |
+| `QC / confidence` | Quality/confidence category (enum: high, medium, low, ambiguous, failed) |
+| `Per-locus calls` | Array of locus-level calls (objects with `Marker / transgene / allele`, `Call`, and optional `Notes`) |
+
 ## API access
 
 The API allows for programmable access to Subject logs, enabling you to read, edit, and delete subject logs through the API. Learn more about the subject logs' fields and data structure on the [Subject log API page]({{"api/schemas/subjectlog/"|absolute_url}}).

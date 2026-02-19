@@ -22,7 +22,20 @@ nav_order: 7
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [max length: 200]|
 | `description` | string [max length: 2000] |
-| `category` | string categorizing the setup type |
+| `category` | single-character code categorizing the setup type **[required for POST; optional for PATCH]** |
+| `comments` | string, used when proposing approval changes |
+
+Optional fields such as `comments` can be omitted from list/detail responses when empty.
+
+
+These are the available `category` options for Setup Type:
+- `I`: In Vitro
+- `E`: Ex Vivo
+- `A`: Anesthetized In Vivo
+- `H`: Head-Fixed Awake
+- `V`: Voluntarily Stationary Awake
+- `F`: Freely Moving Awake
+- `U`: Unknown
 
 
 ## List view
@@ -47,20 +60,25 @@ resp = client.load_model('setuptype')
     {
         'id': '531b2a21-ab1f-4aa8-8eaf-905421168d6b',
         'name': 'Barnes maze',
-        'description': 'The Barnes maze is a paradigm to study spatial learning and memory. It consists of a circular table with holes around the circumference.'
+        'description': 'The Barnes maze is a paradigm to study spatial learning and memory. It consists of a circular table with holes around the circumference.',
+        'category': 'F'
     },
     {
         'id': '414a49b2-61b5-4ef5-8b64-6528d5f1ed8d',
         'name': 'Theta maze',
-        'description': 'A circular maze with a central arm going across the center of the circle.'
+        'description': 'A circular maze with a central arm going across the center of the circle.',
+        'category': 'U'
     },
     {
         'id': '70b1d2eb-a721-4fef-8e86-0c2b1469283a',
         'name': 'Y-maze',
-        'description': 'The Y-maze is, similar to the T-maze, a test to investigate spatial learning and memory. Specifically designed for testing rats or mice.'
+        'description': 'The Y-maze is, similar to the T-maze, a test to investigate spatial learning and memory. Specifically designed for testing rats or mice.',
+        'category': 'U'
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -79,6 +97,7 @@ resp = client.load_model('setuptype')
 resp = client.save_model("setuptype",  data={
         "name": "MyNewSetupType",
         "description": "",
+        "category": "F",
     }
 )
 ```
@@ -87,10 +106,11 @@ resp = client.save_model("setuptype",  data={
 {: .no_toc}
 
 ```
-{'setup_type_approval': {'
-    id': '725ef635-09b7-4817-98f7-d58e598b445e',
+{'setup_type_approval': {
+    'id': '725ef635-09b7-4817-98f7-d58e598b445e',
     'name': 'MyNewSetupType',
-    'description': ''}
+    'description': '',
+    'category': 'F'}
 }
 ```
 
@@ -116,7 +136,8 @@ resp = client.load_model('setuptype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
 {'setup_type': {
     'id': 'a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6',
     'name': 'MyNewSetupType',
-    'description': ''}
+    'description': '',
+    'category': 'F'}
 }
 ```
 
@@ -144,7 +165,8 @@ resp = client.save_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6",
 {'setup_type_approval': {
     'id': '511f5736-5c34-46c5-b4d2-d7bb0727b5fe',
     'name': 'MyNewSetupType',
-    'description': 'new text'}
+    'description': 'new text',
+    'category': 'F'}
 }
 ```
 
@@ -169,7 +191,7 @@ resp = client.delete_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6
 ## List approvals
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptypeapproval
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -189,6 +211,7 @@ resp = client.load_model('setuptypeapproval')
         'id': '725ef635-09b7-4817-98f7-d58e598b445e',
         'name': 'MyNewSetupType',
         'description': '',
+        'category': 'F',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -198,6 +221,7 @@ resp = client.load_model('setuptypeapproval')
         'id': '97b70a5e-52f9-4358-8b27-0a886248e749',
         'name': 'MyNewMaze',
         'description': '',
+        'category': 'U',
         'instance_id': 'e10ea8ab-9afa-4060-8382-dc9d9e1763f8',
         'action': 'Add',
         'reviewer': 3,
@@ -210,7 +234,7 @@ resp = client.load_model('setuptypeapproval')
 ## Detail approval
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptypeapproval/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -229,6 +253,7 @@ resp = client.load_model('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e59
     'id': '725ef635-09b7-4817-98f7-d58e598b445e',
     'name': 'MyNewSetupType',
     'description': '',
+    'category': 'F',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,
@@ -240,7 +265,7 @@ resp = client.load_model('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e59
 ## Accept approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptypeapproval/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -255,7 +280,7 @@ resp = client.save_model("setuptypeapproval", id="725ef635-09b7-4817-98f7-d58e59
 ## Reject approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptype_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/setuptypeapproval/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

@@ -26,6 +26,10 @@ nav_order: 7
 | `rrid` | Research Resource Identifier (RRID) |
 | `rrid_url` | URL to RRID lookup page **[read-only]** |
 | `external_identifiers` | JSON object containing external identifier information |
+| `comments` | string, used when proposing approval changes |
+
+Optional fields such as `comments` can be omitted from list/detail responses when empty.
+
 
 
 ## List view
@@ -51,16 +55,24 @@ resp = client.load_model('strain')
         'id': 'd7e490ec-66ef-447e-ae9f-3f74c858258e',
         'name': 'Brown Norway',
         'description': '',
-        'species': '089b00eb-94e3-464b-b7e8-62d04ddf2b11'
+        'species': '089b00eb-94e3-464b-b7e8-62d04ddf2b11',
+        'rrid': None,
+        'rrid_url': None,
+        'external_identifiers': []
     },
     {
         'id': '378bc660-f35a-48a7-b06d-89ece1e4ba40',
         'name': 'Red-eared slider',
         'description': '',
-        'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f'
+        'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+        'rrid': None,
+        'rrid_url': None,
+        'external_identifiers': []
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -92,7 +104,9 @@ resp = client.save_model("strain", data={
     'id': 'b460dfbc-79bb-499e-87ed-57df02832d88',
     'name': 'MyNewStrain',
     'description': '',
-    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f'}
+    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+    'rrid': None,
+    'external_identifiers': []}
 }
 ```
 
@@ -118,7 +132,10 @@ resp = client.load_model('strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
     'id': '7963dc0b-e4e7-459c-9a05-cf5a54200e02',
     'name': 'MyNewStrain',
     'description': '',
-    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f'}
+    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+    'rrid': None,
+    'rrid_url': None,
+    'external_identifiers': []}
 }
 ```
 
@@ -147,7 +164,9 @@ resp = client.save_model("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", da
     'id': '6403fdaf-7896-4ef7-9b30-ee12d69aa408',
     'name': 'MyNewStrain',
     'description': 'new text',
-    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f'}
+    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+    'rrid': None,
+    'external_identifiers': []}
 }
 ```
 
@@ -193,6 +212,8 @@ resp = client.load_model('strainapproval')
         'name': 'MyNewStrain',
         'description': '',
         'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+        'rrid': None,
+        'external_identifiers': [],
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -203,6 +224,8 @@ resp = client.load_model('strainapproval')
         'name': 'Agumon',
         'description': '',
         'species': '7a224fef-df3f-4b4e-aa52-7ae743b7bf58',
+        'rrid': None,
+        'external_identifiers': [],
         'instance_id': None,
         'action': 'Add',
         'reviewer': 3,
@@ -235,6 +258,8 @@ resp = client.load_model('strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832
     'name': 'MyNewStrain',
     'description': '',
     'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+    'rrid': None,
+    'external_identifiers': [],
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,

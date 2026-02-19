@@ -24,11 +24,11 @@ Data storages describe the storage solution for sessions. A data storage can be 
 | Field | Description |
 |:------|:------------|
 | ``Data storage name`` | Name of the data storage (**required**; string; maximum length: 100 characters; must be unique). Example: "Lab Server 01" |
-| ``Location`` | Location of the data storage (optional). Example: "Cabinet A", "Computer B", "Network storage C" |
+| ``Location`` | Location of the data storage (string; maximum length: 100 characters). Example: "Cabinet A", "Computer B", "Network storage C" |
+| ``Description`` | Rich text description of the data storage. Can include uploaded images. Example: "Primary data storage server for electrophysiology recordings..." |
+| ``Data organization`` | How data is organized in the data storage in JSON format. Example: "Projects → Subjects → Sessions" |
+| ``Data protocols`` | Protocols used for data access in JSON format. Include path and public status for each protocol type (local, network, cloud, web, peer-to-peer). Example: "Network: smb://labserver/data, Private access" |
 | ``Authenticated groups`` | Groups that have change permissions for this data storage (**required**). Example: "Lab B Data Team" |
-| ``Description`` | Rich text description of the data storage (optional). Can include uploaded images. Example: "Primary data storage server for electrophysiology recordings..." |
-| ``Data organization`` | How data is organized in the data storage in JSON format (optional). Example: "Projects → Subjects → Sessions" |
-| ``Data protocols`` | Protocols used for data access in JSON format (optional). Include path and public status for each protocol type (local, network, cloud, web, peer-to-peer). Example: "Network: smb://labserver/data, Private access" |
 
 ## Permissions
 

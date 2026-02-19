@@ -24,9 +24,9 @@ Journals are scholarly publications that serve as the primary means to share sci
 | Field | Description |
 |:------|:------------|
 | ``Name of journal`` | The name of the journal (**required**; string; maximum length: 500 characters; must be unique). Example: "Nature Neuroscience" |
-| ``Description`` | A brief description of the journal's scope and focus (optional; maximum length: 2000 characters). Example: "Peer-reviewed journal covering all aspects of neuroscience research" |
-| ``Website`` | The official website of the journal (optional; URL; maximum length: 200 characters). Example: "https://www.nature.com/neuro/" |
-| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
+| ``Description`` | A brief description of the journal's scope and focus (maximum length: 2000 characters). Example: "Peer-reviewed journal covering all aspects of neuroscience research" |
+| ``Website`` | The official website of the journal (URL; maximum length: 200 characters). Example: "https://www.nature.com/neuro/" |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 

@@ -32,7 +32,7 @@ Chemical reagents cover solvents, fixatives, detergents, and other laboratory ch
 | `Molecular Weight` | Molecular weight of the compound (float, ≥ 0) |
 | `Purity / Grade` | Reported purity or grade designation (string; e.g., "≥99%", "Analytical grade") |
 | `Storage Conditions` | Recommended storage environment (string; e.g., "Room temp", "4°C", "Protect from light") |
-| `Hazard Information` | Optional safety notes or GHS classification (string) |
+| `Hazard Information` | safety notes or GHS classification (string) |
 | `Experimental Use Context` | Typical workflows where the reagent is used (string; e.g., perfusion, fixation, staining) |
 
 ### Consumable device
@@ -58,7 +58,7 @@ Use this table to cross-reference consumables with external databases such as NC
 |:------|:------------|
 | `Source` | (**required**) Database or provider of the identifier (enum; e.g., NCBI, JAX, DOI) |
 | `Identifier` | (**required**) External identifier string (string; e.g., AB_123456) |
-| `URL (optional)` | Direct link to the external record (string; must be a valid URL if provided) |
+| `URL ` | Direct link to the external record (string; must be a valid URL if provided) |
 
 ### Immuno reagent
 
@@ -206,6 +206,34 @@ A simple yet effective tool for measuring electrical activity at a single site. 
 | `Insulation/Coating` | Type and material of electrode insulation (string). Affects recording isolation |
 | `Diameter` | Core wire diameter (float). Determines tissue impact and signal quality |
 | `Insulation diameter` | Total diameter including insulation (float). Important for insertion planning |
+
+## Surgical Consumables
+
+### Implant / fixation material
+
+Materials used for implant anchoring and fixation, such as dental cement, adhesives, and bone screws.
+
+| Field | Description |
+|:------|:------------|
+| `Product ID` | Catalog number or supplier reference (string) |
+| `Type` | (**required**) Material subtype (enum; e.g., dental cement, adhesive, bone screw, skull anchor, bone wax, silicone elastomer, acrylic polymer, cyanoacrylate glue, other) |
+| `Preparation Instructions` | Steps needed before use (string) |
+| `Storage Conditions` | Recommended storage environment (string; e.g., room temperature, 4°C) |
+| `Biocompatible` | Whether the material is biocompatible for in vivo use (boolean) |
+| `Additional Notes` | Free-text notes on specs or usage (string) |
+
+### Surgical disposable
+
+Single-use surgical items such as blades, sutures, catheters, and drapes.
+
+| Field | Description |
+|:------|:------------|
+| `Product ID` | Catalog number or supplier reference (string) |
+| `Type` | (**required**) Disposable subtype (enum; e.g., scalpel blade, needle, syringe, suture, gauze/swab, surgical drape, catheter, other) |
+| `Material` | Primary material (string; e.g., stainless steel, absorbable polymer) |
+| `Specification` | Short size/format descriptor (string; e.g., 30G x 1/2", 6-0 nylon, No. 11 blade) |
+| `Sterile` | Whether item is sterile (boolean) |
+| `Additional Notes` | Free-text notes on specs or usage (string) |
 
 ## API access
 

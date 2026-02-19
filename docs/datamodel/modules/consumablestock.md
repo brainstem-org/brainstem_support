@@ -24,11 +24,13 @@ Consumable stocks refer to the various components and materials essential for co
 | Field | Description |
 |:------|:------------|
 | ``Type of consumable stock`` | Type of consumable stock (**required**). Selected from predefined types. Example: "Silicon probe", "Optic fiber". *See options below* |
+| ``Type specific fields`` | Custom fields based on consumable stock type in JSON format. See [Consumable stock types schema]({{"/datamodel/schemas/consumablestock/"|absolute_url}}) for type-specific fields |
 | ``Inventory`` | The inventory record that tracks the consumable stocks (**required**). Must reference an existing [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}). Example: "Lab supplies inventory" |
-| ``Consumable supplier`` | Supplier filter for consumables (optional). Used to filter the available consumables by supplier. |
+| ``Consumable supplier`` | Supplier filter for consumables. Used to filter the available consumables by supplier. |
 | ``Consumable`` | The specific consumable associated with the consumable stock (**required**). Example: "32-channel silicon probe" |
 | ``Acquisition date`` | The date when the consumable was acquired (format: YYYY-MM-DD). Example: "2024-01-15" |
 | ``Expiration date`` | The date when the consumable stock is expected to expire or become unusable (format: YYYY-MM-DD). Example: "2025-01-15" |
+| ``Status`` | Current availability status of the consumable stock (selected from predefined statuses; default: Available). |
 | ``Storage location`` | The physical location where the consumable stock is stored (string; maximum length: 100 characters). Example: "Room 302, Cabinet B, Shelf 3" |
 | ``Storage conditions`` | The conditions necessary for storing the consumable stock (string; maximum length: 100 characters). Example: "Store at room temperature in desiccator" |
 | ``Intended use`` | The planned experimental use of the consumable stock (string; maximum length: 100 characters). Example: "For chronic neural recordings" |
@@ -67,6 +69,12 @@ See the schema for field details: [Consumable stock types]({{"/datamodel/schemas
 `Silicon probe`: Silicon microelectrode arrays for high‑density extracellular recordings (e.g., Neuropixels and similar multi‑shank arrays).
 
 `Single wire electrode`: Single‑conductor metal wires used as recording/stimulation electrodes or as reference/ground leads in electrophysiology.
+
+### Surgical Consumables
+
+`Surgical disposable`: Single-use sterile items used during procedures, such as gloves, drapes, scalpel blades, syringes, sutures, and gauze.
+
+`Implant or fixation material`: Materials used to secure implants or support surgical fixation, such as dental cement, bone screws, adhesive compounds, and anchoring hardware.
 
 
 

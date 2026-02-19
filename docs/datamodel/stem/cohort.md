@@ -3,7 +3,7 @@ layout: default
 title: Cohorts
 parent: Subjects
 grand_parent: Data model
-nav_order: 3
+nav_order: 4
 ---
 
 # Cohort model
@@ -23,7 +23,7 @@ Cohorts facilitate the creation of subgroups of subjects within a project. They 
 
 | Field | Description |
 |:------|:------------|
-| `Cohort name` | Name of the cohort (**required**; string; max length: 100 characters; must be unique within the project). Example: "Control Group A", "Treatment Group 2024" |
+| `Cohort name` | Name of the cohort (**required**; string; maximum length: 100 characters; must be unique within the project). Example: "Control Group A", "Treatment Group 2024" |
 | `Project` | The project the cohort belongs to (**required**). A cohort can belong to a single project. Example: "Drug Treatment Study" |
 | `Subjects` | Subjects in the cohort. All subjects must belong to the same project (**required**). Can reorder subjects using drag-and-drop. Example: "Mouse_01", "Mouse_02", "Mouse_03" |
 | `Description` | A text description of the cohort, providing additional context and information. Pictures can be uploaded and inserted through rich text formatting. Example: "Control group of 6-month-old male mice..." |

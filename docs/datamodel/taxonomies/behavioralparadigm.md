@@ -3,7 +3,7 @@ layout: default
 title: Behavioral paradigm
 parent: Taxonomies
 grand_parent: Data model
-nav_order: 4
+nav_order: 2
 ---
 
 # Behavioral paradigm model
@@ -43,14 +43,15 @@ Categories and paradigms are shared taxonomies — available to all users once a
 
 | Field | Description |
 |:------|:------------|
-| ``Name`` | The name of the behavioral paradigm (**required**; must be unique). |
-| ``Category`` | The behavioral category this paradigm belongs to (e.g., Spatial Learning, Anxiety). |
-| ``Description`` | Detailed description of the paradigm — what behavior it assesses and the conceptual approach. Should not include setup-specific details or data acquisition methods. |
-| ``Species`` | Species for which this paradigm is applicable (optional). Leave empty if the paradigm applies broadly. |
-| ``Original publication`` | Citation for the original publication (optional). Example: "Morris 1984". |
-| ``Reference URL`` | URL to reference documentation or the original publication (optional). |
-| ``RRID`` | Research Resource Identifier if available (optional). |
-| ``External identifiers`` | External identifiers from various databases (optional). |
+| ``Name`` | The name of the behavioral paradigm (**required**; string; maximum length: 200 characters; must be unique). |
+| ``Category`` | The behavioral category this paradigm belongs to. Must reference an existing [behavioral category]({{"datamodel/taxonomies/behavioralcategory/"|absolute_url}}). Example: "Spatial Learning", "Anxiety". |
+| ``Description`` | Detailed description of the paradigm (text; maximum length: 3000 characters): what behavior it assesses and the conceptual approach. Should not include setup-specific details or data acquisition methods. |
+| ``Species`` | Species for which this paradigm is applicable. Can include multiple [species]({{"datamodel/taxonomies/species/"|absolute_url}}). |
+| ``Original publication`` | Citation for the original publication (string; maximum length: 500 characters). Example: "Morris 1984". |
+| ``Reference URL`` | URL to reference documentation or the original publication (URL; maximum length: 200 characters). |
+| ``RRID`` | Research Resource Identifier if available. |
+| ``External identifiers`` | External identifiers from various databases. |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 

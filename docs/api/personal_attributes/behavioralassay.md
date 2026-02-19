@@ -24,6 +24,8 @@ nav_order: 1
 | `name` | string **[required]** [max length: 50] |
 | `description` | string [max length: 500] |
 | `setup_type` | related environment type ID formatted as a string **[required]** |
+| `behavioral_paradigm` | related behavioral paradigm ID formatted as a string **[required]** |
+| `licenses` | list of related license IDs |
 | `is_public` | boolean |
 
 ## List view
@@ -50,6 +52,8 @@ resp = client.load_model('behavioralassay')
         'name': 'AlternationRunning',
         'description': 'Alternating running task',
         'setup_type': '531b2a21-ab1f-4aa8-8eaf-905421168d6b',
+        'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+        'licenses': [],
         'is_public': False
     },
     {
@@ -57,10 +61,14 @@ resp = client.load_model('behavioralassay')
         'name': 'ContinuousRunning',
         'description': 'Continuous running task',
         'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
+        'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+        'licenses': [],
         'is_public': True
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -69,6 +77,8 @@ resp = client.load_model('behavioralassay')
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/behavioralassay
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
+
+**Additional notes:** both `setup_type` and `behavioral_paradigm` are required for create requests.
 
 
 ### Use example (using Python API)
@@ -80,6 +90,8 @@ resp = client.save_model("behavioralassay",  data=
         'name': 'PlayMarioKart',
         'description': 'Play Mario Kart on GameCube',
         'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
+        'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+        'licenses': [],
     }
 )
 ```
@@ -93,6 +105,8 @@ resp = client.save_model("behavioralassay",  data=
     'name': 'PlayMarioKart',
     'description': 'Play Mario Kart on GameCube',
     'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
+    'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+    'licenses': [],
     'is_public': False}
 }
 ```
@@ -122,6 +136,8 @@ resp = client.load_model('behavioralassay', id='22ae80be-e030-4cee-9cd5-b94ac2ed
     'name': 'PlayMarioKart',
     'description': 'Play Mario Kart on GameCube',
     'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
+    'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+    'licenses': [],
     'is_public': False}
 }
 ```
@@ -150,10 +166,10 @@ resp = client.save_model("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2ed
     'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
     'name': 'PlayMarioKart',
     'description': 'new text',
-    'task': 'Play Mario Kart on GameCube',
-    'reward': None,
     'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-    'sensory_stimulus_type': None}
+    'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+    'licenses': [],
+    'is_public': False}
 }
 ```
 

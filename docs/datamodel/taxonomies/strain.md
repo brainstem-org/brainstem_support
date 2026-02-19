@@ -3,7 +3,7 @@ layout: default
 title: Strains
 parent: Taxonomies
 grand_parent: Data model
-nav_order: 5
+nav_order: 7
 ---
 
 # Strains model
@@ -24,14 +24,14 @@ In biology, a strain is a low-level taxonomic rank below the rank of species. A 
 | Field | Description |
 |:------|:------------|
 | ``Name of strain`` | The scientific name of the strain (**required**; string; maximum length: 100 characters; must be unique). Example: "C57BL/6J", "BALB/c", "129S1/SvImJ" |
-| ``Popular name`` | Common or colloquial name of the strain (optional; maximum length: 100 characters). Example: "Black 6", "BALB/c" |
-| ``Appearance`` | A description of the physical characteristics of the strain (optional; maximum length: 500 characters). Example: "Black coat color, robust build, white belly" |
-| ``Description`` | A general description of the strain, including its genetic and behavioral attributes (optional; maximum length: 2000 characters). Example: "Inbred strain widely used in behavioral and physiological research due to well-characterized genome" |
+| ``Popular name`` | Common or colloquial name of the strain (maximum length: 100 characters). Example: "Black 6", "BALB/c" |
 | ``Species`` | The species to which the strain belongs (**required**). Must reference an existing [species]({{"datamodel/taxonomies/species/"|absolute_url}}). Example: "House mouse" |
 | ``Breeding`` | Breeding status of the strain (**required**). Selected from predefined options: Inbred, Outbred, Wild-type, or Unknown |
-| ``RRID`` | Research Resource Identifier (optional). Must start with "RRID:". Example: "RRID:Addgene_12345" |
-| ``External identifiers`` | External identifiers from databases like JAX, EMMA, etc. (optional). Include URLs when available. |
-| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
+| ``Appearance`` | A description of the physical characteristics of the strain (maximum length: 500 characters). Example: "Black coat color, robust build, white belly" |
+| ``Description`` | A general description of the strain, including its genetic and behavioral attributes (maximum length: 2000 characters). Example: "Inbred strain widely used in behavioral and physiological research due to well-characterized genome" |
+| ``RRID`` | Research Resource Identifier. Must start with "RRID:". Example: "RRID:Addgene_12345" |
+| ``External identifiers`` | External identifiers from databases like JAX, EMMA, etc.. Include URLs when available. |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 

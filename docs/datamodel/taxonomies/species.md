@@ -3,7 +3,7 @@ layout: default
 title: Species
 parent: Taxonomies
 grand_parent: Data model
-nav_order: 4
+nav_order: 6
 ---
 
 # Species model
@@ -24,12 +24,12 @@ A biological species is a group of organisms that can reproduce with one another
 | Field | Description |
 |:------|:------------|
 | ``Name of species`` | The scientific name of the species (**required**; string; maximum length: 100 characters; must be unique). Example: "Homo sapiens", "Mus musculus" |
-| ``Popular name`` | Common or colloquial name of the species (optional; maximum length: 100 characters). Example: "Human", "House mouse" |
+| ``Popular name`` | Common or colloquial name of the species (maximum length: 100 characters). Example: "Human", "House mouse" |
 | ``Appearance`` | A description of the physical characteristics of the species (**required**; maximum length: 500 characters). Example: "Small, quadrupedal mammal with fur, whiskers, and a long tail" |
-| ``Description`` | A general description of the species, including its biological and ecological attributes (optional; maximum length: 2000 characters). Example: "Small rodent commonly used in laboratory research due to its well-characterized genetics and physiology" |
-| ``RRID`` | Research Resource Identifier (optional). Must start with "RRID:". Example: "RRID:NCBI_txid9606" |
-| ``External identifiers`` | External identifiers from databases like NCBI, Ensembl, etc. (optional). Include URLs when available. |
-| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
+| ``Description`` | A general description of the species, including its biological and ecological attributes (maximum length: 2000 characters). Example: "Small rodent commonly used in laboratory research due to its well-characterized genetics and physiology" |
+| ``RRID`` | Research Resource Identifier. Must start with "RRID:". Example: "RRID:NCBI_txid9606" |
+| ``External identifiers`` | External identifiers from databases like NCBI, Ensembl, etc.. Include URLs when available. |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 

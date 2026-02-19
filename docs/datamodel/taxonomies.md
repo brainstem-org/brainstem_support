@@ -17,6 +17,8 @@ Taxonomies provide standardized vocabularies and classification systems for vari
 
 - [**Brain regions**]({{site.baseurl}}/datamodel/taxonomies/brainregion): A comprehensive listing of brain regions based on established atlases that provides standardized neuroanatomical references for precise targeting and documentation.
 
+- [**Regulatory authorities**]({{site.baseurl}}/datamodel/taxonomies/regulatoryauthority): Organizations that issue and oversee research approvals, licenses, and compliance requirements used across regulatory records.
+
 - [**Setup types**]({{site.baseurl}}/datamodel/taxonomies/setuptype): A classification system for different experimental setups, ensuring consistent categorization of behavioral testing areas and research spaces.
 
 - [**Species**]({{site.baseurl}}/datamodel/taxonomies/species): A catalog of animal species used in neuroscience research, including their biological characteristics and experimental applications.

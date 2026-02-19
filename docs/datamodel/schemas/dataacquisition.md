@@ -365,7 +365,9 @@ fUS data captures brain activity through changes in blood flow using ultrasound.
 | `Horizontal resolution` | Horizontal pixels (non-negative integer). Spatial clarity |
 | `Imaging depth (μm)` | Penetration depth (float; measured in μm). Tissue reach |
 
-## General Time Series
+## General and Time-Series Data
+
+### General Time Series
 
 General time series data represents any sequential measurements indexed by time. This format is versatile and can accommodate various types of continuous recordings that don't fit into more specific categories.
 

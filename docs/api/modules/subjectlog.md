@@ -76,11 +76,11 @@ resp = client.load_model('subjectlog')
 ```
 {'subject_logs': [
     {
-        'id': '36570c8f-707b-4ead-950a-f924acf14c37',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'Weighing',
         'description': None,
-        'subject': '0f87c229-6769-4854-83a5-c71e154246b8',
-        'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+        'subject': '00000000-0000-0000-0000-000000000000',
+        'user': '00000000-0000-0000-0000-000000000000',
         'entries': [
             {'date_time': '2023-03-26T04:05:00Z',
              'notes': None,
@@ -88,15 +88,14 @@ resp = client.load_model('subjectlog')
             {'date_time': '2023-03-03T17:05:00Z',
              'notes': None,
              'details': {'weight': 23.0}}
-         ],
-        'links': {'entries': 'entries/'}
+         ]
     },
     {
-        'id': '8d7f3c37-69f5-4069-aca7-406f09de50f8',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'FoodConsumption',
         'description': None,
-        'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-        'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+        'subject': '00000000-0000-0000-0000-000000000000',
+        'user': '00000000-0000-0000-0000-000000000000',
         'entries': [
             {'date_time': '2023-03-09T07:10:00Z',
              'notes': None,
@@ -104,11 +103,12 @@ resp = client.load_model('subjectlog')
             {'date_time': '2023-03-01T13:45:00Z',
              'notes': None,
              'details': {'foodAmount': 2.0}}
-         ],
-        'links': {'entries': 'entries/'}
+         ]
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -126,7 +126,7 @@ resp = client.save_model(
     "subjectlog",
     data={
         "type": "WaterConsumption",
-        "subject": "0cdaf69d-63cf-429f-b549-fc0cc163d046",
+        "subject": "00000000-0000-0000-0000-000000000000",
         "description": "Baseline water access"
     }
 )
@@ -137,11 +137,11 @@ resp = client.save_model(
 
 ```
 {'subject_log': {
-    'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'WaterConsumption',
     'description': 'Baseline water access',
-    'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-    'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+    'subject': '00000000-0000-0000-0000-000000000000',
+    'user': '00000000-0000-0000-0000-000000000000',
     'entries': []
 }}
 ```
@@ -159,7 +159,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105c3')
+resp = client.load_model('subjectlog', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -167,11 +167,11 @@ resp = client.load_model('subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105c3'
 
 ```
 {'subject_log': {
-    'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'WaterConsumption',
     'description': 'Baseline water access',
-    'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-    'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+    'subject': '00000000-0000-0000-0000-000000000000',
+    'user': '00000000-0000-0000-0000-000000000000',
     'entries': []
 }}
 ```
@@ -191,7 +191,7 @@ resp = client.load_model('subjectlog', id='9c3a8cc7-da48-4061-a118-d9c7dc3105c3'
 ```
 resp = client.save_model(
     "subjectlog",
-    id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3",
+    id="00000000-0000-0000-0000-000000000000",
     data={"description": "Post-deprivation monitoring"}
 )
 ```
@@ -201,11 +201,11 @@ resp = client.save_model(
 
 ```
 {'subject_log': {
-    'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'WaterConsumption',
     'description': 'Post-deprivation monitoring',
-    'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-    'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+    'subject': '00000000-0000-0000-0000-000000000000',
+    'user': '00000000-0000-0000-0000-000000000000',
     'entries': []
 }}
 ```
@@ -223,7 +223,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3")
+resp = client.delete_model("subjectlog", id="00000000-0000-0000-0000-000000000000")
 ```
 
 
@@ -239,7 +239,7 @@ resp = client.delete_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c
 {: .no_toc}
 
 ```
-resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="add_entry", data={
+resp = client.save_model("subjectlog", id="00000000-0000-0000-0000-000000000000", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
             'details': {'waterAmount': 9.0}
@@ -252,17 +252,16 @@ resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3"
 
 ```
 {'subject_log': {
-    'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'WaterConsumption',
     'description': 'Post-deprivation monitoring',
-    'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-    'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+    'subject': '00000000-0000-0000-0000-000000000000',
+    'user': '00000000-0000-0000-0000-000000000000',
     'entries': [
         {'date_time': '2023-04-05T13:45:00Z',
          'notes': None,
          'details': {'waterAmount': 9.0}}
-    ],
-    'links': {'entries': 'entries/'}
+    ]
 }}
 ```
 
@@ -280,7 +279,7 @@ resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3"
 ```
 resp = client.save_model(
     "subjectlog",
-    id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3",
+    id="00000000-0000-0000-0000-000000000000",
     options="change_entry",
     data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'Replaced drip line'}
 )
@@ -291,17 +290,16 @@ resp = client.save_model(
 
 ```
 {'subject_log': {
-    'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'WaterConsumption',
     'description': 'Post-deprivation monitoring',
-    'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
-    'user': 'f6d0adbb-6e74-4ca9-9a7c-815cc42b772c',
+    'subject': '00000000-0000-0000-0000-000000000000',
+    'user': '00000000-0000-0000-0000-000000000000',
     'entries': [
         {'date_time': '2023-04-05T13:45:00Z',
          'notes': 'Replaced drip line',
          'details': {'waterAmount': 9.0}}
-    ],
-    'links': {'entries': 'entries/'}
+    ]
 }}
 ```
 
@@ -319,7 +317,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
+resp = client.save_model("subjectlog", id="00000000-0000-0000-0000-000000000000", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example
@@ -327,10 +325,10 @@ resp = client.save_model("subjectlog", id="9c3a8cc7-da48-4061-a118-d9c7dc3105c3"
 
 ```
 {'subject_log': {
-    'id': '9c3a8cc7-da48-4061-a118-d9c7dc3105c3',
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'WaterConsumption',
     'description': "new text",
-    'subject': '0cdaf69d-63cf-429f-b549-fc0cc163d046',
+    'subject': '00000000-0000-0000-0000-000000000000',
     'entries': []}
 }
 ``` 

@@ -19,6 +19,15 @@ nav_order: 1
 
 The behaviors model is a module in sessions used to describe the behaviors occurring in a session. The behaviors are characterized by the involved subjects, the setups, and behavioral assays. Both the setups and the behavioral assays are private attributes that must be defined separately before filling in the behavior form. These private attributes belong to group(s) that must be shared with one of the session's associated projects.
 
+## How it fits together
+
+BrainSTEM organizes behavioral experiments through a hierarchy that separates shared scientific knowledge from lab-specific implementation details:
+
+- **Behavioral Category** (this page) — The broad domain of behavior (e.g., "Learning & Memory" → "Spatial Learning")
+- **Behavioral Paradigm** — A standardized behavioral task shared across the field (e.g., "Morris Water Navigation Task")
+- **Behavioral Assay** — Your lab's specific implementation of a paradigm, linked to a setup type (e.g., "MWM 4-day acquisition, 60s trials, probe on day 5")
+- **Behavior** — The actual execution of an assay within a session, tied to specific subjects and a physical setup
+
 ## Fields
 
 | Field | Description |

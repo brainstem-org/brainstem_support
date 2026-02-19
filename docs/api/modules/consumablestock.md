@@ -21,6 +21,7 @@ nav_order: 2
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
 | `type` | string **[required]**. *See options below* |
+| `status` | string stock status (e.g. `AVAILABLE`, `RESERVED`, `DEPLETED`) |
 | `notes` | string [max length: 500] |
 | `inventory` | related inventory ID formatted as a string **[required]** |
 | `acquisition_date` | string containing date (e.g. "2023-03-22") |
@@ -31,6 +32,7 @@ nav_order: 2
 | `cost` | string [max length: 100] |
 | `consumable` | related consumable ID formatted as a string |
 | `details` | JSON object mapped to the internal `type_json` field. *See accepted schemas below* |
+| `type_schema_version` | string schema version for `details` |
 
 
 ## Types of consumable stock
@@ -55,29 +57,32 @@ resp = client.load_model('consumablestock')
 {: .no_toc}
 
 ```
-{'consumablestock': [
+{'consumable stocks': [
     {
-        'id': 'f79d84c8-6bec-40e3-b18a-5b25e57f4a09',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'OpticFiber',
+        'status': 'AVAILABLE',
         'notes': 'Backup spool',
-        'inventory': '6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e',
+        'inventory': '00000000-0000-0000-0000-000000000000',
         'acquisition_date': '2024-03-01',
         'expiration_date': None,
         'storage_location': 'Cabinet A',
         'storage_conditions': 'Room temperature',
         'intended_use': 'Optogenetics',
         'cost': '120 USD',
-        'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
+        'consumable': '00000000-0000-0000-0000-000000000000',
         'details': {
             'fiberIds': 'OF-2024-03-A',
             'quantity': 12
-        }
+        },
+        'type_schema_version': '0.0.0'
     },
     {
-        'id': 'a18dd2b1-6393-468c-9424-1bc77b9e4976',
+        'id': '00000000-0000-0000-0000-000000000000',
         'type': 'SiliconProbe',
+        'status': 'RESERVED',
         'notes': 'Quarterly order',
-        'inventory': '6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e',
+        'inventory': '00000000-0000-0000-0000-000000000000',
         'acquisition_date': '2024-02-15',
         'expiration_date': None,
         'storage_location': 'Freezer shelf 2',
@@ -88,7 +93,8 @@ resp = client.load_model('consumablestock')
         'details': {
             'probeIds': 'SP-64A,SP-64B',
             'quantity': 2
-        }
+        },
+        'type_schema_version': '0.0.0'
     }
 ]}
 ```
@@ -109,8 +115,8 @@ resp = client.save_model(
     "consumablestock",
     data={
         "type": "OpticFiber",
-        "inventory": "6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e",
-        "consumable": "a5f29099-2758-4163-a8e4-e5e2898e57b2",
+        "inventory": "00000000-0000-0000-0000-000000000000",
+        "consumable": "00000000-0000-0000-0000-000000000000",
         "notes": "Initial batch",
         "acquisition_date": "2024-03-01",
         "storage_location": "Cabinet A",
@@ -123,19 +129,21 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-{'consumablestock': {
-    'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
+{'consumable stock': {
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'OpticFiber',
+    'status': 'AVAILABLE',
     'notes': 'Initial batch',
-    'inventory': '6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e',
+    'inventory': '00000000-0000-0000-0000-000000000000',
     'acquisition_date': '2024-03-01',
     'expiration_date': None,
     'storage_location': 'Cabinet A',
     'storage_conditions': None,
     'intended_use': None,
     'cost': None,
-    'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-    'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12}
+    'consumable': '00000000-0000-0000-0000-000000000000',
+    'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12},
+    'type_schema_version': '0.0.0'
 }}
 ```
 
@@ -151,26 +159,28 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('consumablestock', id='d37c9255-d5ae-47d9-b6e1-4ec760c200fb')
+resp = client.load_model('consumablestock', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'consumablestock': {
-    'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
+{'consumable stock': {
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'OpticFiber',
+    'status': 'AVAILABLE',
     'notes': 'Initial batch',
-    'inventory': '6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e',
+    'inventory': '00000000-0000-0000-0000-000000000000',
     'acquisition_date': '2024-03-01',
     'expiration_date': None,
     'storage_location': 'Cabinet A',
     'storage_conditions': None,
     'intended_use': None,
     'cost': None,
-    'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-    'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12}
+    'consumable': '00000000-0000-0000-0000-000000000000',
+    'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12},
+    'type_schema_version': '0.0.0'
 }}
 ```
 
@@ -189,7 +199,7 @@ resp = client.load_model('consumablestock', id='d37c9255-d5ae-47d9-b6e1-4ec760c2
 ```
 resp = client.save_model(
     "consumablestock",
-    id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb",
+    id="00000000-0000-0000-0000-000000000000",
     data={"notes": "Updated notes"}
 )
 ```
@@ -198,19 +208,21 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-{'consumablestock': {
-    'id': 'd37c9255-d5ae-47d9-b6e1-4ec760c200fb',
+{'consumable stock': {
+    'id': '00000000-0000-0000-0000-000000000000',
     'type': 'OpticFiber',
+    'status': 'AVAILABLE',
     'notes': 'Updated notes',
-    'inventory': '6b80ffa7-40b3-4d3d-8d1a-2c1d581fd88e',
+    'inventory': '00000000-0000-0000-0000-000000000000',
     'acquisition_date': '2024-03-01',
     'expiration_date': None,
     'storage_location': 'Cabinet A',
     'storage_conditions': None,
     'intended_use': None,
     'cost': None,
-    'consumable': 'a5f29099-2758-4163-a8e4-e5e2898e57b2',
-    'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12}
+    'consumable': '00000000-0000-0000-0000-000000000000',
+    'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12},
+    'type_schema_version': '0.0.0'
 }}
 ```
 
@@ -225,5 +237,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("consumablestock", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
+resp = client.delete_model("consumablestock", id="00000000-0000-0000-0000-000000000000")
 ```

@@ -26,6 +26,10 @@ nav_order: 6
 | `rrid` | Research Resource Identifier (RRID) |
 | `rrid_url` | URL to RRID lookup page **[read-only]** |
 | `external_identifiers` | JSON object containing external identifier information |
+| `comments` | string, used when proposing approval changes |
+
+Optional fields such as `comments` can be omitted from list/detail responses when empty.
+
 
 
 ## List view
@@ -51,28 +55,42 @@ resp = client.load_model('hardwaredevice')
         'id': 'a14cc671-6d21-4688-9772-1d2bf765b793',
         'name': 'RZ5D Processor',
         'description': '',
-        'supplier': '56c6f4c3-cf31-48ac-bd16-410123776324'
+        'supplier': '56c6f4c3-cf31-48ac-bd16-410123776324',
+        'rrid': '',
+        'rrid_url': '',
+        'external_identifiers': []
     },
     {
         'id': '33c67482-af52-44f4-a3ef-6d692512a6ca',
         'name': 'Scout (128ch)',
         'description': '',
-        'supplier': 'f309ec90-914b-4382-955e-017bf5d1def1'
+        'supplier': 'f309ec90-914b-4382-955e-017bf5d1def1',
+        'rrid': '',
+        'rrid_url': '',
+        'external_identifiers': []
     },
     {
         'id': '4d33e7ad-c141-4e9d-bc9c-034c51dcfc5a',
         'name': 'SmartBox (256ch)',
         'description': '',
-        'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779'
+        'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
+        'rrid': '',
+        'rrid_url': '',
+        'external_identifiers': []
     },
     {
         'id': '3ca40603-b7f0-4d58-8579-d48b3d6e7ad6',
         'name': 'SpikeGLX',
         'description': 'SpikeGLX is a recording system for extracellular neural probes',
-        'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'
+        'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
+        'rrid': '',
+        'rrid_url': '',
+        'external_identifiers': []
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -131,7 +149,10 @@ resp = client.load_model('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e
     'id': '0e6c723c-e5f8-4979-b7f9-e77a3ae4e817',
     'name': 'MyNewHardwareDevice',
     'description': '',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'}
+    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
+    'rrid': '',
+    'rrid_url': '',
+    'external_identifiers': []}
 }
 ```
 
@@ -188,7 +209,7 @@ resp = client.delete_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae
 ## List approvals
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredeviceapproval
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -231,11 +252,13 @@ resp = client.load_model('hardwaredeviceapproval')
 ]}
 ```
 
+Approval list responses also include a `meta` object (pagination/filter metadata).
+
 
 ## Detail approval
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredeviceapproval/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -266,7 +289,7 @@ resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0
 ## Accept approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredeviceapproval/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -281,7 +304,7 @@ resp = client.save_model("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0
 ## Reject approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/hardwaredevice_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredeviceapproval/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

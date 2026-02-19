@@ -27,6 +27,7 @@ nav_order: 4
 | `setup_type` | related environment type ID formatted as a string **[required]** |
 | `specifications` | JSON array describing setup specifications |
 | `is_public` | boolean |
+| `image` | image URL or null |
 
 
 ## List view
@@ -57,7 +58,8 @@ resp = client.load_model('setup')
         'specifications': [
             {'name': 'Radius', 'value': 12, 'description': 'cm'}
         ],
-        'is_public': False
+        'is_public': False,
+        'image': null
     },
     {
         'id': '3e9ec0e0-d685-42ec-8386-0fa24602a73e',
@@ -66,11 +68,14 @@ resp = client.load_model('setup')
         'description': '',
         'setup_type': 'e1f14b91-e507-48c1-bfec-c68d7db9c166',
         'specifications': {},
-        'is_public': True
+        'is_public': True,
+        'image': null
     }
 ]}
 
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -79,6 +84,8 @@ resp = client.load_model('setup')
 - **URL:** https://www.brainstem.org/api/private/personal_attributes/setup
 - **Data:** JSON dictionary containing at least the required fields.
 - **Responses:** `201` OK; `400` Bad request; `403` Not allowed; `404` Not found
+
+**Additional notes:** `setup_type` is required for create requests.
 
 
 ### Use example (using Python API)
@@ -114,7 +121,8 @@ resp = client.save_model("setup",  data=
         'Length': 100,
         'Width': '30 cm'
     },
-    'is_public': False}
+    'is_public': False,
+    'image': null}
 }
 ```
 
@@ -148,7 +156,8 @@ resp = client.load_model('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
         'Length': 100,
         'Width': '30 cm'
     },
-    'is_public': False}
+    'is_public': False,
+    'image': null}
 }
 ```
 
@@ -175,13 +184,15 @@ resp = client.save_model("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", dat
 {'setup': {
     'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
     'name': 'MyNewEnv',
+    'location': 'Lab Room 103',
     'description': 'new text',
     'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
     'specifications': {
         'Length': 100,
         'Width': '30 cm'
     },
-    'is_public': False}
+    'is_public': False,
+    'image': null}
 }
 ```
 

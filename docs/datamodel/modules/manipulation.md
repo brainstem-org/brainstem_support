@@ -23,12 +23,13 @@ The manipulations model describes temporal manipulations performed in a session.
 
 | Field | Description |
 |:------|:------------|
-| ``Session`` | Session of the manipulation (**required**). Must reference an existing [session]({{"datamodel/stem/session/"|absolute_url}}). Example: "Optogenetic stimulation session #2" |
 | ``Type of manipulation`` | Type of manipulation (**required**). Selected from predefined types. Example: "Optogenetic stimulation". *See options below* |
+| ``Session`` | Session of the manipulation (**required**). Must reference an existing [session]({{"datamodel/stem/session/"|absolute_url}}). Example: "Optogenetic stimulation session #2" |
 | ``Subject procedures`` | Related subject procedures (**required**). Must reference existing [procedures]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Optic fiber implant #B789" |
-| ``Setup`` | Setup filter for equipment (optional). Used to filter available equipment by setup. |
-| ``Equipment`` | Equipment used for the manipulation (optional). Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "LED driver #1" |
+| ``Setup`` | Setup filter for equipment. Used to filter available equipment by setup. |
+| ``Equipment`` | Equipment used for the manipulation. Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "LED driver #1" |
 | ``Notes`` | Notes about the manipulation (string). Example: "20Hz stimulation protocol completed successfully" |
+| ``Type specific fields`` | Custom fields based on manipulation type in JSON format. See [Manipulation types schema]({{"datamodel/schemas/manipulation/"|absolute_url}}) for type-specific fields |
 
 ## Types of manipulations
 

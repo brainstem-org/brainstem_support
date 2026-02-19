@@ -29,9 +29,9 @@ nav_order: 6
 
 
 ## List view
-- **Allowed portals:** public, private
+- **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/projectmembershipinvitation
+- **URL:** https://www.brainstem.org/api/private/stem/projectmembershipinvitation/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -48,17 +48,17 @@ resp = client.load_model('projectmembershipinvitation')
 ```
 {'project_membership_invitations': [
     {
-        'id': '5c386192-1dc6-42d1-84a0-6561fa61845d',
+        'id': '00000000-0000-0000-0000-000000000000',
         'invitee': 27,
-        'project': 'a31e6de1-bd46-4f48-9afe-620ae6435a09',
+        'project': '00000000-0000-0000-0000-000000000000',
         'can_change': False,
         'manage_project': False,
         'own_project': False
     },
     {
-        'id': '4acd89b5-7d85-4ecb-94b1-094ee6473dbb',
+        'id': '00000000-0000-0000-0000-000000000000',
         'invitee': 1,
-        'project': 'c4b8a90b-2963-4d13-aa07-b6f497252dde',
+        'project': '00000000-0000-0000-0000-000000000000',
 
         'can_change': False,
         'manage_project': False,
@@ -69,9 +69,9 @@ resp = client.load_model('projectmembershipinvitation')
 
 
 ## Detail
-- **Allowed portals:** public, private
+- **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/projectmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/stem/projectmembershipinvitation/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -79,7 +79,7 @@ resp = client.load_model('projectmembershipinvitation')
 {: .no_toc}
 
 ```
-resp = client.load_model('projectmembershipinvitation', id='5c386192-1dc6-42d1-84a0-6561fa61845d')
+resp = client.load_model('projectmembershipinvitation', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -87,9 +87,9 @@ resp = client.load_model('projectmembershipinvitation', id='5c386192-1dc6-42d1-8
 
 ```
 {'project_membership_invitation': {
-    'id': '5c386192-1dc6-42d1-84a0-6561fa61845d',
+    'id': '00000000-0000-0000-0000-000000000000',
     'invitee': 27,
-    'project': 'a31e6de1-bd46-4f48-9afe-620ae6435a09',
+    'project': '00000000-0000-0000-0000-000000000000',
     'can_change': False,
     'manage_project': False,
     'own_project': False}
@@ -100,7 +100,7 @@ resp = client.load_model('projectmembershipinvitation', id='5c386192-1dc6-42d1-8
 ## Accept
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/projectmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/stem/projectmembershipinvitation/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -108,7 +108,7 @@ resp = client.load_model('projectmembershipinvitation', id='5c386192-1dc6-42d1-8
 {: .no_toc}
 
 ```
-resp = client.load_model("projectmembershipinvitation", id="5c386192-1dc6-42d1-84a0-6561fa61845d", options="accept")
+resp = client.load_model("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="accept")
 ```
 
 
@@ -116,7 +116,7 @@ resp = client.load_model("projectmembershipinvitation", id="5c386192-1dc6-42d1-8
 ## Reject
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/projectmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/stem/projectmembershipinvitation/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -124,14 +124,14 @@ resp = client.load_model("projectmembershipinvitation", id="5c386192-1dc6-42d1-8
 {: .no_toc}
 
 ```
-resp = client.load_model("projectmembershipinvitation", id="0f1e0097-0f41-4c52-82f2-d643be507120", options="reject")
+resp = client.load_model("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="reject")
 ```
 
 
 ## Cancel
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/projectmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/stem/projectmembershipinvitation/<id\>/cancel/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -139,5 +139,5 @@ resp = client.load_model("projectmembershipinvitation", id="0f1e0097-0f41-4c52-8
 {: .no_toc}
 
 ```
-resp = client.load_model("projectmembershipinvitation", id="5c386192-1dc6-42d1-84a0-6561fa61845d", options="cancel")
+resp = client.load_model("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="cancel")
 ```

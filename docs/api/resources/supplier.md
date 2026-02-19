@@ -23,6 +23,10 @@ nav_order: 6
 | `name` | string **[required]** [max length: 100; must be unique] |
 | `description` | string |
 | `website` | string [max length: 200] |
+| `comments` | string, used when proposing approval changes |
+
+Optional fields such as `comments` can be omitted from list/detail responses when empty.
+
 
 
 ## List view
@@ -58,6 +62,8 @@ resp = client.load_model('supplier')
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -171,7 +177,7 @@ resp = client.delete_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e"
 ## List approvals
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals
+- **URL:** https://www.brainstem.org/api/private/resources/supplierapproval
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -210,11 +216,13 @@ resp = client.load_model('supplierapproval')
 ]}
 ```
 
+Approval list responses also include a `meta` object (pagination/filter metadata).
+
 
 ## Detail approval
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/supplierapproval/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -245,7 +253,7 @@ resp = client.load_model('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a
 ## Accept approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/supplierapproval/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -260,7 +268,7 @@ resp = client.save_model("supplierapproval", id="1af72008-d203-4bea-9766-f692b8a
 ## Reject approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/supplier_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/supplierapproval/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

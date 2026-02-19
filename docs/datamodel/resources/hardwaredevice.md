@@ -24,13 +24,13 @@ Hardware devices refer to durable, often more complex equipment or tools that ar
 | Field | Description |
 |:------|:------------|
 | ``Name of hardware device`` | The name of the hardware device (**required**; string; maximum length: 100 characters; must be unique). Example: "RHD2000 USB Interface Board" |
+| ``Type`` | The type of hardware device (**required**; string). Selected from predefined categories. Example: "Data acquisition system" |
 | ``Supplier`` | The supplier of the hardware device (**required**). Must reference an existing [supplier]({{"datamodel/resources/supplier/"|absolute_url}}). Example: "Intan Technologies" |
-| ``Type`` | The type of hardware device (**optional**). Selected from predefined categories. Example: "Data acquisition system" |
-| ``RRID`` | Research Resource Identifier (optional). Must start with "RRID:". Example: "RRID:SCR_123456" |
-| ``External identifiers`` | External identifiers from databases like manufacturer IDs, model numbers, DOI, etc. (optional). Include URLs when available. |
+| ``RRID`` | Research Resource Identifier. Must start with "RRID:". Example: "RRID:SCR_123456" |
+| ``External identifiers`` | External identifiers from databases like manufacturer IDs, model numbers, DOI, etc.. Include URLs when available. |
 | ``Type specific fields`` | Type-specific fields in JSON format. Fields vary by hardware device type. Example: For amplifier - specifications, input/output details. |
-| ``Description`` | Description of the hardware device (optional; maximum length: 2000 characters). Can include uploaded images. Example: "USB interface board for RHD2000 series digital electrophysiology recording systems..." |
-| ``Adding/editing comments`` | Comments for the submission/approval process (optional). |
+| ``Description`` | Description of the hardware device (maximum length: 2000 characters). Can include uploaded images. Example: "USB interface board for RHD2000 series digital electrophysiology recording systems..." |
+| ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 
