@@ -46,7 +46,7 @@ resp = client.load_model('datastorage')
 {: .no_toc}
 
 ```
-{'datastorage': [
+{'datastorages': [
     {
         'id': '2ba92d91-349d-4e8c-9785-fc941ddd8868',
         'name': 'Test dataset',
@@ -85,6 +85,8 @@ resp = client.load_model('datastorage')
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -232,6 +234,7 @@ resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2
 {'datastorage': {
     'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
     'name': 'MyNewRepo',
+    'location': '/data/newrepo',
     'description': 'new text',
     'is_public': False,
     'data_organization': [

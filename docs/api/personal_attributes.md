@@ -14,10 +14,10 @@ The Personal Attributes app manages user-specific configurations, experimental s
 
 The Personal Attributes app includes the following endpoints:
 
-- **[Setups](/api/personal_attributes/setup/)** - Personal experimental setup configurations
 - **[Behavioral Assays](/api/personal_attributes/behavioralassay/)** - Custom behavioral task definitions and equipment tracking
 - **[Data Storage](/api/personal_attributes/datastorage/)** - Personal data storage configurations and locations
 - **[Inventory](/api/personal_attributes/inventory/)** - Personal laboratory inventory and consumables
+- **[Setups](/api/personal_attributes/setup/)** - Personal experimental setup configurations
 
 These endpoints enable researchers to customize their experimental environments while maintaining consistency across studies.
 
