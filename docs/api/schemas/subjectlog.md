@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Subject log
+title: SubjectLog
 parent: Schemas
 grand_parent: API
-nav_order: 7
+nav_order: 8
 ---
 
-# Subject log schemas
+# SubjectLog schemas
 {: .no_toc}
 
 ## Table of contents
@@ -15,525 +15,359 @@ nav_order: 7
 1. TOC
 {:toc}
 
-## FoodConsumption
-```
-{
-    "type": "object",
-    "title": "Food Consumption log",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "foodAmount": {
-            "title": "Food amount (grams)",
-            "type": "number",
-            "minimum": 0,
-            "options": {
-                "infoText": "Food amount in grams."
-            }
-        }
-    },
-    "required": [
-        "foodAmount"
-    ]
-}
-```
+## How to use this page
 
-## FoodDeprivation
-```
-{
-    "type": "object",
-    "title": "Food deprivation log",
-    "options": {
-        "compact": true
-    },
-    "additionalProperties": false,
-    "properties": {
-        "responsiblePerson": {
-            "title": "Responsible person (name and phone number)",
-            "type": "string"
-        },
-        "protocol": {
-            "title": "Protocol",
-            "type": "string"
-        }
-    },
-    "required": [
-        "responsiblePerson"
-    ]
-}
-```
+- Use this page when calling `/api/private/modules/subjectlog/`.
+- Set `type` to one schema name from the list below.
+- Send `details` that matches that schema exactly.
+- Schema controls shape of per-log-type observations and metrics.
 
-## GenericObservation
-```
-{
-    "type": "object",
-    "title": "Generic Observation",
-    "options": {
-        "compact": true,
-        "no_additional_properties": true,
-        "additionalProperties": false
-    },
-    "properties": {
-        "observationType": {
-            "title": "Observation type",
-            "brief": "type",
-            "type": "string",
-            "enum": [
-                "Pain score",
-                "Grooming",
-                "Exploration",
-                "Freezing",
-                "Facial expression",
-                "Unusual behavior",
-                "Other"
-            ],
-            "options": {
-                "infoText": "The category or behavioral domain of the observation."
-            }
-        },
-        "observation": {
-            "title": "Observation",
-            "brief": "value",
-            "type": "string",
-            "options": {
-                "infoText": "Description of the observed behavior."
-            }
-        },
-        "repetitions": {
-            "title": "Repetitions",
-            "brief": "repetitions",
-            "type": "integer",
-            "minimum": 1,
-            "default": 1,
-            "options": {
-                "infoText": "How many times this observation was recorded under the same condition."
-            }
-        }
-    },
-    "required": [
-        "observationType",
-        "observation"
-    ]
-}
-```
+## Quick type map
 
-## Habituation
-```
-{
-    "type": "object",
-    "title": "Habituation log",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "habituationMethod": {
-            "title": "Method of habituation",
-            "type": "string",
-            "options": {
-                "infoText": "E.g., tail lift, cupping, glove."
-            }
-        }
-    },
-    "required": []
-}
-```
+| Type value | Schema version | Required fields | Schema shape |
+|:-----------|:---------------|:----------------|:-------------|
+| `FoodConsumption` | `1.1.0` | `foodAmount` | `object` |
+| `FoodDeprivation` | `1.0.0` | `responsiblePerson` | `object` |
+| `GenericObservation` | `1.0.0` | `observation`, `observationType` | `object` |
+| `Genotyping` | `1.0.0` | `result`, `sample` | `object` |
+| `Habituation` | `1.0.0` | none | `object` |
+| `Handling` | `1.0.0` | none | `object` |
+| `HargreavesTest` | `1.1.0` | `latency`, `responseScore`, `stimulusLocation` | `object` |
+| `Housing` | `1.0.0` | none | `object` |
+| `TrainingSession` | `1.0.0` | none | `object` |
+| `VonFreyTest` | `1.1.0` | `responseScore`, `stimulusForce`, `stimulusLocation` | `object` |
+| `WaterConsumption` | `1.1.0` | `waterAmount` | `object` |
+| `WaterDeprivation` | `1.0.0` | `responsiblePerson` | `object` |
+| `Weighing` | `1.1.0` | `weight` | `object` |
+| `Wellness` | `1.0.0` | `wellness` | `object` |
 
-## Handling
-```
-{
-    "type": "object",
-    "title": "Handling log",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "handlingMethod": {
-            "title": "Method of handling",
-            "type": "string",
-            "options": {
-                "infoText": "E.g., tail lift, cupping, glove."
-            }
-        }
-    },
-    "required": []
-}
-```
+## Examples
 
-## HargreavesTest
-```
+### SubjectLog payload fragment
+```json
 {
-    "type": "object",
-    "title": "Hargreaves Thermal sensitivity test",
-    "options": {
-        "compact": true,
-        "no_additional_properties": true,
-        "additionalProperties": false
-    },
-    "properties": {
-        "stimulusLocation": {
-            "title": "Stimulus location",
-            "brief": "location",
-            "type": "string",
-            "enum": [
-                "Left hind paw",
-                "Right hind paw",
-                "Left forepaw",
-                "Right forepaw",
-                "Face (left)",
-                "Face (right)",
-                "Tail",
-                "Other"
-            ],
-            "options": {
-                "infoText": "Anatomical location where the thermal stimulus was applied using the Hargreaves test."
-            }
-        },
-        "latency": {
-            "title": "Withdrawal latency (s)",
-            "brief": "latency",
-            "type": "number",
-            "minimum": 0,
-            "units": "s",
-            "options": {
-                "infoText": "Time from stimulus onset to paw withdrawal, measured in seconds."
-            }
-        },
-        "cutoffLatency": {
-            "title": "Cutoff latency (s)",
-            "brief": "cutoff",
-            "type": "number",
-            "minimum": 0,
-            "units": "s",
-            "default": 20,
-            "options": {
-                "infoText": "Maximum allowable latency before automatic termination to prevent tissue damage."
-            }
-        },
-        "responseScore": {
-            "title": "Response score (0\u20133)",
-            "brief": "score",
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 3,
-            "enum": [
-                0,
-                1,
-                2,
-                3
-            ],
-            "descriptions": {
-                "0": "No response",
-                "1": "Delayed or uncertain movement",
-                "2": "Clear paw withdrawal",
-                "3": "Exaggerated withdrawal or escape behavior"
-            },
-            "options": {
-                "infoText": "Categorical assessment of behavioral response. 0: No response, 1: Delayed movement, 2: Normal withdrawal, 3: Exaggerated or escape behavior"
-            }
-        },
-        "repetitions": {
-            "title": "Repetitions",
-            "brief": "repetitions",
-            "type": "integer",
-            "minimum": 1,
-            "default": 3,
-            "options": {
-                "infoText": "Number of repeated Hargreaves trials at the given location."
-            }
-        }
-    },
-    "required": [
-        "stimulusLocation",
-        "latency",
-        "responseScore"
-    ]
-}
-```
-
-## Housing
-```
-{
-    "type": "object",
-    "title": "Housing log",
-    "options": {
-        "compact": true
-    },
-    "additionalProperties": false,
-    "properties": {
-        "location": {
-            "title": "Location",
-            "type": "string",
-            "options": {
-                "infoText": "The location the subject is housed, e.g. an animal housing unit with a specific status.",
-                "inputAttributes": {
-                    "placeholder": "e.g., Unit A, Room 101"
-                }
-            }
-        },
-        "cageId": {
-            "title": "Cage ID",
-            "type": "string",
-            "options": {
-                "infoText": "The ID of the cage where the subject is housed.",
-                "inputAttributes": {
-                    "placeholder": "e.g., Cage-12345"
-                }
-            }
-        },
-        "cageType": {
-            "title": "Cage type",
-            "type": "string",
-            "options": {
-                "infoText": "The type of cage, e.g. an IVC cage with a specific model number, NexGen500 or NexGen1800.",
-                "inputAttributes": {
-                    "placeholder": "e.g., IVC cage, NexGen1800"
-                }
-            }
-        },
-        "lightCycle": {
-            "title": "Light cycle",
-            "type": "string",
-            "options": {
-                "infoText": "The light cycle of the housing unit, e.g. normal or reversed, or specific time points",
-                "inputAttributes": {
-                    "placeholder": "e.g. normal or reversed"
-                }
-            }
-        },
-        "enrichment": {
-            "title": "Enrichment",
-            "type": "string",
-            "options": {
-                "infoText": "Enrichment items in the cage such as nesting material, shelter, or something to gnaw.",
-                "inputAttributes": {
-                    "placeholder": "e.g., nesting material, shelter"
-                }
-            }
-        }
+  "type": "FoodConsumption",
+  "details": {
+    "foodAmount": {
+      "unit": "g",
+      "value": 0
     }
+  }
 }
 ```
 
-## TrainingSession
-```
+## Request pattern
+```json
 {
-    "type": "object",
-    "title": "Training session log",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "task": {
-            "title": "Task of the training",
-            "type": "string"
-        },
-        "setup": {
-            "title": "Setup of the training",
-            "type": "string"
-        },
-        "reinforcementType": {
-            "title": "Reinforcement type",
-            "type": "string",
-            "options": {
-                "infoText": "The reinforcement type used during training (e.g. food, water, open-loop/closed loop."
-            }
-        },
-        "performance": {
-            "title": "The performance level",
-            "type": "string",
-            "options": {
-                "infoText": "The performance level of the training. How well the subject performs the task"
-            }
-        }
-    },
-    "required": []
+  "type": "FoodConsumption",
+  "details": {
+    "foodAmount": {
+      "unit": "g",
+      "value": 0
+    }
+  }
 }
 ```
 
-## VonFreyTest
-```
+## Schema reference
+
+### `FoodConsumption`
+- **Schema title:** Food Consumption log
+- **Schema version:** `1.1.0`
+- **Source:** `brainstem/schemas/SubjectLog/FoodConsumption.json`
+- **Schema shape:** `object`
+- **Required fields:** `foodAmount`
+
+Example payload for this type:
+```json
 {
-    "type": "object",
-    "title": "Von Frey Mechanical sensitivity test",
-    "options": {
-        "compact": true,
-        "no_additional_properties": true,
-        "additionalProperties": false
-    },
-    "properties": {
-        "stimulusLocation": {
-            "title": "Stimulus location",
-            "brief": "location",
-            "type": "string",
-            "enum": [
-                "Left hind paw",
-                "Right hind paw",
-                "Left forepaw",
-                "Right forepaw",
-                "Face (left)",
-                "Face (right)",
-                "Tail",
-                "Other"
-            ],
-            "options": {
-                "infoText": "Anatomical location where the Von Frey filament was applied."
-            }
-        },
-        "stimulusForce": {
-            "title": "Stimulus force (g)",
-            "brief": "force",
-            "type": "number",
-            "minimum": 0,
-            "units": "g",
-            "options": {
-                "infoText": "Force of the Von Frey filament used for mechanical stimulation, in grams."
-            }
-        },
-        "responseScore": {
-            "title": "Response score (0\u20133)",
-            "brief": "score",
-            "type": "integer",
-            "minimum": 0,
-            "maximum": 3,
-            "enum": [
-                0,
-                1,
-                2,
-                3
-            ],
-            "descriptions": {
-                "0": "No response",
-                "1": "Slight movement",
-                "2": "Strong withdrawal",
-                "3": "Flinching or escape"
-            },
-            "options": {
-                "infoText": "Categorical assessment of behavioral response to stimulation.  0: No response, 1: Slight movement, 2: Strong withdrawal, 3: Flinching or escape"
-            }
-        },
-        "repetitions": {
-            "title": "Repetitions",
-            "brief": "repetitions",
-            "type": "integer",
-            "minimum": 1,
-            "default": 10,
-            "options": {
-                "infoText": "Number of repetitions of Von Frey stimulation at the given location."
-            }
-        }
-    },
-    "required": [
-        "stimulusLocation",
-        "stimulusForce",
-        "responseScore"
-    ]
+  "foodAmount": {
+    "unit": "g",
+    "value": 0
+  }
 }
 ```
 
-## WaterConsumption
-```
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `foodAmount` | `object(value:number, unit:enum[kg, g, mg, µg])` | yes | format="numberUnit"; default={"unit": "g"} |
+
+### `FoodDeprivation`
+- **Schema title:** Food deprivation log
+- **Schema version:** `1.0.0`
+- **Source:** `brainstem/schemas/SubjectLog/FoodDeprivation.json`
+- **Schema shape:** `object`
+- **Required fields:** `responsiblePerson`
+
+Example payload for this type:
+```json
 {
-    "type": "object",
-    "title": "Water consumption log",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "waterAmount": {
-            "title": "Water amount (mL)",
-            "type": "number",
-            "minimum": 0,
-            "options": {
-                "infoText": "Water amount in milliliters."
-            }
-        }
-    },
-    "required": [
-        "waterAmount"
-    ]
+  "responsiblePerson": "example"
 }
 ```
 
-## WaterDeprivation
-```
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `protocol` | `string` | no | — |
+| `responsiblePerson` | `string` | yes | — |
+
+### `GenericObservation`
+- **Schema title:** Generic Observation
+- **Schema version:** `1.0.0`
+- **Source:** `brainstem/schemas/SubjectLog/GenericObservation.json`
+- **Schema shape:** `object`
+- **Required fields:** `observation`, `observationType`
+
+Example payload for this type:
+```json
 {
-    "type": "object",
-    "title": "Water deprivation log",
-    "options": {
-        "compact": true
-    },
-    "additionalProperties": false,
-    "properties": {
-        "responsiblePerson": {
-            "title": "Responsible person (name and phone number)",
-            "type": "string"
-        },
-        "protocol": {
-            "title": "Protocol",
-            "type": "string"
-        }
-    },
-    "required": [
-        "responsiblePerson"
-    ]
+  "observation": "example",
+  "observationType": "Pain score"
 }
 ```
 
-## Weighing
-```
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `observation` | `string` | yes | — |
+| `observationType` | `string` | yes | enum=["Pain score", "Grooming", "Exploration", "Freezing", "Facial expression", "Unusual behavior", "Other"] |
+| `repetitions` | `integer` | no | minimum=1; default=1 |
+
+### `Genotyping`
+- **Schema title:** Genotyping
+- **Schema version:** `1.0.0`
+- **Source:** `brainstem/schemas/SubjectLog/Genotyping.json`
+- **Schema shape:** `object`
+- **Required fields:** `result`, `sample`
+
+Example payload for this type:
+```json
 {
-    "type": "object",
-    "title": "Weighing log",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "weight": {
-            "title": "Weight (grams)",
-            "type": "number",
-            "minimum": 0,
-            "options": {
-                "infoText": "Weight of subject in grams."
-            }
-        }
-    },
-    "required": [
-        "weight"
-    ]
+  "result": "example",
+  "sample": "example"
 }
 ```
 
-## Wellness
-```
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `assayPanel` | `string` | no | — |
+| `lociResults` | `array` | no | format="table" |
+| `qcConfidence` | `string` | no | enum=["high", "medium", "low", "ambiguous", "failed"] |
+| `result` | `string` | yes | — |
+| `sample` | `string` | yes | — |
+
+### `Habituation`
+- **Schema title:** Habituation log
+- **Schema version:** `1.0.0`
+- **Source:** `brainstem/schemas/SubjectLog/Habituation.json`
+- **Schema shape:** `object`
+- **Required fields:** none
+
+Example payload for this type:
+```json
 {
-    "type": "object",
-    "title": "Wellness log",
-    "options": {
-        "compact": "true"
-    },
-    "additionalProperties": false,
-    "properties": {
-        "wellness": {
-            "title": "Wellness",
-            "type": "string",
-            "options": {
-                "infoText": "The current wellness status of the subject, such as good health, fair, or poor.",
-                "inputAttributes": {
-                    "placeholder": "e.g., good, fair, poor"
-                }
-            }
-        }
-    },
-    "required": [
-        "wellness"
-    ]
+  "habituationMethod": "example"
 }
 ```
 
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `habituationMethod` | `string` | no | — |
+
+### `Handling`
+- **Schema title:** Handling log
+- **Schema version:** `1.0.0`
+- **Source:** `brainstem/schemas/SubjectLog/Handling.json`
+- **Schema shape:** `object`
+- **Required fields:** none
+
+Example payload for this type:
+```json
+{
+  "handlingMethod": "example"
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `handlingMethod` | `string` | no | — |
+
+### `HargreavesTest`
+- **Schema title:** Hargreaves Thermal sensitivity test
+- **Schema version:** `1.1.0`
+- **Source:** `brainstem/schemas/SubjectLog/HargreavesTest.json`
+- **Schema shape:** `object`
+- **Required fields:** `latency`, `responseScore`, `stimulusLocation`
+
+Example payload for this type:
+```json
+{
+  "latency": {
+    "unit": "s",
+    "value": 0
+  },
+  "responseScore": 0,
+  "stimulusLocation": "Left hind paw"
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `cutoffLatency` | `object(value:number, unit:enum[µs, ms, s, min, h])` | no | format="numberUnit"; default={"unit": "s"} |
+| `latency` | `object(value:number, unit:enum[µs, ms, s, min, h])` | yes | format="numberUnit"; default={"unit": "s"} |
+| `repetitions` | `integer` | no | minimum=1; default=3 |
+| `responseScore` | `integer` | yes | enum=[0, 1, 2, 3]; minimum=0; maximum=3 |
+| `stimulusLocation` | `string` | yes | enum=["Left hind paw", "Right hind paw", "Left forepaw", "Right forepaw", "Face (left)", "Face (right)", "Tail", "Other"] |
+
+### `Housing`
+- **Schema title:** Housing log
+- **Schema version:** `1.0.0`
+- **Source:** `brainstem/schemas/SubjectLog/Housing.json`
+- **Schema shape:** `object`
+- **Required fields:** none
+
+Example payload for this type:
+```json
+{
+  "location": "example",
+  "cageId": "example",
+  "cageType": "example",
+  "lightCycle": "example"
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `cageId` | `string` | no | — |
+| `cageType` | `string` | no | — |
+| `enrichment` | `string` | no | — |
+| `lightCycle` | `string` | no | — |
+| `location` | `string` | no | — |
+
+### `TrainingSession`
+- **Schema title:** Training session log
+- **Schema version:** `1.0.0`
+- **Source:** `brainstem/schemas/SubjectLog/TrainingSession.json`
+- **Schema shape:** `object`
+- **Required fields:** none
+
+Example payload for this type:
+```json
+{
+  "task": "example",
+  "setup": "example",
+  "reinforcementType": "example",
+  "performance": "example"
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `performance` | `string` | no | — |
+| `reinforcementType` | `string` | no | — |
+| `setup` | `string` | no | — |
+| `task` | `string` | no | — |
+
+### `VonFreyTest`
+- **Schema title:** Von Frey Mechanical sensitivity test
+- **Schema version:** `1.1.0`
+- **Source:** `brainstem/schemas/SubjectLog/VonFreyTest.json`
+- **Schema shape:** `object`
+- **Required fields:** `responseScore`, `stimulusForce`, `stimulusLocation`
+
+Example payload for this type:
+```json
+{
+  "responseScore": 0,
+  "stimulusForce": {
+    "unit": "g",
+    "value": 0
+  },
+  "stimulusLocation": "Left hind paw"
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `repetitions` | `integer` | no | minimum=1; default=10 |
+| `responseScore` | `integer` | yes | enum=[0, 1, 2, 3]; minimum=0; maximum=3 |
+| `stimulusForce` | `object(value:number, unit:enum[mg, g, kg])` | yes | format="numberUnit"; default={"unit": "g"} |
+| `stimulusLocation` | `string` | yes | enum=["Left hind paw", "Right hind paw", "Left forepaw", "Right forepaw", "Face (left)", "Face (right)", "Tail", "Other"] |
+
+### `WaterConsumption`
+- **Schema title:** Water consumption log
+- **Schema version:** `1.1.0`
+- **Source:** `brainstem/schemas/SubjectLog/WaterConsumption.json`
+- **Schema shape:** `object`
+- **Required fields:** `waterAmount`
+
+Example payload for this type:
+```json
+{
+  "waterAmount": {
+    "unit": "mL",
+    "value": 0
+  }
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `waterAmount` | `object(value:number, unit:enum[L, mL, µL, nL, pL])` | yes | format="numberUnit"; default={"unit": "mL"} |
+
+### `WaterDeprivation`
+- **Schema title:** Water deprivation log
+- **Schema version:** `1.0.0`
+- **Source:** `brainstem/schemas/SubjectLog/WaterDeprivation.json`
+- **Schema shape:** `object`
+- **Required fields:** `responsiblePerson`
+
+Example payload for this type:
+```json
+{
+  "responsiblePerson": "example"
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `protocol` | `string` | no | — |
+| `responsiblePerson` | `string` | yes | — |
+
+### `Weighing`
+- **Schema title:** Weighing log
+- **Schema version:** `1.1.0`
+- **Source:** `brainstem/schemas/SubjectLog/Weighing.json`
+- **Schema shape:** `object`
+- **Required fields:** `weight`
+
+Example payload for this type:
+```json
+{
+  "weight": {
+    "unit": "g",
+    "value": 0
+  }
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `weight` | `object(value:number, unit:enum[kg, g, mg, µg])` | yes | format="numberUnit"; default={"unit": "g"} |
+
+### `Wellness`
+- **Schema title:** Wellness log
+- **Schema version:** `1.0.0`
+- **Source:** `brainstem/schemas/SubjectLog/Wellness.json`
+- **Schema shape:** `object`
+- **Required fields:** `wellness`
+
+Example payload for this type:
+```json
+{
+  "wellness": "example"
+}
+```
+
+| Field | Expected value | Required | Constraints/format |
+|:------|:---------------|:---------|:-------------------|
+| `wellness` | `string` | yes | — |
