@@ -286,7 +286,7 @@ resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0
 ## Accept approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/hardwaredeviceapproval/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredeviceapproval/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -301,7 +301,7 @@ resp = client.save_model("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0
 ## Reject approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/hardwaredeviceapproval/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/hardwaredeviceapproval/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

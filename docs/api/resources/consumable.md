@@ -325,7 +325,7 @@ resp = client.load_model('consumableapproval', id='b7595523-5578-45c0-b7ef-c1f14
 ## Accept approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/consumableapproval/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/consumableapproval/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -340,7 +340,7 @@ resp = client.save_model("consumableapproval", id="b7595523-5578-45c0-b7ef-c1f14
 ## Reject approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/consumableapproval/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/consumableapproval/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

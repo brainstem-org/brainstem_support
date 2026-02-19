@@ -22,7 +22,8 @@ nav_order: 1
 | `id` | UUID identificator formatted as a string |
 | `name` | string **[required]** [must be unique] |
 | `description` | string |
-| `parent_category` | related behavioral category ID |
+| `parent` | related behavioral category ID |
+| `comments` | string, used when proposing approval changes |
 
 
 ## List view
@@ -43,21 +44,23 @@ resp = client.load_model('behavioralcategory')
 {: .no_toc}
 
 ```
-{'behavioralcategories': [
+{'behavioral_categories': [
     {
         'id': 'a1b2c3d4-5678-90ab-cdef-1234567890ab',
         'name': 'Learning & Memory',
         'description': 'Behavioral tasks assessing learning and memory processes',
-        'parent_category': None
+        'parent': None
     },
     {
         'id': 'b2c3d4e5-6789-01bc-def0-2345678901bc',
         'name': 'Spatial Learning',
         'description': 'Tasks assessing spatial navigation and spatial memory',
-        'parent_category': 'a1b2c3d4-5678-90ab-cdef-1234567890ab'
+        'parent': 'a1b2c3d4-5678-90ab-cdef-1234567890ab'
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -84,11 +87,11 @@ resp = client.save_model("behavioralcategory", data={
 {: .no_toc}
 
 ```
-{'behavioralcategory_approval': {
+{'behavioral_category_approval': {
     'id': 'c3d4e5f6-7890-12cd-ef01-3456789012cd',
     'name': 'Motor Function',
     'description': 'Tasks assessing motor abilities and coordination',
-    'parent_category': None}
+    'parent': None}
 }
 ```
 
@@ -110,11 +113,11 @@ resp = client.load_model('behavioralcategory', id='a1b2c3d4-5678-90ab-cdef-12345
 {: .no_toc}
 
 ```
-{'behavioralcategory': {
+{'behavioral_category': {
     'id': 'a1b2c3d4-5678-90ab-cdef-1234567890ab',
     'name': 'Learning & Memory',
     'description': 'Behavioral tasks assessing learning and memory processes',
-    'parent_category': None}
+    'parent': None}
 }
 ```
 
@@ -139,11 +142,11 @@ resp = client.save_model("behavioralcategory", id="a1b2c3d4-5678-90ab-cdef-12345
 {: .no_toc}
 
 ```
-{'behavioralcategory_approval': {
+{'behavioral_category_approval': {
     'id': 'd4e5f6a7-8901-23de-f012-4567890123de',
     'name': 'Learning & Memory',
     'description': 'updated description',
-    'parent_category': None}
+    'parent': None}
 }
 ```
 
@@ -168,7 +171,7 @@ resp = client.delete_model("behavioralcategory", id="a1b2c3d4-5678-90ab-cdef-123
 ## List approvals
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralcategory_approvals
+- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralcategoryapproval
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -183,12 +186,12 @@ resp = client.load_model('behavioralcategoryapproval')
 {: .no_toc}
 
 ```
-{'behavioralcategory_approvals': [
+{'behavioral_category_approvals': [
     {
         'id': 'c3d4e5f6-7890-12cd-ef01-3456789012cd',
         'name': 'Motor Function',
         'description': 'Tasks assessing motor abilities and coordination',
-        'parent_category': None,
+        'parent': None,
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
@@ -201,7 +204,7 @@ resp = client.load_model('behavioralcategoryapproval')
 ## Detail approval
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralcategory_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralcategoryapproval/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -216,11 +219,11 @@ resp = client.load_model('behavioralcategoryapproval', id='c3d4e5f6-7890-12cd-ef
 {: .no_toc}
 
 ```
-{'behavioralcategory_approval': {
+{'behavioral_category_approval': {
     'id': 'c3d4e5f6-7890-12cd-ef01-3456789012cd',
     'name': 'Motor Function',
     'description': 'Tasks assessing motor abilities and coordination',
-    'parent_category': None,
+    'parent': None,
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,
@@ -232,7 +235,7 @@ resp = client.load_model('behavioralcategoryapproval', id='c3d4e5f6-7890-12cd-ef
 ## Accept approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralcategory_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralcategoryapproval/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -247,7 +250,7 @@ resp = client.save_model("behavioralcategoryapproval", id="c3d4e5f6-7890-12cd-ef
 ## Reject approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralcategory_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralcategoryapproval/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

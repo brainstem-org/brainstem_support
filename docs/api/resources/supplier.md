@@ -250,7 +250,7 @@ resp = client.load_model('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a
 ## Accept approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/supplierapproval/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/supplierapproval/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -265,7 +265,7 @@ resp = client.save_model("supplierapproval", id="1af72008-d203-4bea-9766-f692b8a
 ## Reject approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/resources/supplierapproval/<id\>/
+- **URL:** https://www.brainstem.org/api/private/resources/supplierapproval/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

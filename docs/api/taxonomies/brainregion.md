@@ -83,6 +83,8 @@ resp = client.load_model('brainregion')
 ]}
 ```
 
+Public list responses also include a `meta` object (pagination/filter metadata).
+
 
 ## Add
 - **Allowed portals:** private

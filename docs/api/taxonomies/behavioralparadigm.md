@@ -27,8 +27,8 @@ nav_order: 2
 | `original_publication` | string |
 | `reference_url` | URL string |
 | `rrid` | Research Resource Identifier (RRID) |
-| `rrid_url` | URL to RRID lookup page **[read-only]** |
 | `external_identifiers` | JSON object containing external identifier information |
+| `comments` | string, used when proposing approval changes |
 
 
 ## List view
@@ -49,7 +49,7 @@ resp = client.load_model('behavioralparadigm')
 {: .no_toc}
 
 ```
-{'behavioralparadigms': [
+{'behavioral_paradigms': [
     {
         'id': 'e5f6a7b8-9012-34ef-0123-5678901234ef',
         'name': 'Morris Water Navigation Task',
@@ -74,6 +74,8 @@ resp = client.load_model('behavioralparadigm')
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -102,7 +104,7 @@ resp = client.save_model("behavioralparadigm", data={
 {: .no_toc}
 
 ```
-{'behavioralparadigm_approval': {
+{'behavioral_paradigm_approval': {
     'id': 'a7b8c9d0-1234-56a1-2345-7890123456a1',
     'name': 'Rotarod',
     'description': 'Assessment of balance, coordination, and motor learning on a rotating rod',
@@ -133,7 +135,7 @@ resp = client.load_model('behavioralparadigm', id='e5f6a7b8-9012-34ef-0123-56789
 {: .no_toc}
 
 ```
-{'behavioralparadigm': {
+{'behavioral_paradigm': {
     'id': 'e5f6a7b8-9012-34ef-0123-5678901234ef',
     'name': 'Morris Water Navigation Task',
     'description': 'A spatial learning task using a water maze to assess hippocampal-dependent spatial memory',
@@ -167,7 +169,7 @@ resp = client.save_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-56789
 {: .no_toc}
 
 ```
-{'behavioralparadigm_approval': {
+{'behavioral_paradigm_approval': {
     'id': 'b8c9d0e1-2345-67b2-3456-8901234567b2',
     'name': 'Morris Water Navigation Task',
     'description': 'updated description',
@@ -201,7 +203,7 @@ resp = client.delete_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-567
 ## List approvals
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralparadigm_approvals
+- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralparadigmapproval
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -216,7 +218,7 @@ resp = client.load_model('behavioralparadigmapproval')
 {: .no_toc}
 
 ```
-{'behavioralparadigm_approvals': [
+{'behavioral_paradigm_approvals': [
     {
         'id': 'a7b8c9d0-1234-56a1-2345-7890123456a1',
         'name': 'Rotarod',
@@ -239,7 +241,7 @@ resp = client.load_model('behavioralparadigmapproval')
 ## Detail approval
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralparadigm_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralparadigmapproval/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -254,7 +256,7 @@ resp = client.load_model('behavioralparadigmapproval', id='a7b8c9d0-1234-56a1-23
 {: .no_toc}
 
 ```
-{'behavioralparadigm_approval': {
+{'behavioral_paradigm_approval': {
     'id': 'a7b8c9d0-1234-56a1-2345-7890123456a1',
     'name': 'Rotarod',
     'description': 'Assessment of balance, coordination, and motor learning on a rotating rod',
@@ -275,7 +277,7 @@ resp = client.load_model('behavioralparadigmapproval', id='a7b8c9d0-1234-56a1-23
 ## Accept approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralparadigm_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralparadigmapproval/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -290,7 +292,7 @@ resp = client.save_model("behavioralparadigmapproval", id="a7b8c9d0-1234-56a1-23
 ## Reject approval
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralparadigm_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/taxonomies/behavioralparadigmapproval/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
