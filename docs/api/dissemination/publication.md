@@ -70,9 +70,11 @@ resp = client.load_model('publication')
         "publication_url": "https://www.cell.com/neuron/fulltext/S0896-6273(20)30392-5",
         "pdf_url": "",
         "publication_date": "2020-06-10"
-    },
+    }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add

@@ -13,8 +13,8 @@ The Dissemination app manages the publication and sharing of research outputs. T
 
 The Dissemination app includes the following publication management endpoints:
 
-- **[Publications](/api/dissemination/publication/)** - Research publications and academic papers
 - **[Journals](/api/dissemination/journal/)** - Academic journal information and metadata
+- **[Publications](/api/dissemination/publication/)** - Research publications and academic papers
 
 These endpoints facilitate the tracking and management of research outputs and their relationship to experimental data.
 

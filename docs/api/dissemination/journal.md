@@ -23,6 +23,7 @@ nav_order: 4
 | `name` | string **[required]** [max length: 500] |
 | `description` | string [max length: 2000] |
 | `website` | string [max length: 200] |
+| `comments` | string, used when proposing approval changes |
 
 ## List view
 
@@ -64,6 +65,8 @@ resp = client.load_model('journal')
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -178,7 +181,7 @@ resp = client.delete_model("journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals
+- **URL:** https://www.brainstem.org/api/private/dissemination/journalapproval
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -222,7 +225,7 @@ resp = client.load_model('journalapproval')
 
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/journalapproval/<id\>/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -254,7 +257,7 @@ resp = client.load_model('journalapproval', id='549b9e4f-5253-44f8-93ee-f18f08a3
 
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/journalapproval/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 
@@ -270,7 +273,7 @@ resp = client.save_model("journalapproval", id="549b9e4f-5253-44f8-93ee-f18f08a3
 
 - **Allowed portals:** private
 - **Request method:** PATCH
-- **URL:** https://www.brainstem.org/api/private/dissemination/journal_approvals/<id\>/
+- **URL:** https://www.brainstem.org/api/private/dissemination/journalapproval/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `403` Not allowed; `404` Not found
 

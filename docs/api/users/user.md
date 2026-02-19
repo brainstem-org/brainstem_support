@@ -19,7 +19,7 @@ nav_order: 1
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | UUID identificator formatted as a string |
+| `id` | integer user ID |
 | `email` | string [must be unique]|
 | `first_name` | string |
 | `last_name` | string |
@@ -28,6 +28,7 @@ nav_order: 1
 | `google_scholar` | string [max length: 200] |
 | `orcid_id` | string [max length: 100] |
 | `atlas_preference` | string [max length: 7]|
+| `active_projects` | list of related project IDs |
 
 The following fields are only accessible for administrators:
 
@@ -38,7 +39,9 @@ The following fields are only accessible for administrators:
 | `is_group_admin` | boolean |
 | `is_taxonomies_admin` | boolean |
 | `is_resources_admin` | boolean |
-| `is_attributes_admin` | boolean |
+| `is_dissemination_admin` | boolean |
+| `is_admin_group_account` | boolean |
+| `is_admin_group_manager` | boolean |
 | `is_contact_form_email_receiver` | boolean |
 
 Each dictionary in the `groups_own_json` list contains the group's `id` and `name`:
@@ -95,6 +98,8 @@ resp = client.load_model('user')
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add

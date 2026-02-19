@@ -21,14 +21,14 @@ nav_order: 3
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
-| `user_account_invitation` | invited user ID formatted as a string |
-| `authgroup` | related group ID formatted as a string |
+| `user_account_invitation` | invited user ID formatted as an integer |
+| `authgroup` | related group ID formatted as an integer |
 | `new_manager` | boolean |
 | `new_owner` | boolean |
 
 
 ## List view
-- **Allowed portals:** public, private
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/groupmembershipinvitation
 - **Data:** None
@@ -63,9 +63,11 @@ resp = client.load_model('groupmembershipinvitation')
 ]}
 ```
 
+List responses include a `meta` object (pagination/filter metadata).
+
 
 ## Detail
-- **Allowed portals:** public, private
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/groupmembershipinvitation/<id\>/
 - **Data:** None
@@ -95,7 +97,7 @@ resp = client.load_model('groupmembershipinvitation', id='bdbc1823-7bcf-402d-bca
 ## Accept
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/groupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/groupmembershipinvitation/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -111,7 +113,7 @@ resp = client.load_model("groupmembershipinvitation", id="caf8093f-def3-43a4-9c4
 ## Reject
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/groupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/groupmembershipinvitation/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -126,7 +128,7 @@ resp = client.load_model("groupmembershipinvitation", id="fa2d3f83-f5e8-4c3f-900
 ## Cancel
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/groupmembershipinvitation/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/groupmembershipinvitation/<id\>/cancel/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 

@@ -19,7 +19,7 @@ nav_order: 2
 
 | Field        | Description  |
 |:-------------|:-------------|
-| `id` | UUID identificator formatted as a string |
+| `id` | integer group ID |
 | `name` | string **[required]** |
 | `users` | dictionary with one entry per member of the group. *See structure below.* |
 
@@ -66,6 +66,8 @@ resp = client.load_model('group')
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
@@ -201,7 +203,7 @@ resp = client.delete_model("group", id="3654964e-1bf7-40c7-a376-9dcec4c125cd")
 ## Join
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/group/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/group/<id\>/join/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -219,7 +221,7 @@ resp = client.load_model("group", id="9", options="join")
 ## Leave
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/group/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/group/<id\>/leave/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 

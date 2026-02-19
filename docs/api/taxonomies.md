@@ -16,10 +16,10 @@ The Taxonomies app includes the following standardized classification endpoints:
 
 - **[Behavioral Categories](/api/taxonomies/behavioralcategory/)** - Hierarchical classification of behavioral domains
 - **[Behavioral Paradigms](/api/taxonomies/behavioralparadigm/)** - Standardized behavioral tasks and protocols
-- **[Species](/api/taxonomies/species/)** - Animal species classification and information
-- **[Strains](/api/taxonomies/strain/)** - Genetic strain definitions and characteristics
 - **[Brain Regions](/api/taxonomies/brainregion/)** - Anatomical brain region ontology and hierarchy
 - **[Setup Types](/api/taxonomies/setuptype/)** - Standardized experimental setup classifications
+- **[Species](/api/taxonomies/species/)** - Animal species classification and information
+- **[Strains](/api/taxonomies/strain/)** - Genetic strain definitions and characteristics
 
 These taxonomies provide the foundation for consistent data annotation and enable powerful search and comparison capabilities.
 

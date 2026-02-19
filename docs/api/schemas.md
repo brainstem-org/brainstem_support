@@ -20,8 +20,8 @@ The following pages describe the JSON schema specifications used across BrainSTE
 ### Module Schemas
 - **[Data Acquisition](/api/schemas/dataacquisition/)** - Data acquisition configuration and metadata schemas
 - **[Equipment](/api/schemas/equipment/)** - Laboratory equipment specification schemas
-- **[Procedures](/api/schemas/procedure/)** - Experimental procedure definition schemas
 - **[Manipulations](/api/schemas/manipulation/)** - Experimental manipulation specification schemas
+- **[Procedures](/api/schemas/procedure/)** - Experimental procedure definition schemas
 - **[Procedure Logs](/api/schemas/procedurelog/)** - Procedure logging schemas
 - **[Subject Logs](/api/schemas/subjectlog/)** - Subject observation and activity logging schemas
 - **[Consumable Stock](/api/schemas/consumablestock/)** - Inventory management schemas

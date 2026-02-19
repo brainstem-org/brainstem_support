@@ -20,12 +20,12 @@ nav_order: 4
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
-| `user_account_request` | requesting user ID formatted as a string |
-| `authgroup` | related group ID formatted as a string |
+| `user_account_request` | requesting user ID formatted as an integer |
+| `authgroup` | related group ID formatted as an integer |
 
 
 ## List view
-- **Allowed portals:** public, private
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/groupmembershiprequest
 - **Data:** None
@@ -56,9 +56,11 @@ resp = client.load_model('groupmembershiprequest')
 ]}
 ```
 
+List responses include a `meta` object (pagination/filter metadata).
+
 
 ## Detail
-- **Allowed portals:** public, private
+- **Allowed portals:** private
 - **Request method:** GET
 - **URL:** https://www.brainstem.org/api/private/users/groupmembershiprequest/<id\>/
 - **Data:** None
@@ -86,7 +88,7 @@ resp = client.load_model('groupmembershiprequest', id='fd335535-cf79-4ae8-86af-e
 ## Accept
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/groupmembershiprequest/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/groupmembershiprequest/<id\>/accept/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -102,7 +104,7 @@ resp = client.load_model("groupmembershiprequest", id="fd335535-cf79-4ae8-86af-e
 ## Reject
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/groupmembershiprequest/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/groupmembershiprequest/<id\>/reject/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 
@@ -117,7 +119,7 @@ resp = client.load_model("groupmembershiprequest", id="5a6378e9-be26-4f0f-8e12-2
 ## Cancel
 - **Allowed portals:** private
 - **Request method:** GET
-- **URL:** https://www.brainstem.org/api/private/users/groupmembershiprequest/<id\>/
+- **URL:** https://www.brainstem.org/api/private/users/groupmembershiprequest/<id\>/cancel/
 - **Data:** None
 - **Responses:** `200` OK; `400` Bad request; `403` Not allowed; `404` Not found
 

@@ -20,8 +20,8 @@ nav_order: 4
 | Field        | Description  |
 |:-------------|:-------------|
 | `id` | UUID identificator formatted as a string |
-| `group` | related group ID formatted as a string **[required]** |
-| `principal_investigators` | list of related principal investigators IDs formatted as strings **[required]** |
+| `group` | related group ID formatted as an integer **[required]** |
+| `principal_investigators` | list of related principal investigator IDs formatted as integers **[required]** |
 | `description` | string [max length: 500] |
 | `website` | string [max length: 200] |
 | `department` | string [max length: 100] |
@@ -73,6 +73,8 @@ resp = client.load_model('laboratory')
     }
 ]}
 ```
+
+Public list responses also include a `meta` object (pagination/filter metadata).
 
 
 ## Add
