@@ -29,6 +29,7 @@ Regulatory authorities are organizations that issue and oversee research approva
 | ``Country`` | Country where the authority operates or issues approvals. Selected from ISO country options. |
 | ``Website`` | Official website URL of the authority (URL; maximum length: 200 characters). |
 | ``Description`` | Description of the authority scope and role in compliance oversight (text). |
+| ``Active`` | Designates whether this authority is currently operational (boolean; default: True). Inactive authorities remain searchable but are flagged as no longer issuing approvals. |
 
 ## Submission process
 

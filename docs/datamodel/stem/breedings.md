@@ -42,3 +42,7 @@ Breedings capture parent pairings and litter-level metadata within a project. A 
 Breedings inherit permissions from their associated project.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more.
+
+## API access
+
+The API allows for programmable access to breedings, enabling you to read, edit, and delete breedings through the API. Learn more about the breedings' fields and data structure on the [Breedings API page]({{"api/stem/breeding/"|absolute_url}}).

@@ -35,9 +35,14 @@ Licenses track regulatory and compliance authorizations used by your lab, such a
 | ``Valid until`` | Date when the license expires (format: YYYY-MM-DD). Must be on or after `Valid from` when both dates are provided. |
 | ``License document`` | Uploaded approval file (PDF recommended). |
 | ``Authenticated groups`` | Groups assigned to this license for collaboration and permissions (**required** during creation). |
+| ``Public access`` | Designates if the license information is publicly available (boolean; default: False). Only owners can modify this setting. |
 
 ## Permissions
 
 Licenses follow personal-attribute permission patterns with group-based access and ownership management.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more.
+
+## API access
+
+The API allows for programmable access to licenses, enabling you to read, create, edit, and delete licenses through the API. Learn more about the fields and data structure on the [License API page]({{"api/personal_attributes/license/"|absolute_url}}).

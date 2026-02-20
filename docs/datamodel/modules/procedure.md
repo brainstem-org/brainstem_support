@@ -32,6 +32,7 @@ Procedures cover surgical procedures and other methods that allow tracking or re
 | ``Equipment`` | Equipment used in the procedure. Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "Intan RHD2000" |
 | ``Atlas`` | Brain atlas filter for brain regions. Used to filter available brain regions by atlas. |
 | ``Brain region`` | Target brain region of the procedure. Must reference an existing [brain region]({{"datamodel/taxonomies/brainregion/"|absolute_url}}). Example: "Hippocampus CA1" |
+| ``Licenses`` | Licenses authorizing this procedure. Must reference existing [licenses]({{"datamodel/personal_attributes/license/"|absolute_url}}). |
 | ``Notes`` | Notes about the procedure (string). Example: "Implant placed successfully with minimal bleeding" |
 | ``Type specific fields`` | Custom fields based on procedure type in JSON format. See [Procedure types schema]({{"datamodel/schemas/procedure/"|absolute_url}}) for type-specific fields |
 

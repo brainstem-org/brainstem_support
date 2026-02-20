@@ -50,6 +50,7 @@ Categories and paradigms are shared taxonomies available to everyone. Assays are
 | ``Licenses`` | Licenses that authorize this assay for regulatory and compliance tracking. Can include multiple licenses. |
 | ``Description`` | Protocol details — trial structure, timing, parameters, and any lab-specific variations. |
 | ``Authenticated groups`` | Assign one or more groups during creation. Assigned groups receive change permissions; permissions can be adjusted later on the manage page (**required**). |
+| ``Public access`` | Designates if the behavioral assay is publicly available (boolean; default: False). Must be enabled for assays used in public projects. Only owners can modify this setting. |
 
 ## Permissions
 

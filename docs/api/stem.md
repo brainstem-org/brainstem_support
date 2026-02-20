@@ -19,6 +19,7 @@ The STEM module includes the following key endpoints:
 - **[Sessions](/api/stem/session/)** - Experimental sessions
 - **[Cohorts](/api/stem/cohort/)** - Subject cohorts for studies
 - **[Collections](/api/stem/collection/)** - Data collections and groupings of sessions
+- **[Breedings](/api/stem/breeding/)** - Parent pairings and litter tracking
 - **[Project Group Membership Invitations](/api/stem/project_group_membership_invitation/)** - Group invitation management
 - **[Project Membership Invitations](/api/stem/project_membership_invitation/)** - User invitation management
 

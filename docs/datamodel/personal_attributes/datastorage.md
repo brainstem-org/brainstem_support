@@ -29,6 +29,7 @@ Data storages describe the storage solution for sessions. A data storage can be 
 | ``Data organization`` | How data is organized in the data storage in JSON format. Example: "Projects → Subjects → Sessions" |
 | ``Data protocols`` | Protocols used for data access in JSON format. Include path and public status for each protocol type (local, network, cloud, web, peer-to-peer). Example: "Network: smb://labserver/data, Private access" |
 | ``Authenticated groups`` | Groups that have change permissions for this data storage (**required**). Example: "Lab B Data Team" |
+| ``Public access`` | Designates if the data storage is publicly available (boolean; default: False). Must be enabled for data storages linked to public projects. Only owners can modify this setting. |
 
 ## Permissions
 

@@ -32,6 +32,7 @@ Setups describe where experiments, procedures, or manipulations takes place. It 
 | ``Description`` | Rich text description of the setup. Can include uploaded images. Example: "Linear track setup with two reward ports and tracking cameras..." |
 | ``Image`` | Image of the setup. Uploaded images remain completely private. Example: "setup1_overview.jpg" |
 | ``Specifications`` | Specifications to the setup in key-value format. Example: {"length": "200 cm", "width": "10 cm", "height": "15 cm"} |
+| ``Public access`` | Designates if the setup is publicly available (boolean; default: False). Must be enabled for setups used in public projects. Only owners can modify this setting. |
 
 ## Permissions
 
