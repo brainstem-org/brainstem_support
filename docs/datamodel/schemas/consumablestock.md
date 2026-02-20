@@ -25,7 +25,7 @@ Inventory record for chemicals held in bulk, including solvents, detergents, buf
 
 | Field | Description |
 |:------|:------------|
-| `Product ID` | Catalog or supplier product code (string) |
+| `Batch ID` | Batch or lot identifier (string) |
 | `Compound Name` | Name of the chemical (string) |
 | `Chemical Type` | (**required**) General classification of the reagent (enum) |
 | `Molecular Weight` | Molecular weight (float, ≥ 0) |
@@ -54,7 +54,7 @@ Stock records for antibodies and related immunochemical reagents.
 
 | Field | Description |
 |:------|:------------|
-| `Product ID` | Supplier product code or catalog number (string) |
+| `Batch ID` | Batch or lot identifier (string) |
 | `Reagent Type` | (**required**) General classification (enum; e.g., primary antibody, fluorescent label) |
 | `Host Species` | Species the antibody was raised in (string) |
 | `Reactivity Species` | Species the reagent recognizes (string) |
@@ -81,7 +81,6 @@ Optical elements such as GRIN lenses, cranial windows, or filters stored for exp
 | `Wavelength minimum` | Shortest supported wavelength (float) |
 | `Wavelength maximum` | Longest supported wavelength (float) |
 | `Sterile` | Indicates if supplied sterile (boolean) |
-| `Storage Conditions` | Recommended storage environment (string) |
 | `Experimental Use Context` | Typical applications (array of strings; e.g., chronic imaging) |
 
 ### Optic Fiber Stock
@@ -130,15 +129,15 @@ Bulk pharmacological agents kept on hand for surgical anesthesia, analgesia, or 
 
 | Field | Description |
 |:------|:------------|
-| `Product ID` | Catalog or supplier ID (string) |
+| `Batch ID` | Batch or lot identifier (string) |
 | `Active Ingredient` | Pharmacologically active substance (string) |
+| `Amount` | Amount in stock (string; e.g., "500 mL", "2 gram", "50 tablets") |
 | `Concentration` | Strength of the preparation (string) |
 | `Dosage Form` | Supplied formulation (enum; e.g., solution, tablet) |
 | `Route of Administration` | Typical delivery route (enum) |
 | `Pharmacological Category` | Broad category of use (enum; e.g., analgesic, anesthetic) |
 | `Pharmacological Class` | Mechanistic class (string) |
 | `Formulation` | Excipients or carriers included (string) |
-| `Storage Conditions` | Recommended storage environment (string) |
 | `Purity / Grade` | Purity or grade designation (string) |
 | `Experimental Use Context` | Experimental contexts (array of strings; e.g., surgical, behavioral) |
 
@@ -148,10 +147,11 @@ Reservoirs of buffers or physiological solutions prepared for perfusion, dissect
 
 | Field | Description |
 |:------|:------------|
+| `Solution Name` | Name or identifier of the solution (string) |
 | `Composition` | (**required**) Recipe or formula (string) |
+| `Amount` | Amount in stock (string; e.g., "500 mL", "1 L") |
 | `Target pH value` | Desired pH set point (float) |
 | `Osmolality` | Reported osmolality (string; e.g., "300 mOsm") |
-| `Storage Conditions` | Recommended storage (string) |
 | `Preparation Instructions` | Steps for preparing or sterilising the solution (string) |
 | `Sterile` | Indicates whether the solution is sterile (boolean) |
 | `Purpose / Use` | Primary use cases selected from a predefined list (array of strings) |

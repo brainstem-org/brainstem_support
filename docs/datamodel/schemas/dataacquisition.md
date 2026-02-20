@@ -70,6 +70,7 @@ EEG data records electrical activity of the brain. The biosignals detected by EE
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital file format (string; e.g., EDF, BDF). Affects compatibility with analysis software |
 | `Data-type` | Format of stored data (string; default: 'int16'). Affects precision and size |
 | `Number of channels` | Count of EEG recording channels (non-negative integer). Determines spatial coverage |
@@ -85,6 +86,7 @@ ENG data records electrical activity from peripheral nerves. An electroneurogram
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital file format (string). Determines data organization and software compatibility |
 | `Data-type` | Format of stored data (string; default: 'int16'). Affects precision and storage requirements |
 | `Number of channels` | Count of recording channels (non-negative integer). Determines coverage of neural tissue |
@@ -100,6 +102,7 @@ Extracellular electrophysiology data records electrical activity from outside ce
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital file format (string; e.g., Binary, HDF5). Affects data organization and compatibility |
 | `Data-type` | Format of stored data (string; default: 'int16'). Affects precision and storage requirements |
 | `Number of channels` | Count of recording channels (non-negative integer). Determines spatial sampling of neural tissue |
@@ -115,6 +118,7 @@ Intracellular electrophysiology data records electrical activity from inside cel
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital file format (string; e.g., ABF, DAT). Determines data organization and compatibility |
 | `Data-type` | Format of stored data (string; default: 'int16'). Determines precision and file size |
 | `Sampling rate (Hz)` | Sample frequency (float). Essential for capturing membrane potential changes |
@@ -130,6 +134,7 @@ Fiber photometry data records fluorescence signals from specific neural populati
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., CSV). Determines data organization and compatibility |
 | `Compression` | Data compression type (string). Affects file size and processing speed |
 | `Frame rate (Hz)` | Signal sampling frequency (float; measured in Hz). Critical for temporal resolution |
@@ -143,6 +148,7 @@ Miniscope microscopy data captures neural activity in freely behaving animals us
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., AVI). Determines compatibility and features |
 | `Compression` | Video compression type (string). Affects file size and quality |
 | `Frame rate (Hz)` | Image capture frequency (float; measured in Hz). Critical for neural dynamics |
@@ -158,6 +164,7 @@ Confocal microscopy data captures high-resolution optical sections of samples. M
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., TIFF). Determines compatibility and features |
 | `Compression` | Data compression method (string). Affects file size and quality |
 | `Vertical resolution` | Number of pixels in vertical dimension (non-negative integer). Affects image clarity |
@@ -177,6 +184,7 @@ LFM data captures 3D information in a single shot using an array of microlenses.
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., TIFF). Affects data compatibility and features |
 | `Compression` | Data compression method (string). Impacts file size and quality |
 | `Vertical resolution` | Number of pixels in vertical dimension (non-negative integer). Affects image detail |
@@ -219,6 +227,7 @@ Single-photon microscopy data captures fluorescence images using single-photon e
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., TIFF). Affects compatibility |
 | `Compression` | Data compression method (string). Impacts file size and quality |
 | `Vertical resolution` | Number of pixels vertically (non-negative integer). Affects image detail |
@@ -238,6 +247,7 @@ Two-photon microscopy data captures high-resolution images of living tissue usin
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string). Determines data organization |
 | `Compression` | Data compression type (string). Affects storage efficiency |
 | `Vertical resolution` | Number of pixels vertically (non-negative integer). Affects image clarity |
@@ -257,6 +267,7 @@ Three-photon microscopy data captures high-resolution images of living tissue us
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string). Determines data organization |
 | `Compression` | Data compression type (string). Affects storage efficiency |
 | `Vertical resolution` | Number of pixels vertically (non-negative integer). Affects image detail |
@@ -278,6 +289,7 @@ MRI data provides detailed anatomical images of the brain and body. MRI scanners
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., DICOM). Data organization |
 | `Compression` | Compression method (string). Storage efficiency |
 | `Frame rate (Hz)` | Image acquisition speed (float; measured in Hz). For dynamic studies |
@@ -291,6 +303,7 @@ fMRI data measures brain activity by detecting changes in blood flow. This techn
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., NIfTI, DICOM). Affects compatibility |
 | `Compression` | Data compression method (string). Impacts file size |
 | `Frame rate (Hz)` | Image acquisition rate (float; measured in Hz). Temporal resolution |
@@ -304,6 +317,7 @@ MEG data records magnetic fields produced by electrical currents in the brain. I
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., FIFF). Data organization |
 | `Compression` | Data compression (string). Storage efficiency |
 | `Frame rate (Hz)` | Sampling frequency (float; measured in Hz). Temporal resolution |
@@ -317,6 +331,7 @@ CT data provides detailed cross-sectional images of the subject. A computed tomo
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., DICOM). Determines compatibility |
 | `Compression` | Data compression method (string). Storage efficiency |
 | `Frame rate (Hz)` | Scan acquisition rate (float; measured in Hz). Temporal resolution |
@@ -331,6 +346,7 @@ PET data provides functional images of metabolic processes in the body. This fun
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., DICOM). Data organization standard |
 | `Compression` | Compression method (string). Affects storage size |
 | `Frame rate (Hz)` | Acquisition rate (float; measured in Hz). For dynamic studies |
@@ -344,6 +360,7 @@ SPECT data provides 3D images of radioactive tracer distribution in the body. It
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string; e.g., DICOM). Data structure standard |
 | `Compression` | Compression method (string). File size optimization |
 | `Frame rate (Hz)` | Image acquisition rate (float; measured in Hz). Temporal detail |
@@ -357,6 +374,7 @@ fUS data captures brain activity through changes in blood flow using ultrasound.
 
 | Field | Description |
 |:------|:------------|
+| `File name` | Name of the data file including its extension (string). Identifies the recording on disk |
 | `Format` | Digital format (string). Data organization standard |
 | `Compression` | Compression type (string). Storage optimization |
 | `Frame rate (Hz)` | Ultrasound acquisition rate (float; measured in Hz). Temporal resolution |

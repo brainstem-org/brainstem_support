@@ -346,7 +346,6 @@ Involves injecting a virus into the brain, typically to deliver genetic material
 | `Injection volume` | number (≥ 0). Example: numeric. The total volume of the viral solution to be injected. |
 | `Injection rate` | number (≥ 0). Example: numeric. Rate at which the viral solution is injected. Controlling the injection rate is essential for preventing tissue damage and ensuring uniform distribution of the virus. |
 | `Titer of virus solution` | number (≥ 0). Example: numeric. The titer of the injected virus solution. Enter only if the titer differs from the titer of the virus solution. |
-| `Titer unit of virus solution` | string. Options: vg/mL, TU/mL, pfu/mL. vg/mL: Viral genomes; TU/mL: Transducing units; pfu/mL: Plaque forming units. |
 | `Injection profile` | string. Options: Bolus Injection, Continuous Infusion, Tapered Dose, Intermittent Bolus, Staggered Injection, Ramp Infusion, Burst Infusion, Step Infusion, Layered Dosing, Titration. Describes the injection profile of the virus delivery. |
 
 ## Brain and Tissue Procedures
@@ -402,7 +401,7 @@ Sectioning of frozen tissue using a cryostat, commonly used for preparing tissue
 | `Section storage method` | string. Options: Mounted on slides, Free-floating in solution, Stored in plates, Other. Method used to store the sections after cutting. |
 | `Storage buffer/solution` | string. Example: e.g., PBS, cryoprotectant solution. Buffer or solution used to store sections. |
 
-### Perfusion fixation
+### Brain Perfusion Fixation
 
 A technique for preserving brain tissue where a fixative solution is pumped through the circulatory system to stabilize and preserve tissue structure. This method is essential for preparing brain specimens for microscopic examination.
 
