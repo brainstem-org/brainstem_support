@@ -86,7 +86,7 @@ Now we'll add individual mice that will participate in our imaging study.
 After creating subjects, document their housing conditions and initial weights using subject logs.
 
 1. **Create Housing Log**:
-   - Go to *Modules* → *Subject logs*
+   - Go to *Subject logs* (below Subjects)
    - Click *Add subject log*
 
 **Housing Log Configuration:**
@@ -128,7 +128,7 @@ After creating subjects, document their housing conditions and initial weights u
 After creating individual subjects, group them into a cohort for experimental organization.
 
 1. **Navigate to Cohorts**:
-   - Go to *Personal Attributes* → *Cohorts*
+   - Go to *Cohorts* (below Subjects)
    - Click *Add cohort*
 
 **[SCREENSHOT NEEDED: Cohort creation interface]**
@@ -251,7 +251,7 @@ Document the cranial window implantation procedure.
 Start with habituation to head-fixation and imaging setup.
 
 1. **Navigate to Sessions**:
-   - Go to *Modules* → *Sessions*
+   - Go to *Sessions*
    - Click *Add session*
 
 **[SCREENSHOT NEEDED: Session creation form for imaging]**
@@ -581,17 +581,30 @@ import matplotlib.pyplot as plt
 
 client = BrainstemClient()
 
-# Get all imaging sessions for a project
-imaging_sessions = client.load('session', 
-                               filters={'projects.name.icontains': 'Visual Cortex Population Dynamics Study'}).json()
+# Step 1: Resolve project name to its UUID
+projects = client.load('project',
+                       filters={'name': 'Visual Cortex Population Dynamics Study'}).json()
+project_id = projects['projects'][0]['id']
 
-# Get two-photon data acquisition details
-imaging_data = client.load('dataacquisition',
-                           filters={'session.projects.name.icontains': 'Visual Cortex Population Dynamics Study',
-                                    'type': 'Two-Photon Microscopy'}).json()
+# Step 2: Load all sessions in this project
+all_sessions_resp = client.load('session',
+                                filters={'projects': project_id},
+                                load_all=True).json()
+imaging_sessions = all_sessions_resp.get('sessions', [])
+session_ids = [s['id'] for s in imaging_sessions]
+
+# Step 3: Get two-photon data acquisition records per session
+# Correct type string is 'TwoPhotonMicroscopy' (see Data acquisition schemas)
+imaging_data = []
+for sid in session_ids:
+    resp = client.load('dataacquisition',
+                       filters={'session': sid,
+                                'type': 'TwoPhotonMicroscopy'}).json()
+    imaging_data.extend(resp.get('data_acquisitions', []))
 
 # Load a specific imaging session by name
-session_data = client.load('session', filters={'name': 'vc_m001_day1_gratings'}).json()
+session_data = client.load('session',
+                           filters={'name': 'VC_M001_Day1_DriftingGratings'}).json()
 ```
 
 ## Next Steps
