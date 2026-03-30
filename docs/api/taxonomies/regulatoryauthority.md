@@ -52,7 +52,7 @@ resp = client.load('regulatoryauthority')
 ```
 {'regulatoryauthorities': [
     {
-        'id': 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+        'id': '<id>',
         'name': 'Institutional Animal Care and Use Committee',
         'abbreviation': 'IACUC',
         'country': 'US',
@@ -62,7 +62,7 @@ resp = client.load('regulatoryauthority')
         'is_active': True
     },
     {
-        'id': 'b2c3d4e5-f6a7-8901-bcde-f12345678901',
+        'id': '<id>',
         'name': 'Home Office',
         'abbreviation': 'HO',
         'country': 'GB',
@@ -104,7 +104,7 @@ resp = client.save("regulatoryauthority", data={
 
 ```
 {'regulatoryauthority_approval': {
-    'id': 'c3d4e5f6-a7b8-9012-cdef-123456789012',
+    'id': '<id>',
     'name': 'Animal Ethics Committee',
     'abbreviation': 'AEC',
     'country': 'AU',
@@ -131,7 +131,7 @@ resp = client.save("regulatoryauthority", data={
 {: .no_toc}
 
 ```
-resp = client.load('regulatoryauthority', id='a1b2c3d4-e5f6-7890-abcd-ef1234567890')
+resp = client.load('regulatoryauthority', id='<id>')
 ```
 
 ### Response example
@@ -139,7 +139,7 @@ resp = client.load('regulatoryauthority', id='a1b2c3d4-e5f6-7890-abcd-ef12345678
 
 ```
 {'regulatoryauthority': {
-    'id': 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+    'id': '<id>',
     'name': 'Institutional Animal Care and Use Committee',
     'abbreviation': 'IACUC',
     'country': 'US',
@@ -164,7 +164,7 @@ resp = client.load('regulatoryauthority', id='a1b2c3d4-e5f6-7890-abcd-ef12345678
 {: .no_toc}
 
 ```
-resp = client.save("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef1234567890", data={"description": "Updated description."})
+resp = client.save("regulatoryauthority", id="<id>", data={"description": "Updated description."})
 ```
 
 ### Response example
@@ -172,7 +172,7 @@ resp = client.save("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef12345678
 
 ```
 {'regulatoryauthority_approval': {
-    'id': 'd4e5f6a7-b8c9-0123-defa-234567890123',
+    'id': '<id>',
     'name': 'Institutional Animal Care and Use Committee',
     'abbreviation': 'IACUC',
     'country': 'US',
@@ -180,7 +180,7 @@ resp = client.save("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef12345678
     'website': '',
     'description': 'Updated description.',
     'is_active': True,
-    'instance_id': 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+    'instance_id': '<instance_id-id>',
     'action': 'Change',
     'reviewer': None,
     'status': 'Pending'}
@@ -201,7 +201,7 @@ resp = client.save("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef12345678
 {: .no_toc}
 
 ```
-resp = client.delete("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef1234567890")
+resp = client.delete("regulatoryauthority", id="<id>")
 ```
 
 
@@ -225,7 +225,7 @@ resp = client.load('regulatoryauthorityapproval')
 ```
 {'regulatoryauthority_approvals': [
     {
-        'id': 'c3d4e5f6-a7b8-9012-cdef-123456789012',
+        'id': '<id>',
         'name': 'Animal Ethics Committee',
         'abbreviation': 'AEC',
         'country': 'AU',
@@ -253,7 +253,7 @@ resp = client.load('regulatoryauthorityapproval')
 {: .no_toc}
 
 ```
-resp = client.load('regulatoryauthorityapproval', id='c3d4e5f6-a7b8-9012-cdef-123456789012')
+resp = client.load('regulatoryauthorityapproval', id='<id>')
 ```
 
 ### Response example
@@ -261,7 +261,7 @@ resp = client.load('regulatoryauthorityapproval', id='c3d4e5f6-a7b8-9012-cdef-12
 
 ```
 {'regulatoryauthority_approval': {
-    'id': 'c3d4e5f6-a7b8-9012-cdef-123456789012',
+    'id': '<id>',
     'name': 'Animal Ethics Committee',
     'abbreviation': 'AEC',
     'country': 'AU',
@@ -288,7 +288,7 @@ resp = client.load('regulatoryauthorityapproval', id='c3d4e5f6-a7b8-9012-cdef-12
 {: .no_toc}
 
 ```
-resp = client.save("regulatoryauthorityapproval", id="c3d4e5f6-a7b8-9012-cdef-123456789012", options="accept")
+resp = client.save("regulatoryauthorityapproval", id="<id>", options="accept")
 ```
 
 
@@ -303,5 +303,5 @@ resp = client.save("regulatoryauthorityapproval", id="c3d4e5f6-a7b8-9012-cdef-12
 {: .no_toc}
 
 ```
-resp = client.save("regulatoryauthorityapproval", id="c3d4e5f6-a7b8-9012-cdef-123456789012", options="reject")
+resp = client.save("regulatoryauthorityapproval", id="<id>", options="reject")
 ```

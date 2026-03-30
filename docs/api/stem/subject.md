@@ -73,11 +73,11 @@ resp = client.load('subject')
 {
     "subjects": [
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "<id>",
             "name": "subject1",
             "description": "",
-            "projects": ["00000000-0000-0000-0000-000000000000"],
-            "strain": "00000000-0000-0000-0000-000000000000",
+            "projects": ["<id>"],
+            "strain": "<strain-id>",
             "sex": "M",
             "genetic_line": "",
             "genotype": "",
@@ -88,7 +88,7 @@ resp = client.load('subject')
             "death_date": null,
             "status": "active",
             "extra_fields": {},
-            "procedures": ["00000000-0000-0000-0000-000000000000"],
+            "procedures": ["<id>"],
             "subjectlogs": [],
             "tags": [],
             "links": {
@@ -98,11 +98,11 @@ resp = client.load('subject')
             "name_used_in_storage": null,
         },
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "<id>",
             "name": "subject2",
             "description": "",
-            "projects": ["00000000-0000-0000-0000-000000000000"],
-            "strain": "00000000-0000-0000-0000-000000000000",
+            "projects": ["<id>"],
+            "strain": "<strain-id>",
             "sex": "M",
             "genetic_line": "",
             "genotype": "",
@@ -114,16 +114,16 @@ resp = client.load('subject')
             "status": "active",
             "extra_fields": {},
             "procedures": [
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000"
+                "<id>",
+                "<id>",
+                "<id>",
+                "<id>",
+                "<id>",
+                "<id>",
+                "<id>",
+                "<id>"
             ],
-            "subjectlogs": ["00000000-0000-0000-0000-000000000000"],
+            "subjectlogs": ["<id>"],
             "tags": ["cooling"],
             "links": {
                 "procedures": "procedures/",
@@ -155,11 +155,11 @@ resp = client.save(
     data={
         "name": "NewSubject",
         "description": "some text",
-        "strain": "00000000-0000-0000-0000-000000000000",
+        "strain": "<strain-id>",
         "sex": "U",
-        "projects": ["00000000-0000-0000-0000-000000000000"],
+        "projects": ["<id>"],
         "subject_identifier": "WF-123",
-        "supplier": "00000000-0000-0000-0000-000000000000",
+        "supplier": "<supplier-id>",
     },
 )
 ```
@@ -170,17 +170,17 @@ resp = client.save(
 ```json
 {
     "subject": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewSubject",
         "description": "some text",
-        "projects": ["00000000-0000-0000-0000-000000000000"],
-        "strain": "00000000-0000-0000-0000-000000000000",
+        "projects": ["<id>"],
+        "strain": "<strain-id>",
         "sex": "U",
         "genetic_line": "",
         "genotype": "",
         "subject_identifier": "WF-123",
         "licenses": [],
-        "supplier": "00000000-0000-0000-0000-000000000000",
+        "supplier": "<supplier-id>",
         "birth_date": null,
         "death_date": null,
         "status": "active",
@@ -209,7 +209,7 @@ resp = client.save(
 {: .no_toc}
 
 ```
-resp = client.load('subject', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('subject', id='<id>')
 ```
 
 ### Response example
@@ -218,17 +218,17 @@ resp = client.load('subject', id='00000000-0000-0000-0000-000000000000')
 ```json
 {
     "subject": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewSubject",
         "description": "some text",
-        "projects": ["00000000-0000-0000-0000-000000000000"],
-        "strain": "00000000-0000-0000-0000-000000000000",
+        "projects": ["<id>"],
+        "strain": "<strain-id>",
         "sex": "U",
         "genetic_line": "",
         "genotype": "",
         "subject_identifier": "WF-123",
         "licenses": [],
-        "supplier": "00000000-0000-0000-0000-000000000000",
+        "supplier": "<supplier-id>",
         "birth_date": null,
         "death_date": null,
         "extra_fields": {
@@ -262,7 +262,7 @@ resp = client.load('subject', id='00000000-0000-0000-0000-000000000000')
 ```
 resp = client.save(
     "subject",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={"description": "new text"}
 )
 ```
@@ -273,17 +273,17 @@ resp = client.save(
 ```json
 {
     "subject": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewSubject",
         "description": "new text",
-        "projects": ["00000000-0000-0000-0000-000000000000"],
-        "strain": "00000000-0000-0000-0000-000000000000",
+        "projects": ["<id>"],
+        "strain": "<strain-id>",
         "sex": "U",
         "genetic_line": "",
         "genotype": "",
         "subject_identifier": "WF-123",
         "licenses": [],
-        "supplier": "00000000-0000-0000-0000-000000000000",
+        "supplier": "<supplier-id>",
         "birth_date": null,
         "death_date": null,
         "extra_fields": null,
@@ -312,5 +312,5 @@ resp = client.save(
 {: .no_toc}
 
 ```
-resp = client.delete("subject", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("subject", id="<id>")
 ```

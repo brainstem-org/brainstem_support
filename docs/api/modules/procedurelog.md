@@ -67,10 +67,10 @@ resp = client.load('procedurelog')
 ```
 {'procedure_logs': [
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'Impedances',
         'description': None,
-        'procedure': '00000000-0000-0000-0000-000000000000',
+        'procedure': '<procedure-id>',
         'entries': [
             {'date_time': '2023-05-05T06:20:00Z',
              'notes': None,
@@ -87,10 +87,10 @@ resp = client.load('procedurelog')
         ]
     },
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'LinearDisplacement',
         'description': None,
-        'procedure': '00000000-0000-0000-0000-000000000000',
+        'procedure': '<procedure-id>',
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
              'notes': None,
@@ -119,7 +119,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 ```
 resp = client.save("procedurelog",  data={
     "type": "LinearDisplacement",
-    "procedure": "00000000-0000-0000-0000-000000000000"})
+    "procedure": "<procedure-id>"})
 ```
 
 ### Response example
@@ -127,10 +127,10 @@ resp = client.save("procedurelog",  data={
 
 ```
 {'procedure_log': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'LinearDisplacement',
     'description': None,
-    'procedure': '00000000-0000-0000-0000-000000000000',
+    'procedure': '<procedure-id>',
     'entries': []}
 }
 ```
@@ -148,7 +148,7 @@ resp = client.save("procedurelog",  data={
 {: .no_toc}
 
 ```
-resp = client.load('procedurelog', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('procedurelog', id='<id>')
 ```
 
 ### Response example
@@ -156,10 +156,10 @@ resp = client.load('procedurelog', id='00000000-0000-0000-0000-000000000000')
 
 ```
 {'procedure_log': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'LinearDisplacement',
     'description': None,
-    'procedure': '00000000-0000-0000-0000-000000000000',
+    'procedure': '<procedure-id>',
     'entries': []}
 }
 ```
@@ -177,7 +177,7 @@ resp = client.load('procedurelog', id='00000000-0000-0000-0000-000000000000')
 {: .no_toc}
 
 ```
-resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", data={"description": "new text"})
+resp = client.save("procedurelog", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -185,10 +185,10 @@ resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", da
 
 ```
 {'procedure_log': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'LinearDisplacement',
     'description': "new text",
-    'procedure': '00000000-0000-0000-0000-000000000000',
+    'procedure': '<procedure-id>',
     'entries': []}
 }
 ```
@@ -206,7 +206,7 @@ resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", da
 {: .no_toc}
 
 ```
-resp = client.delete("procedurelog", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("procedurelog", id="<id>")
 ```
 
 
@@ -222,7 +222,7 @@ resp = client.delete("procedurelog", id="00000000-0000-0000-0000-000000000000")
 {: .no_toc}
 
 ```
-resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", options="add_entry", data={
+resp = client.save("procedurelog", id="<id>", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
             'details': {'displacement': 9.0}
@@ -235,10 +235,10 @@ resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", op
 
 ```
 {'procedure_log': {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'LinearDisplacement',
         'description': 'new text',
-        'procedure': '00000000-0000-0000-0000-000000000000',
+        'procedure': '<procedure-id>',
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
@@ -260,7 +260,7 @@ resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", op
 {: .no_toc}
 
 ```
-resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
+resp = client.save("procedurelog", id="<id>", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
 ```
 
 ### Response example
@@ -268,10 +268,10 @@ resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", op
 
 ```
 {'procedure_log': {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'LinearDisplacement',
         'description': 'new text',
-        'procedure': '00000000-0000-0000-0000-000000000000',
+        'procedure': '<procedure-id>',
         'entries': [
             {'date_time': '2023-04-05T13:45:00Z',
             'notes': "new text",
@@ -294,7 +294,7 @@ resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", op
 {: .no_toc}
 
 ```
-resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
+resp = client.save("procedurelog", id="<id>", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example
@@ -302,10 +302,10 @@ resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", op
 
 ```
 {'procedure_log': {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'LinearDisplacement',
         'description': 'new text',
-        'procedure': '00000000-0000-0000-0000-000000000000',
+        'procedure': '<procedure-id>',
         'entries': []
     }
 }

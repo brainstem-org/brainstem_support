@@ -50,10 +50,10 @@ resp = client.load('publication')
 ```
 {'publications': [
     {
-        "id": "9cb4b5ba-b5d9-4bad-9b1e-65b5bdce0746",
+        "id": "<id>",
         "title": "RTHybrid: A Standardized and Open-Source Real-Time Software Model Library for Experimental Neuroscience",
         "authors": "Amaducci R, Reyes-Sanchez M, Elices I, Rodriguez FB and Varona P",
-        "journal": "0a71caa7-c984-47a4-921c-8b18405ee202",
+        "journal": "<journal-id>",
         "abstract": "Short explanation of the paper",
         "doi": "",
         "publication_url": "",
@@ -61,10 +61,10 @@ resp = client.load('publication')
         "publication_date": "2020-03-12"
     },
     {
-        "id": "8d0e93c1-ffa8-4d7d-a42a-65e1a0d938f6",
+        "id": "<id>",
         "title": "Cooling of Medial Septum Reveals Theta Phase Lag Coordination of Hippocampal Cell Assemblies",
         "authors": "Peter Christian Petersen, György Buzsáki",
-        "journal": "330b41c4-b4a4-4761-8d59-300695fdaf2a",
+        "journal": "<journal-id>",
         "abstract": "Short explanation of the paper",
         "doi": "",
         "publication_url": "https://www.cell.com/neuron/fulltext/S0896-6273(20)30392-5",
@@ -94,7 +94,7 @@ resp = client.save("publication",  data=
     {
         "title": "MyNewPaper",
         "authors": "Me et al.",
-        "journal": "0a71caa7-c984-47a4-921c-8b18405ee202",
+        "journal": "<journal-id>",
         "abstract": "Short explanation of the paper",
         "doi": "",
         "publication_url": "",
@@ -108,10 +108,10 @@ resp = client.save("publication",  data=
 {: .no_toc}
 
 ```
-{'publication': {'id': 'e308cb04-428b-4b2c-b86b-15e02c664560',
+{'publication': {'id': '<id>',
   'title': 'MyNewPaper',
   'authors': 'Me et al.',
-  'journal': '0a71caa7-c984-47a4-921c-8b18405ee202',
+  'journal': '<journal-id>',
   'abstract': 'Short explanation of the paper',
   'doi': '',
   'publication_url': '',
@@ -132,17 +132,17 @@ resp = client.save("publication",  data=
 {: .no_toc}
 
 ```
-resp = client.load('publication', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
+resp = client.load('publication', id='<id>')
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'publication': {'id': 'e308cb04-428b-4b2c-b86b-15e02c664560',
+{'publication': {'id': '<id>',
   'title': 'MyNewPaper',
   'authors': 'Me et al.',
-  'journal': '0a71caa7-c984-47a4-921c-8b18405ee202',
+  'journal': '<journal-id>',
   'abstract': 'Short explanation of the paper',
   'doi': '',
   'publication_url': '',
@@ -165,17 +165,17 @@ resp = client.load('publication', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 {: .no_toc}
 
 ```
-resp = client.save("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560", data={"abstract": "new text"})
+resp = client.save("publication", id="<id>", data={"abstract": "new text"})
 ```
 
 ### Response example
 {: .no_toc}
 
 ```
-{'publication': {'id': 'e308cb04-428b-4b2c-b86b-15e02c664560',
+{'publication': {'id': '<id>',
   'title': 'MyNewPaper',
   'authors': 'Me et al.2',
-  'journal': '0a71caa7-c984-47a4-921c-8b18405ee202',
+  'journal': '<journal-id>',
   'abstract': 'new text',
   'doi': '',
   'publication_url': '',
@@ -197,5 +197,5 @@ resp = client.save("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560", dat
 {: .no_toc}
 
 ```
-resp = client.delete("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560")
+resp = client.delete("publication", id="<id>")
 ```

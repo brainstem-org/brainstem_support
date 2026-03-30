@@ -51,7 +51,7 @@ resp = client.load('species')
 ```
 {'species': [
     {
-        'id': '089b00eb-94e3-464b-b7e8-62d04ddf2b11',
+        'id': '<id>',
         'name': 'Rat',
         'description': 'Rattus rattus',
         'rrid': None,
@@ -59,7 +59,7 @@ resp = client.load('species')
         'external_identifiers': []
         },
     {
-        'id': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+        'id': '<id>',
         'name': 'Red-eared Turtles',
         'description': 'Trachemys scripta elegans',
         'rrid': None,
@@ -97,7 +97,7 @@ resp = client.save("species",  data={
 
 ```
 {'species_approval': {
-    'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
+    'id': '<id>',
     'name': 'MyNewSpecies',
     'description': '',
     'rrid': None,
@@ -116,7 +116,7 @@ resp = client.save("species",  data={
 {: .no_toc}
 
 ```
-resp = client.load('species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f')
+resp = client.load('species', id='<id>')
 ```
 
 ### Response example
@@ -124,7 +124,7 @@ resp = client.load('species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f')
 
 ```
 {'species': {
-    'id': '855d4962-52d9-49f2-a9ab-36073bd34c3f',
+    'id': '<id>',
     'name': 'MyNewSpecies',
     'description': '',
     'rrid': None,
@@ -147,7 +147,7 @@ resp = client.load('species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f')
 {: .no_toc}
 
 ```
-resp = client.save("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f", data={"description": "new text"})
+resp = client.save("species", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -155,7 +155,7 @@ resp = client.save("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f", data={"
 
 ```
 {'species_approval': {
-    'id': '5ccb907c-520a-4c67-baf1-ac23a71ab710',
+    'id': '<id>',
     'name': 'MyNewSpecies',
     'description': 'new text',
     'rrid': None,
@@ -177,7 +177,7 @@ resp = client.save("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f", data={"
 {: .no_toc}
 
 ```
-resp = client.delete("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f")
+resp = client.delete("species", id="<id>")
 ``` 
 
 
@@ -201,7 +201,7 @@ resp = client.load('speciesapproval')
 ```
 {'species_approvals': [
     {
-        'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
+        'id': '<id>',
         'name': 'MyNewSpecies',
         'description': '',
         'rrid': None,
@@ -212,7 +212,7 @@ resp = client.load('speciesapproval')
         'status': 'Pending'
     },
     {
-        'id': '0e03a0f2-3b11-47bf-acc1-8b4b6d005692',
+        'id': '<id>',
         'name': 'Digimon',
         'description': 'aaa',
         'rrid': None,
@@ -237,7 +237,7 @@ resp = client.load('speciesapproval')
 {: .no_toc}
 
 ```
-resp = client.load('speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988f037')
+resp = client.load('speciesapproval', id='<id>')
 ```
 
 ### Response example
@@ -245,7 +245,7 @@ resp = client.load('speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988f037')
 
 ```
 {'species_approval': {
-    'id': '529efb3b-99f9-4e42-90e3-f5990988f037',
+    'id': '<id>',
     'name': 'MyNewSpecies',
     'description': '',
     'rrid': None,
@@ -269,7 +269,7 @@ resp = client.load('speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988f037')
 {: .no_toc}
 
 ```
-resp = client.save("speciesapproval", id="529efb3b-99f9-4e42-90e3-f5990988f037", options="accept")
+resp = client.save("speciesapproval", id="<id>", options="accept")
 ```
 
 
@@ -284,5 +284,5 @@ resp = client.save("speciesapproval", id="529efb3b-99f9-4e42-90e3-f5990988f037",
 {: .no_toc}
 
 ```
-resp = client.save("speciesapproval", id="5ccb907c-520a-4c67-baf1-ac23a71ab710", options="reject")
+resp = client.save("speciesapproval", id="<id>", options="reject")
 ```

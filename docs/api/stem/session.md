@@ -86,31 +86,31 @@ resp = client.load("session")
 {
     "sessions": [
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "<id>",
             "name": "session1",
             "description": "",
             "epochs": [],
-            "projects": ["00000000-0000-0000-0000-000000000000"],
+            "projects": ["<id>"],
             "date_time": null,
             "datastorage": [],
             "extra_fields": {},
             "download_links": [],
             "dataacquisition": [],
             "behaviors": [],
-            "manipulations": ["00000000-0000-0000-0000-000000000000"],
+            "manipulations": ["<id>"],
             "tags": [],
         },
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "<id>",
             "name": "session2",
             "description": "",
             "epochs": [],
-            "projects": ["00000000-0000-0000-0000-000000000000"],
+            "projects": ["<id>"],
             "date_time": null,
             "datastorage": [],
             "extra_fields": {},
             "download_links": [],
-            "dataacquisition": ["00000000-0000-0000-0000-000000000000"],
+            "dataacquisition": ["<id>"],
             "behaviors": [],
             "manipulations": [],
             "tags": [],
@@ -138,7 +138,7 @@ resp = client.save(
     data={
         "name": "NewSession",
         "description": "some text",
-        "projects": ["00000000-0000-0000-0000-000000000000"],
+        "projects": ["<id>"],
     },
 )
 ```
@@ -149,11 +149,11 @@ resp = client.save(
 ```json
 {
     "session": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewSession",
         "description": "some text",
         "epochs": [],
-        "projects": ["00000000-0000-0000-0000-000000000000"],
+        "projects": ["<id>"],
         "date_time": null,
         "datastorage": [],
         "extra_fields": {},
@@ -178,7 +178,7 @@ resp = client.save(
 {: .no_toc}
 
 ```python
-resp = client.load("session", id="00000000-0000-0000-0000-000000000000")
+resp = client.load("session", id="<id>")
 ```
 
 ### Example response (detail)
@@ -187,11 +187,11 @@ resp = client.load("session", id="00000000-0000-0000-0000-000000000000")
 ```json
 {
     "session": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewSession",
         "description": "some text",
         "epochs": [],
-        "projects": ["00000000-0000-0000-0000-000000000000"],
+        "projects": ["<id>"],
         "date_time": null,
         "datastorage": [],
         "extra_fields": {
@@ -224,7 +224,7 @@ resp = client.load("session", id="00000000-0000-0000-0000-000000000000")
 ```python
 resp = client.save(
     "session",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={"description": "new text"},
 )
 ```
@@ -235,11 +235,11 @@ resp = client.save(
 ```json
 {
     "session": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewSession",
         "description": "new text",
         "epochs": [],
-        "projects": ["00000000-0000-0000-0000-000000000000"],
+        "projects": ["<id>"],
         "date_time": null,
         "datastorage": [],
         "extra_fields": {},
@@ -264,5 +264,5 @@ resp = client.save(
 {: .no_toc}
 
 ```python
-resp = client.delete("session", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("session", id="<id>")
 ```

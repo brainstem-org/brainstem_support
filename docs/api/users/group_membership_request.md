@@ -44,12 +44,12 @@ resp = client.load('groupmembershiprequest')
 ```
 {'group_membership_requests': [
     {
-        'id': 'fd335535-cf79-4ae8-86af-ed87e1108889',
+        'id': '<id>',
         'user_account_request': 3,
         'authgroup': 9
     },
     {
-        'id': '5a6378e9-be26-4f0f-8e12-2d11a05cd769',
+        'id': '<id>',
         'user_account_request': 3,
         'authgroup': 1
     },
@@ -70,7 +70,7 @@ List responses include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.load('groupmembershiprequest', id='fd335535-cf79-4ae8-86af-ed87e1108889')
+resp = client.load('groupmembershiprequest', id='<id>')
 ```
 
 ### Response example
@@ -78,7 +78,7 @@ resp = client.load('groupmembershiprequest', id='fd335535-cf79-4ae8-86af-ed87e11
 
 ```
 {'group_membership_request': {
-    'id': 'fd335535-cf79-4ae8-86af-ed87e1108889',
+    'id': '<id>',
     'user_account_request': 3,
     'authgroup': 9}
 }
@@ -96,7 +96,7 @@ resp = client.load('groupmembershiprequest', id='fd335535-cf79-4ae8-86af-ed87e11
 {: .no_toc}
 
 ```
-resp = client.load("groupmembershiprequest", id="fd335535-cf79-4ae8-86af-ed87e1108889", options="accept")
+resp = client.load("groupmembershiprequest", id="<id>", options="accept")
 ```
 
 
@@ -112,7 +112,7 @@ resp = client.load("groupmembershiprequest", id="fd335535-cf79-4ae8-86af-ed87e11
 {: .no_toc}
 
 ```
-resp = client.load("groupmembershiprequest", id="5a6378e9-be26-4f0f-8e12-2d11a05cd769", options="reject")
+resp = client.load("groupmembershiprequest", id="<id>", options="reject")
 ```
 
 
@@ -127,5 +127,5 @@ resp = client.load("groupmembershiprequest", id="5a6378e9-be26-4f0f-8e12-2d11a05
 {: .no_toc}
 
 ```
-resp = client.load("groupmembershiprequest", id="263fa5ff-1dd0-4b20-a028-5679ac1b54cf", options="cancel")
+resp = client.load("groupmembershiprequest", id="<id>", options="cancel")
 ```

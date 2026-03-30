@@ -59,18 +59,18 @@ resp = client.load('consumablestock')
 ```
 {'consumable stocks': [
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'OpticFiber',
         'status': 'AVAILABLE',
         'notes': 'Backup spool',
-        'inventory': '00000000-0000-0000-0000-000000000000',
+        'inventory': '<inventory-id>',
         'acquisition_date': '2024-03-01',
         'expiration_date': None,
         'storage_location': 'Cabinet A',
         'storage_conditions': 'Room temperature',
         'intended_use': 'Optogenetics',
         'cost': '120 USD',
-        'consumable': '00000000-0000-0000-0000-000000000000',
+        'consumable': '<consumable-id>',
         'details': {
             'fiberIds': 'OF-2024-03-A',
             'quantity': 12
@@ -78,11 +78,11 @@ resp = client.load('consumablestock')
         'type_schema_version': '0.0.0'
     },
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'SiliconProbe',
         'status': 'RESERVED',
         'notes': 'Quarterly order',
-        'inventory': '00000000-0000-0000-0000-000000000000',
+        'inventory': '<inventory-id>',
         'acquisition_date': '2024-02-15',
         'expiration_date': None,
         'storage_location': 'Freezer shelf 2',
@@ -115,8 +115,8 @@ resp = client.save(
     "consumablestock",
     data={
         "type": "OpticFiber",
-        "inventory": "00000000-0000-0000-0000-000000000000",
-        "consumable": "00000000-0000-0000-0000-000000000000",
+        "inventory": "<inventory-id>",
+        "consumable": "<consumable-id>",
         "notes": "Initial batch",
         "acquisition_date": "2024-03-01",
         "storage_location": "Cabinet A",
@@ -130,18 +130,18 @@ resp = client.save(
 
 ```
 {'consumable stock': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'OpticFiber',
     'status': 'AVAILABLE',
     'notes': 'Initial batch',
-    'inventory': '00000000-0000-0000-0000-000000000000',
+    'inventory': '<inventory-id>',
     'acquisition_date': '2024-03-01',
     'expiration_date': None,
     'storage_location': 'Cabinet A',
     'storage_conditions': None,
     'intended_use': None,
     'cost': None,
-    'consumable': '00000000-0000-0000-0000-000000000000',
+    'consumable': '<consumable-id>',
     'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12},
     'type_schema_version': '0.0.0'
 }}
@@ -159,7 +159,7 @@ resp = client.save(
 {: .no_toc}
 
 ```
-resp = client.load('consumablestock', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('consumablestock', id='<id>')
 ```
 
 ### Response example
@@ -167,18 +167,18 @@ resp = client.load('consumablestock', id='00000000-0000-0000-0000-000000000000')
 
 ```
 {'consumable stock': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'OpticFiber',
     'status': 'AVAILABLE',
     'notes': 'Initial batch',
-    'inventory': '00000000-0000-0000-0000-000000000000',
+    'inventory': '<inventory-id>',
     'acquisition_date': '2024-03-01',
     'expiration_date': None,
     'storage_location': 'Cabinet A',
     'storage_conditions': None,
     'intended_use': None,
     'cost': None,
-    'consumable': '00000000-0000-0000-0000-000000000000',
+    'consumable': '<consumable-id>',
     'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12},
     'type_schema_version': '0.0.0'
 }}
@@ -199,7 +199,7 @@ resp = client.load('consumablestock', id='00000000-0000-0000-0000-000000000000')
 ```
 resp = client.save(
     "consumablestock",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={"notes": "Updated notes"}
 )
 ```
@@ -209,18 +209,18 @@ resp = client.save(
 
 ```
 {'consumable stock': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'OpticFiber',
     'status': 'AVAILABLE',
     'notes': 'Updated notes',
-    'inventory': '00000000-0000-0000-0000-000000000000',
+    'inventory': '<inventory-id>',
     'acquisition_date': '2024-03-01',
     'expiration_date': None,
     'storage_location': 'Cabinet A',
     'storage_conditions': None,
     'intended_use': None,
     'cost': None,
-    'consumable': '00000000-0000-0000-0000-000000000000',
+    'consumable': '<consumable-id>',
     'details': {'fiberIds': 'OF-2024-03-A', 'quantity': 12},
     'type_schema_version': '0.0.0'
 }}
@@ -237,5 +237,5 @@ resp = client.save(
 {: .no_toc}
 
 ```
-resp = client.delete("consumablestock", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("consumablestock", id="<id>")
 ```

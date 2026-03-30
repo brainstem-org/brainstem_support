@@ -49,13 +49,13 @@ resp = client.load('supplier')
 ```
 {'suppliers': [
     {
-        'id': 'a8fd144e-0207-4d47-917e-b89fd505ff06',
+        'id': '<id>',
         'name': 'Thorlabs',
         'description': '',
         'website': 'https://www.thorlabs.com/'
     },
     {
-        'id': '4fa1c3b4-f955-47f5-8524-3f1afa3fc657',
+        'id': '<id>',
         'name': 'UNC Vector Core',
         'description': 'UNC Vector Core',
         'website': 'https://www.med.unc.edu/genetherapy/vectorcore/'
@@ -91,7 +91,7 @@ resp = client.save("supplier",  data={
 
 ```
 {'supplier_approval': {
-    'id': '1af72008-d203-4bea-9766-f692b8a89df6',
+    'id': '<id>',
     'name': 'MyNewSupplier',
     'description': '',
     'website': 'http://newsupplier.com'}
@@ -111,7 +111,7 @@ resp = client.save("supplier",  data={
 {: .no_toc}
 
 ```
-resp = client.load('supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
+resp = client.load('supplier', id='<id>')
 ```
 
 ### Response example
@@ -119,7 +119,7 @@ resp = client.load('supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
 
 ```
 {'supplier': {
-    'id': '1338d838-5b69-4e89-8db9-b35224dcb01e',
+    'id': '<id>',
   'name': 'MyNewSupplier',
   'description': '',
   'website': 'http://newsupplier.com'}
@@ -140,7 +140,7 @@ resp = client.load('supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
 {: .no_toc}
 
 ```
-resp = client.save("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", data={"description": "new text"})
+resp = client.save("supplier", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -148,7 +148,7 @@ resp = client.save("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", data={
 
 ```
 {'supplier_approval': {
-    'id': 'e52eb599-a42f-4c37-9298-9bc4c9b42ff0',
+    'id': '<id>',
     'name': 'MyNewSupplier',
     'description': 'new text',
     'website': 'http://newsupplier.com'}
@@ -170,7 +170,7 @@ resp = client.save("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", data={
 {: .no_toc}
 
 ```
-resp = client.delete("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e")
+resp = client.delete("supplier", id="<id>")
 ``` 
 
 
@@ -194,7 +194,7 @@ resp = client.load('supplierapproval')
 ```
 {'supplier_approvals': [
     {
-        'id': '1af72008-d203-4bea-9766-f692b8a89df6',
+        'id': '<id>',
         'name': 'MyNewSupplier',
         'description': '',
         'website': 'http://newsupplier.com',
@@ -204,11 +204,11 @@ resp = client.load('supplierapproval')
         'status': 'Pending'
     },
     {
-        'id': '5c73ffd2-6d37-4336-be1b-9c39815497e9',
+        'id': '<id>',
         'name': 'NeuroNexus',
         'description': 'bbb',
         'website': '',
-        'instance_id': 'f314f4b0-a51d-45f8-8cda-d9dade2bff66',
+        'instance_id': '<instance_id-id>',
         'action': 'Change',
         'reviewer': 3,
         'status': 'Accepted'
@@ -230,7 +230,7 @@ Approval list responses also include a `meta` object (pagination/filter metadata
 {: .no_toc}
 
 ```
-resp = client.load('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a89df6')
+resp = client.load('supplierapproval', id='<id>')
 ```
 
 ### Response example
@@ -238,7 +238,7 @@ resp = client.load('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a89df6'
 
 ```
 {'supplier_approval': {
-    'id': '1af72008-d203-4bea-9766-f692b8a89df6',
+    'id': '<id>',
     'name': 'MyNewSupplier',
     'description': '',
     'website': 'http://newsupplier.com',
@@ -261,7 +261,7 @@ resp = client.load('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a89df6'
 {: .no_toc}
 
 ```
-resp = client.save("supplierapproval", id="1af72008-d203-4bea-9766-f692b8a89df6", options="accept")
+resp = client.save("supplierapproval", id="<id>", options="accept")
 ```
 
 
@@ -276,5 +276,5 @@ resp = client.save("supplierapproval", id="1af72008-d203-4bea-9766-f692b8a89df6"
 {: .no_toc}
 
 ```
-resp = client.save("supplierapproval", id="f314f4b0-a51d-45f8-8cda-d9dade2bff66", options="reject")
+resp = client.save("supplierapproval", id="<id>", options="reject")
 ```

@@ -195,7 +195,7 @@ resp = client.save("group", id="48", data={
 {: .no_toc}
 
 ```
-resp = client.delete("group", id="3654964e-1bf7-40c7-a376-9dcec4c125cd")
+resp = client.delete("group", id="<id>")
 ``` 
 
 

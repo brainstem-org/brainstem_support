@@ -73,7 +73,7 @@ disp(numel(out.sessions))
 Load a single record by UUID:
 
 ```matlab
-out = client.load('session', 'id', 'c5547922-c973-4ad7-96d3-72789f140024');
+out = client.load('session', 'id', '<id>');
 ```
 
 Auto-paginate to retrieve all records across multiple pages:

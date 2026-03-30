@@ -52,19 +52,19 @@ resp = client.load('strain')
 ```
 {'strains': [
     {
-        'id': 'd7e490ec-66ef-447e-ae9f-3f74c858258e',
+        'id': '<id>',
         'name': 'Brown Norway',
         'description': '',
-        'species': '089b00eb-94e3-464b-b7e8-62d04ddf2b11',
+        'species': '<species-id>',
         'rrid': None,
         'rrid_url': None,
         'external_identifiers': []
     },
     {
-        'id': '378bc660-f35a-48a7-b06d-89ece1e4ba40',
+        'id': '<id>',
         'name': 'Red-eared slider',
         'description': '',
-        'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+        'species': '<species-id>',
         'rrid': None,
         'rrid_url': None,
         'external_identifiers': []
@@ -91,7 +91,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 resp = client.save("strain", data={
         "name": "MyNewStrain",
         "description": "",
-        "species": "93dd9502-305a-4e7b-b66b-42cf8c79368f",
+        "species": "<species-id>",
     }
 )
 ```
@@ -101,10 +101,10 @@ resp = client.save("strain", data={
 
 ```
 {'strain_approval': {
-    'id': 'b460dfbc-79bb-499e-87ed-57df02832d88',
+    'id': '<id>',
     'name': 'MyNewStrain',
     'description': '',
-    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+    'species': '<species-id>',
     'rrid': None,
     'external_identifiers': []}
 }
@@ -121,7 +121,7 @@ resp = client.save("strain", data={
 {: .no_toc}
 
 ```
-resp = client.load('strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
+resp = client.load('strain', id='<id>')
 ```
 
 ### Response example
@@ -129,10 +129,10 @@ resp = client.load('strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
 
 ```
 {'strain': {
-    'id': '7963dc0b-e4e7-459c-9a05-cf5a54200e02',
+    'id': '<id>',
     'name': 'MyNewStrain',
     'description': '',
-    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+    'species': '<species-id>',
     'rrid': None,
     'rrid_url': None,
     'external_identifiers': []}
@@ -153,7 +153,7 @@ resp = client.load('strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
 {: .no_toc}
 
 ```
-resp = client.save("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", data={"description": "new text"})
+resp = client.save("strain", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -161,10 +161,10 @@ resp = client.save("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", data={"d
 
 ```
 {'strain_approval': {
-    'id': '6403fdaf-7896-4ef7-9b30-ee12d69aa408',
+    'id': '<id>',
     'name': 'MyNewStrain',
     'description': 'new text',
-    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+    'species': '<species-id>',
     'rrid': None,
     'external_identifiers': []}
 }
@@ -184,7 +184,7 @@ resp = client.save("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", data={"d
 {: .no_toc}
 
 ```
-resp = client.delete("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02")
+resp = client.delete("strain", id="<id>")
 ``` 
 
 
@@ -208,10 +208,10 @@ resp = client.load('strainapproval')
 ```
 {'strain_approvals': [
     {
-        'id': 'b460dfbc-79bb-499e-87ed-57df02832d88',
+        'id': '<id>',
         'name': 'MyNewStrain',
         'description': '',
-        'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+        'species': '<species-id>',
         'rrid': None,
         'external_identifiers': [],
         'instance_id': None,
@@ -220,10 +220,10 @@ resp = client.load('strainapproval')
         'status': 'Pending'
     },
     {
-        'id': '535e2f20-5571-4acd-83ef-edc4c076bbb4',
+        'id': '<id>',
         'name': 'Agumon',
         'description': '',
-        'species': '7a224fef-df3f-4b4e-aa52-7ae743b7bf58',
+        'species': '<species-id>',
         'rrid': None,
         'external_identifiers': [],
         'instance_id': None,
@@ -246,7 +246,7 @@ resp = client.load('strainapproval')
 {: .no_toc}
 
 ```
-resp = client.load('strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832d88')
+resp = client.load('strainapproval', id='<id>')
 ```
 
 ### Response example
@@ -254,10 +254,10 @@ resp = client.load('strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832d88')
 
 ```
 {'strain_approval': {
-    'id': 'b460dfbc-79bb-499e-87ed-57df02832d88',
+    'id': '<id>',
     'name': 'MyNewStrain',
     'description': '',
-    'species': '93dd9502-305a-4e7b-b66b-42cf8c79368f',
+    'species': '<species-id>',
     'rrid': None,
     'external_identifiers': [],
     'instance_id': None,
@@ -279,7 +279,7 @@ resp = client.load('strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832d88')
 {: .no_toc}
 
 ```
-resp = client.save("strainapproval", id="b460dfbc-79bb-499e-87ed-57df02832d88", options="accept")
+resp = client.save("strainapproval", id="<id>", options="accept")
 ```
 
 
@@ -294,5 +294,5 @@ resp = client.save("strainapproval", id="b460dfbc-79bb-499e-87ed-57df02832d88", 
 {: .no_toc}
 
 ```
-resp = client.save("strainapproval", id="6403fdaf-7896-4ef7-9b30-ee12d69aa408", options="reject")
+resp = client.save("strainapproval", id="<id>", options="reject")
 ```

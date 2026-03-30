@@ -50,11 +50,11 @@ resp = client.load('setup')
 ```
 {'setups': [
     {
-        'id': '58e0003d-16c2-4264-913d-288463c0356d',
+        'id': '<id>',
         'name': 'Head-fixed wheel',
         'location': 'Lab Room 101',
         'description': '',
-        'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
+        'setup_type': '<setup_type-id>',
         'specifications': [
             {'name': 'Radius', 'value': 12, 'description': 'cm'}
         ],
@@ -62,11 +62,11 @@ resp = client.load('setup')
         'image': null
     },
     {
-        'id': '3e9ec0e0-d685-42ec-8386-0fa24602a73e',
+        'id': '<id>',
         'name': 'Maze setup',
         'location': 'Lab Room 102',
         'description': '',
-        'setup_type': 'e1f14b91-e507-48c1-bfec-c68d7db9c166',
+        'setup_type': '<setup_type-id>',
         'specifications': {},
         'is_public': True,
         'image': null
@@ -97,7 +97,7 @@ resp = client.save("setup",  data=
         'name': 'MyNewEnv',
         'location': 'Lab Room 103',
         'description': '',
-        'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
+        'setup_type': '<setup_type-id>',
         'specifications': {
             'Length': 100,
             'Width': '30 cm'
@@ -112,11 +112,11 @@ resp = client.save("setup",  data=
 
 ```
 {'setup': {
-    'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
+    'id': '<id>',
     'name': 'MyNewEnv',
     'location': 'Lab Room 103',
     'description': '',
-    'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
+    'setup_type': '<setup_type-id>',
     'specifications': {
         'Length': 100,
         'Width': '30 cm'
@@ -139,7 +139,7 @@ resp = client.save("setup",  data=
 {: .no_toc}
 
 ```
-resp = client.load('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
+resp = client.load('setup', id='<id>')
 ```
 
 ### Response example
@@ -147,11 +147,11 @@ resp = client.load('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 
 ```
 {'setup': {
-    'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
+    'id': '<id>',
     'name': 'MyNewEnv',
     'location': 'Lab Room 103',
     'description': '',
-    'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
+    'setup_type': '<setup_type-id>',
     'specifications': {
         'Length': 100,
         'Width': '30 cm'
@@ -174,7 +174,7 @@ resp = client.load('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 {: .no_toc}
 
 ```
-resp = client.save("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"description": "new text"})
+resp = client.save("setup", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -182,11 +182,11 @@ resp = client.save("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"de
 
 ```
 {'setup': {
-    'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
+    'id': '<id>',
     'name': 'MyNewEnv',
     'location': 'Lab Room 103',
     'description': 'new text',
-    'setup_type': '78dc6c02-dcb0-4a31-a035-a358c7ee9e79',
+    'setup_type': '<setup_type-id>',
     'specifications': {
         'Length': 100,
         'Width': '30 cm'
@@ -209,5 +209,5 @@ resp = client.save("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"de
 {: .no_toc}
 
 ```
-resp = client.delete("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b")
+resp = client.delete("setup", id="<id>")
 ``` 

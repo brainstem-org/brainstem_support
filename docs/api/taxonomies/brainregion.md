@@ -60,21 +60,21 @@ resp = client.load('brainregion')
 ```
 {"brain_regions": [
     {
-        'id': '620a4416-54fb-4386-b8a7-dda66ac0a7e5',
+        'id': '<id>',
         'name': 'Perifornical nucleus',
         'description': '',
         'acronym': 'PeF',
         'atlas': 'AIA'
     },
     {
-        'id': 'b4782d29-c96c-4bf9-9394-8be2f2ed269a',
+        'id': '<id>',
         'name': 'Retrochiasmatic area',
         'description': '',
         'acronym': 'RCH',
         'atlas': 'AIA'
     },
     {
-        'id': '927a4e7a-4c75-4ecc-8670-bef7e8f4e944',
+        'id': '<id>',
         'name': 'Subthalamic nucleus',
         'description': '',
         'acronym': 'STN',
@@ -113,7 +113,7 @@ resp = client.save("brainregion",  data={
 
 ```
 {'brain_region': {
-    'id': '2cdd3db4-1dc4-4568-9ee3-de2356ee31a9',
+    'id': '<id>',
     'name': 'MyNewBrainRegion',
     'description': '',
     'acronym': 'MNBR',
@@ -134,7 +134,7 @@ resp = client.save("brainregion",  data={
 {: .no_toc}
 
 ```
-resp = client.load('brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee31a9')
+resp = client.load('brainregion', id='<id>')
 ```
 
 ### Response example
@@ -142,7 +142,7 @@ resp = client.load('brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee31a9')
 
 ```
 {'brain_region': {
-    'id': '2cdd3db4-1dc4-4568-9ee3-de2356ee31a9',
+    'id': '<id>',
     'name': 'MyNewBrainRegion',
     'description': '',
     'acronym': 'MNBR',
@@ -164,7 +164,7 @@ resp = client.load('brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee31a9')
 {: .no_toc}
 
 ```
-resp = client.save("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9", data={"description": "new text"})
+resp = client.save("brainregion", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -172,7 +172,7 @@ resp = client.save("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9", dat
 
 ```
 {'brain_region': {
-    'id': '2cdd3db4-1dc4-4568-9ee3-de2356ee31a9',
+    'id': '<id>',
     'name': 'MyNewBrainRegion',
     'description': 'new text',
     'acronym': 'MNBR',
@@ -194,5 +194,5 @@ resp = client.save("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9", dat
 {: .no_toc}
 
 ```
-resp = client.delete("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9")
+resp = client.delete("brainregion", id="<id>")
 ``` 

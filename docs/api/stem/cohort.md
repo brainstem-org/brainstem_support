@@ -46,21 +46,21 @@ resp = client.load('cohort')
 ```
 {'cohorts': [
         {
-            'id': '00000000-0000-0000-0000-000000000000',
+            'id': '<id>',
             'name': 'newcohort1',
-            'project': '00000000-0000-0000-0000-000000000000',
+            'project': '<project-id>',
             'subjects': [
-                            '00000000-0000-0000-0000-000000000000',
-                            '00000000-0000-0000-0000-000000000000'
+                            '<id>',
+                            '<id>'
                         ]
         },
         {
-            'id': '00000000-0000-0000-0000-000000000000',
+            'id': '<id>',
             'name': 'cohort2',
-            'project': '00000000-0000-0000-0000-000000000000',
+            'project': '<project-id>',
             'subjects': [
-                            '00000000-0000-0000-0000-000000000000',
-                            '00000000-0000-0000-0000-000000000000'
+                            '<id>',
+                            '<id>'
                         ]
         }
     ]
@@ -83,7 +83,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save("cohort", data={"name": "NewRestCohort", "project": "00000000-0000-0000-0000-000000000000", "subjects": ["00000000-0000-0000-0000-000000000000"]})
+resp = client.save("cohort", data={"name": "NewRestCohort", "project": "<project-id>", "subjects": ["<id>"]})
 ```
 
 ### Response example
@@ -91,10 +91,10 @@ resp = client.save("cohort", data={"name": "NewRestCohort", "project": "00000000
 
 ```
 {'cohort': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'NewRestCohort',
-    'project': '00000000-0000-0000-0000-000000000000',
-    'subjects': ['00000000-0000-0000-0000-000000000000']
+    'project': '<project-id>',
+    'subjects': ['<id>']
     }
 }
 ```
@@ -112,7 +112,7 @@ resp = client.save("cohort", data={"name": "NewRestCohort", "project": "00000000
 {: .no_toc}
 
 ```
-resp = client.load('cohort', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('cohort', id='<id>')
 ```
 
 ### Response example
@@ -120,10 +120,10 @@ resp = client.load('cohort', id='00000000-0000-0000-0000-000000000000')
 
 ```
 {'cohort': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'NewRestCohort',
-    'project': '00000000-0000-0000-0000-000000000000',
-    'subjects': ['00000000-0000-0000-0000-000000000000']
+    'project': '<project-id>',
+    'subjects': ['<id>']
     }
 }
 ```
@@ -141,7 +141,7 @@ resp = client.load('cohort', id='00000000-0000-0000-0000-000000000000')
 {: .no_toc}
 
 ```
-resp = client.save("cohort", id="00000000-0000-0000-0000-000000000000", data={"name": "new name"})
+resp = client.save("cohort", id="<id>", data={"name": "new name"})
 ```
 
 ### Response example
@@ -149,10 +149,10 @@ resp = client.save("cohort", id="00000000-0000-0000-0000-000000000000", data={"n
 
 ```
 {'cohort': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'new name',
-    'project': '00000000-0000-0000-0000-000000000000',
-    'subjects': ['00000000-0000-0000-0000-000000000000']
+    'project': '<project-id>',
+    'subjects': ['<id>']
     }
 }
 ```
@@ -170,5 +170,5 @@ resp = client.save("cohort", id="00000000-0000-0000-0000-000000000000", data={"n
 {: .no_toc}
 
 ```
-resp = client.delete("cohort", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("cohort", id="<id>")
 ```

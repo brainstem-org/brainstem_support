@@ -58,19 +58,19 @@ resp = client.load('setuptype')
 ```
 {'setup_types': [
     {
-        'id': '531b2a21-ab1f-4aa8-8eaf-905421168d6b',
+        'id': '<id>',
         'name': 'Barnes maze',
         'description': 'The Barnes maze is a paradigm to study spatial learning and memory. It consists of a circular table with holes around the circumference.',
         'category': 'F'
     },
     {
-        'id': '414a49b2-61b5-4ef5-8b64-6528d5f1ed8d',
+        'id': '<id>',
         'name': 'Theta maze',
         'description': 'A circular maze with a central arm going across the center of the circle.',
         'category': 'U'
     },
     {
-        'id': '70b1d2eb-a721-4fef-8e86-0c2b1469283a',
+        'id': '<id>',
         'name': 'Y-maze',
         'description': 'The Y-maze is, similar to the T-maze, a test to investigate spatial learning and memory. Specifically designed for testing rats or mice.',
         'category': 'U'
@@ -107,7 +107,7 @@ resp = client.save("setuptype",  data={
 
 ```
 {'setup_type_approval': {
-    'id': '725ef635-09b7-4817-98f7-d58e598b445e',
+    'id': '<id>',
     'name': 'MyNewSetupType',
     'description': '',
     'category': 'F'}
@@ -126,7 +126,7 @@ resp = client.save("setuptype",  data={
 {: .no_toc}
 
 ```
-resp = client.load('setuptype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
+resp = client.load('setuptype', id='<id>')
 ```
 
 ### Response example
@@ -134,7 +134,7 @@ resp = client.load('setuptype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
 
 ```
 {'setup_type': {
-    'id': 'a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6',
+    'id': '<id>',
     'name': 'MyNewSetupType',
     'description': '',
     'category': 'F'}
@@ -155,7 +155,7 @@ resp = client.load('setuptype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
 {: .no_toc}
 
 ```
-resp = client.save("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6", data={"description": "new text"})
+resp = client.save("setuptype", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -163,7 +163,7 @@ resp = client.save("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6", data=
 
 ```
 {'setup_type_approval': {
-    'id': '511f5736-5c34-46c5-b4d2-d7bb0727b5fe',
+    'id': '<id>',
     'name': 'MyNewSetupType',
     'description': 'new text',
     'category': 'F'}
@@ -184,7 +184,7 @@ resp = client.save("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6", data=
 {: .no_toc}
 
 ```
-resp = client.delete("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6")
+resp = client.delete("setuptype", id="<id>")
 ``` 
 
 
@@ -208,7 +208,7 @@ resp = client.load('setuptypeapproval')
 ```
 {'setup_type_approvals': [
     {
-        'id': '725ef635-09b7-4817-98f7-d58e598b445e',
+        'id': '<id>',
         'name': 'MyNewSetupType',
         'description': '',
         'category': 'F',
@@ -218,11 +218,11 @@ resp = client.load('setuptypeapproval')
         'status': 'Pending'
     },
     {
-        'id': '97b70a5e-52f9-4358-8b27-0a886248e749',
+        'id': '<id>',
         'name': 'MyNewMaze',
         'description': '',
         'category': 'U',
-        'instance_id': 'e10ea8ab-9afa-4060-8382-dc9d9e1763f8',
+        'instance_id': '<instance_id-id>',
         'action': 'Add',
         'reviewer': 3,
         'status': 'Rejected'
@@ -242,7 +242,7 @@ resp = client.load('setuptypeapproval')
 {: .no_toc}
 
 ```
-resp = client.load('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e598b445e')
+resp = client.load('setuptypeapproval', id='<id>')
 ```
 
 ### Response example
@@ -250,7 +250,7 @@ resp = client.load('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e598b445e
 
 ```
 {'setup_type_approval': {
-    'id': '725ef635-09b7-4817-98f7-d58e598b445e',
+    'id': '<id>',
     'name': 'MyNewSetupType',
     'description': '',
     'category': 'F',
@@ -273,7 +273,7 @@ resp = client.load('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e598b445e
 {: .no_toc}
 
 ```
-resp = client.save("setuptypeapproval", id="725ef635-09b7-4817-98f7-d58e598b445e", options="accept")
+resp = client.save("setuptypeapproval", id="<id>", options="accept")
 ```
 
 
@@ -288,5 +288,5 @@ resp = client.save("setuptypeapproval", id="725ef635-09b7-4817-98f7-d58e598b445e
 {: .no_toc}
 
 ```
-resp = client.save("setuptypeapproval", id="511f5736-5c34-46c5-b4d2-d7bb0727b5fe", options="reject")
+resp = client.save("setuptypeapproval", id="<id>", options="reject")
 ```

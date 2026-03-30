@@ -62,11 +62,11 @@ resp = client.load('dataacquisition')
 ```
 {'data_acquisitions': [
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'notes': 'main arena cameras',
-        'session': '00000000-0000-0000-0000-000000000000',
-        'procedures': ['00000000-0000-0000-0000-000000000000'],
-        'equipment': ['00000000-0000-0000-0000-000000000000'],
+        'session': '<session-id>',
+        'procedures': ['<id>'],
+        'equipment': ['<id>'],
         'type': 'BehavioralTracking',
         'details': {
             'fileName': 'session1_tracking.mp4',
@@ -82,11 +82,11 @@ resp = client.load('dataacquisition')
         'order': 0
     },
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'notes': 'acute probe recording',
-        'session': '00000000-0000-0000-0000-000000000000',
-        'procedures': ['00000000-0000-0000-0000-000000000000'],
-        'equipment': ['00000000-0000-0000-0000-000000000000'],
+        'session': '<session-id>',
+        'procedures': ['<id>'],
+        'equipment': ['<id>'],
         'type': 'ExtracellularEphys',
         'details': {
             'fileName': 'session1_probe.dat',
@@ -125,9 +125,9 @@ resp = client.save(
     "dataacquisition",
     data={
         "type": "ExtracellularEphys",
-        "session": "00000000-0000-0000-0000-000000000000",
-        "procedures": ["00000000-0000-0000-0000-000000000000"],
-        "equipment": ["00000000-0000-0000-0000-000000000000"],
+        "session": "<session-id>",
+        "procedures": ["<id>"],
+        "equipment": ["<id>"],
         "notes": "acute probe recording",
         "details": {
             "fileName": "session1_probe.dat",
@@ -154,11 +154,11 @@ resp = client.save(
 
 ```
 {'data_acquisition': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'notes': 'acute probe recording',
-    'session': '00000000-0000-0000-0000-000000000000',
-    'procedures': ['00000000-0000-0000-0000-000000000000'],
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'session': '<session-id>',
+    'procedures': ['<id>'],
+    'equipment': ['<id>'],
     'type': 'ExtracellularEphys',
     'details': {
         'fileName': 'session1_probe.dat',
@@ -193,7 +193,7 @@ resp = client.save(
 {: .no_toc}
 
 ```
-resp = client.load('dataacquisition', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('dataacquisition', id='<id>')
 ```
 
 ### Response example
@@ -201,11 +201,11 @@ resp = client.load('dataacquisition', id='00000000-0000-0000-0000-000000000000')
 
 ```
 {'data_acquisition': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'notes': 'acute probe recording',
-    'session': '00000000-0000-0000-0000-000000000000',
-    'procedures': ['00000000-0000-0000-0000-000000000000'],
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'session': '<session-id>',
+    'procedures': ['<id>'],
+    'equipment': ['<id>'],
     'type': 'ExtracellularEphys',
     'details': {
         'fileName': 'session1_probe.dat',
@@ -244,8 +244,8 @@ resp = client.load('dataacquisition', id='00000000-0000-0000-0000-000000000000')
 ```
 resp = client.save(
     "dataacquisition",
-    id="00000000-0000-0000-0000-000000000000",
-    data={"notes": "re-run with higher gain", "equipment": ["00000000-0000-0000-0000-000000000000"]}
+    id="<id>",
+    data={"notes": "re-run with higher gain", "equipment": ["<id>"]}
 )
 ```
 
@@ -254,11 +254,11 @@ resp = client.save(
 
 ```
 {'data_acquisition': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'notes': 're-run with higher gain',
-    'session': '00000000-0000-0000-0000-000000000000',
-    'procedures': ['00000000-0000-0000-0000-000000000000'],
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'session': '<session-id>',
+    'procedures': ['<id>'],
+    'equipment': ['<id>'],
     'type': 'ExtracellularEphys',
     'details': {
         'fileName': 'session1_probe.dat',
@@ -297,5 +297,5 @@ resp = client.save(
 {: .no_toc}
 
 ```
-resp = client.delete("dataacquisition", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("dataacquisition", id="<id>")
 ``` 

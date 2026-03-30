@@ -46,21 +46,21 @@ resp = client.load('collection')
 ```
 {'collections': [
         {
-            'id': '00000000-0000-0000-0000-000000000000',
+            'id': '<id>',
             'name': 'newcollection1',
-            'project': '00000000-0000-0000-0000-000000000000',
+            'project': '<project-id>',
             'sessions': [
-                            '00000000-0000-0000-0000-000000000000',
-                            '00000000-0000-0000-0000-000000000000'
+                            '<id>',
+                            '<id>'
                         ]
         },
         {
-            'id': '00000000-0000-0000-0000-000000000000',
+            'id': '<id>',
             'name': 'collection2',
-            'project': '00000000-0000-0000-0000-000000000000',
+            'project': '<project-id>',
             'sessions': [
-                            '00000000-0000-0000-0000-000000000000',
-                            '00000000-0000-0000-0000-000000000000'
+                            '<id>',
+                            '<id>'
                         ]
         }
     ]
@@ -81,7 +81,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save("collection", data={"name": "NewRestCollection", "project": "00000000-0000-0000-0000-000000000000", "sessions": ["00000000-0000-0000-0000-000000000000"]})
+resp = client.save("collection", data={"name": "NewRestCollection", "project": "<project-id>", "sessions": ["<id>"]})
 ```
 
 ### Response example
@@ -89,10 +89,10 @@ resp = client.save("collection", data={"name": "NewRestCollection", "project": "
 
 ```
 {'collection': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'NewRestCollection',
-    'project': '00000000-0000-0000-0000-000000000000',
-    'sessions': ['00000000-0000-0000-0000-000000000000']
+    'project': '<project-id>',
+    'sessions': ['<id>']
     }
 }
 ```
@@ -110,7 +110,7 @@ resp = client.save("collection", data={"name": "NewRestCollection", "project": "
 {: .no_toc}
 
 ```
-resp = client.load('collection', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('collection', id='<id>')
 ```
 
 ### Response example
@@ -118,10 +118,10 @@ resp = client.load('collection', id='00000000-0000-0000-0000-000000000000')
 
 ```
 {'collection': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'NewRestCollection',
-    'project': '00000000-0000-0000-0000-000000000000',
-    'sessions': ['00000000-0000-0000-0000-000000000000']
+    'project': '<project-id>',
+    'sessions': ['<id>']
     }
 }
 ```
@@ -139,7 +139,7 @@ resp = client.load('collection', id='00000000-0000-0000-0000-000000000000')
 {: .no_toc}
 
 ```
-resp = client.save("collection", id="00000000-0000-0000-0000-000000000000", data={"name": "new name"})
+resp = client.save("collection", id="<id>", data={"name": "new name"})
 ```
 
 ### Response example
@@ -147,10 +147,10 @@ resp = client.save("collection", id="00000000-0000-0000-0000-000000000000", data
 
 ```
 {'collection': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'new name',
-    'project': '00000000-0000-0000-0000-000000000000',
-    'sessions': ['00000000-0000-0000-0000-000000000000']
+    'project': '<project-id>',
+    'sessions': ['<id>']
     }
 }
 ```
@@ -168,5 +168,5 @@ resp = client.save("collection", id="00000000-0000-0000-0000-000000000000", data
 {: .no_toc}
 
 ```
-resp = client.delete("collection", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("collection", id="<id>")
 ```

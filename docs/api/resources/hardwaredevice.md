@@ -52,37 +52,37 @@ resp = client.load('hardwaredevice')
 ```
 {'hardwaredevices': [
     {
-        'id': 'a14cc671-6d21-4688-9772-1d2bf765b793',
+        'id': '<id>',
         'name': 'RZ5D Processor',
         'description': '',
-        'supplier': '56c6f4c3-cf31-48ac-bd16-410123776324',
+        'supplier': '<supplier-id>',
         'rrid': '',
         'rrid_url': '',
         'external_identifiers': []
     },
     {
-        'id': '33c67482-af52-44f4-a3ef-6d692512a6ca',
+        'id': '<id>',
         'name': 'Scout (128ch)',
         'description': '',
-        'supplier': 'f309ec90-914b-4382-955e-017bf5d1def1',
+        'supplier': '<supplier-id>',
         'rrid': '',
         'rrid_url': '',
         'external_identifiers': []
     },
     {
-        'id': '4d33e7ad-c141-4e9d-bc9c-034c51dcfc5a',
+        'id': '<id>',
         'name': 'SmartBox (256ch)',
         'description': '',
-        'supplier': 'fba48e24-eebf-4b11-a8b9-ac660854d779',
+        'supplier': '<supplier-id>',
         'rrid': '',
         'rrid_url': '',
         'external_identifiers': []
     },
     {
-        'id': '3ca40603-b7f0-4d58-8579-d48b3d6e7ad6',
+        'id': '<id>',
         'name': 'SpikeGLX',
         'description': 'SpikeGLX is a recording system for extracellular neural probes',
-        'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
+        'supplier': '<supplier-id>',
         'rrid': '',
         'rrid_url': '',
         'external_identifiers': []
@@ -109,7 +109,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 resp = client.save("hardwaredevice",  data={
     'name': 'MyNewHardwareDevice',
     'description': '',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'}
+    'supplier': '<supplier-id>'}
 )
 ```
 
@@ -118,10 +118,10 @@ resp = client.save("hardwaredevice",  data={
 
 ```
 {'hardwaredevice_approval': {
-    'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
+    'id': '<id>',
     'name': 'MyNewHardwareDevice',
     'description': '',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'}
+    'supplier': '<supplier-id>'}
 }
 ```
 
@@ -138,7 +138,7 @@ resp = client.save("hardwaredevice",  data={
 {: .no_toc}
 
 ```
-resp = client.load('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e817')
+resp = client.load('hardwaredevice', id='<id>')
 ```
 
 ### Response example
@@ -146,10 +146,10 @@ resp = client.load('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e817')
 
 ```
 {'hardwaredevice': {
-    'id': '0e6c723c-e5f8-4979-b7f9-e77a3ae4e817',
+    'id': '<id>',
     'name': 'MyNewHardwareDevice',
     'description': '',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
+    'supplier': '<supplier-id>',
     'rrid': '',
     'rrid_url': '',
     'external_identifiers': []}
@@ -170,7 +170,7 @@ resp = client.load('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e817')
 {: .no_toc}
 
 ```
-resp = client.save("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817", data={"description": "new text"})
+resp = client.save("hardwaredevice", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -178,10 +178,10 @@ resp = client.save("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817", 
 
 ```
 {'hardwaredevice_approval': {
-    'id': 'd10aaf4c-be23-45b2-9f81-ef1d65ca6c32',
+    'id': '<id>',
     'name': 'MyNewHardwareDevice',
     'description': 'new text',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'}
+    'supplier': '<supplier-id>'}
 }
 ```
 
@@ -202,7 +202,7 @@ resp = client.save("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817", 
 {: .no_toc}
 
 ```
-resp = client.delete("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817")
+resp = client.delete("hardwaredevice", id="<id>")
 ``` 
 
 
@@ -230,21 +230,21 @@ resp = client.load('hardwaredeviceapproval')
 ```
 {'hardwaredevice_approvals': [
     {
-        'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
+        'id': '<id>',
         'name': 'MyNewHardwareDevice',
         'description': '',
-        'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
+        'supplier': '<supplier-id>',
         'instance_id': None,
         'action': 'Add',
         'reviewer': None,
         'status': 'Pending'
     },
     {
-        'id': 'accd5fe5-6739-4e44-ba24-3910eff01fef',
+        'id': '<id>',
         'name': '16-Ch Extracellular Differential AC Amplifier Model 3500',
         'description': '123',
-        'supplier': '866fda99-0ae7-4aeb-a163-5c2e8a3ed4af',
-        'instance_id': '56854ab5-708b-48b2-92a8-3bd84439c1e0',
+        'supplier': '<supplier-id>',
+        'instance_id': '<instance_id-id>',
         'action': 'Change',
         'reviewer': 15,
         'status': 'Accepted'
@@ -266,7 +266,7 @@ Approval list responses also include a `meta` object (pagination/filter metadata
 {: .no_toc}
 
 ```
-resp = client.load('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0198222ee7dd')
+resp = client.load('hardwaredeviceapproval', id='<id>')
 ```
 
 ### Response example
@@ -274,10 +274,10 @@ resp = client.load('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0198222
 
 ```
 {'hardwaredevice_approval': {
-    'id': '23105f29-f31d-47c8-9cc5-0198222ee7dd',
+    'id': '<id>',
     'name': 'MyNewHardwareDevice',
     'description': '',
-    'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08',
+    'supplier': '<supplier-id>',
     'instance_id': None,
     'action': 'Add',
     'reviewer': None,
@@ -297,7 +297,7 @@ resp = client.load('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0198222
 {: .no_toc}
 
 ```
-resp = client.save("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0198222ee7dd", options="accept")
+resp = client.save("hardwaredeviceapproval", id="<id>", options="accept")
 ```
 
 
@@ -312,5 +312,5 @@ resp = client.save("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0198222
 {: .no_toc}
 
 ```
-resp = client.save("hardwaredeviceapproval", id="fd7f6132-0527-4310-a9da-9241728a9163", options="reject")
+resp = client.save("hardwaredeviceapproval", id="<id>", options="reject")
 ```

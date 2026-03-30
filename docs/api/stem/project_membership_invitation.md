@@ -48,17 +48,17 @@ resp = client.load('projectmembershipinvitation')
 ```
 {'project_membership_invitations': [
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'invitee': 27,
-        'project': '00000000-0000-0000-0000-000000000000',
+        'project': '<project-id>',
         'can_change': False,
         'manage_project': False,
         'own_project': False
     },
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'invitee': 1,
-        'project': '00000000-0000-0000-0000-000000000000',
+        'project': '<project-id>',
 
         'can_change': False,
         'manage_project': False,
@@ -79,7 +79,7 @@ resp = client.load('projectmembershipinvitation')
 {: .no_toc}
 
 ```
-resp = client.load('projectmembershipinvitation', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('projectmembershipinvitation', id='<id>')
 ```
 
 ### Response example
@@ -87,9 +87,9 @@ resp = client.load('projectmembershipinvitation', id='00000000-0000-0000-0000-00
 
 ```
 {'project_membership_invitation': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'invitee': 27,
-    'project': '00000000-0000-0000-0000-000000000000',
+    'project': '<project-id>',
     'can_change': False,
     'manage_project': False,
     'own_project': False}
@@ -108,7 +108,7 @@ resp = client.load('projectmembershipinvitation', id='00000000-0000-0000-0000-00
 {: .no_toc}
 
 ```
-resp = client.load("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="accept")
+resp = client.load("projectmembershipinvitation", id="<id>", options="accept")
 ```
 
 
@@ -124,7 +124,7 @@ resp = client.load("projectmembershipinvitation", id="00000000-0000-0000-0000-00
 {: .no_toc}
 
 ```
-resp = client.load("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="reject")
+resp = client.load("projectmembershipinvitation", id="<id>", options="reject")
 ```
 
 
@@ -139,5 +139,5 @@ resp = client.load("projectmembershipinvitation", id="00000000-0000-0000-0000-00
 {: .no_toc}
 
 ```
-resp = client.load("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="cancel")
+resp = client.load("projectmembershipinvitation", id="<id>", options="cancel")
 ```

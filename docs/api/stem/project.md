@@ -88,20 +88,20 @@ resp = client.load("project")
 {
     "projects": [
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "<id>",
             "name": "project2",
             "description": "",
             "sessions": [
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000"
+                "<id>",
+                "<id>",
+                "<id>"
             ],
             "subjects": [
-                "00000000-0000-0000-0000-000000000000"
+                "<id>"
             ],
             "publications": [],
             "collections": [
-                "00000000-0000-0000-0000-000000000000"
+                "<id>"
             ],
             "cohorts": [],
             "extra_fields": {
@@ -130,17 +130,17 @@ resp = client.load("project")
             },
         },
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "<id>",
             "name": "Test project1",
             "description": "<p>My first project1</p>",
             "sessions": [
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000"
+                "<id>",
+                "<id>",
+                "<id>",
+                "<id>"
             ],
             "subjects": [
-                "00000000-0000-0000-0000-000000000000"
+                "<id>"
             ],
             "publications": [],
             "collections": [],
@@ -202,7 +202,7 @@ resp = client.save("project",  data={"name": "NewRestProject", "description": "s
 ```json
 {
     "project": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewRestProject",
         "description": "some text",
         "sessions": [],
@@ -240,7 +240,7 @@ resp = client.save("project",  data={"name": "NewRestProject", "description": "s
 {: .no_toc}
 
 ```python
-resp = client.load("project", id="00000000-0000-0000-0000-000000000000")
+resp = client.load("project", id="<id>")
 ```
 
 **Example response**
@@ -249,11 +249,11 @@ resp = client.load("project", id="00000000-0000-0000-0000-000000000000")
 ```json
 {
     "project": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewRestProject",
         "description": "some text",
         "sessions": [
-            "00000000-0000-0000-0000-000000000000"
+            "<id>"
         ],
         "subjects": [],
         "publications": [],
@@ -300,7 +300,7 @@ resp = client.load("project", id="00000000-0000-0000-0000-000000000000")
 {: .no_toc}
 
 ```python
-resp = client.save("project", id="00000000-0000-0000-0000-000000000000", data={"description": "new text"})
+resp = client.save("project", id="<id>", data={"description": "new text"})
 ```
 
 To add new users and/or groups to the project, or modify the permissions of the existing ones, provide their corresponding dictionaries. Missing permissions will default to *False*.
@@ -308,7 +308,7 @@ To add new users and/or groups to the project, or modify the permissions of the 
 ```python
 resp = client.save(
     "project",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={
         "description": "new text",
         "users": {"user2@mail.com": {"can_change": True, "is_manager": True}},
@@ -322,7 +322,7 @@ To remove users and/or groups, provide the key-value pair `"remove": True` in th
 ```python
 resp = client.save(
     "project",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={
         "description": "new text",
         "users": {"user2@mail.com": {"remove": True}},
@@ -337,7 +337,7 @@ resp = client.save(
 ```json
 {
     "project": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewRestProject",
         "description": "new text",
         "sessions": [],
@@ -391,5 +391,5 @@ resp = client.save(
 {: .no_toc}
 
 ```python
-resp = client.delete("project", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("project", id="<id>")
 ```

@@ -50,7 +50,7 @@ resp = client.load('laboratory')
 ```
 {'laboratories': [
     {
-        'id': '3362d1da-29e4-4723-b326-1605f390178a',
+        'id': '<id>',
         'group': 1,
         'principal_investigators': [],
         'description': '',
@@ -61,7 +61,7 @@ resp = client.load('laboratory')
         'country': 'United States'
     },
     {
-        'id': 'e5dc5bd9-072d-45e4-8b00-2a468a59db8b',
+        'id': '<id>',
         'group': 8,
         'principal_investigators': [3, 7],
         'description': '',
@@ -101,7 +101,7 @@ resp = client.save("laboratory",  data={
 
 ```
 {'laboratory': {
-    'id': '5d882f8b-5c74-428e-9ed9-41c8780527ff',
+    'id': '<id>',
     'group': 41,
     'principal_investigators': [3],
     'description': '',
@@ -126,7 +126,7 @@ resp = client.save("laboratory",  data={
 {: .no_toc}
 
 ```
-resp = client.load('laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff')
+resp = client.load('laboratory', id='<id>')
 ```
 
 ### Response example
@@ -134,7 +134,7 @@ resp = client.load('laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff')
 
 ```
 {'laboratory': {
-    'id': '5d882f8b-5c74-428e-9ed9-41c8780527ff',
+    'id': '<id>',
     'group': 41,
     'principal_investigators': [3],
     'description': '',
@@ -159,7 +159,7 @@ resp = client.load('laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff')
 {: .no_toc}
 
 ```
-resp = client.save("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff", data={"description": "new text"})
+resp = client.save("laboratory", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -167,7 +167,7 @@ resp = client.save("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff", data
 
 ```
 {'laboratory': {
-    'id': '5d882f8b-5c74-428e-9ed9-41c8780527ff',
+    'id': '<id>',
     'group': 41,
     'principal_investigators': [3],
     'description': 'new text',
@@ -192,5 +192,5 @@ resp = client.save("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff", data
 {: .no_toc}
 
 ```
-resp = client.delete("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff")
+resp = client.delete("laboratory", id="<id>")
 ``` 

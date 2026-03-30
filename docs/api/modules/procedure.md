@@ -63,20 +63,20 @@ resp = client.load('procedure')
 ```
 {'procedures': [
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'SiliconProbeImplant',
         'notes': 'acute implant',
-        'subject': '00000000-0000-0000-0000-000000000000',
+        'subject': '<subject-id>',
         'date_time': '2024-03-12T09:00:00Z',
-        'consumablestock': '00000000-0000-0000-0000-000000000000',
-        'equipment': ['00000000-0000-0000-0000-000000000000'],
-        'licenses': ['00000000-0000-0000-0000-000000000000'],
+        'consumablestock': '<consumablestock-id>',
+        'equipment': ['<id>'],
+        'licenses': ['<id>'],
         'details': {
             'probeId': 'SP-64A',
             'sterilizationMethod': 'Ethylene Oxide'
         },
         'type_schema_version': '0.0.0',
-        'brain_region': '00000000-0000-0000-0000-000000000000',
+        'brain_region': '<brain_region-id>',
         'coordinates_system': 'Stereotaxic_BregmaAbsolute',
         'coordinates_details': {
             'apCoordinate': -2.5,
@@ -91,10 +91,10 @@ resp = client.load('procedure')
         'updated_at': '2024-03-12T09:00:00Z'
     },
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'OpticFiberImplant',
         'notes': 'bilateral implant',
-        'subject': '00000000-0000-0000-0000-000000000000',
+        'subject': '<subject-id>',
         'date_time': None,
         'consumablestock': None,
         'equipment': [],
@@ -105,7 +105,7 @@ resp = client.load('procedure')
             'sterilizationMethod': 'Autoclave'
         },
         'type_schema_version': '0.0.0',
-        'brain_region': '00000000-0000-0000-0000-000000000000',
+        'brain_region': '<brain_region-id>',
         'coordinates_system': 'Stereotaxic_BregmaBrainSurface',
         'coordinates_details': {
             'apCoordinate': -2.8,
@@ -137,9 +137,9 @@ resp = client.save(
     "procedure",
     data={
         "type": "OpticFiberImplant",
-        "subject": "00000000-0000-0000-0000-000000000000",
-        "consumablestock": "00000000-0000-0000-0000-000000000000",
-        "equipment": ["00000000-0000-0000-0000-000000000000"],
+        "subject": "<subject-id>",
+        "consumablestock": "<consumablestock-id>",
+        "equipment": ["<id>"],
         "notes": "bilateral implant",
         "details": {"fiberTipShape": "flat", "fiberId": "OF-L-2024-07", "sterilizationMethod": "Autoclave"},
         "coordinates_system": "Stereotaxic_BregmaAbsolute",
@@ -160,13 +160,13 @@ resp = client.save(
 
 ```
 {'procedure': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'OpticFiberImplant',
     'notes': 'bilateral implant',
-    'subject': '00000000-0000-0000-0000-000000000000',
+    'subject': '<subject-id>',
     'date_time': None,
-    'consumablestock': '00000000-0000-0000-0000-000000000000',
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'consumablestock': '<consumablestock-id>',
+    'equipment': ['<id>'],
     'licenses': [],
     'details': {'fiberTipShape': 'flat', 'fiberId': 'OF-L-2024-07', 'sterilizationMethod': 'Autoclave'},
     'type_schema_version': '0.0.0',
@@ -199,7 +199,7 @@ resp = client.save(
 {: .no_toc}
 
 ```
-resp = client.load('procedure', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('procedure', id='<id>')
 ```
 
 ### Response example
@@ -207,13 +207,13 @@ resp = client.load('procedure', id='00000000-0000-0000-0000-000000000000')
 
 ```
 {'procedure': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'OpticFiberImplant',
     'notes': 'bilateral implant',
-    'subject': '00000000-0000-0000-0000-000000000000',
+    'subject': '<subject-id>',
     'date_time': None,
-    'consumablestock': '00000000-0000-0000-0000-000000000000',
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'consumablestock': '<consumablestock-id>',
+    'equipment': ['<id>'],
     'licenses': [],
     'details': {'fiberTipShape': 'flat', 'fiberId': 'OF-L-2024-07', 'sterilizationMethod': 'Autoclave'},
     'type_schema_version': '0.0.0',
@@ -248,7 +248,7 @@ resp = client.load('procedure', id='00000000-0000-0000-0000-000000000000')
 ```
 resp = client.save(
     "procedure",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={"notes": "implant tightened"}
 )
 ```
@@ -258,13 +258,13 @@ resp = client.save(
 
 ```
 {'procedure': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'OpticFiberImplant',
     'notes': 'implant tightened',
-    'subject': '00000000-0000-0000-0000-000000000000',
+    'subject': '<subject-id>',
     'date_time': None,
-    'consumablestock': '00000000-0000-0000-0000-000000000000',
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'consumablestock': '<consumablestock-id>',
+    'equipment': ['<id>'],
     'licenses': [],
     'details': {'fiberTipShape': 'flat', 'fiberId': 'OF-L-2024-07', 'sterilizationMethod': 'Autoclave'},
     'type_schema_version': '0.0.0',
@@ -297,5 +297,5 @@ resp = client.save(
 {: .no_toc}
 
 ```
-resp = client.delete("procedure", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("procedure", id="<id>")
 ```
