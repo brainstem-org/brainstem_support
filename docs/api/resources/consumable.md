@@ -47,7 +47,7 @@ A detailed list of the available `type` options and accepted schemas for the `de
 {: .no_toc}
 
 ```
-resp = client.load_model('consumable')
+resp = client.load('consumable')
 ```
 
 ### Response example
@@ -109,7 +109,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("consumable",  data={
+resp = client.save("consumable",  data={
         "name": "MyNewConsumable",
         "description": "",
         "supplier": "fba48e24-eebf-4b11-a8b9-ac660854d779",
@@ -159,7 +159,7 @@ resp = client.save_model("consumable",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('consumable', id='67f263cd-5960-406f-a879-c1f259140979')
+resp = client.load('consumable', id='67f263cd-5960-406f-a879-c1f259140979')
 ```
 
 ### Response example
@@ -200,7 +200,7 @@ resp = client.load_model('consumable', id='67f263cd-5960-406f-a879-c1f259140979'
 {: .no_toc}
 
 ```
-resp = client.save_model("consumable", id="67f263cd-5960-406f-a879-c1f259140979", data={"description": "new text"})
+resp = client.save("consumable", id="67f263cd-5960-406f-a879-c1f259140979", data={"description": "new text"})
 ```
 
 ### Response example
@@ -238,7 +238,7 @@ resp = client.save_model("consumable", id="67f263cd-5960-406f-a879-c1f259140979"
 {: .no_toc}
 
 ```
-resp = client.delete_model("consumable", id="67f263cd-5960-406f-a879-c1f259140979")
+resp = client.delete("consumable", id="67f263cd-5960-406f-a879-c1f259140979")
 ``` 
 
 
@@ -253,7 +253,7 @@ resp = client.delete_model("consumable", id="67f263cd-5960-406f-a879-c1f25914097
 {: .no_toc}
 
 ```
-resp = client.load_model('consumableapproval')
+resp = client.load('consumableapproval')
 ```
 
 ### Response example
@@ -296,7 +296,7 @@ Approval list responses also include a `meta` object (pagination/filter metadata
 {: .no_toc}
 
 ```
-resp = client.load_model('consumableapproval', id='b7595523-5578-45c0-b7ef-c1f1485ac041')
+resp = client.load('consumableapproval', id='b7595523-5578-45c0-b7ef-c1f1485ac041')
 ```
 
 ### Response example
@@ -336,7 +336,7 @@ resp = client.load_model('consumableapproval', id='b7595523-5578-45c0-b7ef-c1f14
 {: .no_toc}
 
 ```
-resp = client.save_model("consumableapproval", id="b7595523-5578-45c0-b7ef-c1f1485ac041", options="accept")
+resp = client.save("consumableapproval", id="b7595523-5578-45c0-b7ef-c1f1485ac041", options="accept")
 ```
 
 
@@ -351,5 +351,5 @@ resp = client.save_model("consumableapproval", id="b7595523-5578-45c0-b7ef-c1f14
 {: .no_toc}
 
 ```
-resp = client.save_model("consumableapproval", id="8cf7d857-a197-4e36-9e0c-1766bb6aa285", options="reject")
+resp = client.save("consumableapproval", id="8cf7d857-a197-4e36-9e0c-1766bb6aa285", options="reject")
 ```

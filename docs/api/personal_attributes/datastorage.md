@@ -39,7 +39,7 @@ nav_order: 2
 {: .no_toc}
 
 ```
-resp = client.load_model('datastorage')
+resp = client.load('datastorage')
 ```
 
 ### Response example
@@ -101,7 +101,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("datastorage",  data=
+resp = client.save("datastorage",  data=
     {
         'name': "MyNewRepo",
         'location': '/data/newrepo',
@@ -175,7 +175,7 @@ resp = client.save_model("datastorage",  data=
 {: .no_toc}
 
 ```
-resp = client.load_model('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2')
+resp = client.load('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2')
 ```
 
 ### Response example
@@ -224,7 +224,7 @@ resp = client.load_model('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2
 {: .no_toc}
 
 ```
-resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2", data={"description": "new text"})
+resp = client.save("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2", data={"description": "new text"})
 ```
 
 ### Response example
@@ -273,5 +273,5 @@ resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2
 {: .no_toc}
 
 ```
-resp = client.delete_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2")
+resp = client.delete("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2")
 ``` 

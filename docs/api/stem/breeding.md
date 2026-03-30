@@ -44,7 +44,7 @@ nav_order: 7
 {: .no_toc}
 
 ```
-resp = client.load_model('breeding')
+resp = client.load('breeding')
 ```
 
 ### Response example
@@ -79,7 +79,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("breeding", data={
+resp = client.save("breeding", data={
     "name": "NewBreeding",
     "project": "00000000-0000-0000-0000-000000000000",
     "mother": "00000000-0000-0000-0000-000000000000",
@@ -113,7 +113,7 @@ resp = client.save_model("breeding", data={
 {: .no_toc}
 
 ```
-resp = client.load_model('breeding', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('breeding', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -150,7 +150,7 @@ resp = client.load_model('breeding', id='00000000-0000-0000-0000-000000000000')
 {: .no_toc}
 
 ```
-resp = client.save_model("breeding", id="00000000-0000-0000-0000-000000000000", data={"name": "new name"})
+resp = client.save("breeding", id="00000000-0000-0000-0000-000000000000", data={"name": "new name"})
 ```
 
 ### Response example
@@ -179,5 +179,5 @@ resp = client.save_model("breeding", id="00000000-0000-0000-0000-000000000000", 
 {: .no_toc}
 
 ```
-resp = client.delete_model("breeding", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("breeding", id="00000000-0000-0000-0000-000000000000")
 ```

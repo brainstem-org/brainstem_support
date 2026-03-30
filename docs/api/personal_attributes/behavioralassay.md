@@ -39,7 +39,7 @@ nav_order: 1
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralassay')
+resp = client.load('behavioralassay')
 ```
 
 ### Response example
@@ -85,7 +85,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralassay",  data=
+resp = client.save("behavioralassay",  data=
     {
         'name': 'PlayMarioKart',
         'description': 'Play Mario Kart on GameCube',
@@ -124,7 +124,7 @@ resp = client.save_model("behavioralassay",  data=
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralassay', id='22ae80be-e030-4cee-9cd5-b94ac2edc7f8')
+resp = client.load('behavioralassay', id='22ae80be-e030-4cee-9cd5-b94ac2edc7f8')
 ```
 
 ### Response example
@@ -155,7 +155,7 @@ resp = client.load_model('behavioralassay', id='22ae80be-e030-4cee-9cd5-b94ac2ed
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8", data={"description": "new text"})
+resp = client.save("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8", data={"description": "new text"})
 ```
 
 ### Response example
@@ -186,5 +186,5 @@ resp = client.save_model("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2ed
 {: .no_toc}
 
 ```
-resp = client.delete_model("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8")
+resp = client.delete("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8")
 ``` 

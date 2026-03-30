@@ -40,7 +40,7 @@ Optional fields such as `comments` can be omitted from list/detail responses whe
 {: .no_toc}
 
 ```
-resp = client.load_model('supplier')
+resp = client.load('supplier')
 ```
 
 ### Response example
@@ -79,7 +79,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("supplier",  data={
+resp = client.save("supplier",  data={
     'name': 'MyNewSupplier',
     'description': '',
     'website': 'newsupplier.com'}
@@ -111,7 +111,7 @@ resp = client.save_model("supplier",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
+resp = client.load('supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
 ```
 
 ### Response example
@@ -140,7 +140,7 @@ resp = client.load_model('supplier', id='1338d838-5b69-4e89-8db9-b35224dcb01e')
 {: .no_toc}
 
 ```
-resp = client.save_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", data={"description": "new text"})
+resp = client.save("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", data={"description": "new text"})
 ```
 
 ### Response example
@@ -170,7 +170,7 @@ resp = client.save_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e", 
 {: .no_toc}
 
 ```
-resp = client.delete_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e")
+resp = client.delete("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e")
 ``` 
 
 
@@ -185,7 +185,7 @@ resp = client.delete_model("supplier", id="1338d838-5b69-4e89-8db9-b35224dcb01e"
 {: .no_toc}
 
 ```
-resp = client.load_model('supplierapproval')
+resp = client.load('supplierapproval')
 ```
 
 ### Response example
@@ -230,7 +230,7 @@ Approval list responses also include a `meta` object (pagination/filter metadata
 {: .no_toc}
 
 ```
-resp = client.load_model('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a89df6')
+resp = client.load('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a89df6')
 ```
 
 ### Response example
@@ -261,7 +261,7 @@ resp = client.load_model('supplierapproval', id='1af72008-d203-4bea-9766-f692b8a
 {: .no_toc}
 
 ```
-resp = client.save_model("supplierapproval", id="1af72008-d203-4bea-9766-f692b8a89df6", options="accept")
+resp = client.save("supplierapproval", id="1af72008-d203-4bea-9766-f692b8a89df6", options="accept")
 ```
 
 
@@ -276,5 +276,5 @@ resp = client.save_model("supplierapproval", id="1af72008-d203-4bea-9766-f692b8a
 {: .no_toc}
 
 ```
-resp = client.save_model("supplierapproval", id="f314f4b0-a51d-45f8-8cda-d9dade2bff66", options="reject")
+resp = client.save("supplierapproval", id="f314f4b0-a51d-45f8-8cda-d9dade2bff66", options="reject")
 ```

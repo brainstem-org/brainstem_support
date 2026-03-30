@@ -43,7 +43,7 @@ Optional fields such as `comments` can be omitted from list/detail responses whe
 {: .no_toc}
 
 ```
-resp = client.load_model('strain')
+resp = client.load('strain')
 ```
 
 ### Response example
@@ -88,7 +88,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("strain", data={
+resp = client.save("strain", data={
         "name": "MyNewStrain",
         "description": "",
         "species": "93dd9502-305a-4e7b-b66b-42cf8c79368f",
@@ -121,7 +121,7 @@ resp = client.save_model("strain", data={
 {: .no_toc}
 
 ```
-resp = client.load_model('strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
+resp = client.load('strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
 ```
 
 ### Response example
@@ -153,7 +153,7 @@ resp = client.load_model('strain', id='7963dc0b-e4e7-459c-9a05-cf5a54200e02')
 {: .no_toc}
 
 ```
-resp = client.save_model("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", data={"description": "new text"})
+resp = client.save("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", data={"description": "new text"})
 ```
 
 ### Response example
@@ -184,7 +184,7 @@ resp = client.save_model("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02", da
 {: .no_toc}
 
 ```
-resp = client.delete_model("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02")
+resp = client.delete("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02")
 ``` 
 
 
@@ -199,7 +199,7 @@ resp = client.delete_model("strain", id="7963dc0b-e4e7-459c-9a05-cf5a54200e02")
 {: .no_toc}
 
 ```
-resp = client.load_model('strainapproval')
+resp = client.load('strainapproval')
 ```
 
 ### Response example
@@ -246,7 +246,7 @@ resp = client.load_model('strainapproval')
 {: .no_toc}
 
 ```
-resp = client.load_model('strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832d88')
+resp = client.load('strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832d88')
 ```
 
 ### Response example
@@ -279,7 +279,7 @@ resp = client.load_model('strainapproval', id='b460dfbc-79bb-499e-87ed-57df02832
 {: .no_toc}
 
 ```
-resp = client.save_model("strainapproval", id="b460dfbc-79bb-499e-87ed-57df02832d88", options="accept")
+resp = client.save("strainapproval", id="b460dfbc-79bb-499e-87ed-57df02832d88", options="accept")
 ```
 
 
@@ -294,5 +294,5 @@ resp = client.save_model("strainapproval", id="b460dfbc-79bb-499e-87ed-57df02832
 {: .no_toc}
 
 ```
-resp = client.save_model("strainapproval", id="6403fdaf-7896-4ef7-9b30-ee12d69aa408", options="reject")
+resp = client.save("strainapproval", id="6403fdaf-7896-4ef7-9b30-ee12d69aa408", options="reject")
 ```

@@ -39,7 +39,7 @@ nav_order: 6
 {: .no_toc}
 
 ```
-resp = client.load_model('projectmembershipinvitation')
+resp = client.load('projectmembershipinvitation')
 ```
 
 ### Response example
@@ -79,7 +79,7 @@ resp = client.load_model('projectmembershipinvitation')
 {: .no_toc}
 
 ```
-resp = client.load_model('projectmembershipinvitation', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('projectmembershipinvitation', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -108,7 +108,7 @@ resp = client.load_model('projectmembershipinvitation', id='00000000-0000-0000-0
 {: .no_toc}
 
 ```
-resp = client.load_model("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="accept")
+resp = client.load("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="accept")
 ```
 
 
@@ -124,7 +124,7 @@ resp = client.load_model("projectmembershipinvitation", id="00000000-0000-0000-0
 {: .no_toc}
 
 ```
-resp = client.load_model("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="reject")
+resp = client.load("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="reject")
 ```
 
 
@@ -139,5 +139,5 @@ resp = client.load_model("projectmembershipinvitation", id="00000000-0000-0000-0
 {: .no_toc}
 
 ```
-resp = client.load_model("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="cancel")
+resp = client.load("projectmembershipinvitation", id="00000000-0000-0000-0000-000000000000", options="cancel")
 ```

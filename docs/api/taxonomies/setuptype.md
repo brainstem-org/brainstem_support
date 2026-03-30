@@ -49,7 +49,7 @@ These are the available `category` options for Setup Type:
 {: .no_toc}
 
 ```
-resp = client.load_model('setuptype')
+resp = client.load('setuptype')
 ```
 
 ### Response example
@@ -94,7 +94,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("setuptype",  data={
+resp = client.save("setuptype",  data={
         "name": "MyNewSetupType",
         "description": "",
         "category": "F",
@@ -126,7 +126,7 @@ resp = client.save_model("setuptype",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('setuptype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
+resp = client.load('setuptype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
 ```
 
 ### Response example
@@ -155,7 +155,7 @@ resp = client.load_model('setuptype', id='a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6')
 {: .no_toc}
 
 ```
-resp = client.save_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6", data={"description": "new text"})
+resp = client.save("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6", data={"description": "new text"})
 ```
 
 ### Response example
@@ -184,7 +184,7 @@ resp = client.save_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6",
 {: .no_toc}
 
 ```
-resp = client.delete_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6")
+resp = client.delete("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6")
 ``` 
 
 
@@ -199,7 +199,7 @@ resp = client.delete_model("setuptype", id="a2510c9e-3ef2-40eb-b4b4-70b8a3fbd3c6
 {: .no_toc}
 
 ```
-resp = client.load_model('setuptypeapproval')
+resp = client.load('setuptypeapproval')
 ```
 
 ### Response example
@@ -242,7 +242,7 @@ resp = client.load_model('setuptypeapproval')
 {: .no_toc}
 
 ```
-resp = client.load_model('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e598b445e')
+resp = client.load('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e598b445e')
 ```
 
 ### Response example
@@ -273,7 +273,7 @@ resp = client.load_model('setuptypeapproval', id='725ef635-09b7-4817-98f7-d58e59
 {: .no_toc}
 
 ```
-resp = client.save_model("setuptypeapproval", id="725ef635-09b7-4817-98f7-d58e598b445e", options="accept")
+resp = client.save("setuptypeapproval", id="725ef635-09b7-4817-98f7-d58e598b445e", options="accept")
 ```
 
 
@@ -288,5 +288,5 @@ resp = client.save_model("setuptypeapproval", id="725ef635-09b7-4817-98f7-d58e59
 {: .no_toc}
 
 ```
-resp = client.save_model("setuptypeapproval", id="511f5736-5c34-46c5-b4d2-d7bb0727b5fe", options="reject")
+resp = client.save("setuptypeapproval", id="511f5736-5c34-46c5-b4d2-d7bb0727b5fe", options="reject")
 ```

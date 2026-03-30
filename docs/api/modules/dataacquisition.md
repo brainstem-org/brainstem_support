@@ -53,7 +53,7 @@ A detailed list of the available `type` options and accepted schemas for the `de
 {: .no_toc}
 
 ```
-resp = client.load_model('dataacquisition')
+resp = client.load('dataacquisition')
 ```
 
 ### Response example
@@ -121,7 +121,7 @@ resp = client.load_model('dataacquisition')
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "dataacquisition",
     data={
         "type": "ExtracellularEphys",
@@ -193,7 +193,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('dataacquisition', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('dataacquisition', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -242,7 +242,7 @@ resp = client.load_model('dataacquisition', id='00000000-0000-0000-0000-00000000
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "dataacquisition",
     id="00000000-0000-0000-0000-000000000000",
     data={"notes": "re-run with higher gain", "equipment": ["00000000-0000-0000-0000-000000000000"]}
@@ -297,5 +297,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("dataacquisition", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("dataacquisition", id="00000000-0000-0000-0000-000000000000")
 ``` 

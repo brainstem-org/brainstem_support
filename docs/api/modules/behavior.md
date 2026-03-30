@@ -39,7 +39,7 @@ nav_order: 1
 {: .no_toc}
 
 ```
-resp = client.load_model('behavior')
+resp = client.load('behavior')
 ```
 
 ### Response example
@@ -83,7 +83,7 @@ resp = client.load_model('behavior')
 {: .no_toc}
 
 ```
-resp = client.save_model("behavior",  data={
+resp = client.save("behavior",  data={
 	"session": "00000000-0000-0000-0000-000000000000", 
 	"subjects": ["00000000-0000-0000-0000-000000000000"],
 	"setup": "00000000-0000-0000-0000-000000000000",
@@ -121,7 +121,7 @@ resp = client.save_model("behavior",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('behavior', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('behavior', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -153,7 +153,7 @@ resp = client.load_model('behavior', id='00000000-0000-0000-0000-000000000000')
 {: .no_toc}
 
 ```
-resp = client.save_model("behavior", id="00000000-0000-0000-0000-000000000000", data={'subjects': ['00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000000']})
+resp = client.save("behavior", id="00000000-0000-0000-0000-000000000000", data={'subjects': ['00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000000']})
 ```
 
 ### Response example
@@ -185,5 +185,5 @@ resp = client.save_model("behavior", id="00000000-0000-0000-0000-000000000000", 
 {: .no_toc}
 
 ```
-resp = client.delete_model("behavior", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("behavior", id="00000000-0000-0000-0000-000000000000")
 ```

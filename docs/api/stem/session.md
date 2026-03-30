@@ -76,7 +76,7 @@ Use the Session → Data Storage endpoint (`/api/private/stem/sessiondatastorage
 {: .no_toc}
 
 ```python
-resp = client.load_model("session")
+resp = client.load("session")
 ```
 
 ### Example response (list)
@@ -133,7 +133,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```python
-resp = client.save_model(
+resp = client.save(
     "session",
     data={
         "name": "NewSession",
@@ -178,7 +178,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```python
-resp = client.load_model("session", id="00000000-0000-0000-0000-000000000000")
+resp = client.load("session", id="00000000-0000-0000-0000-000000000000")
 ```
 
 ### Example response (detail)
@@ -222,7 +222,7 @@ resp = client.load_model("session", id="00000000-0000-0000-0000-000000000000")
 {: .no_toc}
 
 ```python
-resp = client.save_model(
+resp = client.save(
     "session",
     id="00000000-0000-0000-0000-000000000000",
     data={"description": "new text"},
@@ -264,5 +264,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```python
-resp = client.delete_model("session", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("session", id="00000000-0000-0000-0000-000000000000")
 ```

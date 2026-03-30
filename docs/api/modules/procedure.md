@@ -54,7 +54,7 @@ A detailed list of the available `type` options and accepted schemas for the `de
 {: .no_toc}
 
 ```
-resp = client.load_model('procedure')
+resp = client.load('procedure')
 ```
 
 ### Response example
@@ -133,7 +133,7 @@ resp = client.load_model('procedure')
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "procedure",
     data={
         "type": "OpticFiberImplant",
@@ -199,7 +199,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('procedure', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('procedure', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -246,7 +246,7 @@ resp = client.load_model('procedure', id='00000000-0000-0000-0000-000000000000')
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "procedure",
     id="00000000-0000-0000-0000-000000000000",
     data={"notes": "implant tightened"}
@@ -297,5 +297,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("procedure", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("procedure", id="00000000-0000-0000-0000-000000000000")
 ```

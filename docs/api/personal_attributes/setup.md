@@ -41,7 +41,7 @@ nav_order: 4
 {: .no_toc}
 
 ```
-resp = client.load_model('setup')
+resp = client.load('setup')
 ```
 
 ### Response example
@@ -92,7 +92,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("setup",  data=
+resp = client.save("setup",  data=
     {
         'name': 'MyNewEnv',
         'location': 'Lab Room 103',
@@ -139,7 +139,7 @@ resp = client.save_model("setup",  data=
 {: .no_toc}
 
 ```
-resp = client.load_model('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
+resp = client.load('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 ```
 
 ### Response example
@@ -174,7 +174,7 @@ resp = client.load_model('setup', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 {: .no_toc}
 
 ```
-resp = client.save_model("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"description": "new text"})
+resp = client.save("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"description": "new text"})
 ```
 
 ### Response example
@@ -209,5 +209,5 @@ resp = client.save_model("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b", dat
 {: .no_toc}
 
 ```
-resp = client.delete_model("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b")
+resp = client.delete("setup", id="d0ada97d-8607-48da-817b-bdd54bc9077b")
 ``` 

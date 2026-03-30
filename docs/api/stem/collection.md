@@ -37,7 +37,7 @@ nav_order: 4
 {: .no_toc}
 
 ```
-resp = client.load_model('collection')
+resp = client.load('collection')
 ```
 
 ### Response example
@@ -81,7 +81,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("collection", data={"name": "NewRestCollection", "project": "00000000-0000-0000-0000-000000000000", "sessions": ["00000000-0000-0000-0000-000000000000"]})
+resp = client.save("collection", data={"name": "NewRestCollection", "project": "00000000-0000-0000-0000-000000000000", "sessions": ["00000000-0000-0000-0000-000000000000"]})
 ```
 
 ### Response example
@@ -110,7 +110,7 @@ resp = client.save_model("collection", data={"name": "NewRestCollection", "proje
 {: .no_toc}
 
 ```
-resp = client.load_model('collection', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('collection', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -139,7 +139,7 @@ resp = client.load_model('collection', id='00000000-0000-0000-0000-000000000000'
 {: .no_toc}
 
 ```
-resp = client.save_model("collection", id="00000000-0000-0000-0000-000000000000", data={"name": "new name"})
+resp = client.save("collection", id="00000000-0000-0000-0000-000000000000", data={"name": "new name"})
 ```
 
 ### Response example
@@ -168,5 +168,5 @@ resp = client.save_model("collection", id="00000000-0000-0000-0000-000000000000"
 {: .no_toc}
 
 ```
-resp = client.delete_model("collection", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("collection", id="00000000-0000-0000-0000-000000000000")
 ```

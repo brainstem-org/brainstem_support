@@ -63,7 +63,7 @@ nav_order: 2
 {: .no_toc}
 
 ```
-resp = client.load_model('subject')
+resp = client.load('subject')
 ```
 
 ### Response example
@@ -150,7 +150,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "subject",
     data={
         "name": "NewSubject",
@@ -209,7 +209,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('subject', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('subject', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -260,7 +260,7 @@ resp = client.load_model('subject', id='00000000-0000-0000-0000-000000000000')
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "subject",
     id="00000000-0000-0000-0000-000000000000",
     data={"description": "new text"}
@@ -312,5 +312,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("subject", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("subject", id="00000000-0000-0000-0000-000000000000")
 ```

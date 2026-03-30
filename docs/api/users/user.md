@@ -47,7 +47,7 @@ Each dictionary in the `groups_own_json` list contains the group's `id` and `nam
 
 
 ```
-resp = client.load_model('user')
+resp = client.load('user')
 ```
 
 ### Response example
@@ -105,7 +105,7 @@ Users can only be added through the website Register form.
 
 
 ```
-resp = client.load_model('user', id='16')
+resp = client.load('user', id='16')
 ```
 
 ### Response example
@@ -142,7 +142,7 @@ resp = client.load_model('user', id='16')
 
 
 ```
-resp = client.save_model("user", id="16", data={"website": "www.someweb.com"})
+resp = client.save("user", id="16", data={"website": "www.someweb.com"})
 ```
 
 ### Response example
@@ -178,5 +178,5 @@ resp = client.save_model("user", id="16", data={"website": "www.someweb.com"})
 {: .no_toc}
 
 ```
-resp = client.delete_model("user", id="16")
+resp = client.delete("user", id="16")
 ``` 

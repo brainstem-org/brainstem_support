@@ -41,7 +41,7 @@ nav_order: 4
 {: .no_toc}
 
 ```
-resp = client.load_model('publication')
+resp = client.load('publication')
 ```
 
 ### Response example
@@ -90,7 +90,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("publication",  data=
+resp = client.save("publication",  data=
     {
         "title": "MyNewPaper",
         "authors": "Me et al.",
@@ -132,7 +132,7 @@ resp = client.save_model("publication",  data=
 {: .no_toc}
 
 ```
-resp = client.load_model('publication', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
+resp = client.load('publication', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 ```
 
 ### Response example
@@ -165,7 +165,7 @@ resp = client.load_model('publication', id='da3359b7-e380-4dc6-ba9d-04831d3082d9
 {: .no_toc}
 
 ```
-resp = client.save_model("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560", data={"abstract": "new text"})
+resp = client.save("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560", data={"abstract": "new text"})
 ```
 
 ### Response example
@@ -197,5 +197,5 @@ resp = client.save_model("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560
 {: .no_toc}
 
 ```
-resp = client.delete_model("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560")
+resp = client.delete("publication", id="e308cb04-428b-4b2c-b86b-15e02c664560")
 ```

@@ -43,7 +43,7 @@ Optional fields such as `abbreviation` and `comments` can be omitted from list/d
 {: .no_toc}
 
 ```
-resp = client.load_model('regulatoryauthority')
+resp = client.load('regulatoryauthority')
 ```
 
 ### Response example
@@ -90,7 +90,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("regulatoryauthority", data={
+resp = client.save("regulatoryauthority", data={
     "name": "Animal Ethics Committee",
     "abbreviation": "AEC",
     "country": "AU",
@@ -131,7 +131,7 @@ resp = client.save_model("regulatoryauthority", data={
 {: .no_toc}
 
 ```
-resp = client.load_model('regulatoryauthority', id='a1b2c3d4-e5f6-7890-abcd-ef1234567890')
+resp = client.load('regulatoryauthority', id='a1b2c3d4-e5f6-7890-abcd-ef1234567890')
 ```
 
 ### Response example
@@ -164,7 +164,7 @@ resp = client.load_model('regulatoryauthority', id='a1b2c3d4-e5f6-7890-abcd-ef12
 {: .no_toc}
 
 ```
-resp = client.save_model("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef1234567890", data={"description": "Updated description."})
+resp = client.save("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef1234567890", data={"description": "Updated description."})
 ```
 
 ### Response example
@@ -201,7 +201,7 @@ resp = client.save_model("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef12
 {: .no_toc}
 
 ```
-resp = client.delete_model("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef1234567890")
+resp = client.delete("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef1234567890")
 ```
 
 
@@ -216,7 +216,7 @@ resp = client.delete_model("regulatoryauthority", id="a1b2c3d4-e5f6-7890-abcd-ef
 {: .no_toc}
 
 ```
-resp = client.load_model('regulatoryauthorityapproval')
+resp = client.load('regulatoryauthorityapproval')
 ```
 
 ### Response example
@@ -253,7 +253,7 @@ resp = client.load_model('regulatoryauthorityapproval')
 {: .no_toc}
 
 ```
-resp = client.load_model('regulatoryauthorityapproval', id='c3d4e5f6-a7b8-9012-cdef-123456789012')
+resp = client.load('regulatoryauthorityapproval', id='c3d4e5f6-a7b8-9012-cdef-123456789012')
 ```
 
 ### Response example
@@ -288,7 +288,7 @@ resp = client.load_model('regulatoryauthorityapproval', id='c3d4e5f6-a7b8-9012-c
 {: .no_toc}
 
 ```
-resp = client.save_model("regulatoryauthorityapproval", id="c3d4e5f6-a7b8-9012-cdef-123456789012", options="accept")
+resp = client.save("regulatoryauthorityapproval", id="c3d4e5f6-a7b8-9012-cdef-123456789012", options="accept")
 ```
 
 
@@ -303,5 +303,5 @@ resp = client.save_model("regulatoryauthorityapproval", id="c3d4e5f6-a7b8-9012-c
 {: .no_toc}
 
 ```
-resp = client.save_model("regulatoryauthorityapproval", id="c3d4e5f6-a7b8-9012-cdef-123456789012", options="reject")
+resp = client.save("regulatoryauthorityapproval", id="c3d4e5f6-a7b8-9012-cdef-123456789012", options="reject")
 ```

@@ -165,14 +165,14 @@ When you associate a data storage with a session, BrainSTEM can automatically co
 Use the Python or MATLAB API to programmatically access your data paths:
 
 ```python
-from brainstem_api_client import BrainstemClient
+from brainstem_api_tools import BrainstemClient
 
 client = BrainstemClient()
 
 # Load session with data storage information
-session_response = client.load_model('session', 
-                                   id='your-session-id', 
-                                   include=['datastorage'])
+session_response = client.load('session', 
+                               id='your-session-id', 
+                               include=['datastorage'])
 
 session_data = session_response.json()['sessions'][0]
 storage_info = session_data['datastorage']
@@ -282,7 +282,7 @@ print(f"Data location: {full_path}")
 
 ```python
 import os
-from brainstem_api_client import BrainstemClient
+from brainstem_api_tools import BrainstemClient
 
 def load_session_data(session_id):
     """
@@ -291,9 +291,9 @@ def load_session_data(session_id):
     client = BrainstemClient()
     
     # Get session with data storage info
-    response = client.load_model('session', 
-                               id=session_id, 
-                               include=['datastorage', 'dataacquisition'])
+    response = client.load('session', 
+                           id=session_id, 
+                           include=['datastorage', 'dataacquisition'])
     
     session = response.json()['sessions'][0]
     
@@ -319,11 +319,12 @@ def load_session_data(session_id):
 ```matlab
 function data_info = load_session_data(session_id)
     % Load session metadata and construct data paths
+    client = BrainstemClient();
     
     % Get session with data storage info
-    session_data = load_model('model', 'session', ...
-                             'id', session_id, ...
-                             'include', {'datastorage', 'dataacquisition'});
+    session_data = client.load('session', ...
+                               'id', session_id, ...
+                               'include', {'datastorage', 'dataacquisition'});
     
     % Extract data storage information
     storage = session_data.datastorage;

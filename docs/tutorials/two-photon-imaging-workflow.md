@@ -575,23 +575,23 @@ Group related imaging sessions for comprehensive analysis.
 Access your imaging data programmatically for analysis.
 
 ```python
-from brainstem_api_client import BrainstemClient
+from brainstem_api_tools import BrainstemClient
 import numpy as np
 import matplotlib.pyplot as plt
 
 client = BrainstemClient()
 
-# Get all imaging sessions for a subject
-imaging_sessions = client.load_model('session', 
-                                   filters={'projects__name': 'Visual Cortex Population Dynamics Study'}).json()
+# Get all imaging sessions for a project
+imaging_sessions = client.load('session', 
+                               filters={'projects.name.icontains': 'Visual Cortex Population Dynamics Study'}).json()
 
 # Get two-photon data acquisition details
-imaging_data = client.load_model('dataacquisition',
-                               filters={'session__projects__name': 'Visual Cortex Population Dynamics Study',
-                                      'type': 'Two-Photon Microscopy'}).json()
+imaging_data = client.load('dataacquisition',
+                           filters={'session.projects.name.icontains': 'Visual Cortex Population Dynamics Study',
+                                    'type': 'Two-Photon Microscopy'}).json()
 
-# Download specific imaging session data
-session_data = client.download_session_data('vc_m001_day1_gratings_id')
+# Load a specific imaging session by name
+session_data = client.load('session', filters={'name': 'vc_m001_day1_gratings'}).json()
 ```
 
 ## Next Steps

@@ -41,7 +41,7 @@ nav_order: 4
 {: .no_toc}
 
 ```
-resp = client.load_model('laboratory')
+resp = client.load('laboratory')
 ```
 
 ### Response example
@@ -89,7 +89,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("laboratory",  data={
+resp = client.save("laboratory",  data={
     'group': 41,
     'principal_investigators': [3],
     'institution': 'A university'}
@@ -126,7 +126,7 @@ resp = client.save_model("laboratory",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff')
+resp = client.load('laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff')
 ```
 
 ### Response example
@@ -159,7 +159,7 @@ resp = client.load_model('laboratory', id='5d882f8b-5c74-428e-9ed9-41c8780527ff'
 {: .no_toc}
 
 ```
-resp = client.save_model("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff", data={"description": "new text"})
+resp = client.save("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff", data={"description": "new text"})
 ```
 
 ### Response example
@@ -192,5 +192,5 @@ resp = client.save_model("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff"
 {: .no_toc}
 
 ```
-resp = client.delete_model("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff")
+resp = client.delete("laboratory", id="5d882f8b-5c74-428e-9ed9-41c8780527ff")
 ``` 

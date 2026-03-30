@@ -39,7 +39,7 @@ Each entry in the `users` dictionary has the user `email` as key and the followi
 {: .no_toc}
 
 ```
-resp = client.load_model('group')
+resp = client.load('group')
 ```
 
 ### Response example
@@ -84,7 +84,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("group",  data={
+resp = client.save("group",  data={
     "name": "NewGroup", 
 })
 ```
@@ -115,7 +115,7 @@ resp = client.save_model("group",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('group', id='48')
+resp = client.load('group', id='48')
 ```
 
 ### Response example
@@ -145,13 +145,13 @@ resp = client.load_model('group', id='48')
 {: .no_toc}
 
 ```
-resp = client.save_model("group", id="48", data={"name": "NewGroupName"})
+resp = client.save("group", id="48", data={"name": "NewGroupName"})
 ```
 
 To add new users to the group, or modify the permissions of the existing ones, provide their corresponding dictionaries. Missing permissions will default to *False*.
 
 ```
-resp = client.save_model("group", id="48", data={
+resp = client.save("group", id="48", data={
     "users": {'user4@mail.com': {'is_manager': False, 'is_owner': False}}
     }
 )
@@ -160,7 +160,7 @@ resp = client.save_model("group", id="48", data={
 To remove users, provide the key-value pair `"remove": True` in the corresponding dictionary.
 
 ```
-resp = client.save_model("group", id="48", data={
+resp = client.save("group", id="48", data={
     "users": {'user4@mail.com': {'remove': True}}
     }
 )
@@ -195,7 +195,7 @@ resp = client.save_model("group", id="48", data={
 {: .no_toc}
 
 ```
-resp = client.delete_model("group", id="3654964e-1bf7-40c7-a376-9dcec4c125cd")
+resp = client.delete("group", id="3654964e-1bf7-40c7-a376-9dcec4c125cd")
 ``` 
 
 
@@ -211,7 +211,7 @@ resp = client.delete_model("group", id="3654964e-1bf7-40c7-a376-9dcec4c125cd")
 {: .no_toc}
 
 ```
-resp = client.load_model("group", id="9", options="join")
+resp = client.load("group", id="9", options="join")
 ```
 
 **Note:** a request to join the group is created.
@@ -229,5 +229,5 @@ resp = client.load_model("group", id="9", options="join")
 {: .no_toc}
 
 ```
-resp = client.load_model("group", id="9", options="leave")
+resp = client.load("group", id="9", options="leave")
 ```

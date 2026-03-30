@@ -43,7 +43,7 @@ Optional fields such as `comments` can be omitted from list/detail responses whe
 {: .no_toc}
 
 ```
-resp = client.load_model('hardwaredevice')
+resp = client.load('hardwaredevice')
 ```
 
 ### Response example
@@ -106,7 +106,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("hardwaredevice",  data={
+resp = client.save("hardwaredevice",  data={
     'name': 'MyNewHardwareDevice',
     'description': '',
     'supplier': 'b8146db2-f50e-40c0-9558-1df3586a3b08'}
@@ -138,7 +138,7 @@ resp = client.save_model("hardwaredevice",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e817')
+resp = client.load('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e817')
 ```
 
 ### Response example
@@ -170,7 +170,7 @@ resp = client.load_model('hardwaredevice', id='0e6c723c-e5f8-4979-b7f9-e77a3ae4e
 {: .no_toc}
 
 ```
-resp = client.save_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817", data={"description": "new text"})
+resp = client.save("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817", data={"description": "new text"})
 ```
 
 ### Response example
@@ -202,7 +202,7 @@ resp = client.save_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e
 {: .no_toc}
 
 ```
-resp = client.delete_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817")
+resp = client.delete("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae4e817")
 ``` 
 
 
@@ -219,7 +219,7 @@ resp = client.delete_model("hardwaredevice", id="0e6c723c-e5f8-4979-b7f9-e77a3ae
 {: .no_toc}
 
 ```
-resp = client.load_model('hardwaredeviceapproval')
+resp = client.load('hardwaredeviceapproval')
 ```
 
 ### Response example
@@ -266,7 +266,7 @@ Approval list responses also include a `meta` object (pagination/filter metadata
 {: .no_toc}
 
 ```
-resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0198222ee7dd')
+resp = client.load('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0198222ee7dd')
 ```
 
 ### Response example
@@ -297,7 +297,7 @@ resp = client.load_model('hardwaredeviceapproval', id='23105f29-f31d-47c8-9cc5-0
 {: .no_toc}
 
 ```
-resp = client.save_model("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0198222ee7dd", options="accept")
+resp = client.save("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0198222ee7dd", options="accept")
 ```
 
 
@@ -312,5 +312,5 @@ resp = client.save_model("hardwaredeviceapproval", id="23105f29-f31d-47c8-9cc5-0
 {: .no_toc}
 
 ```
-resp = client.save_model("hardwaredeviceapproval", id="fd7f6132-0527-4310-a9da-9241728a9163", options="reject")
+resp = client.save("hardwaredeviceapproval", id="fd7f6132-0527-4310-a9da-9241728a9163", options="reject")
 ```

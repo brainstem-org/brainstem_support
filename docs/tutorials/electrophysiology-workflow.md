@@ -437,25 +437,25 @@ Group related sessions for analysis and organization.
 Access your experimental data programmatically for analysis.
 
 ```python
-from brainstem_api_client import BrainstemClient
+from brainstem_api_tools import BrainstemClient
 
 client = BrainstemClient()
 
 # Get all sessions for a subject
-subject_sessions = client.load_model('session', 
-                                   filters={'subject__name': 'TM_R001'}).json()
+subject_sessions = client.load('session', 
+                               filters={'subject.name': 'TM_R001'}).json()
 
 # Get behavioral performance data
-behavior_data = client.load_model('behavioralassay',
-                                filters={'session__subject__name': 'TM_R001'}).json()
+behavior_data = client.load('behavior',
+                            filters={'session.subject.name': 'TM_R001'}).json()
 
 # Get neural data file paths
-neural_files = client.load_model('dataacquisition',
-                               filters={'session__subject__name': 'TM_R001',
-                                      'type': 'Extracellular'}).json()
+neural_files = client.load('dataacquisition',
+                           filters={'session.subject.name': 'TM_R001',
+                                    'type': 'Extracellular'}).json()
 
-# Download specific session data
-session_data = client.load_model('session', filters={'name': 'tm_r001_day1_behavior_id'})
+# Load a specific session by name
+session_data = client.load('session', filters={'name': 'tm_r001_day1_behavior_id'}).json()
 ```
 
 ## Next Steps

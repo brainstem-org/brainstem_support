@@ -50,7 +50,7 @@ A detailed list of the available `type` options and accepted schemas for the `de
 {: .no_toc}
 
 ```
-resp = client.load_model('consumablestock')
+resp = client.load('consumablestock')
 ```
 
 ### Response example
@@ -111,7 +111,7 @@ resp = client.load_model('consumablestock')
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "consumablestock",
     data={
         "type": "OpticFiber",
@@ -159,7 +159,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('consumablestock', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('consumablestock', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -197,7 +197,7 @@ resp = client.load_model('consumablestock', id='00000000-0000-0000-0000-00000000
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "consumablestock",
     id="00000000-0000-0000-0000-000000000000",
     data={"notes": "Updated notes"}
@@ -237,5 +237,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("consumablestock", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("consumablestock", id="00000000-0000-0000-0000-000000000000")
 ```

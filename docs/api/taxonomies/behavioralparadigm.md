@@ -45,7 +45,7 @@ Optional fields such as `comments` can be omitted from list/detail responses whe
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralparadigm')
+resp = client.load('behavioralparadigm')
 ```
 
 ### Response example
@@ -94,7 +94,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralparadigm", data={
+resp = client.save("behavioralparadigm", data={
         "name": "Rotarod",
         "description": "Assessment of balance, coordination, and motor learning on a rotating rod",
         "category": "c3d4e5f6-7890-12cd-ef01-3456789012cd",
@@ -131,7 +131,7 @@ resp = client.save_model("behavioralparadigm", data={
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralparadigm', id='e5f6a7b8-9012-34ef-0123-5678901234ef')
+resp = client.load('behavioralparadigm', id='e5f6a7b8-9012-34ef-0123-5678901234ef')
 ```
 
 ### Response example
@@ -165,7 +165,7 @@ resp = client.load_model('behavioralparadigm', id='e5f6a7b8-9012-34ef-0123-56789
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-5678901234ef", data={"description": "updated description"})
+resp = client.save("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-5678901234ef", data={"description": "updated description"})
 ```
 
 ### Response example
@@ -199,7 +199,7 @@ resp = client.save_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-56789
 {: .no_toc}
 
 ```
-resp = client.delete_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-5678901234ef")
+resp = client.delete("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-5678901234ef")
 ``` 
 
 
@@ -214,7 +214,7 @@ resp = client.delete_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-567
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralparadigmapproval')
+resp = client.load('behavioralparadigmapproval')
 ```
 
 ### Response example
@@ -252,7 +252,7 @@ resp = client.load_model('behavioralparadigmapproval')
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralparadigmapproval', id='a7b8c9d0-1234-56a1-2345-7890123456a1')
+resp = client.load('behavioralparadigmapproval', id='a7b8c9d0-1234-56a1-2345-7890123456a1')
 ```
 
 ### Response example
@@ -288,7 +288,7 @@ resp = client.load_model('behavioralparadigmapproval', id='a7b8c9d0-1234-56a1-23
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralparadigmapproval", id="a7b8c9d0-1234-56a1-2345-7890123456a1", options="accept")
+resp = client.save("behavioralparadigmapproval", id="a7b8c9d0-1234-56a1-2345-7890123456a1", options="accept")
 ```
 
 
@@ -303,5 +303,5 @@ resp = client.save_model("behavioralparadigmapproval", id="a7b8c9d0-1234-56a1-23
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralparadigmapproval", id="b8c9d0e1-2345-67b2-3456-8901234567b2", options="reject")
+resp = client.save("behavioralparadigmapproval", id="b8c9d0e1-2345-67b2-3456-8901234567b2", options="reject")
 ```

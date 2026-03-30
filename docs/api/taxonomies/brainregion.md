@@ -51,7 +51,7 @@ These are the available `atlas` options for Brain Region:
 {: .no_toc}
 
 ```
-resp = client.load_model('brainregion')
+resp = client.load('brainregion')
 ```
 
 ### Response example
@@ -99,7 +99,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("brainregion",  data={
+resp = client.save("brainregion",  data={
         "name": "MyNewBrainRegion",
         "description": "",
         "acronym": "MNBR",
@@ -134,7 +134,7 @@ resp = client.save_model("brainregion",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee31a9')
+resp = client.load('brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee31a9')
 ```
 
 ### Response example
@@ -164,7 +164,7 @@ resp = client.load_model('brainregion', id='2cdd3db4-1dc4-4568-9ee3-de2356ee31a9
 {: .no_toc}
 
 ```
-resp = client.save_model("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9", data={"description": "new text"})
+resp = client.save("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9", data={"description": "new text"})
 ```
 
 ### Response example
@@ -194,5 +194,5 @@ resp = client.save_model("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9
 {: .no_toc}
 
 ```
-resp = client.delete_model("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9")
+resp = client.delete("brainregion", id="2cdd3db4-1dc4-4568-9ee3-de2356ee31a9")
 ``` 

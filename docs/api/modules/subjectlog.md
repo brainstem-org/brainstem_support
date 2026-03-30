@@ -67,7 +67,7 @@ A detailed list of the accepted schemas for the `details` field, related to each
 {: .no_toc}
 
 ```
-resp = client.load_model('subjectlog')
+resp = client.load('subjectlog')
 ```
 
 ### Response example
@@ -122,7 +122,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "subjectlog",
     data={
         "type": "WaterConsumption",
@@ -159,7 +159,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('subjectlog', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('subjectlog', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -189,7 +189,7 @@ resp = client.load_model('subjectlog', id='00000000-0000-0000-0000-000000000000'
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "subjectlog",
     id="00000000-0000-0000-0000-000000000000",
     data={"description": "Post-deprivation monitoring"}
@@ -223,7 +223,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("subjectlog", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("subjectlog", id="00000000-0000-0000-0000-000000000000")
 ```
 
 
@@ -239,7 +239,7 @@ resp = client.delete_model("subjectlog", id="00000000-0000-0000-0000-00000000000
 {: .no_toc}
 
 ```
-resp = client.save_model("subjectlog", id="00000000-0000-0000-0000-000000000000", options="add_entry", data={
+resp = client.save("subjectlog", id="00000000-0000-0000-0000-000000000000", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
             'details': {'waterAmount': 9.0}
@@ -277,7 +277,7 @@ resp = client.save_model("subjectlog", id="00000000-0000-0000-0000-000000000000"
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "subjectlog",
     id="00000000-0000-0000-0000-000000000000",
     options="change_entry",
@@ -317,7 +317,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.save_model("subjectlog", id="00000000-0000-0000-0000-000000000000", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
+resp = client.save("subjectlog", id="00000000-0000-0000-0000-000000000000", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example

@@ -58,7 +58,7 @@ A detailed list of the available `type` options and accepted schemas for the `de
 {: .no_toc}
 
 ```
-resp = client.load_model('procedurelog')
+resp = client.load('procedurelog')
 ```
 
 ### Response example
@@ -117,7 +117,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("procedurelog",  data={
+resp = client.save("procedurelog",  data={
     "type": "LinearDisplacement",
     "procedure": "00000000-0000-0000-0000-000000000000"})
 ```
@@ -148,7 +148,7 @@ resp = client.save_model("procedurelog",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('procedurelog', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('procedurelog', id='00000000-0000-0000-0000-000000000000')
 ```
 
 ### Response example
@@ -177,7 +177,7 @@ resp = client.load_model('procedurelog', id='00000000-0000-0000-0000-00000000000
 {: .no_toc}
 
 ```
-resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-000000000000", data={"description": "new text"})
+resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", data={"description": "new text"})
 ```
 
 ### Response example
@@ -206,7 +206,7 @@ resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-00000000000
 {: .no_toc}
 
 ```
-resp = client.delete_model("procedurelog", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("procedurelog", id="00000000-0000-0000-0000-000000000000")
 ```
 
 
@@ -222,7 +222,7 @@ resp = client.delete_model("procedurelog", id="00000000-0000-0000-0000-000000000
 {: .no_toc}
 
 ```
-resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-000000000000", options="add_entry", data={
+resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
             'details': {'displacement': 9.0}
@@ -260,7 +260,7 @@ resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-00000000000
 {: .no_toc}
 
 ```
-resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-000000000000", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
+resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", options="change_entry", data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'new text'})
 ```
 
 ### Response example
@@ -294,7 +294,7 @@ resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-00000000000
 {: .no_toc}
 
 ```
-resp = client.save_model("procedurelog", id="00000000-0000-0000-0000-000000000000", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
+resp = client.save("procedurelog", id="00000000-0000-0000-0000-000000000000", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example

@@ -49,7 +49,7 @@ nav_order: 5
 {: .no_toc}
 
 ```
-resp = client.load_model('license')
+resp = client.load('license')
 ```
 
 ### Response example
@@ -89,7 +89,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("license", data={
+resp = client.save("license", data={
     'name': 'IACUC Protocol 2026-001',
     'type': 'animal_research_authorization',
     'status': 'active',
@@ -133,7 +133,7 @@ resp = client.save_model("license", data={
 {: .no_toc}
 
 ```
-resp = client.load_model('license', id='c3d4e5f6-a7b8-9012-cdef-123456789012')
+resp = client.load('license', id='c3d4e5f6-a7b8-9012-cdef-123456789012')
 ```
 
 ### Response example
@@ -169,7 +169,7 @@ resp = client.load_model('license', id='c3d4e5f6-a7b8-9012-cdef-123456789012')
 {: .no_toc}
 
 ```
-resp = client.save_model("license", id="c3d4e5f6-a7b8-9012-cdef-123456789012", data={"status": "expired"})
+resp = client.save("license", id="c3d4e5f6-a7b8-9012-cdef-123456789012", data={"status": "expired"})
 ```
 
 ### Response example
@@ -205,5 +205,5 @@ resp = client.save_model("license", id="c3d4e5f6-a7b8-9012-cdef-123456789012", d
 {: .no_toc}
 
 ```
-resp = client.delete_model("license", id="c3d4e5f6-a7b8-9012-cdef-123456789012")
+resp = client.delete("license", id="c3d4e5f6-a7b8-9012-cdef-123456789012")
 ```

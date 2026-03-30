@@ -42,7 +42,7 @@ Optional fields such as `comments` can be omitted from list/detail responses whe
 {: .no_toc}
 
 ```
-resp = client.load_model('species')
+resp = client.load('species')
 ```
 
 ### Response example
@@ -85,7 +85,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("species",  data={
+resp = client.save("species",  data={
         "name": "MyNewSpecies",
         "description": "",
     }
@@ -116,7 +116,7 @@ resp = client.save_model("species",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f')
+resp = client.load('species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f')
 ```
 
 ### Response example
@@ -147,7 +147,7 @@ resp = client.load_model('species', id='855d4962-52d9-49f2-a9ab-36073bd34c3f')
 {: .no_toc}
 
 ```
-resp = client.save_model("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f", data={"description": "new text"})
+resp = client.save("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f", data={"description": "new text"})
 ```
 
 ### Response example
@@ -177,7 +177,7 @@ resp = client.save_model("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f", d
 {: .no_toc}
 
 ```
-resp = client.delete_model("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f")
+resp = client.delete("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f")
 ``` 
 
 
@@ -192,7 +192,7 @@ resp = client.delete_model("species", id="855d4962-52d9-49f2-a9ab-36073bd34c3f")
 {: .no_toc}
 
 ```
-resp = client.load_model('speciesapproval')
+resp = client.load('speciesapproval')
 ```
 
 ### Response example
@@ -237,7 +237,7 @@ resp = client.load_model('speciesapproval')
 {: .no_toc}
 
 ```
-resp = client.load_model('speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988f037')
+resp = client.load('speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988f037')
 ```
 
 ### Response example
@@ -269,7 +269,7 @@ resp = client.load_model('speciesapproval', id='529efb3b-99f9-4e42-90e3-f5990988
 {: .no_toc}
 
 ```
-resp = client.save_model("speciesapproval", id="529efb3b-99f9-4e42-90e3-f5990988f037", options="accept")
+resp = client.save("speciesapproval", id="529efb3b-99f9-4e42-90e3-f5990988f037", options="accept")
 ```
 
 
@@ -284,5 +284,5 @@ resp = client.save_model("speciesapproval", id="529efb3b-99f9-4e42-90e3-f5990988
 {: .no_toc}
 
 ```
-resp = client.save_model("speciesapproval", id="5ccb907c-520a-4c67-baf1-ac23a71ab710", options="reject")
+resp = client.save("speciesapproval", id="5ccb907c-520a-4c67-baf1-ac23a71ab710", options="reject")
 ```
