@@ -109,7 +109,7 @@ if sessions:
 
 ## Filtering requests
 
-Filters map directly onto the query parameters documented in the STEM API. Common case-insensitive modifiers include `.icontains`, `.iexact`, `.startswith`, and `.endswith`.
+Filters map directly onto the query parameters documented in the STEM API. Common case-insensitive modifiers include `.icontains`, `.iexact`, `.istartswith`, and `.iendswith`.
 
 ```python
 filtered = client.load(
