@@ -39,7 +39,7 @@ nav_order: 2
 {: .no_toc}
 
 ```
-resp = client.load_model('datastorage')
+resp = client.load('datastorage')
 ```
 
 ### Response example
@@ -48,7 +48,7 @@ resp = client.load_model('datastorage')
 ```
 {'datastorages': [
     {
-        'id': '2ba92d91-349d-4e8c-9785-fc941ddd8868',
+        'id': '<id>',
         'name': 'Test dataset',
         'location': '/data/test',
         'description': '',
@@ -57,7 +57,7 @@ resp = client.load_model('datastorage')
         'data_protocols': []
     },
     {
-        'id': 'c2197dea-eab6-4bbc-8257-3f05537ffdb6',
+        'id': '<id>',
         'name': 'Project data repository',
         'location': '/data/project',
         'description': '',
@@ -101,7 +101,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("datastorage",  data=
+resp = client.save("datastorage",  data=
     {
         'name': "MyNewRepo",
         'location': '/data/newrepo',
@@ -134,7 +134,7 @@ resp = client.save_model("datastorage",  data=
 
 ```
 {'datastorage': {
-    'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
+    'id': '<id>',
     'name': 'MyNewRepo',
     'location': '/data/newrepo',
     'description': '',
@@ -175,7 +175,7 @@ resp = client.save_model("datastorage",  data=
 {: .no_toc}
 
 ```
-resp = client.load_model('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2')
+resp = client.load('datastorage', id='<id>')
 ```
 
 ### Response example
@@ -183,7 +183,7 @@ resp = client.load_model('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2
 
 ```
 {'datastorage': {
-    'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
+    'id': '<id>',
     'name': 'MyNewRepo',
     'location': '/data/newrepo',
     'description': '',
@@ -224,7 +224,7 @@ resp = client.load_model('datastorage', id='9f322057-cf48-4ec7-ab19-d0d7175cffe2
 {: .no_toc}
 
 ```
-resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2", data={"description": "new text"})
+resp = client.save("datastorage", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -232,7 +232,7 @@ resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2
 
 ```
 {'datastorage': {
-    'id': '9f322057-cf48-4ec7-ab19-d0d7175cffe2',
+    'id': '<id>',
     'name': 'MyNewRepo',
     'location': '/data/newrepo',
     'description': 'new text',
@@ -273,5 +273,5 @@ resp = client.save_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2
 {: .no_toc}
 
 ```
-resp = client.delete_model("datastorage", id="9f322057-cf48-4ec7-ab19-d0d7175cffe2")
+resp = client.delete("datastorage", id="<id>")
 ``` 

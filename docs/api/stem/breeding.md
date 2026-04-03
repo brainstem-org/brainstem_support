@@ -44,7 +44,7 @@ nav_order: 7
 {: .no_toc}
 
 ```
-resp = client.load_model('breeding')
+resp = client.load('breeding')
 ```
 
 ### Response example
@@ -53,11 +53,11 @@ resp = client.load_model('breeding')
 ```
 {'breedings': [
         {
-            'id': '00000000-0000-0000-0000-000000000000',
+            'id': '<id>',
             'name': 'B6J x PV-Cre Spring 2026',
-            'project': '00000000-0000-0000-0000-000000000000',
-            'mother': '00000000-0000-0000-0000-000000000000',
-            'father': '00000000-0000-0000-0000-000000000000'
+            'project': '<project-id>',
+            'mother': '<mother-id>',
+            'father': '<father-id>'
         }
     ]
 }
@@ -79,11 +79,11 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("breeding", data={
+resp = client.save("breeding", data={
     "name": "NewBreeding",
-    "project": "00000000-0000-0000-0000-000000000000",
-    "mother": "00000000-0000-0000-0000-000000000000",
-    "father": "00000000-0000-0000-0000-000000000000"
+    "project": "<project-id>",
+    "mother": "<mother-id>",
+    "father": "<father-id>"
 })
 ```
 
@@ -92,11 +92,11 @@ resp = client.save_model("breeding", data={
 
 ```
 {'breeding': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'NewBreeding',
-    'project': '00000000-0000-0000-0000-000000000000',
-    'mother': '00000000-0000-0000-0000-000000000000',
-    'father': '00000000-0000-0000-0000-000000000000'
+    'project': '<project-id>',
+    'mother': '<mother-id>',
+    'father': '<father-id>'
     }
 }
 ```
@@ -113,7 +113,7 @@ resp = client.save_model("breeding", data={
 {: .no_toc}
 
 ```
-resp = client.load_model('breeding', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('breeding', id='<id>')
 ```
 
 ### Response example
@@ -121,11 +121,11 @@ resp = client.load_model('breeding', id='00000000-0000-0000-0000-000000000000')
 
 ```
 {'breeding': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'NewBreeding',
-    'project': '00000000-0000-0000-0000-000000000000',
-    'mother': '00000000-0000-0000-0000-000000000000',
-    'father': '00000000-0000-0000-0000-000000000000',
+    'project': '<project-id>',
+    'mother': '<mother-id>',
+    'father': '<father-id>',
     'description': '',
     'tags': [],
     'birth_date': null,
@@ -150,7 +150,7 @@ resp = client.load_model('breeding', id='00000000-0000-0000-0000-000000000000')
 {: .no_toc}
 
 ```
-resp = client.save_model("breeding", id="00000000-0000-0000-0000-000000000000", data={"name": "new name"})
+resp = client.save("breeding", id="<id>", data={"name": "new name"})
 ```
 
 ### Response example
@@ -158,11 +158,11 @@ resp = client.save_model("breeding", id="00000000-0000-0000-0000-000000000000", 
 
 ```
 {'breeding': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'new name',
-    'project': '00000000-0000-0000-0000-000000000000',
-    'mother': '00000000-0000-0000-0000-000000000000',
-    'father': '00000000-0000-0000-0000-000000000000'
+    'project': '<project-id>',
+    'mother': '<mother-id>',
+    'father': '<father-id>'
     }
 }
 ```
@@ -179,5 +179,5 @@ resp = client.save_model("breeding", id="00000000-0000-0000-0000-000000000000", 
 {: .no_toc}
 
 ```
-resp = client.delete_model("breeding", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("breeding", id="<id>")
 ```

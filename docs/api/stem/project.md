@@ -78,7 +78,7 @@ Each entry in the `groups` object follows the structure:
 {: .no_toc}
 
 ```python
-resp = client.load_model("project")
+resp = client.load("project")
 ```
 
 **Example response**
@@ -88,20 +88,20 @@ resp = client.load_model("project")
 {
     "projects": [
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "<id>",
             "name": "project2",
             "description": "",
             "sessions": [
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000"
+                "<id>",
+                "<id>",
+                "<id>"
             ],
             "subjects": [
-                "00000000-0000-0000-0000-000000000000"
+                "<id>"
             ],
             "publications": [],
             "collections": [
-                "00000000-0000-0000-0000-000000000000"
+                "<id>"
             ],
             "cohorts": [],
             "extra_fields": {
@@ -130,17 +130,17 @@ resp = client.load_model("project")
             },
         },
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "<id>",
             "name": "Test project1",
             "description": "<p>My first project1</p>",
             "sessions": [
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000",
-                "00000000-0000-0000-0000-000000000000"
+                "<id>",
+                "<id>",
+                "<id>",
+                "<id>"
             ],
             "subjects": [
-                "00000000-0000-0000-0000-000000000000"
+                "<id>"
             ],
             "publications": [],
             "collections": [],
@@ -193,7 +193,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```python
-resp = client.save_model("project",  data={"name": "NewRestProject", "description": "some text"})
+resp = client.save("project",  data={"name": "NewRestProject", "description": "some text"})
 ```
 
 **Example response**
@@ -202,7 +202,7 @@ resp = client.save_model("project",  data={"name": "NewRestProject", "descriptio
 ```json
 {
     "project": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewRestProject",
         "description": "some text",
         "sessions": [],
@@ -240,7 +240,7 @@ resp = client.save_model("project",  data={"name": "NewRestProject", "descriptio
 {: .no_toc}
 
 ```python
-resp = client.load_model("project", id="00000000-0000-0000-0000-000000000000")
+resp = client.load("project", id="<id>")
 ```
 
 **Example response**
@@ -249,11 +249,11 @@ resp = client.load_model("project", id="00000000-0000-0000-0000-000000000000")
 ```json
 {
     "project": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewRestProject",
         "description": "some text",
         "sessions": [
-            "00000000-0000-0000-0000-000000000000"
+            "<id>"
         ],
         "subjects": [],
         "publications": [],
@@ -300,15 +300,15 @@ resp = client.load_model("project", id="00000000-0000-0000-0000-000000000000")
 {: .no_toc}
 
 ```python
-resp = client.save_model("project", id="00000000-0000-0000-0000-000000000000", data={"description": "new text"})
+resp = client.save("project", id="<id>", data={"description": "new text"})
 ```
 
 To add new users and/or groups to the project, or modify the permissions of the existing ones, provide their corresponding dictionaries. Missing permissions will default to *False*.
 
 ```python
-resp = client.save_model(
+resp = client.save(
     "project",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={
         "description": "new text",
         "users": {"user2@mail.com": {"can_change": True, "is_manager": True}},
@@ -320,9 +320,9 @@ resp = client.save_model(
 To remove users and/or groups, provide the key-value pair `"remove": True` in the corresponding dictionary.
 
 ```python
-resp = client.save_model(
+resp = client.save(
     "project",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={
         "description": "new text",
         "users": {"user2@mail.com": {"remove": True}},
@@ -337,7 +337,7 @@ resp = client.save_model(
 ```json
 {
     "project": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewRestProject",
         "description": "new text",
         "sessions": [],
@@ -391,5 +391,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```python
-resp = client.delete_model("project", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("project", id="<id>")
 ```

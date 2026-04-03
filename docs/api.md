@@ -17,29 +17,18 @@ The BrainSTEM API provides programmatic access to the complete data model, enabl
 
 ## API Token Management
 
-BrainSTEM supports multiple token types for secure API access. Choose the authentication method that best fits your use case - from long-lived tokens for scripts to short-lived tokens for web applications.
+BrainSTEM uses **Personal Access Tokens** for API authentication. Because BrainSTEM enforces two-factor authentication (2FA), tokens must be obtained through a browser-based flow — your password is never sent to a script or CLI tool.
 
-### Token Types Overview
+| Token Type | Lifetime | How to obtain | Best for |
+|------------|----------|---------------|----------|
+| **Personal Access Token** | 1 year (sliding, auto-refresh) | Web UI form or CLI device auth flow | Scripts, integrations, CLI tools, automation |
+
+### Option 1: Create a Token in the Web UI
 {: .no_toc}
 
-| Token Type | Duration | Renewal | Best For |
-|------------|----------|---------|----------|
-| **Personal Access Token** | 1 year (auto-refresh) | Automatic when used | Scripts, integrations, automation |
-| **Access Token** | 1 hour (fixed expiry) | Refresh token required | Web applications, temporary access |
-| **Refresh Token** | 30 days (fixed expiry) | Re-authenticate with credentials | Renewing access tokens |
+Visit your [API Token Management page](https://www.brainstem.org/private/users/tokens/), enter a descriptive token name (e.g., "My API Integration", "Data Export Script"), and click **Create**. Copy the token immediately — it is only shown once.
 
-### 1. Personal Access Tokens (Recommended)
-{: .no_toc}
-
-Personal access tokens are sliding tokens that automatically refresh themselves and last for 1 year. They're perfect for scripts and integrations since they don't require manual renewal.
-
-**Creating Personal Access Tokens:**
-1. Visit your [API Token Management page](https://www.brainstem.org/private/users/tokens/)
-2. Enter a descriptive name (e.g., "My API Integration", "Data Export Script")
-3. Click "Create Personal Access"
-4. Save the token immediately - it's only shown once when created
-
-**Using Personal Access Tokens:**
+**Use your token in requests:**
 ```bash
 curl -H "Authorization: Bearer YOUR_PERSONAL_TOKEN" \
      https://www.brainstem.org/api/private/stem/project/
@@ -48,80 +37,68 @@ curl -H "Authorization: Bearer YOUR_PERSONAL_TOKEN" \
 {: .important }
 > Personal access tokens are shown only once when created. Save them immediately in a secure location.
 
-### 2. Short-lived Access Tokens
+### Option 2: CLI Device Authorization Flow
 {: .no_toc}
 
-For temporary access or when you need fresh tokens regularly. These tokens expire after 1 hour (3600 seconds) and must be renewed using a refresh token which can be used for 30 days.
+CLI tools (e.g. the BrainSTEM Python and MATLAB API tools) use a browser-based sign-in flow so that 2FA is always enforced. Your password is never sent to the CLI.
 
-**Get Access + Refresh Token Pair:**
-```bash
-curl -X POST https://www.brainstem.org/api/auth/token/ \
-  -H "Content-Type: application/json" \
-  -d '{"email": "your-email", "password": "your-password"}'
+**Browser-redirect mode (default)**
+
+The CLI opens a browser window automatically. If you are already logged in, just click **Approve**.
+
+```
+# Step 1 — CLI initiates a device session
+POST /api/auth/device/
+→ {"session_id": "...", "verification_uri_complete": "https://www.brainstem.org/account/authorize/?session=...", ...}
+
+# Step 2 — CLI opens that URL in your browser; you approve (with 2FA if needed)
+
+# Step 3 — CLI polls until approved
+POST /api/auth/device/token/   body: {"device_code": "..."}
+→ {"status": "authorization_pending"}  ← keep polling every 5 s
+→ {"status": "success", "token": "YOUR_PAT"}  ← done
 ```
 
-**Response:**
+**Headless / no-browser mode**
+
+For servers or Docker environments where no browser is available, the CLI prints a short code instead:
+
+```
+Open https://www.brainstem.org/account/authorize/ in a browser
+and enter the code: WXYZ-1234
+
+Waiting for authorization...
+```
+
+Navigate to that URL on any device, enter the code, and approve — the CLI receives the token automatically.
+
+**Poll response reference**
+
+All `POST /api/auth/device/token/` responses return HTTP 200. Check the JSON body:
+
 ```json
-{
-    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...", 
-    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-    "token_type": "bearer",
-    "expires_in": 3600
-}
+{"status": "authorization_pending"}   // keep polling (every 5 s)
+{"status": "success", "token": "..."}  // done — save the token
+{"error": "access_denied"}            // user clicked Deny — abort
+{"error": "expired_token"}            // 15-minute window elapsed — restart
+{"error": "already_used"}             // token already collected
 ```
-
-**Renew Access Token (before it expires):**
-```bash
-curl -X POST https://www.brainstem.org/api/auth/token/refresh/ \
-  -H "Content-Type: application/json" \
-  -d '{"refresh": "YOUR_REFRESH_TOKEN"}'
-```
-
-{: .important }
-> When renewing the access token, a new refresh token will also be provided and the previous refresh token becomes invalid.
-
-**Use Access Token:**
-```bash
-curl -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-     https://www.brainstem.org/api/private/stem/project/
-```
-
-### 3. Backward Compatible Method
-{: .no_toc}
-
-Direct username/password authentication that returns a long-lived sliding token (equivalent to a Personal Access Token):
-
-```bash
-curl -X POST https://www.brainstem.org/api/token/ \
-  -H "Content-Type: application/json" \
-  -d '{"username": "your-email", "password": "your-password"}'
-```
-
-**Response:**
-```json
-{
-    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-    "token_id": 1,
-    "message": "Token created successfully"
-}
-```
-
-{: .note }
-> The created token will be listed in your Personal Access Token management page and can be deleted manually.
 
 ### Authentication in API Tools
 {: .no_toc}
-The token acquisition process is built into the official API tools:
-- **MATLAB and Python tools**: Automatically handle token requests and management
-- **Web API tool**: Uses your regular credentials (email and password) for browser-based access
+
+The device authorization flow is built into the official API tools:
+- **Python API tool**: `BrainstemClient()` opens a browser automatically; `BrainstemClient(headless=True)` for headless environments. See the [Python API tool docs](/api-tools/python-api-tool/).
+- **MATLAB API tool**: `BrainstemClient()` opens a browser automatically; pass `'token', getenv('BRAINSTEM_TOKEN')` for scripts. See the [MATLAB API tool docs](/api-tools/matlab-api-tool/).
+- **Web API tool**: Uses your existing browser session — no token required for basic exploration.
 
 ### Security Best Practices
 {: .no_toc}
 
-- **Keep tokens secure**: Never share them in public repositories or logs
-- **Save immediately**: Personal access tokens are shown only once when created  
-- **Monitor expiration**: Access tokens (1 hour) and refresh tokens (30 days) have fixed lifetimes
-- **Clean up regularly**: Delete unused tokens and monitor usage in your [token management page](https://www.brainstem.org/private/users/tokens/)
+- **Never send your password to scripts**: Use the device auth flow or create a token in the web UI
+- **Keep tokens secure**: Never commit tokens to version control or share them in logs
+- **Save immediately**: Personal access tokens are shown only once when created
+- **Clean up regularly**: Delete unused tokens via your [token management page](https://www.brainstem.org/private/users/tokens/)
 
 ## Available API Endpoints
 
@@ -175,7 +152,7 @@ https://www.BrainSTEM.org/api/private/stem/session/
 
 **Specific session by ID:**
 ```
-https://www.BrainSTEM.org/api/private/stem/session/12345678-1234-1234-1234-123456789abc/
+https://www.BrainSTEM.org/api/private/stem/session/<id>/
 ```
 
 **Procedure endpoint:**

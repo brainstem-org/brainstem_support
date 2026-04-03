@@ -165,59 +165,88 @@ When you associate a data storage with a session, BrainSTEM can automatically co
 Use the Python or MATLAB API to programmatically access your data paths:
 
 ```python
-from brainstem_api_client import BrainstemClient
+from brainstem_api_tools import BrainstemClient
 
 client = BrainstemClient()
 
-# Load session with data storage information
-session_response = client.load_model('session', 
-                                   id='your-session-id', 
-                                   include=['datastorage'])
+# Load session with expanded data storage records
+# Use filters={'id': ...} to fetch a single session by UUID
+session_response = client.load('session',
+                               filters={'id': 'your-session-id'},
+                               include=['datastorage'])
 
 session_data = session_response.json()['sessions'][0]
-storage_info = session_data['datastorage']
 
-# Access configured protocols and paths
-for protocol in storage_info['data_protocols']:
-    print(f"Protocol: {protocol['protocol']}")
-    print(f"Base path: {protocol['path']}")
-    print(f"Public access: {protocol['is_public']}")
+# datastorage is a list of expanded objects when include=['datastorage'] is used
+for storage in session_data['datastorage']:
+    for protocol in storage['data_protocols']:
+        print(f"Protocol: {protocol['protocol']}")
+        print(f"Base path: {protocol['path']}")
+        print(f"Public access: {protocol['is_public']}")
 ```
 
 ### Constructing Full Paths in Your Analysis Code
 {: .no_toc}
 
 ```python
-def construct_data_path(session_data):
+def construct_data_path(session_data, subject_name=None):
     """
-    Construct full path to session data based on BrainSTEM metadata
+    Construct full path to session data based on BrainSTEM metadata.
+
+    Requires the session to have been loaded with:
+      include=['datastorage', 'projects']
+    so that datastorage and projects are expanded to full objects.
+
+    Sessions have no direct subject field — subjects are linked via behavior
+    records. Pass subject_name explicitly when your organization includes
+    Subjects (e.g. retrieved via client.load('behavior', ...)).
     """
-    storage = session_data['datastorage']
+    if not session_data.get('datastorage'):
+        return None
+
+    # datastorage is a list; use the first linked storage
+    storage = session_data['datastorage'][0]
 
     # Use the first configured protocol by default.
     # Update this selection if your storage relies on a specific protocol.
     base_path = storage['data_protocols'][0]['path']
-    
+
     # Extract organization elements
     organization = storage['data_organization']
-    
+
     # Build path based on organization structure
     path_components = [base_path]
-    
+
     for element in organization:
         if element['elements'] == 'Projects':
+            # projects is expanded to full objects when include=['projects'] is used
             path_components.append(session_data['projects'][0]['name'])
         elif element['elements'] == 'Subjects':
-            path_components.append(session_data['subject']['name'])
+            # Session has no direct subject field; provide subject_name separately.
+            if subject_name:
+                path_components.append(subject_name)
         elif element['elements'] == 'Sessions':
-            storage_name = session_data.get('name_used_in_storage', 
-                                          session_data['name'])
+            storage_name = session_data.get('name_used_in_storage') or session_data['name']
             path_components.append(storage_name)
-    
+
     return '/'.join(path_components)
 
-# Usage
-full_path = construct_data_path(session_data)
+
+# Load session with datastorage and projects expanded
+session_response = client.load('session',
+                               filters={'id': 'your-session-id'},
+                               include=['datastorage', 'projects'])
+session_data = session_response.json()['sessions'][0]
+
+# If your organization includes Subjects, retrieve subject name via behaviors
+behaviors = client.load('behavior', filters={'session': session_data['id']}).json()
+subject_name = None
+if behaviors.get('behaviors'):
+    subject_id = behaviors['behaviors'][0]['subjects'][0]
+    subject_resp = client.load('subject', filters={'id': subject_id}).json()
+    subject_name = subject_resp['subjects'][0]['name']
+
+full_path = construct_data_path(session_data, subject_name=subject_name)
 print(f"Data location: {full_path}")
 ```
 
@@ -282,30 +311,39 @@ print(f"Data location: {full_path}")
 
 ```python
 import os
-from brainstem_api_client import BrainstemClient
+from brainstem_api_tools import BrainstemClient
 
 def load_session_data(session_id):
     """
-    Load session metadata and construct data paths
+    Load session metadata and construct data paths.
+    Uses include=['datastorage', 'projects'] so path construction works.
     """
     client = BrainstemClient()
-    
-    # Get session with data storage info
-    response = client.load_model('session', 
-                               id=session_id, 
-                               include=['datastorage', 'dataacquisition'])
-    
+
+    # Use filters={'id': ...} to fetch a single session by UUID
+    response = client.load('session',
+                           filters={'id': session_id},
+                           include=['datastorage', 'projects', 'dataacquisition'])
+
     session = response.json()['sessions'][0]
-    
+
+    # Retrieve subject name via behavior records if organization includes Subjects
+    behaviors = client.load('behavior', filters={'session': session_id}).json()
+    subject_name = None
+    if behaviors.get('behaviors'):
+        subject_id = behaviors['behaviors'][0]['subjects'][0]
+        subject_resp = client.load('subject', filters={'id': subject_id}).json()
+        subject_name = subject_resp['subjects'][0]['name']
+
     # Construct data path
-    data_path = construct_data_path(session)
-    
+    data_path = construct_data_path(session, subject_name=subject_name)
+
     # Load actual data files
     data_files = []
-    if os.path.exists(data_path):
-        data_files = [f for f in os.listdir(data_path) 
-                     if f.endswith(('.dat', '.bin', '.h5'))]
-    
+    if data_path and os.path.exists(data_path):
+        data_files = [f for f in os.listdir(data_path)
+                      if f.endswith(('.dat', '.bin', '.h5'))]
+
     return {
         'session_metadata': session,
         'data_path': data_path,
@@ -318,26 +356,45 @@ def load_session_data(session_id):
 
 ```matlab
 function data_info = load_session_data(session_id)
-    % Load session metadata and construct data paths
-    
-    % Get session with data storage info
-    session_data = load_model('model', 'session', ...
-                             'id', session_id, ...
-                             'include', {'datastorage', 'dataacquisition'});
-    
-    % Extract data storage information
-    storage = session_data.datastorage;
+    % Load session metadata and construct data paths.
+    % Using include={'datastorage','projects'} expands those fields to full objects.
+    client = BrainstemClient();
+
+    % Fetch the session by UUID and expand datastorage and projects
+    session_response = client.load('session', ...
+                                   'id', session_id, ...
+                                   'include', {'datastorage', 'projects', 'dataacquisition'});
+    session_data = session_response.sessions{1};
+
+    % Extract data storage information (first linked storage)
+    storage = session_data.datastorage{1};
 
     % Use the first configured protocol; adjust if a specific protocol is required.
     base_path = storage.data_protocols{1}.path;
-    
-    % Construct full path (simplified example)
+
+    % Project name is available when include={'projects'} is used
     project_name = session_data.projects{1}.name;
-    subject_name = session_data.subject.name;
+
+    % Session has no direct subject field; subjects are linked via behavior records.
+    % Retrieve subject separately if your organization structure includes Subjects.
+    behaviors = client.load('behavior', 'filter', {'session', session_id});
+    if ~isempty(behaviors.behaviors)
+        subject_id = behaviors.behaviors{1}.subjects{1};
+        subject_resp = client.load('subject', 'id', subject_id);
+        subject_name = subject_resp.subjects{1}.name;
+    else
+        subject_name = '';
+    end
+
     storage_name = session_data.name_used_in_storage;
-    
-    full_path = fullfile(base_path, project_name, subject_name, storage_name);
-    
+
+    % Build path — omit subject component if subject_name is empty
+    if ~isempty(subject_name)
+        full_path = fullfile(base_path, project_name, subject_name, storage_name);
+    else
+        full_path = fullfile(base_path, project_name, storage_name);
+    end
+
     data_info.session_metadata = session_data;
     data_info.data_path = full_path;
     data_info.exists = exist(full_path, 'dir') == 7;
@@ -357,7 +414,7 @@ Configure your organization structure to match your lab's file hierarchy:
     "Projects",
     "Subjects",
     "Sessions"
-  ],
+  ]
 }
 ```
 

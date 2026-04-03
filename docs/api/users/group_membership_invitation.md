@@ -38,7 +38,7 @@ nav_order: 3
 {: .no_toc}
 
 ```
-resp = client.load_model('groupmembershipinvitation')
+resp = client.load('groupmembershipinvitation')
 ```
 
 ### Response example
@@ -47,14 +47,14 @@ resp = client.load_model('groupmembershipinvitation')
 ```
 {'group_membership_invitations': [
     {
-        'id': 'bdbc1823-7bcf-402d-bcaf-c16ce8da4632',
+        'id': '<id>',
         'user_account_invitation': 11,
         'authgroup': 12,
         'new_manager': False,
         'new_owner': False
     },
     {
-        'id': '4820aea8-151c-422e-9427-d7985a949518',
+        'id': '<id>',
         'user_account_invitation': 7,
         'authgroup': 48,
         'new_manager': False,
@@ -77,7 +77,7 @@ List responses include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.load_model('groupmembershipinvitation', id='bdbc1823-7bcf-402d-bcaf-c16ce8da4632')
+resp = client.load('groupmembershipinvitation', id='<id>')
 ```
 
 ### Response example
@@ -85,7 +85,7 @@ resp = client.load_model('groupmembershipinvitation', id='bdbc1823-7bcf-402d-bca
 
 ```
 {'group_membership_invitation': {
-    'id': 'bdbc1823-7bcf-402d-bcaf-c16ce8da4632',
+    'id': '<id>',
     'user_account_invitation': 11,
     'authgroup': 12,
     'new_manager': False,
@@ -105,7 +105,7 @@ resp = client.load_model('groupmembershipinvitation', id='bdbc1823-7bcf-402d-bca
 {: .no_toc}
 
 ```
-resp = client.load_model("groupmembershipinvitation", id="caf8093f-def3-43a4-9c46-543e3f7d63b0", options="accept")
+resp = client.load("groupmembershipinvitation", id="<id>", options="accept")
 ```
 
 
@@ -121,7 +121,7 @@ resp = client.load_model("groupmembershipinvitation", id="caf8093f-def3-43a4-9c4
 {: .no_toc}
 
 ```
-resp = client.load_model("groupmembershipinvitation", id="fa2d3f83-f5e8-4c3f-9006-fc2d92d0c0a0", options="reject")
+resp = client.load("groupmembershipinvitation", id="<id>", options="reject")
 ```
 
 
@@ -136,5 +136,5 @@ resp = client.load_model("groupmembershipinvitation", id="fa2d3f83-f5e8-4c3f-900
 {: .no_toc}
 
 ```
-resp = client.load_model("groupmembershipinvitation", id="77c92a03-79ce-4cd6-9379-fd3d4f459012", options="cancel")
+resp = client.load("groupmembershipinvitation", id="<id>", options="cancel")
 ```

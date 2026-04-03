@@ -30,18 +30,21 @@ A behavioral assay defines:
 2. Click *Add behavioral assay*
 3. Fill in the required fields:
     - **Name**: Descriptive name (e.g., "T-maze Alternation Task")
-    - **Setup Type**: Select the matching setup type (e.g., T-maze)
+    - **Setup type**: Select the matching setup type (e.g., T-maze) (**required**)
+    - **Behavioral paradigm**: Select the standardized paradigm this assay implements (**required**)
+    - **Authenticated Groups**: Assign one or more lab groups (**required**)
     - **Description**: Briefly describe the protocol, goals, and any special requirements
 4. Save the assay. It will now be available when creating sessions in compatible setups.
 
 ### Example: Defining a T-maze Alternation Paradigm
-```json
-{
-  "name": "T-maze Alternation Task",
-  "setup_type": "T-maze",
-  "description": "A spatial working memory task where the subject must alternate between left and right arms for reward."
-}
-```
+
+| Field | Value |
+|-------|-------|
+| **Name** | T-maze Alternation Task |
+| **Setup type** | T-maze (select from available setup types) |
+| **Behavioral paradigm** | Alternation Task (select the matching paradigm) |
+| **Authenticated Groups** | Select your lab group |
+| **Description** | A spatial working memory task where the subject must alternate between left and right arms for reward. |
 
 ## Best Practices
 - Use clear, standardized names for assays

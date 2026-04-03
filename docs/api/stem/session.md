@@ -76,7 +76,7 @@ Use the Session → Data Storage endpoint (`/api/private/stem/sessiondatastorage
 {: .no_toc}
 
 ```python
-resp = client.load_model("session")
+resp = client.load("session")
 ```
 
 ### Example response (list)
@@ -86,31 +86,31 @@ resp = client.load_model("session")
 {
     "sessions": [
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "<id>",
             "name": "session1",
             "description": "",
             "epochs": [],
-            "projects": ["00000000-0000-0000-0000-000000000000"],
+            "projects": ["<id>"],
             "date_time": null,
             "datastorage": [],
             "extra_fields": {},
             "download_links": [],
             "dataacquisition": [],
             "behaviors": [],
-            "manipulations": ["00000000-0000-0000-0000-000000000000"],
+            "manipulations": ["<id>"],
             "tags": [],
         },
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "<id>",
             "name": "session2",
             "description": "",
             "epochs": [],
-            "projects": ["00000000-0000-0000-0000-000000000000"],
+            "projects": ["<id>"],
             "date_time": null,
             "datastorage": [],
             "extra_fields": {},
             "download_links": [],
-            "dataacquisition": ["00000000-0000-0000-0000-000000000000"],
+            "dataacquisition": ["<id>"],
             "behaviors": [],
             "manipulations": [],
             "tags": [],
@@ -133,12 +133,12 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```python
-resp = client.save_model(
+resp = client.save(
     "session",
     data={
         "name": "NewSession",
         "description": "some text",
-        "projects": ["00000000-0000-0000-0000-000000000000"],
+        "projects": ["<id>"],
     },
 )
 ```
@@ -149,11 +149,11 @@ resp = client.save_model(
 ```json
 {
     "session": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewSession",
         "description": "some text",
         "epochs": [],
-        "projects": ["00000000-0000-0000-0000-000000000000"],
+        "projects": ["<id>"],
         "date_time": null,
         "datastorage": [],
         "extra_fields": {},
@@ -178,7 +178,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```python
-resp = client.load_model("session", id="00000000-0000-0000-0000-000000000000")
+resp = client.load("session", id="<id>")
 ```
 
 ### Example response (detail)
@@ -187,11 +187,11 @@ resp = client.load_model("session", id="00000000-0000-0000-0000-000000000000")
 ```json
 {
     "session": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewSession",
         "description": "some text",
         "epochs": [],
-        "projects": ["00000000-0000-0000-0000-000000000000"],
+        "projects": ["<id>"],
         "date_time": null,
         "datastorage": [],
         "extra_fields": {
@@ -222,9 +222,9 @@ resp = client.load_model("session", id="00000000-0000-0000-0000-000000000000")
 {: .no_toc}
 
 ```python
-resp = client.save_model(
+resp = client.save(
     "session",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={"description": "new text"},
 )
 ```
@@ -235,11 +235,11 @@ resp = client.save_model(
 ```json
 {
     "session": {
-        "id": "00000000-0000-0000-0000-000000000000",
+        "id": "<id>",
         "name": "NewSession",
         "description": "new text",
         "epochs": [],
-        "projects": ["00000000-0000-0000-0000-000000000000"],
+        "projects": ["<id>"],
         "date_time": null,
         "datastorage": [],
         "extra_fields": {},
@@ -264,5 +264,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```python
-resp = client.delete_model("session", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("session", id="<id>")
 ```

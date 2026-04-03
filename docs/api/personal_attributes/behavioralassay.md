@@ -39,7 +39,7 @@ nav_order: 1
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralassay')
+resp = client.load('behavioralassay')
 ```
 
 ### Response example
@@ -48,20 +48,20 @@ resp = client.load_model('behavioralassay')
 ```
 {'behavioralassays': [
     {
-        'id': 'febe36f7-4769-496d-bb91-6a8443214b94',
+        'id': '<id>',
         'name': 'AlternationRunning',
         'description': 'Alternating running task',
-        'setup_type': '531b2a21-ab1f-4aa8-8eaf-905421168d6b',
-        'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+        'setup_type': '<setup_type-id>',
+        'behavioral_paradigm': '<behavioral_paradigm-id>',
         'licenses': [],
         'is_public': False
     },
     {
-        'id': 'f7bc834e-761c-4147-a3d4-da52293a565c',
+        'id': '<id>',
         'name': 'ContinuousRunning',
         'description': 'Continuous running task',
-        'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-        'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+        'setup_type': '<setup_type-id>',
+        'behavioral_paradigm': '<behavioral_paradigm-id>',
         'licenses': [],
         'is_public': True
     }
@@ -85,12 +85,12 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralassay",  data=
+resp = client.save("behavioralassay",  data=
     {
         'name': 'PlayMarioKart',
         'description': 'Play Mario Kart on GameCube',
-        'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-        'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+        'setup_type': '<setup_type-id>',
+        'behavioral_paradigm': '<behavioral_paradigm-id>',
         'licenses': [],
     }
 )
@@ -101,11 +101,11 @@ resp = client.save_model("behavioralassay",  data=
 
 ```
 {'behavioralassay': {
-    'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
+    'id': '<id>',
     'name': 'PlayMarioKart',
     'description': 'Play Mario Kart on GameCube',
-    'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-    'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+    'setup_type': '<setup_type-id>',
+    'behavioral_paradigm': '<behavioral_paradigm-id>',
     'licenses': [],
     'is_public': False}
 }
@@ -124,7 +124,7 @@ resp = client.save_model("behavioralassay",  data=
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralassay', id='22ae80be-e030-4cee-9cd5-b94ac2edc7f8')
+resp = client.load('behavioralassay', id='<id>')
 ```
 
 ### Response example
@@ -132,11 +132,11 @@ resp = client.load_model('behavioralassay', id='22ae80be-e030-4cee-9cd5-b94ac2ed
 
 ```
 {'behavioralassay': {
-    'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
+    'id': '<id>',
     'name': 'PlayMarioKart',
     'description': 'Play Mario Kart on GameCube',
-    'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-    'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+    'setup_type': '<setup_type-id>',
+    'behavioral_paradigm': '<behavioral_paradigm-id>',
     'licenses': [],
     'is_public': False}
 }
@@ -155,7 +155,7 @@ resp = client.load_model('behavioralassay', id='22ae80be-e030-4cee-9cd5-b94ac2ed
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8", data={"description": "new text"})
+resp = client.save("behavioralassay", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -163,11 +163,11 @@ resp = client.save_model("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2ed
 
 ```
 {'behavioralassay': {
-    'id': '22ae80be-e030-4cee-9cd5-b94ac2edc7f8',
+    'id': '<id>',
     'name': 'PlayMarioKart',
     'description': 'new text',
-    'setup_type': '8e9c4d33-f59c-45ca-8e43-f01789f20332',
-    'behavioral_paradigm': '00000000-0000-0000-0000-000000000000',
+    'setup_type': '<setup_type-id>',
+    'behavioral_paradigm': '<behavioral_paradigm-id>',
     'licenses': [],
     'is_public': False}
 }
@@ -186,5 +186,5 @@ resp = client.save_model("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2ed
 {: .no_toc}
 
 ```
-resp = client.delete_model("behavioralassay", id="22ae80be-e030-4cee-9cd5-b94ac2edc7f8")
+resp = client.delete("behavioralassay", id="<id>")
 ``` 

@@ -53,7 +53,7 @@ A detailed list of the available `type` options and accepted schemas for the `de
 {: .no_toc}
 
 ```
-resp = client.load_model('dataacquisition')
+resp = client.load('dataacquisition')
 ```
 
 ### Response example
@@ -62,11 +62,11 @@ resp = client.load_model('dataacquisition')
 ```
 {'data_acquisitions': [
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'notes': 'main arena cameras',
-        'session': '00000000-0000-0000-0000-000000000000',
-        'procedures': ['00000000-0000-0000-0000-000000000000'],
-        'equipment': ['00000000-0000-0000-0000-000000000000'],
+        'session': '<session-id>',
+        'procedures': ['<id>'],
+        'equipment': ['<id>'],
         'type': 'BehavioralTracking',
         'details': {
             'fileName': 'session1_tracking.mp4',
@@ -82,11 +82,11 @@ resp = client.load_model('dataacquisition')
         'order': 0
     },
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'notes': 'acute probe recording',
-        'session': '00000000-0000-0000-0000-000000000000',
-        'procedures': ['00000000-0000-0000-0000-000000000000'],
-        'equipment': ['00000000-0000-0000-0000-000000000000'],
+        'session': '<session-id>',
+        'procedures': ['<id>'],
+        'equipment': ['<id>'],
         'type': 'ExtracellularEphys',
         'details': {
             'fileName': 'session1_probe.dat',
@@ -121,13 +121,13 @@ resp = client.load_model('dataacquisition')
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "dataacquisition",
     data={
         "type": "ExtracellularEphys",
-        "session": "00000000-0000-0000-0000-000000000000",
-        "procedures": ["00000000-0000-0000-0000-000000000000"],
-        "equipment": ["00000000-0000-0000-0000-000000000000"],
+        "session": "<session-id>",
+        "procedures": ["<id>"],
+        "equipment": ["<id>"],
         "notes": "acute probe recording",
         "details": {
             "fileName": "session1_probe.dat",
@@ -154,11 +154,11 @@ resp = client.save_model(
 
 ```
 {'data_acquisition': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'notes': 'acute probe recording',
-    'session': '00000000-0000-0000-0000-000000000000',
-    'procedures': ['00000000-0000-0000-0000-000000000000'],
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'session': '<session-id>',
+    'procedures': ['<id>'],
+    'equipment': ['<id>'],
     'type': 'ExtracellularEphys',
     'details': {
         'fileName': 'session1_probe.dat',
@@ -193,7 +193,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('dataacquisition', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('dataacquisition', id='<id>')
 ```
 
 ### Response example
@@ -201,11 +201,11 @@ resp = client.load_model('dataacquisition', id='00000000-0000-0000-0000-00000000
 
 ```
 {'data_acquisition': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'notes': 'acute probe recording',
-    'session': '00000000-0000-0000-0000-000000000000',
-    'procedures': ['00000000-0000-0000-0000-000000000000'],
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'session': '<session-id>',
+    'procedures': ['<id>'],
+    'equipment': ['<id>'],
     'type': 'ExtracellularEphys',
     'details': {
         'fileName': 'session1_probe.dat',
@@ -242,10 +242,10 @@ resp = client.load_model('dataacquisition', id='00000000-0000-0000-0000-00000000
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "dataacquisition",
-    id="00000000-0000-0000-0000-000000000000",
-    data={"notes": "re-run with higher gain", "equipment": ["00000000-0000-0000-0000-000000000000"]}
+    id="<id>",
+    data={"notes": "re-run with higher gain", "equipment": ["<id>"]}
 )
 ```
 
@@ -254,11 +254,11 @@ resp = client.save_model(
 
 ```
 {'data_acquisition': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'notes': 're-run with higher gain',
-    'session': '00000000-0000-0000-0000-000000000000',
-    'procedures': ['00000000-0000-0000-0000-000000000000'],
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
+    'session': '<session-id>',
+    'procedures': ['<id>'],
+    'equipment': ['<id>'],
     'type': 'ExtracellularEphys',
     'details': {
         'fileName': 'session1_probe.dat',
@@ -297,5 +297,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("dataacquisition", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("dataacquisition", id="<id>")
 ``` 

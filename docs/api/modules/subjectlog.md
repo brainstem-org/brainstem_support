@@ -67,7 +67,7 @@ A detailed list of the accepted schemas for the `details` field, related to each
 {: .no_toc}
 
 ```
-resp = client.load_model('subjectlog')
+resp = client.load('subjectlog')
 ```
 
 ### Response example
@@ -76,11 +76,11 @@ resp = client.load_model('subjectlog')
 ```
 {'subject_logs': [
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'Weighing',
         'description': None,
-        'subject': '00000000-0000-0000-0000-000000000000',
-        'user': '00000000-0000-0000-0000-000000000000',
+        'subject': '<subject-id>',
+        'user': '<user-id>',
         'entries': [
             {'date_time': '2023-03-26T04:05:00Z',
              'notes': None,
@@ -91,11 +91,11 @@ resp = client.load_model('subjectlog')
          ]
     },
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'FoodConsumption',
         'description': None,
-        'subject': '00000000-0000-0000-0000-000000000000',
-        'user': '00000000-0000-0000-0000-000000000000',
+        'subject': '<subject-id>',
+        'user': '<user-id>',
         'entries': [
             {'date_time': '2023-03-09T07:10:00Z',
              'notes': None,
@@ -122,11 +122,11 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "subjectlog",
     data={
         "type": "WaterConsumption",
-        "subject": "00000000-0000-0000-0000-000000000000",
+        "subject": "<subject-id>",
         "description": "Baseline water access"
     }
 )
@@ -137,11 +137,11 @@ resp = client.save_model(
 
 ```
 {'subject_log': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'WaterConsumption',
     'description': 'Baseline water access',
-    'subject': '00000000-0000-0000-0000-000000000000',
-    'user': '00000000-0000-0000-0000-000000000000',
+    'subject': '<subject-id>',
+    'user': '<user-id>',
     'entries': []
 }}
 ```
@@ -159,7 +159,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('subjectlog', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('subjectlog', id='<id>')
 ```
 
 ### Response example
@@ -167,11 +167,11 @@ resp = client.load_model('subjectlog', id='00000000-0000-0000-0000-000000000000'
 
 ```
 {'subject_log': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'WaterConsumption',
     'description': 'Baseline water access',
-    'subject': '00000000-0000-0000-0000-000000000000',
-    'user': '00000000-0000-0000-0000-000000000000',
+    'subject': '<subject-id>',
+    'user': '<user-id>',
     'entries': []
 }}
 ```
@@ -189,9 +189,9 @@ resp = client.load_model('subjectlog', id='00000000-0000-0000-0000-000000000000'
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "subjectlog",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={"description": "Post-deprivation monitoring"}
 )
 ```
@@ -201,11 +201,11 @@ resp = client.save_model(
 
 ```
 {'subject_log': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'WaterConsumption',
     'description': 'Post-deprivation monitoring',
-    'subject': '00000000-0000-0000-0000-000000000000',
-    'user': '00000000-0000-0000-0000-000000000000',
+    'subject': '<subject-id>',
+    'user': '<user-id>',
     'entries': []
 }}
 ```
@@ -223,7 +223,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("subjectlog", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("subjectlog", id="<id>")
 ```
 
 
@@ -239,7 +239,7 @@ resp = client.delete_model("subjectlog", id="00000000-0000-0000-0000-00000000000
 {: .no_toc}
 
 ```
-resp = client.save_model("subjectlog", id="00000000-0000-0000-0000-000000000000", options="add_entry", data={
+resp = client.save("subjectlog", id="<id>", options="add_entry", data={
             'date_time': '2023-04-05T13:45:00Z',
             'notes': None,
             'details': {'waterAmount': 9.0}
@@ -252,11 +252,11 @@ resp = client.save_model("subjectlog", id="00000000-0000-0000-0000-000000000000"
 
 ```
 {'subject_log': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'WaterConsumption',
     'description': 'Post-deprivation monitoring',
-    'subject': '00000000-0000-0000-0000-000000000000',
-    'user': '00000000-0000-0000-0000-000000000000',
+    'subject': '<subject-id>',
+    'user': '<user-id>',
     'entries': [
         {'date_time': '2023-04-05T13:45:00Z',
          'notes': None,
@@ -277,9 +277,9 @@ resp = client.save_model("subjectlog", id="00000000-0000-0000-0000-000000000000"
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "subjectlog",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     options="change_entry",
     data={'date_time': '2023-04-05T13:45:00Z', 'notes': 'Replaced drip line'}
 )
@@ -290,11 +290,11 @@ resp = client.save_model(
 
 ```
 {'subject_log': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'WaterConsumption',
     'description': 'Post-deprivation monitoring',
-    'subject': '00000000-0000-0000-0000-000000000000',
-    'user': '00000000-0000-0000-0000-000000000000',
+    'subject': '<subject-id>',
+    'user': '<user-id>',
     'entries': [
         {'date_time': '2023-04-05T13:45:00Z',
          'notes': 'Replaced drip line',
@@ -317,7 +317,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.save_model("subjectlog", id="00000000-0000-0000-0000-000000000000", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
+resp = client.save("subjectlog", id="<id>", options="remove_entry", data={'date_time': '2023-04-05T13:45:00Z'})
 ```
 
 ### Response example
@@ -325,10 +325,10 @@ resp = client.save_model("subjectlog", id="00000000-0000-0000-0000-000000000000"
 
 ```
 {'subject_log': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'WaterConsumption',
     'description': "new text",
-    'subject': '00000000-0000-0000-0000-000000000000',
+    'subject': '<subject-id>',
     'entries': []}
 }
 ``` 

@@ -32,4 +32,4 @@ Choose the tool that best fits your workflow:
 - **For Python users**: Begin with the [Python API tool](/api-tools/python-api-tool/)  
 - **For exploration**: Try the [Web API tool](/api-tools/web-api-tool/) in your browser
 
-All tools use the same underlying [API endpoints](/api/) and support consistent authentication and query patterns. 
+All tools use the same underlying [API endpoints](/api/) and support consistent authentication and query patterns. Authentication uses Personal Access Tokens obtained via a browser-based device authorization flow — your password is never sent to a script. See the [API documentation](/api/) for full details on token management. 

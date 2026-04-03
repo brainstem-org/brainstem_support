@@ -54,7 +54,7 @@ A detailed list of the available `type` options and accepted schemas for the `de
 {: .no_toc}
 
 ```
-resp = client.load_model('equipment')
+resp = client.load('equipment')
 ```
 
 ### Response example
@@ -63,14 +63,14 @@ resp = client.load_model('equipment')
 ```
 {'equipment': [
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'name': 'Headstage amplifier',
         'type': 'Amplifier',
         'notes': '32-channel preamp',
-        'setup': '00000000-0000-0000-0000-000000000000',
+        'setup': '<setup-id>',
         'date_time': '2024-03-05T10:00:00Z',
         'consumable': None,
-        'hardwaredevice': '00000000-0000-0000-0000-000000000000',
+        'hardwaredevice': '<hardwaredevice-id>',
         'details': {},
         'type_schema_version': '0.0.0',
         'coordinates_system': 'External_XYZ_Absolute',
@@ -85,11 +85,11 @@ resp = client.load_model('equipment')
         'coordinates_schema_version': '0.0.0'
     },
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'name': 'Two-photon rig',
         'type': 'TwoPhotonMicroscope',
         'notes': 'Imaging setup',
-        'setup': '00000000-0000-0000-0000-000000000000',
+        'setup': '<setup-id>',
         'date_time': None,
         'consumable': None,
         'hardwaredevice': None,
@@ -121,13 +121,13 @@ resp = client.load_model('equipment')
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "equipment",
     data={
         "name": "Fiber photometry console",
         "type": "FiberPhotometrySystem",
-        "setup": "00000000-0000-0000-0000-000000000000",
-        "hardwaredevice": "00000000-0000-0000-0000-000000000000",
+        "setup": "<setup-id>",
+        "hardwaredevice": "<hardwaredevice-id>",
         "notes": "Main recording rig",
         "details": {},
         "coordinates_system": "External_XYZ_Absolute",
@@ -148,14 +148,14 @@ resp = client.save_model(
 
 ```
 {'equipment': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'Fiber photometry console',
     'type': 'FiberPhotometrySystem',
     'notes': 'Main recording rig',
-    'setup': '00000000-0000-0000-0000-000000000000',
+    'setup': '<setup-id>',
     'date_time': None,
     'consumable': None,
-    'hardwaredevice': '00000000-0000-0000-0000-000000000000',
+    'hardwaredevice': '<hardwaredevice-id>',
     'details': {},
     'type_schema_version': '0.0.0',
     'coordinates_system': 'External_XYZ_Absolute',
@@ -183,7 +183,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('equipment', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('equipment', id='<id>')
 ```
 
 ### Response example
@@ -191,14 +191,14 @@ resp = client.load_model('equipment', id='00000000-0000-0000-0000-000000000000')
 
 ```
 {'equipment': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'Fiber photometry console',
     'type': 'FiberPhotometrySystem',
     'notes': 'Main recording rig',
-    'setup': '00000000-0000-0000-0000-000000000000',
+    'setup': '<setup-id>',
     'date_time': None,
     'consumable': None,
-    'hardwaredevice': '00000000-0000-0000-0000-000000000000',
+    'hardwaredevice': '<hardwaredevice-id>',
     'details': {},
     'type_schema_version': '0.0.0',
     'coordinates_system': 'External_XYZ_Absolute',
@@ -227,9 +227,9 @@ resp = client.load_model('equipment', id='00000000-0000-0000-0000-000000000000')
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "equipment",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={"notes": "Updated calibration complete"}
 )
 ```
@@ -239,14 +239,14 @@ resp = client.save_model(
 
 ```
 {'equipment': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'name': 'Fiber photometry console',
     'type': 'FiberPhotometrySystem',
     'notes': 'Updated calibration complete',
-    'setup': '00000000-0000-0000-0000-000000000000',
+    'setup': '<setup-id>',
     'date_time': None,
     'consumable': None,
-    'hardwaredevice': '00000000-0000-0000-0000-000000000000',
+    'hardwaredevice': '<hardwaredevice-id>',
     'details': {},
     'type_schema_version': '0.0.0',
     'coordinates_system': 'External_XYZ_Absolute',
@@ -273,5 +273,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("equipment", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("equipment", id="<id>")
 ```

@@ -45,7 +45,7 @@ Optional fields such as `comments` can be omitted from list/detail responses whe
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralparadigm')
+resp = client.load('behavioralparadigm')
 ```
 
 ### Response example
@@ -54,10 +54,10 @@ resp = client.load_model('behavioralparadigm')
 ```
 {'behavioral_paradigms': [
     {
-        'id': 'e5f6a7b8-9012-34ef-0123-5678901234ef',
+        'id': '<id>',
         'name': 'Morris Water Navigation Task',
         'description': 'A spatial learning task using a water maze to assess hippocampal-dependent spatial memory',
-        'category': 'b2c3d4e5-6789-01bc-def0-2345678901bc',
+        'category': '<category-id>',
         'species': [],
         'original_publication': 'Morris 1984',
         'reference_url': '',
@@ -65,10 +65,10 @@ resp = client.load_model('behavioralparadigm')
         'external_identifiers': None
     },
     {
-        'id': 'f6a7b8c9-0123-45f0-1234-6789012345f0',
+        'id': '<id>',
         'name': 'Elevated Plus Exploration',
         'description': 'Assessment of anxiety-like behavior via open arm avoidance on an elevated plus-shaped maze',
-        'category': 'c3d4e5f6-7890-12cd-ef01-3456789012cd',
+        'category': '<category-id>',
         'species': [],
         'original_publication': '',
         'reference_url': '',
@@ -94,10 +94,10 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralparadigm", data={
+resp = client.save("behavioralparadigm", data={
         "name": "Rotarod",
         "description": "Assessment of balance, coordination, and motor learning on a rotating rod",
-        "category": "c3d4e5f6-7890-12cd-ef01-3456789012cd",
+        "category": "<category-id>",
         "original_publication": "Dunham & Miya 1957",
     }
 )
@@ -108,10 +108,10 @@ resp = client.save_model("behavioralparadigm", data={
 
 ```
 {'behavioral_paradigm_approval': {
-    'id': 'a7b8c9d0-1234-56a1-2345-7890123456a1',
+    'id': '<id>',
     'name': 'Rotarod',
     'description': 'Assessment of balance, coordination, and motor learning on a rotating rod',
-    'category': 'c3d4e5f6-7890-12cd-ef01-3456789012cd',
+    'category': '<category-id>',
     'species': [],
     'original_publication': 'Dunham & Miya 1957',
     'reference_url': '',
@@ -131,7 +131,7 @@ resp = client.save_model("behavioralparadigm", data={
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralparadigm', id='e5f6a7b8-9012-34ef-0123-5678901234ef')
+resp = client.load('behavioralparadigm', id='<id>')
 ```
 
 ### Response example
@@ -139,10 +139,10 @@ resp = client.load_model('behavioralparadigm', id='e5f6a7b8-9012-34ef-0123-56789
 
 ```
 {'behavioral_paradigm': {
-    'id': 'e5f6a7b8-9012-34ef-0123-5678901234ef',
+    'id': '<id>',
     'name': 'Morris Water Navigation Task',
     'description': 'A spatial learning task using a water maze to assess hippocampal-dependent spatial memory',
-    'category': 'b2c3d4e5-6789-01bc-def0-2345678901bc',
+    'category': '<category-id>',
     'species': [],
     'original_publication': 'Morris 1984',
     'reference_url': '',
@@ -165,7 +165,7 @@ resp = client.load_model('behavioralparadigm', id='e5f6a7b8-9012-34ef-0123-56789
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-5678901234ef", data={"description": "updated description"})
+resp = client.save("behavioralparadigm", id="<id>", data={"description": "updated description"})
 ```
 
 ### Response example
@@ -173,10 +173,10 @@ resp = client.save_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-56789
 
 ```
 {'behavioral_paradigm_approval': {
-    'id': 'b8c9d0e1-2345-67b2-3456-8901234567b2',
+    'id': '<id>',
     'name': 'Morris Water Navigation Task',
     'description': 'updated description',
-    'category': 'b2c3d4e5-6789-01bc-def0-2345678901bc',
+    'category': '<category-id>',
     'species': [],
     'original_publication': 'Morris 1984',
     'reference_url': '',
@@ -199,7 +199,7 @@ resp = client.save_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-56789
 {: .no_toc}
 
 ```
-resp = client.delete_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-5678901234ef")
+resp = client.delete("behavioralparadigm", id="<id>")
 ``` 
 
 
@@ -214,7 +214,7 @@ resp = client.delete_model("behavioralparadigm", id="e5f6a7b8-9012-34ef-0123-567
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralparadigmapproval')
+resp = client.load('behavioralparadigmapproval')
 ```
 
 ### Response example
@@ -223,10 +223,10 @@ resp = client.load_model('behavioralparadigmapproval')
 ```
 {'behavioral_paradigm_approvals': [
     {
-        'id': 'a7b8c9d0-1234-56a1-2345-7890123456a1',
+        'id': '<id>',
         'name': 'Rotarod',
         'description': 'Assessment of balance, coordination, and motor learning on a rotating rod',
-        'category': 'c3d4e5f6-7890-12cd-ef01-3456789012cd',
+        'category': '<category-id>',
         'species': [],
         'original_publication': 'Dunham & Miya 1957',
         'reference_url': '',
@@ -252,7 +252,7 @@ resp = client.load_model('behavioralparadigmapproval')
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralparadigmapproval', id='a7b8c9d0-1234-56a1-2345-7890123456a1')
+resp = client.load('behavioralparadigmapproval', id='<id>')
 ```
 
 ### Response example
@@ -260,10 +260,10 @@ resp = client.load_model('behavioralparadigmapproval', id='a7b8c9d0-1234-56a1-23
 
 ```
 {'behavioral_paradigm_approval': {
-    'id': 'a7b8c9d0-1234-56a1-2345-7890123456a1',
+    'id': '<id>',
     'name': 'Rotarod',
     'description': 'Assessment of balance, coordination, and motor learning on a rotating rod',
-    'category': 'c3d4e5f6-7890-12cd-ef01-3456789012cd',
+    'category': '<category-id>',
     'species': [],
     'original_publication': 'Dunham & Miya 1957',
     'reference_url': '',
@@ -288,7 +288,7 @@ resp = client.load_model('behavioralparadigmapproval', id='a7b8c9d0-1234-56a1-23
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralparadigmapproval", id="a7b8c9d0-1234-56a1-2345-7890123456a1", options="accept")
+resp = client.save("behavioralparadigmapproval", id="<id>", options="accept")
 ```
 
 
@@ -303,5 +303,5 @@ resp = client.save_model("behavioralparadigmapproval", id="a7b8c9d0-1234-56a1-23
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralparadigmapproval", id="b8c9d0e1-2345-67b2-3456-8901234567b2", options="reject")
+resp = client.save("behavioralparadigmapproval", id="<id>", options="reject")
 ```

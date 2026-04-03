@@ -39,7 +39,7 @@ nav_order: 1
 {: .no_toc}
 
 ```
-resp = client.load_model('behavior')
+resp = client.load('behavior')
 ```
 
 ### Response example
@@ -48,25 +48,25 @@ resp = client.load_model('behavior')
 ```
 {'behaviors': [
 	{
-		'id': '00000000-0000-0000-0000-000000000000',
-		'session': '00000000-0000-0000-0000-000000000000',
-		'subjects': ['00000000-0000-0000-0000-000000000000'],
-		'setup': '00000000-0000-0000-0000-000000000000',
-		'behavioralassay': '00000000-0000-0000-0000-000000000000'
+		'id': '<id>',
+		'session': '<session-id>',
+		'subjects': ['<id>'],
+		'setup': '<setup-id>',
+		'behavioralassay': '<behavioralassay-id>'
 	},
 	{
-		'id': '00000000-0000-0000-0000-000000000000',
-		'session': '00000000-0000-0000-0000-000000000000',
-		'subjects': ['00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000000'],
-		'setup': '00000000-0000-0000-0000-000000000000',
-		'behavioralassay': '00000000-0000-0000-0000-000000000000'
+		'id': '<id>',
+		'session': '<session-id>',
+		'subjects': ['<id>', '<id>'],
+		'setup': '<setup-id>',
+		'behavioralassay': '<behavioralassay-id>'
 	},
 	{
-		'id': '00000000-0000-0000-0000-000000000000',
-		'session': '00000000-0000-0000-0000-000000000000',
-		'subjects': ['00000000-0000-0000-0000-000000000000'],
-		'setup': '00000000-0000-0000-0000-000000000000',
-		'behavioralassay': '00000000-0000-0000-0000-000000000000'
+		'id': '<id>',
+		'session': '<session-id>',
+		'subjects': ['<id>'],
+		'setup': '<setup-id>',
+		'behavioralassay': '<behavioralassay-id>'
 	}
 ]}
 ```
@@ -83,11 +83,11 @@ resp = client.load_model('behavior')
 {: .no_toc}
 
 ```
-resp = client.save_model("behavior",  data={
-	"session": "00000000-0000-0000-0000-000000000000", 
-	"subjects": ["00000000-0000-0000-0000-000000000000"],
-	"setup": "00000000-0000-0000-0000-000000000000",
-	"behavioralassay": "00000000-0000-0000-0000-000000000000",
+resp = client.save("behavior",  data={
+	"session": "<session-id>", 
+	"subjects": ["<id>"],
+	"setup": "<setup-id>",
+	"behavioralassay": "<behavioralassay-id>",
 	"notes": "Optional notes about this behavior"
 })
 ```
@@ -98,11 +98,11 @@ resp = client.save_model("behavior",  data={
 ```
 {'behavior': 
 	{
-		'id': '00000000-0000-0000-0000-000000000000',
-		'session': '00000000-0000-0000-0000-000000000000',
-		'subjects': ['00000000-0000-0000-0000-000000000000'],
-		'setup': '00000000-0000-0000-0000-000000000000',
-		'behavioralassay': '00000000-0000-0000-0000-000000000000',
+		'id': '<id>',
+		'session': '<session-id>',
+		'subjects': ['<id>'],
+		'setup': '<setup-id>',
+		'behavioralassay': '<behavioralassay-id>',
 		'notes': 'Optional notes about this behavior'
 	}
 }
@@ -121,7 +121,7 @@ resp = client.save_model("behavior",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('behavior', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('behavior', id='<id>')
 ```
 
 ### Response example
@@ -130,11 +130,11 @@ resp = client.load_model('behavior', id='00000000-0000-0000-0000-000000000000')
 ```
 {'behavior': 
 	{
-		'id': '00000000-0000-0000-0000-000000000000',
-		'session': '00000000-0000-0000-0000-000000000000',
-		'subjects': ['00000000-0000-0000-0000-000000000000'],
-		'setup': '00000000-0000-0000-0000-000000000000',
-		'behavioralassay': '00000000-0000-0000-0000-000000000000',
+		'id': '<id>',
+		'session': '<session-id>',
+		'subjects': ['<id>'],
+		'setup': '<setup-id>',
+		'behavioralassay': '<behavioralassay-id>',
 		'notes': 'Optional notes about this behavior'
 	}
 }
@@ -153,7 +153,7 @@ resp = client.load_model('behavior', id='00000000-0000-0000-0000-000000000000')
 {: .no_toc}
 
 ```
-resp = client.save_model("behavior", id="00000000-0000-0000-0000-000000000000", data={'subjects': ['00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000000']})
+resp = client.save("behavior", id="<id>", data={'subjects': ['<id>', '<id>']})
 ```
 
 ### Response example
@@ -162,11 +162,11 @@ resp = client.save_model("behavior", id="00000000-0000-0000-0000-000000000000", 
 ```
 {'behavior': 
 	{
-		'id': '00000000-0000-0000-0000-000000000000',
-		'session': '00000000-0000-0000-0000-000000000000',
-		'subjects': ['00000000-0000-0000-0000-000000000000', '00000000-0000-0000-0000-000000000000'],
-		'setup': '00000000-0000-0000-0000-000000000000',
-		'behavioralassay': '00000000-0000-0000-0000-000000000000',
+		'id': '<id>',
+		'session': '<session-id>',
+		'subjects': ['<id>', '<id>'],
+		'setup': '<setup-id>',
+		'behavioralassay': '<behavioralassay-id>',
 		'notes': 'Optional notes about this behavior'
 	}
 }
@@ -185,5 +185,5 @@ resp = client.save_model("behavior", id="00000000-0000-0000-0000-000000000000", 
 {: .no_toc}
 
 ```
-resp = client.delete_model("behavior", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("behavior", id="<id>")
 ```

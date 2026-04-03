@@ -49,7 +49,7 @@ nav_order: 5
 {: .no_toc}
 
 ```
-resp = client.load_model('license')
+resp = client.load('license')
 ```
 
 ### Response example
@@ -58,13 +58,13 @@ resp = client.load_model('license')
 ```
 {'licenses': [
     {
-        'id': 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+        'id': '<id>',
         'name': 'PPL: Septo-hippocampal dynamics 2025-2028',
         'type': 'animal_research_authorization',
         'status': 'active',
         'description': '',
         'country': 'GB',
-        'regulatory_authority': 'b2c3d4e5-f6a7-8901-bcde-f12345678901',
+        'regulatory_authority': '<regulatory_authority-id>',
         'license_number': 'PP1234567',
         'license_document': None,
         'valid_from': '2025-01-01',
@@ -89,7 +89,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("license", data={
+resp = client.save("license", data={
     'name': 'IACUC Protocol 2026-001',
     'type': 'animal_research_authorization',
     'status': 'active',
@@ -105,7 +105,7 @@ resp = client.save_model("license", data={
 
 ```
 {'license': {
-    'id': 'c3d4e5f6-a7b8-9012-cdef-123456789012',
+    'id': '<id>',
     'name': 'IACUC Protocol 2026-001',
     'type': 'animal_research_authorization',
     'status': 'active',
@@ -133,7 +133,7 @@ resp = client.save_model("license", data={
 {: .no_toc}
 
 ```
-resp = client.load_model('license', id='c3d4e5f6-a7b8-9012-cdef-123456789012')
+resp = client.load('license', id='<id>')
 ```
 
 ### Response example
@@ -141,7 +141,7 @@ resp = client.load_model('license', id='c3d4e5f6-a7b8-9012-cdef-123456789012')
 
 ```
 {'license': {
-    'id': 'c3d4e5f6-a7b8-9012-cdef-123456789012',
+    'id': '<id>',
     'name': 'IACUC Protocol 2026-001',
     'type': 'animal_research_authorization',
     'status': 'active',
@@ -169,7 +169,7 @@ resp = client.load_model('license', id='c3d4e5f6-a7b8-9012-cdef-123456789012')
 {: .no_toc}
 
 ```
-resp = client.save_model("license", id="c3d4e5f6-a7b8-9012-cdef-123456789012", data={"status": "expired"})
+resp = client.save("license", id="<id>", data={"status": "expired"})
 ```
 
 ### Response example
@@ -177,7 +177,7 @@ resp = client.save_model("license", id="c3d4e5f6-a7b8-9012-cdef-123456789012", d
 
 ```
 {'license': {
-    'id': 'c3d4e5f6-a7b8-9012-cdef-123456789012',
+    'id': '<id>',
     'name': 'IACUC Protocol 2026-001',
     'type': 'animal_research_authorization',
     'status': 'expired',
@@ -205,5 +205,5 @@ resp = client.save_model("license", id="c3d4e5f6-a7b8-9012-cdef-123456789012", d
 {: .no_toc}
 
 ```
-resp = client.delete_model("license", id="c3d4e5f6-a7b8-9012-cdef-123456789012")
+resp = client.delete("license", id="<id>")
 ```

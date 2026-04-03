@@ -437,25 +437,41 @@ Group related sessions for analysis and organization.
 Access your experimental data programmatically for analysis.
 
 ```python
-from brainstem_api_client import BrainstemClient
+from brainstem_api_tools import BrainstemClient
 
 client = BrainstemClient()
 
-# Get all sessions for a subject
-subject_sessions = client.load_model('session', 
-                                   filters={'subject__name': 'TM_R001'}).json()
+# Step 1: Resolve subject name to its UUID
+# (Session has no subject field; subjects are linked via behavior records)
+subjects = client.load('subject', filters={'name': 'TM_R001'}).json()
+subject_id = subjects['subjects'][0]['id']
 
-# Get behavioral performance data
-behavior_data = client.load_model('behavioralassay',
-                                filters={'session__subject__name': 'TM_R001'}).json()
+# Step 2: Find all behavior records for this subject and collect session IDs
+behaviors = client.load('behavior',
+                        filters={'subjects': subject_id},
+                        load_all=True).json()
+session_ids = list({b['session'] for b in behaviors.get('behaviors', [])})
 
-# Get neural data file paths
-neural_files = client.load_model('dataacquisition',
-                               filters={'session__subject__name': 'TM_R001',
-                                      'type': 'Extracellular'}).json()
+# Step 3: Load the sessions
+subject_sessions = []
+for sid in session_ids:
+    resp = client.load('session', filters={'id': sid}).json()
+    subject_sessions.extend(resp.get('sessions', []))
 
-# Download specific session data
-session_data = client.load_model('session', filters={'name': 'tm_r001_day1_behavior_id'})
+# Step 4: Behavior records are already in `behaviors` from Step 2
+behavior_data = behaviors
+
+# Step 5: Get neural data acquisition records per session
+neural_files = []
+for sid in session_ids:
+    resp = client.load('dataacquisition',
+                       filters={'session': sid,
+                                'type': 'ExtracellularEphys'}).json()
+    neural_files.extend(resp.get('data_acquisitions', []))
+
+# Load a specific session by name
+session_data = client.load('session',
+                           filters={'name': 'TM_R001_Day1_ThetaMaze_Training1'}).json()
 ```
 
 ## Next Steps

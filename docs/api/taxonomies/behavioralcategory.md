@@ -40,7 +40,7 @@ Optional fields such as `comments` can be omitted from list/detail responses whe
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralcategory')
+resp = client.load('behavioralcategory')
 ```
 
 ### Response example
@@ -49,16 +49,16 @@ resp = client.load_model('behavioralcategory')
 ```
 {'behavioral_categories': [
     {
-        'id': 'a1b2c3d4-5678-90ab-cdef-1234567890ab',
+        'id': '<id>',
         'name': 'Learning & Memory',
         'description': 'Behavioral tasks assessing learning and memory processes',
         'parent': None
     },
     {
-        'id': 'b2c3d4e5-6789-01bc-def0-2345678901bc',
+        'id': '<id>',
         'name': 'Spatial Learning',
         'description': 'Tasks assessing spatial navigation and spatial memory',
-        'parent': 'a1b2c3d4-5678-90ab-cdef-1234567890ab'
+        'parent': '<parent-id>'
     }
 ]}
 ```
@@ -79,7 +79,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralcategory", data={
+resp = client.save("behavioralcategory", data={
         "name": "Motor Function",
         "description": "Tasks assessing motor abilities and coordination",
     }
@@ -91,7 +91,7 @@ resp = client.save_model("behavioralcategory", data={
 
 ```
 {'behavioral_category_approval': {
-    'id': 'c3d4e5f6-7890-12cd-ef01-3456789012cd',
+    'id': '<id>',
     'name': 'Motor Function',
     'description': 'Tasks assessing motor abilities and coordination',
     'parent': None}
@@ -109,7 +109,7 @@ resp = client.save_model("behavioralcategory", data={
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralcategory', id='a1b2c3d4-5678-90ab-cdef-1234567890ab')
+resp = client.load('behavioralcategory', id='<id>')
 ```
 
 ### Response example
@@ -117,7 +117,7 @@ resp = client.load_model('behavioralcategory', id='a1b2c3d4-5678-90ab-cdef-12345
 
 ```
 {'behavioral_category': {
-    'id': 'a1b2c3d4-5678-90ab-cdef-1234567890ab',
+    'id': '<id>',
     'name': 'Learning & Memory',
     'description': 'Behavioral tasks assessing learning and memory processes',
     'parent': None}
@@ -138,7 +138,7 @@ resp = client.load_model('behavioralcategory', id='a1b2c3d4-5678-90ab-cdef-12345
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralcategory", id="a1b2c3d4-5678-90ab-cdef-1234567890ab", data={"description": "updated description"})
+resp = client.save("behavioralcategory", id="<id>", data={"description": "updated description"})
 ```
 
 ### Response example
@@ -146,7 +146,7 @@ resp = client.save_model("behavioralcategory", id="a1b2c3d4-5678-90ab-cdef-12345
 
 ```
 {'behavioral_category_approval': {
-    'id': 'd4e5f6a7-8901-23de-f012-4567890123de',
+    'id': '<id>',
     'name': 'Learning & Memory',
     'description': 'updated description',
     'parent': None}
@@ -167,7 +167,7 @@ resp = client.save_model("behavioralcategory", id="a1b2c3d4-5678-90ab-cdef-12345
 {: .no_toc}
 
 ```
-resp = client.delete_model("behavioralcategory", id="a1b2c3d4-5678-90ab-cdef-1234567890ab")
+resp = client.delete("behavioralcategory", id="<id>")
 ``` 
 
 
@@ -182,7 +182,7 @@ resp = client.delete_model("behavioralcategory", id="a1b2c3d4-5678-90ab-cdef-123
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralcategoryapproval')
+resp = client.load('behavioralcategoryapproval')
 ```
 
 ### Response example
@@ -191,7 +191,7 @@ resp = client.load_model('behavioralcategoryapproval')
 ```
 {'behavioral_category_approvals': [
     {
-        'id': 'c3d4e5f6-7890-12cd-ef01-3456789012cd',
+        'id': '<id>',
         'name': 'Motor Function',
         'description': 'Tasks assessing motor abilities and coordination',
         'parent': None,
@@ -215,7 +215,7 @@ resp = client.load_model('behavioralcategoryapproval')
 {: .no_toc}
 
 ```
-resp = client.load_model('behavioralcategoryapproval', id='c3d4e5f6-7890-12cd-ef01-3456789012cd')
+resp = client.load('behavioralcategoryapproval', id='<id>')
 ```
 
 ### Response example
@@ -223,7 +223,7 @@ resp = client.load_model('behavioralcategoryapproval', id='c3d4e5f6-7890-12cd-ef
 
 ```
 {'behavioral_category_approval': {
-    'id': 'c3d4e5f6-7890-12cd-ef01-3456789012cd',
+    'id': '<id>',
     'name': 'Motor Function',
     'description': 'Tasks assessing motor abilities and coordination',
     'parent': None,
@@ -246,7 +246,7 @@ resp = client.load_model('behavioralcategoryapproval', id='c3d4e5f6-7890-12cd-ef
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralcategoryapproval", id="c3d4e5f6-7890-12cd-ef01-3456789012cd", options="accept")
+resp = client.save("behavioralcategoryapproval", id="<id>", options="accept")
 ```
 
 
@@ -261,5 +261,5 @@ resp = client.save_model("behavioralcategoryapproval", id="c3d4e5f6-7890-12cd-ef
 {: .no_toc}
 
 ```
-resp = client.save_model("behavioralcategoryapproval", id="d4e5f6a7-8901-23de-f012-4567890123de", options="reject")
+resp = client.save("behavioralcategoryapproval", id="<id>", options="reject")
 ```

@@ -38,7 +38,7 @@ nav_order: 3
 {: .no_toc}
 
 ```
-resp = client.load_model('inventory')
+resp = client.load('inventory')
 ```
 
 ### Response example
@@ -47,14 +47,14 @@ resp = client.load_model('inventory')
 ```
 {'inventories': [
     {
-        'id': '58e0003d-16c2-4264-913d-288463c0356d',
+        'id': '<id>',
         'name': 'Probe inventory',
         'location': 'Lab Room 101',
         'description': '',
         'is_public': False
     },
     {
-        'id': '3e9ec0e0-d685-42ec-8386-0fa24602a73e',
+        'id': '<id>',
         'name': 'Virus inventory',
         'location': 'Lab Room 102',
         'description': '',
@@ -79,7 +79,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("inventory",  data=
+resp = client.save("inventory",  data=
     {
         'name': 'My new probe inventory',
         'location': 'Lab Room 103',
@@ -94,7 +94,7 @@ resp = client.save_model("inventory",  data=
 
 ```
 {'inventory': {
-    'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
+    'id': '<id>',
     'name': 'My new probe inventory',
     'location': 'Lab Room 103',
     'description': '',
@@ -115,7 +115,7 @@ resp = client.save_model("inventory",  data=
 {: .no_toc}
 
 ```
-resp = client.load_model('inventory', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
+resp = client.load('inventory', id='<id>')
 ```
 
 ### Response example
@@ -123,7 +123,7 @@ resp = client.load_model('inventory', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 
 ```
 {'inventory': {
-    'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
+    'id': '<id>',
     'name': 'My new probe inventory',
     'location': 'Lab Room 103',
     'description': '',
@@ -144,7 +144,7 @@ resp = client.load_model('inventory', id='d0ada97d-8607-48da-817b-bdd54bc9077b')
 {: .no_toc}
 
 ```
-resp = client.save_model("inventory", id="d0ada97d-8607-48da-817b-bdd54bc9077b", data={"description": "new text"})
+resp = client.save("inventory", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -152,7 +152,7 @@ resp = client.save_model("inventory", id="d0ada97d-8607-48da-817b-bdd54bc9077b",
 
 ```
 {'inventory': {
-    'id': 'd0ada97d-8607-48da-817b-bdd54bc9077b',
+    'id': '<id>',
     'name': 'My new probe inventory',
     'location': 'Lab Room 103',
     'description': 'new text',
@@ -173,5 +173,5 @@ resp = client.save_model("inventory", id="d0ada97d-8607-48da-817b-bdd54bc9077b",
 {: .no_toc}
 
 ```
-resp = client.delete_model("inventory", id="d0ada97d-8607-48da-817b-bdd54bc9077b")
+resp = client.delete("inventory", id="<id>")
 ``` 

@@ -46,7 +46,7 @@ A detailed list of the available `type` options and accepted schemas for the `de
 {: .no_toc}
 
 ```
-resp = client.load_model('manipulation')
+resp = client.load('manipulation')
 ```
 
 ### Response example
@@ -55,12 +55,12 @@ resp = client.load_model('manipulation')
 ```
 {'manipulations': [
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'ElectricalStimulation',
         'notes': 'motor cortex pulses',
-        'procedures': ['00000000-0000-0000-0000-000000000000'],
-        'equipment': ['00000000-0000-0000-0000-000000000000'],
-        'session': '00000000-0000-0000-0000-000000000000',
+        'procedures': ['<id>'],
+        'equipment': ['<id>'],
+        'session': '<session-id>',
         'details': [
             {
                 'amplitude': 0.15,
@@ -76,12 +76,12 @@ resp = client.load_model('manipulation')
         'order': 0
     },
     {
-        'id': '00000000-0000-0000-0000-000000000000',
+        'id': '<id>',
         'type': 'LiquidPerturbation',
         'notes': 'saline wash',
-        'procedures': ['00000000-0000-0000-0000-000000000000'],
+        'procedures': ['<id>'],
         'equipment': [],
-        'session': '00000000-0000-0000-0000-000000000000',
+        'session': '<session-id>',
         'details': [
             {
                 'liquidAgent': 'Saline',
@@ -111,13 +111,13 @@ resp = client.load_model('manipulation')
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "manipulation",
     data={
         'type': 'LiquidPerturbation',
-        'session': '00000000-0000-0000-0000-000000000000',
-        'procedures': ['00000000-0000-0000-0000-000000000000'],
-        'equipment': ['00000000-0000-0000-0000-000000000000'],
+        'session': '<session-id>',
+        'procedures': ['<id>'],
+        'equipment': ['<id>'],
         'notes': 'odorant rinse',
         'details': [
             {
@@ -139,12 +139,12 @@ resp = client.save_model(
 
 ```
 {'manipulation': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'LiquidPerturbation',
     'notes': 'odorant rinse',
-    'procedures': ['00000000-0000-0000-0000-000000000000'],
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
-    'session': '00000000-0000-0000-0000-000000000000',
+    'procedures': ['<id>'],
+    'equipment': ['<id>'],
+    'session': '<session-id>',
     'details': [
         {
             'liquidAgent': 'Water',
@@ -174,7 +174,7 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.load_model('manipulation', id='00000000-0000-0000-0000-000000000000')
+resp = client.load('manipulation', id='<id>')
 ```
 
 ### Response example
@@ -182,12 +182,12 @@ resp = client.load_model('manipulation', id='00000000-0000-0000-0000-00000000000
 
 ```
 {'manipulation': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'LiquidPerturbation',
     'notes': 'odorant rinse',
-    'procedures': ['00000000-0000-0000-0000-000000000000'],
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
-    'session': '00000000-0000-0000-0000-000000000000',
+    'procedures': ['<id>'],
+    'equipment': ['<id>'],
+    'session': '<session-id>',
     'details': [
         {
             'liquidAgent': 'Water',
@@ -217,9 +217,9 @@ resp = client.load_model('manipulation', id='00000000-0000-0000-0000-00000000000
 {: .no_toc}
 
 ```
-resp = client.save_model(
+resp = client.save(
     "manipulation",
-    id="00000000-0000-0000-0000-000000000000",
+    id="<id>",
     data={"notes": "rinse complete"}
 )
 ```
@@ -229,12 +229,12 @@ resp = client.save_model(
 
 ```
 {'manipulation': {
-    'id': '00000000-0000-0000-0000-000000000000',
+    'id': '<id>',
     'type': 'LiquidPerturbation',
     'notes': 'rinse complete',
-    'procedures': ['00000000-0000-0000-0000-000000000000'],
-    'equipment': ['00000000-0000-0000-0000-000000000000'],
-    'session': '00000000-0000-0000-0000-000000000000',
+    'procedures': ['<id>'],
+    'equipment': ['<id>'],
+    'session': '<session-id>',
     'details': [
         {
             'liquidAgent': 'Water',
@@ -266,5 +266,5 @@ resp = client.save_model(
 {: .no_toc}
 
 ```
-resp = client.delete_model("manipulation", id="00000000-0000-0000-0000-000000000000")
+resp = client.delete("manipulation", id="<id>")
 ``` 

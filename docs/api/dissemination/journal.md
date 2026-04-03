@@ -40,7 +40,7 @@ Optional fields such as `comments` can be omitted from list/detail responses whe
 {: .no_toc}
 
 ```
-resp = client.load_model('journal')
+resp = client.load('journal')
 ```
 
 ### Response example
@@ -49,19 +49,19 @@ resp = client.load_model('journal')
 ```
 {'journals': [
     {
-        'id': 'fb66207b-bc2d-4e93-9047-7ad38a8883ef',
+        'id': '<id>',
         'name': 'bioRxiv',
         'description': '',
         'website': 'https://www.biorxiv.org'
     },
     {
-        'id': 'd061bcf6-ac0c-4aa1-8ead-09aadbde7bf9',
+        'id': '<id>',
         'name': 'eLife',
         'description': '',
         'website': ''
     },
     {
-        'id': 'da3359b7-e380-4dc6-ba9d-04831d3082d9',
+        'id': '<id>',
         'name': 'SomeJournal',
         'description': '',
         'website': ''
@@ -86,7 +86,7 @@ Public list responses also include a `meta` object (pagination/filter metadata).
 {: .no_toc}
 
 ```
-resp = client.save_model("journal",  data={
+resp = client.save("journal",  data={
     'name': 'MyNewJournal',
     'description': '',
     'website': 'newjournal.com'}
@@ -98,7 +98,7 @@ resp = client.save_model("journal",  data={
 
 ```
 {'journal_approval': {
-        'id': '549b9e4f-5253-44f8-93ee-f18f08a39a36',
+        'id': '<id>',
         'name': 'MyNewJournal',
         'description': '',
         'website': 'http://newjournal.com'
@@ -118,7 +118,7 @@ resp = client.save_model("journal",  data={
 {: .no_toc}
 
 ```
-resp = client.load_model('journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
+resp = client.load('journal', id='<id>')
 ```
 
 ### Response example
@@ -126,7 +126,7 @@ resp = client.load_model('journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 
 ```
 {'journal': {
-    'id': 'da3359b7-e380-4dc6-ba9d-04831d3082d9',
+    'id': '<id>',
     'name': 'SomeJournal',
     'description': '',
     'website': ''}
@@ -148,7 +148,7 @@ resp = client.load_model('journal', id='da3359b7-e380-4dc6-ba9d-04831d3082d9')
 {: .no_toc}
 
 ```
-resp = client.save_model("journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", data={"description": "new text"})
+resp = client.save("journal", id="<id>", data={"description": "new text"})
 ```
 
 ### Response example
@@ -156,7 +156,7 @@ resp = client.save_model("journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", d
 
 ```
 {'journal_approval': {
-    'id': '640ea107-cf9e-413a-b0b8-562082654481',
+    'id': '<id>',
     'name': 'SomeJournal',
     'description': 'new text',
     'website': ''}
@@ -177,7 +177,7 @@ resp = client.save_model("journal", id="da3359b7-e380-4dc6-ba9d-04831d3082d9", d
 {: .no_toc}
 
 ```
-resp = client.delete_model("journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
+resp = client.delete("journal", id="<id>")
 ```
 
 ## List approvals
@@ -192,7 +192,7 @@ resp = client.delete_model("journal", id="d37c9255-d5ae-47d9-b6e1-4ec760c200fb")
 {: .no_toc}
 
 ```
-resp = client.load_model('journalapproval')
+resp = client.load('journalapproval')
 ```
 
 ### Response example
@@ -201,17 +201,17 @@ resp = client.load_model('journalapproval')
 ```
 {'journal_approvals': [
     {
-        'id': '640ea107-cf9e-413a-b0b8-562082654481',
+        'id': '<id>',
         'name': 'SomeJournal',
         'description': 'new text',
         'website': '',
-        'instance_id': 'da3359b7-e380-4dc6-ba9d-04831d3082d9',
+        'instance_id': '<instance_id-id>',
         'action': 'Change',
         'reviewer': None,
         'status': 'Pending'
     },
     {
-        'id': '549b9e4f-5253-44f8-93ee-f18f08a39a36',
+        'id': '<id>',
         'name': 'MyNewJournal',
         'description': '',
         'website': 'http://newjournal.com',
@@ -236,7 +236,7 @@ resp = client.load_model('journalapproval')
 {: .no_toc}
 
 ```
-resp = client.load_model('journalapproval', id='549b9e4f-5253-44f8-93ee-f18f08a39a36')
+resp = client.load('journalapproval', id='<id>')
 ```
 
 ### Response example
@@ -244,7 +244,7 @@ resp = client.load_model('journalapproval', id='549b9e4f-5253-44f8-93ee-f18f08a3
 
 ```
 {'journal_approval': {
-    'id': '549b9e4f-5253-44f8-93ee-f18f08a39a36',
+    'id': '<id>',
     'name': 'MyNewJournal',
     'description': '',
     'website': 'http://newjournal.com',
@@ -268,7 +268,7 @@ resp = client.load_model('journalapproval', id='549b9e4f-5253-44f8-93ee-f18f08a3
 {: .no_toc}
 
 ```
-resp = client.save_model("journalapproval", id="549b9e4f-5253-44f8-93ee-f18f08a39a36", options="accept")
+resp = client.save("journalapproval", id="<id>", options="accept")
 ```
 
 
@@ -284,5 +284,5 @@ resp = client.save_model("journalapproval", id="549b9e4f-5253-44f8-93ee-f18f08a3
 {: .no_toc}
 
 ```
-resp = client.save_model("journalapproval", id="549b9e4f-5253-44f8-93ee-f18f08a39a36", options="reject")
+resp = client.save("journalapproval", id="<id>", options="reject")
 ```
