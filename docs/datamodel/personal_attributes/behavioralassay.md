@@ -23,9 +23,9 @@ A behavioral assay is your lab's specific implementation of a behavioral paradig
 
 BrainSTEM organizes behavioral experiments through a hierarchy that separates shared scientific knowledge from lab-specific implementation details:
 
-- **Behavioral Category** — The broad domain (e.g., "Learning & Memory" → "Spatial Learning")
-- **Behavioral Paradigm** — The standardized task shared across the field (e.g., "Morris Water Navigation Task")
-- **Behavioral Assay** (this page) — Your lab's specific implementation of a paradigm, linking it to a setup type (e.g., "MWM 4-day acquisition, 60s trials, probe on day 5")
+- **Behavioral Category** — The broad domain (e.g., "Anxiety & Affect" → "Anxiety")
+- **Behavioral Paradigm** — The standardized task shared across the field (e.g., "Elevated Plus Exploration")
+- **Behavioral Assay** (this page) — Your lab's specific implementation of a paradigm under a specific preparation condition, linking a paradigm to a setup type (e.g., "EPM 5-min test")
 - **Behavior** — The actual execution of an assay within a session, tied to specific subjects and a physical setup
 
 Categories and paradigms are shared taxonomies available to everyone. Assays are lab-specific — they belong to your groups and capture exactly how you run a paradigm.
@@ -35,8 +35,8 @@ Categories and paradigms are shared taxonomies available to everyone. Assays are
 | Level | Example |
 |:------|:--------|
 | Paradigm | Elevated Plus Exploration |
-| Assay | "EPM 5-min test" — single 5-min session, 300 lux open arms, setup type: Elevated Plus Maze |
-| Behavior | Rat #7, Session 2024-06-01, ran assay "EPM 5-min test" on setup "EPM Rig B" |
+| Assay | "EPM 5-min test" — single 5-min session, 300 lux open arms, setup type: Elevated Plus Maze (Freely Moving Awake) |
+| Behavior | Rat #7, Session 2024-06-01, ran assay "EPM 5-min test" on setup "EPM Rig B, Room 108" |
 
 ## Fields
 
@@ -44,7 +44,7 @@ Categories and paradigms are shared taxonomies available to everyone. Assays are
 |:------|:------------|
 | ``Behavioral assay name`` | A descriptive name for this assay, ideally indicating the paradigm and key protocol details (e.g., "MWM 4-day acquisition" or "EPM 5-min test") (**required**; string; maximum length: 50 characters). |
 | ``Setup category`` | Category of setup conditions associated with the selected setup type (e.g., Freely Moving Awake, Head-Fixed Awake). |
-| ``Setup type`` | The standardized apparatus type (e.g., "Elevated Plus Maze", "Open Field Arena") (**required**). Must reference an existing [setup type]({{"datamodel/taxonomies/setuptype/"|absolute_url}}). |
+| ``Setup type`` | The preparation condition under which this assay is run — a setup type encodes both the physiological state of the subject (e.g., Freely Moving Awake) and the class of apparatus (e.g., "Elevated Plus Maze"). This constrains which physical setups can be used when recording a behavior (**required**). Must reference an existing [setup type]({{"datamodel/taxonomies/setuptype/"|absolute_url}}). |
 | ``Behavioral category`` | The taxonomy category that organizes the selected behavioral paradigm (e.g., "Learning & Memory"). |
 | ``Behavioral paradigm`` | The shared paradigm this assay implements (**required**). Must reference an existing [behavioral paradigm]({{"datamodel/taxonomies/behavioralparadigm/"|absolute_url}}). |
 | ``Licenses`` | Licenses that authorize this assay for regulatory and compliance tracking. Can include multiple licenses. |

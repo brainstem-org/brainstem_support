@@ -18,7 +18,25 @@ has_toc: false
 
 ## Introduction 
 
-Setups describe where experiments, procedures, or manipulations takes place. It also describes the environment of a recorded subject. Setups has specifications and equipment associate with it.
+A setup describes a specific physical rig, maze, or apparatus in your lab where experiments are conducted. Setups are where procedures, data acquisition, behaviors, and manipulations take place. Each setup belongs to a setup type and can have equipment and specifications associated with it.
+
+## How it fits together
+
+Setups are part of a two-level hierarchy for describing experimental apparatus:
+
+- **Setup Type Category** — The broad experimental condition (e.g., "Freely Moving Awake", "Head-Fixed Awake", "In Vitro"). This is a field on the setup type.
+- **Setup Type** — A shared classification of the experimental preparation: the physiological state of the subject or tissue and the associated class of apparatus (e.g., "Open Field Arena" under Freely Moving Awake, "Surgical Table" under Anesthetized In Vivo). Defined in taxonomies and available to everyone.
+- **Setup** (this page) — Your lab's specific physical rig (e.g., "EPM rig B, Room 108" or "Linear track, Room 205"). Belongs to your groups.
+
+In a behavioral experiment, a **behavior** record links a **behavioral assay** (how you run a paradigm) with a **setup** (where you run it) and the **subjects** involved.
+
+## Example
+
+| Level | Example |
+|:------|:--------|
+| Setup Type Category | Freely Moving Awake |
+| Setup Type | Open Field Arena |
+| Setup | "Open Field, Room 204" — 50×50 cm arena, Room 204 |
 
 ## Fields
 
@@ -26,7 +44,7 @@ Setups describe where experiments, procedures, or manipulations takes place. It 
 |:------|:------------|
 | ``Setup name`` | Name of the setup (**required**; string; maximum length: 50 characters). Example: "Behavior Room A - Setup 1" |
 | ``Setup category`` | Category used to filter available setup types. Selected from predefined setup categories (In Vitro, Ex Vivo, Anesthetized In Vivo, Head-Fixed Awake, Voluntarily Stationary Awake, Freely Moving Awake, Unknown). Example: "Freely Moving Awake" |
-| ``Setup type`` | The type of environment the setup is (**required**). Must reference an existing [setup type]({{"datamodel/taxonomies/setuptype/"|absolute_url}}). Example: "Linear track" |
+| ``Setup type`` | The preparation condition and associated class of apparatus (e.g., "Open Field Arena" under Freely Moving Awake, "Head-fixed disc" under Head-Fixed Awake). Each setup type has a category describing the physiological state of the subject or tissue (**required**). Must reference an existing [setup type]({{"datamodel/taxonomies/setuptype/"|absolute_url}}). |
 | ``Location`` | Location of the setup (string; maximum length: 100 characters). Example: "Room 302B, Neuroscience Building" or "Room 201, Surgery room" |
 | ``Authenticated groups`` | Groups that have change permissions for this setup (**required**). Example: "Behavior Core Team" |
 | ``Description`` | Rich text description of the setup. Can include uploaded images. Example: "Linear track setup with two reward ports and tracking cameras..." |
@@ -36,7 +54,7 @@ Setups describe where experiments, procedures, or manipulations takes place. It 
 
 ## Permissions
 
-Setups define the overall permissions level for equipment. You manage permissions through the management tab, where you can assign individual users and groups access levels to a setup. Setup have four permission levels: membership (read access), contributors, managers, and owners.
+Setups define the overall permissions level for equipment. You manage permissions through the management tab, where you can assign individual users and groups access levels to a setup. Setups have four permission levels: membership (read access), change permissions, managers, and owners.
 
 Equipment inherit permissions from their associated setup.
 

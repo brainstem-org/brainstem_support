@@ -23,9 +23,9 @@ Behavioral categories provide a two-level hierarchical classification for organi
 
 BrainSTEM organizes behavioral experiments through a hierarchy that separates shared scientific knowledge from lab-specific implementation details:
 
-- **Behavioral Category** (this page) — The broad domain of behavior (e.g., "Learning & Memory" → "Spatial Learning")
-- **Behavioral Paradigm** — A standardized behavioral task shared across the field (e.g., "Morris Water Navigation Task")
-- **Behavioral Assay** — Your lab's specific implementation of a paradigm, linked to a setup type (e.g., "MWM 4-day acquisition, 60s trials, probe on day 5")
+- **Behavioral Category** (this page) — The broad domain of behavior (e.g., "Anxiety & Affect" → "Anxiety")
+- **Behavioral Paradigm** — A standardized behavioral task shared across the field (e.g., "Elevated Plus Exploration")
+- **Behavioral Assay** — Your lab's specific implementation of a paradigm under a specific preparation condition, linked to a setup type (e.g., "EPM 5-min test")
 - **Behavior** — The actual execution of an assay within a session, tied to specific subjects and a physical setup
 
 ## Category hierarchy

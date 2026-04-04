@@ -17,16 +17,32 @@ nav_order: 1
 
 ## Introduction
 
-The behaviors model is a module in sessions used to describe the behaviors occurring in a session. The behaviors are characterized by the involved subjects, the setups, and behavioral assays. Both the setups and the behavioral assays are private attributes that must be defined separately before filling in the behavior form. These private attributes belong to group(s) that must be shared with one of the session's associated projects.
+A behavior is a module within a session that records which behavioral assay was performed, on which subjects, and using which setup. It ties together the standardized task description (via the assay) with the physical apparatus (via the setup) for a specific experimental session.
 
 ## How it fits together
 
-BrainSTEM organizes behavioral experiments through a hierarchy that separates shared scientific knowledge from lab-specific implementation details:
+A behavior record is the junction point of two independent hierarchies — both must be defined before you can record a behavior:
 
-- **Behavioral Category** (this page) — The broad domain of behavior (e.g., "Learning & Memory" → "Spatial Learning")
-- **Behavioral Paradigm** — A standardized behavioral task shared across the field (e.g., "Morris Water Navigation Task")
-- **Behavioral Assay** — Your lab's specific implementation of a paradigm, linked to a setup type (e.g., "MWM 4-day acquisition, 60s trials, probe on day 5")
-- **Behavior** — The actual execution of an assay within a session, tied to specific subjects and a physical setup
+| Behavioral track | Setup track |
+|:----------------|:-----------|
+| *Shared taxonomy — available to all users* | |
+| **Behavioral Category** — The broad cognitive domain (e.g., "Anxiety") | **Preparation condition** — The subject's physiological state (e.g., "Freely Moving Awake") |
+| **Behavioral Paradigm** — Standardized task across the field (e.g., "Elevated Plus Exploration") | **Setup Type** — Class of apparatus for that preparation (e.g., "Elevated plus maze") |
+| *Lab-specific — private attribute belonging to your groups* | |
+| **Behavioral Assay** — Your protocol for the paradigm under that preparation (e.g., "EPM 5-min test") | **Setup** — Your physical rig of that type (e.g., "EPM rig B, Room 108") |
+
+A **Behavior** record (this page) combines a behavioral assay with a specific physical setup and the subjects involved, within a session. The assay already encodes the preparation condition via its setup type — selecting a matching physical setup completes the record.
+
+Both the setup and the behavioral assay are private attributes and must be defined separately before filling in the behavior form. They belong to group(s) that must be shared with one of the session's associated projects.
+
+## Example
+
+| Level | Example |
+|:------|:--------|
+| Behavioral Assay | EPM 5-min test |
+| Setup | EPM rig B, Room 108 |
+| Subjects | Mouse 01, Mouse 02 |
+| Behavior | Session 2026-06-01 — Elevated Plus Exploration, trial 1 |
 
 ## Fields
 
