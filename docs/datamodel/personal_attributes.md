@@ -20,4 +20,6 @@ Personal attributes are model elements that are typically shared within individu
 
 - [**Licenses**]({{site.baseurl}}/datamodel/personal_attributes/license): Tracks regulatory and compliance authorizations (for example animal research, biosafety, and controlled substance licenses) used across lab activities.
 
+- [**Protocols**]({{site.baseurl}}/datamodel/personal_attributes/protocol): Written methods such as SOPs and published protocols. A protocol is attached to work that followed it, so procedures and logs can reference the method instead of repeating it.
+
 - [**Setups**]({{site.baseurl}}/datamodel/personal_attributes/setup): Descriptions of the physical arrangements and equipment configurations used for experiments. Setups may be unique to a particular lab or research question.
