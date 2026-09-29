@@ -26,6 +26,7 @@ Subject logs refers to records that track various aspects of the subjects' livin
 | ``Type`` | Type of subject logs (**required**). Selected from predefined types. Example: "Food consumption log", "Housing log". *See options below* |
 | ``Description`` | Description of the subject logs (string; maximum length: 500 characters). Example: "Daily food consumption" |
 | ``Subject`` | The subject of the log (**required**). Must reference a [subject]({{"datamodel/stem/subject/"|absolute_url}}). Example: "Mouse_01" |
+| ``Protocol`` | Optional reusable [protocol]({{"datamodel/personal_attributes/protocol/"|absolute_url}}) for the whole log. Must have protocol type Subject log and either no subtype restrictions or include this log type. Choices include protocols you can read and public protocols. |
 | **Log Entries** | Multiple log entries can be added, each containing: |
 | ``Date and time`` | Timestamp for each log entry. Used for simple timestamp logs (datetime). Format: YYYY-MM-DD HH:mm:ss. Example: "2024-03-15 14:30:00" |
 | ``Start and end time`` | Start and stop timestamps for duration-based logs (datetime). Used for Housing, Deprivation, Habituation, Handling, and Training logs. Format: YYYY-MM-DD HH:mm:ss. Example: Start: "2024-03-15 14:30:00", End: "2024-03-15 15:30:00" |

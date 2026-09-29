@@ -23,6 +23,7 @@ nav_order: 8
 | `type` | string **[required]**. *See options below* |
 | `description` | string [max length: 500] |
 | `subject` | related subject ID formatted as a string **[required]** |
+| `protocol` | Optional [protocol]({{"api/personal_attributes/protocol/"|absolute_url}}) UUID, or `null` to clear. Must be readable by you or public, have `protocol_type: "subject_log"`, and allow this record's `type` (or have no subtype restrictions). |
 | `user` | ID of the user who created the log **[read-only]** |
 | `entries` | list of log entries **[read-only]**. *See entries format below* |
 

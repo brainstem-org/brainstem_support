@@ -18,6 +18,7 @@ The Personal Attributes app includes the following endpoints:
 - **[Data Storage](/api/personal_attributes/datastorage/)** - Personal data storage configurations and locations
 - **[Inventory](/api/personal_attributes/inventory/)** - Personal laboratory inventory and consumables
 - **[Licenses](/api/personal_attributes/license/)** - Research and compliance authorizations (animal research, biosafety, controlled substances, etc.)
+- **[Protocols](/api/personal_attributes/protocol/)** - Reusable procedure and subject-log methods, subtype restrictions, attachments, and license links
 - **[Setups](/api/personal_attributes/setup/)** - Personal experimental setup configurations
 
 These endpoints enable researchers to customize their experimental environments while maintaining consistency across studies.
@@ -26,6 +27,7 @@ These endpoints enable researchers to customize their experimental environments 
 
 - Configure personal experimental setups and equipment arrangements
 - Define custom behavioral assays for specific research needs
+- Reuse documented protocols across procedures and subject logs
 - Manage personal data storage locations and backup configurations
 - Track personal laboratory inventory and equipment usage
 - Maintain consistent experimental configurations across sessions

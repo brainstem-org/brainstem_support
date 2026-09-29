@@ -23,6 +23,7 @@ nav_order: 6
 | `type` | string **[required]**. *See options below* |
 | `notes` | string [max length: 500] |
 | `subject` | related subject ID formatted as a string **[required]** |
+| `protocol` | Optional [protocol]({{"api/personal_attributes/protocol/"|absolute_url}}) UUID, or `null` to clear. Must be readable by you or public, have `protocol_type: "procedure"`, and allow this record's `type` (or have no subtype restrictions). |
 | `date_time` | string containing date and time (ISO 8601) |
 | `consumablestock` | related consumable stock ID formatted as a string |
 | `equipment` | list of related equipment IDs formatted as strings |

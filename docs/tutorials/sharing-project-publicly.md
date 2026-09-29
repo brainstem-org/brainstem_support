@@ -20,7 +20,7 @@ BrainSTEM enables open science by allowing you to make your research data public
 
 **Key Concepts:**
 - **Projects** are the primary container for public data sharing
-- **Personal Attributes** (behavioral assays, setups, data storage, inventories) have independent public settings
+- **Personal Attributes** (behavioral assays, setups, data storage, inventories, protocols) have independent public settings
 - Making a project public does NOT automatically make its personal attributes public
 
 The diagram below illustrates how public permissions flow through the BrainSTEM data model:
@@ -28,7 +28,7 @@ The diagram below illustrates how public permissions flow through the BrainSTEM 
 ![permissions]({{site.baseurl}}/assets/images/permission_public.png)
 
 {: .important }
-> Making a project public does NOT automatically share its associated personal attributes. Behavioral Assays, setups, data storage, and inventories must be made public separately to ensure complete data accessibility.
+> Making a project public does NOT automatically share its associated personal attributes. Behavioral Assays, setups, data storage, inventories, and protocols must be made public separately to ensure complete data accessibility.
 
 ## Understanding Public Project Sharing
 
@@ -73,7 +73,7 @@ When you make a project public, the following components become publicly accessi
 
 ## Sharing Related Personal Attributes
 
-Personal attributes referenced in your sessions must be shared separately to provide complete experimental context. Without this, users can see that modules exist but cannot access the methodological details.
+Personal attributes referenced in your sessions, procedures, and subject logs must be shared separately to provide complete experimental context. Without this, users can see that modules exist but cannot access the methodological details.
 
 ### Which Personal Attributes to Share
 
@@ -83,6 +83,7 @@ Personal attributes referenced in your sessions must be shared separately to pro
 | **Setups** | If your sessions reference specific experimental environments | Users need to know equipment configuration and environmental conditions |
 | **Data Storage** | If you want users to access raw data files | Users need file paths and access protocols to retrieve actual data |
 | **Inventories** | If procedures reference specific consumables | Users need to know exact materials used (probes, drugs, etc.) |
+| **[Protocols]({{"datamodel/personal_attributes/protocol/"|absolute_url}})** | If procedures, subject logs, or procedure episodes reference reusable methods | Users need the method description, URL, and any attached protocol document |
 
 ## Making Personal Attributes Public
 
@@ -96,13 +97,14 @@ Personal attributes referenced in your sessions must be shared separately to pro
    - **Personal Attributes** → **Setups**
    - **Personal Attributes** → **Data storage**
    - **Personal Attributes** → **Inventories**
-2. Select the item used in your public sessions
+   - **Personal Attributes** → **Protocols**
+2. Select the item referenced by your public project
 3. Click **Edit**
 4. Scroll to the bottom and check the **Public access** checkbox
 5. Click **Save**
 
 {: .note }
-> Repeat this process for each personal attribute referenced in your public project's sessions.
+> Repeat this process for each personal attribute referenced in your public project. Making a protocol public also exposes its attachment download link; linked licenses retain their own public access settings.
 
 ## Best Practices for Public Data Sharing
 

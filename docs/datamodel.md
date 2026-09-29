@@ -17,7 +17,7 @@ The model is structured into the following main categories:
 - [__Projects__](/datamodel/project): Core model for organizing research efforts.
 - [__Subjects__](/datamodel/subject): Representing the organisms or entities being studied. Includes related concepts like [Procedures](/datamodel/subjects/procedure), [Subject Logs](/datamodel/subjects/subjectlog), [Breedings](/datamodel/stem/breedings), and [Cohorts](/datamodel/subjects/cohort).
 - [__Sessions__](/datamodel/session): Detailing experimental sessions. Includes related concepts like [Behaviors](/datamodel/sessions/behavior), [Data Acquisition](/datamodel/sessions/dataacquisition), [Manipulations](/datamodel/sessions/manipulation), and [Collections](/datamodel/sessions/collection).
-- [__Personal attributes__](/datamodel/personal_attributes/): Models for lab-specific elements such as [Setups](/datamodel/personal_attributes/setup), [Inventories](/datamodel/personal_attributes/inventory), [Behavioral Assays](/datamodel/personal_attributes/behavioralassay), and [Data Storage](/datamodel/personal_attributes/datastorage).
+- [__Personal attributes__](/datamodel/personal_attributes/): Models for lab-specific elements such as [Setups](/datamodel/personal_attributes/setup), [Inventories](/datamodel/personal_attributes/inventory), [Behavioral Assays](/datamodel/personal_attributes/behavioralassay), [Data Storage](/datamodel/personal_attributes/datastorage), and [Protocols](/datamodel/personal_attributes/protocol).
 - [__Resources__](/datamodel/resources/): Representing materials, equipment, and entities involved in research, including [Consumables](/datamodel/resources/consumable), [Hardware Devices](/datamodel/resources/hardwaredevice), and [Suppliers](/datamodel/resources/supplier).
 - [__Taxonomies__](/datamodel/taxonomies/): Standardized vocabularies and classification systems for neuroscience research.
 - [__Dissemination__](/datamodel/dissemination/): Capturing information related to the publication and sharing of research findings.
@@ -37,6 +37,7 @@ Tables represent models, while lines represent connections between them. A fork 
 - __Subjects__ are linked to __Procedures__, __Subject Logs__, and __Cohorts__. They are also described by their __Strain__ (Taxonomy).
 - __Sessions__ are linked to __Behaviors__, __Data Acquisition__, __Manipulations__, and __Collections__. They can also link to __Data Storage__ (Personal Attribute).
 - __Personal Attributes__ like __Setups__ (containing __Equipment__) and __Inventories__ (containing __Consumable Stocks__) define lab-specific configurations.
+- __Protocols__ store reusable methods referenced by procedures, subject logs, and procedure episodes, with links to authorizing licenses.
 - __Resources__ like __Consumables__, __Hardware Devices__, and __Suppliers__ represent tangible items or entities.
 - __Taxonomies__ provide standardized classifications (e.g., __Species__, __Brain Regions__).
 - __Dissemination__ models like __Publications__ link back to __Projects__.

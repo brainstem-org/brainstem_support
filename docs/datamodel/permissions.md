@@ -106,7 +106,8 @@ Personal Attributes
 │   └── Consumable stocks
 ├── Data storages
 ├── Behavioral Assays
-└── Licenses
+├── Licenses
+└── Protocols
 ```
 
 #### Group Level Inheritance
@@ -114,12 +115,16 @@ Personal Attributes
 
 | Parent Level | Inheritance Pattern | Inheriting Components |
 |:-------------|:-------------------|:-------------------|
-| **Group** | Direct inheritance from associated groups | Personal Attributes (Behavioral Assays, Data Storage, Setups, Inventories, Licenses) |
+| **Group** | Direct inheritance from associated groups | Personal Attributes (Behavioral Assays, Data Storage, Setups, Inventories, Licenses, Protocols) |
 | **Experimental Setup** | Direct inheritance with module-level access | Equipment |
 | **Inventory** | Direct inheritance with module-level access | Consumable Stocks |
 
 * All personal attributes inherit permissions directly from their associated groups
 * Group membership automatically grants access to personal attributes
+
+### Protocol Permissions
+
+[Protocols]({{"datamodel/personal_attributes/protocol/"|absolute_url}}) have independent member, contributor, manager, and owner permissions. The creator is an owner, and groups selected during creation receive contributor permissions. Owners edit protocol details and public access; managers manage member and contributor access. Protocol permissions are not inherited from a project that references the protocol.
 
 ## Public Sharing
 
@@ -135,7 +140,7 @@ Personal Attributes
 {: .important }
 > - Each Personal Attribute requires individual public sharing settings
 > - Only owners can modify public access settings
-> - Public status required for behavioral assays, data storage, setups, and licenses used in public projects
+> - Enable public access separately for behavioral assays, data storage, setups, licenses, and protocols that you want readers of a public project to access
 
 ## Permission Management
 
