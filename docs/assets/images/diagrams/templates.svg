@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660" width="1400" height="660" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Templates: a procedure template prefills a new procedure; the user adds subject, date and stock</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="660" fill="#fff"/>
+  <text x="40" y="40" font-size="18" font-weight="600" fill="#2c2a38">What a template fills in, and what you still enter</text>
+  <rect x="60" y="100" width="340" height="190" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="230" y="145.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Procedure template</text>
+  <text x="230" y="167.5" font-size="15" fill="#fff" text-anchor="middle">Silicon probe implant</text>
+  <text x="230" y="189.5" font-size="15" fill="#fff" text-anchor="middle">type and type-specific fields</text>
+  <text x="230" y="211.5" font-size="15" fill="#fff" text-anchor="middle">coordinates: AP, ML, DV, angles</text>
+  <text x="230" y="233.5" font-size="15" fill="#fff" text-anchor="middle">material rows: probe, cement, screws</text>
+  <text x="230" y="255.5" font-size="15" fill="#fff" text-anchor="middle">(role and product, no stock)</text>
+  <rect x="560" y="100" width="340" height="190" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="730" y="145.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Procedure</text>
+  <text x="730" y="167.5" font-size="15" fill="#fff" text-anchor="middle">Mouse_01, 2026-03-14</text>
+  <text x="730" y="189.5" font-size="15" fill="#fff" text-anchor="middle">copied from the template:</text>
+  <text x="730" y="211.5" font-size="15" fill="#fff" text-anchor="middle">type, fields, coordinates,</text>
+  <text x="730" y="233.5" font-size="15" fill="#fff" text-anchor="middle">material rows</text>
+  <text x="730" y="255.5" font-size="15" fill="#fff" text-anchor="middle">+ your entries →</text>
+  <rect x="1000" y="100" width="340" height="190" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
+  <text x="1014" y="144.5" font-size="15" fill="#4a4858">You still enter:</text>
+  <text x="1014" y="166.5" font-size="15" fill="#4a4858">• subject</text>
+  <text x="1014" y="188.5" font-size="15" fill="#4a4858">• date and time</text>
+  <text x="1014" y="210.5" font-size="15" fill="#4a4858">• notes</text>
+  <text x="1014" y="232.5" font-size="15" fill="#4a4858">• the stock item for each material row</text>
+  <text x="1014" y="254.5" font-size="15" fill="#4a4858">   (from your inventory)</text>
+  <rect x="60" y="400" width="340" height="90" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="230" y="428.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Material usage template</text>
+  <text x="230" y="450.5" font-size="15" fill="#2c2a38" text-anchor="middle">role Silicon probe, product ASSY-156</text>
+  <text x="230" y="472.5" font-size="15" fill="#2c2a38" text-anchor="middle">stage and details prefilled</text>
+  <rect x="1000" y="400" width="340" height="90" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1170" y="428.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Consumable stock</text>
+  <text x="1170" y="450.5" font-size="15" fill="#2c2a38" text-anchor="middle">ASSY-156, lot 2024-11</text>
+  <text x="1170" y="472.5" font-size="15" fill="#2c2a38" text-anchor="middle">from your Inventory</text>
+  <rect x="560" y="540" width="780" height="70" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
+  <text x="574" y="568.5" font-size="15" fill="#4a4858">Same pattern for templates of procedure episodes, specimen procedures,</text>
+  <text x="574" y="590.5" font-size="15" fill="#4a4858">experimental interfaces, material usages, data acquisitions and manipulations.</text>
+  <path d="M400 195 L560 195" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="480" y="168" font-size="15" fill="#4a4858" text-anchor="middle">apply to a</text>
+  <text x="480" y="186" font-size="15" fill="#4a4858" text-anchor="middle">new procedure</text>
+  <path d="M1000 195 L900 195" fill="none" stroke="#6f6d82" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <text x="950" y="218" font-size="15" fill="#4a4858" text-anchor="middle">entered</text>
+  <text x="950" y="236" font-size="15" fill="#4a4858" text-anchor="middle">by you</text>
+  <path d="M230 400 L230 290" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="245" y="350" font-size="15" fill="#4a4858" text-anchor="start">supplies the material rows</text>
+  <path d="M1000 445 L730 445 L730 290" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="745" y="350" font-size="15" fill="#4a4858" text-anchor="start">chosen for each material row</text>
+  <text x="745" y="370" font-size="15" fill="#4a4858" text-anchor="start">when the template is applied</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 860" width="1300" height="860" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">How behaviors fit together: behavioral categories group paradigms, an assay implements a paradigm on a setup type, a setup is a rig of a setup type with its equipment, and a behavior records an assay run on a setup with subjects in a session.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1300" height="860" fill="#fff"/>
+  <rect x="30" y="30" width="1240" height="300" rx="8" fill="#6b7c2a" fill-opacity="0.07" stroke="#6b7c2a" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="44" y="54" font-size="16" font-weight="600" fill="#6b7c2a">Taxonomies: shared by everyone</text>
+  <rect x="30" y="350" width="1240" height="270" rx="8" fill="#3f6bb3" fill-opacity="0.07" stroke="#3f6bb3" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="44" y="374" font-size="16" font-weight="600" fill="#3f6bb3">Personal attributes: your lab's, shared through groups</text>
+  <rect x="30" y="640" width="1240" height="200" rx="8" fill="#8122a1" fill-opacity="0.07" stroke="#8122a1" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="44" y="664" font-size="16" font-weight="600" fill="#8122a1">Records of a session, in your projects</text>
+  <path d="M230 160 L230 220" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="242.0" y="196" font-size="15" fill="#4a4858" text-anchor="start">groups</text>
+  <path d="M230 304 L230 400" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="218.0" y="324" font-size="15" fill="#4a4858" text-anchor="end">implemented as</text>
+  <path d="M1070 160 L1070 220" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1082.0" y="196" font-size="15" fill="#4a4858" text-anchor="start">a field of</text>
+  <path d="M1070 304 L1070 400" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1082.0" y="380" font-size="15" fill="#4a4858" text-anchor="start">built as</text>
+  <path d="M940 304 L940 340 L360 340 L360 400" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="650.0" y="322" font-size="15" fill="#4a4858" text-anchor="middle">the assay names the setup type it runs on</text>
+  <path d="M1070 540 L1070 484" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1082.0" y="520" font-size="15" fill="#4a4858" text-anchor="start">installed in</text>
+  <path d="M400 442 L600 442 L600 690" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="414" y="432" font-size="15" fill="#4a4858" text-anchor="start">run as</text>
+  <path d="M900 442 L700 442 L700 690" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="886" y="432" font-size="15" fill="#4a4858" text-anchor="end">run on</text>
+  <path d="M400 740 L480 740" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="440.0" y="730" font-size="15" fill="#4a4858" text-anchor="middle">contains</text>
+  <path d="M900 740 L820 740" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="860.0" y="730" font-size="15" fill="#4a4858" text-anchor="middle">involves</text>
+  <rect x="60" y="80" width="340" height="80" rx="7" fill="#eff1e8" stroke="#aeb78a" stroke-width="1.2"/>
+  <text x="230" y="115.5" font-size="19" font-weight="600" fill="#4d591e" text-anchor="middle">Behavioral category</text>
+  <text x="230" y="137.5" font-size="15" fill="#2c2a38" text-anchor="middle">Anxiety &amp; Affect › Anxiety (nested)</text>
+  <rect x="60" y="220" width="340" height="84" rx="7" fill="#eff1e8" stroke="#aeb78a" stroke-width="1.2"/>
+  <text x="230" y="246.5" font-size="19" font-weight="600" fill="#4d591e" text-anchor="middle">Behavioral paradigm</text>
+  <text x="230" y="268.5" font-size="15" fill="#2c2a38" text-anchor="middle">Elevated Plus Exploration</text>
+  <text x="230" y="290.5" font-size="15" fill="#2c2a38" text-anchor="middle">the task, as the field knows it</text>
+  <rect x="60" y="400" width="340" height="84" rx="7" fill="#eaeff7" stroke="#95aed5" stroke-width="1.2"/>
+  <text x="230" y="426.5" font-size="19" font-weight="600" fill="#2d4d81" text-anchor="middle">Behavioral assay</text>
+  <text x="230" y="448.5" font-size="15" fill="#2c2a38" text-anchor="middle">EPM 5-min test</text>
+  <text x="230" y="470.5" font-size="15" fill="#2c2a38" text-anchor="middle">your lab's version of the paradigm</text>
+  <rect x="900" y="80" width="340" height="80" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="1070" y="113" font-size="19" font-weight="600" fill="#2c2a38" text-anchor="middle">Setup type category</text>
+  <text x="1070" y="137" font-size="15" fill="#2c2a38" text-anchor="middle">Freely Moving Awake (a choice list)</text>
+  <rect x="900" y="220" width="340" height="84" rx="7" fill="#eff1e8" stroke="#aeb78a" stroke-width="1.2"/>
+  <text x="1070" y="246.5" font-size="19" font-weight="600" fill="#4d591e" text-anchor="middle">Setup type</text>
+  <text x="1070" y="268.5" font-size="15" fill="#2c2a38" text-anchor="middle">Elevated plus maze</text>
+  <text x="1070" y="290.5" font-size="15" fill="#2c2a38" text-anchor="middle">the class of apparatus</text>
+  <rect x="900" y="400" width="340" height="84" rx="7" fill="#eaeff7" stroke="#95aed5" stroke-width="1.2"/>
+  <text x="1070" y="426.5" font-size="19" font-weight="600" fill="#2d4d81" text-anchor="middle">Setup</text>
+  <text x="1070" y="448.5" font-size="15" fill="#2c2a38" text-anchor="middle">EPM rig B, Room 108</text>
+  <text x="1070" y="470.5" font-size="15" fill="#2c2a38" text-anchor="middle">your physical rig</text>
+  <rect x="900" y="540" width="340" height="64" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1070" y="567" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Equipment</text>
+  <text x="1070" y="588" font-size="14" fill="#2c2a38" text-anchor="middle">camera, IR lights, tracking software</text>
+  <rect x="60" y="700" width="340" height="80" rx="7" fill="#f1e7f5" stroke="#ba85cb" stroke-width="1.2"/>
+  <text x="230" y="735.5" font-size="19" font-weight="600" fill="#5d1874" text-anchor="middle">Session</text>
+  <text x="230" y="757.5" font-size="15" fill="#2c2a38" text-anchor="middle">Mouse_01, 2026-03-14</text>
+  <rect x="480" y="690" width="340" height="100" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="650" y="724.5" font-size="19" font-weight="600" fill="#fff" text-anchor="middle">Behavior</text>
+  <text x="650" y="746.5" font-size="15" fill="#fff" text-anchor="middle">EPM test of Mouse_01</text>
+  <text x="650" y="768.5" font-size="15" fill="#fff" text-anchor="middle">one assay, one setup, its subjects</text>
+  <rect x="900" y="700" width="340" height="80" rx="7" fill="#f1e7f5" stroke="#ba85cb" stroke-width="1.2"/>
+  <text x="1070" y="735.5" font-size="19" font-weight="600" fill="#5d1874" text-anchor="middle">Subjects</text>
+  <text x="1070" y="757.5" font-size="15" fill="#2c2a38" text-anchor="middle">Mouse_01</text>
+</svg>

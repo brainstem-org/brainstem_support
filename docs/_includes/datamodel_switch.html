@@ -1,0 +1,105 @@
+{%- comment -%}
+The interactive data model on a documentation page: inline without its toolbar, on a plain white background
+(the renderer's toolbar-less mode with background: 'plain' and locked: true, fitted whole and sized to its
+content, in a frame without border; locked keeps it as it opened: clicking a model does nothing, pan, zoom and
+hover still work), with Expand (the full diagram with its tools in a page overlay)
+and a full-screen link above it. With an `image`, an Overview / Interactive switch shows the drawing first.
+Parameters:
+  query       explorer query for every view, e.g. "view=permissions" (optional)
+  inline      extra query for the inline frame only, e.g. "notes=0" or "show=shared" (optional)
+  max_height  the inline frame's largest height in px (default 900); it grows to fit its content
+  image       path of an overview drawing, e.g. /assets/images/diagrams/data-model-overview.svg (optional)
+  alt         alt text of the drawing
+  caption     one sentence under the inline diagram (HTML allowed)
+  title       the overlay's title
+  frame_title the iframe's title
+Usage: {% include datamodel_switch.html query="view=permissions" inline="notes=0" %}
+With an image, the page URL selects the view: ?view=interactive, or any explorer parameter such as ?focus=stem.project.
+{%- endcomment -%}
+{%- assign dm_explorer = '/assets/datamodel/explorer.html' | relative_url -%}
+{%- assign dm_query = include.query | default: "" -%}
+{%- if dm_query != "" -%}{%- assign dm_embed = dm_explorer | append: "?embed=1&" | append: dm_query -%}{%- assign dm_full = dm_explorer | append: "?" | append: dm_query -%}{%- else -%}{%- assign dm_embed = dm_explorer | append: "?embed=1" -%}{%- assign dm_full = dm_explorer -%}{%- endif -%}
+{%- assign dm_inline = dm_embed | append: "&toolbar=0&background=plain&locked=1" -%}
+{%- if include.inline -%}{%- assign dm_inline = dm_inline | append: "&" | append: include.inline -%}{%- endif -%}
+<div class="dm-switch" role="tablist" aria-label="Data model views" style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 0.75rem;">
+  {%- if include.image %}
+  <button type="button" class="btn dm-switch__btn" data-dm-view="overview" role="tab" aria-selected="true">Overview</button>
+  <button type="button" class="btn dm-switch__btn" data-dm-view="interactive" role="tab" aria-selected="false">Interactive</button>
+  {%- endif %}
+  <button type="button" class="dm-expand dm-switch__reset" title="Return to the view the diagram opened with" style="margin-left: auto;">&#x21BA; Reset view</button>
+  <button type="button" class="dm-expand dm-switch__expand" data-dm-expand="{{ dm_embed }}" data-dm-title="{{ include.title | default: 'Interactive data model' }}">&#x2922; Expand</button>
+  <button type="button" class="dm-expand dm-switch__full-btn" onclick="window.location.href = document.querySelector('.dm-switch__full').href">&#x26F6; Full screen</button>
+  <a class="dm-switch__full" href="{{ dm_full }}" hidden>Open full screen</a>
+</div>
+
+{%- if include.image %}
+<div class="dm-view" data-dm-panel="overview">
+  <a href="{{ include.image | relative_url }}"><img src="{{ include.image | relative_url }}" alt="{{ include.alt }}" loading="lazy"></a>
+  <p style="font-size: 0.8rem; color: #6f6d82; margin: 0.3rem 0 1.2rem;">Click the drawing to see it in full size. It shows the core models; switch to <strong>Interactive</strong> for the complete model with all fields and relations.</p>
+</div>
+{%- endif %}
+
+<div class="dm-view" data-dm-panel="interactive"{% if include.image %} hidden{% endif %}>
+  <iframe data-dm-autosize data-dm-min="320" data-dm-max="{{ include.max_height | default: 900 }}" {% if include.image %}data-dm-src{% else %}src{% endif %}="{{ dm_inline }}" title="{{ include.frame_title | default: 'BrainSTEM interactive data model' }}" loading="lazy" style="width: 100%; height: 480px; border: 0; background: #fff;"></iframe>
+  <p style="font-size: 0.8rem; color: #6f6d82; margin: 0.3rem 0 1.2rem;">{{ include.caption | default: "Drag to pan, Ctrl + scroll to zoom and hover a model to see its connections; <strong>Reset view</strong> returns to this view. <strong>Expand</strong> opens the full diagram, where you can click a model to read about it and use its search, layouts, layers and detail panel." }}</p>
+</div>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('[data-dm-view]');
+  var panels = document.querySelectorAll('[data-dm-panel]');
+  var params = new URLSearchParams(window.location.search);
+  var shared = ['focus', 'field', 'permissions', 'layout', 'show', 'isolate', 'depth', 'path', 'expand'];
+  function extra() {
+    var out = '';
+    shared.forEach(function (key) { if (params.get(key)) { out += '&' + key + '=' + encodeURIComponent(params.get(key)); } });
+    return out;
+  }
+  /* Parameters in the page URL (a deep link such as ?focus=stem.session) carry over to the inline frame,
+     the overlay and the full-screen link. */
+  var expand = document.querySelector('.dm-switch__expand');
+  var full = document.querySelector('.dm-switch__full');
+  if (extra()) {
+    if (expand) { expand.setAttribute('data-dm-expand', expand.getAttribute('data-dm-expand') + extra()); }
+    if (full) { full.href += (full.href.indexOf('?') === -1 ? '?' : '&') + extra().slice(1); }
+  }
+  if (full) { full.href += (full.href.indexOf('?') === -1 ? '?' : '&') + 'from=' + encodeURIComponent(window.location.pathname); }
+  function show(view) {
+    panels.forEach(function (panel) {
+      var active = panel.getAttribute('data-dm-panel') === view;
+      panel.hidden = !active;
+      if (active) {
+        var frame = panel.querySelector('iframe[data-dm-src]');
+        if (frame && !frame.getAttribute('src')) { frame.setAttribute('src', frame.getAttribute('data-dm-src') + extra()); }
+      }
+    });
+    buttons.forEach(function (button) {
+      var active = button.getAttribute('data-dm-view') === view;
+      button.setAttribute('aria-selected', active ? 'true' : 'false');
+      button.classList.toggle('btn-purple', active);
+    });
+    /* Reset view, Expand and Full screen act on the interactive diagram, so they are shown only with it; on the
+       Overview they would suggest the drawing itself can be expanded. */
+    document.querySelectorAll('.dm-switch__reset, .dm-switch__expand, .dm-switch__full-btn').forEach(function (control) {
+      control.hidden = view !== 'interactive';
+    });
+  }
+  var resetButton = document.querySelector('.dm-switch__reset');
+  if (resetButton) {
+    resetButton.addEventListener('click', function () {
+      var frame = document.querySelector('[data-dm-panel=interactive] iframe');
+      if (frame && frame.contentWindow) { frame.contentWindow.postMessage({ type: 'dm-reset' }, '*'); }
+    });
+  }
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () { show(button.getAttribute('data-dm-view')); });
+  });
+  if (buttons.length) {
+    show(params.get('view') === 'interactive' || params.get('focus') ? 'interactive' : 'overview');
+  } else {
+    var frame = document.querySelector('[data-dm-panel=interactive] iframe');
+    if (frame && extra()) { frame.setAttribute('src', frame.getAttribute('src') + extra()); }
+  }
+})();
+</script>
+{% include datamodel_overlay.html %}

@@ -1,0 +1,9 @@
+{%- comment -%}
+A short silent recording of a sequence of steps, looping, with a caption.
+Usage: {% include walkthrough.html slug="get-started-create-project" caption="Creating a project: ..." %}
+The files are docs/assets/images/walkthroughs/<slug>.webm and its poster <slug>.jpg, recorded by scripts/screenshots.py.
+{%- endcomment -%}
+<figure class="walkthrough" style="margin: 0.5rem 0 1.4rem;">
+  <video class="screenshot" src="{{ '/assets/images/walkthroughs/' | append: include.slug | append: '.webm' | relative_url }}" poster="{{ '/assets/images/walkthroughs/' | append: include.slug | append: '.jpg' | relative_url }}" autoplay loop muted playsinline controls preload="metadata" style="width: 100%; border: 1px solid #e2e0ea; border-radius: 6px; background: #f7f6fb;"></video>
+  <figcaption style="font-size: 0.8rem; color: #6f6d82; margin: 0.3rem 0 0;">{{ include.caption }}</figcaption>
+</figure>

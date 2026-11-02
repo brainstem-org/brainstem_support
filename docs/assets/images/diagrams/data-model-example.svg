@@ -1,0 +1,253 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2140 1298" width="2140" height="1298" role="img" aria-label="Example: an extracellular recording session in a rat, as BrainSTEM records it">
+<title>Example: an extracellular recording session in a rat</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6f6d82"/></marker></defs>
+<rect width="2140" height="1298" fill="#fff"/>
+<rect x="760" y="20" width="400" height="126" rx="6" fill="#f9f4fa" stroke="#5d1874" stroke-width="1.2"/>
+<path d="M766,20 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#8122a1"/>
+<path d="M760,56 h400" stroke="#5d1874" stroke-width="1"/>
+<text x="770" y="44" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#fff">Project</text>
+<text x="770" y="76" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Name</text>
+<text x="899.2" y="76" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Place cells 2026</text>
+<path d="M760,86 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="770" y="106" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Groups</text>
+<text x="899.2" y="106" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Buzsaki Lab</text>
+<path d="M760,116 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="770" y="136" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Public access</text>
+<text x="899.2" y="136" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Private</text>
+<path d="M889.2,56 v90" stroke="#dcdae6" stroke-width="0.6"/>
+<path d="M960.0,146 L960.0,146" fill="none" stroke="#6f6d82" stroke-width="1.3"/>
+<path d="M960.0,146 L960.0,173.0 L640.0,173.0 L640.0,200" fill="none" stroke="#6f6d82" stroke-width="1.3" marker-end="url(#arrow)"/>
+<path d="M960.0,146 L960.0,173.0 L1280.0,173.0 L1280.0,200" fill="none" stroke="#6f6d82" stroke-width="1.3" marker-end="url(#arrow)"/>
+<rect x="440" y="200" width="400" height="186" rx="6" fill="#f9f4fa" stroke="#5d1874" stroke-width="1.2"/>
+<path d="M446,200 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#8122a1"/>
+<path d="M440,236 h400" stroke="#5d1874" stroke-width="1"/>
+<text x="450" y="224" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#fff">Subject</text>
+<text x="450" y="256" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Name</text>
+<text x="528.8" y="256" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Rat 17</text>
+<path d="M440,266 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="286" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Species</text>
+<text x="528.8" y="286" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Rattus norvegicus</text>
+<path d="M440,296 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="316" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Strain</text>
+<text x="528.8" y="316" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Long Evans</text>
+<path d="M440,326 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="346" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Sex</text>
+<text x="528.8" y="346" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Male</text>
+<path d="M440,356 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="376" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Status</text>
+<text x="528.8" y="376" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Active</text>
+<path d="M518.8,236 v150" stroke="#dcdae6" stroke-width="0.6"/>
+<rect x="1080" y="200" width="400" height="186" rx="6" fill="#f9f4fa" stroke="#5d1874" stroke-width="1.2"/>
+<path d="M1086,200 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#8122a1"/>
+<path d="M1080,236 h400" stroke="#5d1874" stroke-width="1"/>
+<text x="1090" y="224" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#fff">Session</text>
+<text x="1090" y="256" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Name</text>
+<text x="1269.6" y="256" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Rat17_2026-03-13</text>
+<path d="M1080,266 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1090" y="286" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Date and time onset</text>
+<text x="1269.6" y="286" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">13 March 2026, 10:00</text>
+<path d="M1080,296 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1090" y="316" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Subjects</text>
+<text x="1269.6" y="316" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Rat 17</text>
+<path d="M1080,326 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1090" y="346" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Data storage</text>
+<text x="1269.6" y="346" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">nas://lab/working</text>
+<path d="M1080,356 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1090" y="376" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Epochs</text>
+<text x="1269.6" y="376" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Baseline, Task, Rest</text>
+<path d="M1259.6,236 v150" stroke="#dcdae6" stroke-width="0.6"/>
+<path d="M640.0,386 L640.0,423.0 L220.0,423.0 L220.0,460" fill="none" stroke="#6f6d82" stroke-width="1.3" marker-end="url(#arrow)"/>
+<path d="M640.0,386 L640.0,460" fill="none" stroke="#6f6d82" stroke-width="1.3" marker-end="url(#arrow)"/>
+<rect x="20" y="460" width="400" height="186" rx="6" fill="#ffffff" stroke="#8db9bf" stroke-width="1.2"/>
+<path d="M26,460 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#d5e5e8"/>
+<path d="M20,496 h400" stroke="#8db9bf" stroke-width="1"/>
+<text x="30" y="484" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#225b63">Silicon probe implant</text>
+<text x="30" y="516" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Date and time</text>
+<text x="167.60000000000002" y="516" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">10 March 2026</text>
+<path d="M20,526 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="546" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Subject</text>
+<text x="167.60000000000002" y="546" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Rat 17</text>
+<path d="M20,556 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="576" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Target regions</text>
+<text x="167.60000000000002" y="576" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">CA1</text>
+<path d="M20,586 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="606" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Protocol</text>
+<text x="167.60000000000002" y="606" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Chronic implant v3</text>
+<path d="M20,616 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="636" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Status</text>
+<text x="167.60000000000002" y="636" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Performed</text>
+<path d="M157.60000000000002,496 v150" stroke="#dcdae6" stroke-width="0.6"/>
+<rect x="20" y="654" width="400" height="182" rx="6" fill="#ffffff" stroke="#8db9bf" stroke-width="1.2"/>
+<path d="M26,654 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#d5e5e8"/>
+<path d="M20,690 h400" stroke="#8db9bf" stroke-width="1"/>
+<text x="30" y="678" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#225b63">Materials</text>
+<text x="30" y="708" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="700" fill="#4a4858">one row per material used</text>
+<path d="M20,716 h400" stroke="#c9c6d6" stroke-width="0.8"/>
+<text x="30" y="736" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Silicon probe</text>
+<text x="184.4" y="736" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">ASSY-156 (NeuroNexus)</text>
+<path d="M20,746 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="766" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Source</text>
+<text x="184.4" y="766" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Inventory: probes cabinet</text>
+<path d="M20,776 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="796" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Adhesive, cement</text>
+<text x="184.4" y="796" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">C&amp;B Metabond</text>
+<path d="M20,806 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="826" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Anchor screw</text>
+<text x="184.4" y="826" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Stainless M1</text>
+<path d="M174.4,716 v120" stroke="#dcdae6" stroke-width="0.6"/>
+<rect x="20" y="844" width="400" height="182" rx="6" fill="#ffffff" stroke="#c9c6d6" stroke-width="1.2"/>
+<path d="M26,844 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#efeef4"/>
+<path d="M20,880 h400" stroke="#c9c6d6" stroke-width="1"/>
+<text x="30" y="868" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#2c2a38">Coordinates</text>
+<text x="30" y="898" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="700" fill="#4a4858">Bregma stereotaxic, from brain surface</text>
+<path d="M20,906 h400" stroke="#c9c6d6" stroke-width="0.8"/>
+<text x="30" y="926" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">AP</text>
+<text x="117.2" y="926" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">-3.5 mm</text>
+<path d="M20,936 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="956" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">ML</text>
+<text x="117.2" y="956" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">2.5 mm</text>
+<path d="M20,966 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="986" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Depth</text>
+<text x="117.2" y="986" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">1.6 mm</text>
+<path d="M20,996 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="1016" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">ML angle</text>
+<text x="117.2" y="1016" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">10°</text>
+<path d="M107.2,906 v120" stroke="#dcdae6" stroke-width="0.6"/>
+<rect x="440" y="460" width="400" height="186" rx="6" fill="#ffffff" stroke="#8db9bf" stroke-width="1.2"/>
+<path d="M446,460 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#d5e5e8"/>
+<path d="M440,496 h400" stroke="#8db9bf" stroke-width="1"/>
+<text x="450" y="484" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#225b63">Virus injection</text>
+<text x="450" y="516" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Date and time</text>
+<text x="604.4" y="516" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">5 March 2026</text>
+<path d="M440,526 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="546" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Subject</text>
+<text x="604.4" y="546" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Rat 17</text>
+<path d="M440,556 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="576" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Target regions</text>
+<text x="604.4" y="576" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">CA1</text>
+<path d="M440,586 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="606" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Injection volume</text>
+<text x="604.4" y="606" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">50 µL</text>
+<path d="M440,616 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="636" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Injection rate</text>
+<text x="604.4" y="636" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">10 µL/min</text>
+<path d="M594.4,496 v150" stroke="#dcdae6" stroke-width="0.6"/>
+<rect x="440" y="654" width="400" height="122" rx="6" fill="#ffffff" stroke="#8db9bf" stroke-width="1.2"/>
+<path d="M446,654 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#d5e5e8"/>
+<path d="M440,690 h400" stroke="#8db9bf" stroke-width="1"/>
+<text x="450" y="678" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#225b63">Materials</text>
+<text x="450" y="708" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="700" fill="#4a4858">one row per material used</text>
+<path d="M440,716 h400" stroke="#c9c6d6" stroke-width="0.8"/>
+<text x="450" y="736" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Viral vector</text>
+<text x="570.8" y="736" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">AAV1-CaMKII-GCaMP6f</text>
+<path d="M440,746 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="766" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Source</text>
+<text x="570.8" y="766" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Inventory: -80 °C freezer</text>
+<path d="M560.8,716 v60" stroke="#dcdae6" stroke-width="0.6"/>
+<rect x="440" y="784" width="400" height="152" rx="6" fill="#ffffff" stroke="#c9c6d6" stroke-width="1.2"/>
+<path d="M446,784 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#efeef4"/>
+<path d="M440,820 h400" stroke="#c9c6d6" stroke-width="1"/>
+<text x="450" y="808" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#2c2a38">Coordinates</text>
+<text x="450" y="838" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="700" fill="#4a4858">Bregma stereotaxic, from brain surface</text>
+<path d="M440,846 h400" stroke="#c9c6d6" stroke-width="0.8"/>
+<text x="450" y="866" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">AP</text>
+<text x="512.0" y="866" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">-3.5 mm</text>
+<path d="M440,876 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="896" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">ML</text>
+<text x="512.0" y="896" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">2.5 mm</text>
+<path d="M440,906 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="450" y="926" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Depth</text>
+<text x="512.0" y="926" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">1.6 mm</text>
+<path d="M502.0,846 v90" stroke="#dcdae6" stroke-width="0.6"/>
+<path d="M220.0,1026 L220.0,1066" fill="none" stroke="#6f6d82" stroke-width="1.3" marker-end="url(#arrow)"/>
+<text x="230.0" y="1052" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="400" fill="#4a4858">creates</text>
+<rect x="20" y="1066" width="400" height="212" rx="6" fill="#ffffff" stroke="#8db9bf" stroke-width="1.2"/>
+<path d="M26,1066 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#d5e5e8"/>
+<path d="M20,1102 h400" stroke="#8db9bf" stroke-width="1"/>
+<text x="30" y="1090" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#225b63">Experimental interface</text>
+<text x="30" y="1120" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="700" fill="#4a4858">the implanted probe, kept across sessions</text>
+<path d="M20,1128 h400" stroke="#c9c6d6" stroke-width="0.8"/>
+<text x="30" y="1148" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Type</text>
+<text x="159.2" y="1148" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Silicon probe</text>
+<path d="M20,1158 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="1178" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Subject</text>
+<text x="159.2" y="1178" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Rat 17</text>
+<path d="M20,1188 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="1208" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Target region</text>
+<text x="159.2" y="1208" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">CA1</text>
+<path d="M20,1218 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="1238" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Coordinates</text>
+<text x="159.2" y="1238" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">copied from the implant</text>
+<path d="M20,1248 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="30" y="1268" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Persistence</text>
+<text x="159.2" y="1268" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Chronic</text>
+<path d="M149.2,1128 v150" stroke="#dcdae6" stroke-width="0.6"/>
+<path d="M1280.0,386 L1280.0,423.0 L1080.0,423.0 L1080.0,460" fill="none" stroke="#6f6d82" stroke-width="1.3" marker-end="url(#arrow)"/>
+<path d="M1280.0,386 L1280.0,423.0 L1500.0,423.0 L1500.0,460" fill="none" stroke="#6f6d82" stroke-width="1.3" marker-end="url(#arrow)"/>
+<path d="M1280.0,386 L1280.0,423.0 L1920.0,423.0 L1920.0,460" fill="none" stroke="#6f6d82" stroke-width="1.3" marker-end="url(#arrow)"/>
+<rect x="880" y="460" width="400" height="246" rx="6" fill="#ffffff" stroke="#8db9bf" stroke-width="1.2"/>
+<path d="M886,460 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#d5e5e8"/>
+<path d="M880,496 h400" stroke="#8db9bf" stroke-width="1"/>
+<text x="890" y="484" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#225b63">Data acquisition: Extracellular ephys</text>
+<text x="890" y="516" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Session</text>
+<text x="1019.2" y="516" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Rat17_2026-03-13</text>
+<path d="M880,526 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="890" y="546" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Interfaces</text>
+<text x="1019.2" y="546" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Silicon probe in CA1</text>
+<path d="M880,556 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="890" y="576" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Equipment</text>
+<text x="1019.2" y="576" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Intan RHD2000</text>
+<path d="M880,586 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="890" y="606" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">File name</text>
+<text x="1019.2" y="606" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">dataset1.dat</text>
+<path d="M880,616 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="890" y="636" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Sampling rate</text>
+<text x="1019.2" y="636" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">20000 Hz</text>
+<path d="M880,646 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="890" y="666" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Channels</text>
+<text x="1019.2" y="666" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">128</text>
+<path d="M880,676 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="890" y="696" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Epoch</text>
+<text x="1019.2" y="696" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Task</text>
+<path d="M1009.2,496 v210" stroke="#dcdae6" stroke-width="0.6"/>
+<rect x="1300" y="460" width="400" height="186" rx="6" fill="#ffffff" stroke="#8db9bf" stroke-width="1.2"/>
+<path d="M1306,460 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#d5e5e8"/>
+<path d="M1300,496 h400" stroke="#8db9bf" stroke-width="1"/>
+<text x="1310" y="484" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#225b63">Data acquisition: Behavioral tracking</text>
+<text x="1310" y="516" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Session</text>
+<text x="1414.0" y="516" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Rat17_2026-03-13</text>
+<path d="M1300,526 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1310" y="546" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Equipment</text>
+<text x="1414.0" y="546" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Basler camera</text>
+<path d="M1300,556 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1310" y="576" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">File name</text>
+<text x="1414.0" y="576" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">behavior1.avi</text>
+<path d="M1300,586 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1310" y="606" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Frame rate</text>
+<text x="1414.0" y="606" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">30 Hz</text>
+<path d="M1300,616 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1310" y="636" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Resolution</text>
+<text x="1414.0" y="636" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">640 × 480</text>
+<path d="M1404.0,496 v150" stroke="#dcdae6" stroke-width="0.6"/>
+<rect x="1720" y="460" width="400" height="186" rx="6" fill="#ffffff" stroke="#8db9bf" stroke-width="1.2"/>
+<path d="M1726,460 h388 a6,6 0 0 1 6,6 v30 h-400 v-30 a6,6 0 0 1 6,-6 z" fill="#d5e5e8"/>
+<path d="M1720,496 h400" stroke="#8db9bf" stroke-width="1"/>
+<text x="1730" y="484" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" text-anchor="start" font-weight="700" fill="#225b63">Behavior</text>
+<text x="1730" y="516" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Session</text>
+<text x="1909.6" y="516" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Rat17_2026-03-13</text>
+<path d="M1720,526 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1730" y="546" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Behavioral assay</text>
+<text x="1909.6" y="546" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Alternation run</text>
+<path d="M1720,556 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1730" y="576" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Setup</text>
+<text x="1909.6" y="576" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Linear track rig</text>
+<path d="M1720,586 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1730" y="606" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Behavioral paradigm</text>
+<text x="1909.6" y="606" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Spatial alternation</text>
+<path d="M1720,616 h400" stroke="#dcdae6" stroke-width="0.6"/>
+<text x="1730" y="636" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38" text-decoration="underline">Epoch</text>
+<text x="1909.6" y="636" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" text-anchor="start" font-weight="400" fill="#2c2a38">Task</text>
+<path d="M1899.6,496 v150" stroke="#dcdae6" stroke-width="0.6"/>
+<path d="M420,1173.0 L1080.0,1173.0 L1080.0,708" fill="none" stroke="#6f6d82" stroke-width="1.3" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+<text x="434" y="1165.0" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" text-anchor="start" font-weight="400" fill="#4a4858">the recording names the interface it was made through</text>
+</svg>

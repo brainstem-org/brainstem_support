@@ -13,81 +13,73 @@ has_toc: false
 Documentation, tutorials, and support resources for BrainSTEM.
 {: .fs-6 .fw-300}
 
-[Get started now](#getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2} [Visit BrainSTEM.org](https://www.brainstem.org/){: .btn .fs-5 .mb-4 .mb-md-0}
-
-![website screenshot](/assets/images/website_screenshot_v2.jpg)
+[Get started now]({{ "/tutorials/get_started/"|absolute_url}}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2} [Visit BrainSTEM.org](https://www.brainstem.org/){: .btn .fs-5 .mb-4 .mb-md-0}
 
 ## About BrainSTEM
 {: .no_toc}
 
-This site provides comprehensive documentation and support for BrainSTEM – a collaborative electronic lab notebook designed specifically for experimental neuroscience. BrainSTEM captures and organizes electrophysiological, imaging, and behavioral data through a modular, standardized data model that can be extended to accommodate future data types.
+This site provides documentation and support for BrainSTEM, a collaborative electronic lab notebook designed for experimental neuroscience. BrainSTEM captures and organizes the metadata of in-vivo and ex-vivo experiments, from subjects, surgeries and implants to recordings, imaging and behavior, and from tissue preparations to staining and slice physiology, through a modular, standardized data model that grows with new methods.
 
-Whether you're running a small lab or managing large-scale collaborative projects, BrainSTEM provides the infrastructure to organize, share, and access your experimental data with standardized metadata and reproducible workflows.
+Whether you run a small lab or manage large collaborative projects, BrainSTEM provides the infrastructure to organize, share and access your experimental metadata with controlled vocabularies, versioned schemas and reproducible workflows.
 
-### Key Features
+### Key features
+{: .no_toc}
 
-- **Comprehensive Data Management**: Organize sessions, subjects, procedures, and experimental metadata in one platform
-- **Collaborative Research**: Granular permissions enable seamless collaboration within and across laboratories
-- **Public Data Sharing**: One-click public sharing of sessions for open science initiatives
-- **Programmable Access**: Full API with dedicated toolsets for MATLAB and Python
-- **Customizable Interface**: Web-based interface tailored for neuroscience research workflows
-- **Standardized Metadata**: Consistent data annotation using controlled vocabularies and taxonomies
+{% include tour.html %}
 
-BrainSTEM is ready for public use, and we encourage researchers to create an account and begin exploring the platform. Your feedback helps us advance and shape the future of collaborative neuroscience data management.
+- **Complete experimental records**: projects, subjects and specimen sets, procedures with their materials and the interfaces they implant, sessions with data acquisition, manipulations, behavior and epochs, all with type-specific, validated fields.
+- **Collaboration and compliance**: object-level permissions through projects and groups, procedure episodes with severity classifications, licenses and protocols, and planned records.
+- **Shared resources and taxonomies**: a catalog of consumables (including hundreds of silicon probe and ECoG array designs), hardware devices and suppliers; species, strains, atlases with brain-region trees and coordinate previews; new entries can be submitted with an RRID or DOI.
+- **Open science**: one-click public sharing of projects, a public portal and API, versioned JSON exports, STAR Methods reports, and conversion to NWB files for DANDI.
+- **Programmable and AI ready**: a REST API with Python and MATLAB tools, permanent URLs for every schema version and a machine-readable reference generated from the server; an in-app assistant that searches your records, an MCP server for Claude, Cursor and other assistants, and agent skills for coding agents, all bound by your permissions.
+- **Integrations**: SoftMouse colony import, CSV and batch import, and an interactive data model to explore how everything connects.
+{: .tour-features }
 
-[Data Model]({{"/datamodel/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [Web Interface]({{"/webinterface/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [API]({{"/api/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [API Tools]({{"/api-tools/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4}
+### How BrainSTEM structures an experiment
+{: .no_toc}
 
-## Getting Started
+A project holds the subjects, and each session records one occasion with a subject. Around them, BrainSTEM records what was done, what was recorded, with what, where in the brain, under which rules and where the data lives. Colours follow the apps of the [data model]({{ "/datamodel/"|absolute_url}}).
 
-New to BrainSTEM? Our comprehensive tutorials will guide you through every step of the process, from account creation to advanced data management.
+![How BrainSTEM structures an experiment: a project holds subjects and sessions; procedures, interfaces, epochs, behavior, data acquisition and manipulations answer what was done and recorded; species, data storage, protocols, atlases, materials and setups answer which animal, where the data lives, under which rules, where in the brain, which products and with what.]({{site.baseurl}}/assets/images/diagrams/what-brainstem-records.svg)
 
-### For New Users
-Start with our beginner-friendly tutorial that covers:
-- Creating or joining research groups
-- Setting up your first project, subjects, and sessions
-- Understanding the BrainSTEM data model
-- Basic data entry and organization
+[Data model]({{"/datamodel/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [Web interface]({{"/webinterface/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [API]({{"/api/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [Tools]({{"/tools/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4}
 
-### For Advanced Users
-Explore advanced features including:
-- Public data sharing and collaboration
-- Resource and taxonomy submission
-- Project and group management
-- Setting up lab infrastructure
+## Getting started
 
-[Get Started Tutorial]({{ "/tutorials/get_started/"|absolute_url}}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2}
-[View All Tutorials]({{ "/tutorials/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+New to BrainSTEM? The tutorials guide you from account creation to complete experimental workflows.
 
-## Join Our Community
+### For new users
+{: .no_toc}
+- [Creating or joining research groups]({{ "/tutorials/managing-groups/"|absolute_url}})
+- [Setting up your first project, subjects and sessions]({{ "/tutorials/get_started/"|absolute_url}})
+- [Understanding the BrainSTEM data model]({{ "/datamodel/"|absolute_url}})
+- [Forms, lists and entry pages of the web interface]({{ "/webinterface/"|absolute_url}})
 
-We're actively seeking research groups to join the BrainSTEM community. As an active user, you'll help shape the future of collaborative neuroscience data management while gaining early notice of new features.
+### For advanced users
+{: .no_toc}
+- [Ex vivo workflows with specimen sets, specimen procedures and slice sessions]({{ "/tutorials/specimen-workflow/"|absolute_url}})
+- [Public data sharing]({{ "/tutorials/sharing-project-publicly/"|absolute_url}}), [exports and NWB conversion]({{ "/tutorials/exporting-to-nwb/"|absolute_url}})
+- [Submitting resources and taxonomies]({{ "/tutorials/submit-resource-and-taxonomies/"|absolute_url}})
+- [Working with the AI assistant, the MCP server and agent skills]({{ "/tutorials/working-with-ai/"|absolute_url}})
 
-### Benefits of Joining
-- **Stay Informed**: Get early notice about new features and capabilities
-- **Direct Impact**: Your feedback directly influences platform development
-- **Dedicated Support**: Assistance during onboarding and beyond
+[Get started tutorial]({{ "/tutorials/get_started/"|absolute_url}}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2}
+[View all tutorials]({{ "/tutorials/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
 
-If you're committed to advancing open science and interested in joining the BrainSTEM community, we'd love to hear from you.
+## Support and community
 
-[Join the Community](https://docs.google.com/forms/d/e/1FAIpQLSctFj4ek5Ib-1FQoi9KeGzCkg6o-cuM26oggNu8FYeKRqNpwg/viewform){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0}
+### Get help
+{: .no_toc}
 
-## Support and Community
-
-### Get Help
-We're here to assist you with any questions or issues:
-
-- **[GitHub Issues](https://github.com/brainstem-org/brainstem_support/issues)**: Report bugs and technical problems
-- **[GitHub Discussions](https://github.com/brainstem-org/brainstem_support/discussions)**: Ask questions, request features, and engage with the community
-- **[Contact Form](https://brainstem.org/#Get-in-touch)**: For account-specific issues and direct support
-
+- **[GitHub Issues](https://github.com/brainstem-org/brainstem_support/issues)**: report bugs and technical problems
+- **[GitHub Discussions](https://github.com/brainstem-org/brainstem_support/discussions)**: ask questions, request features, and engage with the community
+- **[Contact form](https://brainstem.org/#Get-in-touch)**: account-specific issues and direct support
 
 ### Contributing
-BrainSTEM thrives on community input. Whether you're reporting bugs, suggesting enhancements, or participating in discussions, your contribution helps improve the platform for all users.
+{: .no_toc}
+BrainSTEM thrives on community input. Whether you report bugs, suggest enhancements or take part in discussions, your contribution helps improve the platform for everyone.
 
 ## Acknowledgments
 
 BrainSTEM is supported by the [Oxytocin U19 BRAIN Initiative Grant](https://med.nyu.edu/departments-institutes/neuroscience/research/shared-research-resources/oxytocin-u19-brain-initiative-grant), enabling advances in collaborative neuroscience research infrastructure.
 
-<p align="center">
-	<img src="/assets/images/brain_initiative.png" width="19%">&emsp;&emsp;&emsp;&emsp;
-</p>
+<p style="text-align: center;"><img src="{{site.baseurl}}/assets/images/brain_initiative.png" alt="BRAIN Initiative" width="160"></p>

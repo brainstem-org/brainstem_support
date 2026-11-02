@@ -4,4 +4,9 @@ _site/
 .jekyll-metadata
 .DS_Store
 Gemfile.lock
-/scripts
+
+# The interactive data model is fetched from the BrainSTEM server when the site is built
+# (scripts/build_reference_docs.py --assets-only); only explorer.html is kept in the repository.
+docs/assets/datamodel/*
+!docs/assets/datamodel/explorer.html
+__pycache__/

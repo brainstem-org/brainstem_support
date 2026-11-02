@@ -11,35 +11,66 @@ nav_order: 1
 ## Table of contents
 {: .no_toc .text-delta }
 
+{::options toc_levels="2..2" /}
 1. TOC
 {:toc}
 
 ## Introduction
 
-Projects serve as a primary means to group subjects, sessions, and collections together. A project can be used to relate experiments for publications, describe day-to-day experiments, or share experimental data with collaborators. Projects define the overall permissions level of most other content.
+Projects group the subjects, specimen sets, sessions, cohorts, collections and breedings that belong to one line of work. A project can relate experiments to publications, describe day-to-day experiments, or share experimental data with collaborators. Projects are the permission boundary of BrainSTEM: your access to a subject, a session, a procedure or a data acquisition comes from the projects it belongs to, not from the entry itself.
 
+The lab's own resources (setups and their equipment, inventories and their stock, protocols, licenses, behavioral assays and data storages) sit outside projects and keep their own permissions. See [Personal attributes]({{"datamodel/personal_attributes/"|absolute_url}}).
+
+{% include datamodel_embed.html model="stem.project" %}
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
-| `Project name` | Name of the project (**required**; string; maximum length: 200 characters; must be unique across BrainSTEM). Example: "Hippocampal Memory Study 2024", "Visual Cortex Development Project" |
-| `Description` | A rich text description of the project. You can upload and insert images through rich text formatting. Example: "This project investigates place cell activity in the CA1 region of the hippocampus..." |
-| `Publications` | Related publications. Can link multiple publications to a project. Example: "Smith et al. 2024 Nature", "Garcia 2023 Science" |
-| `Tags` | Tags for the project. Great for organizational purposes and quick labeling, and filtering. Tags are shared across all users. Example: "electrophysiology", "behavior", "hippocampus" |
-| `Extra content` | Allows you to add extra fields to the project. Values can be strings or numeric. Saved as key-value pairs. Example: {"Ethics_Protocol": "2024-001", "Funding": "NIH R01"} |
-| `Project name in storage` | Use this field if you have another name for your project in your local data storage (string; maximum length: 200 characters). Example: "HPC_MEM_24" |
-| `Repository links` | If this project has been shared in an online public repository, link it here. Example: Links to DANDI (dandiset-123456) or OpenNeuro (ds000123) |
-| `User with role` | Individual users assigned to the project with specific roles. Roles include: Contact person, Conceptualizer, Data collector, Data curator, Data manager, Formal analyzer, Investigator, Maintainer, Method developer, Producer, Project leader, Project manager, Supervisor. Example: Lab PI as Project leader, postdoc as Investigator, students as Data collectors |
-| `Public` | Determines if the project is publicly available (boolean; default: False). When enabled, allows public access according to public inheritance rules |
+| `Project name` | Name of the project (**required**; string; maximum length: 200 characters; must be unique across BrainSTEM, ignoring case). Include something identifying, such as the lab or the study. Example: "Hippocampal Memory Study 2024" |
+| `Authenticated groups` | Groups given Contributor access when the project is created (add form only). After creation, access is managed from the project's **Manage permissions** page, where you can also invite individual people. |
+| `Public access` | Private or Public (default: Private). The form shows it as a **Project visibility** toggle and asks for confirmation when you switch it. Public makes the project and everything that inherits from it readable on the public portal without an account. Only owners can change it. |
+| `Description` | A rich text description of the project. You can insert images; the image URL is publicly exposed. |
+| `Publications` | Related [publications]({{"datamodel/dissemination/publication/"|absolute_url}}). A project can link several publications; this is what lets a reader move from a paper to the underlying entries. A new publication must be approved before other users can see it. |
+| `Tags` | Tags for organization and filtering. Tags are shared across all users; the suggestions show tags already used in your projects, and you can always type a new one. Example: "electrophysiology", "hippocampus" |
+| `Extra content` | Custom key-value fields that the standard fields do not cover. Values can be text or numbers. Example: {"Ethics_Protocol": "2024-001", "Funding": "NIH R01"} |
+| `Project name in storage` | The name of the project in your local data storage, when it differs from the name above (string; maximum length: 200 characters). Shown in the **Online repositories** part of the form. Example: "HPC_MEM_24" |
+| `Repository links` | Links to where the data or code live externally, such as a DANDI set, a GitHub repository or an institutional archive. Each link names the repository (DANDI, Zenodo, GitHub, Figshare and others) and its URL. |
+
+**Project name in storage**, **Repository links**, the user roles below and the groups chosen at creation are available only in the web form; the REST API exposes the other fields (**Extra content** is called `extra_fields` there).
+
+{% include schemas/project.md %}
+
+## User roles
+
+The change form of a project has a **User roles** list. Each row names a user who holds Contributor access or more on the project (**User with role**) and a **Role** that describes their contribution to the work: Contact person, Conceptualizer, Data collector, Data curator, Data manager, Formal analyzer, Investigator, Maintainer, Method developer, Producer, Project leader, Project manager or Supervisor. A person can have several roles. The roles are shown on the project page and in its exports, where they describe who did what, in the manner of a contributor statement.
+
+These roles are descriptive only. They have nothing to do with the permission roles (Member, Contributor, Manager, Owner) that decide who can see and edit the project; see [Permissions](#permissions). User roles are not available through the REST API.
+
+## Related entries
+
+- [__Subjects__]({{"datamodel/stem/subject/"|absolute_url}}) and [__Specimen sets__]({{"datamodel/stem/specimenset/"|absolute_url}}) belong to one or more projects.
+- [__Sessions__]({{"datamodel/stem/session/"|absolute_url}}) belong to one or more projects.
+- [__Cohorts__]({{"datamodel/stem/cohort/"|absolute_url}}), [__Collections__]({{"datamodel/stem/collection/"|absolute_url}}) and [__Breedings__]({{"datamodel/stem/breeding/"|absolute_url}}) belong to exactly one project. Deleting a project deletes them too.
+
+## Export and download
+
+The **Export** menu on a project page offers a printable view (save as PDF), a Word document, a spreadsheet (CSV, Excel) and a **STAR Methods** report (preview or .docx) built from the project's entries. **Export** → **Download project data** exports the project's entries as JSON, optionally compressed; large exports run in the background and are downloaded when ready. The same export is available through the API (`export/` and `export-jobs/` actions on the project).
 
 ## Permissions
 
-Projects define the overall permissions level for subjects, sessions, collections, cohorts, and modules. You manage permissions through the management tab, where you can assign individual users and groups access levels to a project.
+A project's access is held directly on it, by user and by group. A user or a group holds one of four permission roles:
 
-Projects have four permission levels: membership (read access), contributors, managers, and owners.
+| Role | Can |
+|:-----|:----|
+| Member | Read the project and everything that inherits from it. |
+| Contributor | Also create, edit and delete subjects, sessions, specimen sets and their modules. Most forms only offer projects where you are at least a Contributor. |
+| Manager | Also add or remove members and groups, and send invitations. |
+| Owner | Also edit the project's own fields, make it public and delete it. |
 
-Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
+An invitation grants one of these roles. People without a BrainSTEM account can be invited by email; the invitation is applied when they register. A member can leave a project from its page.
+
+Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more.
 
 ## API access
 

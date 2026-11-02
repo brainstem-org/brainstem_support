@@ -30,7 +30,7 @@ Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn
 
 1. Navigate to the Groups page:
    - Visit [https://www.brainstem.org/private/auth/group/](https://www.brainstem.org/private/auth/group/)
-   - Or click the **Users** icon in the top navigation bar and select **Groups**
+   - Or click the **Users, groups & invitations** icon in the top navigation bar and select **Groups**
 
 2. Find your group in the list and click on it to access management options
 
@@ -43,20 +43,20 @@ As a group manager, you can add and remove members, as well as manage invitation
 **To invite a new member to your group:**
 
 1. Go to your group's management page
-2. Click the **Invite user** button
-3. Select the user from the dropdown list. 
+2. Click the **Invite users** button
+3. Select the user, or enter the email address of someone who has no account yet
 4. Click **Submit** to send the invitation
 
 {: .note }
-> The invited user will receive an email notification and must accept the invitation to join the group.
+> The invited user will receive an email notification and must accept the invitation to join the group. Invitations to people without an account expire after 14 days.
 
 ### Checking Invitation Status
 
 **To monitor pending invitations:**
 
-1. Navigate to [https://www.brainstem.org/private/users/groupmembershipinvitation/](https://www.brainstem.org/private/users/groupmembershipinvitation/)
-2. View the status of all pending invitations
-3. Monitor which invitations have been accepted or are still pending
+1. Click the **Users, groups & invitations** icon and select **Invitations & Requests**
+2. The **Groups** section lists pending invitations and membership requests for your groups
+3. Accept membership requests from lab members there
 
 ### Removing Members
 
@@ -94,16 +94,17 @@ As a group owner, you have full administrative control including the ability to 
 
 Group owners can associate their group with institutional and Principal investigators for better organization and identification.
 
-1. Access your group's settings page
-2. Click the **Add Laboratory** button
+1. Open your group's details page
+2. Click the **Add laboratory details** button
 3. Fill in the laboratory details:
 
 | Field | Description |
 |-------|-------------|
-| **Principal investigators** | Select from group members |
-| **Website** | Lab website URL (optional) |
+| **Principal investigators** (required) | Select from group members |
+| **Institution** (required) | University or research institution name |
 | **Department** | Department name |
-| **Institution** | University or research institution name |
+| **Website** | Lab website URL (optional) |
+| **Description** | A short description of the lab |
 | **City** | Laboratory location city |
 | **Country** | Laboratory location country |
 
@@ -117,7 +118,7 @@ Group owners can associate their group with institutional and Principal investig
 **To change your group's name:**
 
 1. Go to your group's main page
-2. Click the **Edit** button 
+2. Click the **Edit group** button
 3. Locate the **Name** field at the top of the form
 4. Enter the new group name
 5. Click **Save** to confirm the changes

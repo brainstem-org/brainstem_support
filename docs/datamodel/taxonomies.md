@@ -3,24 +3,28 @@ layout: default
 title: Taxonomies
 parent: Data model
 has_children: true
-nav_order: 5
+nav_order: 9
 has_toc: false
 ---
 
 # Taxonomies
 
-Taxonomies provide standardized vocabularies and classification systems for various aspects of neuroscience research. These taxonomies ensure consistency in naming and categorization across different experiments and research groups. The main categories of taxonomies are:
+Taxonomies provide standardized vocabularies and classification systems for various aspects of neuroscience research. They ensure consistency in naming and categorization across experiments and research groups. Most taxonomies are expandable: anyone can submit an entry, which is usable immediately in your own records and becomes visible to everyone once approved. Species, strains and behavioral paradigms carry an RRID and external identifiers; species and strains also carry a popular name. The main categories of taxonomies are:
 
-- [**Behavioral categories**]({{site.baseurl}}/datamodel/taxonomies/behavioralcategory): Behavioral categories provide a two-level hierarchical classification for organizing behavioral paradigms into meaningful groups by cognitive domain or experimental focus.
+- [**Anatomical regions**]({{site.baseurl}}/datamodel/taxonomies/anatomicalregion): Anatomical structures as defined by an atlas or ontology, used as target regions on procedures, specimen procedures, experimental interfaces and specimen sets. System-loaded, with no approval workflow. Formerly called brain regions.
 
-- [**Behavioral paradigms**]({{site.baseurl}}/datamodel/taxonomies/behavioralparadigm): Behavioral paradigms represent standardized behavioral tasks and protocols shared across the neuroscience community. A paradigm describes the conceptual approach to assessing a particular behavior — independent of any specific lab's implementation or physical apparatus.
+- [**Anatomical references**]({{site.baseurl}}/datamodel/taxonomies/anatomicalreference): The atlas and ontology releases that regions belong to, with their species, coordinate space and visualization status. System-managed.
 
-- [**Brain regions**]({{site.baseurl}}/datamodel/taxonomies/brainregion): A comprehensive listing of brain regions based on established atlases that provides standardized neuroanatomical references for precise targeting and documentation.
+- [**Coordinate transforms**]({{site.baseurl}}/datamodel/taxonomies/coordinatetransform): Named, versioned mappings from a coordinate system to an atlas, used for the coordinate preview on procedures. System-managed.
 
-- [**Regulatory authorities**]({{site.baseurl}}/datamodel/taxonomies/regulatoryauthority): Organizations that issue and oversee research approvals, licenses, and compliance requirements used across regulatory records.
+- [**Behavioral categories**]({{site.baseurl}}/datamodel/taxonomies/behavioralcategory): A two-level hierarchical classification for organizing behavioral paradigms by cognitive domain or experimental focus.
 
-- [**Setup types**]({{site.baseurl}}/datamodel/taxonomies/setuptype): A classification system for different experimental setups, ensuring consistent categorization of behavioral testing areas and research spaces.
+- [**Behavioral paradigms**]({{site.baseurl}}/datamodel/taxonomies/behavioralparadigm): Standardized behavioral tasks shared across the neuroscience community, with their category, applicable species and original publication, independent of any lab's implementation.
 
-- [**Species**]({{site.baseurl}}/datamodel/taxonomies/species): A catalog of animal species used in neuroscience research, including their biological characteristics and experimental applications.
+- [**Regulatory authorities**]({{site.baseurl}}/datamodel/taxonomies/regulatoryauthority): Organizations that issue and oversee research approvals and licenses.
 
-- [**Strains**]({{site.baseurl}}/datamodel/taxonomies/strain): A listing of genetic variants and breeding lines within species, documenting specific genetic backgrounds and phenotypic characteristics relevant to neuroscience research.
+- [**Setup types**]({{site.baseurl}}/datamodel/taxonomies/setuptype): Classes of experimental preparation and apparatus, each in a preparation category, used by setups and behavioral assays.
+
+- [**Species**]({{site.baseurl}}/datamodel/taxonomies/species): The animal species used in research. Every subject stores its species directly.
+
+- [**Strains**]({{site.baseurl}}/datamodel/taxonomies/strain): Genetically defined lines within a species. Strain names are unique within their species.

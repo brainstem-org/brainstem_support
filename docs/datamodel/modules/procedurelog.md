@@ -12,55 +12,52 @@ nav_order: 1
 ## Table of contents
 {: .no_toc .text-delta }
 
+{::options toc_levels="2..2" /}
 1. TOC
 {:toc}
 
 ## Introduction
 
-Procedure logs refer to systematic records that track specific parameters or outcomes related to the procedures performed on or with subjects in scientific studies. These logs are vital for ensuring the accuracy and reproducibility of experimental results, allowing researchers to monitor the effectiveness, consistency, and potential issues associated with various procedures and equipment used in their studies. Procedure log types share relationships, but fields are tailored to the various procedure logs types.
+A procedure log is a longitudinal measurement series attached to one procedure: electrode impedances, linear drive displacement, tetrode drive adjustments. The log holds what stays the same across the series (the procedure and the kind of measurement); each entry holds one dated measurement. These logs document the effectiveness, consistency and potential issues of implants and equipment over time. Fields are tailored to the log type.
+
+{% include datamodel_embed.html model="modules.procedurelog" %}
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
-| ``Type`` | Type of procedure logs (**required**). Selected from predefined types. Example: "Impedances log", "Linear displacement log". *See options below* |
-| ``Description`` | Description of the procedure logs (string; maximum length: 500 characters). Example: "Daily impedance measurements for tetrode array" |
+| ``Type`` | Type of procedure log (**required**). Selected from predefined types. Example: "Impedances log". *See options below* |
+| ``Description`` | Description of the log series (string; maximum length: 500 characters). Example: "Daily impedance measurements for tetrode array" |
 | ``Procedure`` | The procedure of the log (**required**). Must reference an existing [procedure]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Silicon probe implant #A123" |
-| **Log Entries** | Multiple log entries can be added, each containing: |
-| ``Date and time`` | Timestamp for each entry in the log (**required**; datetime). Format: YYYY-MM-DD HH:mm:ss. Example: "2024-03-15 14:30:00" |
-| ``Notes`` | Notes for each entry in the log (string; maximum length: 500 characters). Example: "Observed slight increase in impedance values" |
-| ``Type specific fields`` | Custom fields based on procedure log type in JSON format for each entry. See [Procedure log types schema]({{"datamodel/schemas/procedurelog/"|absolute_url}}) for type-specific fields |
-
+| **Log Entries** | Multiple log entries can be added from the log's own page, each containing: |
+| ``Date and time`` | Timestamp of the entry (**required**; datetime; format: YYYY-MM-DD HH:mm:ss). |
+| ``Performed by`` | User who performed the measurement. Can differ from the user who created the log. |
+| ``Notes`` | Notes for the entry (string; maximum length: 500 characters). |
+| ``Type specific fields`` | Fields based on the log type, per entry. See the [Procedure log types schema]({{"datamodel/schemas/procedurelog/"|absolute_url}}). |
 
 ## Types of procedure logs
 
-These are the available type options for procedure logs:
+These are the available type options for procedure logs. See the schema for field details: [Procedure log types]({{"datamodel/schemas/procedurelog/"|absolute_url}}).
 
-See the schema for field details: [Procedure logs types]({{"datamodel/schemas/procedurelog/"|absolute_url}}).
+`Impedances log`: Electrode impedance measurements over time, used to follow contact quality and detect failing channels. Entry fields: impedances (kΩ), phases (°) and the list of channels, recorded in the same order as the values.
 
-`Impedances log`: Records electrode impedance over time to assess contact quality and track electrode/tissue interface health.
+`Linear displacement log`: Ordered position or depth adjustments for a probe advanced on a microdrive. Each entry is one movement, so the series reconstructs the device's depth history. Entry field: displacement.
 
-`Linear displacement log`: Tracks linear movement or position (e.g., depth adjustments of probes/electrodes) to document precise placement over time.
-
-`Tetrode log (4 tetrodes)`: Logs positioning, adjustments, impedances, and signal quality for a bundle of four tetrodes.
-
-`Tetrode log (8 tetrodes)`: Logs positioning, adjustments, impedances, and signal quality for a bundle of eight tetrodes.
-
+`Tetrode adjustment log`: A sheet of drive adjustments. Each dated entry is one row and each tetrode one column; a cell records how far that tetrode was moved, as a distance or as screw rotation, with negative values retracting. The number of columns follows the procedure's tetrode count. The detail page shows a running total per tetrode and a depth chart.
 
 ## Submission form
 
-The procedure logs submission form consists of two parts:
+The procedure log submission form consists of two parts:
 
 1. First part: Fill in the required fields.
-2. Second part: After clicking "Create and continue," you can edit all fields of the entry.
-
+2. Second part: After clicking "Create and continue," you can edit all fields and add entries.
 
 ## Permissions
 
-Procedure logs inherit permissions from projects via the subject and then the procedure associated with the entry.
+Procedure logs inherit permissions from projects via the subject and then the procedure associated with the log.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more.
 
 ## API access
 
-The API allows for programmable access to Procedure logs, enabling you to read, edit, and delete procedure logs through the API. Learn more about the procedure logs' fields and data structure on the [Procedure logs API page]({{"api/modules/procedurelog/"|absolute_url}}).
+The API allows for programmable access to procedure logs, enabling you to read, edit, and delete procedure logs through the API. Entries are added, changed and removed through the log's `add_entry`, `change_entry` and `remove_entry` actions. Learn more about the procedure logs' fields and data structure on the [Procedure logs API page]({{"api/modules/procedurelog/"|absolute_url}}).

@@ -1,0 +1,20 @@
+
+// Screenshots of the BrainSTEM interface (inserted by scripts/screenshots.py placeholders) and their captions.
+img.screenshot, .screenshot img {
+  border: 1px solid #e2e0ea;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(40, 20, 60, 0.12);
+  margin: 0.5rem 0 0.25rem;
+}
+.screenshot + p > em:only-child, p > img.screenshot + em {
+  display: block;
+  font-size: 0.8rem;
+  color: #6f6d82;
+  margin-bottom: 1.2rem;
+}
+
+// The credit under the navigation (nav_footer_custom.html): on small screens, where the navigation folds away, it
+// would sit above the page's title.
+@media (max-width: 49.99rem) {
+  .side-bar > .site-credit { display: none; }
+}

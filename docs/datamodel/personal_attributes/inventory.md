@@ -13,28 +13,33 @@ has_toc: false
 ## Table of contents
 {: .no_toc .text-delta }
 
+{::options toc_levels="2..2" /}
 1. TOC
 {:toc}
 
 ## Introduction
 
-Inventories in BrainSTEM provide a way to track and manage consumable resources within a laboratory or research group. They allow for organized tracking of supplies and materials needed for experiments. Each inventory can be associated with specific groups and can be either public or private.
+An inventory is a place where [consumable stock]({{"datamodel/modules/consumablestock/"|absolute_url}}) is managed: a lab's reagent store, a freezer, a shared facility stock. It is the container for stock lots and the permission boundary for them. The chain runs [consumable]({{"datamodel/resources/consumable/"|absolute_url}}) (the catalog product), consumable stock (the lot you hold) and [material usage]({{"datamodel/modules/materialusage/"|absolute_url}}) (that lot being used); the inventory is what makes the middle step yours.
+
+Anywhere a material selector offers a stock lot (procedures, specimen procedures, experimental interfaces), the choices come from inventories where you are at least a Contributor.
+
+{% include datamodel_embed.html model="personal_attributes.inventory" %}
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
-| ``Inventory name`` | Name of the inventory (**required**; string; maximum length: 50 characters). Example: "Silicon Probe Storage" |
-| ``Location`` | Location of the inventory (string; maximum length: 100 characters). Example: "Room 302, Cabinet B, ESD-safe storage" or "-80°C Freezer, Bay 3, Boxes V1-V10" |
-| ``Description`` | Rich text description of the inventory. Can include uploaded images. Example: "Storage location for all silicon probes, organized by probe type and usage status..." |
-| ``Authenticated groups`` | Groups that have change permissions for this inventory (**required**). Example: "Equipment Management Team" |
-| ``Public access`` | Designates if the inventory is publicly available (boolean; default: False). Must be enabled for inventories linked to public projects. Only owners can modify this setting. |
+| ``Inventory name`` | Name of the inventory (**required**; string; maximum length: 50 characters). Name it for the store rather than for the lab. Example: "Silicon Probe Storage" |
+| ``Authenticated groups`` | Groups given access when the inventory is created (create only). After creation, access is managed from the inventory's own page, where individual people can also be invited. |
+| ``Location`` | Where the store is: room, freezer, shelf (string; maximum length: 100 characters). Each stock lot also has its own storage location. Example: "-80°C Freezer, Bay 3" |
+| ``Description`` | Rich text description of what the inventory holds and any local rules for using it. Can include uploaded images. |
+| ``Public access`` | Designates if the inventory is publicly available (boolean; default: False). It makes the store and its stock readable on the public portal, not usable. Only owners can modify this setting. |
+
+An inventory cannot be deleted while consumable stocks point to it.
 
 ## Permissions
 
-You manage permissions through the management tab, where you can assign individual users and groups access levels to an inventory. Inventories have four permission levels: membership (read access), contributors, managers, and owners.
-
-Consumable stocks inherit permissions from their associated inventory.
+You manage permissions through the management tab, where you assign individual users and groups one of four roles. Members can see the inventory. Contributors can add, edit and remove its stock and select its lots when recording materials. Managers also manage access. Owners also edit the inventory's own fields and delete it. This is independent of project access, so sharing data does not share control of your reagents.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 

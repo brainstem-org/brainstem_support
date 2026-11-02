@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 640" width="1300" height="640" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Procedure stages: material usage rows belong to a stage or to the whole procedure</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1300" height="640" fill="#fff"/>
+  <text x="40" y="40" font-size="18" font-weight="600" fill="#2c2a38">Stages of a procedure and the materials that belong to them</text>
+  <rect x="60" y="70" width="380" height="100" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="250" y="92.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Procedure</text>
+  <text x="250" y="114.5" font-size="15" fill="#fff" text-anchor="middle">Anesthesia, Mouse_01, 2026-03-14</text>
+  <text x="250" y="136.5" font-size="15" fill="#fff" text-anchor="middle">type policy declares the stage types</text>
+  <text x="250" y="158.5" font-size="15" fill="#fff" text-anchor="middle">Induction, Maintenance, Top-up, …</text>
+  <rect x="60" y="240" width="300" height="100" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="210" y="273.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Stage 1: Induction</text>
+  <text x="210" y="295.5" font-size="15" fill="#2c2a38" text-anchor="middle">route: inhaled, chamber</text>
+  <text x="210" y="317.5" font-size="15" fill="#2c2a38" text-anchor="middle">duration 3 min</text>
+  <rect x="420" y="240" width="300" height="100" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="570" y="273.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Stage 2: Maintenance</text>
+  <text x="570" y="295.5" font-size="15" fill="#2c2a38" text-anchor="middle">route: inhaled, nose cone</text>
+  <text x="570" y="317.5" font-size="15" fill="#2c2a38" text-anchor="middle">duration 45 min</text>
+  <rect x="60" y="550" width="740" height="70" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
+  <text x="74" y="578.5" font-size="15" fill="#4a4858">A stage carries what its materials share: route, rate, duration, temperature.</text>
+  <text x="74" y="600.5" font-size="15" fill="#4a4858">Each material usage row names one stage, or none for the whole procedure.</text>
+  <rect x="60" y="410" width="300" height="100" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="210" y="432.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Material usage</text>
+  <text x="210" y="454.5" font-size="15" fill="#2c2a38" text-anchor="middle">Anesthetic agent: isoflurane</text>
+  <text x="210" y="476.5" font-size="15" fill="#2c2a38" text-anchor="middle">applied 5 %, lot A1</text>
+  <text x="210" y="498.5" font-size="15" fill="#2c2a38" text-anchor="middle">stage: Induction</text>
+  <rect x="420" y="410" width="300" height="100" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="570" y="432.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Material usage</text>
+  <text x="570" y="454.5" font-size="15" fill="#2c2a38" text-anchor="middle">Anesthetic agent: isoflurane</text>
+  <text x="570" y="476.5" font-size="15" fill="#2c2a38" text-anchor="middle">applied 1.5 %, lot A1</text>
+  <text x="570" y="498.5" font-size="15" fill="#2c2a38" text-anchor="middle">stage: Maintenance</text>
+  <rect x="800" y="410" width="300" height="100" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="950" y="432.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Material usage</text>
+  <text x="950" y="454.5" font-size="15" fill="#2c2a38" text-anchor="middle">Analgesic: carprofen</text>
+  <text x="950" y="476.5" font-size="15" fill="#2c2a38" text-anchor="middle">5 mg/kg, subcutaneous</text>
+  <text x="950" y="498.5" font-size="15" fill="#2c2a38" text-anchor="middle">stage: none (whole procedure)</text>
+  <path d="M250 170 L250 200 L950 200 L950 410" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M210 200 L210 240" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M570 200 L570 240" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="385" y="192" font-size="15" fill="#4a4858" text-anchor="middle">stages, in order</text>
+  <text x="965" y="300" font-size="15" fill="#4a4858" text-anchor="start">material row</text>
+  <text x="965" y="320" font-size="15" fill="#4a4858" text-anchor="start">without a stage</text>
+  <path d="M210 340 L210 410" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="225" y="380" font-size="15" fill="#4a4858" text-anchor="start">materials of this stage</text>
+  <path d="M570 340 L570 410" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="585" y="380" font-size="15" fill="#4a4858" text-anchor="start">materials of this stage</text>
+</svg>

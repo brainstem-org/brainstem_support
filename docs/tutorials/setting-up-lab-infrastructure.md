@@ -36,7 +36,7 @@ Behavioral Assays are standardized experimental protocols (such as T-maze altern
 For detailed instructions on creating, managing, and best practices for behavioral assays, see the dedicated tutorial: [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays).
 
 {: .note }
-> When planning your infrastructure, ensure that your setups have the correct environment type for the behavioral assays you intend to use.
+> When planning your infrastructure, ensure that your setups have the correct **Setup type** for the behavioral assays you intend to use: a behavior can only combine a setup and an assay of the same setup type.
 
 ## Planning Your Infrastructure
 
@@ -56,14 +56,16 @@ Understanding the relationships between components:
 ```
 Setup (Physical Environment)
 ├── Equipment (Devices in that environment)
-│   ├── Hardware devices (specific models/brands)
-│   └── Coordinates systems (for positioning)
-└── Associated with → Procedures, Behaviors, Data acquisition
+│   ├── Hardware device or consumable from the shared catalogs (the model)
+│   └── Coordinates system (for positioning)
+└── Used by → Procedures, Behaviors, Data acquisition, Manipulations
 
 Inventory (Storage/Organization System)
-└── Consumable Stocks (Specific items)
-    └── Associated with → Procedures
+└── Consumable stocks (your lots and batches of a catalog consumable)
+    └── Used as → Material rows of procedures, specimen procedures and experimental interfaces
 ```
+
+Consumables and hardware devices are shared catalogs maintained by all users (see [Submit Resources & Taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies)). Your setups, equipment, inventories and stocks are yours.
 
 ## Creating Setups
 
@@ -75,6 +77,10 @@ Setups represent your physical experimental environments. Each setup corresponds
 1. Go to **Personal Attributes** → **Setups** in the left navigation menu
 2. Click the **Add setup** button
 
+![A setup's form: name, setup category and type, location, visibility, description, image and specifications; its equipment is a separate tab.]({{site.baseurl}}/assets/images/screenshots/setup-form.png)
+{: .screenshot }
+*A setup's form: name, setup category and type, location, visibility, description, image and specifications; its equipment is a separate tab.*
+
 ### Step 2: Configure Basic Setup Information
 {: .no_toc}
 
@@ -83,8 +89,10 @@ Setups represent your physical experimental environments. Each setup corresponds
 | Field | Instructions |
 |-------|-------------|
 | **Name** | Use descriptive, standardized names (e.g., "Behavior Room A", "Surgery Station 1", "2P Imaging Rig", "Head-fixed Linear Track") |
-| **Environment Type** | Select appropriate category: Behavioral environments (T-maze, Open field, Barnes maze, Linear track), Recording environments (Head-fixed disc, Homecage, Custom rigs), or Surgical environments (Surgical table) |
-| **Authenticated Groups** | Select groups that should have access to this setup |
+| **Setup type** | Select appropriate category: Behavioral environments (T-maze, Open field, Barnes maze, Linear track), Recording environments (Head-fixed disc, Homecage, Custom rigs), or Surgical environments (Surgical table) |
+| **Authenticated groups** | Select groups that should have access to this setup |
+| **Location** | The room or building where the setup stands |
+| **Setup visibility** | **Private** (default) or **Public** |
 | **Description** | Provide comprehensive details including: Physical location (room number, building), Setup purpose and capabilities, Special requirements or restrictions, Contact person for technical issues |
 
 ### Step 3: Define Specifications
@@ -112,9 +120,9 @@ Add relevant specifications for your setup. Specifications can be a string or a 
 | Field | Value |
 |-------|-------|
 | **Name** | T-maze Behavior Room |
-| **Setup Type** | T-maze |
+| **Setup type** | T-maze |
 | **Description** | Behavioral testing room with automated T-maze system for spatial memory tasks. Located in Room 302B, Neuroscience Building |
-| **Public Access** | No |
+| **Setup visibility** | Private |
 | **Specifications** | ArmLength: "45 cm", StemLength: "50 cm", CorridorWidth: "10 cm" |
 
 {: .note }
@@ -127,8 +135,12 @@ Equipment represents the devices and instruments within your setups. Each piece 
 ### Step 1: Navigate to Equipment
 {: .no_toc}
 
-1. Go to **Modules** → **Equipment**
+1. Go to **Personal attributes** → **Equipment**
 2. Click the **Add equipment** button
+
+![An equipment entry's form: an amplifier in a setup, with its hardware device, date and coordinates.]({{site.baseurl}}/assets/images/screenshots/equipment-form.png)
+{: .screenshot }
+*An equipment entry's form: an amplifier in a setup, with its hardware device, date and coordinates.*
 
 ### Step 2: Configure Equipment Basics
 {: .no_toc}
@@ -136,9 +148,10 @@ Equipment represents the devices and instruments within your setups. Each piece 
 | Field | Instructions |
 |-------|-------------|
 | **Name** | Use specific, identifiable names (Good: "Intan RHD2000 #1", "Behavior Camera Main", "LED Driver Ch1-4"; Avoid: "Recording device", "Camera", "Light") |
+| **Type** | The equipment type (data acquisition system, camera, laser, stereotaxic frame, ...) |
 | **Setup** | Select the setup where this equipment is located |
-| **Hardware Device** | Choose from the resources database or submit new devices |
-| **Coordinates System** | Define how this equipment's position is measured (Common: "External_XYZ_Absolute") |
+| **Hardware device** or **Consumable** | Link the catalog entry that describes the model: a **hardware device** for instruments (amplifiers, cameras, microscopes) or a **consumable** for device-like items kept in the catalog (for example an optic fiber design or an electrode component). Use one of the two. |
+| **Coordinates** | How this equipment's position is described; the default is "External XYZ Coordinates with Euler Orientation" |
 
 ### Step 3: Common Equipment Types
 {: .no_toc}
@@ -155,12 +168,12 @@ Equipment represents the devices and instruments within your setups. Each piece 
 | Field | Value |
 |-------|-------|
 | **Name** | Intan RHD2000 System #1 |
+| **Type** | Data acquisition system |
 | **Setup** | Select: Open Field Arena |
-| **Hardware Device** | Intan RHD2000 USB interface board |
-| **Type** | DataAcquisitionSystem |
+| **Hardware device** | Intan RHD2000 USB interface board |
 
 {: .important }
-> Link equipment to appropriate hardware devices in the resources database. If your specific model isn't available, submit it for approval first.
+> Link equipment to the matching hardware device in the shared catalog. If your model isn't there, add it with **Lookup RRID** (see [Submit Resources & Taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies)); you can use your pending entry right away.
 
 ## Setting Up Inventories
 
@@ -185,8 +198,8 @@ Organize inventories by material type (Neural Probes, Viral Vectors, Pharmacolog
 |-------|-------------|
 | **Name** | Clear, descriptive identification (Examples: "Silicon Probe Storage", "AAV Virus Stocks", "Behavioral Supplies RT") |
 | **Description** | Include important details: Physical location and access requirements, Storage conditions and handling notes, Responsible person or contact, Special safety considerations |
-| **Authenticated Groups** | Groups that can access and modify this inventory |
-| **Public Access** | Usually False for lab inventories |
+| **Authenticated groups** | Groups that can access and modify this inventory |
+| **Visibility** | Usually left on **Private** for lab inventories |
 
 ### Step 3: Inventory Setup Example
 {: .no_toc}
@@ -195,7 +208,7 @@ Organize inventories by material type (Neural Probes, Viral Vectors, Pharmacolog
 |-------|-------|
 | **Name** | Neural Electrode Inventory |
 | **Description** | Storage for all neural recording electrodes and probes. Located in Room 302, Cabinet B. Handle with anti-static precautions. Contact: Lab Manager for restocking. |
-| **Authenticated Groups** | Electrophysiology Team, Lab Managers |
+| **Authenticated groups** | Electrophysiology Team, Lab Managers |
 
 ## Adding Consumable Stocks
 
@@ -204,40 +217,69 @@ Consumable stocks are the specific items within your inventories. These are the 
 ### Step 1: Navigate to Consumable Stocks
 {: .no_toc}
 
-1. Go to **Modules** → **Consumable stocks**
+1. Go to **Personal attributes** → **Consumable stocks**
 2. Click **Add consumable stock**
+
+![A consumable stock entry's form: a NeuroNexus silicon probe (A1x32-6mm-50-177) in stock, with its inventory, dates, status, storage and the type-specific details.]({{site.baseurl}}/assets/images/screenshots/consumable-stock-form.png)
+{: .screenshot }
+*A consumable stock entry's form: a NeuroNexus silicon probe (A1x32-6mm-50-177) in stock, with its inventory, dates, status, storage and the type-specific details.*
 
 ### Step 2: Configure Stock Information
 {: .no_toc}
 
 | Field Category | Field | Description |
 |----------------|--------|-------------|
-| **Basic Information** | Name | Specific, identifiable descriptions |
-| | Inventory | Select the appropriate inventory category |
-| | Consumable | Choose from resources database or submit new items |
-| **Tracking Details** | Lot number | Manufacturer's batch identifier |
-| | Supplier | Where the item was purchased |
+| **Basic Information** | Type | The stock type (Silicon probe, Virus solution, Pharmacological agent, Antibody or immunoreagent, ...). It mirrors the consumable catalog types. |
+| | Inventory | Select the appropriate inventory |
+| | Consumable | The catalog entry this stock is a lot of. The list is limited to consumables of the matching type; filter by **Supplier** first, or add a missing consumable with the **+** button |
+| | Status | Availability of the lot (see below) |
+| **Tracking Details** | Acquisition date | When the lot arrived |
+| | Expiration date | If applicable; the status switches to Expired automatically after this date |
 | | Cost | For budget tracking and planning |
 | **Storage Information** | Storage location | Specific location within the inventory |
 | | Storage conditions | Temperature, humidity, special requirements |
-| | Expiration date | If applicable |
 | **Usage Information** | Intended use | Specific experimental applications |
 | | Notes | Special handling, preparation, or usage instructions |
+| **Details** | Type-specific fields | Lot number, concentration, titer, and other properties of this lot as received |
+
+**Status values**: Available, In use, Reserved, Depleted, Used, Failed/Broken, Expired, Maintenance, Discontinued, Unknown. Only stock that is **Available** or **Reserved** is offered when a procedure records a material. Quantities are not decremented automatically; update the status by hand when a lot is used up. The stock page lists where the lot was used ("Used in", "Material type", "Use details").
 
 ### Step 3: Consumable Stock Example
 {: .no_toc}
 
 | Field | Value |
 |-------|-------|
-| **Type** | SiliconProbe |
+| **Type** | Silicon probe |
 | **Inventory** | Select: Neural Electrode Inventory |
-| **Consumable** | NeuroNexus A1x32-Poly2 |
-| **Acquisition Date** | 2024-01-15 |
-| **Storage Location** | Cabinet B, Slot 15, Anti-static tube #A1x32-15 |
-| **Storage Conditions** | Room temperature, anti-static protection |
-| **Intended Use** | Chronic hippocampal recordings in behaving mice |
+| **Supplier** | NeuroNexus (optional filter) |
+| **Consumable** | NeuroNexus A1x32-Poly2 (a *Silicon probe design* from the catalog) |
+| **Status** | Available |
+| **Acquisition date** | 2024-01-15 |
+| **Storage location** | Cabinet B, Slot 15, Anti-static tube #A1x32-15 |
+| **Storage conditions** | Room temperature, anti-static protection |
+| **Intended use** | Chronic hippocampal recordings in behaving mice |
 | **Cost** | $1,200 |
 | **Notes** | Pre-cleaned with 70% ethanol. Handle with non-magnetic forceps only. Sterilize with EtO gas before implantation. |
+
+### Picking a probe design from the catalog
+{: .no_toc}
+
+Silicon probe and ECoG array designs are imported from vendor catalogs (NeuroNexus, ATLAS Neuroengineering, Cambridge Neurotech, IMEC Neuropixels; Blackrock Neurotech, NeuroNexus, PMT Corporation and others for ECoG). Open **Resources** → **Consumables**, filter by **Consumable type** "Silicon probe design" and supplier, and check the **Probe schematic** on the design's page: it shows the shank layout and site positions drawn from the catalog geometry. The same geometry draws the shanks in the coordinate viewer once the probe is implanted. See [Probe catalog]({{site.baseurl}}/webinterface/probe-catalog/).
+
+### Keeping an eye on stock
+{: .no_toc}
+
+The dashboard widgets **Inventory status** and **Expiring stock** (next 30 days) summarize your inventories. Add them with **Add widget** → **Manage widgets**.
+
+## Templates for Repeated Configurations
+
+Procedures, specimen procedures, experimental interfaces, data acquisitions, manipulations and procedure episodes can be saved as **templates**, and so can single material rows.
+
+1. Open the record you want to reuse and click **Create Template** on its details page (or **Save as material template** on a material card).
+2. Give the template a name and, optionally, share it with projects; otherwise it stays personal. Templates shared with a public project are public.
+3. Next time, choose **Add ...** → **Create from template** in the list, or **Use template** inside a form. The template fills type, details, coordinates, equipment, target regions, stages and materials; subject, date and stock lots are left for you.
+
+Manage all templates under **Tools** → **Templates**. Stock-backed material rows become catalog rows in a template, so the lot is chosen again at use.
 
 ## Permission Management
 
@@ -252,45 +294,14 @@ BrainSTEM infrastructure uses four permission levels for setups and inventories 
 | **Managers** | All Contributor permissions<br>Manage permissions for others<br>Configure setup specifications<br>**Cannot** delete infrastructure or transfer ownership |
 | **Owners** | All Manager permissions<br>Full control over setups and equipment<br>Delete infrastructure components<br>Transfer ownership to other users<br>Complete administrative control |
 
-**Best Practices for Assigning Permissions**:
-- **Owners**: PI, lab manager, or senior lab members with equipment responsibility
-- **Managers**: Postdocs or experienced graduate students who primarily use specific rigs
-- **Contributors**: Lab members who regularly use the equipment for their research
-- **Members**: All lab members who might occasionally need read access
+Permissions are set on the setup or inventory with **Manage** on its details page, in the same way as for projects (see [Manage Projects]({{site.baseurl}}/tutorials/managing-projects) and the [permissions page]({{site.baseurl}}/datamodel/permissions/)). The groups you select in **Authenticated groups** when creating the entry get Contributor access.
 
-### Group-Based Access
-{: .no_toc}
-
-**Recommended Group Structure**:
-```
-Lab Members (Basic access to most lab resources)
-├── Graduate Students (Access to setups and equipment for their projects)
-├── Postdocs (Broader access, can manage equipment in their research areas)
-├── Lab Manager (Administrative access, inventory management)
-├── PI and Senior Staff (Full ownership and administrative control)
-└── Technique-Specific Groups (Optional, for specialized equipment)
-    ├── Electrophysiology Users (Access to recording equipment and probes)
-    ├── Imaging Users (Access to microscopes and imaging supplies)
-    └── Behavior Users (Access to behavioral setups and paradigms)
-```
-
-## Best Practices
-
-### Naming Conventions
-{: .no_toc}
+## Naming Conventions
 
 - **Setups**: Include location and be specific (e.g., "Room302_TmazeBehavior", "HeadFixed_2P_VR")
 - **Equipment**: Include model and serial number (e.g., "IntanRHD2000_SN1234")
 - **Inventories**: Include storage info (e.g., "Probes_RoomTemp", "Viruses_Minus80")
 - **Consumable Stocks**: Include lot numbers and concentrations where applicable
-
-### Documentation and Maintenance
-{: .no_toc}
-
-- Include technical specifications, calibration status, and safety considerations in descriptions
-- Specify physical locations, storage conditions, and responsible contacts
-- Update consumable stock levels monthly, review equipment quarterly, audit permissions annually
-- Document modifications, update permissions when roles change, and archive rather than delete old equipment
 
 ## Integration with Experimental Workflows
 
@@ -298,20 +309,22 @@ Lab Members (Basic access to most lab resources)
 {: .no_toc}
 
 When creating procedures, your infrastructure components become available:
-- **Setups** provide the location context
-- **Equipment** specifies tools used (stereotaxic frames, injection systems)
-- **Consumable stocks** track materials consumed (probes, viruses, drugs)
+- **Equipment** specifies tools used (stereotaxic frames, injection systems); the setup follows from the equipment
+- **Consumable stocks** are selected as the **Material source** of a material row (probes, viruses, drugs). Each procedure type declares which material roles it takes and which are required; the row keeps a copy of the stock's details (catalog item, lot, dates, storage location), so the record stays readable if the inventory changes
+- An **implant** procedure turns its device material into an **experimental interface** that sessions refer to
 
 ### Using Infrastructure in Sessions
 {: .no_toc}
 
 Your setup determines available:
-- **Equipment** for data acquisition modules
-- **Behavioral Assays** compatible with the environment type
+- **Equipment** for data acquisition and manipulation modules
+- **Behavioral assays** compatible with the setup type
+
+Data acquisitions and manipulations also name the **experimental interface** the signal passed through: an implanted device, or an interface you create for a camera or stimulator and reuse across sessions.
 
 ## Troubleshooting
 
-**Setup not available**: Verify authentication permissions and environment type compatibility
+**Setup not available**: Verify your group permissions on the setup, and that the setup and the behavioral assay have the same **Setup type**
 
 **Equipment missing from dropdowns**: Confirm correct setup assignment, equipment type alignment, and permission matching
 
@@ -324,5 +337,6 @@ With your lab infrastructure in place, you're ready to move on to experimental w
 - **Start with experimental design**: Learn about [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) to define standardized experimental protocols that use your setups
 - **Set up data management**: Configure [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to link your metadata to actual data files stored on your systems
 - **Organize team access**: Set up [Managing Groups]({{site.baseurl}}/tutorials/managing-groups) and [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) to properly organize team access to your infrastructure
-- **Explore complete workflows**: Follow the [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow)<!-- or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow)--> tutorial for end-to-end experimental documentation
-- **Contribute to the platform**: Use [Submit Resources & Taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies) to add any missing equipment or consumable types to the BrainSTEM database
+- **Explore complete workflows**: Follow the [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow) or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) tutorial for end-to-end experimental documentation
+- **Contribute to the platform**: Use [Submit Resources & Taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies) to add any missing hardware devices or consumables to the BrainSTEM catalogs
+- **Go ex vivo**: The [Ex vivo workflow]({{site.baseurl}}/tutorials/specimen-workflow) uses the same stocks (fixatives, antibodies) as material rows of specimen procedures

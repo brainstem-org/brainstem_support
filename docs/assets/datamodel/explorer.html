@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interactive data model | BrainSTEM documentation</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <script>
+        /* Mark the mode on <html> before anything renders, so an embedded frame never flashes the header. */
+        (function () {
+            var q = new URLSearchParams(window.location.search);
+            var cls = document.documentElement.classList;
+            if (q.get('embed') === '1') { cls.add('explorer--embed'); }
+            var compact = q.get('compact') === '1' && !!q.get('focus');
+            if (compact) { cls.add('explorer--compact'); }
+            if ((q.get('toolbar') === '0' || q.get('plain') === '1') && !compact) { cls.add('explorer--bare'); }
+            if (q.get('background') === 'plain') { cls.add('explorer--plain-bg'); }
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap 5.3.8, the version BrainSTEM bundles: the diagram's tooltips are Bootstrap tooltips. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/data-model-diagram.css">
+    <style>
+        /* The two theme tokens the diagram stylesheet reads; the rest of the BrainSTEM theme is not needed. */
+        :root { --primary: #8122a1; --gradient-color: #51459d; }
+        html, body { height: 100%; margin: 0; }
+        body { display: flex; flex-direction: column; font-family: Inter, "Segoe UI", sans-serif; background: #f7f6fb; }
+        .explorer__header {
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+            padding: 0.6rem 1rem; background: linear-gradient(90deg, var(--primary), var(--gradient-color)); color: #fff;
+        }
+        .explorer__header h1 { font-size: 1.1rem; margin: 0; font-weight: 600; }
+        .explorer__header p { margin: 0; font-size: 0.85rem; opacity: 0.9; }
+        .explorer__links a { color: #fff; margin-left: 1rem; font-size: 0.9rem; }
+        .explorer__main { flex: 1 1 auto; min-height: 0; display: flex; }
+        .explorer__root { flex: 1 1 auto; min-height: 0; min-width: 0; }
+        html.explorer--embed .explorer__header { display: none; }
+        /* Compact previews (model pages): the diagram grows by flex inside the root, as in BrainSTEM's help modals. */
+        html.explorer--compact .explorer__main { padding: 0; }
+        html.explorer--compact .explorer__root { display: flex; flex-direction: column; }
+        html.explorer--compact .explorer__root > .datamodel { flex: 1 1 auto; height: auto; min-height: 0; }
+        /* In an inline preview the page carries the Reset view button and the hint, so the graph gets the
+           whole frame. */
+        html.explorer--compact .datamodel__compact-reset, html.explorer--compact .datamodel__compact-hint,
+        html.explorer--compact .datamodel__compact-status,
+        html.explorer--bare .datamodel__compact-reset, html.explorer--bare .datamodel__compact-status { display: none !important; }
+        /* Toolbar-less views (the Overview view of the documentation pages): the renderer draws only the
+           viewport and a "Back to start" button. */
+        html.explorer--bare .explorer__main { padding: 0; }
+        /* background=plain: a white, grid-free viewport, edge to edge, for a frameless embed. */
+        html.explorer--plain-bg body, html.explorer--plain-bg .explorer__main { background: #fff; padding: 0; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/dom-utils.js"></script>
+    <script src="vendor/data-model-diagram.js" defer></script>
+</head>
+<body class="datamodel-page" data-theme="private">
+    <header class="explorer__header">
+        <div>
+            <h1><i class="fa fa-sitemap" aria-hidden="true"></i> BrainSTEM interactive data model</h1>
+            <p>Every model with its fields, the relations between them, where permissions come from, and the fields of every type. Click a model to read about it.</p>
+        </div>
+        <nav class="explorer__links" aria-label="Related pages">
+            <a id="explorer-back" href="/datamodel/">&larr; Back to the documentation</a>
+            <a href="https://www.brainstem.org/private/datamodel/" target="_blank" rel="noopener noreferrer">Open in BrainSTEM</a>
+        </nav>
+    </header>
+    <main class="explorer__main">
+        <div class="explorer__root datamodel-page__root" id="datamodel-root"></div>
+    </main>
+    <script>
+        /* Query parameters: embed=1 hides the header; compact=1 (with focus) draws one model with its direct
+           connections only, as the Graph tab of BrainSTEM's help modals; toolbar=0 shows the diagram without
+           its toolbar, detail panel and legend (the Overview view of the documentation pages); focus, field,
+           view, permissions, layout, show, isolate, depth, path and expand are the renderer's own shared-view
+           parameters; notes=0 leaves out the overview's notes; background=plain gives a white viewport without
+           the dotted grid, outline or rounded corners (the embedding page sets border: 0 on the frame); locked=1 keeps
+           the view as it opened: clicking a model does nothing, while pan, zoom and hover still work. Compact and toolbar-less frames report their
+           fitted height to the embedding page, which sizes them; the renderer refits a view it placed itself
+           when its frame is resized. */
+        /* The Back link returns to the page the reader came from when it is on this site (the model page, the
+           data model page, the permissions page); otherwise to the data model page. */
+        (function () {
+            var back = document.getElementById('explorer-back');
+            var from = new URLSearchParams(window.location.search).get('from') || '';
+            // Only a path on this site: the overlay and the full-screen links pass the page they were on. The path
+            // is resolved as the browser would, so "/\evil.example" (read as "//evil.example") is refused too.
+            try {
+                var target = new URL(from, window.location.origin);
+                from = /^\/(?!\/)/.test(from) && target.origin === window.location.origin
+                    ? target.pathname + target.search + target.hash : '';
+            } catch (error) { from = ''; }
+            if (from.indexOf('/assets/datamodel/') === 0) { from = ''; }
+            try {
+                var ref = document.referrer ? new URL(document.referrer) : null;
+                if (!from && ref && ref.origin === window.location.origin && ref.pathname.indexOf('/assets/datamodel/') !== 0) {
+                    from = ref.pathname + ref.search + ref.hash;
+                }
+            } catch (error) { /* no usable referrer */ }
+            if (from) {
+                back.href = from;
+                var name = from.replace(/[?#].*$/, '').replace(/\/$/, '').split('/').pop().replace(/[-_]/g, ' ');
+                back.textContent = '\u2190 Back to ' + (name ? name.charAt(0).toUpperCase() + name.slice(1) : 'the documentation');
+            }
+        })();
+        window.brainstem.onReady(function () {
+            var params = new URLSearchParams(window.location.search);
+            var embed = params.get('embed') === '1';
+            var compact = params.get('compact') === '1' && !!params.get('focus');
+            var bare = (params.get('toolbar') === '0' || params.get('plain') === '1') && !compact;
+            var root = document.getElementById('datamodel-root');
+            var mount = function () {
+                var api = window.brainstemDataModel;
+                var instance = api.mount(root, {
+                    graphUrl: 'graph.json',
+                    schemaUrl: 'types/{group}/{type}.json',
+                    pageUrl: window.location.pathname,
+                    context: 'page',
+                    embed: embed,
+                    compact: compact,
+                    toolbar: !bare,
+                    notes: params.get('notes') !== '0',
+                    background: params.get('background') === 'plain' ? 'plain' : undefined,
+                    /* locked=1: the inline views keep the view they opened with (clicks on models do nothing);
+                       Expand and full screen open without it. */
+                    locked: params.get('locked') === '1',
+                    focus: params.get('focus') || '',
+                    field: params.get('field') || '',
+                    surface: 'https://www.brainstem.org/private/',
+                    history: false,
+                    viewState: compact ? null : api.parseViewState(window.location.search),
+                    /* Previews sit in a documentation column narrower than a help modal: let them zoom out
+                       to fit, down to where labels stop being readable (compact) or the whole overview fits. */
+                    minFitScale: compact ? 0.45 : (bare ? 0.2 : undefined),
+                    /* Tell the embedding page how tall the fitted graph is, so the preview can hug it. */
+                    onFit: (compact || bare) && window.parent !== window ? function (detail) {
+                        /* An inline view fills its frame: a few pixels at the sides, room for the "Reset view"
+                           button above and, in a compact preview, for the hint below, instead of the
+                           renderer's 40px all round. The frame is then sized to exactly that. */
+                        var b = detail.bounds, vp = detail.viewport;
+                        /* Compact previews: the page holds the controls, so only the stubs of arrows to hidden
+                           models need room at the sides. */
+                        var side = compact ? 14 : 6, top = 8, bottom = 8;
+                        var scale = Math.min(0.9, (vp.width - 2 * side) / b.width);
+                        if (compact && scale < 0.45) {
+                            /* Too busy to show whole and readable: keep the renderer's own view, centred on the
+                               focused card, in a frame that shows as much of it as the page allows. */
+                            window.parent.postMessage({ type: 'dm-preview-height', focus: params.get('focus') || '',
+                                height: Math.round(b.height * detail.scale), whole: false }, '*');
+                            return;
+                        }
+                        if (scale > detail.scale * 1.01 || Math.abs(detail.ty - (top - b.y * scale)) > 2) {
+                            instance.centerOn(b.x + b.width / 2, b.y + (vp.height / 2 - top) / scale, scale);
+                        }
+                        window.parent.postMessage({
+                            type: 'dm-preview-height', focus: params.get('focus') || '', exact: true,
+                            height: Math.round(top + b.height * scale + bottom), whole: true
+                        }, '*');
+                    } : undefined
+                });
+                window.dmInstance = instance;
+                if (compact || bare) {
+                    /* The page's "Reset view" button. */
+                    window.addEventListener('message', function (event) {
+                        if (event.data && event.data.type === 'dm-reset' && instance && instance.reset) { instance.reset(); }
+                    });
+                }
+                if ((bare || compact) && window.ResizeObserver) {
+                    /* The tightened view counts as the reader's, so the renderer no longer refits it when the
+                       frame changes width; fit again then (height changes come from the sizing above). */
+                    var lastWidth = root.clientWidth;
+                    new window.ResizeObserver(function () {
+                        if (root.clientWidth !== lastWidth) {
+                            lastWidth = root.clientWidth;
+                            if (instance.state && instance.state.graph) { instance.fit({ exact: true }); }
+                        }
+                    }).observe(root);
+                }
+            };
+            if (window.brainstemDataModel) { mount(); } else { window.addEventListener('load', mount); }
+        });
+    </script>
+</body>
+</html>

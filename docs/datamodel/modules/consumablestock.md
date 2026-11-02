@@ -12,75 +12,95 @@ nav_order: 1
 ## Table of contents
 {: .no_toc .text-delta }
 
+{::options toc_levels="2..2" /}
 1. TOC
 {:toc}
 
 ## Introduction
 
-Consumable stocks refer to the various components and materials essential for conducting experiments and recording data. These stocks are integral to maintaining high-quality research conditions and ensuring that experiments are performed using accurate and reliable equipment. Each consumable stock type has unique applications depending on the experimental needs, while the fields associated with these types are designed to capture the specific details of each consumable.
+A consumable stock is one lot, batch, vial, package, prepared solution or subject-specific component held in an [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}). It is a physical thing your lab has, not a product you could order. Create a separate entry per lot, so that a material used in an experiment can be traced to the exact batch it came from.
+
+The chain runs catalog, stock, use: a [consumable]({{"datamodel/resources/consumable/"|absolute_url}}) is the shared catalog identity (what the product is, who makes it); the consumable stock is your lot of that product, with its own dates, storage, status and lot-specific details; a [material usage]({{"datamodel/modules/materialusage/"|absolute_url}}) records that lot being used in a procedure, specimen procedure or experimental interface. See [Materials]({{"datamodel/materials/"|absolute_url}}). Reusable apparatus that persists across sessions is [equipment]({{"datamodel/modules/equipment/"|absolute_url}}), not stock.
+
+{% include datamodel_embed.html model="modules.consumablestock" %}
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
-| ``Type of consumable stock`` | Type of consumable stock (**required**). Selected from predefined types. Example: "Silicon probe", "Optic fiber". *See options below* |
-| ``Type specific fields`` | Custom fields based on consumable stock type in JSON format. See [Consumable stock types schema]({{"/datamodel/schemas/consumablestock/"|absolute_url}}) for type-specific fields |
-| ``Inventory`` | The inventory record that tracks the consumable stocks (**required**). Must reference an existing [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}). Example: "Lab supplies inventory" |
-| ``Consumable supplier`` | Supplier filter for consumables. Used to filter the available consumables by supplier. |
-| ``Consumable`` | The specific consumable associated with the consumable stock (**required**). Example: "32-channel silicon probe" |
-| ``Acquisition date`` | The date when the consumable was acquired (format: YYYY-MM-DD). Example: "2024-01-15" |
-| ``Expiration date`` | The date when the consumable stock is expected to expire or become unusable (format: YYYY-MM-DD). Example: "2025-01-15" |
-| ``Status`` | Current availability status of the consumable stock (selected from predefined statuses; default: Available). |
-| ``Storage location`` | The physical location where the consumable stock is stored (string; maximum length: 100 characters). Example: "Room 302, Cabinet B, Shelf 3" |
-| ``Storage conditions`` | The conditions necessary for storing the consumable stock (string; maximum length: 100 characters). Example: "Store at room temperature in desiccator" |
-| ``Intended use`` | The planned experimental use of the consumable stock (string; maximum length: 100 characters). Example: "For chronic neural recordings" |
-| ``Cost`` | The cost of the consumable stock (string; maximum length: 100 characters). Example: "$500 USD" |
-| ``Notes`` | Additional information or special considerations for the consumable stock (string). Example: "Handle with care, fragile components" |
-
+| ``Type of consumable stock`` | Type of consumable stock (**required**). Controls the lot-specific fields and which materials the lot may be used as later. Example: "Silicon probe", "Virus solution". *See options below* |
+| ``Status`` | Current availability of the lot (**required**; default: Available). Choices: Available, In use, Reserved, Depleted, Used, Failed/Broken, Expired, Maintenance, Discontinued, Unknown. |
+| ``Inventory`` | The inventory that holds the lot (**required**). Must reference an existing [inventory]({{"datamodel/personal_attributes/inventory/"|absolute_url}}) where you are at least a Contributor. The inventory decides who may see and edit the stock. |
+| ``Consumable supplier`` | Form-only filter for the consumable field. Not stored. |
+| ``Consumable`` | The catalog entry this lot is an instance of (**required**). The consumable types allowed depend on the stock type; a stock of type Silicon probe must point at a Silicon probe design, an ECoG array at an ECoG array design, a Virus solution at a Virus construct, an Optic fiber at an Optic fiber design. |
+| ``Acquisition date`` | Date the lot was acquired (format: YYYY-MM-DD). |
+| ``Expiration date`` | Date the lot is expected to expire or become unusable (format: YYYY-MM-DD). |
+| ``Storage location`` | Where the lot is stored (string; maximum length: 100 characters). Example: "Room 302, Cabinet B, Shelf 3" |
+| ``Storage conditions`` | Conditions for storing the lot (string; maximum length: 100 characters). Example: "-80°C" |
+| ``Intended use`` | Planned experimental use (string; maximum length: 100 characters). Example: "Chronic recordings, cohort 3" |
+| ``Cost`` | Cost of the lot (string; maximum length: 100 characters). Example: "$500 USD" |
+| ``Notes`` | Additional information (string; maximum length: 500 characters). |
+| ``Type specific fields`` | Lot-specific fields based on the stock type. Most types record a batch or product identifier; that identifier is what makes a later material usage traceable. See the [Consumable stock types schema]({{"datamodel/schemas/consumablestock/"|absolute_url}}). |
 
 ## Types of consumable stocks
 
-These are the available type options for Consumable stock:
-
-See the schema for field details: [Consumable stock types]({{"/datamodel/schemas/consumablestock/"|absolute_url}}).
+These are the available type options for consumable stock. They mirror the [consumable catalog types]({{"datamodel/resources/consumable/"|absolute_url}}), with instance names for the design/instance pairs (Silicon probe for Silicon probe design, ECoG array for ECoG array design, Optic fiber for Optic fiber design, Virus solution for Virus construct). See the schema for field details: [Consumable stock types]({{"datamodel/schemas/consumablestock/"|absolute_url}}).
 
 ### Reagents and Solutions
 
-`Chemical reagent`: Bulk chemicals (powders or liquids) used to prepare solutions or carry out procedures; includes solvents, salts, detergents, fixatives.
+`Antibody or immunoreagent`: An antibody or related binding reagent for immunolabeling. Record host and reactivity species. Fields: reagent type (required), batch ID, host and reactivity species, target antigen, clonality, conjugate, amount, dilution.
 
-`Pharmacological agent`: Agents administered for anesthesia, analgesia, sedation, or controlled physiological manipulation during experiments.
+`Biological material`: Vials or a lot of cells, a cell line, primary cells, organoids or tissue held in the lab, bought or banked from your own culture. Choose it for the material a culture or injection is started from; virus preparations are virus solutions. Fields: batch ID, vials or units in the lot, viable cells per vial or unit, viability, passage at freeze, cryopreservation medium.
 
-`Physiological solution`: Prepared buffers and aqueous solutions used for perfusion, dissection, recording, washing, or tissue storage (e.g., PBS, ACSF, Ringer’s).
+`Chemical reagent`: A defined chemical compound; for laboratory chemicals rather than a formulated drug or a buffer you mixed. Fields: chemical type (required), batch ID, compound name, molecular weight, amount, concentration, purity or grade, hazard information.
 
-`Tracer or dye`: Fluorescent or chromogenic compounds for labeling cells/tissues or tracing neural circuits in histology and anatomy workflows.
+`Histology reagent`: A reagent prepared for tissue processing, such as a fixative, buffer or clearing solution. Fields: batch ID, amount, concentration, pH, preparation date and instructions.
 
-`Virus solution`: Packaged viral vectors used for in vivo gene delivery (e.g., expression of reporters, recombinases, optogenetic tools) and trans‑synaptic tracing.
+`Medical or carrier gas`: A gas cylinder, such as oxygen, carbon dioxide or an inhalant carrier. Fields: cylinder or batch ID, amount, regulator setting.
 
-`Antibody or immunoreagent`: Primary/secondary antibodies and related immunochemical reagents for detection and labeling in IHC/ICC, Western blot, ELISA, etc.
+`Pharmacological agent`: A formulated drug given to a subject: anesthetics, analgesics, antibiotics. Fields: pharmacological category (required), batch ID, active ingredient, amount, concentration, dosage form, route, pharmacological class, formulation.
+
+`Physiological solution`: A solution the tissue or animal is exposed to, such as ACSF, saline or Ringer's. Fields: solution name, composition, amount, target pH, osmolality, preparation instructions, sterility, purpose.
+
+`Tracer or dye`: A dye or tracer used to label structures or follow connectivity. Fields: dye type (required), batch ID, fluorophore, route of application, excitation and emission peaks, amount, solvent, preparation instructions.
+
+`Virus solution`: A viral vector preparation. Fields: batch ID, titer, volume, number of aliquots, volume per aliquot.
 
 ### Device-Linked Consumables
 
-`Consumable device`: Per‑animal or single‑use hardware consumed by implantation or wear, such as baseplates, microdrives, adapters, or implant fasteners.
+`Connector component`: Connectors, headers and adapters used to build an implant or headstage assembly. Fields: batch ID, quantity, assembled by.
 
-`Optical component`: Discrete optical elements used for imaging or optical access, including GRIN lenses, cranial windows, dichroics, and emission/excitation filters.
+`Consumable device`: A manufactured device consumed or dedicated to one subject that no more specific type covers. Fields: device class (required), product ID, compatible systems, dimensions, material, connectivity, use context.
 
-`Optic fiber`: Fiber assemblies for delivering or collecting light (implant ferrule fibers, patch cords, rotary‑joint compatible fibers) for optogenetics or photometry.
+`Electrode component`: Electrode parts and wire stock, as distinct from a finished probe. Fields: batch ID, quantity, length, measured impedance, sterility.
 
-`Silicon probe`: Silicon microelectrode arrays for high‑density extracellular recordings (e.g., Neuropixels and similar multi‑shank arrays).
+`Optic fiber`: Fiber stock or assembled fiber implants. Fields: fiber IDs and quantity.
 
-`Single wire electrode`: Single‑conductor metal wires used as recording/stimulation electrodes or as reference/ground leads in electrophysiology.
+`Optical component`: Lenses, prisms, filters and windows. Fields: optical component type (required), product ID, material, dimensions, surface coating, wavelength range, sterility, use context.
+
+`Silicon probe`: Silicon probes held as stock. Record the probe IDs; this is how a specific probe is traced from the shelf into a subject and back out if recovered. Fields: probe IDs and quantity.
+
+`ECoG array`: ECoG surface arrays held as stock, each lot linked to an ECoG array design in the catalog. Arrays are durable: they can be marked failed or in maintenance, not depleted or expired. Fields: array IDs and quantity.
+
+`Single wire electrode`: Individual wire electrodes held as stock. Fields: wire IDs, quantity, length.
 
 ### Surgical Consumables
 
-`Surgical disposable`: Single-use sterile items used during procedures, such as gloves, drapes, scalpel blades, syringes, sutures, and gauze.
+`Adhesive or cement`: Dental cement, glue or resin used to fix implants. Fields: batch ID, amount, mixing ratio, preparation instructions, sterility.
 
-`Implant or fixation material`: Materials used to secure implants or support surgical fixation, such as dental cement, bone screws, adhesive compounds, and anchoring hardware.
+`Fastener or anchor`: Screws, pins and anchors that hold an implant to bone. Fields: batch ID, quantity, sterility.
 
+`Implant or fixation material`: Bulk material used to build or secure an implant, such as biocompatible polymer or wax. Fields: batch ID, amount, preparation instructions, sterility.
 
+`Surgical disposable`: Single-use surgical supplies: sutures, blades, swabs, drapes. Fields: batch ID, quantity, sterility.
+
+## Deleting a stock
+
+A consumable stock cannot be deleted while material usages point to it. Mark it Depleted, Used or Discontinued instead, so the records that used it keep their trace.
 
 ## Permissions
 
-Consumable stocks inherit permissions through the inventory associated with them.
+Consumable stocks inherit permissions through the inventory associated with them. Contributors of the inventory can add and edit its stock and select its lots when recording materials.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more.
 

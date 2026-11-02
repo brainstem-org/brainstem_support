@@ -1,0 +1,76 @@
+name: Build and deploy the site
+
+# Builds the Jekyll site and publishes it to GitHub Pages (support.brainstem.org). The interactive data model
+# (graph, type summaries and renderer under docs/assets/datamodel/) is not kept in the repository: the build
+# fetches it from the BrainSTEM server's public reference, so the site always shows the server's current model
+# and BrainSTEM's schemas and code are not distributed under this repository's licence. The repository variable
+# BRAINSTEM_SERVER chooses the server (default https://www.brainstem.org). The server allows 600 requests a
+# minute to /reference/, so the fetch of some 450 files takes about a minute. A branch without
+# docs/assets/datamodel/explorer.html does not embed the model and skips the fetch.
+#
+# Needs Settings > Pages > Source set to "GitHub Actions"; the custom domain stays in the Pages settings.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "41 4 * * *"   # daily, so the data model follows the server between documentation changes
+  workflow_dispatch:
+    inputs:
+      server:
+        description: BrainSTEM server to fetch the interactive data model from (empty for the default)
+        required: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch the interactive data model from the server
+        if: hashFiles('docs/assets/datamodel/explorer.html') != ''
+        env:
+          SERVER: ${{ github.event.inputs.server || vars.BRAINSTEM_SERVER || 'https://www.brainstem.org' }}
+        run: python scripts/build_reference_docs.py --server "$SERVER" --assets-only
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - uses: actions/configure-pages@v5
+
+      - name: Build the site
+        working-directory: docs
+        env:
+          JEKYLL_ENV: production
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_REPO_NWO: ${{ github.repository }}
+        run: bundle exec jekyll build --destination ../_site
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
