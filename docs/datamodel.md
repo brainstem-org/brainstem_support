@@ -51,22 +51,6 @@ The model is structured into these main categories:
 - [__Permissions__]({{"datamodel/permissions/"|absolute_url}}): object-level permissions that inherit from projects, groups and personal attributes.
 - [__Schemas__]({{"datamodel/schemas/"|absolute_url}}): the type-specific, versioned JSON schemas behind every modular record.
 
-### Elements of the graph
-{: .no_toc}
-
-In the overview drawing, boxes represent models, grouped and coloured by app as in the interactive view, and lines represent connections between them. Arrows point from a record to the records that belong to it, and indented boxes belong to the box above them. The interactive view shows every relation with its cardinality. Some models have subtypes that share fields and relations but carry type-specific details validated against a schema: procedures, specimen procedures, data acquisition, manipulations, experimental interfaces, material usages, logs, equipment, consumables and their stock.
-
-- __Projects__ are the primary organizational unit and the root of permissions.
-- __Subjects__ are linked to __Procedures__, __Procedure episodes__, __Subject logs__, __Experimental interfaces__, __Cohorts__ and __Breedings__, and are described by their __Species__ and __Strain__.
-- __Specimen sets__ are derived from a subject or another set and linked to __Specimens__, __Specimen procedures__, __Specimen logs__ and specimen-based __Sessions__.
-- __Sessions__ link their __Subjects__ or __Specimen sets__ directly and are described by __Behaviors__, __Data acquisition__, __Manipulations__ and __Epochs__; they can link to __Data storage__ and belong to __Collections__.
-- __Experimental interfaces__ are the points where hardware meets the animal or tissue (an implanted probe, a cranial window, an optic fiber). Implant procedures create them; data acquisitions and manipulations record which interfaces they used, and through them where a recording was made.
-- __Material usages__ record the materials of a procedure, specimen procedure or interface, each taken from a __Consumable stock__, the __Consumable__ catalog, or entered manually.
-- __Personal attributes__ such as __Setups__ (containing __Equipment__) and __Inventories__ (containing __Consumable stock__) define a lab's configuration; __Protocols__ and __Licenses__ record methods and regulatory authorization.
-- __Taxonomies__ provide the standardized classifications, and __Anatomical regions__ belong to an __Atlas__ that also drives coordinate previews.
-- __Dissemination__ records such as __Publications__ link back to __Projects__.
-- __Permissions__ are managed through __Users__ and __Groups__ and apply throughout the structure.
-
 ## Example usage of the flexible modular design
 {: .no_toc }
 
