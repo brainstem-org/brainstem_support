@@ -29,12 +29,13 @@ Your profile page holds your account information, affiliation, preferences and m
 | **User preferences** | **Atlas preference** |
 | Memberships | **Group memberships**, **Membership invitations**, **Membership requests**, **Project memberships** |
 
-{% include slides.html slides="user-profile-page|Your profile: email, name, user name in data storage, bio, affiliation, professional links and preferences, with your group memberships below.;;user-profile-edit|Editing your profile: name, user name in storage, bio, affiliation and professional links." %}
+![Your profile: email, name, user name in data storage, bio, affiliation, professional links and preferences, with your group memberships below.]({{site.baseurl}}/assets/images/screenshots/user-profile-page.png)
+{: .screenshot }
+*Your profile: email, name, user name in data storage, bio, affiliation, professional links and preferences, with your group memberships below.*
 
 Click **Edit** to change your details. The edit page also lets you upload a profile image (up to 5 MB) and change your email address through **Change email securely**: a confirmation link is sent to the new address and is valid for one hour.
 
-{: .note }
-> A complete profile with an ORCID helps collaborators recognise you in shared projects. Public user pages show only your image and affiliation.
+A complete profile with an ORCID helps collaborators recognise you in shared projects. Public user pages show only your image and affiliation.
 
 There are no preferences for time zone, date format, theme or page size.
 
@@ -48,7 +49,7 @@ There are no preferences for time zone, date format, theme or page size.
 
 **Project memberships** lists the projects you have access to and your level on each: Member (read), Contributor (read and edit), Manager (also manage memberships) or Owner (full control). This list is private. Invitations you have received and requests you have sent appear under **Membership invitations** and **Membership requests**; invitations sent to people without an account expire after 14 days.
 
-Permissions are explained on the [Permissions]({{"datamodel/permissions/"|absolute_url}}) page.
+Permissions are explained on the [Permissions]({{"datamodel/permissions/"|absolute_url}}) page. How to invite colleagues, answer invitations and leave a project is described in [Sharing and memberships]({{"webinterface/sharing-and-memberships/"|absolute_url}}).
 
 ## Active projects
 
@@ -64,7 +65,12 @@ The projects you mark as active act as a global filter across list views, dashbo
 
 - Creating a token requires two-factor authentication to be set up ("Set up two-factor authentication before creating an API token.") and a recent confirmation of your identity (**Confirm it's you**; valid for 10 minutes).
 - Under **Create New Personal Access Token**, enter a **Token Name** (up to 64 characters, unique among your active tokens) and click **Create Token**.
-- The token is shown once: "This token will only be shown once." Use **Copy Token** and store it in a safe place.
+
+<!-- screenshot: user-profile-token-created | The new token shown once after creation -->
+
+{: .important }
+> The token is shown only once, right after you create it: "This token will only be shown once. Copy it now and store it securely." Use **Copy Token** and keep it in a safe place; if you lose it, delete it and create a new one.
+
 - You can hold up to 10 active tokens ("Maximum number of personal tokens reached (10)."). Each token is valid for one year, sliding: each use extends it by a year.
 - The **Personal Access Tokens** table lists **Token Name**, **Status**, **Last Used** and **Actions**. Delete a single token with its ✕, or every token with **Delete All** (confirmed as **Delete all personal access tokens?**).
 
@@ -86,15 +92,20 @@ Command-line tools can also sign in through a device flow: the tool shows an 8-c
 {: .screenshot }
 *Active Sessions: the current session and a second one on another device with its Log out button, and Log out of all other devices at the top.*
 
-Without **Keep me signed in** a session lasts 12 hours; with it, 30 days from your last activity. Your institution's security policy can shorten these. After five failed sign-in attempts the account and address are locked for one hour. Sensitive actions, such as creating an API token, ask you to confirm your identity again if your last sign-in is more than 10 minutes old.
+### Session lifetime and lockout
+
+| Rule | System default |
+|------|----------------|
+| Session without **Keep me signed in** | Lasts 12 hours |
+| Session with **Keep me signed in** | Lasts 30 days from your last activity, and ends at the latest 365 days after sign-in |
+| Failed sign-in attempts | After five failed attempts, sign-in for that account from that address is blocked for one hour |
+| Sensitive actions, such as creating an API token | Ask you to confirm your identity again if your last confirmation is more than 10 minutes old |
+
+Your institution's security policy can shorten the session lifetimes, see [Organisation policies]({{"webinterface/two-factor-authentication/#organisation-policies-and-session-lifetimes"|absolute_url}}).
 
 ## AI assistant settings
 
 When the AI assistant is enabled, **Profile & Settings** → **AI assistant settings** shows your usage of the shared allowance and lets you add your own provider key. See [AI assistant]({{"webinterface/ai-assistant/"|absolute_url}}).
-
-![AI assistant settings: this month's free allowance and the option to use your own key.]({{site.baseurl}}/assets/images/screenshots/ai-assistant-settings.png)
-{: .screenshot }
-*AI assistant settings: this month's free allowance and the option to use your own key.*
 
 ## Related
 

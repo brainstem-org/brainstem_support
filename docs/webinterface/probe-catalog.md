@@ -19,11 +19,15 @@ nav_order: 3
 
 Silicon probes and ECoG arrays are recorded in BrainSTEM through the material chain: a shared catalog entry describes the manufacturer's design, a consumable stock entry describes the physical probe your lab owns, and an implant procedure records which probe went into which subject. BrainSTEM ships a catalog of probe designs from the main vendors so that you rarely have to type probe geometry yourself. The chain itself is explained on the [Materials]({{"datamodel/materials/"|absolute_url}}) page.
 
+![A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)
+
 ## Designs as consumables
 
 Probe designs are consumables of the type **Silicon probe design** or **ECoG array design** (under **Resources** → **Consumables**). Each design carries the geometry of the probe in its type-specific details: number of shanks, shank length, width and pitch, number of channels, site layout and pitch, reference sites, and where available the individual site coordinates. Like all shared catalog entries they are visible to every user.
 
-{% include slides.html slides="probe-catalog-list|The consumables list searched for Buzsaki probe designs, with their type, supplier and description.;;probe-catalog-page|The top of a silicon probe design's details page: name, supplier, type and the type-specific details, such as the recording-site layout, the number of shanks and the shank dimensions.;;probe-catalog-form|The same design's form, scrolled to the external identifiers and the type-specific details: product ID, recording-site layout, site column alignment, channels, recording sites and the shank geometry." %}
+![The top of a silicon probe design's details page: name, supplier, type and the type-specific details, such as the recording-site layout, the number of shanks and the shank dimensions.]({{site.baseurl}}/assets/images/screenshots/probe-catalog-page.png)
+{: .screenshot }
+*The top of a silicon probe design's details page: name, supplier, type and the type-specific details, such as the recording-site layout, the number of shanks and the shank dimensions.*
 
 At the time of writing the catalog holds 366 silicon probe designs and 95 ECoG array designs:
 

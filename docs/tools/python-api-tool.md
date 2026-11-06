@@ -60,10 +60,10 @@ client = BrainstemClient(headless=True)
 Create a token on your [token page](https://www.brainstem.org/private/users/tokens/) and export it once:
 
 ```bash
-export BRAINSTEM_API_TOKEN=<your token>
+export BRAINSTEM_API_TOKEN="<token>"
 ```
 
-`BrainstemClient()` picks it up automatically. You can also pass it explicitly with `BrainstemClient(token=...)`. Tokens are valid for one year; create a new one afterwards.
+`BrainstemClient()` picks it up automatically. You can also pass it explicitly with `BrainstemClient(token="<token>")`. For how long a token stays valid, see [API authentication](/api/#authentication).
 
 ### Public data without an account
 {: .no_toc}
@@ -101,6 +101,10 @@ public_projects = client.load("project", portal="public").json()["projects"]
 ```
 
 List responses carry `meta` with `page`, `per_page`, `total_results` and `total_pages`.
+
+Lists of procedures, specimen procedures, sessions and breedings hold performed entries only. Filter on `status` to get planned or cancelled ones, for example `filters={"status": "planned"}` or `filters={"status.in": ["planned", "performed"]}` (see [Planned records](/api/#planned-records)).
+
+The `<session-id>`, `<project-id>` and similar placeholders on this page stand for entry ids. Open the entry in the web interface and copy the id from the address bar or the **API** button ([Finding an ID](/webinterface/import-tool/#finding-an-id)), or read it from a `load` result.
 
 ### Filtering
 {: .no_toc}
@@ -199,7 +203,7 @@ Type-specific records take `type` and `details`; the fields of each type are on 
 client.save("dataacquisition", data={
     "session": session_id,
     "type": "ExtracellularEphys",
-    "interfaces": ["<experimental-interface-id>"],
+    "experimental_interfaces": ["<experimental-interface-id>"],
     "details": {"nChannels": 64, "sr": {"value": 30000, "unit": "Hz"}},
 })
 ```
@@ -266,14 +270,14 @@ brainstem logout                     # removes the cached token
 
 brainstem load session
 brainstem load session --filters name.icontains=Rat --sort -name --include projects
-brainstem load session --id <uuid>
+brainstem load session --id "<session-id>"
 brainstem load session --per-page 20 --page 2
 brainstem load session --all         # every page, one merged JSON object
 brainstem load project --portal public
 
-brainstem save session --data '{"name": "New session", "projects": ["<uuid>"]}'
-brainstem save session --id <uuid> --data '{"description": "updated"}'
-brainstem delete session --id <uuid>
+brainstem save session --data '{"name": "New session", "projects": ["<project-id>"], "session_type": "subject", "subjects": ["<subject-id>"]}'
+brainstem save session --id "<session-id>" --data '{"description": "updated"}'
+brainstem delete session --id "<session-id>"
 
 brainstem reference rules.md         # a page of the agent reference, no login needed
 ```
@@ -286,7 +290,9 @@ brainstem reference rules.md         # a page of the agent reference, no login n
 - `ExportError`: an export was refused or the server does not support exports.
 - `ValueError`: unknown model, invalid portal, bad paging arguments or a missing id.
 - `FutureWarning`: a deprecated name was used, for example `brainregion` instead of `anatomicalregion`.
-- Plain `load`, `save` and `delete` return the response without raising on `4xx` or `5xx`; check the status code.
+
+{: .note }
+Plain `load`, `save` and `delete` return the response without raising on `4xx` or `5xx`. A failed save or delete looks like any other call until you check `status_code`, or call `raise_for_status()`.
 
 ## Troubleshooting
 

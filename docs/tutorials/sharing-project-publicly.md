@@ -16,19 +16,19 @@ nav_order: 10
 
 ## Introduction
 
-BrainSTEM enables open science by allowing you to make your research data publicly accessible to the scientific community. This tutorial explains how to configure public sharing for projects and their associated personal attributes.
+This tutorial makes a project public, together with the setups, behavioral assays, data storage, inventories, protocols and licenses its entries refer to. At the end, anyone can read the project on the public portal and through the public API, without an account.
 
-**Key Concepts:**
-- **Projects** are the primary container for public data sharing
-- **Personal Attributes** (behavioral assays, setups, data storage, inventories, protocols) have independent public settings
-- Making a project public does NOT automatically make its personal attributes public
+**Prerequisites**: the Owner role on the project and on the entries you want to share (see [Manage Projects]({{site.baseurl}}/tutorials/managing-projects)).
 
-Public access flows from the project to everything that belongs to it (subjects, sessions, procedures and their modules), while personal attributes keep their own switch. The [permissions page]({{site.baseurl}}/datamodel/permissions/#public-sharing) shows this inheritance in the interactive data model.
+Public access flows from the project to everything that belongs to it (subjects, sessions, procedures and their modules). The [permissions page]({{site.baseurl}}/datamodel/permissions/#public-sharing) shows this inheritance in the interactive data model.
 
 {: .important }
-> Making a project public does NOT automatically share its associated personal attributes. Behavioral Assays, setups, data storage, inventories, and protocols must be made public separately to ensure complete data accessibility.
+> Making a project public does not share the personal attributes its entries refer to. Behavioral assays, setups, data storage, inventories, protocols and licenses each have their own public setting and must be made public separately.
 
-## Understanding Public Project Sharing
+![What the project's visibility switch publishes, what needs its own switch, what is always public and what is never public.]({{site.baseurl}}/assets/images/diagrams/public-sharing-scope.svg)
+*What the project's visibility switch publishes, what needs its own switch, what is always public and what is never public.*
+
+## What becomes public
 
 When you make a project public, the following components become publicly accessible:
 
@@ -42,17 +42,20 @@ When you make a project public, the following components become publicly accessi
 | **Templates** | Templates shared with the project |
 
 {: .important }
-> **Planned records are never public.** Planned subjects, specimen sets and specimens, and planned or cancelled procedures, sessions and breedings stay hidden on the public portal and in the public API until they are marked performed, enrolled or collected.
+> **Planned entries are never public.** Planned subjects, specimen sets and specimens, and planned or cancelled procedures, sessions and breedings stay hidden on the public portal and in the public API until they are marked performed, enrolled or collected.
 
-{: .note }
-> Project-level data becomes public, but the **personal attributes** referenced in sessions (behavioral assays, setups, data storage) remain private unless separately shared. Membership and permission lists are never public. Shared catalogs (species, strains, consumables, hardware devices, publications) are always public.
+Membership and permission lists are never public. Shared catalogs (species, strains, consumables, hardware devices, publications) are always public.
 
-## Making a Project Public
+## Before you start
 
-{: .important }
-> **Permission Required:** Only project **Owners** can change the public sharing status of a project.
+1. **Review sensitive information**: Ensure no personally identifiable information or proprietary data is included
+2. **Complete documentation**: Fill in descriptions for projects, sessions, and personal attributes
+3. **Verify data quality**: Check that all metadata is accurate and complete
+4. **Test internally**: Have lab members verify access to ensure nothing is missing
 
-**To make a project public:**
+## Step 1: Make the project public
+
+You need Owner on the project.
 
 1. Click **Projects** in the left navigation menu
 2. Select your project from the list
@@ -63,12 +66,7 @@ When you make a project public, the following components become publicly accessi
 {: .screenshot }
 *The project Edit form: switching **Project visibility** to **Public** opens the "Make this project public?" confirmation dialog*
 
-5. A confirmation dialog **Make this project public?** appears:
-   ```
-   Are you sure you want to make this project public? This will make all related 
-   content visible to the public (subjects, sessions, and modules associated with 
-   the project).
-   ```
+5. The confirmation dialog **Make this project public?** appears.
 6. Click **Make public** to proceed, or cancel to keep it private
 7. Click **Save** to apply your changes
 
@@ -76,15 +74,13 @@ When you make a project public, the following components become publicly accessi
 - The project appears on the **public portal** at [www.brainstem.org/public](https://www.brainstem.org/public/), which needs no account. Visitors get read-only lists and details pages; filters, column settings, exports and bulk actions are reserved for signed-in users.
 - Anyone can read the project through the **public API** at `https://www.brainstem.org/api/public/...` without a token, and MCP clients without a token see it too (see [MCP server]({{site.baseurl}}/api/mcp/)).
 - The **Interactive data model** on the public portal (`/public/datamodel/`) still requires signing in; the copy on this site at [Interactive data model]({{site.baseurl}}/datamodel/?view=interactive) does not.
-- Anonymous visitors do not see planned records (see above).
+- Anonymous visitors do not see planned entries (see above).
 
 Use the **Public project** filter in the Projects list, or the **Public status** filter on shared catalogs, to check what is public.
 
-## Sharing Related Personal Attributes
+## Step 2: Decide which personal attributes to share
 
-Personal attributes referenced in your sessions, procedures, and subject logs must be shared separately to provide complete experimental context. Without this, users can see that modules exist but cannot access the methodological details.
-
-### Which Personal Attributes to Share
+Without the personal attributes, readers see that a session used a setup or an assay, but cannot open it.
 
 | Personal Attribute | When to Share Publicly | Why It's Needed |
 |-------------------|----------------------|----------------|
@@ -93,13 +89,11 @@ Personal attributes referenced in your sessions, procedures, and subject logs mu
 | **Data Storage** | If you want users to access raw data files | Users need file paths and access protocols to retrieve actual data |
 | **Inventories** | If procedures reference specific consumables | Users need to know exact materials used (probes, drugs, etc.) |
 | **[Protocols]({{"datamodel/personal_attributes/protocol/"|absolute_url}})** | If procedures, subject logs, or procedure episodes reference reusable methods | Users need the method description, URL, and any attached protocol document |
+| **[Licenses]({{"datamodel/personal_attributes/license/"|absolute_url}})** | If subjects, procedures or behavioral assays reference the licenses that authorized them | Users can see under which authorization the work was done |
 
-## Making Personal Attributes Public
+## Step 3: Make the personal attributes public
 
-{: .important }
-> **Permission Required:** Only **Owners** of personal attributes can change their public status.
-
-**To make any personal attribute public:**
+You need Owner on each personal attribute.
 
 1. Navigate to the appropriate section:
    - **Personal attributes** → **Behavioral assays**
@@ -109,24 +103,24 @@ Personal attributes referenced in your sessions, procedures, and subject logs mu
    - **Personal attributes** → **Licenses**
 2. Select the item referenced by your public project
 3. Click **Edit**
-4. Switch its visibility (for example **Setup visibility**) to **Public** and confirm the **Make public** dialog
+4. Switch its visibility (**Setup visibility**, **Behavioral assay visibility**, **Inventory visibility**, **Protocol visibility** or **License visibility**) to **Public** and confirm the **Make public** dialog
 5. Click **Save**
 
-**Data storage** has no visibility switch of its own. Its visibility follows its data protocols: mark the protocol that points at a public location (for example a DANDI or web URL) as public, and keep the lab-internal paths private.
+**Data storage** has no visibility switch of its own. Its visibility follows its data protocols: on its edit page, set **Public Access** on the protocol that points at a public location (for example a DANDI or web URL), and keep the lab-internal paths private.
 
-{: .note }
-> Repeat this process for each personal attribute referenced in your public project. Making a protocol public also exposes its attachment download link; linked licenses retain their own public access settings.
+{: .warning }
+> One public data protocol makes the whole data storage public when you save it, with its name, location, description and the public protocols' paths. Check that no lab-internal path is marked **Public Access**.
 
-## Best Practices for Public Data Sharing
+Repeat this for each personal attribute your public project refers to.
 
-### Before Making Data Public
+{: .warning }
+> Making a protocol public also exposes its attachment: anyone on the public portal or public API can download the attached protocol document. Remove the attachment first if it should stay internal.
 
-1. **Review sensitive information**: Ensure no personally identifiable information or proprietary data is included
-2. **Complete documentation**: Fill in descriptions for projects, sessions, and personal attributes
-3. **Verify data quality**: Check that all metadata is accurate and complete
-4. **Test internally**: Have lab members verify access to ensure nothing is missing
+## End state
 
-## Revoking Public Access
+The project and its subjects, sessions and modules are on the public portal, and the setups, assays, storage routes and protocols they refer to can be opened there too.
+
+## Revoking public access
 
 If you need to make data private again:
 
@@ -136,14 +130,11 @@ If you need to make data private again:
 4. Click **Save**
 
 {: .warning }
-> Making a project private will immediately remove it from the public dashboard. However, users who have already downloaded or accessed the data will retain their copies.
+> Making a project private will immediately remove it from the public portal. However, users who have already downloaded or accessed the data will retain their copies.
 
-## Next Steps
+## Next steps
 
-After making your data publicly available, consider these enhancements:
-
-- **Improve discoverability**: Use [Submit Resources & Taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies) to contribute standardized resources that make your data more findable
-- **Document protocols thoroughly**: Ensure your [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) are well-documented for protocol reproducibility
-- **Optimize data access**: Review [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to ensure public data has appropriate file access protocols
-- **Enable programmatic access**: Readers can load your public project without a token with `BrainstemClient(anonymous=True)` in the [Python API tool]({{site.baseurl}}/tools/python-api-tool) or `BrainstemClient('anonymous', true)` in the [MATLAB API tool]({{site.baseurl}}/tools/matlab-api-tool)
-- **Deposit the metadata**: Convert the project to NWB files with [Exporting to NWB]({{site.baseurl}}/tutorials/exporting-to-nwb)
+- **Next:** [Exporting to NWB]({{site.baseurl}}/tutorials/exporting-to-nwb): convert the project to NWB files for a data archive.
+- Readers can load your public project without a token with `BrainstemClient(anonymous=True)` in the [Python API tool]({{site.baseurl}}/tools/python-api-tool) or `BrainstemClient('anonymous', true)` in the [MATLAB API tool]({{site.baseurl}}/tools/matlab-api-tool).
+- [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage): add a public data protocol that points at the archived files.
+- Data model: [Permissions]({{site.baseurl}}/datamodel/permissions/#public-sharing) and [Projects]({{site.baseurl}}/datamodel/stem/project/).

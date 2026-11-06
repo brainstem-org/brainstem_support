@@ -68,6 +68,9 @@ The agent reaches BrainSTEM through, in order of preference, a BrainSTEM [MCP se
 2. Sign in **in your own terminal**: `brainstem login` (browser, with 2FA), or create a token on your [token page](https://www.brainstem.org/private/users/tokens/) and `export BRAINSTEM_API_TOKEN=...` before starting the agent. The agent never runs the login for you and never sees your password.
 3. For another server, `export BRAINSTEM_API_URL=http://127.0.0.1:8000`.
 
+{: .warning }
+> The agent acts with your token, so it holds all your rights, including deleting records and making projects public. Showing a change plan and waiting for your approval is behaviour the skills ask of the agent, not something BrainSTEM enforces. Use a separate token for the agent, review each plan before you approve it, and revoke the token when you are done.
+
 ## Example requests
 
 - "Which subjects in project X received optogenetic stimulation of the medial septum?"

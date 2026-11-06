@@ -85,8 +85,8 @@ A planned set is the row that planned specimen procedures hang off before the ma
 
 ## Deleting a specimen set
 
-{: .note }
-> Deleting a specimen set also deletes its specimens, specimen procedures, specimen logs and the experimental interfaces that target it.
+{: .warning }
+> Deleting a specimen set also deletes its specimens, specimen procedures, specimen logs and the experimental interfaces that target it. **Recover** on the specimen sets list restores the set together with them; see [Deleted entries]({{"webinterface/deleted-entries/"|absolute_url}}).
 
 ## Permissions
 

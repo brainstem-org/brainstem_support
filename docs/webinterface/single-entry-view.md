@@ -31,25 +31,19 @@ The header of a details page offers, depending on the model and your permissions
 | **Create Template** | Saves the entry as a reusable template (procedures, specimen procedures, interfaces, data acquisitions, manipulations, episodes) |
 | **Graph** | "Show this entry with its related entries" in the data graph, see below |
 | History icon | Opens the revision history (requires change permission) |
-| Trash icon **Delete** | Deletes the entry after a confirmation page, see [Deleted entries]({{"webinterface/deleted-entries/"|absolute_url}}) |
+| Trash icon **Delete** | Deletes the entry after a confirmation page. Shown on some details pages only, for example specimen sets and specimens; delete other entries from their form or from **More actions** in a list row. See [Deleted entries]({{"webinterface/deleted-entries/"|absolute_url}}) |
 | **API** | Opens the entry in the web API |
 | **Export** | Download dropdown, see below |
 | **Planned** pill | Shown while the entry is planned; the transition buttons (**Mark as performed** and others) are on its form. See [Planning]({{"webinterface/planning/"|absolute_url}}) |
 
-{% include slides.html slides="single-entry-view-session|A session's details page: history, API, Graph, Duplicate, Export and Edit in the header, the related entries as tabs.;;single-entry-view-export-menu|The Export menu of a details page: Print / Save as PDF, Download Word and Spreadsheet." %}
+![A session's details page: history, API, Graph, Duplicate, Export and Edit in the header, the related entries as tabs.]({{site.baseurl}}/assets/images/screenshots/single-entry-view-session.png)
+{: .screenshot }
+*A session's details page: history, API, Graph, Duplicate, Export and Edit in the header, the related entries as tabs.*
 
 ### Export dropdown
 {: .no_toc}
 
-The **Export** dropdown (download icon) contains:
-
-- **Print / Save as PDF**: a print-ready page in a new tab. Use your browser's print dialog to save it as PDF. Ctrl/Cmd+P on a details page opens the same view.
-- **Download Word**: an editable .docx file with the entry's fields as label and value tables.
-- **Spreadsheet (CSV, Excel…)**: on sessions, consumables, hardware devices and suppliers; opens the export page scoped to this entry.
-- **STAR Methods (preview)** and **STAR Methods (.docx)**: on projects only.
-- **Download project data**: on projects only; the complete project as JSON or an Excel workbook.
-
-All formats are described on [Exports and reports]({{"webinterface/exports-and-reports/"|absolute_url}}). The export buttons are hidden for anonymous visitors on the public portal.
+The **Export** dropdown (download icon) offers **Print / Save as PDF** and **Download Word**, on many entry types **Spreadsheet (CSV, Excel…)**, and on projects also **STAR Methods** and **Download project data**. What each format contains and where else it is offered is described on [Exports and reports]({{"webinterface/exports-and-reports/"|absolute_url}}).
 
 ## Fields and details
 

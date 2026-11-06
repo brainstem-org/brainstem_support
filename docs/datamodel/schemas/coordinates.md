@@ -57,11 +57,14 @@ All stereotaxic coordinate systems in BrainSTEM follow a right-handed coordinate
    * Following right-hand rule
    * Positive values are ventral
 
+Landmark-referenced and spinal coordinates use the same signs (spinal coordinates measure RC, rostrocaudal, instead of AP). Standardized reference spaces keep their atlas's own origin and axes, which are given with each space below.
+
 ### Angle Measurement System
-By default, angles are defined by three rotations:
-        1. The AP angle, rotating clockwise around ML
-        2. The ML angle, rotating clockwise around AP
-        3. The rotation angle, rotating clockwise around the object's depth axis
+By default, angles are defined by three rotations, applied in this order:
+
+1. The AP angle, rotating clockwise around ML
+2. The ML angle, rotating clockwise around AP
+3. The rotation angle, rotating clockwise around the object's depth axis
 
 {: .warning }
 Proper understanding and application of these angles is critical for accurate probe placement and experimental reproducibility.
@@ -75,8 +78,8 @@ All stereotaxic measurements use three angles to specify orientation:
    * Measured as rotation from the vertical axis in the sagittal plane
    * 0° represents vertical along DV axis
    * Range: -180° to +180°
-   * Positive values indicate anterior rotation
-   * Example: +15° indicates probe tiltet 15° anteriorly from vertical
+   * Positive values lean the top of the probe anteriorly, so its tip points posteriorly
+   * Example: +15° means the top of the probe leans 15° anterior of vertical
 
 **ML angle (Medial-Lateral rotation):**
 
@@ -85,15 +88,15 @@ All stereotaxic measurements use three angles to specify orientation:
    * Measured as rotation from the vertical axis in the coronal plane
    * 0° represents vertical along DV axis
    * Range: -180° to +180°
-   * Positive values indicate rightward/clockwise rotation (as seen from behind)
-   * Example: +20° indicates probe tiltet 20° to the right from vertical
+   * Positive values lean the top of the probe to the right (as seen from behind), so its tip points to the left
+   * Example: +20° means the top of the probe leans 20° to the right of vertical
 
 **Rotation angle (around probe axis):**
 
 <img src="/assets/images/coordinates/rotation3.png" width="45%">
 
    * 0° when probe features align with the coronal plane
-   * Range: -180° to +180° (or 0° to 360°)
+   * Range: -180° to +180°
    * Positive rotation is clockwise when viewed from above
 
 ## External coordinates

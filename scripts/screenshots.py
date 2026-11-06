@@ -16,6 +16,11 @@ Environment:
     BRAINSTEM_SCREENSHOT_PASSWORD demo user's password
     BRAINSTEM_CHECKOUT            BrainSTEM checkout; its virtualenv computes the TOTP code for the login wizard
     BRAINSTEM_SCREENSHOT_ALLOW_EMAILS  comma-separated emails a picture may show besides the demo user's
+    BRAINSTEM_SCREENSHOT_ASSISTANT     1 on a server whose AI assistant answers: ai-assistant-drawer-results shows results
+
+Most pictures only look; a few write as the demo user: deleted-entries-recover-page deletes a session kept for it,
+user-profile-sessions ends the demo user's other sessions, and user-profile-token-created creates an API token and
+revokes it once the picture is taken.
 
     python scripts/screenshots.py                 # every screenshot and walkthrough
     python scripts/screenshots.py forms-materials-editor dashboard-manage-widgets
@@ -152,7 +157,11 @@ def first_row_link(page, list_path: str, query: str) -> str:
 # ("press", css, key), ("js", script), ("select", css, label) for a native <select>, ("select2", select_css,
 # text) to pick in a Select2 widget, ("open_select2", select_css, text) to leave it open after typing,
 # ("scroll_to", css), ("wait_gone", [texts], max_ms) to wait until loading messages disappear, and
-# ("call", function) to run a function(page). `clip` limits the picture to a CSS selector.
+# ("call", function) to run a function(page). `clip` limits the picture to a CSS selector, `around` to the box
+# round a list of elements (each a selector or its fallbacks), `full` takes the whole page. `css` is a style added
+# once the page has loaded, `after` steps run once the picture is taken, `cleanup` steps run whether or not it was,
+# and `"no_save": True` refuses every write the page attempts (for a change form whose fields a target changes; forms
+# autosave).
 
 
 def entry(list_path: str, query: str = "", suffix: str = "change/"):
@@ -168,6 +177,7 @@ def entry_id(page, list_path: str, query: str) -> str:
 
 VIEWER_LOADING = ["Preparing coordinate viewer", "Loading atlas anatomy"]
 RAT_IMPLANT = entry("/private/modules/procedure/", "Silicon+probe+implant+R06")
+RAT_IMPLANT_DETAILS = entry("/private/modules/procedure/", "Silicon+probe+implant+R06", "")
 
 
 def select_by_text(select, text: str):
@@ -226,6 +236,157 @@ def second_session(page):
         other.close()
 
 
+def guard_writes(route):
+    """For a picture that changes a form without saving it (`"no_save": True`): change forms autosave as fields
+    change, so every write to the API is refused; an autosave is answered as if it succeeded, so the form shows no
+    error."""
+    request = route.request
+    writes = request.method not in ("GET", "HEAD", "OPTIONS") and any(k in request.url for k in ("/api/", "/ajax/", "_method="))
+    if not writes:
+        route.continue_()
+    elif request.method == "PATCH" or "_method=PATCH" in request.url:
+        route.fulfill(status=200, content_type="application/json", body="{}")
+    else:
+        route.abort()
+
+
+def confirm_identity(page):
+    """The step-up page sensitive actions ask for when the sign-in is older than a few minutes: the two-factor code
+    (when the demo user has a device), then the password."""
+    otp = page.locator("input[name=otp_token]")
+    if otp.count() and otp.first.is_visible():
+        if not CHECKOUT:
+            raise SystemExit("creating a token asks for the two-factor code again: set BRAINSTEM_CHECKOUT")
+        for attempt in range(2):
+            otp.first.fill(totp_token())
+            with page.expect_navigation():
+                page.locator("button[name=_verify_mfa]").first.click()
+            page.wait_for_load_state("networkidle")
+            if not (otp.count() and otp.first.is_visible()):
+                break
+            page.wait_for_timeout(31000)  # the code of the sign-in cannot be used twice: wait for the next one
+    password = page.locator("#id_current_password")
+    if password.count():
+        password.fill(PASSWORD)
+        with page.expect_navigation():
+            password.press("Enter")
+        page.wait_for_load_state("networkidle")
+
+
+DOCS_TOKEN = "Docs example token"  # created for user-profile-token-created and revoked right after the picture
+
+
+def revoke_docs_token(page) -> bool:
+    """Revoke the token user-profile-token-created made (its value is in the picture); True if there was one."""
+    page.goto(BASE + "/private/users/tokens/", wait_until="networkidle")
+    found = page.evaluate("""name => {
+        const form = [...document.querySelectorAll("form[action^='delete/']")].find(f => {
+            for (let n = f.parentElement, i = 0; n && i < 8; n = n.parentElement, i++) {
+                if (n.querySelectorAll("form[action^='delete/']").length > 1) return false;
+                if (n.textContent.includes(name)) return true;
+            }
+            return false;
+        });
+        if (form) { form.setAttribute('data-docs-revoke', ''); return true; }
+        return false;
+    }""", DOCS_TOKEN)
+    if found:
+        # Submit the form itself: its button asks for confirmation through a page script.
+        with page.expect_navigation():
+            page.locator("form[data-docs-revoke]").first.evaluate("f => f.submit()")
+        page.wait_for_load_state("networkidle")
+    return found
+
+
+def create_docs_token(page):
+    """Create a personal access token, confirming the identity when the page asks, so the page that shows the new
+    token once is open."""
+    for _ in range(3):
+        page.fill("#token_name", DOCS_TOKEN)
+        with page.expect_navigation():
+            page.locator("form[action='create/'] [type=submit]").first.click()
+        page.wait_for_load_state("networkidle")
+        if page.locator("#access_token").count():
+            return
+        if page.locator("#id_current_password, input[name=otp_token]").count():
+            confirm_identity(page)
+        elif not revoke_docs_token(page):  # left active by an earlier run that failed before revoking it
+            break
+        page.goto(BASE + "/private/users/tokens/", wait_until="networkidle")
+    raise RuntimeError(f"no token was created (ended on {page.url})")
+
+
+GET_STARTED_PROJECT = "Hippocampal place cells 2026"  # the project get-started-project-form fills in
+
+
+def stand_in_project(page):
+    """Show the project the getting-started guide creates in the Projects field, which lists the demo project: the
+    picked option is relabelled for the picture only (Select2 redraws it; the form's own scripts are not told)."""
+    page.locator("#id_projects").first.evaluate("""(s, label) => {
+        const o = [...s.options].find(o => o.selected);
+        if (!o) return;
+        o.textContent = label;
+        for (const $ of [window.jQuery, window.django && django.jQuery]) {
+            if ($ && $(s).data('select2')) { $(s).trigger('change.select2'); return; }
+        }
+    }""", GET_STARTED_PROJECT)
+
+
+def acquisition_entry(kind: str) -> list[str]:
+    """`around` for one entry of a session's Data acquisition tab: its header and its details."""
+    header = f"fieldset.selected .field-dataacquisitions > .detail-view__inline__header:has-text('{kind}')"
+    return [header, header + " + .field-content__wrapper"]
+
+
+def scroll_to_top(selector: str, offset: int = 90):
+    """A `call` step: scroll the page so the element sits just under the fixed top bar."""
+    return lambda page: page.locator(selector).first.evaluate(
+        "(e, offset) => window.scrollTo(0, e.getBoundingClientRect().top + window.scrollY - offset)", offset)
+
+
+def fill_new_behavior(page):
+    """The behavior Add Behavior opened on the session's change form, filled in as the tutorial's step says (never
+    saved: the target refuses writes)."""
+    form = page.locator("#behaviors-group .inline-related:not(.empty-form)").last
+    prefix = form.get_attribute("id") or ""
+    for name, text in (("subjects", "R02"), ("setup", "Rat Electrophysiology"), ("behavioralassay", "Rat Delayed")):
+        css = f"#id_{prefix}-{name}"
+        if not page.locator(css).count():
+            continue
+        try:
+            do_step(page, ("select2", css, text))
+            page.wait_for_timeout(700)
+        except Exception as error:  # noqa: BLE001 - the notice is the point of the picture, not every field
+            print(f"        (left {name} empty: {str(error).splitlines()[0][:80]})")
+
+
+def show_brain_regions(page):
+    """Switch on the coloured brain-region overlay of the coordinate viewer, once the atlas labels have loaded."""
+    toggle = page.locator("[data-coordinate-show-regions]").first
+    for _ in range(60):
+        if toggle.count() and toggle.is_enabled():
+            break
+        page.wait_for_timeout(500)
+    if toggle.count() and toggle.is_enabled() and not toggle.is_checked():
+        page.locator("label[for=coordinate-preview-show-regions]").first.click()
+        page.wait_for_timeout(2500)
+    elif not (toggle.count() and toggle.is_enabled()):
+        print("        (no brain-region overlay for this atlas)")
+
+
+# The 3D view at a lower brain opacity, so the implant's track shows through the brain.
+BRAIN_OPACITY_JS = ("const r = document.querySelector('[data-coordinate-brain-opacity]');"
+                    " if (r) { r.value = 25; r.dispatchEvent(new Event('input', {bubbles: true})); }")
+# The CKEditor description box as tall as its text, not its 300-pixel default.
+SHORT_EDITOR_CSS = (".ck.ck-editor__main > .ck-editor__editable, .ck-editor__editable_inline"
+                    "{min-height: 0 !important; height: auto !important}")
+# The AI assistant answers only on a server with a working provider; set BRAINSTEM_SCREENSHOT_ASSISTANT=1 there and
+# ai-assistant-drawer-results shows the answer (result cards, Show all and the link to the list).
+ASSISTANT_ANSWERS = os.environ.get("BRAINSTEM_SCREENSHOT_ASSISTANT") == "1"
+ASSISTANT_QUESTION = [("click_sel", ".brainstem-assistant__launcher"), ("wait", 1200),
+                      ("fill", "[class*=brainstem-assistant] textarea", "Reversal sessions of mouse M09"), ("wait", 600)]
+
+
 TAB = "fieldset.module.selected"  # the open tab of a details or change page
 FORM_CARD = [field("name"), "button[name=_continue]"]  # an add form from its name field down to its buttons
 TARGETS: list[dict] = [
@@ -234,32 +395,36 @@ TARGETS: list[dict] = [
     # Every step of the checklist, the completed ones included (they sit in a collapsed <details>).
     {"slug": "dashboard-getting-started", "go": "/private/", "clip": ".dashboard-item:has-text('Getting started')",
      "steps": [("js", "document.querySelectorAll('details.dashboard-onboarding-completed').forEach(d => d.open = true)"), ("wait", 500)]},
-    {"slug": "dashboard-manage-widgets", "go": "/private/", "steps": [("click", "Add widget"), ("wait", 800)]},
     {"slug": "dashboard-recent-activity", "go": "/private/", "steps": [("call", lambda p: p.locator(".header__action__button").filter(has=p.locator("[class*=history], [class*=clock]")).first.click() if p.locator(".header__action__button").filter(has=p.locator("[class*=history], [class*=clock]")).count() else p.locator(".header__action__button").nth(6).click()), ("wait", 1500)]},
     # List view
     {"slug": "list-view-procedures", "go": "/private/modules/procedure/", "viewport": {"width": 1440, "height": 680}},
     {"slug": "list-view-sessions", "go": "/private/stem/session/", "viewport": {"width": 1440, "height": 680}},
     # A search and what it found: the list's search box with the query typed, the result count, and the first matching
     # rows (the sidebar has a search box of its own, left alone).
-    {"slug": "list-view-search", "go": "/private/stem/session/?q=Reversal",
-     "around": ["input[name=q]:not(.custom-sidebar input)", "#result_list tbody tr:nth-child(3)"], "pad": 18,
-     "steps": [("js", "document.querySelectorAll('input[name=q]').forEach(i => { if (!i.closest('.custom-sidebar')) i.value = 'Reversal'; })")]},
     {"slug": "list-view-manage-filters", "go": "/private/modules/procedure/", "steps": [("click", "Filters"), ("wait", 800)]},
     {"slug": "list-view-region-filter-dialog", "go": "/private/modules/procedure/", "steps": [
         ("click_sel", ".anatomical-region-filter__trigger"), ("wait", 1500), ("wait_gone", ["Loading"], 8000)]},
     {"slug": "list-view-manage-columns", "go": "/private/modules/procedure/", "steps": [("click", "Columns"), ("wait", 800)]},
-    # The last three rows ticked (on screen with the actions bar under the table) and the action list opened in full.
-    {"slug": "list-view-bulk-actions", "go": "/private/stem/subject/", "viewport": {"width": 1440, "height": 1000}, "steps": [
+    # The last three rows ticked, the actions bar under them and its action list opened downwards in full (room is
+    # added under the table, so the list does not open over the rows); the toolbar that follows the scroll is hidden.
+    {"slug": "list-view-bulk-actions", "go": "/private/stem/subject/", "viewport": {"width": 1440, "height": 1000},
+     "css": ("body{padding-bottom:520px!important} .list-view__header__actions .object-tools.sticky{visibility:hidden!important}"
+             " .select2-results > .select2-results__options{max-height:none!important}"),
+     "around": ["#result_list tbody tr:nth-last-child(3)", ".changelist-footer .actions", ".select2-container--open .select2-dropdown"],
+     "steps": [
         ("js", "[...document.querySelectorAll('input.action-select')].slice(-3).forEach(c => c.click())"),
-        ("scroll_to", ".changelist-footer .actions"), ("wait", 400),
+        ("js", "document.querySelector('.changelist-footer .actions').scrollIntoView({block: 'center'})"), ("wait", 400),
         ("open_select2", "select[name=action]", ""), ("wait", 600)]},
     # Procedures have the fullest row menu (Create template among others).
     {"slug": "list-view-row-actions", "go": "/private/modules/procedure/", "steps": [("call", open_row_menu), ("wait", 600)]},
-    {"slug": "list-view-active-projects", "go": "/private/stem/subject/", "steps": [("click", "Manage active projects"), ("wait", 1000)]},
+    # The dialog with the demo project ticked (not saved, so the lists stay unfiltered for the other pictures).
+    {"slug": "list-view-active-projects", "go": "/private/stem/subject/", "steps": [
+        ("click", "Manage active projects"), ("wait", 1000),
+        ("js", "const c = document.querySelector('.active-projects-modal__project__list [id^=unique_checkbox_id_]'); if (c && !c.checked) c.click();"),
+        ("wait", 600)],
+     "after": [("click_sel", ".active-projects-modal__cancel")]},
     # Forms: change pages of demo entries, so the fields are filled
     {"slug": "forms-procedure-general", "go": entry("/private/modules/procedure/", "Cranial+window")},
-    {"slug": "forms-materials-editor", "go": entry("/private/modules/procedure/", "Cranial+window"), "clip": "section.inline-group.selected",
-     "steps": [("click", "Materials ("), ("wait", 800)]},
     {"slug": "forms-add-material-menu", "go": entry("/private/modules/procedure/", "Cranial+window"),
      "steps": [("click", "Materials ("), ("wait", 500), ("click", "Add material"), ("wait", 800)]},
     {"slug": "forms-templates-picker", "go": entry("/private/modules/procedure/", "Cranial+window"),
@@ -272,9 +437,6 @@ TARGETS: list[dict] = [
         ("wait", 800), ("call", lambda p: p.locator("[data-coordinate-preview-button]").first.evaluate("e => e.scrollIntoView({block: 'center'})")),
         ("wait", 600)]},
     # The server's own messages: the browser's required-field check is switched off, so the form is submitted empty.
-    {"slug": "forms-validation", "go": "/private/stem/subject/add/",
-     "steps": [("js", "document.querySelectorAll('form').forEach(f => f.noValidate = true)"),
-               ("click_sel", "button[name=_continue]"), ("wait", 1500)]},
     # The guided duplicate page of a subject (Duplicate in the header of its details page), with two kinds ticked.
     {"slug": "forms-duplication-page", "go": entry("/private/stem/subject/", "SAMPLE+Mouse+M09", "duplicate/"),
      "steps": [("js", "[...document.querySelectorAll('input[type=checkbox]')].filter(c => /^\\s*(Procedures|Subject logs)/.test("
@@ -284,39 +446,54 @@ TARGETS: list[dict] = [
     {"slug": "single-entry-view-session-epochs", "go": entry("/private/stem/session/", "R02+Steve+Reversal+01", ""), "steps": [("click", "Epochs ("), ("wait", 1000)]},
     {"slug": "single-entry-view-subject-procedures", "go": entry("/private/stem/subject/", "M09+Antonio", ""), "steps": [("click", "Procedures ("), ("wait", 1000)]},
     # The header with its open Export menu, not the whole page.
-    {"slug": "single-entry-view-export-menu", "go": entry("/private/stem/session/", "R02+Steve+Reversal+01", ""),
+    # The project's Export menu: the record exports and the project's own, STAR Methods and Download project data.
+    {"slug": "exports-project-export-menu", "go": entry("/private/stem/project/", "Neural+dynamics", ""),
      "around": [".exportlink--with-dropdown", ".exportlink__dropdown", "h1"], "pad": 24,
      "steps": [("click_sel", ".exportlink--with-dropdown"), ("wait", 600)]},
-    {"slug": "single-entry-view-history", "go": entry("/private/stem/session/", "R02+Steve+Reversal+01", "history/")},
+    # An entry that was edited after it was created: R02's implantation episode, whose severity and description were
+    # changed (the history of the demo's sessions holds only the dataset's own revisions).
+    {"slug": "single-entry-view-history", "go": entry("/private/modules/procedureepisode/", "R02+Steve+Electrophysiology", "history/"),
+     "viewport": {"width": 1440, "height": 560}},
     {"slug": "single-entry-view-data-graph", "go": lambda p: "/private/datamodel/?view=overview&record=stem.session:" + entry_id(p, "/private/stem/session/", "R02+Steve+Reversal+01"),
      "steps": [("wait", 4000)]},
-    # Each data acquisition tab framed on the modality's own entry (the second one), with its interface and details.
+    # Each Data acquisition tab cropped to the modality's own entry (not the video tracking above it, which records
+    # through no interface): its header, setup, equipment, experimental interface and details.
     {"slug": "ephys-session-data-acquisition", "go": entry("/private/stem/session/", "R02+Steve+Reversal+01", ""),
-     "steps": [("click", "Data acquisition ("), ("wait", 800), ("scroll_to", "text=Data acquisition 2"), ("wait", 400)]},
+     "viewport": {"width": 1440, "height": 1100}, "around": acquisition_entry("Extracellular Electrophysiology"),
+     "steps": [("click", "Data acquisition ("), ("wait", 800),
+               ("call", scroll_to_top(acquisition_entry("Extracellular Electrophysiology")[0])), ("wait", 400)]},
     {"slug": "2p-data-acquisition-tab", "go": entry("/private/stem/session/", "M03+Mirabel+Acquisition+01", ""),
-     "steps": [("click", "Data acquisition ("), ("wait", 800), ("scroll_to", "text=Data acquisition 2"), ("wait", 400)]},
-    {"slug": "ephys-behavior-tab", "go": entry("/private/stem/session/", "R02+Steve+Reversal+01", ""), "steps": [("click", "Behaviors ("), ("wait", 800)]},
-    # The rat of the electrophysiology tutorial.
-    {"slug": "ephys-subject-procedures", "go": entry("/private/stem/subject/", "SAMPLE+Rat+R06", ""), "steps": [("click", "Procedures ("), ("wait", 800)]},
+     "viewport": {"width": 1440, "height": 1100}, "around": acquisition_entry("Two-Photon Microscopy"),
+     "steps": [("click", "Data acquisition ("), ("wait", 800),
+               ("call", scroll_to_top(acquisition_entry("Two-Photon Microscopy")[0])), ("wait", 400)]},
+    # The behavior Add Behavior opens on the session's change form, filled in, with its notice that the setup and the
+    # behavioral assay must share the setup type (nothing is saved).
+    {"slug": "ephys-behavior-tab", "go": entry("/private/stem/session/", "R02+Steve+Reversal+01"), "no_save": True,
+     "viewport": {"width": 1440, "height": 1000}, "clip": "#behaviors-group",
+     "steps": [("click_sel", ".changeform-tabs-item a:has-text('Behaviors')"), ("wait", 800),
+               ("click_sel", "#behaviors-group .add-row a >> visible=true"), ("wait", 1000),
+               ("call", fill_new_behavior), ("wait", 500)]},
+    # The rat implant of the electrophysiology tutorial: the experimental interface it created, on its own tab.
+    {"slug": "ephys-subject-procedures", "go": RAT_IMPLANT_DETAILS, "viewport": {"width": 1440, "height": 760},
+     "steps": [("click_sel", ".changeform-tabs-item a:has-text('Experimental interfaces')"), ("wait", 800)]},
     # Planning
-    {"slug": "planning-planned-records", "go": entry("/private/stem/session/", "Reversal+03+(planned)", ""), "viewport": {"width": 1440, "height": 640}},
     {"slug": "planning-planned-form", "go": entry("/private/stem/session/", "Reversal+03+(planned)"), "viewport": {"width": 1440, "height": 640}},
     # Import tool and SoftMouse
     {"slug": "import-tool-batch-grid", "go": "/private/import-tool/", "steps": [("call", fill_import_grid)]},
-    {"slug": "import-tool-fields", "go": "/private/import-tool/", "steps": [("click_sel", "button:has-text('Subjects')"), ("wait", 600), ("click", "Fields"), ("wait", 800)]},
     # The page in full: the intro and the Projects, Subjects and Sessions sections with their templates.
     {"slug": "import-tool-csv", "go": "/private/import-tool/", "full": True, "steps": [("click", "CSV import"), ("wait", 800)]},
-    {"slug": "softmouse-import-preview", "go": "/private/softmouse/browse/"},
+    # The credentials form a user without saved SoftMouse credentials sees. (softmouse-import-preview, the Import
+    # Configuration preview, needs saved credentials, an uploaded SoftMouse export and subjects linked to earlier
+    # SoftMouse imports for its Update and Skip rows, which the demo dataset does not have.)
+    {"slug": "softmouse-credentials", "go": "/private/softmouse/credentials/"},
     # Exports
     {"slug": "exports-print-preview", "go": entry("/private/stem/project/", "Neural+dynamics", "export/?format=html&mode=full")},
     {"slug": "exports-star-methods-preview", "go": entry("/private/stem/project/", "Neural+dynamics", "export/?format=html&mode=star_methods")},
-    # The whole form: format and contents, the parts list and the JSON options under it.
-    {"slug": "exports-download-project-data", "go": entry("/private/stem/project/", "Neural+dynamics", "download/"), "clip": ".form__wrapper"},
+    # The page title and the whole form under it: File format and Contents, the parts list and the JSON options (a
+    # window tall enough for all of it, so the crop is not scrolled under the top bar).
+    {"slug": "exports-download-project-data", "go": entry("/private/stem/project/", "Neural+dynamics", "download/"),
+     "viewport": {"width": 1440, "height": 1500}, "around": ["h1.custom-content__title", ".form__wrapper"], "pad": 20},
     # CSV chosen, not the empty format.
-    {"slug": "exports-spreadsheet", "go": lambda p: "/private/stem/subject/export/?id=" + entry_id(p, "/private/stem/subject/", "M09+Antonio"),
-     "steps": [("js", "const s = [...document.querySelectorAll('select')].find(s => [...s.options].some(o => /csv/i.test(o.text)));"
-                      " if (s) { s.value = [...s.options].find(o => /csv/i.test(o.text)).value; s.dispatchEvent(new Event('change', {bubbles: true}));"
-                      " if (window.jQuery) jQuery(s).trigger('change'); }"), ("wait", 500)]},
     # Probe catalog
     # The schematic is an SVG image of its own; capture the drawing rather than the page around it.
     {"slug": "probe-catalog-schematic", "go": entry("/private/resources/consumable/", "A16x8-5mm-berg-200-160", "schematic.svg"),
@@ -326,24 +503,25 @@ TARGETS: list[dict] = [
     # The top of the details page (name, type, supplier and the design's details); the schematic has its own pictures.
     {"slug": "probe-catalog-page", "go": entry("/private/resources/consumable/", "A16x8-5mm-berg-200-160", "")},
     # The design's form at its type-specific details: the geometry.
-    {"slug": "probe-catalog-form", "go": entry("/private/resources/consumable/", "A16x8-5mm-berg-200-160"),
-     "steps": [("scroll_to", "[data-type-details-heading]"), ("wait", 400)]},
-    {"slug": "probe-catalog-list", "go": "/private/resources/consumable/?q=Buzsaki"},
     # Atlases and coordinates
-    {"slug": "atlases-coordinate-viewer", "go": entry("/private/modules/procedure/", "Cranial+window"),
-     "steps": [("click", "View coordinates"), ("wait_gone", VIEWER_LOADING, 90000), ("wait", 2500)]},
-    {"slug": "atlases-viewer-rat-3d", "go": RAT_IMPLANT, "steps": [("click", "View coordinates"), ("wait_gone", VIEWER_LOADING, 90000), ("wait", 2500)]},
+    # The brain at a quarter of its opacity, so the probe's track shows through it.
+    {"slug": "atlases-viewer-rat-3d", "go": RAT_IMPLANT, "steps": [("click", "View coordinates"), ("wait_gone", VIEWER_LOADING, 90000),
+     ("wait", 1500), ("js", BRAIN_OPACITY_JS), ("wait", 2000)]},
+    # The three planes with the coloured brain-region overlay on.
     {"slug": "atlases-viewer-rat-all-planes", "go": RAT_IMPLANT, "steps": [("click", "View coordinates"), ("wait_gone", VIEWER_LOADING, 90000),
-     ("click", "All planes"), ("wait", 2500)]},
-    {"slug": "atlases-viewer-rat-coronal", "go": RAT_IMPLANT, "steps": [("click", "View coordinates"), ("wait_gone", VIEWER_LOADING, 90000),
-     ("click", "Coronal"), ("wait", 2500)]},
+     ("click", "All planes"), ("wait", 2500), ("call", show_brain_regions)]},
     # The Atlas and Target regions fields with the region list open.
     {"slug": "atlases-region-picker", "go": RAT_IMPLANT, "around": [field("target_regions_atlas"), field("target_regions"), ".select2-container--open .select2-dropdown"],
      "pad": 24, "steps": [("open_select2", "#id_target_regions", "CA1"), ("wait", 1000)]},
     # Account
     {"slug": "user-profile-page", "go": "/private/users/user/63/"},
-    {"slug": "user-profile-edit", "go": "/private/users/user/63/profile/"},
     {"slug": "user-profile-api-token-management", "go": "/private/users/tokens/"},
+    # A token just created, shown once. It is a real token of the demo user, so it is revoked as soon as the picture
+    # is taken, also when the capture fails (`cleanup`); creating it may ask for the password and two-factor code
+    # again (BRAINSTEM_CHECKOUT).
+    {"slug": "user-profile-token-created", "go": "/private/users/tokens/", "viewport": {"width": 1440, "height": 1100},
+     "around": [".login-signup__form__header", "#access_token", "#copy_btn", "a.link-element--arrow-back"], "pad": 24,
+     "steps": [("call", create_docs_token), ("wait", 500)], "cleanup": [("call", revoke_docs_token)]},
     # Earlier runs' sessions ended, then one more sign-in from another browser: a second row with its Log out button.
     {"slug": "user-profile-sessions", "go": "/private/users/sessions/", "viewport": {"width": 1440, "height": 700},
      "steps": [("call", logout_other_sessions), ("call", second_session), ("call", lambda p: p.reload(wait_until="networkidle")),
@@ -351,19 +529,24 @@ TARGETS: list[dict] = [
     {"slug": "two-factor-active-methods", "go": "/account/two_factor/", "viewport": {"width": 1100, "height": 700}},
     # The settings page in full, down to the form for one's own provider key.
     {"slug": "ai-assistant-settings", "go": "/private/llm-assistant-settings/", "full": True},
-    # The question box: examples, the question, Page context, AI summary and Search.
+    # With BRAINSTEM_SCREENSHOT_ASSISTANT=1 (a server whose assistant answers): the drawer with the answer, its result
+    # cards, Show all and the link to the list. Otherwise the question box: examples, the question, Page context, AI
+    # summary and Search.
     {"slug": "ai-assistant-drawer-results", "go": "/private/stem/subject/",
-     "around": [".brainstem-assistant__examples", ".brainstem-assistant__submit"], "pad": 24,
-     "steps": [("click_sel", ".brainstem-assistant__launcher"), ("wait", 1200),
-               ("fill", "[class*=brainstem-assistant] textarea", "Reversal sessions of mouse M09"), ("wait", 600)],
-     # Results need a server whose assistant can answer; on such a server add:
-     # ("click_sel", ".brainstem-assistant__submit"), ("wait_gone", ["Searching"], 90000)
+     "steps": ASSISTANT_QUESTION + [
+         ("click_sel", ".brainstem-assistant__submit"),
+         ("call", lambda p: p.wait_for_selector(".brainstem-assistant__drawer .llm-assistant__results", timeout=120000)),
+         ("wait_gone", ["Searching"], 30000), ("wait", 1500)],
+     "clip": ".brainstem-assistant__drawer",
+     "after": [("click_sel", ".brainstem-assistant__close")]} if ASSISTANT_ANSWERS else
+    {"slug": "ai-assistant-drawer-results", "go": "/private/stem/subject/",
+     "around": [".brainstem-assistant__examples", ".brainstem-assistant__submit"], "pad": 24, "steps": ASSISTANT_QUESTION,
      "after": [("click_sel", ".brainstem-assistant__close")]},
     {"slug": "project-public-access-dialog", "go": entry("/private/stem/project/", "Neural+dynamics"),
      "steps": [("js", "document.querySelector('#id_is_public_1').click()"), ("wait", 1200)], "after": [("press", "body", "Escape")]},
-    {"slug": "project-permissions", "go": entry("/private/stem/project/", "Neural+dynamics", "manage/")},
+    # The whole page, down to Save and Return to project under the tables.
+    {"slug": "project-permissions", "go": entry("/private/stem/project/", "Neural+dynamics", "manage/"), "full": True},
     # Deleted entries
-    {"slug": "deleted-entries-recover-list", "go": "/private/stem/session/recover/", "viewport": {"width": 1440, "height": 560}},
     {"slug": "deleted-entries-recover-page", "go": lambda p: recover_page(p)},
     # Forms used by the tutorials: change pages of demo entries, so the fields are filled
     {"slug": "project-add-form", "go": entry("/private/stem/project/", "Neural+dynamics"), "viewport": {"width": 1440, "height": 620}},
@@ -372,6 +555,11 @@ TARGETS: list[dict] = [
     {"slug": "cohort-add-form", "go": entry("/private/stem/cohort/", "Active+Rat"), "viewport": {"width": 1440, "height": 620}},
     {"slug": "procedure-add-form", "go": RAT_IMPLANT},
     {"slug": "specimenset-add-form", "go": entry("/private/stem/specimenset/", "Coronal+Section+Series"), "full": True, "clip": "#content-main, main"},
+    # The section series' form at its lineage: type and status, subject and source specimen set, the starting
+    # conditions, quality and item count.
+    {"slug": "specimen-set-form", "go": entry("/private/stem/specimenset/", "Coronal+Section+Series"), "pad": 18,
+     "around": [field("type"), field("status"), field("subject"), field("source_specimen_set"), field("baseline_conditions"),
+                field("quality"), field("item_count")]},
     {"slug": "specimen-session-form", "go": entry("/private/stem/session/", "Coronal+sections+-+Confocal"), "viewport": {"width": 1440, "height": 620}},
     {"slug": "experimentalinterface-add-form", "go": entry("/private/modules/experimentalinterface/", "Silicon")},
     # A fixation, the step the tutorial illustrates here.
@@ -379,10 +567,9 @@ TARGETS: list[dict] = [
      "steps": [("click", "Materials ("), ("wait", 800)]},
     {"slug": "equipment-list", "go": "/private/modules/equipment/"},
     # The rat session's auditory stimulation (the tutorial's rat, with its interface filled).
-    {"slug": "ephys-manipulation-form", "go": entry("/private/modules/manipulation/", "Auditory")},
-    {"slug": "ephys-collection-form", "go": entry("/private/stem/collection/", "Rat+Longitudinal")},
-    {"slug": "data-storage-form", "go": entry("/private/personal_attributes/datastorage/", "Primary+Working"), "full": True},
-    {"slug": "setup-form", "go": entry("/private/personal_attributes/setup/", "Rat+Electrophysiology+Rig"), "full": True},
+    # Both forms in full, the description box as tall as its one line of text.
+    {"slug": "data-storage-form", "go": entry("/private/personal_attributes/datastorage/", "Primary+Working"), "full": True, "css": SHORT_EDITOR_CSS},
+    {"slug": "setup-form", "go": entry("/private/personal_attributes/setup/", "Rat+Electrophysiology+Rig"), "full": True, "css": SHORT_EDITOR_CSS},
     {"slug": "equipment-form", "go": entry("/private/modules/equipment/", "SmartBox")},
     # A silicon probe in stock, the tutorial's example.
     {"slug": "consumable-stock-form", "go": entry("/private/modules/consumablestock/", "Silicon")},
@@ -393,30 +580,18 @@ TARGETS: list[dict] = [
     {"slug": "2p-cranial-window-interface", "go": entry("/private/modules/experimentalinterface/", "Cranial")},
     # Tutorial subjects and sessions: the add forms the steps describe, filled with each tutorial's example (not saved;
     # lists pick the demo project and its animals, which stand in for the tutorial's).
-    {"slug": "ephys-add-subject", "go": "/private/stem/subject/add/", "viewport": {"width": 1440, "height": 1000}, "around": FORM_CARD, "pad": 24,
-     "steps": [("wait", 600), ("fill", "#id_name", "TM_R001"), ("select2", "#id_projects", "Neural dynamics"), ("select2", "#id_sex", "Male"),
-               ("call", lambda p: choose(p, "#id_species", "Rattus norvegicus")), ("wait", 900),
-               ("call", lambda p: choose(p, "#id_strain", "Long-Evans")), ("wait", 500)]},
-    {"slug": "2p-add-subject", "go": "/private/stem/subject/add/", "viewport": {"width": 1440, "height": 1000}, "around": FORM_CARD, "pad": 24,
-     "steps": [("wait", 600), ("fill", "#id_name", "VC_M001"), ("select2", "#id_projects", "Neural dynamics"), ("select2", "#id_sex", "Male"),
-               ("call", lambda p: choose(p, "#id_species", "Mus musculus")), ("wait", 900),
-               ("call", lambda p: choose(p, "#id_strain", "C57BL/6J")), ("wait", 500)]},
-    {"slug": "ephys-session-form", "go": "/private/stem/session/add/", "viewport": {"width": 1440, "height": 1000}, "around": FORM_CARD, "pad": 24,
-     "steps": [("wait", 600), ("fill", "#id_name", "TM_R001_Day1_PreSleep_Baseline"), ("select2", "#id_projects", "Neural dynamics"),
-               ("select2", "#id_subjects", "R01"), ("wait", 500)]},
-    {"slug": "2p-session-form", "go": "/private/stem/session/add/", "viewport": {"width": 1440, "height": 1000}, "around": FORM_CARD, "pad": 24,
-     "steps": [("wait", 600), ("fill", "#id_name", "VC_M001_Day1_DriftingGratings"), ("select2", "#id_projects", "Neural dynamics"),
-               ("select2", "#id_subjects", "M03"), ("wait", 500)]},
     # Getting started: the add forms the steps describe, filled in as the step says (not saved).
     {"slug": "get-started-project-form", "go": "/private/stem/project/add/", "around": FORM_CARD, "pad": 24,
      "steps": [("wait", 600), ("fill", "#id_name", "Hippocampal place cells 2026"), ("select2", "#id_authgroups", "SAMPLE"), ("wait", 500)]},
+    # The project the guide's first step creates is not in the demo dataset: the demo project is picked (so the
+    # subjects list loads) and shown under that project's name (stand_in_project).
     {"slug": "get-started-subject-form", "go": "/private/stem/subject/add/", "around": FORM_CARD, "pad": 24,
      "steps": [("wait", 600), ("fill", "#id_name", "SAMPLE Mouse M10 - Bruno"), ("select2", "#id_projects", "Neural dynamics"),
                ("select2", "#id_sex", "Male"), ("select2", "#id_species", "Mus musculus"), ("wait", 600),
-               ("select2", "#id_strain", "C57BL/6J"), ("wait", 500)]},
+               ("select2", "#id_strain", "C57BL/6J"), ("wait", 500), ("call", stand_in_project), ("wait", 300)]},
     {"slug": "get-started-session-form", "go": "/private/stem/session/add/", "around": FORM_CARD, "pad": 24,
      "steps": [("wait", 600), ("fill", "#id_name", "SAMPLE M09 Antonio - Shaping 02"), ("select2", "#id_projects", "Neural dynamics"),
-               ("select2", "#id_subjects", "M09"), ("wait", 500)]},
+               ("select2", "#id_subjects", "M09"), ("wait", 500), ("call", stand_in_project), ("wait", 300)]},
 ]
 
 
@@ -424,10 +599,6 @@ TARGETS: list[dict] = [
 # camera starts framed on the form, a pointer works the controls, nothing is saved, and the clip ends on the
 # button the step ends with. Each is written to docs/assets/images/walkthroughs/<slug>.webm with a poster .jpg.
 WALKTHROUGHS: list[dict] = [
-    {"slug": "get-started-create-project", "go": "/private/stem/project/add/", "steps": [
-        ("frame", {"union": True, "targets": FORM_CARD}, None, {"maxh": 700}), ("wait", 500),
-        ("type", "#id_name", "Hippocampal place cells 2026"), ("select2", "#id_authgroups", "SAMPLE"), ("wait", 600),
-        ("point", "button[name=_continue]"), ("wait", 1400)]},
     # The form is taller than the screen: the camera glides down to the taxonomy once the top fields are done.
     {"slug": "get-started-create-subject", "go": "/private/stem/subject/add/", "steps": [
         ("frame", {"union": True, "targets": [field("name"), field("sex")]}, None, {"below": 160}), ("wait", 500),
@@ -1324,12 +1495,8 @@ def record_tour(p, only: list[str] | None = None) -> bool:
 
 # Placeholders that reuse another target's capture.
 ALIASES = {
-    "ephys-add-project": "project-add-form", "2p-add-project": "project-add-form",
-    "ephys-add-cohort": "cohort-add-form",
     "ephys-procedure-form": "procedure-add-form",
     "ephys-epochs-tab": "single-entry-view-session-epochs",
-    "exports-export-menu": "single-entry-view-export-menu",
-    "specimen-set-form": "specimenset-add-form",
     "project-manage-members": "project-permissions",
 }
 
@@ -1394,6 +1561,8 @@ def run(slugs: list[str]):
         for target in wanted:
             slug = target["slug"]
             index, step = -1, ("",)
+            if target.get("no_save"):
+                page.route("**/*", guard_writes)
             try:
                 path = target["go"](page) if callable(target["go"]) else target["go"]
                 page.set_viewport_size(target.get("viewport", VIEWPORT))
@@ -1406,6 +1575,8 @@ def run(slugs: list[str]):
                     page.add_style_tag(content=HIDE_CSS)
                     if "brainstem-assistant" not in str(target.get("steps")):
                         page.add_style_tag(content=".brainstem-assistant__launcher{display:none!important}")
+                    if target.get("css"):
+                        page.add_style_tag(content=target["css"])
                 page.wait_for_timeout(500)
                 # The assistant drawer remembers that it was open; keep it out of unrelated pictures.
                 if page.locator(".brainstem-assistant__close:visible").count():
@@ -1433,16 +1604,26 @@ def run(slugs: list[str]):
                 else:
                     page.screenshot(path=str(file), full_page=target.get("full", False))
                 for step in target.get("after", []):
-                    if step[0] == "press":
-                        page.keyboard.press(step[2])
-                    elif step[0] == "click_sel":
+                    if step[0] == "click_sel":
                         page.locator(step[1]).first.click(timeout=4000)
+                    else:
+                        do_step(page, step)
                 done.append(slug)
                 print(f"ok      {slug}")
             except Exception as error:  # noqa: BLE001
                 where = f" at step {index + 1} {step[:2]}" if target.get("steps") and "index" in locals() else ""
                 failed.append((slug, str(error).splitlines()[0][:140]))
                 print(f"FAILED  {slug}{where}: {str(error).splitlines()[0][:140]}")
+            finally:
+                for step in target.get("cleanup", []):
+                    try:
+                        do_step(page, step)
+                    except Exception as error:  # noqa: BLE001
+                        print(f"        (cleanup of {slug} failed: {str(error).splitlines()[0][:120]})")
+                if target.get("no_save"):
+                    # Leave the page while writes are still refused: an autosave fires as the page unloads.
+                    page.goto("about:blank")
+                    page.unroute("**/*", guard_writes)
         browser.close()
         if not slugs or any(w["slug"] in slugs for w in WALKTHROUGHS) or "walkthroughs" in slugs:
             walk_done, walk_failed = record_walkthroughs(p, [] if "walkthroughs" in slugs else slugs)

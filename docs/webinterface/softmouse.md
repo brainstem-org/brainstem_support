@@ -22,21 +22,26 @@ The SoftMouse integration imports colony records from SoftMouse into BrainSTEM. 
 | SoftMouse | BrainSTEM | Source |
 |-----------|-----------|--------|
 | Animals | Subjects | API and Excel |
-| Studies | Cohorts (each study also becomes a private project) | API and Excel |
+| Studies | Cohorts in each of the import's target projects (no new project is created) | API and Excel |
 | Protocols | Licenses | API and Excel |
 | Cages | Housing logs (subject logs) | API and Excel |
 | Matings | Breedings | Excel only |
 | Litters, Strains | Information only, not imported | Excel |
 
-Samples are not imported, and deletions in SoftMouse are never applied in BrainSTEM. Open the integration from **Tools** → **SoftMouse integration**. Until credentials are saved it redirects to the credentials page.
+Samples are not imported.
+
+{: .note }
+> Deletions in SoftMouse are never applied in BrainSTEM. An animal, study, cage or protocol you delete in SoftMouse stays in BrainSTEM until you delete it there yourself.
+
+Open the integration from **Tools** → **SoftMouse integration**. Until credentials are saved it redirects to the credentials page.
 
 ## Credentials and defaults
 
 The **SoftMouse Integration** page holds your connection and import defaults. Credentials are personal (one SoftMouse account per BrainSTEM user) and stored encrypted.
 
-![The SoftMouse integration page before connecting: account credentials, the subject naming convention and the import defaults.]({{site.baseurl}}/assets/images/screenshots/softmouse-import-preview.png)
+![The SoftMouse Integration credentials form before connecting: Username and Password, the subject naming convention and the Browse & Import defaults.]({{site.baseurl}}/assets/images/screenshots/softmouse-credentials.png)
 {: .screenshot }
-*The SoftMouse integration page before connecting: account credentials, the subject naming convention and the import defaults.*
+*The SoftMouse Integration credentials form before connecting: Username and Password, the subject naming convention and the Browse & Import defaults.*
 
 - **Username** and **Password** of your SoftMouse account. "Your SoftMouse account must include API access to browse or sync data directly. You can still export your data from SoftMouse as an Excel file and upload it to BrainSTEM, if API access is unavailable…"
 - **Subject naming convention**: a **Subject Name Prefix** (up to 50 characters, unique across BrainSTEM) and a **Subject Naming Template**, either **Prefix + GUI ID** (for example LAB-12345) or **Prefix + Physical Tag + GUI ID** (LAB-T1-12345).
@@ -58,7 +63,11 @@ Select rows and click **Import Selected**, or **Import All**.
 
 The **Import Configuration** dialog asks for the **Target projects**, **Subject naming** and **Subject species** (required), and optionally a **Write-access group** and a **Housing log protocol**. Under **Record mappings** you match SoftMouse strains, suppliers and protocols to BrainSTEM entries in the **Taxonomy Mapping**, **Resource Mapping** and **License Mapping** tables. **Create Inline** adds a missing strain or supplier on the spot (it stays pending approval until the BrainSTEM team reviews it) and **Open full … form** opens the full form. Mappings are remembered for later imports.
 
+A study does not become a project of its own. It is imported as cohorts inside each of the **Target projects**: one cohort per SoftMouse group of the study, or a single cohort named after the study when it has no groups. A study import therefore needs at least one target project.
+
 Click **Generate Preview**. Every record gets a status:
+
+<!-- screenshot: softmouse-import-preview | The Import Configuration preview with Create, Update, Skip and Blocked statuses -->
 
 | Status | Meaning |
 |--------|---------|
@@ -68,6 +77,9 @@ Click **Generate Preview**. Every record gets a status:
 | **Blocked** | Cannot be imported, for example a missing mapping or a sire or dam that is not imported through the same connection |
 
 Up to 500 records per type are shown in the preview. Choose **Update existing records** or **Skip updates** and click **Start Import**. A preview is valid for 30 minutes and can be used once.
+
+{: .warning }
+> **Update existing records** overwrites the imported fields of matching subjects, cohorts, licenses and housing logs with the SoftMouse values, including changes made in BrainSTEM since the last import. Choose **Skip updates** to create new records only and leave existing ones unchanged.
 
 ### How animals are mapped
 {: .no_toc}

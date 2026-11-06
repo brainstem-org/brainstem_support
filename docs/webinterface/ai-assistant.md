@@ -17,9 +17,9 @@ nav_order: 1
 
 ## Overview
 
-The AI assistant is a semantic search over your BrainSTEM records: ask in plain language, for example "Long Evans subjects with virus injections in CA1", and it returns the matching records. A language model translates the question into a structured query; BrainSTEM validates the query and runs it on its own server, with your permissions. Vector embeddings of the anatomical regions and of the consumable and hardware catalogs resolve names that are not written exactly as stored. The assistant only reads: it never creates, changes or deletes records.
+The AI assistant finds records for you. Ask a question in plain language, for example "Long Evans subjects with virus injections in CA1", and it shows the matching records as cards; when more records match than it shows, it can link to the full list. The search runs on BrainSTEM's server with your permissions, so you see only records you can already read. Region and product names do not have to be written exactly as stored. The assistant only reads: it never creates, changes or deletes records. What it sends to the language model provider is listed under [Privacy](#privacy).
 
-For AI use outside the web interface, see the [MCP server]({{"api/mcp/"|absolute_url}}) and the [agent skills]({{"tools/agent-skills/"|absolute_url}}).
+For AI use outside the web interface, see the [MCP server]({{"api/mcp/"|absolute_url}}) and the [agent skills]({{"tools/agent-skills/"|absolute_url}}); [Working with AI]({{"tutorials/working-with-ai/#what-each-channel-sees-and-can-change"|absolute_url}}) compares what each of them sends and can change.
 
 ## Opening the assistant
 
@@ -43,7 +43,10 @@ What it can find:
 
 Follow-up questions refine the previous result: "only last month", "among these sessions", "show the collections of these sessions". The browser keeps the last five questions and answers of the conversation; the **Recent** dropdown lists "Your recent searches, kept on this device only".
 
-Search tips shown in the drawer: "We suggest using quotation marks for exact names, e.g. "Pilot study". When relevant, include the model name or record type, e.g. find sessions with silicon probe implant procedure." Ordinary criteria use "a bounded evidence scan of up to 1,000 rows", so very broad questions may not return every match.
+Search tips shown in the drawer: "We suggest using quotation marks for exact names, e.g. "Pilot study". When relevant, include the model name or record type, e.g. find sessions with silicon probe implant procedure."
+
+{: .note }
+> Ordinary criteria use "a bounded evidence scan of up to 1,000 rows", so the result of a very broad question can be incomplete. Narrow the question, or open the linked list view to work with the full set.
 
 ### Example searches
 {: .no_toc}
@@ -68,7 +71,10 @@ The **Page context** switch, off by default, lets the assistant "Include approve
 ### AI summary
 {: .no_toc}
 
-The **AI summary** toggle, off by default, asks the model to "grade each result card and write a short summary. Slower and uses more tokens." For this, the result cards are sent to the provider: each record's name, a short description and the evidence for the match.
+The **AI summary** toggle, off by default, asks the model to "grade each result card and write a short summary. Slower and uses more tokens."
+
+{: .note }
+> With **AI summary** on, the result cards are sent to the language model provider: each record's name, a short description and the evidence for the match. Without it, your records stay on BrainSTEM's server. See [Privacy](#privacy).
 
 ## How to
 
@@ -82,8 +88,8 @@ The **How to** tab is off unless the site enables it. When it is shown, you can 
 {: .screenshot }
 *AI assistant settings: this month's free allowance and the option to use your own key.*
 
-- **Your AI usage** shows what the assistant has used on your account: calls and tokens ("Tokens are the text the model read and wrote."), the share of this month's free allowance left and when it resets. "Complex questions with several conditions use more of the allowance than simple ones. Searches are free up to this allowance; when it runs out, searching pauses until it resets, or you can use your own key."
-- **Use my provider and model** switches to your own provider account. Choose a provider (OpenRouter, OpenAI or DeepSeek), paste your API key, enter a model id (for example `openai/gpt-4.1-mini` on OpenRouter, `gpt-4o` on OpenAI or `deepseek-chat`) and optionally a reasoning effort for reasoning models. "Personal configuration applies only while the switch below is on." With your own key "your provider bills you directly, typically a few cents per search depending on the model, and BrainSTEM's allowance no longer applies."
+- **Your assistant usage** shows how much of this month's free allowance is left (for example "About 6–10 searches left this month") and when it resets, and how many "Fill out" suggestions you used today. While you search with your own key it shows what you spent this month and in total instead. "Complex questions with several conditions use more of the allowance than simple ones. Searches are free up to this allowance; when it runs out, searching pauses until it resets, or you can use your own key."
+- Under **Your own key**, choose a **Provider** (OpenRouter, OpenAI or DeepSeek), paste your **API key**, optionally enter a **Model** id exactly as your provider lists it (left blank, BrainSTEM's recommended model is used) and, under **Advanced**, a **Reasoning** effort for reasoning models. Click **Save settings**, then turn on **Search with my own key** ("Save a key to enable this switch."). With your own key "your provider bills you directly, typically a few cents per search depending on the model, and BrainSTEM's allowance no longer applies."
 - **Test connection** sends "one tiny request with the values above (or your saved key) and report whether the provider answers and how fast. Nothing is saved."
 
 When to use your own key, as the page puts it: BrainSTEM's free allowance is used up and you want to keep searching; you want a different or stronger model; or your lab or institution requires its own provider account.

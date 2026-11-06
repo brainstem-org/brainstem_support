@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data model
-nav_order: 2
+nav_order: 3
 has_children: true
 has_toc: false
 ---
@@ -26,6 +26,14 @@ Records belong to projects, which decide who can see and edit them, so a lab kee
 The **Overview** below is a drawing of the whole model; the **Interactive** view is the complete current model, copied from the BrainSTEM server's public reference: every model as a card with its fields, every relation, where each model inherits its permissions from, and the fields of every type. **Expand** opens it with its search, layouts, layers and detail panel. The same diagram is embedded on each model page, focused on that model, and is available inside BrainSTEM from the Help menu and the Graph tab of every help dialog.
 
 {% include datamodel_switch.html image="/assets/images/diagrams/data-model-overview.svg" alt="Overview of the BrainSTEM data model: users and groups hold roles on projects; projects own subjects, specimen sets and sessions with their modules; personal attributes are owned and shared by users and groups, like projects; the shared catalog and taxonomies are used by everyone" title="Interactive data model" query="view=overview&show=shared" max_height="1400" %}
+
+### Where do I record it?
+{: .no_toc}
+
+What happened decides which kind of entry records it: an action on a subject, an observation over time, a device that stays in place, tissue taken out, or what was measured, delivered or done in a session.
+
+![Which kind of entry records what happened: procedures, subject logs, interfaces, specimen sets, data acquisition, manipulations, behaviors, epochs and material usage]({{site.baseurl}}/assets/images/diagrams/where-to-record.svg)
+*Which kind of entry records what happened. Each kind has its own page under [Organization of the models](#organization-of-the-models).*
 
 ### Organization of the models
 {: .no_toc}

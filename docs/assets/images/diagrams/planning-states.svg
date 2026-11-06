@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" width="1400" height="820" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Planning states: a planned procedure, specimen procedure, session or breeding becomes performed with Mark as performed (breedings: Mark as started) or is cancelled; the transition is checked, a performed implant with an experimental interface cannot go back to planned, and planned entries show in lists but not in statistics, the API by default or the public portal.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="820" fill="#fff"/>
+  <text x="40" y="40" font-size="18" font-weight="600" fill="#2c2a38">Planned, performed and cancelled</text>
+  <rect x="40" y="60" width="900" height="108" rx="8" fill="#6f6d82" fill-opacity="0.07" stroke="#6f6d82" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="54" y="84" font-size="16" font-weight="600" fill="#6f6d82">Entries with a planning status</text>
+  <rect x="60" y="100" width="200" height="48" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="160" y="129" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Procedures</text>
+  <rect x="275" y="100" width="210" height="48" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="380" y="129" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Specimen procedures</text>
+  <rect x="500" y="100" width="200" height="48" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="600" y="129" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Sessions</text>
+  <rect x="715" y="100" width="200" height="48" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="815" y="129" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Breedings</text>
+  <path d="M320 258 L660 258" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="490" y="246" font-size="16" font-weight="600" fill="#2c2a38" text-anchor="middle">Mark as performed</text>
+  <text x="490" y="282" font-size="14" fill="#4a4858" text-anchor="middle">breedings: Mark as started</text>
+  <path d="M150 306 L150 420" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="162" y="398" font-size="14" fill="#4a4858" text-anchor="start">Status: Cancelled</text>
+  <path d="M720 306 L720 352 L250 352 L250 306" fill="none" stroke="#6f6d82" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <text x="485" y="376" font-size="14" fill="#4a4858" text-anchor="middle">back to planned, in the Status field</text>
+  <path d="M860 306 L860 420" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="850" y="392" font-size="14" fill="#4a4858" text-anchor="end">implants create</text>
+  <rect x="60" y="210" width="260" height="96" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="190" y="241.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle">Planned</text>
+  <text x="190" y="263.5" font-size="15" fill="#4a4858" text-anchor="middle">prepared; nothing happened</text>
+  <text x="190" y="285.5" font-size="15" fill="#4a4858" text-anchor="middle">the date is the intended one</text>
+  <rect x="660" y="210" width="260" height="96" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="790" y="241.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle">Performed</text>
+  <text x="790" y="263.5" font-size="15" fill="#4a4858" text-anchor="middle">describes what was done</text>
+  <text x="790" y="285.5" font-size="15" fill="#4a4858" text-anchor="middle">the default for new entries</text>
+  <rect x="60" y="420" width="260" height="96" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="190" y="451.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle">Cancelled</text>
+  <text x="190" y="473.5" font-size="15" fill="#4a4858" text-anchor="middle">planned, then dropped</text>
+  <text x="190" y="495.5" font-size="15" fill="#4a4858" text-anchor="middle">kept for the record</text>
+  <rect x="660" y="420" width="260" height="96" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="790" y="451.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Experimental interface</text>
+  <text x="790" y="473.5" font-size="15" fill="#2c2a38" text-anchor="middle">created when an implant</text>
+  <text x="790" y="495.5" font-size="15" fill="#2c2a38" text-anchor="middle">procedure is performed</text>
+  <rect x="60" y="540" width="860" height="136" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
+  <text x="74" y="568.5" font-size="15" fill="#2c2a38" font-weight="600">Checked when a plan becomes performed</text>
+  <text x="74" y="590.5" font-size="15" fill="#4a4858">Procedure: subject enrolled, episode not planned, date and time set</text>
+  <text x="74" y="612.5" font-size="15" fill="#4a4858">Specimen procedure: set (and targeted specimens) collected, date set</text>
+  <text x="74" y="634.5" font-size="15" fill="#4a4858">Session: subjects enrolled, specimen sets collected</text>
+  <text x="74" y="656.5" font-size="15" fill="#4a4858">Breeding: parents enrolled, pairing date set</text>
+  <rect x="60" y="692" width="860" height="96" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
+  <text x="74" y="722.5" font-size="15" fill="#2c2a38" font-weight="600">Refused when going back to planned</text>
+  <text x="74" y="744.5" font-size="15" fill="#4a4858">a performed implant procedure with linked experimental interfaces</text>
+  <text x="74" y="766.5" font-size="15" fill="#4a4858">a breeding whose offspring already exist</text>
+  <rect x="980" y="60" width="380" height="728" rx="8" fill="#6f6d82" fill-opacity="0.07" stroke="#6f6d82" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="994" y="84" font-size="16" font-weight="600" fill="#6f6d82">Where planned entries show</text>
+  <rect x="1000" y="102" width="340" height="120" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1170" y="145" font-size="18" font-weight="600" fill="#2c2a38" text-anchor="middle">Lists and forms</text>
+  <text x="1170" y="168" font-size="16" fill="#4a4858" text-anchor="middle">Yes: a Planned pill,</text>
+  <text x="1170" y="191" font-size="16" fill="#4a4858" text-anchor="middle">a Status column and filter</text>
+  <rect x="1000" y="236" width="340" height="120" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1170" y="279" font-size="18" font-weight="600" fill="#2c2a38" text-anchor="middle">Dropdowns and links</text>
+  <text x="1170" y="302" font-size="16" fill="#4a4858" text-anchor="middle">Yes: names start with</text>
+  <text x="1170" y="325" font-size="16" fill="#4a4858" text-anchor="middle">Planned: or Cancelled:</text>
+  <rect x="1000" y="370" width="340" height="120" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1170" y="413" font-size="18" font-weight="600" fill="#2c2a38" text-anchor="middle">Statistics and counts</text>
+  <text x="1170" y="436" font-size="16" fill="#4a4858" text-anchor="middle">No: dashboard statistics and</text>
+  <text x="1170" y="459" font-size="16" fill="#4a4858" text-anchor="middle">licence counts are performed only</text>
+  <rect x="1000" y="504" width="340" height="120" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1170" y="547" font-size="18" font-weight="600" fill="#2c2a38" text-anchor="middle">API</text>
+  <text x="1170" y="570" font-size="16" fill="#4a4858" text-anchor="middle">Only when asked:</text>
+  <text x="1170" y="593" font-size="16" fill="#4a4858" text-anchor="middle">include_planned=true</text>
+  <rect x="1000" y="638" width="340" height="120" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1170" y="681" font-size="18" font-weight="600" fill="#2c2a38" text-anchor="middle">Public portal</text>
+  <text x="1170" y="704" font-size="16" fill="#4a4858" text-anchor="middle">Never, even when the</text>
+  <text x="1170" y="727" font-size="16" fill="#4a4858" text-anchor="middle">project is public</text>
+</svg>

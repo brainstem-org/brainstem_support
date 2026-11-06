@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 970" width="1400" height="970" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Where do I record it: an intervention performed on the animal is a procedure; a measure or observation of the animal is a subject log; a device left in or on the animal is an experimental interface, created by its implant procedure; tissue taken for ex-vivo work is a specimen set, processed in specimen procedures; a product used is a material usage row; in a session, a recorded signal is a data acquisition, a delivered stimulus a manipulation, a task a behavior and a time segment an epoch.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="970" fill="#fff"/>
+  <text x="40" y="40" font-size="18" font-weight="600" fill="#2c2a38">Where do I record it?</text>
+  <text x="60" y="84" font-size="15" font-weight="600" fill="#4a4858">What happened</text>
+  <text x="620" y="84" font-size="15" font-weight="600" fill="#4a4858">Record it as</text>
+  <text x="1090" y="84" font-size="15" font-weight="600" fill="#4a4858">Related entry</text>
+  <rect x="40" y="96" width="1340" height="436" rx="8" fill="#6f6d82" fill-opacity="0.07" stroke="#6f6d82" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="54" y="120" font-size="16" font-weight="600" fill="#6f6d82">Outside a session: on the animal or its tissue</text>
+  <rect x="60" y="140" width="470" height="64" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="76" y="166.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="start">An intervention on the animal</text>
+  <text x="76" y="188.5" font-size="15" fill="#4a4858" text-anchor="start">surgery, implant, injection, anesthesia, perfusion</text>
+  <path d="M530 172 L620 172" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="620" y="140" width="340" height="64" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="790" y="166.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Procedure</text>
+  <text x="790" y="188.5" font-size="15" fill="#fff" text-anchor="middle">an intervention performed on the subject</text>
+  <rect x="60" y="218" width="470" height="64" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="76" y="244.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="start">A measure or observation of the animal</text>
+  <text x="76" y="266.5" font-size="15" fill="#4a4858" text-anchor="start">weight, health check, water intake, training progress</text>
+  <path d="M530 250 L620 250" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="620" y="218" width="340" height="64" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="790" y="244.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Subject log</text>
+  <text x="790" y="266.5" font-size="15" fill="#fff" text-anchor="middle">dated measures and observations</text>
+  <rect x="60" y="296" width="470" height="64" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="76" y="322.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="start">A device left in or on the animal</text>
+  <text x="76" y="344.5" font-size="15" fill="#4a4858" text-anchor="start">probe, optic fiber, cannula, window, headpost</text>
+  <path d="M530 328 L620 328" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="620" y="296" width="340" height="64" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="790" y="322.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Experimental interface</text>
+  <text x="790" y="344.5" font-size="15" fill="#fff" text-anchor="middle">kept for later sessions</text>
+  <path d="M1090 328 L960 328" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1025.0" y="319.0" font-size="14" fill="#4a4858" text-anchor="middle">creates</text>
+  <rect x="1090" y="296" width="270" height="64" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1225" y="322.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Implant procedure</text>
+  <text x="1225" y="344.5" font-size="15" fill="#2c2a38" text-anchor="middle">creates it when performed</text>
+  <rect x="60" y="374" width="470" height="64" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="76" y="400.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="start">Tissue taken for ex-vivo work</text>
+  <text x="76" y="422.5" font-size="15" fill="#4a4858" text-anchor="start">slices, sections, cultures, organoids</text>
+  <path d="M530 406 L620 406" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="620" y="374" width="340" height="64" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="790" y="400.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Specimen set</text>
+  <text x="790" y="422.5" font-size="15" fill="#fff" text-anchor="middle">a batch of material from the subject</text>
+  <path d="M960 406 L1090 406" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1025.0" y="397.0" font-size="14" fill="#4a4858" text-anchor="middle">processed in</text>
+  <rect x="1090" y="374" width="270" height="64" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1225" y="400.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Specimen procedure</text>
+  <text x="1225" y="422.5" font-size="15" fill="#2c2a38" text-anchor="middle">sectioning, fixation, staining</text>
+  <rect x="60" y="452" width="470" height="64" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="76" y="478.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="start">A product or lot that was used</text>
+  <text x="76" y="500.5" font-size="15" fill="#4a4858" text-anchor="start">drug, virus, probe, cement, screws</text>
+  <path d="M530 484 L620 484" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="620" y="452" width="340" height="64" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="790" y="478.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Material usage</text>
+  <text x="790" y="500.5" font-size="15" fill="#fff" text-anchor="middle">role, product, source, amount</text>
+  <path d="M960 484 L1090 484" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1025.0" y="475.0" font-size="14" fill="#4a4858" text-anchor="middle">a row of</text>
+  <rect x="1090" y="452" width="270" height="64" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1225" y="478.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Procedure</text>
+  <text x="1225" y="500.5" font-size="15" fill="#2c2a38" text-anchor="middle">or specimen procedure</text>
+  <rect x="40" y="552" width="1340" height="358" rx="8" fill="#6f6d82" fill-opacity="0.07" stroke="#6f6d82" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="54" y="576" font-size="16" font-weight="600" fill="#6f6d82">During a session</text>
+  <rect x="60" y="596" width="470" height="64" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="76" y="622.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="start">A signal was recorded</text>
+  <text x="76" y="644.5" font-size="15" fill="#4a4858" text-anchor="start">ephys, imaging, video, audio</text>
+  <path d="M530 628 L620 628" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="620" y="596" width="340" height="64" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="790" y="622.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Data acquisition</text>
+  <text x="790" y="644.5" font-size="15" fill="#fff" text-anchor="middle">a recorded signal, through interfaces</text>
+  <rect x="60" y="674" width="470" height="64" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="76" y="700.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="start">Something delivered to the target</text>
+  <text x="76" y="722.5" font-size="15" fill="#4a4858" text-anchor="start">stimulus, optogenetics, drug delivery</text>
+  <path d="M530 706 L620 706" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="620" y="674" width="340" height="64" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="790" y="700.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Manipulation</text>
+  <text x="790" y="722.5" font-size="15" fill="#fff" text-anchor="middle">a delivered stimulus, through interfaces</text>
+  <rect x="60" y="752" width="470" height="64" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="76" y="778.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="start">The animal performed a task</text>
+  <text x="76" y="800.5" font-size="15" fill="#4a4858" text-anchor="start">an assay run on a setup</text>
+  <path d="M530 784 L620 784" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="620" y="752" width="340" height="64" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="790" y="778.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Behavior</text>
+  <text x="790" y="800.5" font-size="15" fill="#fff" text-anchor="middle">assay, setup and subjects</text>
+  <rect x="60" y="830" width="470" height="64" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="76" y="856.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="start">A stretch of time in the session</text>
+  <text x="76" y="878.5" font-size="15" fill="#4a4858" text-anchor="start">baseline, stimulation, recovery</text>
+  <path d="M530 862 L620 862" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="620" y="830" width="340" height="64" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="790" y="856.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Epoch</text>
+  <text x="790" y="878.5" font-size="15" fill="#fff" text-anchor="middle">start and end from session onset</text>
+  <rect x="60" y="932" width="20" height="20" rx="4" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="90" y="947" font-size="15" fill="#2c2a38">STEM data</text>
+  <rect x="192.39999999999998" y="932" width="20" height="20" rx="4" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="222.39999999999998" y="947" font-size="15" fill="#2c2a38">Modules</text>
+  <rect x="309.59999999999997" y="932" width="20" height="20" rx="4" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="339.59999999999997" y="947" font-size="15" fill="#2c2a38">related entry</text>
+</svg>

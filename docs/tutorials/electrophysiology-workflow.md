@@ -2,563 +2,278 @@
 layout: default
 title: Ephys Workflow
 parent: Tutorials
-nav_order: 8
+nav_order: 7
 ---
 
 # Ephys Workflow: Theta Maze with Sleep Sessions
 {: .no_toc}
 
-## Introduction
+This tutorial records a chronic Neuropixels experiment in rats, from the first animal to an exported project: a project, four subjects and their cohort, the probe implant with the experimental interface it creates, one day of recordings (sleep, the theta maze task, sleep again) and the collection that groups them. At the end you download the project as a JSON file that the NWB converter reads.
 
-This tutorial walks through a complete electrophysiology experiment in BrainSTEM, from subject preparation to data analysis. We'll document a multi-day theta maze learning study with sleep sessions, demonstrating how to integrate subjects, procedures, behavioral assays, data acquisition, manipulations, and collections in a realistic research workflow.
+## Table of contents
+{: .no_toc .text-delta }
 
-**Experimental Design Overview:**
-- **Subjects**: Rat cohort for spatial learning study
-- **Setup**: Theta maze with ceiling-mounted camera and OptiTrack 3D tracking
-- **Sessions**: Pre-behavior sleep → Theta maze behavior → Post-behavior sleep
-- **Data**: Neuropixels recordings, behavioral video, 3D position tracking
-- **Analysis**: Learning curves, replay detection, place cell analysis
+1. TOC
+{:toc}
+
+## Prerequisites
+
+- You are a Contributor of your lab's group (see [Get started!]({{site.baseurl}}/tutorials/get_started) and [Manage Groups]({{site.baseurl}}/tutorials/managing-groups)).
+- The records below exist; this tutorial selects them by these names.
+
+**Records you need first**
+
+| Name | Kind | Key settings | Created in |
+|------|------|--------------|------------|
+| Theta Maze Rig | Setup | **Setup type** Theta maze | [Lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) |
+| Sleep Recording Box | Setup | Where the rat sleeps before and after the task | [Lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) |
+| Surgical Station | Setup | Where the implant surgery is done | [Lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) |
+| Neuropixels System | Equipment | Records the probe | [Lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) |
+| Sleep Box Camera | Equipment | Camera of the Sleep Recording Box | [Lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) |
+| OptiTrack System | Equipment | Motion tracking of the Theta Maze Rig | [Lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) |
+| Stereotaxic Frame | Equipment | Frame of the Surgical Station | [Lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) |
+| Neural Electrode Inventory | Inventory | Holds the consumable stock **Neuropixels 2.0 probe**, status Available | [Lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) |
+| Lab Server | Data storage | Where the recordings are stored | [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) |
+| Theta Maze Alternation Task | Behavioral assay | **Setup type** Theta maze, **Behavioral paradigm** Delayed Alternation, **Authenticated groups** your lab group | [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) |
+
+Required fields are marked with an asterisk (*) in the web interface and in the tables below. Several forms open with a short first step and continue after **Create and continue**. Subject and session forms then save automatically.
 
 {: .note }
-> This tutorial assumes that the lab infrastructure is already set up (setups, equipment, inventories) as described in the [Setting Up Lab Infrastructure tutorial]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure).
+> Project, cohort and collection forms do not save automatically. Click **Save** before you leave them, or the changes are lost (see [Forms]({{site.baseurl}}/webinterface/forms/#autosave)).
 
-## Part A: Project and Subject Setup
+## Part A: Project and Subjects
 
-### Step 1: Creating the Research Project
+### Step 1: Create the project
 
-First, we'll create a project to organize and provide context for our experimental work. The project submission is split in two steps. First, you fill in required details, after which you can add other details. Required fields are highlighted with an asterix (*) in the web interface and this tutorial. 
+1. Go to **Projects** and click **Add project**.
+2. Enter **Project name (must be unique)** * *Theta Maze Spatial Learning Study* and select your lab group under **Authenticated groups**. The groups you select get Contributor access.
+3. Click **Create and continue**, enter the **Description** "Place cell dynamics and memory consolidation during theta maze alternation, with chronic Neuropixels recordings in rats and sleep before and after each session", leave **Project visibility** on *Private* and click **Save**.
 
-1. **Navigate to Projects**:
-   - Go to *Projects*
-   - Click *Add project*
+The form looks as in [Get started]({{site.baseurl}}/tutorials/get_started/#structure-your-work-create-your-first-project).
 
-![A project's form once created: name, project visibility and description; Online repositories and User roles are separate tabs.]({{site.baseurl}}/assets/images/screenshots/ephys-add-project.png)
-{: .screenshot }
-*A project's form once created: name, project visibility and description; Online repositories and User roles are separate tabs.*
+### Step 2: Add the subjects
 
-2. **Configure Project Details**:
+1. Go to **Subjects** and click **Add subject**.
+2. Fill in the first step:
 
 | Field | Value |
 |-------|-------|
-| **Name** * | Theta Maze Spatial Learning Study |
-| **Description** | Investigating hippocampal place cell dynamics and memory consolidation during spatial learning using theta maze behavioral assay with simultaneous Neuropixels recordings in freely moving rats. |
-| **Authenticated groups** | Select groups that should have access to this project |
-| **Project visibility** | Private (keep the project private to the lab) |
-
-{: .note }
-> Once submitted other details can be added. Additional project details like PI name, funding source, IACUC protocol numbers, and timeline information can be included in the project description or managed through your lab's separate project management systems. Authenticated groups will get contribute permissions. You can add additional groups or change permissions in the manage page: Go to *Project detail page* → *Manage*
-
-### Step 2: Adding Individual Subjects
-
-Now we'll add individual rats that will participate in our study.
-
-1. **Navigate to Add Subject**:
-   - Go to *Subjects* 
-   - Click *Add subject*
-
-![The Add subject form filled in for TM_R001: name, project, sex, species Rattus norvegicus with strain Long-Evans, and status Active (the demo project stands in for the tutorial's).]({{site.baseurl}}/assets/images/screenshots/ephys-add-subject.png)
-{: .screenshot }
-*The Add subject form filled in for TM_R001: name, project, sex, species Rattus norvegicus with strain Long-Evans, and status Active (the demo project stands in for the tutorial's).*
-
-2. **Subject Configuration Example**:
-
-| Field | Value |
-|-------|-------|
-| **Name** * | TM_R001 |
-| **Projects** * | Select: Theta Maze Spatial Learning Study |
+| **Subject name (must be unique)** * | TM_R001 |
+| **Projects** * | Theta Maze Spatial Learning Study |
 | **Sex** * | Male |
-| **Species** * | Select: Rattus norvegicus |
-| **Strain** | Select: Long-Evans (optional; the list only shows strains of the chosen species) |
+| **Species** * | Rattus norvegicus |
+| **Strain** | Long-Evans (only strains of the chosen species are listed) |
 | **Status** * | Active |
-| **Description** | Male Long-Evans rat for theta maze spatial learning study with Neuropixels recordings |
-| **Genetic Line** | Wild type |
-| **Birth Date** | 2024-05-01 |
-| **Subject Identifier** | Red-001 (ear tag number) |
 
-**Repeat this process to create additional subjects:**
-- TM_R002, TM_R003, TM_R004 (for a cohort of 4 rats)
-- Use similar configurations but update IDs, ear tags
+The form looks as in [Get started]({{site.baseurl}}/tutorials/get_started/#create-your-first-subject).
 
-{: .note }
-> The additional subjects can be duplicated from the first subject. Go to the *Subject detail page of the first subject* → *Duplicate*.
-> Fill in the new subject name, choose which procedures and logs to copy, click **Check copy** and then **Duplicate**. **Copy as a plan** marks everything copied as planned, which suits animals that are not yet enrolled. Interfaces (the physical implant) are never copied.
+3. Click **Create and continue** and add **Genetic line** *Wild type*, **Birth date** 2024-05-01 and **Subject identifier** *Red-001* (the ear tag).
+4. Add TM_R002, TM_R003 and TM_R004 the same way, or open TM_R001 and click **Duplicate**: enter the new name, choose which procedures and logs to copy, click **Check copy** and then **Duplicate**.
 
-### Step 2b: Document Initial Housing and Weight
+### Step 3: Record housing and weight
 
-After creating subjects, document their housing conditions and initial weights using subject logs.
-
-1. **Create Housing Log**:
-   - Go to *Subject logs* (below Subjects)
-   - Click *Add subject log*
-
-**Housing Log Configuration:**
+1. Open TM_R001 and click **Edit**. The **Subject Logs** panel lists the subject's logs.
+2. Click **Add log**, choose **Housing log**, enter the **Description** "Housing for the theta maze cohort" and click **Next**. Fill in the first entry and click **Save entry**:
 
 | Field | Value |
 |-------|-------|
-| **Type** | Housing log |
-| **Subject** | Select: TM_R001 |
-| **Description** | Initial housing assignment for experimental cohort |
-
-**Type-specific Details:**
-
-| Field | Value |
-|-------|-------|
-| **Start and end time** | 2024-08-01 08:00:00 to 2024-12-31 18:00:00 |
-| **Notes** | Pair-housed with TM_R002. Standard rat cages with enrichment. |
+| **Start and end time** | 2024-08-01 08:00:00 (leave the end empty) |
 | **Location** | Animal Facility Room 204 |
 | **Cage ID** | Cage_A1_pair |
-| **Cage type** | NexGen Rat 1800 |
 | **Light cycle** | 12:12 light-dark cycle (lights on 07:00) |
-| **Enrichment** | Paper tubes, wooden chew blocks |
 
-{: .note }
-> Only the start time is required, so you can leave the end time blank.
+3. Click **Add log** again, choose **Weighing log**, click **Next** and save an entry with **Date and time** 2024-08-01 09:00:00 and **Weight** 385 g.
 
-2. **Create Initial Weighing Log**:
+Later entries go into the same logs with **Add entry**. The fields of every log type are on the [Subject log types]({{site.baseurl}}/datamodel/schemas/subjectlog/) page.
 
-**Weighing Log Configuration:**
+### Step 4: Create the cohort
 
-| Field | Value |
-|-------|-------|
-| **Type** | Weighing log |
-| **Subject** | Select: TM_R001 |
+1. Go to **Cohorts** (below Subjects) and click **Add cohort**.
+2. Enter **Cohort name** *TM_Learning_Cohort_1*, **Project** *Theta Maze Spatial Learning Study* and **Subjects** TM_R001 to TM_R004.
+3. Click **Create and continue**, add the **Description** "4 male Long-Evans rats, pair housed, food restricted to 85% of body weight during training" and click **Save**.
 
-**Type-specific Details:**
+## Part B: Surgery and Interfaces
 
-| Field | Value |
-|-------|-------|
-| **Weight (grams)** | 385 |
-| **Date and time** | 2024-08-01 09:00:00 |
-| **Notes** | Pre-experiment baseline weight. Animal healthy and active. |
+![Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)
+*Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.*
 
-### Step 3: Creating the Experimental Cohort
+### Step 5: Record the Neuropixels implant
 
-After creating individual subjects, we can group them into a cohort for experimental organization.
+A procedure records the surgery with its coordinates, target regions and materials. Creating a performed **Silicon probe implant** also creates the **experimental interface** (the implanted probe) that the recordings refer to.
 
-1. **Navigate to Cohorts**:
-   - Go to *Cohorts* (below Subjects)
-   - Click *Add cohort*
-
-![A cohort's form: name, project and the rat subjects it groups.]({{site.baseurl}}/assets/images/screenshots/ephys-add-cohort.png)
-{: .screenshot }
-*A cohort's form: name, project and the rat subjects it groups.*
-
-
-2. **Configure Cohort Details**:
+1. Go to **Subjects** → **Procedures**, click **Add procedure** and choose **Create blank**.
+2. Fill in:
 
 | Field | Value |
 |-------|-------|
-| **Name** | TM_Learning_Cohort_1 |
-| **Project** | Select: Theta Maze Spatial Learning Study |
-| **Subjects** | Select: TM_R001, TM_R002, TM_R003, TM_R004 |
-| **Description** | First experimental cohort for theta maze spatial learning study. 4 male Long-Evans rats, age-matched littermates, trained on alternation task with Neuropixels recordings. Pair housed, 12:12 light cycle, food restricted to 85% body weight during training. |
-| **Tags** | theta maze, spatial learning, neuropixels, male rats |
-
-
-### Step 4: Equipment and Setup Verification
-
-Verify your theta maze setup includes all necessary equipment:
-
-**Required Equipment**:
-- Neuropixels data acquisition system (IMEC - Neuropixels OneBox)
-- Ceiling-mounted camera for behavioral tracking (Basler - acA640-90uc)
-- OptiTrack motion capture system for 3D head tracking (6+ cameras OptiTrack - Flex 13)
-
-### Step 5: Neuropixels Probe Implantation Procedure
-
-Document the surgical procedure for Neuropixels probe implantation. A procedure records the event: its type, date, coordinates, target regions, and the **materials** it used. Saving an implant procedure also creates the **experimental interface** (the implanted probe) that sessions refer to later.
-
-1. **Navigate to Procedures**:
-   - Go to *Subjects*
-   - Open subject *TM_R001* and click *Edit*; procedures are added from the subject page, or from *Subjects* → *Procedures* → *Add procedure* → *Create blank*
-
-![The Procedures tab of a subject's page (here rat R06 Carol): each procedure with its details and its Edit, Duplicate, Template, Delete and API buttons]({{site.baseurl}}/assets/images/screenshots/ephys-subject-procedures.png)
-{: .screenshot }
-*The Procedures tab of a subject's page (here rat R06 Carol): each procedure with its details and its Edit, Duplicate, Template, Delete and API buttons*
-
-
-2. **Procedure Configuration**:
-
-**Basic Information:**
-
-| Field | Value |
-|-------|-------|
-| **Type** * | Silicon probe implant |
-| **Subject** * | Select: TM_R001 |
-| **Status** * | Performed |
+| **Type of procedure** * | Silicon probe implant |
 | **Date and time of the procedure** | 2024-08-15 10:00:00 |
-| **Equipment** | Select: Stereotaxic Frame (from the Surgical Station setup) |
-| **Protocol** | Select your implantation protocol, if you keep one |
+| **Subject** * | TM_R001 |
+| **Setup** | Surgical Station (narrows the equipment list) |
+| **Equipment** | Stereotaxic Frame |
 | **Atlas** | Waxholm Space Sprague Dawley Rat Brain Atlas |
-| **Target regions** | Type to search regions and select the hippocampal CA1 region |
-| **Notes** | Chronic Neuropixels probe implantation targeting CA1/CA3 hippocampus. |
-| **Coordinates** | Stereotaxic Bregma-Based Surface Coordinates with Depth |
+| **Target regions** | Cornu ammonis 1, Dentate gyrus |
+| **Status** * | Performed |
+| **Notes** | Chronic Neuropixels 2.0 implant in right dorsal hippocampus. |
 
 ![A silicon probe implant's form: type, date, subject, episode, setup and equipment, atlas and target regions, licenses, protocol, performed by and status.]({{site.baseurl}}/assets/images/screenshots/ephys-procedure-form.png)
 {: .screenshot }
 *A silicon probe implant's form: type, date, subject, episode, setup and equipment, atlas and target regions, licenses, protocol, performed by and status.*
 
+3. Under **Details** set **Dura handling** *Punctured*, **Ground placement** and **Reference placement** *Over the cerebellum*, and **Fixation method** *Dental cement* and *Anchor screws*.
+4. Set **Coordinates** to **Stereotaxic Bregma-Based Absolute Coordinates** and enter the probe tip: **AP coordinate** -3.5 mm, **ML coordinate** 2.5 mm, **DV coordinate** 3.6 mm, and 0° for **AP angle**, **ML angle** and **Rotation**. Click **View coordinates** to check the track in the rat atlas (see [Atlases and coordinates]({{site.baseurl}}/webinterface/atlases-and-coordinates/)).
+
+{: .note }
+> Choose an absolute Bregma-based system if you plan to export to NWB. The converter writes it as a localization point; surface systems with a depth are not written (see [Exporting to NWB]({{site.baseurl}}/tutorials/exporting-to-nwb/#limitations)).
+
+5. On the **Materials** tab click **+ Add material** and add these rows (see [Materials]({{site.baseurl}}/datamodel/materials/)):
+
+| Material role | Material source | Value |
+|---------------|-----------------|-------|
+| **Silicon probe** (required) | Consumable stock | **Inventory** Neural Electrode Inventory, **Consumable stock** Neuropixels 2.0 probe |
+| **Adhesive, cement, or sealant** | Manual entry | Dental cement |
+| **Anchor screw, pin, or fastener** | Manual entry | Stainless steel skull screws |
+
 {% include walkthrough.html slug="ephys-procedure-materials" caption="The Materials tab of a silicon probe implant: its material rows, and the Add material menu listing the roles this procedure type accepts." %}
 
+The probe's sites, channels and spacing come from its design in the [probe catalog]({{site.baseurl}}/webinterface/probe-catalog/). Stock quantities are not counted down: set the stock's **Status** by hand when the last probe is used.
 
-**Coordinate Details:**
+6. Click **Create**. As the form's notice says, this creates a *Silicon probe* experimental interface, *TM_R001 \| Silicon probe implant*, listed on the procedure's **Experimental interfaces** tab and under **Sessions** → **Experimental interfaces**. The procedure appears on the **Procedures** tab of the subject's page:
 
-| Field | Value |
-|-------|-------|
-| **AP coordinate** | -3.5 mm |
-| **ML coordinate** | +2.5 mm |
-| **Depth** | 2.0 mm (from the brain surface) |
-| **AP angle** | 0° |
-| **ML angle** | 0° |
-| **Rotation** | 0° |
-
-Click **View coordinates** to preview the entry point and implantation track in the atlas. The viewer offers 3D, coronal, sagittal and horizontal views and draws the probe shanks from the linked probe design. It is available for species with a volumetric atlas, such as mouse (Allen CCF) and rat (Waxholm Space), once the subject, a supported coordinate system and the required coordinate values are filled in. See [Atlases and coordinates]({{site.baseurl}}/webinterface/atlases-and-coordinates/).
-
-3. **Materials** tab:
-
-The former single "Consumable stock" field has been replaced by material rows. Each procedure type declares which material roles it accepts; for a silicon probe implant the **Silicon probe** row is required.
-
-   - Click **+ Add material** and choose **Silicon probe**.
-   - Choose the **Material source**: **Consumable stock** (select the **Inventory** *Neural Electrode Inventory* and the **Consumable stock** *Neuropixels 2.0 probe*; only stock with status Available or Reserved is offered), **Consumable** (the catalog design when you have no stock entry), or **Manual entry** (a name and specification).
-   - Add further rows as used: **Adhesive, cement, or sealant** for the dental cement, **Anchor screw, pin, or fastener** for skull screws, **Surgical supply** for disposables.
-
-A stock-backed row keeps a copy of the stock's details at the time of use (catalog item, lot, dates, storage location), so the procedure stays readable if the inventory changes later. Stock quantities are not decremented; set the stock's **Status** by hand when it is used up.
-
-{: .note }
-> Probe specifications (Neuropixels 2.0: 960 total sites, 384 recording sites, 20 μm spacing, etc.) are documented in the catalog design and the consumable stock entry, not in the procedure record. Silicon probe designs from NeuroNexus, ATLAS Neuroengineering, Cambridge Neurotech and IMEC are already in the catalog; see [Setting Up Lab Infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure).
-
-4. **Save**. A notice on the form announces: "Saving creates a/an Silicon probe experimental interface from this procedure. Its type, coordinates, installed date, equipment, target regions and device materials then follow this procedure." After saving, the interface *TM_R001 | Silicon probe implant* appears on the procedure's **Experimental interfaces** tab and under *Sessions* → *Experimental interfaces*. Its persistence is "Chronic / persistent". Edit the procedure, not the interface, to change coordinates or the probe; name, persistence, removal date and notes belong to the interface.
-
-{: .note }
-> If you record the procedure before surgery, set **Status** to *Planned*. The page then shows an orange **Planned** pill and no interface is created yet. Click **Mark as performed** after the surgery; the date must be set and the interface is created at that point. See [Planning]({{site.baseurl}}/webinterface/planning/).
-
-### Step 5b: Grouping the surgery into a procedure episode (optional)
-
-Anesthesia, analgesia and the implant itself are separate procedures. A **procedure episode** groups them into one perioperative event with personnel, severity and recovery outcome.
-
-1. Go to *Subjects* → *Procedures* and open the episode section, or create the episode first and use **Link existing** to attach procedures.
-2. Record the companion procedures on TM_R001:
-   - **Anesthesia**: required material **Anesthetic agent** (isoflurane from stock), optional **Carrier gas**; stages **Induction** and **Maintenance** with their conditions.
-   - **Analgesic**: route and the **Active agent** material.
-   - **Craniotomy** and **Headcap** as further procedures of the same episode.
-3. Set the episode's **Status** to *Active* during surgery and *Complete* once end date, recovery outcome and a named responsible person are recorded.
-
-The episode page offers quick **Weighing** and **Welfare check** logs with a **Phase** (Pre-procedure, Recovery, Follow-up, and so on).
-
-## Part B: Multi-Session Experimental Workflow
-
-### Step 6: Pre-Behavior Sleep Session
-
-After recovery, we begin with a baseline sleep recording.
-
-1. **Navigate to Sessions**:
-   - Go to *Sessions*
-   - Click *Add session*
-
-![The Add session form filled in for TM_R001_Day1_PreSleep_Baseline: session type Subject, project, subject and status (the demo project and rat R01 stand in for the tutorial's).]({{site.baseurl}}/assets/images/screenshots/ephys-session-form.png)
+![The Procedures tab of a subject's page (here rat R06 Carol): each procedure with its details and its Edit, Duplicate, Template, Delete and API buttons]({{site.baseurl}}/assets/images/screenshots/ephys-subject-procedures.png)
 {: .screenshot }
-*The Add session form filled in for TM_R001_Day1_PreSleep_Baseline: session type Subject, project, subject and status (the demo project and rat R01 stand in for the tutorial's).*
+*The Procedures tab of a subject's page (here rat R06 Carol): each procedure with its details and its Edit, Duplicate, Template, Delete and API buttons*
 
-2. **Sleep Session Configuration**:
+{: .important }
+> Once the implant has created its interface, the procedure's **Subject** is fixed, and its **Type of procedure** cannot be changed while it has material rows. The interface's type, installation date, coordinates, target regions and equipment are set by the procedure: change them on the procedure, not on the interface, where they cannot be edited.
 
-**Basic Session Information:**
+{: .important }
+> A procedure with **Status** *Planned* creates no interface, so the recordings below cannot select the probe. Click **Mark as performed** after the surgery (see [Planning]({{site.baseurl}}/webinterface/planning/)).
+
+### Step 5b: Group the surgery into a procedure episode (optional)
+
+1. Add the companion procedures on TM_R001 as in Step 5: **Anesthesia** (required material **Anesthetic agent**, for example isoflurane) and **Analgesic** (material **Active agent**).
+2. Go to **Subjects** → **Procedures** → **Procedure episodes**, create the episode and attach the three procedures with **Link existing**.
+
+The episode records the surgery as one perioperative event; see [Procedure episodes]({{site.baseurl}}/datamodel/modules/procedureepisode/).
+
+### Step 6: Create the camera and tracking interfaces
+
+Every data acquisition names the experimental interface the signal passed through. The sleep camera and the motion tracking system each need one, created once and reused in every session of this rat.
+
+1. Go to **Sessions** → **Experimental interfaces**, click **Add experimental interface** and choose **Create blank**.
+2. Fill in one column per interface and click **Create and continue**:
+
+| Field | Sleep camera | Motion tracking |
+|-------|--------------|-----------------|
+| **Name** * | TM_R001 sleep box camera | TM_R001 OptiTrack |
+| **Target type** | Subject | Subject |
+| **Subject** | TM_R001 | TM_R001 |
+| **Interface type** * | Camera | Tracking system |
+| **Persistence** * | Chronic / persistent | Chronic / persistent |
+| **Equipment** | Sleep Box Camera | OptiTrack System |
+| **Details** | **Frame rate (Hz)** 30 | **Tracked markers** Three reflective markers on the headstage |
+
+The types and their details are on the [Experimental interface types]({{site.baseurl}}/datamodel/schemas/experimentalinterface/) page.
+
+## Part C: Recording Sessions
+
+### Step 7: Pre-behavior sleep session
+
+1. Go to **Sessions** and click **Add session**.
+2. Fill in the first step and click **Create and continue**:
 
 | Field | Value |
 |-------|-------|
-| **Name** * | TM_R001_Day1_PreSleep_Baseline |
+| **Session name (must be unique)** * | TM_R001_Day1_PreSleep_Baseline |
 | **Session type** * | Subject |
-| **Projects** * | Select: Theta Maze Spatial Learning Study |
-| **Subjects** | Select: TM_R001 |
+| **Projects** * | Theta Maze Spatial Learning Study |
+| **Subjects** | TM_R001 |
 | **Status** * | Performed |
-| **Description** | Baseline sleep recording before theta maze training. 4-hour session to capture natural sleep-wake cycles and establish baseline neural activity patterns. |
-| **Date and time onset** | 2024-08-22 09:00:00 |
-| **Tags** | baseline, sleep, pre-training, neuropixels |
 
-{: .note }
-> Sessions have no setup, duration or behavioral assay fields. Those are specified in the Behavior, Data acquisition and Epoch tabs within the session. A session can also be created as *Planned* and marked performed later.
+The form looks as in [Get started]({{site.baseurl}}/tutorials/get_started/#create-your-first-session).
 
-**Data Acquisition - Extracellular Recording:**
+3. Add **Date and time onset** 2024-08-22 09:00:00 (the NWB converter writes no file for a session without an onset; see [Exporting to NWB]({{site.baseurl}}/tutorials/exporting-to-nwb/#step-5-read-the-manifest-and-validation-report)), **Data storage** *Lab Server*, **Session name in data storage** *tm_r001_day1_presleep* and the **Tags** baseline, sleep.
+4. On the **Data acquisition** tab click **Add Data acquisition** once per recording. **Setup** only narrows the **Equipment** list.
 
-| Setting | Value |
-|---------|-------|
-| **Type** * | Extracellular Electrophysiology |
-| **Experimental interfaces** * | Select: TM_R001 \| Silicon probe implant |
-| **Equipment** | Select: Neuropixels System (from the Sleep Recording Box setup) |
-| **File name** | TM_R001_Day1_PreSleep_Baseline.dat |
-| **Format** | Binary |
-| **Data-type** | int16 |
-| **Number of channels** | 384 |
-| **Sampling rate (Hz)** | 30000 |
-| **Least significant bit (μV/bit)** | 0.195 |
-
-**Data Acquisition - Video:**
-
-| Setting | Value |
-|---------|-------|
-| **Session** | Select: TM_R001_Day1_PreSleep_Baseline |
-| **Type** * | Video Tracking |
-| **Experimental interfaces** * | Select: Sleep Box Camera (a *Camera* interface; see note) |
-| **Equipment** | Select: Sleep Box Camera |
-| **Notes** | Sleep state monitoring |
-
-{: .note }
-> Every data acquisition names the **experimental interfaces** the signal passed through; the field is required and only offers interfaces of subjects (or specimen sets) in the session's projects. Implanted devices get their interface from the implant procedure. For equipment such as cameras, create an interface of type *Camera* once (*Sessions* → *Experimental interfaces* → *Add experimental interface*, target the subject, link the equipment) and reuse it in every session. Equipment-backed interface types take no materials.
-
-
-**Session Epochs:**
-
-| Epoch Name | Start | End | Description |
-|------------|-------|-----|-------------|
-| **Habituation** | 00:00:00 | 00:30:00 | Adaptation to recording environment |
-| **Baseline_recording** | 00:30:00 | 04:00:00 | Continuous sleep/wake recording (3.5 hours) |
+| Field | Neuropixels recording | Sleep video |
+|-------|-----------------------|-------------|
+| **Type of data acquisition** * | Extracellular Electrophysiology | Video Tracking |
+| **Equipment** | Neuropixels System | Sleep Box Camera |
+| **Experimental interfaces** * | TM_R001 \| Silicon probe implant | TM_R001 sleep box camera |
+| **File name** | TM_R001_Day1_PreSleep_Baseline.dat | TM_R001_Day1_PreSleep_Baseline.avi |
+| **Format** | Binary | AVI |
+| **Data-type** | int16 | |
+| **Number of channels** | 384 | |
+| **Sampling rate** | 30 kHz | |
+| **Number of samples** | 432000000 (4 hours) | |
+| **Frame rate** | | 30 Hz |
 
 ![The Data acquisition tab of a saved session (here rat R02's Reversal 01): a Video Tracking entry and, below it, the session's second data acquisition, an Extracellular Electrophysiology entry with its setup, equipment and experimental interface]({{site.baseurl}}/assets/images/screenshots/ephys-session-data-acquisition.png)
 {: .screenshot }
 *The Data acquisition tab of a saved session (here rat R02's Reversal 01): a Video Tracking entry and, below it, the session's second data acquisition, an Extracellular Electrophysiology entry with its setup, equipment and experimental interface*
 
-### Step 7: Theta Maze Behavioral Session
+5. On the **Epochs** tab click **Add Epoch** and add *Habituation* (**Start** 00:00:00, **End** 00:30:00) and *Baseline_sleep* (00:30:00 to 04:00:00), relative to the session onset.
+6. Drag both data acquisitions from **Link to epochs** onto *Baseline_sleep* (see [Epochs]({{site.baseurl}}/datamodel/stem/epoch/)). A data acquisition belongs to one epoch only, so link each recording to the epoch that covers it.
 
-The main experimental session combining behavior with neural recording.
+### Step 8: Theta maze session
 
-1. **Behavioral Assay Setup** (**Personal attributes** → **Behavioral assays** → **Add behavioral assay**; see [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays)):
-
-| Field | Value |
-|-------|-------|
-| **Behavioral assay name** | Theta Maze Alternation Task |
-| **Setup type** | Theta maze (the same setup type as the Theta Maze Rig setup) |
-| **Behavioral paradigm** | Select the alternation paradigm |
-| **Authenticated groups** | Select your lab groups |
-| **Description** | Forced alternation task in theta maze. Rats navigate alternating left/right arms to receive food rewards. Trial duration 180s, inter-trial interval 45s, total 40 trials per session. Performance criteria: 80% correct, minimum 15 trials for learning threshold. |
-| **Behavioral assay visibility** | Private |
-
-2. **Complete Session Configuration**:
-
-**Basic Session Information:**
-
-| Field | Value |
-|-------|-------|
-| **Name** * | TM_R001_Day1_ThetaMaze_Training1 |
-| **Session type** * | Subject |
-| **Projects** * | Select: Theta Maze Spatial Learning Study |
-| **Subjects** | Select: TM_R001 |
-| **Status** * | Performed |
-| **Description** | First day theta maze behavioral training with Neuropixels recording |
-| **Date and time onset** | 2024-08-22 14:00:00 |
-| **Tags** | behavior, theta-maze, training, day1 |
-| **Data storage** | Select: Lab Server (see [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage)) |
-| **Name used in storage** | tm_r001_day1_training1 |
-
-**Behavior:**
-
-| Field | Value |
-|-------|-------|
-| **Subjects** | Select: TM_R001 |
-| **Setup** | Select: Theta Maze Rig |
-| **Behavioral assay** | Select: Theta Maze Alternation Task |
+1. Add a session as in Step 7 with **Session name (must be unique)** *TM_R001_Day1_ThetaMaze_Training1*, **Date and time onset** 2024-08-22 14:00:00, **Data storage** *Lab Server* and **Session name in data storage** *tm_r001_day1_training1*.
+2. On the **Behaviors** tab click **Add Behavior** and select **Subjects** *TM_R001*, **Setup** *Theta Maze Rig* and **Behavioral assay** *Theta Maze Alternation Task*. The assay is offered only for a setup of the same setup type.
 
 ![The Behaviors tab of a saved session (here rat R02's Reversal 01): each behavior names its subjects, behavioral assay and setup]({{site.baseurl}}/assets/images/screenshots/ephys-behavior-tab.png)
 {: .screenshot }
 *The Behaviors tab of a saved session (here rat R02's Reversal 01): each behavior names its subjects, behavioral assay and setup*
 
-**Data Acquisition - Extracellular Recording:**
+3. On the **Data acquisition** tab add:
 
-| Setting | Value |
-|---------|-------|
-| **Session** | Select: TM_R001_Day1_ThetaMaze_Training1 |
-| **Type** * | Extracellular Electrophysiology |
-| **Experimental interfaces** * | Select: TM_R001 \| Silicon probe implant |
-| **Equipment** | Select: Neuropixels System |
-| **Format** | Binary |
-| **Data-type** | int16 |
-| **Number of channels** | 384 |
-| **Sampling rate (Hz)** | 30000 |
-| **Number of samples** | 216000000 |
-| **Least significant bit (μV/bit)** | 0.195 |
+| Field | Neuropixels recording | Position tracking |
+|-------|-----------------------|-------------------|
+| **Type of data acquisition** * | Extracellular Electrophysiology | Behavioral Tracking |
+| **Equipment** | Neuropixels System | OptiTrack System |
+| **Experimental interfaces** * | TM_R001 \| Silicon probe implant | TM_R001 OptiTrack |
+| **File name** | TM_R001_Day1_ThetaMaze_Training1.dat | TM_R001_Day1_ThetaMaze_Training1.csv |
+| **Format** | Binary | CSV |
+| **Data-type** | int16 | |
+| **Number of channels** | 384 | |
+| **Sampling rate** | 30 kHz | |
+| **Number of samples** | 216000000 (2 hours) | |
+| **Frame rate** | | 120 Hz |
 
-**Data Acquisition - Video:**
-
-| Setting | Value |
-|---------|-------|
-| **Session** | Select: TM_R001_Day1_ThetaMaze_Training1 |
-| **Type** * | Video Tracking |
-| **Experimental interfaces** * | Select: Ceiling Camera (*Camera* interface) |
-| **Equipment** | Select: Ceiling Camera |
-| **Notes** | Behavioral video recording with LED tracking |
-
-**Data Acquisition - Position Tracking:**
-
-| Setting | Value |
-|---------|-------|
-| **Session** | Select: TM_R001_Day1_ThetaMaze_Training1 |
-| **Type** * | Behavioral Tracking |
-| **Experimental interfaces** * | Select: OptiTrack (*Tracking system* interface) |
-| **Equipment** | Select: OptiTrack System |
-| **Notes** | Head and body position tracking with LED markers |
-
-**Session Epochs:**
-
-| Epoch Name | Start | End | Description |
-|------------|-------|-----|-------------|
-| **Pre_task_baseline** | 00:00:00 | 00:10:00 | Open field exploration before task |
-| **Training_trials** | 00:10:00 | 01:10:00 | Forced alternation training trials (longer for rats) |
-| **Free_choice_trials** | 01:10:00 | 01:50:00 | Free choice alternation test (longer for rats) |
-| **Post_task_rest** | 01:50:00 | 02:00:00 | Rest period after task completion |
-
-Epoch **Start** and **End** are given relative to the session start (hh:mm:ss or seconds). On the **Epochs** tab, drag the behavior, data acquisitions and manipulations from **Link to epochs** onto the epoch they belong to; a data acquisition can belong to one epoch only. The **Timeline** on the session's **Epochs** tab shows the result.
+4. On the **Epochs** tab add *Pre_task_rest* (00:00:00 to 00:10:00), *Task* (00:10:00 to 01:50:00) and *Post_task_rest* (01:50:00 to 02:00:00). Drag the behavior and both acquisitions onto *Task*. The **Timeline** shows the result:
 
 ![The Epochs tab of a saved session (here rat R02's Reversal 01): the timeline of its three epochs with their behavior, data acquisitions and manipulation, and the epochs table below]({{site.baseurl}}/assets/images/screenshots/ephys-epochs-tab.png)
 {: .screenshot }
 *The Epochs tab of a saved session (here rat R02's Reversal 01): the timeline of its three epochs with their behavior, data acquisitions and manipulation, and the epochs table below*
 
-### Step 8: Adding Manipulations (Optional)
+### Step 9: Post-behavior sleep session
 
-For experiments with optogenetic or pharmacological manipulations.
+1. Add a session as in Step 7 with **Session name (must be unique)** *TM_R001_Day1_PostSleep_Consolidation*, **Date and time onset** 2024-08-22 16:00:00 and **Data storage** *Lab Server*.
+2. Add the two data acquisitions of Step 7 with this session's file names and **Number of samples** 648000000 (6 hours).
+3. Add the epochs *Post_task_rest* (00:00:00 to 01:00:00) and *Sleep* (01:00:00 to 06:00:00), and drag both acquisitions onto *Sleep*.
 
-![An example manipulation form, here an auditory stimulation in rat R06's Reversal 01 session, with its setup, equipment and the type-specific details table; an optogenetic stimulation has its own details.]({{site.baseurl}}/assets/images/screenshots/ephys-manipulation-form.png)
-{: .screenshot }
-*An example manipulation form, here an auditory stimulation in rat R06's Reversal 01 session, with its setup, equipment and the type-specific details table; an optogenetic stimulation has its own details.*
+## Part D: Organize and Export
 
-**Manipulation Configuration:**
+### Step 10: Create the collection
 
-**Basic Information:**
+1. Go to **Collections** (below Sessions) and click **Add collection**.
+2. Enter **Collection name** *TM_R001_Learning_Week1*, **Project** *Theta Maze Spatial Learning Study* and the three **Sessions** of Steps 7 to 9.
+3. Click **Create and continue**, add the **Tags** learning, week1 and click **Save**.
 
-| Field | Value |
-|-------|-------|
-| **Session** | Select: TM_R001_Day1_ThetaMaze_Training1 |
-| **Type** * | Optogenetic stimulation |
-| **Experimental interfaces** * | Select: TM_R001 \| Optic fiber implant |
-| **Equipment** | Select: Yellow Laser System |
-| **Notes** | PV interneuron silencing during choice trials |
+### Step 11: Export the project
 
-{: .note }
-> Manipulations link to experimental interfaces, not procedures. The optic fiber interface comes from an *Optic fiber implant* procedure on TM_R001 (required material: **Implanted optic fiber**), recorded like the probe implant in Step 5. The virus that expresses the opsin is a *Virus injection* procedure with a **Viral-vector preparation** material row.
+1. Open the project's page and click **Export** → **Download project data**.
+2. Choose **File format** *JSON* and **Contents** *Whole project* (a single session suits one NWB file).
+3. Click **Download**.
 
-**Type-specific Details:**
+The options and limits are on [Exports and reports]({{site.baseurl}}/webinterface/exports-and-reports/#download-project-data). [Exporting to NWB]({{site.baseurl}}/tutorials/exporting-to-nwb) converts the file; scripts can request the same export with the [Python API tool]({{site.baseurl}}/tools/python-api-tool/).
 
-| Parameter | Value |
-|-----------|-------|
-| **Power** | 10 mW |
-| **Profile** | Square |
-| **Duration** | 0.5 s |
-| **Duty cycle** | 1.0 |
-| **Repetitions** | 40 |
-| **Wavelength** | 589 nm |
-| **Closed loop** | Unchecked |
+You now have a project with a cohort of four rats; the implant of TM_R001 with its materials and the probe interface it created; camera and tracking interfaces; three sessions of day 1 with their data acquisitions, behavior and epochs, linked to the Lab Server; a collection that groups them; and a JSON export of the project.
 
-The details of an optogenetic stimulation are a table: add one row per stimulation pattern used in the session.
+## Next steps
 
-### Step 9: Post-Behavior Sleep Session
-
-Capture sleep-dependent replay and consolidation.
-
-**Post-Sleep Session Configuration:**
-
-**Basic Session Information:**
-
-| Field | Value |
-|-------|-------|
-| **Name** * | TM_R001_Day1_PostSleep_Consolidation |
-| **Session type** * | Subject |
-| **Projects** * | Select: Theta Maze Spatial Learning Study |
-| **Subjects** | Select: TM_R001 |
-| **Status** * | Performed |
-| **Description** | Post-behavior sleep session for memory consolidation recording |
-| **Date and time onset** | 2024-08-22 16:00:00 |
-| **Tags** | postsleep, consolidation, replay |
-| **Data storage** | Select: Lab Server |
-
-**Data Acquisition - Extracellular Recording:**
-
-| Setting | Value |
-|---------|-------|
-| **Session** | Select: TM_R001_Day1_PostSleep_Consolidation |
-| **Type** * | Extracellular Electrophysiology |
-| **Experimental interfaces** * | Select: TM_R001 \| Silicon probe implant |
-| **Equipment** | Select: Neuropixels System |
-| **Format** | Binary |
-| **Data-type** | int16 |
-| **Number of channels** | 384 |
-| **Sampling rate (Hz)** | 30000 |
-| **Number of samples** | 648000000 |
-
-**Session Epochs:**
-
-| Epoch Name | Start | End | Description |
-|------------|-------|-----|-------------|
-| **Post_behavior_rest** | 00:00:00 | 01:00:00 | Immediate post-behavior period |
-| **Sleep_recording** | 01:00:00 | 06:00:00 | Extended sleep/replay recording (5 hours) |
-
-## Part C: Data Organization and API access
-
-### Step 10: Creating Collections
-
-Group related sessions for analysis and organization.
-
-![A collection's form: the project and the sessions it groups.]({{site.baseurl}}/assets/images/screenshots/ephys-collection-form.png)
-{: .screenshot }
-*A collection's form: the project and the sessions it groups.*
-
-**Collection Configuration:**
-
-| Field | Value |
-|-------|-------|
-| **Name** | TM_R001_Learning_Week1 |
-| **Project** | Select: Theta Maze Spatial Learning Study |
-| **Sessions** | Select: TM_R001_Day1_PreSleep_Baseline, TM_R001_Day1_ThetaMaze_Training1, TM_R001_Day1_PostSleep_Consolidation |
-| **Description** | First week of theta maze training for subject TM_R001. Collection includes presleep baseline, behavioral training session, and postsleep consolidation recording. |
-| **Tags** | learning, spatial_memory, hippocampus, week1, place_cells |
-
-### Step 11: API Data Access for Analysis
-
-Access your experimental data programmatically for analysis.
-
-```python
-from brainstem_api_tools import BrainstemClient
-
-client = BrainstemClient()
-
-# Step 1: Resolve subject name to its UUID
-subjects = client.load('subject', filters={'name': 'TM_R001'}).json()
-subject_id = subjects['subjects'][0]['id']
-
-# Step 2: Sessions name their subjects directly
-sessions = client.load('session',
-                       filters={'subjects': subject_id},
-                       load_all=True)['sessions']   # load_all returns the decoded JSON
-session_ids = [s['id'] for s in sessions]
-
-# Step 3: Neural data acquisition records per session, with the interfaces they used
-neural_files = []
-for sid in session_ids:
-    resp = client.load('dataacquisition',
-                       filters={'session': sid, 'type': 'ExtracellularEphys'},
-                       include=['interfaces']).json()
-    neural_files.extend(resp.get('data_acquisitions', []))
-
-# Step 4: The implant procedure and its material usage rows (the probe, cement, screws)
-procedures = client.load('procedure',
-                         filters={'subject': subject_id, 'type': 'SiliconProbeImplant'}).json()
-procedure_id = procedures['procedures'][0]['id']
-probe_materials = client.load('materialusage', filters={'procedure': procedure_id},
-                              load_all=True)['materialusages']
-
-# Load a specific session by name
-session_data = client.load('session',
-                           filters={'name': 'TM_R001_Day1_ThetaMaze_Training1'}).json()
-
-# Export the whole project (format 2.1 JSON) for NWB conversion
-export = client.export_project(sessions[0]['projects'][0])
-```
-
-Planned sessions and procedures are left out of API lists unless you filter on `status`, for example `client.load('session', filters={'status': 'planned'})`.
-
-## Next Steps
-
-After completing this comprehensive electrophysiology workflow, consider these logical progressions:
-
-- **Explore an imaging workflow**: The [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) records a virus injection, a cranial window and imaging sessions with the same building blocks
-- **Access data programmatically**: Master the [Python API tool]({{site.baseurl}}/tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/tools/matlab-api-tool) to automate analysis workflows for your large-scale electrophysiology datasets
-- **Understand behavioral documentation**: Review [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) to understand how behavioral protocols are documented and standardized across experiments
-- **Optimize data management**: Learn about [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to efficiently organize and access your large electrophysiology datasets with proper file linking
-- **Enable data sharing**: Use [Sharing Project Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) to make your electrophysiology datasets available to the research community for collaborative analysis and meta-studies
-- **Export to NWB**: Follow [Exporting to NWB]({{site.baseurl}}/tutorials/exporting-to-nwb) to turn the sessions into NWB files with the probe, electrode group and surgery metadata filled in from these records
+- **Data model**: [Sessions]({{site.baseurl}}/datamodel/stem/session/), [Procedures]({{site.baseurl}}/datamodel/modules/procedure/), [Experimental interfaces]({{site.baseurl}}/datamodel/modules/experimentalinterface/), [Data acquisition]({{site.baseurl}}/datamodel/modules/dataacquisition/) and its [types]({{site.baseurl}}/datamodel/schemas/dataacquisition/), [Epochs]({{site.baseurl}}/datamodel/stem/epoch/) and [Behaviors]({{site.baseurl}}/datamodel/modules/behavior/).
+- **Stimulation**: record optogenetic or other stimulation as a [manipulation]({{site.baseurl}}/datamodel/modules/manipulation/) of the session, through the interface of an implanted optic fiber.
+- **NWB**: convert the export with [Exporting to NWB]({{site.baseurl}}/tutorials/exporting-to-nwb).
+- **Imaging**: the [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) uses the same building blocks.
+- **Sharing**: publish the project and the assay with [Share data publicly]({{site.baseurl}}/tutorials/sharing-project-publicly).

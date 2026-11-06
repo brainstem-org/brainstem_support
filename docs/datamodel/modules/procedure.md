@@ -37,9 +37,9 @@ Ex-vivo tissue work (slicing, sectioning, clearing, staining) is recorded as a [
 
 | Field | Description |
 |:------|:------------|
-| ``Type of procedure`` | Type of procedure (**required**). Selected from the predefined types listed below. The type controls the type-specific fields and which coordinate systems, regions, equipment and materials apply. It cannot be changed once material usages or stages exist. |
+| ``Type of procedure`` | Type of procedure (**required**). Selected from the predefined types listed below. The type controls the type-specific fields and which coordinate systems, regions, equipment and materials apply. Fixed once materials or stages exist (see [What becomes fixed](#what-becomes-fixed)). |
 | ``Status`` | Planned, performed or cancelled (default: performed). Performed means the record describes what was done. A planned procedure is prepared ahead of time; its page carries a banner, its title says "Planned", and it is left out of counts, exports and API listings unless asked for. Mark it performed once it has happened (the date and time is then required). Cancelled keeps a dropped plan for the record. |
-| ``Subject`` | The subject the procedure was performed on (**required**). Must reference an existing [subject]({{"datamodel/stem/subject/"|absolute_url}}). Fixed once the procedure has created an experimental interface. |
+| ``Subject`` | The subject the procedure was performed on (**required**). Must reference an existing [subject]({{"datamodel/stem/subject/"|absolute_url}}). Fixed once the procedure has created an experimental interface (see [What becomes fixed](#what-becomes-fixed)). |
 | ``Procedure episode`` | The [procedure episode]({{"datamodel/modules/procedureepisode/"|absolute_url}}) this action belongs to. The episode and the procedure must refer to the same subject. |
 | ``Date and time of the procedure`` | Onset date and time of this individual action. Example: "2024-03-22 10:30:00" |
 | ``Performed by`` | The person who physically performed the procedure, which can differ from the user who entered it. Eligible users come from the subject's projects; the current user is suggested. |
@@ -60,9 +60,18 @@ Ex-vivo tissue work (slicing, sectioning, clearing, staining) is recorded as a [
 
 ## Experimental interfaces created by procedures
 
-Procedure types that establish an interface (marked below) automatically create the corresponding [experimental interface]({{"datamodel/modules/experimentalinterface/"|absolute_url}}) when the procedure is saved as performed. The procedure documents the action at a particular time; the interface describes the resulting probe, cannula, window or sensor. The procedure remains the source for the interface type, installation date, coordinates, target regions and equipment: later changes on the procedure update the interface, and these values cannot be edited on the interface itself. The interface also receives a copy of the installed materials (the device, plus materials its own type accepts); materials merely consumed during the action, such as adhesives or irrigation, stay on the procedure. Deleting the procedure leaves the interface in place.
+Procedure types that establish an interface (marked below) automatically create the corresponding [experimental interface]({{"datamodel/modules/experimentalinterface/"|absolute_url}}) when the procedure is saved as performed. The procedure documents the action at a particular time; the interface describes the resulting probe, cannula, window or sensor. The interface also receives a copy of the installed materials (the device, plus materials its own type accepts); materials merely consumed during the action, such as adhesives or irrigation, stay on the procedure. Deleting the procedure leaves the interface in place.
+
+{: .important }
+The procedure remains the source of the interface's type, installation date, coordinates, target regions, equipment and copied materials. Later changes on the procedure overwrite these values on the interface, and the interface form shows them locked. Make such corrections on the procedure.
 
 Data acquisitions and manipulations do not link to procedures. They link to the experimental interfaces they used, and the installing procedure is reached through the interface.
+
+## What becomes fixed
+
+- The **Type of procedure** cannot be changed once the procedure has materials or stages.
+- The **Subject** cannot be changed once the procedure has created an experimental interface.
+- On the interface it created, the values the procedure owns (see above) are edited on the procedure, not on the interface.
 
 ## Types of procedures
 

@@ -11,6 +11,9 @@ nav_order: 5
 
 Each file holds the session and its subject; the surgeries, viruses and drugs the subject received; the devices, electrode groups and optogenetic sites; and the acquisitions, behaviors, manipulations and epochs of the session. The converter is **metadata only**: measured data (time series, images, video) is not converted.
 
+![From BrainSTEM to NWB: on BrainSTEM, the server builds the export JSON of a project or session; on your computer, brainstem-nwb converts it into one NWB file per session and subject with a manifest and a validation report. Metadata only: the lab adds the raw data and shares the files on DANDI.]({{site.baseurl}}/assets/images/diagrams/export-nwb-pipeline.svg)
+*From a BrainSTEM export through brainstem-nwb to one NWB file per session and subject, with a conversion manifest and a validation report. The files hold metadata only; raw data is added to them separately.*
+
 > **Repository:** [brainstem-org/brainstem-nwb](https://github.com/brainstem-org/brainstem-nwb), with full documentation of the mapping, the manifest, the warnings and the validation.
 
 ## Table of contents
@@ -46,11 +49,13 @@ Directly from the server:
 
 ```bash
 brainstem login                                                 # once, from the Python API tool
-brainstem-nwb export --project PROJECT_UUID --output ./nwb/
-brainstem-nwb export --session SESSION_UUID --output ./nwb/     # one session
+brainstem-nwb export --project "<project-id>" --output ./nwb/
+brainstem-nwb export --session "<session-id>" --output ./nwb/   # one session
 ```
 
-Authentication follows the API tools: `--token` or `BRAINSTEM_API_TOKEN`, then the cached token from `brainstem login`, then the browser sign-in on an interactive terminal. In scripts and CI, `--no-device-flow` makes the exporter stop with exit code 3 instead of waiting for a browser. Export needs read access to the project.
+`<project-id>` and `<session-id>` are the ids of the entries: open the project or session in the web interface and copy the id from the address bar or the **API** button ([Finding an ID](/webinterface/import-tool/#finding-an-id)).
+
+Authentication follows the API tools: `--token` or `BRAINSTEM_API_TOKEN`, then the cached token from `brainstem login`, then the browser sign-in on an interactive terminal. In scripts and CI, `--no-device-flow` makes the exporter stop with exit code 3 instead of waiting for a browser. Export needs read access to the project as a member; a public project you are not a member of cannot be exported (see [Public data](/publicdata/#using-public-data)).
 
 ## Configuration
 
@@ -105,10 +110,10 @@ Coordinates recorded in the bregma- and lambda-based absolute systems and in All
 ## Command line
 
 ```bash
-brainstem-nwb export (--project UUID | --export-file FILE | --session UUID) --output DIR [options]
+brainstem-nwb export (--project <project-id> | --export-file FILE | --session <session-id>) --output DIR [options]
 brainstem-nwb manifest --export-file export.json -o manifest.json    # dry run, no files written
 brainstem-nwb validate ./nwb/ [--manifest FILE] [--inspector-config dandi|none] [--fail-on error|warning]
-brainstem-nwb fetch --project UUID -o export.json.gz                  # download the export only
+brainstem-nwb fetch --project "<project-id>" -o export.json.gz        # download the export only
 brainstem-nwb mapping [--format md|json]                              # the mapping specification
 brainstem-nwb schema manifest|report                                  # JSON schemas of the manifest and report
 ```
@@ -122,7 +127,7 @@ Exit codes: `0` success, `1` some sessions failed, `2` usage or configuration er
 ```python
 from brainstem_nwb import export_project
 
-result = export_project(project_id="PROJECT_UUID", output_dir="./nwb")
+result = export_project(project_id="<project-id>", output_dir="./nwb")
 # or: export_project(export_file="brainstem-export.json.gz", output_dir="./nwb")
 print(result.exit_code, result.manifest.summary)
 ```

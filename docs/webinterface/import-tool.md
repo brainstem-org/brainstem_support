@@ -29,7 +29,9 @@ For colony data from SoftMouse use the [SoftMouse integration]({{"webinterface/s
 
 Batch entry is a spreadsheet-like grid with dropdowns, date pickers and tag editors. Nothing is written until you validate the rows and confirm the import.
 
-{% include slides.html slides="import-tool-batch-grid|Batch entry for subjects after Validate current tab: one new row, one that already exists, and one blocked because a required field is missing; the summary line counts them.;;import-tool-fields|Fields chooses which columns the grid shows for a record type." %}
+![Batch entry for subjects after Validate current tab: one new row, one that already exists, and one blocked because a required field is missing; the summary line counts them.]({{site.baseurl}}/assets/images/screenshots/import-tool-batch-grid.png)
+{: .screenshot }
+*Batch entry for subjects after Validate current tab: one new row, one that already exists, and one blocked because a required field is missing; the summary line counts them.*
 
 ### Choosing what to create
 {: .no_toc}

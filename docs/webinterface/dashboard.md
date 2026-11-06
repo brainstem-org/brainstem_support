@@ -38,15 +38,11 @@ The public dashboard uses the same layout without **Getting started** and **Late
 
 ## Managing widgets
 
-Click the gear icon to open the dashboard tools bar. From there:
+The dashboard tools sit in the header, to the right of the page title (on a narrow screen, click the gear icon to show them):
 
 - **Add widget** opens the **Manage widgets** dialog: "Select the widgets shown on your dashboard. New widgets are added at the top." Use **Search widgets…** to find a widget, tick the widgets you want and click **Save**. The dialog counts "N widgets shown." At least one widget must stay selected.
-- **Reset layout** restores the default layout after a confirmation: "Restore the default widget layout? This will replace your current dashboard widgets."
-- The active projects switch and **Manage active projects** are also in the tools bar of the private main dashboard. See [active projects]({{"webinterface/list-view/#active-projects"|absolute_url}}).
-
-![Manage widgets: tick the widgets to show, grouped by kind, then Save; Reset layout restores the default.]({{site.baseurl}}/assets/images/screenshots/dashboard-manage-widgets.png)
-{: .screenshot }
-*Manage widgets: tick the widgets to show, grouped by kind, then Save; Reset layout restores the default.*
+- **Reset layout**, at the bottom of the same dialog, restores the default layout after a confirmation: "Restore the default widget layout? This will replace your current dashboard widgets."
+- The active projects switch and **Manage active projects** are also in the tools of the private main dashboard. See [active projects]({{"webinterface/list-view/#active-projects"|absolute_url}}).
 
 To rearrange widgets, drag a widget by its handle to a new position or to another column. Click the **x** of a widget to remove it. Widgets cannot be collapsed and have no individual settings. Anonymous visitors to the public portal cannot customise the dashboard.
 
@@ -74,10 +70,6 @@ The **Getting started** widget tracks the first steps of a new user under the he
 1. **Collaborate**: join or create a group, and invite your first teammate.
 2. **Prepare your environment**: add your first setup, behavioral assay, inventory and data storage.
 3. **Structure your work**: create your first project, add your first subject and create your first session.
-
-![The Getting started widget: the next step to take and how many are done.]({{site.baseurl}}/assets/images/screenshots/dashboard-getting-started.png)
-{: .screenshot }
-*The Getting started widget: the next step to take and how many are done.*
 
 Each step links to the page where it is done and is ticked off automatically. Remove the widget once you no longer need it.
 
@@ -109,8 +101,7 @@ Filters at the top of the dialog:
 
 Statistics widgets count the records you can read: in the private portal the projects you have access to (narrowed by your active projects), in the public portal the public projects. Hover over a widget title to see how fresh it is; most widgets show "Cached · updates every 5 min", "10 min" or "30 min". There is no manual refresh button. The record cards and **Subject status** are always live.
 
-{: .note }
-> Statistics count performed records only. Planned records are left out, see [Planning]({{"webinterface/planning/"|absolute_url}}).
+Statistics count performed records only; planned records are left out (see [Planning]({{"webinterface/planning/"|absolute_url}})).
 
 ## Active projects
 

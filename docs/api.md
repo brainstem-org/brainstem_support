@@ -1,7 +1,7 @@
 ---
 layout: default
 title: API
-nav_order: 4
+nav_order: 5
 has_children: true
 has_toc: false
 ---
@@ -15,15 +15,59 @@ The BrainSTEM REST API gives programmatic access to the complete data model: eve
 1. TOC
 {:toc}
 
+## Quick start
+
+1. Create a token on your [API token page](https://www.brainstem.org/private/users/tokens/) (see [Authentication](#authentication)) and copy it.
+2. Install the Python client and put the token in the environment:
+
+   ```bash
+   pip install brainstem_python_api_tools
+   export BRAINSTEM_API_TOKEN="<token>"
+   ```
+
+3. List your sessions and create one:
+
+   ```python
+   from brainstem_api_tools import BrainstemClient
+
+   client = BrainstemClient()                      # reads BRAINSTEM_API_TOKEN
+   sessions = client.load("session").json()["sessions"]
+   print(len(sessions), "sessions on the first page")
+
+   created = client.save("session", data={
+       "name": "Example session",
+       "projects": ["<project-id>"],
+       "session_type": "subject",
+       "subjects": ["<subject-id>"],
+       "date_time": "2026-03-02T10:00:00Z",
+   }).json()
+   print(created["session"]["id"])
+   ```
+
+The same read and write with curl:
+
+```bash
+curl -H "Authorization: Bearer $BRAINSTEM_API_TOKEN" \
+     https://www.brainstem.org/api/private/stem/session/
+
+curl -X POST \
+     -H "Authorization: Bearer $BRAINSTEM_API_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Example session", "projects": ["<project-id>"], "session_type": "subject", "subjects": ["<subject-id>"], "date_time": "2026-03-02T10:00:00Z"}' \
+     https://www.brainstem.org/api/private/stem/session/
+```
+
+Replace `<project-id>` and `<subject-id>` with the ids of entries you can change; open the entry in the web interface and copy the id from the address bar or the **API** button ([Finding an ID](/webinterface/import-tool/#finding-an-id)). A new session is recorded as performed unless you send `"status": "planned"`. The required fields of every resource are on its page under [Available endpoints](#available-endpoints).
+
 ## Authentication
 
 BrainSTEM uses **Personal Access Tokens** (PATs) for API authentication. Because BrainSTEM enforces two-factor authentication (2FA), tokens are issued through the browser only: your password is never typed into a script or a command line tool.
 
 | Token type | Lifetime | How to obtain | Best for |
 |------------|----------|---------------|----------|
-| **Personal Access Token** | One year, sliding: each use extends it by a year | Web UI, or the device authorization flow built into the Python and MATLAB tools | Scripts, integrations, CLI tools, AI assistants |
+| **Personal Access Token** | One year from creation. Using the token does not extend it; create a new one before it expires. | Web UI, or the device authorization flow built into the Python and MATLAB tools | Scripts, integrations, CLI tools, AI assistants |
 
-A user can hold up to 10 active tokens. Each token has a name, records when and from where it was last used, and can be revoked at any time. Revocation takes effect immediately.
+A user can hold up to 10 active tokens. Each token has a name, records when and from where it was last used, and can be revoked at any time. Revocation takes effect immediately. [Checking a token](#checking-a-token) shows when it expires.
 
 ### Option 1: Create a token in the web UI
 {: .no_toc}
@@ -33,47 +77,21 @@ Open your [API token management page](https://www.brainstem.org/private/users/to
 Use it as a bearer token:
 
 ```bash
-curl -H "Authorization: Bearer YOUR_PERSONAL_TOKEN" \
+curl -H "Authorization: Bearer $BRAINSTEM_API_TOKEN" \
      https://www.brainstem.org/api/private/stem/project/
 ```
 
 {: .important }
-> Personal access tokens are shown only once when created. Save them in a secure location, for example in the `BRAINSTEM_API_TOKEN` environment variable that all BrainSTEM tools read.
+> A token has no scopes: whoever holds it can read, change, delete and publish with all your rights until it expires a year later or you revoke it. Keep it out of shared code and notebooks, for example in the `BRAINSTEM_API_TOKEN` environment variable that all BrainSTEM tools read, and revoke it on your token page if it leaks.
 
 ### Option 2: Device authorization flow
 {: .no_toc}
 
 The Python and MATLAB tools and the `brainstem` command line sign you in through the browser. The tool asks the server for a device session, opens the approval page, and polls until you approve. The approval page requires your normal login including 2FA.
 
-```
-# Step 1 — the tool starts a device session (no authentication)
-POST /api/auth/device/        body: {"client_name": "my-script"}
-→ {"session_id": "...", "device_code": "...", "user_code": "WXYZ-1234",
-   "verification_uri": "https://www.brainstem.org/account/authorize/",
-   "verification_uri_complete": "https://www.brainstem.org/account/authorize/?session=...",
-   "expires_in": 900, "interval": 5}
+In a headless environment (a server or a container without a browser) the tool prints the approval URL and a short code; open the URL on any device, enter the code and approve.
 
-# Step 2 — you approve in the browser (with 2FA)
-
-# Step 3 — the tool polls until approved
-POST /api/auth/device/token/  body: {"device_code": "..."}
-→ {"status": "authorization_pending"}            ← keep polling every 5 s
-→ {"status": "success", "token": "...", "token_id": 42, "token_name": "my-script 2026-03-29 14:30:10"}
-```
-
-In a headless environment (a server or a container without a browser) the tool prints the `verification_uri` and the short `user_code`; open the URL on any device, enter the code and approve.
-
-All poll responses return HTTP 200 with a status in the body:
-
-```json
-{"status": "authorization_pending"}   // keep polling
-{"status": "success", "token": "..."}  // done; the token is returned exactly once
-{"error": "access_denied"}            // you clicked Deny
-{"error": "expired_token"}            // the 15-minute window elapsed; start again
-{"error": "already_used"}             // the token was already collected
-```
-
-A token obtained this way appears on your token page with the client name and a timestamp, and can be revoked like any other.
+A token obtained this way appears on your token page with the client name and a timestamp, has the same one-year lifetime, and can be revoked like any other. The requests behind the flow are described under [Device authorization protocol](#device-authorization-protocol), for authors of other clients.
 
 ### Checking a token
 {: .no_toc}
@@ -95,8 +113,39 @@ Both clients and the NWB exporter also read `BRAINSTEM_API_URL` to talk to anoth
 
 - Never type your password into a script. Use the device flow or create a token in the web UI.
 - Keep tokens out of version control, logs and shared notebooks.
-- Give each script or machine its own named token so you can revoke one without touching the others.
+- Give each script, machine and AI application its own named token so you can revoke one without touching the others.
 - Delete unused tokens on your [token management page](https://www.brainstem.org/private/users/tokens/).
+
+### Device authorization protocol
+{: .no_toc}
+
+The requests the clients make during the [device authorization flow](#option-2-device-authorization-flow):
+
+```
+# Step 1 — the tool starts a device session (no authentication)
+POST /api/auth/device/        body: {"client_name": "my-script"}
+→ {"session_id": "...", "device_code": "...", "user_code": "WXYZ-1234",
+   "verification_uri": "https://www.brainstem.org/account/authorize/",
+   "verification_uri_complete": "https://www.brainstem.org/account/authorize/?session=...",
+   "expires_in": 900, "interval": 5}
+
+# Step 2 — you approve in the browser (with 2FA)
+
+# Step 3 — the tool polls until approved
+POST /api/auth/device/token/  body: {"device_code": "..."}
+→ {"status": "authorization_pending"}            ← keep polling every 5 s
+→ {"status": "success", "token": "...", "token_id": 42, "token_name": "my-script 2026-03-29 14:30:10"}
+```
+
+All poll responses return HTTP 200 with a status in the body:
+
+```json
+{"status": "authorization_pending"}   // keep polling
+{"status": "success", "token": "..."}  // done; the token is returned exactly once
+{"error": "access_denied"}            // you clicked Deny
+{"error": "expired_token"}            // the 15-minute window elapsed; start again
+{"error": "already_used"}             // the token was already collected
+```
 
 ## Endpoint structure
 
@@ -107,14 +156,12 @@ https://www.brainstem.org/api/{portal}/{app}/{resource}/
 https://www.brainstem.org/api/{portal}/{app}/{resource}/{id}/
 ```
 
-{: .note }
-> **portal**: `private` (records you can read, needs a token) or `public` (records of public projects, read-only, no token).
->
-> **app**: `stem`, `modules`, `personal_attributes`, `resources`, `taxonomies`, `dissemination` or `users`.
->
-> **resource**: the lower-case model name, for example `session`, `procedure`, `specimenset`, `experimentalinterface` or `anatomicalregion`.
->
-> **id**: the UUID of one record.
+| Part | Value |
+|:-----|:------|
+| `portal` | `private` (records you can read, needs a token) or `public` (records of public projects, read-only, no token) |
+| `app` | `stem`, `modules`, `personal_attributes`, `resources`, `taxonomies`, `dissemination` or `users` |
+| `resource` | the lower-case model name, for example `session`, `procedure`, `specimenset`, `experimentalinterface` or `anatomicalregion` |
+| `id` | the UUID of one record |
 
 Examples:
 
@@ -125,8 +172,7 @@ https://www.brainstem.org/api/private/modules/procedure/
 https://www.brainstem.org/api/public/stem/project/
 ```
 
-{: .warning }
-> `taxonomies/brainregion` is a deprecated alias of `taxonomies/anatomicalregion`. Use the new name.
+`taxonomies/brainregion` is a deprecated alias of `taxonomies/anatomicalregion`; use the new name.
 
 ## Available endpoints
 
@@ -187,7 +233,7 @@ https://www.brainstem.org/api/public/stem/session/
 - **GET**: retrieve a list or one record.
 - **POST**: create a record.
 - **PATCH**: change the fields you send (recommended for updates).
-- **PUT**: replace a record completely.
+- **PUT**: update a record with the complete record. Fields you leave out are kept, not cleared, so PATCH does the same with less to send.
 - **DELETE**: delete a record.
 
 ## Responses
@@ -206,6 +252,13 @@ A detail, create or update response uses the singular key: `{"session": {...}}`.
 Relations are returned as ids. Dates are ISO 8601 strings. Type-specific details are JSON objects validated against the [schema](/api/schemas/) of the selected type.
 
 ## Query parameters
+
+With curl, pass `-g` (`--globoff`), because curl otherwise reads `{}` and `[]` in a URL as its own globbing syntax, and quote the URL so the shell leaves `&`, `[]` and `{}` alone. The Python and MATLAB tools build these parameters for you.
+
+```bash
+curl -g -H "Authorization: Bearer $BRAINSTEM_API_TOKEN" \
+     "https://www.brainstem.org/api/private/stem/session/?filter{name.icontains}=rat&sort[]=-date_time&per_page=20"
+```
 
 ### Filtering
 {: .no_toc}
@@ -226,9 +279,9 @@ A filter can follow a relation into the related record only when that relation i
 
 | Query | Works? |
 |---|---|
-| `procedure/?filter{subject}=<uuid>` | yes, `subject` is the last segment |
+| `procedure/?filter{subject}=<subject-id>` | yes, `subject` is the last segment |
 | `procedure/?filter{target_regions.acronym}=CA1` | yes, `target_regions` is nestable |
-| `session/?filter{subjects.species}=<uuid>` | yes, `subjects` is nestable |
+| `session/?filter{subjects.species}=<species-id>` | yes, `subjects` is nestable |
 | `procedure/?filter{equipment.name}=Rig` | no, `equipment` is not nestable; look the equipment up first and filter with `filter{equipment.in}=<ids>` |
 
 Tags are filtered by name: `filter{tags.name}=control` (also `.in` and `.icontains`); records return tags as names. Type-specific `details` cannot be filtered on the server.
@@ -250,7 +303,7 @@ Tags are filtered by name: `filter{tags.name}=control` (also `.in` and `.icontai
 /?include[]=dataacquisition.*&include[]=subjects.*
 ```
 
-Included records are returned next to the main list, under their own plural key ("sideloaded"), not nested inside each record. Only nestable relations can be included; on any other relation `include[]` is ignored and you get ids only. Only records you can read are included, and the relation's id list in that response then shows only those. Read a record without `include[]` before replacing one of its lists. `exclude[]=<field>` drops a field from the response.
+Included records are returned next to the main list, under their own plural key ("sideloaded"), not nested inside each record. Only nestable relations can be included; on any other relation `include[]` is ignored and you get ids only. Only records you can read are included, and the relation's id list in that response then shows only those (see the warning under [Writing records](#writing-records)). `exclude[]=<field>` drops a field from the response.
 
 ### Pagination
 {: .no_toc}
@@ -272,13 +325,13 @@ Follow `page` up to `meta.total_pages`, or use `load_all` in the Python and MATL
 ### Planned records
 {: .no_toc}
 
-Procedures, specimen procedures, sessions and breedings carry a `status` of `planned`, `performed` or `cancelled`. Listings return performed records only unless you add `include_planned=true` or filter on `status` explicitly. The public portal never returns planned records.
+Procedures, specimen procedures, sessions and breedings carry a `status` of `planned`, `performed` or `cancelled`. Listings return performed records only unless you add `include_planned=true` or filter on `status` explicitly (`filter{status}=planned`). A record created without `status` is recorded as performed. The public portal never returns planned records.
 
 ### Combining parameters
 {: .no_toc}
 
 ```
-/?filter{projects}=<id>&sort[]=-date_time&include[]=subjects.*&per_page=200
+/?filter{projects}=<project-id>&sort[]=-date_time&include[]=subjects.*&per_page=200
 ```
 
 ## Writing records
@@ -291,6 +344,12 @@ Procedures, specimen procedures, sessions and breedings carry a `status` of `pla
 - Some records need **form-only inputs** that are not returned in responses, for example `source` on a material usage (inventory, catalog or manual). They are listed under "Form-only inputs" on the resource page.
 - Writes to shared taxonomies and catalog resources by users without approval rights create an **approval request** instead of the record.
 - Deleting a record that other records still reference returns `400` ("still referenced by ...").
+
+{: .warning }
+> A list read with `include[]` holds only the linked records you can read. Sending that list back replaces the stored one, so the links to records you cannot see are removed. Read the record without `include[]` before you change one of its lists.
+
+{: .warning }
+> `PUT .../materials/` replaces the whole material collection: every row missing from `items` is deleted, and a request without `items` deletes them all. When you send `stages`, stages missing from them are deleted too. Read the collection with `GET` first, change it, and send it back with its `expected_parent_updated_at`; the server answers `409` if the record changed in between.
 
 ## Other endpoints
 

@@ -21,7 +21,7 @@ Deleting an entry removes it from lists, forms and the API, but BrainSTEM keeps 
 
 ## Deleting an entry
 
-Delete an entry with the trash icon on its details page, the **Delete** button on its form, or **Delete** in the **More actions** menu of a list row. A confirmation page lists what will be deleted with it. After confirming, the page reports "Successfully deleted {model} with permission tracking."
+Delete an entry with the **Delete** button on its form, **Delete** in the **More actions** menu of a list row, or, on the pages that show it (for example specimen sets and specimens), the trash icon on its details page. A confirmation page lists what will be deleted with it. After you confirm, a message confirms the deletion and you return to the list.
 
 What is deleted with an entry:
 
@@ -35,18 +35,13 @@ What is protected:
 
 You need delete permission on the entry; on project data this means Contributor, Manager or Owner on its project. Shared catalogue entries (taxonomies, resources, publications) are maintained by the BrainSTEM team and cannot be deleted from the private portal; ask through the [contact form](https://brainstem.org/#Get-in-touch) if one is wrong.
 
-{: .warning }
-> The bulk action **Delete selected items** in list views deletes the ticked rows without a confirmation page. Rows you may not delete are skipped and reported.
+The bulk action **Delete selected items** in list views works differently: it deletes the ticked rows without a confirmation page, see [Bulk actions]({{"webinterface/list-view/#bulk-actions"|absolute_url}}).
 
 ## The deleted entries list
 
 Each list view has a **Recover** button ("Recover deleted entries") in its toolbar. It is available for projects, subjects, sessions, cohorts, collections, breedings, specimen sets, specimens, procedures, specimen procedures, subject logs, procedure logs, specimen logs, behaviors, data acquisitions and manipulations.
 
-![Recover Deleted Sessions: the deleted sessions you may recover, with when and by whom they were deleted.]({{site.baseurl}}/assets/images/screenshots/deleted-entries-recover-list.png)
-{: .screenshot }
-*Recover Deleted Sessions: the deleted sessions you may recover, with when and by whom they were deleted.*
-
-The **Deleted {plural}** page lists the entries you may restore, 50 per page, with the number of recoverable entries and the columns **{Model}**, **Deleted at**, **Deleted by** and **Actions**. You see entries that belonged to a project you can read; recovering one needs change permission on that project. Specimen-related entries need change permission for listing too. Nothing can be recovered through the public portal.
+The **Deleted {plural}** page lists the entries you may restore, 50 per page, with the number of recoverable entries and the columns **{Entry type}**, **Deleted at**, **Deleted by** and **Actions**. You see entries that belonged to a project you can read; recovering one needs change permission on that project. Specimen-related entries need change permission for listing too. Nothing can be recovered through the public portal.
 
 ## Recovering an entry
 
@@ -58,15 +53,17 @@ Click **Review** on a deleted entry. The **Recover {entry}** page says: "Review 
 
 Recovery restores the entry with its original identifier, its relations, tags, permissions and the child records that were deleted with it. The page confirms "{entry} was successfully recovered."
 
-No automatic clean-up of deleted entries was found; treat recovery as available but recover important entries promptly.
+Deleted entries are not removed automatically after a while: an entry stays recoverable until someone recovers it.
 
 ## Revision history
 
 Every save of an entry is stored as a revision with the date, user and a comment such as "Changed name, description.", "Updated via API.", "Revision before deletion" or "{label} (planning transition)". Open the history with the history icon on the details page (users with change permission; on projects, owners only) or from the change form of subjects, sessions and specimen sets.
 
-The history page lists the revisions with **Date/time**, **User** and **Action**: "Choose a date from the list below to revert to a previous version of this object." Opening a revision shows the entry as it was and offers **Revert {model}** to restore that version as a new save; the later revisions are kept.
+The history page lists the revisions with **Date/time**, **User** and **Action**: "Choose a date from the list below to revert to a previous version of this object." Opening a revision shows the entry as it was and offers **Revert {entry type}** to restore that version as a new save; the later revisions are kept.
 
 Guided duplicates record the differences from their original in the copy's history, and planning transitions are recorded as revisions as well.
+
+Older revisions are thinned out periodically. For each entry BrainSTEM always keeps the first revision and the five most recent ones, and of the rest one revision per hour for the last hour, one per day for the last week, one per week for the last month, one per month for the last year and one per year before that.
 
 ## Related
 

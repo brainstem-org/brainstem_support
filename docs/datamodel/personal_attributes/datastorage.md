@@ -32,7 +32,10 @@ A data storage describes where session data physically live and how to reach the
 | ``Data organization`` | How folders are nested inside the storage, as structured JSON (see the [data organization schema](#structured-fields)). Example: "Projects → Subjects → Sessions" |
 | ``Data protocols`` | How the storage is reached, as a JSON list (see the [data protocols schema](#structured-fields)). Each entry has a protocol type (Local Storage, SMB/CIFS, NFS, AFP, SFTP, FTP, HTTPS/Web, Globus, S3, Dropbox, Google Drive, OneDrive and others), a path and whether that route is publicly reachable. Example: "SMB/CIFS: smb://labserver/data, private" |
 | ``Authenticated groups`` | Groups given access when the data storage is created (create only). After creation, access is managed from the storage's own page, where individual people can also be invited. |
-| ``Public access`` | Designates if the data storage is publicly available (boolean; default: False). This publishes the description of where data live, including paths; it does not make the data themselves reachable. Only owners can modify this setting. |
+| ``Public access`` | Whether the data storage is shown on the public portal. It has no switch of its own: saving the storage makes it public when at least one of its data protocols is marked public, and private otherwise. Public access publishes the description of where data live, including the public protocols' paths; it does not make the data themselves reachable. Only owners can change the data protocols. |
+
+{: .important }
+Marking a single data protocol public makes the whole data storage public when you save it, and that protocol's path is shown as a download source on the public sessions stored there. Mark only the routes outside readers should see.
 
 {% include schemas/datastorage.md %}
 

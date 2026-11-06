@@ -54,7 +54,10 @@ Sessions can also be grouped in [__Collections__]({{"datamodel/stem/collection"|
 
 ## Subject sessions and specimen sessions
 
-A session is either a **subject session** (in-vivo work on one or more [subjects]({{"datamodel/stem/subject/"|absolute_url}})) or a **specimen session** (ex-vivo work on [specimen sets]({{"datamodel/stem/specimenset/"|absolute_url}})). The session type is chosen when the session is created and cannot be changed afterwards. A subject session offers the Subjects field, and its data acquisitions and manipulations can only link to experimental interfaces installed on those subjects. A specimen session offers the Specimen sets field, and its modules link to interfaces installed on those sets.
+A session is either a **subject session** (in-vivo work on one or more [subjects]({{"datamodel/stem/subject/"|absolute_url}})) or a **specimen session** (ex-vivo work on [specimen sets]({{"datamodel/stem/specimenset/"|absolute_url}})). A subject session offers the Subjects field, and its data acquisitions and manipulations can only link to experimental interfaces installed on those subjects. A specimen session offers the Specimen sets field, and its modules link to interfaces installed on those sets.
+
+{: .note }
+The session type is chosen when the session is created and cannot be changed afterwards. A session recorded with the wrong type has to be created again with the right one.
 
 ## Planning
 

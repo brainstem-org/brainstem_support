@@ -183,9 +183,10 @@ Drawings are generated, never edited by hand:
 
 - `scripts/render_diagrams.py` draws the conceptual figures in `docs/assets/images/diagrams/` (the material
   chain, procedure → interface → session, specimen lineage, templates, stages, the epoch timeline, the two
-  session kinds, the data-model overview, the landing-page picture, the behavior and setup tracks, and the setup
-  hub (where setups and equipment are used); the last two are drawn once per page that shows them, with that page's
-  model solid). Edit the figure's function and rerun it,
+  session kinds, the data-model overview, the landing-page picture, the behavior and setup tracks, the setup
+  hub (where setups and equipment are used) and the parts of a session (behavior, data acquisition, manipulation and
+  epochs); the last three are drawn once per page that shows them, with that page's model solid), and the reader aids: where to record what, the planning states, the public-sharing scope, the
+  setup type categories and the export-to-NWB pipeline. Edit the figure's function and rerun it,
   for example `python scripts/render_diagrams.py session-kinds`.
 - `scripts/render_example_figure.py` draws the worked example on the data model page (`data-model-example.svg`,
   one ephys session in a rat as table cards).

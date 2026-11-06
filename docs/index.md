@@ -50,8 +50,8 @@ New to BrainSTEM? The tutorials guide you from account creation to complete expe
 
 ### For new users
 {: .no_toc}
-- [Creating or joining research groups]({{ "/tutorials/managing-groups/"|absolute_url}})
 - [Setting up your first project, subjects and sessions]({{ "/tutorials/get_started/"|absolute_url}})
+- [Creating or joining research groups]({{ "/tutorials/managing-groups/"|absolute_url}})
 - [Understanding the BrainSTEM data model]({{ "/datamodel/"|absolute_url}})
 - [Forms, lists and entry pages of the web interface]({{ "/webinterface/"|absolute_url}})
 
@@ -70,6 +70,7 @@ New to BrainSTEM? The tutorials guide you from account creation to complete expe
 ### Get help
 {: .no_toc}
 
+- **[FAQ]({{ "/faq/"|absolute_url}})**: answers to the questions new users ask most
 - **[GitHub Issues](https://github.com/brainstem-org/brainstem_support/issues)**: report bugs and technical problems
 - **[GitHub Discussions](https://github.com/brainstem-org/brainstem_support/discussions)**: ask questions, request features, and engage with the community
 - **[Contact form](https://brainstem.org/#Get-in-touch)**: account-specific issues and direct support

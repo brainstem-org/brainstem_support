@@ -61,7 +61,7 @@ Projects have four levels that can be assigned to users and to groups:
 {: .note }
 When a level is given to a group, every member of the group holds it. A user's effective level is the highest of their own and their groups' levels.
 
-Creating or editing an entry needs Contributor on every project involved; you can only attach entries to projects where you are at least a Contributor. Links that require two records to share a project (a session and its subjects, a specimen set taken from a subject, a cohort and its subjects) are guarded on both sides: a project cannot be removed from a record while such a link depends on it.
+Creating or editing an entry needs Contributor on at least one project involved; you can only attach entries to projects where you are at least a Contributor. Links that require two records to share a project (a session and its subjects, a specimen set taken from a subject, a cohort and its subjects) are guarded on both sides: a project cannot be removed from a record while such a link depends on it.
 
 ### Personal attribute permissions
 
@@ -69,7 +69,7 @@ Setups, inventories, behavioral assays, data storage and licenses carry the same
 
 ### Protocol permissions
 
-[Protocols]({{"datamodel/personal_attributes/protocol/"|absolute_url}}) have their own Member, Contributor, Manager and Owner roles. The creator is an Owner and the groups selected at creation receive Contributor access. Protocol permissions are not inherited from the projects or entries that reference the protocol.
+[Protocols]({{"datamodel/personal_attributes/protocol/"|absolute_url}}), like the other personal attributes, have Member, Contributor, Manager and Owner roles of their own. The creator is an Owner and the groups selected at creation receive Contributor access. Protocol permissions are not inherited from the projects or entries that reference the protocol.
 
 ### Shared catalog and taxonomies
 
@@ -115,7 +115,8 @@ Users and groups
 | **Specimen set** | Specimens, specimen procedures (and their material usages and stages), specimen logs, experimental interfaces of the set |
 | **Session** | Behaviors, data acquisition, manipulations, epochs |
 
-An entry linked to several projects is readable with Member on any of them.
+{: .important }
+An entry linked to several projects is readable by everyone with Member on any one of them. Adding a subject or session to a second project shares it, and everything that inherits from it, with that project's members.
 
 ### Personal attributes
 
@@ -138,31 +139,28 @@ Users and groups
 
 Data storage, behavioral assays, licenses and protocols have no inheriting records. Each personal attribute is owned by the user who created it and is shared by giving roles to other users and to groups.
 
-Templates (procedure, specimen procedure, interface, data acquisition, manipulation and material usage templates) are owned by the user who created them and can be shared with projects; members of those projects can read and apply them.
+Templates (procedure, procedure episode, specimen procedure, interface, data acquisition, manipulation and material usage templates) are owned by the user who created them and can be shared with projects; members of those projects can read and apply them.
 
 ## Planned entries
 
-Procedures, specimen procedures, sessions and breedings carry a status of **planned**, **performed** or **cancelled**. Planned entries are shown to users with a "Planned" badge and are kept out of counts, public pages and API listings unless asked for explicitly. Permissions are the same as for performed entries.
+Procedures, specimen procedures, sessions and breedings carry a status of **planned**, **performed** or **cancelled**. Subjects, specimen sets, specimens and procedure episodes have planned states of their own (see [Planning]({{"webinterface/planning/"|absolute_url}})). Planned entries are shown to users with a "Planned" badge and are kept out of counts, public pages and API listings unless asked for explicitly. Permissions are the same as for performed entries.
 
 ## Public sharing
 
 ### Public sharing of projects
-{: .note }
-> When a project is made public:
-> - its subjects, specimen sets, sessions, modules, cohorts, collections and breedings become readable without an account, in the public portal and the public API;
-> - only project owners can make a project public;
-> - public access is read-only; members keep their edit rights;
-> - planned records are never shown publicly.
+{: .warning }
+> Making a project public publishes, at once and without an account, everything that inherits from it, including templates shared with the project and logs; see [What becomes public]({{"publicdata/#what-becomes-public"|absolute_url}}). An entry in several projects is public as soon as one of them is public.
+
+Only project owners can make a project public. Public access is read-only; members keep their edit rights. Planned entries stay private until they are marked performed.
 
 ### Public sharing of personal attributes
 {: .important }
-> - Each personal attribute (setup, inventory, behavioral assay, data storage, license, protocol) has its own public setting, changed by its owners.
+> - Each personal attribute (setup, inventory, behavioral assay, license, protocol) has its own public setting, changed by its owners. A data storage has none: it is public when at least one of its data protocols is marked public.
 > - Make the attributes public that readers of a public project should be able to open; otherwise the public record shows the link but not the attribute.
 
 ## Permission management
 
-- **Projects**: project page → Manage → Permissions: add or remove users and groups, change levels, set public access, send invitations.
-- **Groups**: group page: add or remove members, change roles, handle join requests and email invitations.
-- **Personal attributes**: the attribute's page → Permissions: users, groups, levels, public access.
+- **Projects and personal attributes**: the entry's **Manage** button opens the **Manage permissions** page, where Managers and Owners invite users and groups, change levels and remove access. Public visibility is set on the entry's form (**Project visibility**, **Setup visibility** and so on). See [Sharing and memberships]({{"webinterface/sharing-and-memberships/"|absolute_url}}).
+- **Groups**: the group's page: members, roles, join requests and invitations. See [Managing groups]({{"tutorials/managing-groups/"|absolute_url}}).
 - **API tokens** act with the permissions of their owner; see [API authentication]({{"api/#authentication"|absolute_url}}).
 - **Institutional security policy**: your institution can require two-factor sign-in and set session lifetimes for every account of its email domain; see [Two-factor authentication]({{"webinterface/two-factor-authentication/"|absolute_url}}).

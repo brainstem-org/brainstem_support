@@ -24,6 +24,9 @@ Most interfaces are created automatically. Saving an implant procedure (for exam
 
 Interfaces are what sessions refer to. [Data acquisitions]({{"datamodel/modules/dataacquisition/"|absolute_url}}) and [manipulations]({{"datamodel/modules/manipulation/"|absolute_url}}) link the interfaces they recorded through or delivered through, not the procedures. Where a recording was made is therefore read from the target regions of its interfaces. An interface is not the lab instrument (that is [equipment]({{"datamodel/modules/equipment/"|absolute_url}}) in a setup, which equipment-backed interface types can point at), not the device product (that is a [consumable]({{"datamodel/resources/consumable/"|absolute_url}}) or [consumable stock]({{"datamodel/modules/consumablestock/"|absolute_url}})), and not the signal or stimulus passing through it.
 
+![Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)
+*Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.*
+
 {% include datamodel_embed.html model="modules.experimentalinterface" %}
 
 ## Fields
@@ -46,6 +49,9 @@ Interfaces are what sessions refer to. [Data acquisitions]({{"datamodel/modules/
 | `Notes` | Notes about the interface (string; maximum length: 500 characters). |
 | `Type specific fields` | Fields that depend on the selected type, such as the channel map of a probe or the core diameter of a fiber. See the [Experimental interface types schema]({{"datamodel/schemas/experimentalinterface/"|absolute_url}}). |
 | `Materials` | Ordered list of the [material usages]({{"datamodel/modules/materialusage/"|absolute_url}}) the interface is made of. *See below.* |
+
+{: .important }
+On an interface created by a procedure, the procedure owns the type, installation date, coordinates, target regions, equipment and the copied materials. The form shows them and the subject locked, and later changes on the procedure overwrite them, including values changed through the API. Make such corrections on the [procedure]({{"datamodel/modules/procedure/"|absolute_url}}). The name, persistence, removal date and notes stay the interface's own.
 
 ## Types of experimental interfaces
 

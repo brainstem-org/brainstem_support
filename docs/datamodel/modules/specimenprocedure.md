@@ -24,7 +24,7 @@ A specimen procedure is an event. It is not a device (that is an [experimental i
 
 Performed whole-set specimen procedures update the preparation conditions of the set (for example a performed fixation adds the condition "Fixed"). Procedures that target specific specimens update the conditions of those specimens only.
 
-{: .warning }
+{: .note }
 > The specimen procedure type family is still being refined and its type-specific fields may change between releases.
 
 {% include datamodel_embed.html model="modules.specimenprocedure" %}

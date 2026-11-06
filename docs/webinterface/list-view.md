@@ -16,7 +16,7 @@ nav_order: 3
 
 ## Overview
 
-Every model has a list view: a table of entries with a search box, filters, configurable columns and bulk actions. Open a list from the left sidebar (for example **Subjects** → **Procedures**). Several models also have per-type list pages, for example a list of silicon probe implants only; on these pages every type-specific field is available as a column and the type filter is dropped.
+Every kind of entry has a list view: a table of entries with a search box, filters, configurable columns and bulk actions. Open a list from the left sidebar (for example **Subjects** → **Procedures**). Several entry types also have per-type list pages, for example a list of silicon probe implants only; on these pages every type-specific field is available as a column and the type filter is dropped.
 
 Anonymous visitors to the public portal see a reduced list view without filters, sorting, column settings or bulk actions.
 
@@ -24,29 +24,29 @@ Anonymous visitors to the public portal see a reduced list view without filters,
 
 Above the table you find:
 
-- **Add {model}** creates a new entry. For procedures, data acquisitions, manipulations, specimen procedures, procedure episodes and experimental interfaces the button is a dropdown with **Create blank** and **Create from template**.
+![The procedures list with its toolbar: search, Filters, Columns and the filter chips.]({{site.baseurl}}/assets/images/screenshots/list-view-procedures.png)
+{: .screenshot }
+*The procedures list with its toolbar: search, Filters, Columns and the filter chips.*
+
+- **Add {entry type}** creates a new entry. For procedures, data acquisitions, manipulations, specimen procedures, procedure episodes and experimental interfaces the button is a dropdown with **Create blank** and **Create from template**.
 - **Recover** opens the list of deleted entries you can restore, see [Deleted entries]({{"webinterface/deleted-entries/"|absolute_url}}).
 - **API** opens the same list in the web API.
 - **Templates** (on the procedure list) opens the procedure templates.
-- **Export** downloads the list as a spreadsheet on models that support it, see [Exports and reports]({{"webinterface/exports-and-reports/"|absolute_url}}).
+- **Export** downloads the list as a spreadsheet, with its search and filters applied. It is offered on most lists, see [where spreadsheet export is offered]({{"webinterface/exports-and-reports/#spreadsheet"|absolute_url}}).
 - **Filters** and **Columns** open the dialogs described below. On narrow screens these two buttons are hidden.
 - The **Created** and **Updated** date filters are shown as tag-style links.
 
 ## Search
 
-Type in the **Search** box and press Enter or click the magnifier. The search matches the text fields of the model. Search terms are combined with any active filters.
+Type in the **Search** box and press Enter or click the magnifier. The search matches the text fields of the entries. Search terms are combined with any active filters.
 
-![The sessions list after a search for Reversal: the search box, the By session type and By Status filters, and the result count (14 results of 59).]({{site.baseurl}}/assets/images/screenshots/list-view-search.png)
-{: .screenshot }
-*The sessions list after a search for Reversal: the search box, the By session type and By Status filters, and the result count (14 results of 59).*
-
-For searching across models in plain language, see the [AI assistant]({{"webinterface/ai-assistant/"|absolute_url}}).
+For searching across entry types in plain language, see the [AI assistant]({{"webinterface/ai-assistant/"|absolute_url}}).
 
 ## Filters
 
-{% include slides.html slides="list-view-procedures|The procedures list with its toolbar: search, Filters, Columns and the filter chips;;list-view-manage-filters|Manage filters: tick the filters you want as chips above the table, grouped by what they filter;;list-view-manage-columns|Manage columns: choose and reorder the columns of the table" %}
+{% include slides.html slides="list-view-manage-filters|Manage filters: tick the filters you want as chips above the table, grouped by what they filter;;list-view-manage-columns|Manage columns: choose and reorder the columns of the table" %}
 
-Filters sit in a horizontal toolbar above the table. Each filter is a dropdown whose first option reads **By {filter}**; numeric range and anatomical region filters have their own inline widgets. Which filters are offered depends on the model.
+Filters sit in a horizontal toolbar above the table. Each filter is a dropdown whose first option reads **By {filter}**; numeric range and anatomical region filters have their own inline widgets. Which filters are offered depends on the kind of entry.
 
 | Filter kind | Examples | Behaviour |
 |-------------|----------|-----------|
@@ -82,9 +82,9 @@ Click the **Anatomical region** pill to open the **Anatomical regions filter** d
 - **Show only available regions** hides regions with no data; a **Refresh availability** button recounts. Dots mark **Data available** and **Data available in subregions**.
 - Up to 50 regions can be selected at once.
 
-![The Anatomical regions filter dialog of the procedures list: atlas choice, region search, the region tree with availability dots, and the subregion and availability options.]({{site.baseurl}}/assets/images/screenshots/list-view-region-filter-dialog.png)
+![The Anatomical regions filter dialog of the procedures list: atlas choice, region search, the region tree, and the subregion and availability options.]({{site.baseurl}}/assets/images/screenshots/list-view-region-filter-dialog.png)
 {: .screenshot }
-*The Anatomical regions filter dialog of the procedures list.*
+*The Anatomical regions filter dialog of the procedures list: atlas choice, region search, the region tree, and the subregion and availability options.*
 
 Click **Apply**. Active regions show as acronym tags on the pill (up to three, then "+N"). On subject and project lists the filter looks across procedures, interfaces, specimen sets and specimen procedures; on the session list across data acquisition and manipulation interfaces. Cohort and specimen lists use a flat dropdown instead of the tree.
 
@@ -93,7 +93,7 @@ Click **Apply**. Active regions show as acronym tags on the pill (up to three, t
 
 Click **Filters** to open **Manage filters**. This dialog chooses which filter widgets are shown in the toolbar, not their values. Filters are listed in collapsible groups (for sessions: Session, Subjects, Specimen sets, Consumables, Project related, Data storage, Setups, Behaviors, Data acquisition, Manipulations, Experimental interfaces, Access, Metadata). Search with **Search filters…**, tick the filters you want and click **Save**. A dot marks filters that are currently applied. **Clear** unticks everything.
 
-Your choice is saved per model and per portal, and follows you across devices. Filters added in later releases are merged into your saved choice. A filter that is present in the page URL is always shown, even if you hid it.
+Your choice is saved per entry type and per portal, and follows you across devices. Filters added in later releases are merged into your saved choice. A filter that is present in the page URL is always shown, even if you hid it.
 
 ### Filter values live in the URL
 {: .no_toc}
@@ -114,19 +114,22 @@ The **Filter by active projects** switch (shown as **Active projects** when spac
 
 Click **Manage active projects** to choose the projects. The dialog lists all projects you can read with a **Filter by name** box, dropdowns for group, creator and creation date, and sort orders such as **Active first, A–Z**, **Most sessions**, **Most subjects** and **Permission level**. Each project shows its subject and session counts and an icon for your permission level (Contributor, Manager, Owner; no icon means read only). Use **Select all**, tick the projects and click **Save**.
 
-The selection is saved to your account and applies on every device. It narrows list views, dashboard widgets, the choices offered in add forms, the recent activity feed and the import tool. It is a convenience filter, not a permission boundary: you can still open any entry you have access to by its link, and if the selection matches nothing, everything you can access is shown.
+The selection is saved to your account and applies on every device. It narrows list views, dashboard widgets, the choices offered in add forms, the recent activity feed and the import tool.
+
+{: .note }
+> Active projects are a convenience filter, not a permission boundary. You can still open any entry you have access to by its link, others keep their access to your projects, and if the selection matches nothing, everything you can access is shown.
 
 ## Columns
 
-Click **Columns** to open **Manage columns**: "Choose and order the columns shown for {model plural}."
+Click **Columns** to open **Manage columns**: "Choose and order the columns shown for {entry type, plural}."
 
-- The **Select columns** tab lists columns in collapsible groups (Overview, Relationships, domain groups, **{Model} parameters**, **Type-specific**, Workflow, Access, Metadata). Use **Search columns…** to find one. Related records appear in pairs: an **X list** column that shows up to five linked entries (then "+N more") and an **X count** column, for example **Epochs** and **Epochs #** on sessions.
+- The **Select columns** tab lists columns in collapsible groups (Overview, Relationships, domain groups, **{Entry type} parameters**, **Type-specific**, Workflow, Access, Metadata). Use **Search columns…** to find one. Related records appear in pairs: an **X list** column that shows up to five linked entries (then "+N more") and an **X count** column, for example **Epochs** and **Epochs #** on sessions.
 - The **Reorder columns** tab lets you drag columns into order or use the move buttons, and hide a column with ✕. The first column is marked **Required** and cannot be hidden or moved.
 - **Restore defaults** returns to the default columns. **Save** reloads the list.
 
-Type-specific fields that have a filter are also offered as columns under **{Model} parameters**, for example **Shank length** on consumables. Values with units show as "value unit", lists show three items then "+N more", and empty values show as "—". On per-type list pages every field of the type is a **Type-specific** column, shown by default. An **Extra fields** column shows any extra key: value pairs stored on the entry.
+Type-specific fields that have a filter are also offered as columns under **{Entry type} parameters**, for example **Shank length** on consumables. Values with units show as "value unit", lists show three items then "+N more", and empty values show as "—". On per-type list pages every field of the type is a **Type-specific** column, shown by default. An **Extra fields** column shows any extra key: value pairs stored on the entry.
 
-Your column layout is saved per model and per portal. Columns added in later releases stay hidden until you add them. There is no limit to the number of columns, but joins for related columns are only computed while the column is visible.
+Your column layout is saved per entry type and per portal. Columns added in later releases stay hidden until you add them. There is no limit to the number of columns.
 
 ## Sorting
 
@@ -152,8 +155,8 @@ Tick the checkboxes of several rows and pick an action from the dropdown (privat
 
 | Action | Available on |
 |--------|-------------|
-| **Export selected entries** | Most models, see [Exports and reports]({{"webinterface/exports-and-reports/#batch-exports"|absolute_url}}) |
-| **Delete selected items** | Most models |
+| **Export selected entries** | Most entry types, see [Exports and reports]({{"webinterface/exports-and-reports/#batch-exports"|absolute_url}}) |
+| **Delete selected items** | Most entry types |
 | **Assign selected sessions to a project** / **to a collection** / **to a data storage** | Sessions |
 | **Mark selected planned sessions as performed** | Sessions |
 | **Assign selected subjects to a project** / **to a cohort** | Subjects |
@@ -167,15 +170,15 @@ Tick the checkboxes of several rows and pick an action from the dropdown (privat
 *The bulk actions dropdown of the subjects list: assign the selected subjects to a project or a cohort, enroll planned subjects, delete or export the selected entries, then Go.*
 
 {: .warning }
-> **Delete selected items** deletes the ticked entries straight away, without a confirmation page. Entries you may not delete are skipped. Deleted entries can be restored from the **Recover** list, see [Deleted entries]({{"webinterface/deleted-entries/"|absolute_url}}).
+> **Delete selected items** deletes the ticked entries straight away, without a confirmation page. Entries you may not delete, or that cannot be deleted, are skipped and reported in a message above the list. Deleted entries can be restored from the **Recover** list, see [Deleted entries]({{"webinterface/deleted-entries/"|absolute_url}}).
 
 ## Help icon
 
-The question mark next to the page title opens the help dialog of the model: a description of the model, its fields and types, and a **Graph** tab that shows the model with its direct connections. The **Open the full data model** button leads to the [interactive data model]({{"datamodel/"|absolute_url}}?view=interactive).
+The question mark next to the page title opens the help dialog of the entry type: a description, its fields and types, and a **Graph** tab that shows the entry type with its direct connections. The **Open the full data model** button leads to the [interactive data model]({{"datamodel/"|absolute_url}}?view=interactive).
 
 ## Recover deleted entries
 
-The **Recover** button in the toolbar opens the list of deleted entries of that model that you may restore. See [Deleted entries]({{"webinterface/deleted-entries/"|absolute_url}}).
+The **Recover** button in the toolbar opens the list of deleted entries of that type that you may restore. See [Deleted entries]({{"webinterface/deleted-entries/"|absolute_url}}).
 
 ## Related
 

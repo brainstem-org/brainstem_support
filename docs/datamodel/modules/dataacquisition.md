@@ -22,6 +22,9 @@ A data acquisition describes one recording stream captured during a session: an 
 
 The signal is linked to what produced it through [experimental interfaces]({{"datamodel/modules/experimentalinterface/"|absolute_url}}): the probe, fiber, lens, sensor or other target-facing interface the signal came through. The procedure that installed an interface is reached through the interface itself, so a data acquisition no longer links to procedures directly. [Equipment]({{"datamodel/modules/equipment/"|absolute_url}}) identifies the reusable instruments around it: amplifiers, cameras, microscopes, acquisition systems.
 
+![A session and its parts: the behavior (what the subjects were doing), data acquisitions (what was recorded) and manipulations (what was delivered), each placed in an epoch of the session (when); behaviors run an assay on a setup, and acquisitions and manipulations pass through experimental interfaces.]({{site.baseurl}}/assets/images/diagrams/session-parts-dataacquisition.svg)
+*A session and its parts. Data acquisitions, drawn solid, say what was recorded, each through the experimental interfaces the signal came through; the behavior says what the subjects were doing, manipulations what was delivered, and epochs when.*
+
 {% include datamodel_embed.html model="modules.dataacquisition" %}
 
 ## Fields

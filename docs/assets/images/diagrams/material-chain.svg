@@ -7,26 +7,26 @@
   </defs>
   <rect width="1500" height="520" fill="#fff"/>
   <text x="40" y="40" font-size="18" font-weight="600" fill="#2c2a38">Where a material comes from, and where it is used</text>
-  <rect x="450" y="80" width="360" height="150" rx="8" fill="#3f6bb3" fill-opacity="0.07" stroke="#3f6bb3" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
-  <text x="464" y="104" font-size="16" font-weight="600" fill="#3f6bb3">Inventory (personal attribute)</text>
   <rect x="60" y="110" width="320" height="100" rx="7" fill="#f4ede5" stroke="#c7a47e" stroke-width="1.2"/>
   <text x="220" y="132.5" font-size="17" font-weight="600" fill="#6f410e" text-anchor="middle">Consumable</text>
   <text x="220" y="154.5" font-size="15" fill="#2c2a38" text-anchor="middle">Shared catalog entry</text>
   <text x="220" y="176.5" font-size="15" fill="#2c2a38" text-anchor="middle">e.g. ASSY-156 silicon probe</text>
   <text x="220" y="198.5" font-size="15" fill="#2c2a38" text-anchor="middle">nominal value, supplier</text>
-  <rect x="470" y="120" width="320" height="96" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
-  <text x="630" y="151.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Consumable stock</text>
-  <text x="630" y="173.5" font-size="15" fill="#2c2a38" text-anchor="middle">Lot or item in an inventory</text>
-  <text x="630" y="195.5" font-size="15" fill="#2c2a38" text-anchor="middle">as-received value, lot, expiry</text>
+  <rect x="470" y="108" width="320" height="112" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="630" y="136.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Consumable stock</text>
+  <text x="630" y="158.5" font-size="15" fill="#2c2a38" text-anchor="middle">Lot or item in an inventory</text>
+  <text x="630" y="180.5" font-size="15" fill="#2c2a38" text-anchor="middle">e.g. ASSY-156, lot 2024-11</text>
+  <text x="630" y="202.5" font-size="15" fill="#2c2a38" text-anchor="middle">as-received value, lot, expiry</text>
   <rect x="470" y="290" width="320" height="70" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
   <text x="484" y="318.5" font-size="15" fill="#4a4858">Manual entry</text>
   <text x="484" y="340.5" font-size="15" fill="#4a4858">name and free text only, no catalog link</text>
   <rect x="880" y="120" width="320" height="170" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
-  <text x="1040" y="166.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Material usage</text>
-  <text x="1040" y="188.5" font-size="15" fill="#fff" text-anchor="middle">Role: Anesthetic agent</text>
-  <text x="1040" y="210.5" font-size="15" fill="#fff" text-anchor="middle">Source: stock, catalog or manual</text>
-  <text x="1040" y="232.5" font-size="15" fill="#fff" text-anchor="middle">Applied value: dose, volume, conc.</text>
-  <text x="1040" y="254.5" font-size="15" fill="#fff" text-anchor="middle">Stage (optional), frozen snapshot</text>
+  <text x="1040" y="155.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Material usage</text>
+  <text x="1040" y="177.5" font-size="15" fill="#fff" text-anchor="middle">Role: Silicon probe</text>
+  <text x="1040" y="199.5" font-size="15" fill="#fff" text-anchor="middle">in a silicon probe implant</text>
+  <text x="1040" y="221.5" font-size="15" fill="#fff" text-anchor="middle">Source: stock, catalog or manual</text>
+  <text x="1040" y="243.5" font-size="15" fill="#fff" text-anchor="middle">Applied value: dose, volume, conc.</text>
+  <text x="1040" y="265.5" font-size="15" fill="#fff" text-anchor="middle">Stage (optional), frozen snapshot</text>
   <rect x="1260" y="110" width="220" height="64" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
   <text x="1370" y="136.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Procedure</text>
   <text x="1370" y="158.5" font-size="15" fill="#2c2a38" text-anchor="middle">in-vivo event</text>

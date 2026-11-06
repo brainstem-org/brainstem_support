@@ -62,7 +62,10 @@ The species is required when a subject is created. A strain alone is not accepte
 
 ## Deleting a subject
 
-Deleting a subject deletes its procedures, subject logs and experimental interfaces. A subject cannot be deleted while a breeding or a procedure episode points to it. Specimen sets derived from the subject keep their records; only the link to the subject is cleared.
+{: .warning }
+Deleting a subject also deletes its procedures, subject logs and experimental interfaces. **Recover** on the subjects list restores the subject together with them; see [Deleted entries]({{"webinterface/deleted-entries/"|absolute_url}}).
+
+A subject cannot be deleted while a breeding or a procedure episode points to it, or while a data acquisition or manipulation uses one of its experimental interfaces. Specimen sets derived from the subject keep their records; only the link to the subject is cleared.
 
 ## Permissions
 

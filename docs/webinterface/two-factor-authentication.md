@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Two-Factor Authentication
+title: Two-factor authentication
 parent: Account and security
 grand_parent: Web interface
 nav_order: 2
 ---
 
-# Two-Factor Authentication (2FA)
+# Two-factor authentication (2FA)
 {: .no_toc}
 
 ## Table of contents
@@ -29,7 +29,9 @@ Two-factor authentication adds a second step to signing in: a code from an authe
 1. Open the avatar menu and choose **Security & access** → **Two-factor authentication** ([www.brainstem.org/account/two_factor/](https://www.brainstem.org/account/two_factor/)).
 2. Under **Active Authentication Methods**, click **Add Authentication App** (**Add another Authentication App** once you have one) or **Activate Email Authentication**.
 3. For an authenticator app, follow the **Configure Two-Factor Authentication** wizard: scan the QR code (or enter the secret key) in your app and type the 6-digit code it shows.
-4. Under **Backup Tokens**, click **Generate Tokens** and store the tokens offline.
+4. In the **Backup Tokens** row, click **Generate Tokens** and store the tokens offline. Once tokens exist, the link reads **View Tokens**.
+
+Backup tokens are only available in a session in which you confirmed a second factor; setting up a method in this session counts. Otherwise the **Backup Tokens** row says "Please complete 2FA login first to access backup tokens" and shows **Requires 2FA login**: sign out and sign in again with your code.
 
 ![Two-factor authentication page: an authenticator app and the Backup Tokens row under Active Authentication Methods, and the Add another Authentication App and Activate Email Authentication buttons]({{site.baseurl}}/assets/images/screenshots/two-factor-active-methods.png)
 {: .screenshot }
@@ -48,21 +50,30 @@ With **Email Authentication** a 6-digit code is sent to your account email at si
 ### Backup tokens
 {: .no_toc}
 
-Backup tokens are single-use codes for when you cannot reach your app or email. **View Tokens** shows the remaining tokens; **Generate Tokens** replaces them. They are removed when you remove all primary methods.
+Backup tokens are single-use codes for when you cannot reach your app or email. **View Tokens** shows the remaining tokens; **Generate Tokens** replaces them. They are deleted when you remove your last method, see [Managing methods](#managing-methods).
 
 ## Signing in with 2FA
 
 1. Enter your email and password.
 2. Enter the code from your default method, or choose another method or a backup token.
-3. Tick **Keep me signed in** to stay signed in for 30 days from your last activity; otherwise the session ends after 12 hours.
-
-After five failed attempts, sign-in for that account and address is blocked for one hour.
+3. Tick **Keep me signed in** to stay signed in longer. How long each kind of session lasts, and when repeated failed attempts block sign-in, is described under [Session lifetime and lockout]({{"webinterface/user-profile/#session-lifetime-and-lockout"|absolute_url}}).
 
 ## Managing methods
 
+Methods and backup tokens are managed on the same two-factor page. Each method has its own control in the **Active Authentication Methods** table:
+
+| Method | Control | Confirmation |
+|--------|---------|--------------|
+| Authenticator app | **Delete** | **Delete Authenticator App**: "Are you sure you want to remove this authenticator?" |
+| Email authentication | **Disable**, shown only when your organisation does not require two-factor sign-in | **Disable Email authentication**: "Are you sure you want to disable email-based authentication?" |
+
+Click **Confirm** to remove the method, or **Cancel**. Before removing or disabling a method, BrainSTEM asks for a fresh code from one of your methods.
+
 - Add a new method before removing the one you rely on.
-- Methods and backup tokens are managed on the same two-factor page.
-- When your organisation requires 2FA, the email method stays on; you can add an app but not remove every method.
+- When your organisation requires two-factor sign-in, the email method has no **Disable** link, and removing your last remaining method is refused: "Your organization requires at least one authentication method."
+
+{: .warning }
+> Removing your last method also deletes your backup tokens. Add the new method before you remove the old one: without a working method or a backup token you cannot sign in with two factors, and only support can help you regain access (see [Recovery](#recovery)).
 
 ## Recovery
 
@@ -75,12 +86,12 @@ Without a backup token, contact support through the [contact form](https://brain
 
 ## Organisation policies and session lifetimes
 
-Your institution can set a security policy for every account with its email domain. You see its effect at sign-in and on the two-factor page; the policy can tighten the system defaults, never loosen them:
+Your institution can set a security policy for every account with its email domain. You see its effect at sign-in and on the two-factor page; the policy can tighten the [system defaults]({{"webinterface/user-profile/#session-lifetime-and-lockout"|absolute_url}}), never loosen them:
 
 | Setting | Meaning |
 |---------|---------|
 | **Two-factor sign-in** | **Required** or **Optional** |
-| **Stays signed in for** | How long a **Keep me signed in** session lasts since the last activity (system default 30 days, up to 365 days) |
+| **Stays signed in for** | How long a **Keep me signed in** session lasts since the last activity |
 | **Sign-in renewed every** | How often an active session is extended |
 | **Must sign in again after** | A hard limit after which you sign in again regardless of activity |
 
@@ -95,7 +106,7 @@ When your institution turns on email 2FA for every account of its domain, it is 
 
 ## Related
 
-- [User profile]({{"webinterface/user-profile/#active-sessions"|absolute_url}}): **Active sessions**, **Change password** and the **Keep me signed in** lifetimes
+- [User profile]({{"webinterface/user-profile/#active-sessions"|absolute_url}}): **Active sessions**, **Change password** and the [session lifetimes and lockout]({{"webinterface/user-profile/#session-lifetime-and-lockout"|absolute_url}})
 - [User profile: API tokens]({{"webinterface/user-profile/#api-tokens"|absolute_url}}): why a token needs a two-factor method first
 - [API]({{"api/"|absolute_url}}): signing in from scripts with a personal access token or the device flow
 - [Get started]({{"tutorials/get_started/"|absolute_url}}): creating your account

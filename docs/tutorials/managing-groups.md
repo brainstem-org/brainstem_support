@@ -8,130 +8,72 @@ nav_order: 2
 # Managing Groups
 {: .no_toc}
 
-## Introduction
+A group is your lab in BrainSTEM: projects, setups, inventories and data storage are shared with a group, and every member inherits that access. This tutorial creates a group for your lab (or joins an existing one), invites your lab members, and shows how to manage their roles. At the end, your lab members are in one group that you can select in **Authenticated groups** when you create entries.
 
-Groups in BrainSTEM are essential for organizing lab members and managing permissions. This tutorial will guide you through the process of managing groups effectively, including understanding different permission levels and performing common management tasks.
+**Prerequisites**: a BrainSTEM account (see [Get started!]({{site.baseurl}}/tutorials/get_started)).
 
-## Group Permission Levels
+## Table of contents
+{: .no_toc .text-delta }
 
-BrainSTEM groups have three levels of membership, each with increasing levels of control:
+1. TOC
+{:toc}
 
-| Permission Level | Capabilities |
-|-----------------|-------------|
-| **Members** | View group resources<br>Inherit project permissions assigned to the group<br>Leave the group voluntarily<br>**Cannot** modify group settings or membership |
-| **Managers** | All Member permissions<br>Add new members to the group<br>Remove existing members from the group<br>Create and manage member invitations<br>**Cannot** modify group settings or grant privileges |
-| **Owners** | All Manager permissions<br>Associate group with laboratory information<br>Rename the group<br>Promote members to Manager or Owner roles<br>Modify all group settings<br>Full administrative control |
+## Find the groups
 
-Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more about the BrainSTEM permission system. 
+Click the **Users, groups & invitations** icon in the top bar and select **Groups**, or go to [www.brainstem.org/private/auth/group/](https://www.brainstem.org/private/auth/group/). The list shows every group with its laboratory and number of users. Search it before creating a group: your lab may already have one.
 
-## Accessing Group Management
+## Option A: Create a group
 
-**To access your group's management page:**
+1. On the Groups page, click **Add group**.
+2. Enter the **Group name (must be unique)**. Add your institution to the name, for example "Sample Lab - NYU".
+3. Click **Save**. The group's page opens. You are its first member, with the Manager and Owner roles.
 
-1. Navigate to the Groups page:
-   - Visit [https://www.brainstem.org/private/auth/group/](https://www.brainstem.org/private/auth/group/)
-   - Or click the **Users, groups & invitations** icon in the top navigation bar and select **Groups**
+## Option B: Request to join a group
 
-2. Find your group in the list and click on it to access management options
+1. On the Groups page, open the group of your lab.
+2. Click **Request membership**. The message "Membership requested!" confirms it, and the group's managers are emailed.
+3. Wait for a manager to accept. You are emailed when the request is accepted or denied, and you can withdraw it with **Cancel request** on the group's page.
 
-## Manager Capabilities
+## Invite a member
 
-As a group manager, you can add and remove members, as well as manage invitations.
+You need Manager on the group.
 
-### Adding New Members
-
-**To invite a new member to your group:**
-
-1. Go to your group's management page
-2. Click the **Invite users** button
-3. Select the user, or enter the email address of someone who has no account yet
-4. Click **Submit** to send the invitation
+1. Open your group's page and click **Invite users**.
+2. In **Invite user**, enter the email address of the person. People who already have an account are suggested as you type. People without an account receive a signup link.
+3. As an Owner, you can tick **Manager** or **Owner** under **Extra permissions** to invite the person with that role.
+4. Click **Send invitation**.
 
 {: .note }
-> The invited user will receive an email notification and must accept the invitation to join the group. Invitations to people without an account expire after 14 days.
+> The invited person must accept the invitation from the email or from **Invitations & Requests** before joining. Invitations to people without an account expire after 14 days. Pending invitations and requests are listed on the group's page, where managers can **Accept** or **Deny** requests and **Cancel invitation**. Answering invitations is described on [Sharing and memberships]({{site.baseurl}}/webinterface/sharing-and-memberships/#answering-an-invitation).
 
-### Checking Invitation Status
+## Manage members and roles
 
-**To monitor pending invitations:**
-
-1. Click the **Users, groups & invitations** icon and select **Invitations & Requests**
-2. The **Groups** section lists pending invitations and membership requests for your groups
-3. Accept membership requests from lab members there
-
-### Removing Members
-
-**To remove members from your group:**
-
-1. Access your group's member list
-2. Locate the user(s) you want to remove
-3. Check the checkbox next to their name(s)
-4. Click the **Save** button to confirm the removal
+1. Open your group's page and click **Manage**.
+2. The member table has the columns **User**, **Manager**, **Owner** and **Remove**. Tick **Manager** or **Owner** to give a role, or **Remove** to take someone out of the group. Changing Managers and Owners needs the Owner role.
+3. Click **Save**.
 
 {: .important }
-> Removing a member will revoke their access to all group resources.
+> Removing a member immediately revokes everything they could access through the group. A group always keeps at least one owner.
 
-## Owner Capabilities
+To leave a group yourself, click **Leave group** on the **Manage** page.
 
-As a group owner, you have full administrative control including the ability to promote members, and modify group settings.
+## Add laboratory details
 
-### Managing Member Privileges
+You need Owner on the group.
 
-**To promote members to Manager or Owner roles:**
+1. Open your group's page and click **Add laboratory details**.
+2. Select the **Principal investigators** from the group's members and enter the **Institution**. The other fields are described on the [Users]({{site.baseurl}}/datamodel/users/) page.
+3. Click **Save**.
 
-1. Access your group's member list
-2. Locate the member(s) you want to modify
-3. Check/uncheck the appropriate boxes:
-   - **Managers** checkbox: Grants manager privileges (can add/remove members)
-   - **Owners** checkbox: Grants owner privileges (full administrative control)
-4. Click **Save** to apply the changes
+The laboratory details help other users recognize your group when they invite it to a project. To rename the group, click **Edit group** on its page.
 
-{: .important }
-> Owner privileges should be granted carefully as they provide complete control over the group, including the ability to modify all settings and member roles.
+## End state
 
-### Associating with Laboratory
+Your lab group exists, you are its owner, and your lab members have joined or been invited. Select it in **Authenticated groups** whenever you create a setup, inventory, data storage or project, and every member gets Contributor access. What each role can do is listed on the [Permissions]({{site.baseurl}}/datamodel/permissions/#group-permissions) page.
 
-**To link your group to laboratory information:**
+## Next steps
 
-Group owners can associate their group with institutional and Principal investigators for better organization and identification.
-
-1. Open your group's details page
-2. Click the **Add laboratory details** button
-3. Fill in the laboratory details:
-
-| Field | Description |
-|-------|-------------|
-| **Principal investigators** (required) | Select from group members |
-| **Institution** (required) | University or research institution name |
-| **Department** | Department name |
-| **Website** | Lab website URL (optional) |
-| **Description** | A short description of the lab |
-| **City** | Laboratory location city |
-| **Country** | Laboratory location country |
-
-4. Click **Save** to apply the association
-
-{: .note }
-> Laboratory associations help other users identify your research group and can be useful for collaboration and data sharing.
-
-### Renaming the Group
-
-**To change your group's name:**
-
-1. Go to your group's main page
-2. Click the **Edit group** button
-3. Locate the **Name** field at the top of the form
-4. Enter the new group name
-5. Click **Save** to confirm the changes
-
-{: .important }
-> Choose group names carefully as they should clearly identify your lab or research team. Other users will see this name when collaborating on projects.
-
-## Next Steps
-
-After setting up your research groups, you're ready to organize your research:
-
-- **Create collaborative projects**: Use [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) to organize your research and enable team collaboration
-- **Set up your lab infrastructure**: Follow [Setting Up Lab Infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) to configure equipment, setups, and inventories that your group can access
-- **Configure data storage**: Set up [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) locations that your team can use for data management
-- **Start documenting experiments**: Begin with [Get Started]({{site.baseurl}}/tutorials/get_started) to create your first subjects and sessions with proper group permissions
-- **Plan for data sharing**: Learn about [Share Data Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) when you're ready to make research openly accessible
+- **Next:** [Setting Up Lab Infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure): create the setups, equipment and inventories your group shares.
+- [Manage Projects]({{site.baseurl}}/tutorials/managing-projects): give your group a level on a project.
+- [Sharing and memberships]({{site.baseurl}}/webinterface/sharing-and-memberships/): invitations, requests and the Manage permissions page in detail.
+- Data model: [Users, groups and laboratories]({{site.baseurl}}/datamodel/users/) and [Permissions]({{site.baseurl}}/datamodel/permissions/).

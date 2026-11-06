@@ -15,12 +15,6 @@ BrainSTEM exports one project, or one session with everything it touches, as a s
 1. TOC
 {:toc}
 
-## Requirements
-
-- Read access to the project (Member or above), or to one of the session's projects. Without it the endpoints answer `404`.
-- A token and the private portal.
-- At most 30 export requests per hour per user, direct exports and job requests together.
-
 ## Endpoints
 
 | Method and URL | Use |
@@ -90,5 +84,8 @@ export = client.export_project('<project-id>', 'background', true);
 - Records of projects you cannot read. References to them stay bare keys.
 
 ## From export to NWB
+
+![From BrainSTEM to NWB: on BrainSTEM, the server builds the export JSON of a project or session; on your computer, brainstem-nwb converts it into one NWB file per session and subject with a manifest and a validation report. Metadata only: the lab adds the raw data and shares the files on DANDI.]({{site.baseurl}}/assets/images/diagrams/export-nwb-pipeline.svg)
+*From a BrainSTEM export through brainstem-nwb to one NWB file per session and subject, with a conversion manifest and a validation report. The files hold metadata only; raw data is added to them separately.*
 
 The [brainstem-nwb](/tools/brainstem-nwb/) converter turns a project or session export into Neurodata Without Borders files, one per session and subject, and the [ndx-brainstem](/tools/ndx-brainstem/) extension stores the complete BrainSTEM records inside those files.

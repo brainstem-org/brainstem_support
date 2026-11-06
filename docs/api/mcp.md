@@ -7,7 +7,14 @@ nav_order: 11
 # MCP server
 {: .no_toc}
 
-The [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open standard that connects AI applications to external data and tools. The BrainSTEM MCP server uses it to give AI applications, such as Claude Code or Cursor, access to BrainSTEM: they can read the data model and the schemas, search and export your records, follow recent changes and, after your confirmation, create and update records. Every request goes through the REST API with the permissions of your token.
+The [Model Context Protocol](https://modelcontextprotocol.io) (MCP) is an open standard that connects AI applications to external data and tools. The BrainSTEM MCP server uses it to give AI applications, such as Claude Code or Cursor, access to BrainSTEM: they can read the data model and the schemas, search and export your records, follow recent changes and, on a writable connection, create and update records. Every request goes through the REST API with the permissions of your token.
+
+{: .important }
+> - What the application reads through the server, records and exports included, is sent to the model provider of your AI application.
+> - The token has no scopes. A [read-only connection](#connecting) is a property of the URL only: the same token writes through the plain URL or the REST API.
+> - Showing you each change before it is made is an instruction to the application. The server cannot tell whether you were asked.
+
+[Working with AI]({{site.baseurl}}/tutorials/working-with-ai/#what-each-channel-sees-and-can-change) compares what the MCP server, the agent skills and the in-app assistant send and can change.
 
 For a step-by-step setup, see [Working with AI]({{site.baseurl}}/tutorials/working-with-ai/#the-mcp-server).
 
@@ -42,9 +49,9 @@ claude mcp add --transport http brainstem https://www.brainstem.org/mcp/ \
 }
 ```
 
-Create the token on your [API token page](https://www.brainstem.org/private/users/tokens/) and name it after the application, so you can revoke it later. The one-click connectors of claude.ai and ChatGPT need an OAuth sign-in that BrainSTEM does not offer yet; use an application that lets you set the header.
+Create the token on your [API token page](https://www.brainstem.org/private/users/tokens/), one per application, and name it after the application, so you can revoke it without affecting your other tools. Its lifetime is described under [API authentication](/api/#authentication). The one-click connectors of claude.ai and ChatGPT need an OAuth sign-in that BrainSTEM does not offer yet; use an application that lets you set the header.
 
-**Read-only connection.** Use `https://www.brainstem.org/mcp/?read_only=true` to hide every writing tool. This is the safe choice for exploring data.
+**Read-only connection.** Use `https://www.brainstem.org/mcp/?read_only=true` to hide every writing tool; the server also refuses writes on such a connection. This is the safe choice for exploring data, but it protects nothing if the token is used elsewhere (see the note at the top).
 
 ## Tools
 
@@ -67,7 +74,7 @@ The server also exposes the reference pages and schemas as MCP resources, so a c
 - **Delete records.** Deletion is only available in the web interface and the REST API.
 - **Manage accounts.** Users, groups, laboratories, memberships and invitations cannot be written through MCP.
 - **Publish by accident.** A generic create or update cannot set `is_public`; making a record public is its own tool, `set_visibility`.
-- **Act without asking.** The server instructs the assistant to show you the exact payload before every create or update and to wait for your confirmation, one confirmation per call, and never to act on instructions found inside records.
+- **Act without asking.** The server instructs the assistant to show you the exact payload before every create or update and to wait for your confirmation, one confirmation per call, and never to act on instructions found inside records. These are instructions to the application; the server cannot tell whether you were asked. The other three points are enforced by the server.
 
 Every record written through MCP is marked in its revision history ("Created via MCP", "Changed Name via MCP").
 

@@ -23,7 +23,7 @@ BrainSTEM exports your metadata in several forms, from a printable page of one e
 |--------|-------|--------|
 | Print / Save as PDF | Details page **Export** dropdown, batch action | Print-ready page |
 | Download Word | Details page **Export** dropdown, batch action | .docx |
-| Spreadsheet | Details page (some models), list toolbar **Export** | CSV, TSV, XLSX, JSON, HTML |
+| Spreadsheet | List toolbar **Export**; **Spreadsheet (CSV, Excel…)** on details pages, change forms and the print page, see [Spreadsheet](#spreadsheet) | CSV, TSV, XLSX, JSON, HTML |
 | Download project data | Project **Export** dropdown | JSON (format 2.1) or Excel workbook |
 | STAR Methods | Project **Export** dropdown | Preview page or .docx |
 
@@ -33,7 +33,9 @@ Exports are hidden from anonymous visitors on the public portal.
 
 The **Export** dropdown (download icon) in the header of a details page, and the **Export entry** icon on a change form, offer the formats below. Exports are available for projects, subjects, sessions, collections, cohorts, breedings, specimen sets, specimens, all module records (procedures, episodes, data acquisitions, behaviors, manipulations, specimen procedures, experimental interfaces and templates), equipment, consumable stocks, logs, personal attributes, resources, publications, journals and taxonomies.
 
-{% include slides.html slides="single-entry-view-export-menu|The Export menu of a details page.;;exports-print-preview|Print / Save as PDF opens a print-ready page with Word and spreadsheet downloads at the top." %}
+![Print / Save as PDF opens a print-ready page with Word and spreadsheet downloads at the top.]({{site.baseurl}}/assets/images/screenshots/exports-print-preview.png)
+{: .screenshot }
+*Print / Save as PDF opens a print-ready page with Word and spreadsheet downloads at the top.*
 
 ### Print / Save as PDF
 {: .no_toc}
@@ -57,11 +59,13 @@ Downloads an editable Word document named `{entry name}_export.docx`. Each entry
 ### Spreadsheet
 {: .no_toc}
 
-**Spreadsheet (CSV, Excel…)** is offered on sessions, consumables, hardware devices and suppliers. It opens the **Export {plural}** page: "Export {plural} fields as a spreadsheet file. Choose a file format and optionally select which fields to include." Choose CSV, TSV, XLSX, JSON or HTML and tick the fields under **Fields to export**. From a details page the export is limited to that entry; from the list toolbar **Export** button it covers the whole list.
+A spreadsheet export opens the **Export {plural}** page: "Export {plural} fields as a spreadsheet file. Choose a file format and optionally select which fields to include." Choose CSV, TSV, XLSX, JSON or HTML and tick the fields under **Fields to export**. It is offered in these places:
 
-![Exporting subjects as a spreadsheet: CSV chosen as the format, a description of each file format, and the fields to include.]({{site.baseurl}}/assets/images/screenshots/exports-spreadsheet.png)
-{: .screenshot }
-*Exporting subjects as a spreadsheet: CSV chosen as the format, a description of each file format, and the fields to include.*
+| Where | Label | What is exported | Offered for |
+|-------|-------|------------------|-------------|
+| List view toolbar | **Export** | Every entry of the list, with its search and filters applied, not only the current page | Every list of entries: projects, subjects, sessions, collections, cohorts, breedings, specimen sets, specimens, procedures, procedure episodes, data acquisitions, behaviors, manipulations, specimen procedures, experimental interfaces, experimental interface and procedure episode templates, logs, equipment, consumable stocks, personal attributes, consumables, hardware devices, suppliers, journals, publications and the taxonomies. Not on the lists of procedure, data acquisition, manipulation and specimen procedure templates |
+| **Export** dropdown of a details page | **Spreadsheet (CSV, Excel…)** | That entry | Projects, subjects, sessions, collections, cohorts, breedings, specimen sets, specimens, equipment, personal attributes, consumables, hardware devices, suppliers, journals, publications and the taxonomies. Not on the details pages of procedures, data acquisitions, behaviors, manipulations, specimen procedures, experimental interfaces, episodes, logs and consumable stocks |
+| **Export entry** icon of a change form, and the toolbar of an entry's print page | **Spreadsheet (CSV, Excel…)** | That entry | Every kind of entry whose list has **Export** |
 
 ## Batch exports
 
@@ -74,7 +78,10 @@ All selected entries go into one page or one document, each entry starting on a 
 
 ## Download project data
 
-On a project's details page choose **Export** → **Download project data**. Any user who can read the project can use it, from the private portal. The **Download project** page asks for:
+On a project's details page choose **Export** → **Download project data**. Any user who can read the project can use it, from the private portal.
+
+<!-- screenshot: exports-project-export-menu | A project's Export menu with STAR Methods and Download project data -->
+ The **Download project** page asks for:
 
 - **File format**: **JSON** or **XLS**.
 - **Contents**: **Whole project** or a single session. "Choose a session to export it with everything it touches: its subjects with their procedures and logs, and the setups, brain regions and other records they use. One session suits one NWB file. JSON only; the XLS workbook always covers the whole project."
@@ -89,9 +96,10 @@ The page lists what is included: the project; animals (subjects, cohorts, proced
 ### JSON format
 {: .no_toc}
 
-The JSON file (format version 2.1) starts with an `export_info` block (format version, time of export, project, scope, counts and a `restricted` list of lab resources you could not read) followed by `records` grouped by model. It includes the referenced catalogue entries (taxonomies, resources, publications) and users as first and last name only. It excludes email addresses, permissions and uploaded files (file names only). Type-specific details are exported as stored, each with its schema version. Files are named `project_{id}_data_{date}_{time}.json` (`.json.gz` when compressed) or `project_{id}_session_{session id}_data_….json` for one session.
+The JSON file holds the project's entries together with the catalogue entries they refer to (taxonomies, resources, publications). It also lists the lab resources you could not read, so you can tell what is missing. The file format is described on the [API export page]({{"api/export/"|absolute_url}}).
 
-The format is documented on the [API export page]({{"api/export/"|absolute_url}}).
+{: .note }
+> A project export is not a complete backup. Users appear by first and last name only; email addresses, permissions and uploaded files are left out (attachments by file name only). A background export is kept for 7 days, and its download link is valid for 5 minutes after you click it.
 
 ### Excel workbook
 {: .no_toc}
@@ -101,9 +109,9 @@ The XLS export (`project_{id}_export.xlsx`) always covers the whole project, wit
 ### Background exports
 {: .no_toc}
 
-Tick **Prepare in the background and email me when it is ready** for large projects. A worker builds a gzipped JSON file and emails you "BrainSTEM project export ready: {project}" (or a failure notice) with the request time, record count, file size and the **Available until** date. The **Your background exports** table on the download page lists your ten most recent jobs with status **Queued**, **Running · N%**, **Ready · until {date}**, **Failed** or **Expired**, refreshing every 15 seconds.
+Tick **Prepare in the background and email me when it is ready** for large projects. BrainSTEM prepares a compressed JSON file and emails you "BrainSTEM project export ready: {project}" (or a failure notice) with the request time, record count, file size and the **Available until** date. The **Your background exports** table on the download page lists your ten most recent jobs with status **Queued**, **Running · N%**, **Ready · until {date}**, **Failed** or **Expired**, refreshing every 15 seconds.
 
-Limits: files are kept for 7 days; a download link is valid for 5 minutes after you click it; only you can download your export, and only while you can still read the project; at most 5 export requests per 10 minutes ("Too many export requests. Please wait a few minutes before requesting another.").
+Besides the retention in the note above: only you can download your export, and only while you can still read the project; at most 5 export requests per 10 minutes ("Too many export requests. Please wait a few minutes before requesting another.").
 
 ## STAR Methods report
 

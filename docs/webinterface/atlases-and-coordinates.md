@@ -30,6 +30,9 @@ The **Coordinates** field appears on procedure types that place something in the
 
 Surface systems take **AP coordinate** (positive is anterior), **ML coordinate** (positive is right), **Depth** from the brain surface, **AP angle**, **ML angle** and **Rotation**; absolute systems take a **DV coordinate** instead of depth. Lengths can be entered in nm, µm, mm or m (default mm), angles in degrees. Every system, its fields and the sign and angle conventions are listed on the [Coordinate systems]({{"datamodel/schemas/coordinates/"|absolute_url}}) page.
 
+![The stereotaxic axes: AP positive anterior, ML positive to the right, DV positive ventral.]({{site.baseurl}}/assets/images/coordinates/coordinates2.png){: width="40%"}
+*The stereotaxic axes. Bregma and Lambda, and the AP and ML angles and the rotation, are drawn on the [Coordinate systems]({{"datamodel/schemas/coordinates/"|absolute_url}}) page.*
+
 ## The atlas selector and target regions
 
 The **Atlas** field chooses the reference atlas for the target regions: "The active anatomical atlas. You can set your preferred atlas in your profile". The list holds the active atlases with imported regions, grouped by species, and is preloaded with the **Atlas preference** from your [profile]({{"webinterface/user-profile/#atlas-preference"|absolute_url}}). When the subject's species has exactly one compatible atlas, it is selected automatically. The atlas must match the subject's species ("The atlas must match the subject species."), and a subject's species cannot be changed while its procedures reference an atlas of another species.
@@ -59,11 +62,14 @@ The mouse, rat and marmoset atlases are bilateral: left and right regions are fo
 ### How stereotaxic coordinates are placed in an atlas
 {: .no_toc}
 
-Coordinates given directly in an atlas space (the XYZ systems) are shown exactly. Stereotaxic coordinates are estimated: mouse Bregma coordinates through a published Bregma-to-CCF estimate, rat Bregma and Lambda coordinates through the Waxholm registration, and marmoset landmark coordinates relative to interaural zero with a caveat of about 1 mm. Every estimated placement shows the note "Estimated stereotaxic placement in an atlas average. This is not a measured registration or ground-truth localization." Lambda-based mouse coordinates and macaque or zebrafish stereotaxic coordinates cannot be previewed.
+Coordinates given directly in an atlas space (the XYZ systems) are shown exactly. Stereotaxic coordinates are estimated: mouse Bregma coordinates through a published Bregma-to-CCF estimate, rat Bregma and Lambda coordinates through the Waxholm registration, and marmoset landmark coordinates relative to interaural zero with a caveat of about 1 mm. Lambda-based mouse coordinates and macaque or zebrafish stereotaxic coordinates cannot be previewed.
+
+{: .note }
+> A stereotaxic placement in the viewer is an estimate in an atlas average, not your animal's anatomy. Every estimated placement says so: "Estimated stereotaxic placement in an atlas average. This is not a measured registration or ground-truth localization." Confirm the actual position with histology.
 
 ## Region-only vocabularies
 
-Thirteen further atlases and ontologies provide region trees for target regions without a coordinate viewer:
+At the time of writing, thirteen further atlases and ontologies provide region trees for target regions without a coordinate viewer:
 
 - Mouse: Paxinos and Franklin Mouse Brain Atlas (2001), Allen Developing Mouse Brain Atlas, Allen Spinal Cord Atlas, Adult Mouse Gross Anatomy
 - Rat: BrainMaps Rat Brain Atlas (4.0), Paxinos and Watson Rat Brain Atlas (1997), Swanson Rat Brain Atlas (2004)
@@ -77,7 +83,7 @@ Thirteen further atlases and ontologies provide region trees for target regions 
 
 The **View coordinates** button sits next to the coordinates on the procedure form, on the procedure details page (**Coordinates · {system}**), on procedure rows of the subject page and on the episode form. It is enabled once a subject with a species, a supported coordinate system, a compatible atlas and the required values are set. When disabled, its tooltip says why: "Choose a subject.", "Choose a supported coordinate system.", "No coordinate viewer is available for this species and coordinate system.", "Choose a compatible atlas.", "Coordinate viewer assets are unavailable for this atlas." or "Enter a value for AP coordinate…". XYZ systems need x, y and z; absolute systems AP, ML and DV; surface systems AP, ML and depth (burr holes and ECoG implants need no depth).
 
-{% include slides.html slides="atlases-coordinate-viewer|A cranial window in the Allen Mouse Common Coordinate Framework: the entry point on the 3D brain.;;atlases-viewer-rat-3d|A silicon probe implant in the Waxholm Space Sprague Dawley rat atlas: the probe track in 3D.;;atlases-viewer-rat-all-planes|All planes: coronal, sagittal and horizontal sections through the probe tip, with the region under the cursor (Dentate gyrus) at the bottom.;;atlases-viewer-rat-coronal|The coronal plane at the probe's AP position with the track crosshair.;;forms-coordinates|The procedure's coordinate system with the View coordinates button that opens the viewer." %}
+{% include slides.html slides="forms-coordinates|The procedure's coordinate system with the View coordinates button that opens the viewer.;;atlases-viewer-rat-3d|A silicon probe implant in the Waxholm Space Sprague Dawley rat atlas: the probe track in 3D.;;atlases-viewer-rat-all-planes|All planes: coronal, sagittal and horizontal sections through the probe tip, with the region under the cursor (Dentate gyrus) at the bottom." %}
 
 ### The coordinate viewer
 {: .no_toc}
@@ -91,10 +97,6 @@ The **Coordinate viewer** ("View coordinates and implantation track in anatomica
 - Readouts **Position:** and **Region:** under the cursor; legend **Entry point**, **Endpoint**, **Implantation axis**. "A faint dashed guide shows a nearby track up to 2 mm away."
 
 The device is drawn from the procedure: a silicon probe with the shank count, pitch and thickness of the probe design recorded in the Materials tab ("No silicon-probe material is saved; a schematic single shank is shown." otherwise), an optic fiber, an injection volume, a single wire or reference electrode, a burr hole or ECoG array on the surface, or a generic implantation trajectory. Atlas attribution and licence are shown in the dialog.
-
-## Atlas preference
-
-Set **Atlas preference** on your [profile]({{"webinterface/user-profile/#atlas-preference"|absolute_url}}) to have your usual atlas preselected in every form.
 
 ## Related
 

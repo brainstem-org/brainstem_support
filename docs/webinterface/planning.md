@@ -38,13 +38,15 @@ Epochs, behaviors, data acquisitions and manipulations have no status of their o
 - In dropdowns, links and breadcrumbs the name is prefixed with **Planned:** or **Cancelled:**. Subjects are the exception; they rely on the status badge.
 - List views show a **Status** badge column and a **Status** filter with **Performed**, **Planned**, **Cancelled** and **Planned or cancelled**. Lists show all rows, planned ones included.
 
-{% include slides.html slides="planning-planned-records|A planned session's details page: the Planned pill and no recorded modules yet.;;planning-planned-form|The planned session's form: Mark as performed turns it into a performed session.;;list-view-sessions|The sessions list shows the status of every session, planned ones included." %}
+{% include slides.html slides="planning-planned-form|The planned session's form: Mark as performed turns it into a performed session.;;list-view-sessions|The sessions list shows the status of every session, planned ones included." %}
 
 ## Creating a plan
 
 Set **Status** to **Planned** when you create the record, or duplicate an existing subject, session, specimen set or episode with **Copy as a plan**: "Everything copied is marked planned, as preparation for work that has not happened yet." See [Duplication]({{"webinterface/forms/#duplication"|absolute_url}}).
 
 ## Transitions
+
+![The planned, performed and cancelled states with the buttons and guards of each transition, and where planned entries appear.]({{site.baseurl}}/assets/images/diagrams/planning-states.svg)
 
 While a record is planned, its form shows a transition button in the header; the details page shows the **Planned** pill. The same transitions exist as bulk actions in list views for several rows at once.
 
@@ -60,6 +62,11 @@ A transition checks the whole record and is recorded in the history as "{label} 
 
 When a planned implant procedure is marked as performed, its experimental interface is created at that moment, in the same way as for a procedure saved as performed. The form notes this: "Creating this procedure also creates a/an {label} experimental interface for the subject, unless the procedure is planned…".
 
+![Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)
+
+{: .important }
+> Once a performed implant has an experimental interface, it cannot go back to planned: "This procedure has linked experimental interfaces, so it cannot go back to planned. Remove the interface links first."
+
 ## Validation rules
 
 Plans are checked so that nothing performed depends on something that has not happened yet. In plain words:
@@ -67,7 +74,6 @@ Plans are checked so that nothing performed depends on something that has not ha
 - A performed procedure needs an enrolled subject: "This subject is still planned. Enroll the subject before recording a performed procedure, or keep the procedure planned."
 - A performed procedure cannot belong to a planned episode: "This episode is still planned. A performed procedure cannot belong to a planned episode…"
 - Marking a procedure as performed requires its date: "Set the date and time the procedure was performed."
-- A performed implant with an experimental interface cannot go back to planned: "This procedure has linked experimental interfaces, so it cannot go back to planned. Remove the interface links first."
 - A performed session cannot include planned subjects: "Planned subjects cannot take part in a performed session: … Enroll them first, or keep the session planned."
 - A performed specimen procedure needs collected material: "This specimen set is still planned (not collected yet). Mark the set as collected before recording a performed procedure on it…"
 - A planned breeding has no offspring yet: "This breeding is still planned, so its offspring cannot exist yet…"
@@ -77,8 +83,10 @@ Plans are checked so that nothing performed depends on something that has not ha
 
 - List views in the web interface show planned, performed and cancelled rows together; use the **Status** filter to separate them.
 - Dashboard statistics and licence counts use performed records only.
-- The REST API returns performed rows by default; add `include_planned=true` or a status filter to see plans. Behaviors, data acquisitions, manipulations and epochs inside planned sessions are left out in the same way. See the [API documentation]({{"api/"|absolute_url}}).
 - The public portal never shows planned subjects, specimen sets or specimens, nor planned or cancelled procedures, sessions or breedings, even when the project is public. See [Public data]({{"publicdata/"|absolute_url}}).
+
+{: .note }
+> API lists return performed entries only, unless you ask for planned and cancelled ones. A script that lists entries through the API without asking does not see your plans; see the [API documentation]({{"api/"|absolute_url}}) for how to include them.
 
 ## Related
 
@@ -86,4 +94,4 @@ Plans are checked so that nothing performed depends on something that has not ha
 - [Single entry view]({{"webinterface/single-entry-view/"|absolute_url}}): the **Planned** pill in the header
 - [List view]({{"webinterface/list-view/#bulk-actions"|absolute_url}}): the **Status** filter and the bulk transitions
 - [Procedures]({{"datamodel/modules/procedure/"|absolute_url}}), [Sessions]({{"datamodel/stem/session/"|absolute_url}}) and [Breedings]({{"datamodel/stem/breeding/"|absolute_url}}): the entries with a planning status
-- [Permissions]({{"datamodel/permissions/#planned-records"|absolute_url}}): who sees planned records
+- [Permissions]({{"datamodel/permissions/#planned-entries"|absolute_url}}): who sees planned records

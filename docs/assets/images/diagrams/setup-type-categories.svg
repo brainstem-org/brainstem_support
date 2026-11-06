@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1540 660" width="1540" height="660" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Setup type categories, from a slice to a freely moving animal: In Vitro, Ex Vivo, Anesthetized In Vivo, Head-Fixed Awake, Restrained Awake and Freely Moving Awake, each with an example setup type, and the biological preparation, physiological state and constraint level derived from the category.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1540" height="660" fill="#fff"/>
+  <text x="40" y="36" font-size="18" font-weight="600" fill="#2c2a38">Setup type categories: from a slice to a freely moving animal</text>
+  <path d="M236 78 L1504 78" stroke="#6f6d82" stroke-width="1.6" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="230" y="66" font-size="14" fill="#4a4858" text-anchor="start">more experimental control</text>
+  <text x="1510" y="66" font-size="14" fill="#4a4858" text-anchor="end">more natural behavior</text>
+  <rect x="230" y="96" width="205" height="150" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="332.5" y="176.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle"></text>
+  <g transform="translate(230,96)" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M8 66 L50 74" stroke="#9a98aa" stroke-width="4"/>
+  <path d="M154 92 L197 100" stroke="#9a98aa" stroke-width="4"/>
+  <circle cx="102" cy="82" r="54" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.5"/>
+  <circle cx="102" cy="82" r="46" fill="#dcebf6" stroke="#6f6d82" stroke-width="1.2"/>
+  <path d="M102 60 C120 53 139 62 139 80 C139 97 125 107 109 105 C105 105 103 102 102 99 C101 102 99 105 95 105 C79 107 65 97 65 80 C65 62 84 53 102 60 Z" fill="#f1d2de" stroke="#6f6d82" stroke-width="1.4"/>
+  <path d="M102 61 L102 98" stroke="#6f6d82" stroke-width="0.8" opacity="0.5"/>
+  <path d="M78 84 C72 74 84 66 94 72 M126 84 C132 74 120 66 110 72" fill="none" stroke="#6f6d82" stroke-width="1.3"/>
+  <path d="M80 92 C88 96 96 94 99 90 M124 92 C116 96 108 94 105 90" fill="none" stroke="#6f6d82" stroke-width="0.9" opacity="0.6"/>
+  <path d="M190 6 L194 10 L160 44 L156 40 Z" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.2"/>
+  <path d="M158 42 L118 78" stroke="#6f6d82" stroke-width="1.2"/>
+  </g>
+  <rect x="230" y="260" width="205" height="52" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="332.5" y="291" font-size="16" font-weight="600" fill="#2c2a38" text-anchor="middle">In Vitro</text>
+  <rect x="230" y="324" width="205" height="64" rx="7" fill="#eff1e8" stroke="#aeb78a" stroke-width="1.2"/>
+  <text x="332.5" y="349.5" font-size="15" font-weight="600" fill="#4d591e" text-anchor="middle">Brain slice</text>
+  <text x="332.5" y="371.5" font-size="15" fill="#2c2a38" text-anchor="middle">recording chamber</text>
+  <rect x="445" y="96" width="205" height="150" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="547.5" y="176.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle"></text>
+  <g transform="translate(445,96)" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M4 40 L22 40 L22 60" fill="none" stroke="#9a98aa" stroke-width="4"/>
+  <rect x="16" y="30" width="172" height="112" rx="8" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.5"/>
+  <rect x="23" y="37" width="158" height="98" rx="5" fill="#dcebf6" stroke="#6f6d82" stroke-width="1.1"/>
+  <rect x="93" y="112" width="14" height="20" rx="5" fill="#f1d2de" stroke="#6f6d82" stroke-width="1.3"/>
+  <ellipse cx="100" cy="110" rx="21" ry="10" fill="#f1d2de" stroke="#6f6d82" stroke-width="1.4"/>
+  <path d="M83 106 L117 106 M81 110 L119 110 M83 114 L117 114" stroke="#6f6d82" stroke-width="0.8" opacity="0.6"/>
+  <path d="M99 50 C82 48 69 58 69 76 C69 92 79 103 99 103 Z" fill="#f1d2de" stroke="#6f6d82" stroke-width="1.5"/>
+  <path d="M101 50 C118 48 131 58 131 76 C131 92 121 103 101 103 Z" fill="#f1d2de" stroke="#6f6d82" stroke-width="1.5"/>
+  <path d="M80 70 C86 66 92 68 95 74 M120 70 C114 66 108 68 105 74" fill="none" stroke="#6f6d82" stroke-width="0.9" opacity="0.5"/>
+  <ellipse cx="93" cy="45" rx="6.5" ry="8" fill="#f1d2de" stroke="#6f6d82" stroke-width="1.3"/>
+  <ellipse cx="107" cy="45" rx="6.5" ry="8" fill="#f1d2de" stroke="#6f6d82" stroke-width="1.3"/>
+  <path d="M189 8 L193 12 L163 42 L159 38 Z" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.2"/>
+  <path d="M161 40 L124 72" stroke="#6f6d82" stroke-width="1.2"/>
+  </g>
+  <rect x="445" y="260" width="205" height="52" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="547.5" y="291" font-size="16" font-weight="600" fill="#2c2a38" text-anchor="middle">Ex Vivo</text>
+  <rect x="445" y="324" width="205" height="64" rx="7" fill="#eff1e8" stroke="#aeb78a" stroke-width="1.2"/>
+  <text x="547.5" y="349.5" font-size="15" font-weight="600" fill="#4d591e" text-anchor="middle">Isolated whole-brain</text>
+  <text x="547.5" y="371.5" font-size="15" fill="#2c2a38" text-anchor="middle">preparation</text>
+  <rect x="660" y="96" width="205" height="150" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="762.5" y="176.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle"></text>
+  <g transform="translate(660,96)" stroke-linejoin="round" stroke-linecap="round">
+  <rect x="12" y="122" width="181" height="10" rx="3" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.3"/>
+  <path d="M160 122 L160 64 L130 64" fill="none" stroke="#9a98aa" stroke-width="5"/>
+  <rect x="30" y="112" width="118" height="10" rx="3" fill="#f6e4c6" stroke="#6f6d82" stroke-width="1.2"/>
+  <g transform="translate(42,71) scale(1)" stroke="#6f6d82" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M9 31 C-6 32 -16 24 -30 33 C-38 38 -44 36 -48 31" fill="none" stroke-width="1.6"/>
+    <path d="M20 37 L17 42 L27 42 M66 37 L66 42 L73 42" fill="none" stroke-width="1.6"/>
+    <path d="M9 31 C3 15 19 3 41 3 C58 3 69 8 78 16 C85 21 92 25 97 30 C95 33 90 34 84 34 C76 36 70 37 63 38 C50 41 30 41 18 39 C12 38 10 35 9 31 Z" fill="#e6e4ee" stroke-width="1.6"/>
+    <ellipse cx="71" cy="11" rx="7" ry="9" transform="rotate(-18 71 11)" fill="#e6e4ee" stroke-width="1.5"/>
+    <ellipse cx="71.5" cy="11.5" rx="3.6" ry="5.5" transform="rotate(-18 71 11)" fill="#f2c4d2" stroke="none"/>
+    <circle cx="96.5" cy="30.5" r="2.2" fill="#f2c4d2" stroke-width="1"/>
+    <path d="M93 31 L104 28 M93 32 L104 33" fill="none" stroke-width="0.8" opacity="0.7"/>
+    <path d="M81.5 22 Q84.5 25 87.5 22" fill="none" stroke-width="1.5"/>
+  </g>
+  <circle cx="113" cy="82" r="4" fill="#9a98aa" stroke="#6f6d82" stroke-width="1.2"/>
+  <path d="M136 92 L156 86 L156 110 L136 106 Z" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.3"/>
+  <path d="M156 98 C172 98 180 100 205 100" fill="none" stroke="#9a98aa" stroke-width="3"/>
+  <rect x="102" y="10" width="14" height="40" rx="2" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.3"/>
+  <path d="M109 50 L109 70" stroke="#6f6d82" stroke-width="1.6"/>
+  <text x="58" y="56" font-size="15" fill="#6f6d82" font-style="italic">z</text>
+  <text x="68" y="44" font-size="12" fill="#6f6d82" font-style="italic">z</text>
+  </g>
+  <rect x="660" y="260" width="205" height="52" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="762.5" y="291" font-size="16" font-weight="600" fill="#2c2a38" text-anchor="middle">Anesthetized In Vivo</text>
+  <rect x="660" y="324" width="205" height="64" rx="7" fill="#eff1e8" stroke="#aeb78a" stroke-width="1.2"/>
+  <text x="762.5" y="360.5" font-size="15" font-weight="600" fill="#4d591e" text-anchor="middle">Stereotaxic frame</text>
+  <rect x="875" y="96" width="205" height="150" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="977.5" y="176.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle"></text>
+  <g transform="translate(875,96)" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M96 140 L96 104 M60 140 L132 140" stroke="#9a98aa" stroke-width="4"/>
+  <circle cx="96" cy="104" r="34" fill="#fff" stroke="#6f6d82" stroke-width="1.6"/>
+  <circle cx="96" cy="104" r="28" fill="none" stroke="#6f6d82" stroke-width="0.8" opacity="0.5"/>
+  <path d="M96 76 L96 132 M68 104 L124 104 M76 84 L116 124 M116 84 L76 124" stroke="#6f6d82" stroke-width="0.8" opacity="0.45"/>
+  <circle cx="96" cy="104" r="4" fill="#9a98aa"/>
+  <path d="M178 140 L178 34 L128 34" fill="none" stroke="#9a98aa" stroke-width="5"/>
+  <g transform="translate(44,29) scale(0.95)" stroke="#6f6d82" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M9 31 C-6 32 -16 24 -30 33 C-38 38 -44 36 -48 31" fill="none" stroke-width="1.6"/>
+    <path d="M20 37 L17 42 L27 42 M66 37 L66 42 L73 42" fill="none" stroke-width="1.6"/>
+    <path d="M9 31 C3 15 19 3 41 3 C58 3 69 8 78 16 C85 21 92 25 97 30 C95 33 90 34 84 34 C76 36 70 37 63 38 C50 41 30 41 18 39 C12 38 10 35 9 31 Z" fill="#e6e4ee" stroke-width="1.6"/>
+    <ellipse cx="71" cy="11" rx="7" ry="9" transform="rotate(-18 71 11)" fill="#e6e4ee" stroke-width="1.5"/>
+    <ellipse cx="71.5" cy="11.5" rx="3.6" ry="5.5" transform="rotate(-18 71 11)" fill="#f2c4d2" stroke="none"/>
+    <circle cx="96.5" cy="30.5" r="2.2" fill="#f2c4d2" stroke-width="1"/>
+    <path d="M93 31 L104 28 M93 32 L104 33" fill="none" stroke-width="0.8" opacity="0.7"/>
+    <circle cx="84.5" cy="22" r="2.1" fill="#6f6d82" stroke="none"/>
+  </g>
+  <rect x="102" y="28" width="30" height="8" rx="2" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.2"/>
+  <path d="M150 56 L138 58" stroke="#9a98aa" stroke-width="3"/>
+  <path d="M150 56 L176 50" stroke="#9a98aa" stroke-width="3"/>
+  </g>
+  <rect x="875" y="260" width="205" height="52" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="977.5" y="291" font-size="16" font-weight="600" fill="#2c2a38" text-anchor="middle">Head-Fixed Awake</text>
+  <rect x="875" y="324" width="205" height="64" rx="7" fill="#eff1e8" stroke="#aeb78a" stroke-width="1.2"/>
+  <text x="977.5" y="360.5" font-size="15" font-weight="600" fill="#4d591e" text-anchor="middle">Head-fixed treadmill</text>
+  <rect x="1090" y="96" width="205" height="150" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1192.5" y="176.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle"></text>
+  <g transform="translate(1090,96)" stroke-linejoin="round" stroke-linecap="round">
+  <rect x="22" y="118" width="160" height="9" rx="3" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.2"/>
+  <path d="M50 118 L50 104 M128 118 L128 104" stroke="#9a98aa" stroke-width="4"/>
+  <g transform="translate(48,62) scale(1)" stroke="#6f6d82" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M9 31 C-6 32 -16 24 -30 33 C-38 38 -44 36 -48 31" fill="none" stroke-width="1.6"/>
+    <path d="M20 37 L17 42 L27 42 M66 37 L66 42 L73 42" fill="none" stroke-width="1.6"/>
+    <path d="M9 31 C3 15 19 3 41 3 C58 3 69 8 78 16 C85 21 92 25 97 30 C95 33 90 34 84 34 C76 36 70 37 63 38 C50 41 30 41 18 39 C12 38 10 35 9 31 Z" fill="#e6e4ee" stroke-width="1.6"/>
+    <ellipse cx="71" cy="11" rx="7" ry="9" transform="rotate(-18 71 11)" fill="#e6e4ee" stroke-width="1.5"/>
+    <ellipse cx="71.5" cy="11.5" rx="3.6" ry="5.5" transform="rotate(-18 71 11)" fill="#f2c4d2" stroke="none"/>
+    <circle cx="96.5" cy="30.5" r="2.2" fill="#f2c4d2" stroke-width="1"/>
+    <path d="M93 31 L104 28 M93 32 L104 33" fill="none" stroke-width="0.8" opacity="0.7"/>
+    <circle cx="84.5" cy="22" r="2.1" fill="#6f6d82" stroke="none"/>
+  </g>
+  <path d="M40 58 L126 58 A10 24 0 0 1 126 106 L40 106" fill="#cfd8ea" fill-opacity="0.45" stroke="#6f6d82" stroke-width="1.5"/>
+  <ellipse cx="126" cy="82" rx="10" ry="24" fill="none" stroke="#6f6d82" stroke-width="1.3"/>
+  <ellipse cx="40" cy="82" rx="10" ry="24" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.5"/>
+  <path d="M58 64 L108 64 M58 100 L108 100" stroke="#ffffff" stroke-width="2.5" opacity="0.8"/>
+  <path d="M64 70 L100 70" stroke="#6f6d82" stroke-width="1" opacity="0.5"/>
+  </g>
+  <rect x="1090" y="260" width="205" height="52" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1192.5" y="291" font-size="16" font-weight="600" fill="#2c2a38" text-anchor="middle">Restrained Awake</text>
+  <rect x="1090" y="324" width="205" height="64" rx="7" fill="#eff1e8" stroke="#aeb78a" stroke-width="1.2"/>
+  <text x="1192.5" y="360.5" font-size="15" font-weight="600" fill="#4d591e" text-anchor="middle">Tube restrainer</text>
+  <rect x="1305" y="96" width="205" height="150" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1407.5" y="176.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle"></text>
+  <g transform="translate(1305,96)" stroke-linejoin="round" stroke-linecap="round">
+  <path d="M46 46 L160 46 L160 92 L46 92 Z" fill="#f7f6fa" stroke="#6f6d82" stroke-width="1.3"/>
+  <path d="M46 92 L160 92 L188 134 L18 134 Z" fill="#fff" stroke="#6f6d82" stroke-width="1.5"/>
+  <path d="M18 134 L18 88 L46 46 M188 134 L188 88 L160 46" fill="none" stroke="#6f6d82" stroke-width="1.3"/>
+  <path d="M18 88 L46 46 L46 92 Z M188 88 L160 46 L160 92 Z" fill="#efeef4" stroke="none" opacity="0.8"/>
+  <path d="M30 126 C44 112 40 102 62 104 C78 106 66 122 84 124" fill="none" stroke="#6f6d82" stroke-width="1.3" stroke-dasharray="3 4"/>
+  <circle cx="122" cy="10" r="6" fill="#d3d1dc" stroke="#6f6d82" stroke-width="1.2"/>
+  <path d="M122 16 C124 40 128 54 128 86" fill="none" stroke="#6f6d82" stroke-width="1.2"/>
+  <g transform="translate(84,87) scale(0.82)" stroke="#6f6d82" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M9 31 C-6 32 -16 24 -30 33 C-38 38 -44 36 -48 31" fill="none" stroke-width="1.6"/>
+    <path d="M20 37 L17 42 L27 42 M66 37 L66 42 L73 42" fill="none" stroke-width="1.6"/>
+    <path d="M9 31 C3 15 19 3 41 3 C58 3 69 8 78 16 C85 21 92 25 97 30 C95 33 90 34 84 34 C76 36 70 37 63 38 C50 41 30 41 18 39 C12 38 10 35 9 31 Z" fill="#e6e4ee" stroke-width="1.6"/>
+    <ellipse cx="71" cy="11" rx="7" ry="9" transform="rotate(-18 71 11)" fill="#e6e4ee" stroke-width="1.5"/>
+    <ellipse cx="71.5" cy="11.5" rx="3.6" ry="5.5" transform="rotate(-18 71 11)" fill="#f2c4d2" stroke="none"/>
+    <circle cx="96.5" cy="30.5" r="2.2" fill="#f2c4d2" stroke-width="1"/>
+    <path d="M93 31 L104 28 M93 32 L104 33" fill="none" stroke-width="0.8" opacity="0.7"/>
+    <circle cx="84.5" cy="22" r="2.1" fill="#6f6d82" stroke="none"/>
+  </g>
+  <rect x="122" y="84" width="11" height="8" rx="2" fill="#9a98aa" stroke="#6f6d82" stroke-width="1"/>
+  </g>
+  <rect x="1305" y="260" width="205" height="52" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1407.5" y="291" font-size="16" font-weight="600" fill="#2c2a38" text-anchor="middle">Freely Moving Awake</text>
+  <rect x="1305" y="324" width="205" height="64" rx="7" fill="#eff1e8" stroke="#aeb78a" stroke-width="1.2"/>
+  <text x="1407.5" y="360.5" font-size="15" font-weight="600" fill="#4d591e" text-anchor="middle">Open field arena</text>
+  <rect x="230" y="440" width="205" height="38" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="332.5" y="463.5" font-size="15" font-weight="600" fill="#2c2a38" text-anchor="middle">In vitro</text>
+  <rect x="445" y="440" width="205" height="38" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="547.5" y="463.5" font-size="15" font-weight="600" fill="#2c2a38" text-anchor="middle">Ex vivo</text>
+  <rect x="660" y="440" width="850" height="38" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1085" y="463.5" font-size="15" font-weight="600" fill="#2c2a38" text-anchor="middle">In vivo</text>
+  <rect x="230" y="490" width="420" height="38" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="440" y="513" font-size="14" font-weight="600" fill="#2c2a38" text-anchor="middle">not applicable</text>
+  <rect x="660" y="490" width="205" height="38" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="762.5" y="513.5" font-size="15" font-weight="600" fill="#2c2a38" text-anchor="middle">Anesthetized</text>
+  <rect x="875" y="490" width="635" height="38" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1192.5" y="513.5" font-size="15" font-weight="600" fill="#2c2a38" text-anchor="middle">Awake</text>
+  <rect x="230" y="540" width="635" height="38" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="547.5" y="563" font-size="14" font-weight="600" fill="#2c2a38" text-anchor="middle">not applicable</text>
+  <rect x="875" y="540" width="205" height="38" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="977.5" y="563.5" font-size="15" font-weight="600" fill="#2c2a38" text-anchor="middle">Head-fixed</text>
+  <rect x="1090" y="540" width="205" height="38" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1192.5" y="563.5" font-size="15" font-weight="600" fill="#2c2a38" text-anchor="middle">Restrained</text>
+  <rect x="1305" y="540" width="205" height="38" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1407.5" y="563.5" font-size="15" font-weight="600" fill="#2c2a38" text-anchor="middle">Freely moving</text>
+  <text x="40" y="291.0" font-size="15" fill="#2c2a38" text-anchor="start">Category</text>
+  <text x="40" y="361.0" font-size="15" fill="#2c2a38" text-anchor="start">Setup type, e.g.</text>
+  <text x="40" y="464.0" font-size="15" fill="#4a4858" text-anchor="start">Biological preparation</text>
+  <text x="40" y="514.0" font-size="15" fill="#4a4858" text-anchor="start">Physiological state</text>
+  <text x="40" y="564.0" font-size="15" fill="#4a4858" text-anchor="start">Constraint level</text>
+  <text x="40" y="424" font-size="14" fill="#4a4858" text-anchor="start">Derived from the category (read-only):</text>
+  <text x="40" y="625" font-size="14" fill="#4a4858" text-anchor="start">Unknown: only when the preparation cannot be determined, such as for imported historical records.</text>
+</svg>

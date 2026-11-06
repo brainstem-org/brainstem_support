@@ -86,9 +86,9 @@ bi = card(ix, yi, iw, "interface", "Experimental interface", [("Type", "Silicon 
 m1x, m1w = 880, 400; m2x, m2w = 1300, 400; m3x, m3w = 1720, 400
 for mx, mw in [(m1x, m1w), (m2x, m2w), (m3x, m3w)]:
     elbow(ssx + ssw/2, seb, mx + mw/2, y2)
-c1 = card(m1x, y2, m1w, "acq", "Data acquisition: Extracellular ephys", [("Session", "Rat17_2026-03-13", True), ("Interfaces", "Silicon probe in CA1", True), ("Equipment", "Intan RHD2000", True), ("File name", "dataset1.dat", False), ("Sampling rate", "20000 Hz", False), ("Channels", "128", False), ("Epoch", "Task", True)])
+c1 = card(m1x, y2, m1w, "acq", "Data acquisition: Extracellular ephys", [("Session", "Rat17_2026-03-13", True), ("Interfaces", "Silicon probe in CA1", True), ("Equipment", "Intan RHD2000", True), ("File name", "dataset1.dat", False), ("Sampling rate", "20000 Hz", False), ("Channels", "128", False)])
 c2 = card(m2x, y2, m2w, "acq", "Data acquisition: Behavioral tracking", [("Session", "Rat17_2026-03-13", True), ("Equipment", "Basler camera", True), ("File name", "behavior1.avi", False), ("Frame rate", "30 Hz", False), ("Resolution", "640 × 480", False)])
-c3 = card(m3x, y2, m3w, "acq", "Behavior", [("Session", "Rat17_2026-03-13", True), ("Behavioral assay", "Alternation run", True), ("Setup", "Linear track rig", True), ("Behavioral paradigm", "Spatial alternation", True), ("Epoch", "Task", True)])
+c3 = card(m3x, y2, m3w, "acq", "Behavior", [("Session", "Rat17_2026-03-13", True), ("Subjects", "Rat 17", True), ("Behavioral assay", "Alternation run", True), ("Setup", "Linear track rig", True)])
 # interface -> data acquisition link
 ly = yi + HEAD + 26 + ROW * 1.5
 parts.append(f'<path d="M{ix+iw},{ly} L{m1x+m1w/2},{ly} L{m1x+m1w/2},{c1+2}" fill="none" stroke="{EDGE}" stroke-width="1.3" stroke-dasharray="6 4" marker-end="url(#arrow)"/>')

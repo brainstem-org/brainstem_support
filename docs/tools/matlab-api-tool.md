@@ -41,13 +41,13 @@ BrainSTEM enforces two-factor authentication (2FA). The client signs you in thro
 Create a token on your [token page](https://www.brainstem.org/private/users/tokens/) and set it once:
 
 ```matlab
-setenv('BRAINSTEM_API_TOKEN', '<your token>')
+setenv('BRAINSTEM_API_TOKEN', '<token>')
 client = BrainstemClient();                     % picks it up automatically
 
-client = BrainstemClient('token', '<your token>');   % or pass it directly
+client = BrainstemClient('token', '<token>');   % or pass it directly
 ```
 
-Tokens are valid for one year; the client warns when fewer than 15 days remain.
+For how long a token stays valid, see [API authentication](/api/#authentication). The client warns when fewer than 15 days remain.
 
 ### Interactive sign-in (desktop MATLAB)
 {: .no_toc}
@@ -86,12 +86,16 @@ out = client.load('session', 'id', '<session-id>');  % one record: out.session
 out = client.load('session', 'load_all', true);      % every page
 ```
 
+Lists of procedures, specimen procedures, sessions and breedings hold performed entries only. Filter on `status` to get planned or cancelled ones, for example `'filter', {'status', 'planned'}` (see [Planned records](/api/#planned-records)).
+
+The `<session-id>`, `<project-id>` and similar placeholders on this page stand for entry ids. Open the entry in the web interface and copy the id from the address bar or the **API** button ([Finding an ID](/webinterface/import-tool/#finding-an-id)), or read it from a `load` result.
+
 ### Query options
 {: .no_toc}
 
 | Option | Meaning |
 |---|---|
-| `'filter', {field, value, ...}` | pairs of filter key and value, e.g. `{'name.icontains', 'Rat'}`; a relation by id is `{'projects', '<uuid>'}` |
+| `'filter', {field, value, ...}` | pairs of filter key and value, e.g. `{'name.icontains', 'Rat'}`; a relation by id is `{'projects', '<project-id>'}` |
 | `'sort', {'-date_time'}` | sort fields, `-` for descending |
 | `'include', {'projects', 'behaviors'}` | sideload related records (sent as `include[]=<name>.*`) |
 | `'limit', n` | page size, 1 to 500 (default 100) |
@@ -166,7 +170,7 @@ Type-specific records take `type` and `details`; the fields of each type are on 
 d = struct();
 d.session = session_id;
 d.type = 'ExtracellularEphys';
-d.interfaces = {'<experimental-interface-id>'};
+d.experimental_interfaces = {'<experimental-interface-id>'};
 d.details = struct('nChannels', 64, 'sr', struct('value', 30000, 'unit', 'Hz'));
 client.save(d, 'dataacquisition');
 ```
@@ -175,7 +179,7 @@ Validation errors are raised as `BrainSTEM:save` with the field messages from th
 
 ## Updating records
 
-Pass a struct with an `id`. The default method is `PUT`, which replaces the record; use `'method', 'patch'` to change only the fields you send.
+Pass a struct with an `id`. The default method is `PUT`, which expects the complete record; fields you leave out are kept, not cleared. Use `'method', 'patch'` to send only the fields you change.
 
 ```matlab
 p = struct('id', '<session-id>', 'description', 'updated');

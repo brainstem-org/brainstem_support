@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Web interface
-nav_order: 3
+nav_order: 4
 has_children: true
 has_toc: false
 ---
@@ -45,3 +45,8 @@ The pages in this section describe each part of the interface. The four pages yo
 
 - [__Planning__]({{"webinterface/planning/"|absolute_url}}): Planned, performed and cancelled records and the transitions between them
 - [__Deleted entries__]({{"webinterface/deleted-entries/"|absolute_url}}): What deletion does, how to recover deleted entries and the revision history
+
+### [Collaboration]({{"webinterface/collaboration/"|absolute_url}})
+{: .no_toc}
+
+- [__Sharing and memberships__]({{"webinterface/sharing-and-memberships/"|absolute_url}}): Giving users and groups access to projects and lab resources, invitations, levels and leaving

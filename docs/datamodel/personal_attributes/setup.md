@@ -60,9 +60,9 @@ Anywhere a form offers equipment (procedures, specimen procedures, experimental 
 {: .no_toc}
 
 ![The behavioral track and the setup track: behavioral categories group paradigms, and an assay is your lab's version of a paradigm on a setup type; a setup is your rig of a setup type, with its equipment. A behavior in a session runs one assay on one setup with its subjects.]({{site.baseurl}}/assets/images/diagrams/behavior-tracks-setup.svg)
-*The behavioral track (left) and the setup track (right) run from the shared taxonomies through your lab's personal attributes and meet in a behavior recorded in a session. The setup type category is a field of the setup type, not a separate record.*
+*The behavioral track (left) and the setup track (right) run from the shared taxonomies through your lab's personal attributes and meet in a behavior recorded in a session. This page describes the setup, drawn solid. The setup type category is a field of the setup type, not a separate record.*
 
-A **behavior** record links a **behavioral assay** with a **setup** and the **subjects** involved; the assay's setup type lets you check that the rig suits the assay.
+A **behavior** record links a **behavioral assay** with a **setup** and the **subjects** involved. The setup must be of the assay's setup type; the behavior form refuses other combinations.
 
 ## Example
 

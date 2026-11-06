@@ -35,9 +35,6 @@ A setup type classifies the experimental preparation — the physiological and b
 
 A setup type classifies the rigs of every lab. Two kinds of record point at it: your [setups]({{"datamodel/personal_attributes/setup/"|absolute_url}}), and the [behavioral assays]({{"datamodel/personal_attributes/behavioralassay/"|absolute_url}}) that name the kind of rig they run on. Through the setups and their equipment, it gives the preparation context of the records that use them.
 
-![A setup is built as a setup type and holds its equipment, and each piece of equipment can name its model in the shared catalog. Procedures, specimen procedures, experimental interfaces, data acquisitions and manipulations name the equipment they used; a behavior names the whole setup.]({{site.baseurl}}/assets/images/diagrams/setup-hub-setuptype.svg)
-*Each setup is built as one setup type. Procedures, specimen procedures and experimental interfaces on a subject or specimen set, and data acquisitions and manipulations in a session, name the [equipment]({{"datamodel/modules/equipment/"|absolute_url}}) of a setup; a behavior names the setup itself. This page describes the setup type, drawn solid.*
-
 The preparation state is the primary axis. Setup types sit between the broad preparation category and your lab's specific physical rigs:
 
 - **Setup type category** — The broad experimental condition (e.g., "Freely Moving Awake", "Head-Fixed Awake"). This is a field on each setup type.
@@ -55,7 +52,12 @@ A **behavioral assay** links a behavioral paradigm to a setup type, defining how
 
 ## Setup type categories
 
-Each setup type belongs to one of the following preparation categories. This is the defining axis — it describes the physiological and behavioral state of the subject or tissue, not the class of apparatus:
+Each setup type belongs to one of the following preparation categories. This is the defining axis — it describes the physiological and behavioral state of the subject or tissue, not the class of apparatus.
+
+![Setup type categories from a slice to a freely moving animal: In Vitro (a brain slice recording chamber), Ex Vivo (an isolated whole-brain preparation), Anesthetized In Vivo (a stereotaxic frame), Head-Fixed Awake (a head-fixed treadmill), Restrained Awake (a tube restrainer) and Freely Moving Awake (an open field arena). Below, the biological preparation, physiological state and constraint level derived from each category.]({{site.baseurl}}/assets/images/diagrams/setup-type-categories.svg)
+*The categories run from the most experimental control on the left to the most natural behavior on the right, each shown with one setup type of that category. The biological preparation, physiological state and constraint level are derived from the category and cannot be set separately; physiological state and constraint level do not apply to tissue outside the animal.*
+
+The categories are:
 
 - **In Vitro** — Isolated cells or tissues maintained outside of a living organism. Offers maximal experimental control and mechanistic clarity but lacks natural systemic context.
 - **Ex Vivo** — Intact or semi-intact tissue preparations retaining some network-level organization. Bridges the gap between single cells and whole organisms.
