@@ -1,0 +1,31 @@
+{%- comment -%}
+Embeds the interactive data model with one model in focus and its direct connections, as the Graph tab of
+BrainSTEM's help modals, fitted to the column, on a plain white background without a frame. "Expand" opens the model with its neighbours isolated in an
+overlay; "Full model" opens the whole model there, focused on this model. Usage: {% include datamodel_embed.html model="stem.project" %}
+Optional: height="420px" (the start height; the preview then hugs the fitted graph).
+{%- endcomment -%}
+{%- assign dm_model = include.model -%}
+{%- assign dm_height = include.height | default: "420px" -%}
+{%- assign dm_explorer = '/assets/datamodel/explorer.html' | relative_url -%}
+<div class="dm-embed">
+  <div class="dm-embed__bar dm-controls" style="display: flex; align-items: center; justify-content: flex-end; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
+    <button type="button" class="dm-expand dm-embed__reset" title="Return to the view the preview opened with">&#x21BA; Reset view</button>
+    <button type="button" class="dm-expand" data-dm-expand="{{ dm_explorer }}?embed=1&amp;focus={{ dm_model }}&amp;isolate=1" data-dm-title="{{ page.title }}: this model and its neighbours">&#x2922; Expand</button>
+    <button type="button" class="dm-expand" data-dm-expand="{{ dm_explorer }}?embed=1&amp;focus={{ dm_model }}" data-dm-title="{{ page.title }} in the full data model">&#x25A3; Full model</button>
+  </div>
+  <iframe data-dm-autosize data-dm-min="260" data-dm-max="600" src="{{ dm_explorer }}?embed=1&amp;compact=1&amp;background=plain&amp;focus={{ dm_model }}" title="{{ dm_model }} in the interactive data model" loading="lazy" style="width: 100%; height: {{ dm_height }}; border: 0; background: #fff;"></iframe>
+  <p style="font-size: 0.8rem; color: #6f6d82; margin: 0.3rem 0 1.2rem;">This model with its direct connections only: drag to pan, Ctrl + scroll to zoom, click a model to select it, use the chevron to see its fields.</p>
+</div>
+<script>
+(function () {
+  if (window.dmEmbedReset) { return; }
+  window.dmEmbedReset = true;
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest('.dm-embed__reset');
+    if (!button) { return; }
+    var frame = button.closest('.dm-embed').querySelector('iframe');
+    if (frame && frame.contentWindow) { frame.contentWindow.postMessage({ type: 'dm-reset' }, '*'); }
+  });
+})();
+</script>
+{% include datamodel_overlay.html %}

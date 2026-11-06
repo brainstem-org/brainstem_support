@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 460" width="1400" height="460" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">A session and its parts: the behavior (what the subjects were doing), data acquisitions (what was recorded) and manipulations (what was delivered), each placed in one of the session's epochs (when); behaviors run an assay on a setup, and acquisitions and manipulations pass through experimental interfaces.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="460" fill="#fff"/>
+  <text x="40" y="36" font-size="18" font-weight="600" fill="#2c2a38">A session and its parts</text>
+  <rect x="60" y="60" width="145" height="70" rx="7" fill="#eaeff7" stroke="#95aed5" stroke-width="1.2"/>
+  <text x="132.5" y="88.5" font-size="15" font-weight="600" fill="#2d4d81" text-anchor="middle">Behavioral assay</text>
+  <text x="132.5" y="110.5" font-size="15" fill="#2c2a38" text-anchor="middle">the task</text>
+  <rect x="215" y="60" width="145" height="70" rx="7" fill="#eaeff7" stroke="#95aed5" stroke-width="1.2"/>
+  <text x="287.5" y="88.5" font-size="15" font-weight="600" fill="#2d4d81" text-anchor="middle">Setup</text>
+  <text x="287.5" y="110.5" font-size="15" fill="#2c2a38" text-anchor="middle">the rig</text>
+  <rect x="390" y="60" width="630" height="70" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="705" y="89.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Experimental interfaces</text>
+  <text x="705" y="111.5" font-size="15" fill="#2c2a38" text-anchor="middle">the probe, fiber or window a signal or stimulus passes through</text>
+  <rect x="30" y="160" width="1340" height="280" rx="8" fill="#8122a1" fill-opacity="0.07" stroke="#8122a1" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="44" y="184" font-size="16" font-weight="600" fill="#8122a1"></text>
+  <text x="1050" y="190" font-size="16" font-weight="600" fill="#8122a1">Session: Mouse_01, 2026-03-14</text>
+  <path d="M132 130 L132 210" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="144" y="150" font-size="15" fill="#4a4858" text-anchor="start">run as</text>
+  <path d="M287 130 L287 210" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="299" y="150" font-size="15" fill="#4a4858" text-anchor="start">run on</text>
+  <path d="M540 130 L540 210" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="552" y="150" font-size="15" fill="#4a4858" text-anchor="start">recorded through</text>
+  <path d="M870 130 L870 210" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="882" y="150" font-size="15" fill="#4a4858" text-anchor="start">delivered through</text>
+  <rect x="60" y="210" width="300" height="110" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="210" y="248.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Behavior</text>
+  <text x="210" y="270.5" font-size="15" fill="#fff" text-anchor="middle">what the subjects were doing</text>
+  <text x="210" y="292.5" font-size="15" fill="#fff" text-anchor="middle">open field</text>
+  <rect x="390" y="210" width="300" height="110" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="540" y="248.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Data acquisition</text>
+  <text x="540" y="270.5" font-size="15" fill="#2c2a38" text-anchor="middle">what was recorded</text>
+  <text x="540" y="292.5" font-size="15" fill="#2c2a38" text-anchor="middle">extracellular ephys</text>
+  <rect x="720" y="210" width="300" height="110" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="870" y="248.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Manipulation</text>
+  <text x="870" y="270.5" font-size="15" fill="#2c2a38" text-anchor="middle">what was delivered</text>
+  <text x="870" y="292.5" font-size="15" fill="#2c2a38" text-anchor="middle">optogenetic stimulation</text>
+  <rect x="1050" y="210" width="290" height="110" rx="7" fill="#f1e7f5" stroke="#ba85cb" stroke-width="1.2"/>
+  <text x="1195" y="248.5" font-size="17" font-weight="600" fill="#5d1874" text-anchor="middle">Epochs</text>
+  <text x="1195" y="270.5" font-size="15" fill="#2c2a38" text-anchor="middle">when it happened</text>
+  <text x="1195" y="292.5" font-size="15" fill="#2c2a38" text-anchor="middle">baseline, stimulation, recovery</text>
+  <path d="M210 320 L210 352" fill="none" stroke="#6f6d82" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <path d="M540 320 L540 352" fill="none" stroke="#6f6d82" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <path d="M870 320 L870 352 L1195 352 L1195 324" fill="none" stroke="#6f6d82" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <path d="M210 352 L870 352" fill="none" stroke="#6f6d82" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="540" y="376" font-size="14" fill="#4a4858" text-anchor="middle">each placed in one of the session's epochs</text>
+  <text x="60" y="418" font-size="14" fill="#4a4858" text-anchor="start">An epoch names at most one behavior, and a data acquisition belongs to one epoch only. Behaviors are recorded in subject-based sessions only.</text>
+</svg>

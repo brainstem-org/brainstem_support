@@ -1,0 +1,81 @@
+{%- comment -%}
+The overlay that shows the interactive data model over the page, as BrainSTEM's own data model modal does.
+Included once per page by datamodel_embed.html or by a page that has its own expand button.
+Any element with data-dm-expand="<explorer url>" (and optional data-dm-title) opens it.
+{%- endcomment -%}
+{%- unless include.skip_markup -%}
+<div class="dm-overlay" id="dm-overlay" hidden role="dialog" aria-modal="true" aria-label="Interactive data model">
+  <div class="dm-overlay__bar">
+    <span class="dm-overlay__title">Interactive data model</span>
+    <a class="dm-overlay__newtab" href="#" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+    <button type="button" class="dm-overlay__close" aria-label="Close">&times; Close</button>
+  </div>
+  <iframe class="dm-overlay__frame" title="Interactive data model"></iframe>
+</div>
+<style>
+  .dm-overlay { position: fixed; inset: 0; z-index: 3000; background: rgba(28, 22, 46, 0.72); display: flex; flex-direction: column; padding: 1.25rem; }
+  .dm-overlay[hidden] { display: none; }
+  .dm-overlay__bar { display: flex; align-items: center; gap: 1rem; padding: 0.5rem 0.9rem; background: linear-gradient(90deg, #8122a1, #51459d); color: #fff; border-radius: 8px 8px 0 0; font-size: 0.9rem; }
+  .dm-overlay__title { font-weight: 600; flex: 1 1 auto; }
+  .dm-overlay__newtab { color: #fff !important; }
+  .dm-overlay__close { background: rgba(255,255,255,0.15); color: #fff; border: 0; border-radius: 6px; padding: 0.3rem 0.7rem; font: inherit; cursor: pointer; }
+  .dm-overlay__close:hover { background: rgba(255,255,255,0.3); }
+  .dm-overlay__frame { flex: 1 1 auto; width: 100%; border: 0; border-radius: 0 0 8px 8px; background: #f7f6fb; }
+  body.dm-overlay-open { overflow: hidden; }
+  .dm-expand { font: inherit; font-size: 0.8rem; cursor: pointer; border: 1px solid #d6d2e3; border-radius: 6px; background: #fff; color: #5c3b92; padding: 0.15rem 0.6rem; }
+  .dm-expand:hover { background: #f2effa; }
+  @media (max-width: 760px) { .dm-overlay { padding: 0.4rem; } }
+</style>
+<script>
+(function () {
+  if (window.dmOverlay) { return; }
+  var overlay = document.getElementById('dm-overlay');
+  var frame = overlay.querySelector('.dm-overlay__frame');
+  var title = overlay.querySelector('.dm-overlay__title');
+  var newtab = overlay.querySelector('.dm-overlay__newtab');
+  function open(src, label) {
+    title.textContent = label || 'Interactive data model';
+    var full = src.replace(/([?&])embed=1&?/, '$1').replace(/[?&]$/, '');
+    newtab.href = full + (full.indexOf('?') === -1 ? '?' : '&') + 'from=' + encodeURIComponent(window.location.pathname);
+    frame.src = src;
+    overlay.hidden = false;
+    document.body.classList.add('dm-overlay-open');
+  }
+  function close() {
+    overlay.hidden = true;
+    frame.src = 'about:blank';
+    document.body.classList.remove('dm-overlay-open');
+  }
+  overlay.querySelector('.dm-overlay__close').addEventListener('click', close);
+  overlay.addEventListener('click', function (event) { if (event.target === overlay) { close(); } });
+  function onKey(event) { if (event.key === 'Escape' && !overlay.hidden) { close(); } }
+  document.addEventListener('keydown', onKey);
+  /* Keys pressed inside the (same-origin) explorer do not reach this document; listen there too.
+     (Block comments only: the HTML compressor strips line endings from inline scripts.) */
+  frame.addEventListener('load', function () {
+    try { frame.contentWindow.document.addEventListener('keydown', onKey); } catch (error) { /* cross-origin: ignore */ }
+  });
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest('[data-dm-expand]');
+    if (!button) { return; }
+    event.preventDefault();
+    open(button.getAttribute('data-dm-expand'), button.getAttribute('data-dm-title'));
+  });
+  window.dmOverlay = { open: open, close: close };
+  /* Compact and toolbar-less explorer frames (data-dm-autosize) post the height of their fitted graph; give
+     the frame that plus room for the Back to start button and hint, within the bounds the frame declares.
+     The renderer refits the view when the frame changes size. */
+  window.addEventListener('message', function (event) {
+    var data = event.data;
+    if (!data || data.type !== 'dm-preview-height') { return; }
+    Array.prototype.forEach.call(document.querySelectorAll('iframe[data-dm-autosize]'), function (frame) {
+      if (frame.contentWindow !== event.source) { return; }
+      var min = parseInt(frame.getAttribute('data-dm-min') || '260', 10);
+      var max = parseInt(frame.getAttribute('data-dm-max') || '600', 10);
+      var wanted = Math.max(min, Math.min(max, data.exact ? data.height : data.height + 90));
+      if (Math.abs(frame.getBoundingClientRect().height - wanted) > 8) { frame.style.height = wanted + 'px'; }
+    });
+  });
+})();
+</script>
+{%- endunless -%}

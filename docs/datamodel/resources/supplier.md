@@ -12,30 +12,35 @@ nav_order: 3
 ## Table of contents
 {: .no_toc .text-delta }
 
+{::options toc_levels="2..2" /}
 1. TOC
 {:toc}
 
 ## Introduction
 
-Suppliers refer to companies, organizations, and individuals that provide the essential consumables and hardware devices necessary for conducting experiments and studies in the field. These suppliers play a critical role in the research ecosystem by ensuring that researchers have access to the high-quality materials and equipment they need. In BrainSTEM, suppliers are a shared model across users.
+A supplier is a company, organization or individual that provides consumables and hardware devices. Both [consumables]({{"datamodel/resources/consumable/"|absolute_url}}) and [hardware devices]({{"datamodel/resources/hardwaredevice/"|absolute_url}}) require one, so the supplier is the top of the catalog: it is how a product is attributed to whoever makes or sells it. [Subjects]({{"datamodel/stem/subject/"|absolute_url}}) can also name the supplier they were bought from. In BrainSTEM, suppliers are a shared model across users.
+
+{% include datamodel_embed.html model="resources.supplier" %}
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
-| ``Name of supplier`` | The name of the supplier (**required**; string; maximum length: 100 characters; must be unique). Example: "IMEC" |
-| ``Description`` | Description of the supplier (maximum length: 2000 characters). Example: "World-leading R&D and innovation hub in nanoelectronics and digital technologies..." |
-| ``Website`` | The website of the supplier (URL). Example: "https://www.imec-int.com" |
+| ``Name of supplier`` | The company as it is commonly known (**required**; string; maximum length: 100 characters; must be unique across BrainSTEM). Keep parent and subsidiary separate only where products are branded differently. Example: "IMEC" |
+| ``Description`` | What the supplier provides, and anything that distinguishes it from a similarly named company (maximum length: 2000 characters). |
+| ``Website`` | The website of the supplier (URL; maximum length: 200 characters). Example: "https://www.imec-int.com" |
 | ``Adding/editing comments`` | Comments for the submission/approval process. |
 
 ## Submission process
 
-Anyone can submit a supplier or suggest changes to an existing one, but all submissions must be approved before they are available for usage. Please see existing entries for examples of what to submit.
+Anyone can submit a supplier or suggest changes to an existing one. A submission enters the approval queue and is usable in your own records immediately; it is visible only to you until accepted. Search under the trading name, the full legal name and any parent company first; suppliers merge and rebrand often. For details of the approval statuses see the [Resources page]({{"datamodel/resources/"|absolute_url}}).
+
+A supplier cannot be deleted while consumables, hardware devices, subjects or pending submissions point to it.
 
 ## Permissions
 
-Once an entry has been approved, it becomes available to everyone.
+Everyone can read the accepted list. Editing an accepted supplier is restricted, since it would change every product attributed to it; an edit creates a change request that is reviewed before it takes effect. Your own pending submissions remain yours to edit or cancel.
 
 ## API access
 
-The API allows for programmable access to suppliers, enabling you to read, edit, and delete entries through the API. Learn more about the suppliers' fields and data structure on the [Suppliers API page]({{"api/resources/supplier/"|absolute_url}}).
+The API allows for programmable access to suppliers, returning the accepted list plus your own pending submissions. Learn more about the suppliers' fields and data structure on the [Suppliers API page]({{"api/resources/supplier/"|absolute_url}}).

@@ -1,0 +1,47 @@
+{%- comment -%}
+A strip of screenshots with one caption each and Previous / Next controls.
+Usage: {% include slides.html slides="slug-one|Caption one;;slug-two|Caption two" %}
+Each slug is a file under docs/assets/images/screenshots/.
+{%- endcomment -%}
+{%- assign dm_slides = include.slides | split: ";;" -%}
+<div class="slides" data-slides>
+  {%- for item in dm_slides -%}
+  {%- assign parts = item | split: "|" -%}
+  <figure class="slides__slide"{% if forloop.first %}{% else %} hidden{% endif %}>
+    <img class="screenshot" src="{{ '/assets/images/screenshots/' | append: parts[0] | append: '.png' | relative_url }}" alt="{{ parts[1] | strip }}" loading="lazy">
+    <figcaption>{{ forloop.index }}/{{ forloop.length }} &middot; {{ parts[1] | strip }}</figcaption>
+  </figure>
+  {%- endfor -%}
+  <div class="slides__controls">
+    <button type="button" class="dm-expand" data-slides-prev>&#x2039; Previous</button>
+    <span class="slides__dots">{% for item in dm_slides %}<span class="slides__dot{% if forloop.first %} is-active{% endif %}"></span>{% endfor %}</span>
+    <button type="button" class="dm-expand" data-slides-next>Next &#x203A;</button>
+  </div>
+</div>
+<style>
+  .slides { margin: 0.5rem 0 1.4rem; }
+  .slides__slide { margin: 0; }
+  .slides__slide figcaption { font-size: 0.8rem; color: #6f6d82; margin: 0.3rem 0 0.5rem; }
+  .slides__controls { display: flex; align-items: center; gap: 0.75rem; }
+  .slides__dots { display: inline-flex; gap: 0.3rem; }
+  .slides__dot { width: 8px; height: 8px; border-radius: 50%; background: #d6d2e3; display: inline-block; }
+  .slides__dot.is-active { background: #7a2ca0; }
+  .dm-expand { font: inherit; font-size: 0.8rem; cursor: pointer; border: 1px solid #d6d2e3; border-radius: 6px; background: #fff; color: #5c3b92; padding: 0.15rem 0.6rem; }
+</style>
+<script>
+(function () {
+  if (window.dmSlides) { return; }
+  window.dmSlides = true;
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest('[data-slides-prev], [data-slides-next]');
+    if (!button) { return; }
+    var strip = button.closest('[data-slides]');
+    var slides = strip.querySelectorAll('.slides__slide');
+    var dots = strip.querySelectorAll('.slides__dot');
+    var current = Array.prototype.findIndex.call(slides, function (s) { return !s.hidden; });
+    var next = (current + (button.hasAttribute('data-slides-next') ? 1 : slides.length - 1)) % slides.length;
+    slides.forEach(function (s, i) { s.hidden = i !== next; });
+    dots.forEach(function (d, i) { d.classList.toggle('is-active', i === next); });
+  });
+})();
+</script>

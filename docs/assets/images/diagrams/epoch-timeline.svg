@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 610" width="1400" height="610" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Epoch timeline: named intervals from the session onset, each with the behavior, data acquisitions and manipulations placed in it</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="610" fill="#fff"/>
+  <rect x="300" y="30" width="1020" height="56" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="810" y="63.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Session   Mouse_01, 2026-03-14 10:00   (session onset = 0:00)</text>
+  <path d="M300 130 L1320 130" stroke="#6f6d82" stroke-width="1.6" fill="none"/>
+  <path d="M300 124 L300 136" stroke="#6f6d82" stroke-width="1.6"/>
+  <path d="M300 140 L300 500" stroke="#6f6d82" stroke-width="1" stroke-dasharray="3 5" opacity="0.45"/>
+  <text x="300" y="114" font-size="15" fill="#4a4858" text-anchor="middle">0:00</text>
+  <path d="M555 124 L555 136" stroke="#6f6d82" stroke-width="1.6"/>
+  <path d="M555 140 L555 500" stroke="#6f6d82" stroke-width="1" stroke-dasharray="3 5" opacity="0.45"/>
+  <text x="555" y="114" font-size="15" fill="#4a4858" text-anchor="middle">0:10</text>
+  <path d="M810 124 L810 136" stroke="#6f6d82" stroke-width="1.6"/>
+  <path d="M810 140 L810 500" stroke="#6f6d82" stroke-width="1" stroke-dasharray="3 5" opacity="0.45"/>
+  <text x="810" y="114" font-size="15" fill="#4a4858" text-anchor="middle">0:20</text>
+  <path d="M1065 124 L1065 136" stroke="#6f6d82" stroke-width="1.6"/>
+  <path d="M1065 140 L1065 500" stroke="#6f6d82" stroke-width="1" stroke-dasharray="3 5" opacity="0.45"/>
+  <text x="1065" y="114" font-size="15" fill="#4a4858" text-anchor="middle">0:30</text>
+  <path d="M1320 124 L1320 136" stroke="#6f6d82" stroke-width="1.6"/>
+  <path d="M1320 140 L1320 500" stroke="#6f6d82" stroke-width="1" stroke-dasharray="3 5" opacity="0.45"/>
+  <text x="1320" y="114" font-size="15" fill="#4a4858" text-anchor="middle">0:40</text>
+  <text x="1320" y="158" font-size="14" fill="#4a4858" text-anchor="end">time from session onset (h:mm)</text>
+  <text x="60" y="202" font-size="16" font-weight="600" fill="#2c2a38">Epoch: Baseline</text>
+  <rect x="300.0" y="176" width="255.0" height="40" rx="7" fill="#f1e7f5" stroke="#ba85cb" stroke-width="1.2"/>
+  <text x="427.5" y="200.5" font-size="15" font-weight="600" fill="#5d1874" text-anchor="middle">0:00 – 0:10</text>
+  <text x="84" y="244" font-size="15" fill="#4a4858">Behavior</text>
+  <rect x="300.0" y="222" width="255.0" height="34" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="427.5" y="243.5" font-size="15" font-weight="600" fill="#225b63" text-anchor="middle">Open field</text>
+  <text x="60" y="302" font-size="16" font-weight="600" fill="#2c2a38">Epoch: Stimulation</text>
+  <rect x="555.0" y="276" width="255.0" height="40" rx="7" fill="#f1e7f5" stroke="#ba85cb" stroke-width="1.2"/>
+  <text x="682.5" y="300.5" font-size="15" font-weight="600" fill="#5d1874" text-anchor="middle">0:10 – 0:20</text>
+  <text x="84" y="344" font-size="15" fill="#4a4858">Data acquisition</text>
+  <rect x="555.0" y="322" width="255.0" height="34" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="682.5" y="343.5" font-size="15" font-weight="600" fill="#225b63" text-anchor="middle">Extracellular ephys</text>
+  <text x="84" y="384" font-size="15" fill="#4a4858">Manipulation</text>
+  <rect x="555.0" y="362" width="255.0" height="34" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="682.5" y="383.5" font-size="15" font-weight="600" fill="#225b63" text-anchor="middle">Optogenetic stimulation</text>
+  <text x="60" y="442" font-size="16" font-weight="600" fill="#2c2a38">Epoch: Recovery</text>
+  <rect x="810.0" y="416" width="510.0" height="40" rx="7" fill="#f1e7f5" stroke="#ba85cb" stroke-width="1.2"/>
+  <text x="1065" y="440.5" font-size="15" font-weight="600" fill="#5d1874" text-anchor="middle">0:20 – 0:40</text>
+  <text x="84" y="484" font-size="15" fill="#4a4858">Behavior</text>
+  <rect x="810.0" y="462" width="510.0" height="34" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1065" y="483.5" font-size="15" font-weight="600" fill="#225b63" text-anchor="middle">Open field (the same behavior)</text>
+  <rect x="300" y="526" width="1020" height="62" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
+  <text x="314" y="550.5" font-size="15" fill="#4a4858">An epoch names at most one behavior, and one behavior can run through several epochs.</text>
+  <text x="314" y="572.5" font-size="15" fill="#4a4858">A data acquisition belongs to one epoch only; a manipulation can span several epochs.</text>
+</svg>

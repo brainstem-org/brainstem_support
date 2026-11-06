@@ -2,11 +2,15 @@
 layout: default
 title: Managing Data Storage
 parent: Tutorials
-nav_order: 6
+nav_order: 5
 ---
 
 # Managing Data Storage
 {: .no_toc}
+
+This tutorial creates the data storage **Lab Server**, which describes where your recordings live and how their folders are nested, links it to a session, and builds the path to that session's files in your analysis code. At the end, every session can point at its folder on your server, cloud storage or public repository.
+
+**Prerequisites**: a lab group (see [Manage Groups]({{site.baseurl}}/tutorials/managing-groups)) and a project with at least one session (see [Get started!]({{site.baseurl}}/tutorials/get_started)).
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -14,423 +18,126 @@ nav_order: 6
 1. TOC
 {:toc}
 
-## Introduction
+## What a data storage describes
 
-Data storage in BrainSTEM provides a flexible way to link your metadata to actual data files stored on various platforms. This tutorial covers how to set up data storage locations, associate them with sessions, and configure dynamic data linking for seamless access to your raw data.
+A data storage does not hold files. It records three things:
 
-## Understanding Data Storage Concepts
+1. **Where** the data is: the storage's name, location and description.
+2. **How the folders are nested**: its **Data organization**, for example Projects → Subjects → Sessions.
+3. **How to reach it**: its **Data protocols**, one per access route (a network share, a cloud folder, a public repository), each with its own path.
 
-BrainSTEM's data storage system consists of three key components:
+A session names its data storage, and the project, subject and session each carry the folder name used in storage. Together these give the path to a session's files.
 
-1. **Data Storage Locations**: Define where your data is physically stored (servers, cloud, local drives)
-2. **Data Organization**: How your files are structured within the storage location
-3. **Data Protocols**: How to access the data (paths, URLs, access methods)
+## Step 1: Create the data storage
 
-## Creating a Data Storage Location
+![A data storage's form: name, location, description, the data organization rows and the data protocols with their public access value.]({{site.baseurl}}/assets/images/screenshots/data-storage-form.png)
+{: .screenshot }
+*A data storage's form: name, location, description, the data organization rows and the data protocols with their public access value.*
 
-### Step 1: Navigate to Data Storage
-{: .no_toc}
+1. Go to **Personal attributes** → **Data storage** and click **Add data storage**.
+2. Enter the **Data storage name (must be unique)** "Lab Server". The name is unique across BrainSTEM; if it is taken, add your lab's name, for example "Sample Lab Server".
+3. In **Authenticated groups**, select your lab group. The groups you select get Contributor access, which lets their members select the storage on a session.
+4. Click **Save**. The data storage's edit page opens.
 
-1. From the dashboard, go to *Personal Attributes* → *Data storage* in the left navigation menu
-2. Click the *Add data storage* button in the top right corner
+## Step 2: Describe the folders and the access routes
 
-### Step 2: Configure Basic Information
-{: .no_toc}
+1. Fill in the **Location**, for example "Network storage, Room 301", and a **Description** of what is stored there.
+2. Under **Data organization**, add one row per folder level, from the top level down: "Projects", "Subjects", "Sessions". The elements are Projects, Cohorts, Collections, Subjects, Sessions, Users and Years.
+3. Under **Data protocols**, add one row per access route, with its **Protocol Type**, its **Access Path/URL** and whether it has **Public Access**. For example:
 
-Fill in the basic details:
+   | Protocol Type | Access Path/URL | Public Access |
+   |---------------|-----------------|---------------|
+   | SMB/CIFS | `smb://uni.domain/group/data` | No |
+   | Local Storage | `/Volumes/LabServer/Data` | No |
+   | HTTPS/Web | `https://dandiarchive.org/dandiset/123456` | Yes |
 
-| Field | Description |
-|-------|-------------|
-| **Name** | Descriptive name for your data storage (e.g., "Lab Server 01", "Cloud Storage Main") |
-| **Authenticated groups** | Groups that can access this data storage **(required)** |
-| **Description** | Details about stored data types and access requirements |
-| **Public access** | Whether this storage should be publicly accessible |
+4. Click **Save**.
 
-{: .important }
-> Permissions are directly set on data storages. Data storage has four permission levels: membership (read access), contributors, managers, and owners.
+A data storage has no visibility switch of its own. Each data protocol has its own **Public Access** value.
 
-{: .note }
-> Choose names that clearly identify the storage location and its purpose. Other lab members will see these names when creating sessions.
+{: .warning }
+> Setting **Public Access** on one data protocol makes the whole data storage public when you save it: its name, location, description and the public protocols' paths appear on the public portal. The files themselves are not made reachable.
 
-### Step 3: Define Data Organization
-{: .no_toc}
+All fields are described on the [Data storage]({{site.baseurl}}/datamodel/personal_attributes/datastorage/) page.
 
-Configure how your data is organized within the storage location. This defines the hierarchy of folders/directories:
+## Step 3: Assign the data storage to sessions
 
-**Available organization elements:**
-- Projects
-- Collections
-- Cohorts
-- Subjects  
-- Sessions
-- Years
+A session's **Data storage** list offers only the data storages on which you are at least Contributor.
 
-**Example organization structures:**
+1. Open the session and click **Edit**.
+2. In **Data storage**, select "Lab Server". A session can have several data storages; their order is kept.
+3. If the session's folder has another name than the session, enter it in **Session name in data storage**, for example "ses01_baseline".
+4. Click **Save**.
 
-```
-Subjects → Sessions
-```
+Projects and subjects have the same kind of field: **Project name in storage** (under **Online repositories** on the project's form) and **Subject name used in data storage**. To assign many sessions at once, select them in the **Sessions** list and run **Assign selected sessions to a data storage**.
 
-```
-Projects → Subjects → Sessions
-```
+## Step 4: Build a session's path in your analysis code
 
-Add organization elements that match your lab's file structure conventions using the available element types.
+BrainSTEM stores the parts of the path; your code joins them. Take the **Access Path/URL** of a data protocol and add one folder per **Data organization** element, using each entry's name in storage, or its name when that is empty:
 
-### Step 4: Configure Data Storage Protocols
-{: .no_toc}
+| Part | Value |
+|------|-------|
+| **Access Path/URL** (Local Storage) | `/Volumes/LabServer/Data` |
+| Projects | Memory_Study_2024 |
+| Subjects | Mouse_001 |
+| Sessions (its **Session name in data storage**) | ses01_baseline |
+| **Path** | `/Volumes/LabServer/Data/Memory_Study_2024/Mouse_001/ses01_baseline` |
 
-Set up how to access your data storage. You can configure multiple protocols for the same storage location, e.g.:
-
-| Storage Type | Protocol | Path Example | Public |
-|--------------|----------|--------------|--------|
-| **Local Drive** | Local Storage | `/Users/researcher/data/` | No |
-| **Network/Server** | SMB/CIFS | `smb://uni.domain/group/data/` | No |
-| **Cloud Storage** | Dropbox | `data/myproject` | No |
-| **Public Repository** | HTTPS/Web | `https://dandiarchive.org/dandiset/123456/` | Yes |
-
-{: .important }
-> You can configure multiple protocols for the same data storage. This allows flexibility in how different users or systems access the same data.
-
-## Assigning Data Storage to Sessions
-
-### During Session Creation
-{: .no_toc}
-
-1. When creating a new session, locate the **Data storage** field
-2. Select from your configured data storage locations in the dropdown
-3. Optionally, specify a **Name used in storage** - this is the folder/file name used in your actual storage system
-
-### For Existing Sessions
-{: .no_toc}
-
-1. Navigate to the session you want to update
-2. Click the *Edit* button
-3. Select or change the **Data storage** field
-4. Update the **Name used in storage** if needed
-5. Save your changes
-
-{: .note }
-> The "Name used in storage" field helps maintain consistent naming between BrainSTEM and your actual file system, making it easier to locate files programmatically. This is a session-level field, not a data storage field.
-
-## Dynamic Data Linking
-
-BrainSTEM's data storage system enables dynamic construction of file paths based on your metadata and organization structure.
-
-### How Dynamic Linking Works
-{: .no_toc}
-
-When you associate a data storage with a session, BrainSTEM can automatically construct file paths based on:
-
-1. **Data storage base path**: The root location defined in your data storage protocols
-2. **Organization structure**: How you've defined data should be organized
-3. **Session metadata**: Project names, subject names, session names, dates
-
-### Example Dynamic Path Construction
-{: .no_toc}
-
-**Data Storage Configuration:**
-
-| Field | Value |
-|-------|-------|
-| **Name** | Lab Server Main |
-| **Base path** | `/Volumes/StorageName/Data/` |
-| **Organization** | Projects → Subjects → Sessions |
-
-**Dynamic Path:**
-```
-/Volumes/StorageName/Data/{projects}/{subjects}/{sessions}/
-```
-
-{: .note }
-> Data files should be stored in the session folder based on this organization structure.
-
-**Session Information:**
-
-| Field | Value |
-|-------|-------|
-| **Project** | Memory_Study_2024 |
-| **Subject** | Mouse_001 |
-| **Session** | Baseline_Recording |
-| **Name used in storage** | ses01_baseline |
-
-**Resulting Path:**
-```
-/Volumes/StorageName/Data/Memory_Study_2024/Mouse_001/ses01_baseline/
-```
-
-### API Access to Dynamic Paths
-{: .no_toc}
-
-Use the Python or MATLAB API to programmatically access your data paths:
+The function below does this with the [Python API tool]({{site.baseurl}}/tools/python-api-tool/), which explains installation and sign-in. It handles Projects, Subjects and Sessions, and stops with an error on any other element, so a storage organized by Years or Cohorts tells you what to add instead of returning a wrong path.
 
 ```python
 from brainstem_api_tools import BrainstemClient
 
 client = BrainstemClient()
 
-# Load session with expanded data storage records
-# Use filters={'id': ...} to fetch a single session by UUID
-session_response = client.load('session',
-                               filters={'id': 'your-session-id'},
-                               include=['datastorage'])
 
-session_data = session_response.json()['sessions'][0]
+def load(kind, entry_id):
+    return client.load(kind, id=entry_id).json()[kind]
 
-# datastorage is a list of expanded objects when include=['datastorage'] is used
-for storage in session_data['datastorage']:
-    for protocol in storage['data_protocols']:
-        print(f"Protocol: {protocol['protocol']}")
-        print(f"Base path: {protocol['path']}")
-        print(f"Public access: {protocol['is_public']}")
+
+def folder(entry):
+    """An entry's folder: its name used in storage, else its name."""
+    return entry.get("name_used_in_storage") or entry["name"]
+
+
+def session_path(session_id, protocol="Local Storage"):
+    session = load("session", session_id)
+    storage = load("datastorage", session["datastorage"][0])
+    paths = {p["protocol"]: p["path"] for p in storage["data_protocols"] or []}
+    parts = [paths[protocol].rstrip("/")]
+    for element in storage["data_organization"] or []:
+        if element == "Projects":
+            parts.append(folder(load("project", session["projects"][0])))
+        elif element == "Subjects":
+            parts.append(folder(load("subject", session["subjects"][0])))
+        elif element == "Sessions":
+            parts.append(folder(session))
+        else:
+            raise ValueError(f"No rule for the data organization element {element!r}")
+    return "/".join(parts)
+
+
+print(session_path("<session-id>"))
 ```
 
-### Constructing Full Paths in Your Analysis Code
-{: .no_toc}
+{: .note }
+> The **Project name in storage** is not available through the API, so the function uses the project's name for the Projects folder. If your project folder has another name, put it in the function. The [MATLAB API tool]({{site.baseurl}}/tools/matlab-api-tool/) loads entries the same way, with `client.load('session', 'id', session_id)`.
 
-```python
-def construct_data_path(session_data, subject_name=None):
-    """
-    Construct full path to session data based on BrainSTEM metadata.
+## End state
 
-    Requires the session to have been loaded with:
-      include=['datastorage', 'projects']
-    so that datastorage and projects are expanded to full objects.
+The data storage "Lab Server" describes your folder structure and access routes, your session points at it, and your analysis code can turn a session into the folder that holds its files.
 
-    Sessions have no direct subject field — subjects are linked via behavior
-    records. Pass subject_name explicitly when your organization includes
-    Subjects (e.g. retrieved via client.load('behavior', ...)).
-    """
-    if not session_data.get('datastorage'):
-        return None
+## Troubleshooting
 
-    # datastorage is a list; use the first linked storage
-    storage = session_data['datastorage'][0]
+**Data storage missing in a session's list**: you need at least Contributor on the data storage. Ask its owner or a manager to give you or your group a role from the storage's **Manage** page (see [Permissions]({{site.baseurl}}/datamodel/permissions/#personal-attribute-permissions)).
 
-    # Use the first configured protocol by default.
-    # Update this selection if your storage relies on a specific protocol.
-    base_path = storage['data_protocols'][0]['path']
+**Session not added by the list action**: a group with a role on one of the session's projects must be at least Contributor on the data storage, and you must be Contributor on one of the session's projects.
 
-    # Extract organization elements
-    organization = storage['data_organization']
+**Path does not match the files**: check the order of the **Data organization** rows, the **Access Path/URL** of the protocol you use, and the names in storage of the project, subject and session.
 
-    # Build path based on organization structure
-    path_components = [base_path]
+## Next steps
 
-    for element in organization:
-        if element['elements'] == 'Projects':
-            # projects is expanded to full objects when include=['projects'] is used
-            path_components.append(session_data['projects'][0]['name'])
-        elif element['elements'] == 'Subjects':
-            # Session has no direct subject field; provide subject_name separately.
-            if subject_name:
-                path_components.append(subject_name)
-        elif element['elements'] == 'Sessions':
-            storage_name = session_data.get('name_used_in_storage') or session_data['name']
-            path_components.append(storage_name)
-
-    return '/'.join(path_components)
-
-
-# Load session with datastorage and projects expanded
-session_response = client.load('session',
-                               filters={'id': 'your-session-id'},
-                               include=['datastorage', 'projects'])
-session_data = session_response.json()['sessions'][0]
-
-# If your organization includes Subjects, retrieve subject name via behaviors
-behaviors = client.load('behavior', filters={'session': session_data['id']}).json()
-subject_name = None
-if behaviors.get('behaviors'):
-    subject_id = behaviors['behaviors'][0]['subjects'][0]
-    subject_resp = client.load('subject', filters={'id': subject_id}).json()
-    subject_name = subject_resp['subjects'][0]['name']
-
-full_path = construct_data_path(session_data, subject_name=subject_name)
-print(f"Data location: {full_path}")
-```
-
-## Best Practices
-
-### Naming Conventions
-{: .no_toc}
-
-- **Data Storage Names**: Use descriptive names that indicate location and purpose
-- **Storage Names**: Keep file/folder names consistent with your lab's conventions
-- **Avoid Special Characters**: Use underscores or hyphens instead of spaces
-
-### Organization Strategies
-{: .no_toc}
-
-- **Standardize Early**: Establish organization patterns before accumulating lots of data
-- **Document Conventions**: Create lab protocols for file naming and organization
-- **Plan for Growth**: Design structures that scale with increasing data volumes
-
-### Security and Access
-{: .no_toc}
-
-- **Authenticated Groups**: Required - only users in these groups can access the data storage
-- **Public/Private Settings**: Configure based on data sensitivity needs
-- **Group Matching**: Data storage can only be added to sessions in projects that share at least one authenticated group
-
-## Troubleshooting Common Issues
-
-### Cannot Access Data Storage in Sessions
-{: .no_toc}
-
-**Problem**: Data storage doesn't appear in the session dropdown
-
-**Solutions**:
-- Verify you're a member of at least one authenticated group for the data storage
-
-### Path Construction Errors
-{: .no_toc}
-
-**Problem**: Generated paths don't match actual file locations
-
-**Solutions**:
-- Review your data organization structure configuration
-- Verify the base paths in your protocols are correct
-- Check that "Name used in storage" matches your actual file/folder names
-
-### API Access Issues
-{: .no_toc}
-
-**Problem**: Cannot access data storage information via API
-
-**Solutions**:
-- Ensure you're including 'datastorage' in your API include parameters
-- Verify your API authentication is working
-- Check that you have proper permissions to access the data storage
-- Confirm you're using the correct session ID
-
-## Integration with Analysis Workflows
-
-### Loading Data in Python
-{: .no_toc}
-
-```python
-import os
-from brainstem_api_tools import BrainstemClient
-
-def load_session_data(session_id):
-    """
-    Load session metadata and construct data paths.
-    Uses include=['datastorage', 'projects'] so path construction works.
-    """
-    client = BrainstemClient()
-
-    # Use filters={'id': ...} to fetch a single session by UUID
-    response = client.load('session',
-                           filters={'id': session_id},
-                           include=['datastorage', 'projects', 'dataacquisition'])
-
-    session = response.json()['sessions'][0]
-
-    # Retrieve subject name via behavior records if organization includes Subjects
-    behaviors = client.load('behavior', filters={'session': session_id}).json()
-    subject_name = None
-    if behaviors.get('behaviors'):
-        subject_id = behaviors['behaviors'][0]['subjects'][0]
-        subject_resp = client.load('subject', filters={'id': subject_id}).json()
-        subject_name = subject_resp['subjects'][0]['name']
-
-    # Construct data path
-    data_path = construct_data_path(session, subject_name=subject_name)
-
-    # Load actual data files
-    data_files = []
-    if data_path and os.path.exists(data_path):
-        data_files = [f for f in os.listdir(data_path)
-                      if f.endswith(('.dat', '.bin', '.h5'))]
-
-    return {
-        'session_metadata': session,
-        'data_path': data_path,
-        'data_files': data_files
-    }
-```
-
-### MATLAB Integration
-{: .no_toc}
-
-```matlab
-function data_info = load_session_data(session_id)
-    % Load session metadata and construct data paths.
-    % Using include={'datastorage','projects'} expands those fields to full objects.
-    client = BrainstemClient();
-
-    % Fetch the session by UUID and expand datastorage and projects
-    session_response = client.load('session', ...
-                                   'id', session_id, ...
-                                   'include', {'datastorage', 'projects', 'dataacquisition'});
-    session_data = session_response.sessions{1};
-
-    % Extract data storage information (first linked storage)
-    storage = session_data.datastorage{1};
-
-    % Use the first configured protocol; adjust if a specific protocol is required.
-    base_path = storage.data_protocols{1}.path;
-
-    % Project name is available when include={'projects'} is used
-    project_name = session_data.projects{1}.name;
-
-    % Session has no direct subject field; subjects are linked via behavior records.
-    % Retrieve subject separately if your organization structure includes Subjects.
-    behaviors = client.load('behavior', 'filter', {'session', session_id});
-    if ~isempty(behaviors.behaviors)
-        subject_id = behaviors.behaviors{1}.subjects{1};
-        subject_resp = client.load('subject', 'id', subject_id);
-        subject_name = subject_resp.subjects{1}.name;
-    else
-        subject_name = '';
-    end
-
-    storage_name = session_data.name_used_in_storage;
-
-    % Build path — omit subject component if subject_name is empty
-    if ~isempty(subject_name)
-        full_path = fullfile(base_path, project_name, subject_name, storage_name);
-    else
-        full_path = fullfile(base_path, project_name, storage_name);
-    end
-
-    data_info.session_metadata = session_data;
-    data_info.data_path = full_path;
-    data_info.exists = exist(full_path, 'dir') == 7;
-end
-```
-
-This allows users to access data via local mount, cloud backup, or public repository depending on their needs.
-
-### Custom Organization Patterns
-{: .no_toc}
-
-Configure your organization structure to match your lab's file hierarchy:
-
-```json
-{
-  "data_organization": [
-    "Projects",
-    "Subjects",
-    "Sessions"
-  ]
-}
-```
-
-**Example resulting path:**
-```
-/Volumes/StorageName/Data/Memory_Study/Mouse_001/Baseline_Recording/
-```
-
-By following this tutorial, you can effectively manage data storage in BrainSTEM, creating seamless links between your metadata and actual data files for efficient analysis workflows.
-
-## Next Steps
-
-With data storage configured, you can now effectively manage and analyze your research data:
-
-- **Start experimental workflows**: Follow complete experimental documentation with [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow)<!-- or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow)--> tutorial that demonstrates data storage integration
-- **Use API tools**: Access your data programmatically with [Python API tool]({{site.baseurl}}/api-tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/api-tools/matlab-api-tool) for seamless integration with analysis workflows
-- **Organize experiments**: Create structured [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) that integrate with your data storage system for organized behavioral data
-- **Enable collaboration**: Set up proper [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) to share your organized data storage with lab members and collaborators
-- **Enable open data**: Make your data publicly accessible through [Sharing Project Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) to promote open science and collaboration
+- **Next:** [Manage Projects]({{site.baseurl}}/tutorials/managing-projects): give your collaborators a role on the project.
+- [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow): links each session to "Lab Server".
+- [Share data publicly]({{site.baseurl}}/tutorials/sharing-project-publicly): mark the protocol that points at a public repository as public.
+- Data model: [Data storage]({{site.baseurl}}/datamodel/personal_attributes/datastorage/) and [Sessions]({{site.baseurl}}/datamodel/stem/session/).

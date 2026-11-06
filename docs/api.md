@@ -1,13 +1,13 @@
 ---
 layout: default
 title: API
-nav_order: 4
+nav_order: 5
 has_children: true
 has_toc: false
 ---
 # API
 {: .no_toc}
-The BrainSTEM API provides programmatic access to the complete data model, enabling developers to interact with neuroscience data and metadata through RESTful endpoints. [API tools](/api-tools/) have been developed for MATLAB and Python, and a Web API tool allows for browsing and testing API endpoints directly in your browser.
+The BrainSTEM REST API gives programmatic access to the complete data model: every record you can see in the web interface can be read, created, changed and deleted through HTTPS endpoints that return JSON. [API tools](/tools/) exist for Python and MATLAB, AI assistants can connect through the [MCP server](/api/mcp/) or the [agent skills](/tools/agent-skills/), and the server describes itself in a machine-readable [reference](/api/reference/) that is generated from its code.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -15,285 +15,376 @@ The BrainSTEM API provides programmatic access to the complete data model, enabl
 1. TOC
 {:toc}
 
-## API Token Management
+## Quick start
 
-BrainSTEM uses **Personal Access Tokens** for API authentication. Because BrainSTEM enforces two-factor authentication (2FA), tokens must be obtained through a browser-based flow — your password is never sent to a script or CLI tool.
+1. Create a token on your [API token page](https://www.brainstem.org/private/users/tokens/) (see [Authentication](#authentication)) and copy it.
+2. Install the Python client and put the token in the environment:
 
-| Token Type | Lifetime | How to obtain | Best for |
+   ```bash
+   pip install brainstem_python_api_tools
+   export BRAINSTEM_API_TOKEN="<token>"
+   ```
+
+3. List your sessions and create one:
+
+   ```python
+   from brainstem_api_tools import BrainstemClient
+
+   client = BrainstemClient()                      # reads BRAINSTEM_API_TOKEN
+   sessions = client.load("session").json()["sessions"]
+   print(len(sessions), "sessions on the first page")
+
+   created = client.save("session", data={
+       "name": "Example session",
+       "projects": ["<project-id>"],
+       "session_type": "subject",
+       "subjects": ["<subject-id>"],
+       "date_time": "2026-03-02T10:00:00Z",
+   }).json()
+   print(created["session"]["id"])
+   ```
+
+The same read and write with curl:
+
+```bash
+curl -H "Authorization: Bearer $BRAINSTEM_API_TOKEN" \
+     https://www.brainstem.org/api/private/stem/session/
+
+curl -X POST \
+     -H "Authorization: Bearer $BRAINSTEM_API_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Example session", "projects": ["<project-id>"], "session_type": "subject", "subjects": ["<subject-id>"], "date_time": "2026-03-02T10:00:00Z"}' \
+     https://www.brainstem.org/api/private/stem/session/
+```
+
+Replace `<project-id>` and `<subject-id>` with the ids of entries you can change; open the entry in the web interface and copy the id from the address bar or the **API** button ([Finding an ID](/webinterface/import-tool/#finding-an-id)). A new session is recorded as performed unless you send `"status": "planned"`. The required fields of every resource are on its page under [Available endpoints](#available-endpoints).
+
+## Authentication
+
+BrainSTEM uses **Personal Access Tokens** (PATs) for API authentication. Because BrainSTEM enforces two-factor authentication (2FA), tokens are issued through the browser only: your password is never typed into a script or a command line tool.
+
+| Token type | Lifetime | How to obtain | Best for |
 |------------|----------|---------------|----------|
-| **Personal Access Token** | 1 year (sliding, auto-refresh) | Web UI form or CLI device auth flow | Scripts, integrations, CLI tools, automation |
+| **Personal Access Token** | One year from creation. Using the token does not extend it; create a new one before it expires. | Web UI, or the device authorization flow built into the Python and MATLAB tools | Scripts, integrations, CLI tools, AI assistants |
 
-### Option 1: Create a Token in the Web UI
+A user can hold up to 10 active tokens. Each token has a name, records when and from where it was last used, and can be revoked at any time. Revocation takes effect immediately. [Checking a token](#checking-a-token) shows when it expires.
+
+### Option 1: Create a token in the web UI
 {: .no_toc}
 
-Visit your [API Token Management page](https://www.brainstem.org/private/users/tokens/), enter a descriptive token name (e.g., "My API Integration", "Data Export Script"), and click **Create**. Copy the token immediately — it is only shown once.
+Open your [API token management page](https://www.brainstem.org/private/users/tokens/) (Profile → **Security & access** → **API tokens**), click **Create New Personal Access Token**, enter a descriptive name such as "Analysis pipeline" and confirm. You are asked to confirm your password and 2FA code first. Copy the token right away; it is shown only once.
 
-**Use your token in requests:**
+Use it as a bearer token:
+
 ```bash
-curl -H "Authorization: Bearer YOUR_PERSONAL_TOKEN" \
+curl -H "Authorization: Bearer $BRAINSTEM_API_TOKEN" \
      https://www.brainstem.org/api/private/stem/project/
 ```
 
 {: .important }
-> Personal access tokens are shown only once when created. Save them immediately in a secure location.
+> A token has no scopes: whoever holds it can read, change, delete and publish with all your rights until it expires a year later or you revoke it. Keep it out of shared code and notebooks, for example in the `BRAINSTEM_API_TOKEN` environment variable that all BrainSTEM tools read, and revoke it on your token page if it leaks.
 
-### Option 2: CLI Device Authorization Flow
+### Option 2: Device authorization flow
 {: .no_toc}
 
-CLI tools (e.g. the BrainSTEM Python and MATLAB API tools) use a browser-based sign-in flow so that 2FA is always enforced. Your password is never sent to the CLI.
+The Python and MATLAB tools and the `brainstem` command line sign you in through the browser. The tool asks the server for a device session, opens the approval page, and polls until you approve. The approval page requires your normal login including 2FA.
 
-**Browser-redirect mode (default)**
+In a headless environment (a server or a container without a browser) the tool prints the approval URL and a short code; open the URL on any device, enter the code and approve.
 
-The CLI opens a browser window automatically. If you are already logged in, just click **Approve**.
+A token obtained this way appears on your token page with the client name and a timestamp, has the same one-year lifetime, and can be revoked like any other. The requests behind the flow are described under [Device authorization protocol](#device-authorization-protocol), for authors of other clients.
+
+### Checking a token
+{: .no_toc}
+
+`GET /api/auth/token/info/` with the bearer header returns the token's user, type, issue and expiry times. It answers `401` when the token is invalid or revoked.
+
+### Authentication in the Python and MATLAB tools
+{: .no_toc}
+
+- **Python:** `BrainstemClient()` reads `BRAINSTEM_API_TOKEN`, then a cached token, and otherwise opens the browser; `BrainstemClient(headless=True)` prints the code instead. See the [Python API tool](/tools/python-api-tool/).
+- **MATLAB:** `BrainstemClient()` reads `BRAINSTEM_API_TOKEN`, then a cached token, and otherwise opens the browser. See the [MATLAB API tool](/tools/matlab-api-tool/).
+- **Web API tool:** uses your browser session; no token needed. See the [Web API tool](/tools/web-api-tool/).
+- **MCP and agent skills:** configure the bearer header once; see [MCP server](/api/mcp/) and [Agent skills](/tools/agent-skills/).
+
+Both clients and the NWB exporter also read `BRAINSTEM_API_URL` to talk to another server than `https://www.brainstem.org`.
+
+### Security best practices
+{: .no_toc}
+
+- Never type your password into a script. Use the device flow or create a token in the web UI.
+- Keep tokens out of version control, logs and shared notebooks.
+- Give each script, machine and AI application its own named token so you can revoke one without touching the others.
+- Delete unused tokens on your [token management page](https://www.brainstem.org/private/users/tokens/).
+
+### Device authorization protocol
+{: .no_toc}
+
+The requests the clients make during the [device authorization flow](#option-2-device-authorization-flow):
 
 ```
-# Step 1 — CLI initiates a device session
-POST /api/auth/device/
-→ {"session_id": "...", "verification_uri_complete": "https://www.brainstem.org/account/authorize/?session=...", ...}
+# Step 1 — the tool starts a device session (no authentication)
+POST /api/auth/device/        body: {"client_name": "my-script"}
+→ {"session_id": "...", "device_code": "...", "user_code": "WXYZ-1234",
+   "verification_uri": "https://www.brainstem.org/account/authorize/",
+   "verification_uri_complete": "https://www.brainstem.org/account/authorize/?session=...",
+   "expires_in": 900, "interval": 5}
 
-# Step 2 — CLI opens that URL in your browser; you approve (with 2FA if needed)
+# Step 2 — you approve in the browser (with 2FA)
 
-# Step 3 — CLI polls until approved
-POST /api/auth/device/token/   body: {"device_code": "..."}
-→ {"status": "authorization_pending"}  ← keep polling every 5 s
-→ {"status": "success", "token": "YOUR_PAT"}  ← done
+# Step 3 — the tool polls until approved
+POST /api/auth/device/token/  body: {"device_code": "..."}
+→ {"status": "authorization_pending"}            ← keep polling every 5 s
+→ {"status": "success", "token": "...", "token_id": 42, "token_name": "my-script 2026-03-29 14:30:10"}
 ```
 
-**Headless / no-browser mode**
-
-For servers or Docker environments where no browser is available, the CLI prints a short code instead:
-
-```
-Open https://www.brainstem.org/account/authorize/ in a browser
-and enter the code: WXYZ-1234
-
-Waiting for authorization...
-```
-
-Navigate to that URL on any device, enter the code, and approve — the CLI receives the token automatically.
-
-**Poll response reference**
-
-All `POST /api/auth/device/token/` responses return HTTP 200. Check the JSON body:
+All poll responses return HTTP 200 with a status in the body:
 
 ```json
-{"status": "authorization_pending"}   // keep polling (every 5 s)
-{"status": "success", "token": "..."}  // done — save the token
-{"error": "access_denied"}            // user clicked Deny — abort
-{"error": "expired_token"}            // 15-minute window elapsed — restart
-{"error": "already_used"}             // token already collected
+{"status": "authorization_pending"}   // keep polling
+{"status": "success", "token": "..."}  // done; the token is returned exactly once
+{"error": "access_denied"}            // you clicked Deny
+{"error": "expired_token"}            // the 15-minute window elapsed; start again
+{"error": "already_used"}             // the token was already collected
 ```
 
-### Authentication in API Tools
+## Endpoint structure
+
+All record endpoints follow one pattern:
+
+```
+https://www.brainstem.org/api/{portal}/{app}/{resource}/
+https://www.brainstem.org/api/{portal}/{app}/{resource}/{id}/
+```
+
+| Part | Value |
+|:-----|:------|
+| `portal` | `private` (records you can read, needs a token) or `public` (records of public projects, read-only, no token) |
+| `app` | `stem`, `modules`, `personal_attributes`, `resources`, `taxonomies`, `dissemination` or `users` |
+| `resource` | the lower-case model name, for example `session`, `procedure`, `specimenset`, `experimentalinterface` or `anatomicalregion` |
+| `id` | the UUID of one record |
+
+Examples:
+
+```
+https://www.brainstem.org/api/private/stem/session/
+https://www.brainstem.org/api/private/stem/session/<id>/
+https://www.brainstem.org/api/private/modules/procedure/
+https://www.brainstem.org/api/public/stem/project/
+```
+
+`taxonomies/brainregion` is a deprecated alias of `taxonomies/anatomicalregion`; use the new name.
+
+## Available endpoints
+
+Every resource has its own page with its fields, write rules, permissions and examples. The pages are generated from the server code, so they match the current release.
+
+### Core records
 {: .no_toc}
+- **[STEM](/api/stem/)**: projects, subjects, sessions, specimen sets and specimens, cohorts, collections, breedings and epochs.
+- **[Modules](/api/modules/)**: procedures, procedure episodes and logs, specimen procedures and logs, experimental interfaces, material usages, data acquisition, manipulations, behaviors, equipment, consumable stock, and the templates for each of them.
+- **[Personal attributes](/api/personal_attributes/)**: setups, inventories, behavioral assays, data storage, licenses and protocols.
 
-The device authorization flow is built into the official API tools:
-- **Python API tool**: `BrainstemClient()` opens a browser automatically; `BrainstemClient(headless=True)` for headless environments. See the [Python API tool docs](/api-tools/python-api-tool/).
-- **MATLAB API tool**: `BrainstemClient()` opens a browser automatically; pass `'token', getenv('BRAINSTEM_TOKEN')` for scripts. See the [MATLAB API tool docs](/api-tools/matlab-api-tool/).
-- **Web API tool**: Uses your existing browser session — no token required for basic exploration.
-
-### Security Best Practices
+### Shared catalog, taxonomies and dissemination
 {: .no_toc}
-
-- **Never send your password to scripts**: Use the device auth flow or create a token in the web UI
-- **Keep tokens secure**: Never commit tokens to version control or share them in logs
-- **Save immediately**: Personal access tokens are shown only once when created
-- **Clean up regularly**: Delete unused tokens via your [token management page](https://www.brainstem.org/private/users/tokens/)
-
-## Available API Endpoints
-
-The following pages provide detailed documentation for each API endpoint, including available fields, relationships, and specific examples:
-
-### Core Data Management
-{: .no_toc}
-- **[STEM](/api/stem/)** - Core experimental data model including projects, sessions, subjects, cohorts, and collections
-- **[Modules](/api/modules/)** - procedures, behaviors, data acquisition, manipulations, subject logs, consumable stocks and equipment
-- **[Personal Attributes](/api/personal_attributes/)** - User-specific configurations of  behavioral assays, data storage, inventories and setups
-
-### Shared resources, taxonomies and dissemination
-{: .no_toc}
-- **[Resources](/api/resources/)** - consumable, hardware devices, and supplier information
-- **[Taxonomies](/api/taxonomies/)** - Standardized classifications for species, strains, brain regions, and setup types
-- **[Dissemination](/api/dissemination/)** - research output tracking though publications and journals
+- **[Resources](/api/resources/)**: consumables, hardware devices and suppliers.
+- **[Taxonomies](/api/taxonomies/)**: species, strains, anatomical regions and atlas references, coordinate transforms, behavioral categories and paradigms, setup types and regulatory authorities.
+- **[Dissemination](/api/dissemination/)**: publications and journals.
 
 ### Collaboration
 {: .no_toc}
-- **[Users](/api/users/)** - User accounts, groups, laboratories, and membership management
+- **[Users](/api/users/)**: users, groups and laboratories.
 
-### Technical Documentation
+### Supporting endpoints
 {: .no_toc}
-- **[Schemas](/api/schemas/)** - JSON schema specifications for complex data structures and validation
+- **[Templates](/api/templates/)**: the templates that prefill procedures, episodes, interfaces, material rows, data acquisitions and manipulations.
+- **[Approvals](/api/approvals/)**: the approval requests behind submissions to the shared catalogs and taxonomies.
+- **[Invitations and requests](/api/invitations/)**: membership invitations to projects, groups and personal attributes, join requests and pending invitations.
+- **[Link tables](/api/links/)**: the many-to-many rows with fields of their own, such as cohort subjects and the interfaces of a data acquisition.
 
-## API Endpoint Structure
-
-The BrainSTEM API follows a RESTful design pattern. All API endpoints follow a consistent URL structure:
-
-```
-https://www.BrainSTEM.org/api/{portal}/{app}/{model}/{id}/
-```
-
-### URL Components
+### Technical reference
 {: .no_toc}
-{: .note }
-> **portal**: `private` or `public` - Determines access permissions and authentication requirements
-> 
-> **app**: The application apps - `stem`, `modules`, `personal_attributes`, `resources`, `taxonomies`, `dissemination`, `auth`, `users`
-> 
-> **model**: The specific data model (e.g., `session`, `procedure`, `project`). See the [data model](/datamodel/) for a complete overview
-> 
-> **id**: (Optional) Specific record identifier (UUID) for individual resource access
+- **[Schemas](/api/schemas/)**: the type-specific JSON payloads (`type` + `details`, coordinate systems) and their versions.
+- **[Relationships](/api/relationships/)**: how resources connect, as the queries that follow each link.
+- **[Exports](/api/export/)**: a project or a session as one versioned JSON document.
+- **[Public schemas](/api/public-schemas/)**: the permanent URLs of every schema version.
+- **[Agent reference](/api/reference/)**: the server's own machine-readable description of its API.
+- **[MCP server](/api/mcp/)**: access to the data model and your records for AI applications such as Claude Code and Cursor.
 
-### Example Endpoints
+## Public vs private portals
+
+### Private portal
 {: .no_toc}
-**Session endpoint (all sessions):**
-```
-https://www.BrainSTEM.org/api/private/stem/session/
-```
+- **Access**: a Personal Access Token, or your browser session in the [Web API tool](/tools/web-api-tool/).
+- **Content**: records of the projects you are a member of and the lab resources shared with your groups.
+- **Operations**: read, create, change and delete, according to your role on each record.
 
-**Specific session by ID:**
-```
-https://www.BrainSTEM.org/api/private/stem/session/<id>/
-```
-
-**Procedure endpoint:**
-```
-https://www.BrainSTEM.org/api/private/modules/procedure/
-```
-
-## Public vs Private Portals
-
-BrainSTEM provides two distinct portals with separate authentication systems:
-
-### Private Portal
+### Public portal
 {: .no_toc}
-- **Access**: Requires user authentication with API token
-- **Content**: Your private data and projects
-- **URL Pattern**: `https://www.BrainSTEM.org/api/private/...`
+- **Access**: open, no token.
+- **Content**: records of projects that their owners made public, and lab resources made public individually.
+- **Operations**: read only. An empty public result says nothing about private data.
 
-### Public Portal  
+```
+https://www.brainstem.org/api/public/stem/session/
+```
+
+## HTTP methods
+
+- **GET**: retrieve a list or one record.
+- **POST**: create a record.
+- **PATCH**: change the fields you send (recommended for updates).
+- **PUT**: update a record with the complete record. Fields you leave out are kept, not cleared, so PATCH does the same with less to send.
+- **DELETE**: delete a record.
+
+## Responses
+
+A list response is an object with the plural response key of the resource and a `meta` object:
+
+```json
+{
+    "sessions": [ ... ],
+    "meta": {"page": 1, "per_page": 100, "total_results": 231, "total_pages": 3}
+}
+```
+
+A detail, create or update response uses the singular key: `{"session": {...}}`. The keys are listed on each resource page and do not always match the resource name (`data_acquisition`, `consumable_stock`, `anatomical_region`).
+
+Relations are returned as ids. Dates are ISO 8601 strings. Type-specific details are JSON objects validated against the [schema](/api/schemas/) of the selected type.
+
+## Query parameters
+
+With curl, pass `-g` (`--globoff`), because curl otherwise reads `{}` and `[]` in a URL as its own globbing syntax, and quote the URL so the shell leaves `&`, `[]` and `{}` alone. The Python and MATLAB tools build these parameters for you.
+
+```bash
+curl -g -H "Authorization: Bearer $BRAINSTEM_API_TOKEN" \
+     "https://www.brainstem.org/api/private/stem/session/?filter{name.icontains}=rat&sort[]=-date_time&per_page=20"
+```
+
+### Filtering
 {: .no_toc}
-- **Access**: Open access to publicly shared data
-- **Content**: Data that has been explicitly made public by researchers
-- **URL Pattern**: `https://www.BrainSTEM.org/api/public/...`
 
-**Example - Public sessions:**
 ```
-https://www.BrainSTEM.org/api/public/stem/session/
+/?filter{<field>}=<value>
+/?filter{<field>.<operator>}=<value>
+/?filter{<field>.<related field>}=<value>      (nestable relations only)
 ```
 
-## HTTP Methods
+Operators: `in`, `any`, `all`, `icontains`, `contains`, `startswith`, `istartswith`, `endswith`, `iendswith`, `iexact`, `eq`, `gt`, `gte`, `lt`, `lte`, `range`, `isnull`, `year`, `month`, `day`, `week_day`. No operator means exact match. Repeat the parameter for `in`:
 
-The BrainSTEM API supports standard HTTP methods:
+```
+/?filter{type.in}=ExtracellularEphys&filter{type.in}=TwoPhotonMicroscopy
+```
 
-- **GET**: Retrieve data (list of records or specific record)
-- **POST**: Create new records
-- **PUT**: Update existing records (complete replacement)
-- **PATCH**: Partial update of existing records
-- **DELETE**: Remove records
+A filter can follow a relation into the related record only when that relation is **nestable**, that is, when the server lets a query step through it into the related record's fields (marked "nestable" in the field table of each resource page). Any other relation can only be the last segment and is compared with ids:
 
-## Query Parameters
+| Query | Works? |
+|---|---|
+| `procedure/?filter{subject}=<subject-id>` | yes, `subject` is the last segment |
+| `procedure/?filter{target_regions.acronym}=CA1` | yes, `target_regions` is nestable |
+| `session/?filter{subjects.species}=<species-id>` | yes, `subjects` is nestable |
+| `procedure/?filter{equipment.name}=Rig` | no, `equipment` is not nestable; look the equipment up first and filter with `filter{equipment.in}=<ids>` |
 
-When querying endpoints, you can use various parameters to filter, sort, and customize the response data. 
+Tags are filtered by name: `filter{tags.name}=control` (also `.in` and `.icontains`); records return tags as names. Type-specific `details` cannot be filtered on the server.
 
-### Filtering Data
+### Sorting
 {: .no_toc}
-You can filter results by specifying field values or search criteria:
 
-**Exact match filter:**
-Filter records where a field equals a specific value:
 ```
-/?filter{name}=project1
-```
-
-**Text search filter:**
-Search for records containing specific text using case-insensitive matching:
-```
-/?filter{description.icontains}=hippocampus
-```
-
-**Other filter operators:**
-- `icontains`: Case-insensitive text search
-- `startswith`: Field value starts with specified text
-- `endswith`: Field value ends with specified text
-- `gt`, `gte`: Greater than, greater than or equal
-- `lt`, `lte`: Less than, less than or equal
-
-### Sorting Results
-{: .no_toc}
-Control the order of returned results by specifying sort fields and direction:
-
-**Descending sort (newest/highest first):**
-Use a minus sign (-) prefix for descending order:
-```
-/?sort[]=-name
-/?sort[]=-created_date
-```
-
-**Ascending sort (oldest/lowest first):**
-Default behavior, no prefix needed:
-```
-/?sort[]=description
 /?sort[]=name
+/?sort[]=-date_time
+/?sort[]=-date_time&sort[]=name
 ```
 
-**Multiple sort fields:**
-```
-/?sort[]=-created_date&sort[]=name
-```
-
-### Including Related Data
+### Including related records
 {: .no_toc}
-By default, relational fields return only the ID (UUID) of related records. You can include full related data in the response:
 
-**Include single relationship:**
 ```
-/?include[]=behaviors
-/?include[]=dataacquisition
+/?include[]=projects.*
+/?include[]=dataacquisition.*&include[]=subjects.*
 ```
 
-**Include multiple relationships:**
-```
-/?include[]=behaviors&include[]=subjects&include[]=procedures
-```
-
-This reduces the number of API calls needed to get complete data by fetching related records in a single request.
-
-### Combining Query Parameters
-{: .no_toc}
-Multiple query parameters can be combined using the `&` operator:
-
-**Complex query example:**
-```
-/?filter{name}=project1&sort[]=-created_date&include[]=behaviors&include[]=subjects
-```
-
-This query will:
-1. Filter for records where name equals "project1"
-2. Sort by creation date (newest first)
-3. Include full behavior data
-4. Include full subject data
+Included records are returned next to the main list, under their own plural key ("sideloaded"), not nested inside each record. Only nestable relations can be included; on any other relation `include[]` is ignored and you get ids only. Only records you can read are included, and the relation's id list in that response then shows only those (see the warning under [Writing records](#writing-records)). `exclude[]=<field>` drops a field from the response.
 
 ### Pagination
 {: .no_toc}
-For large datasets, the API automatically paginates results:
 
-- **Default page size**: 20 records
-- **Custom page size**: `/?limit=50` (maximum 100)
-- **Navigate pages**: `/?offset=20` (skip first 20 records)
+Lists are paged with `page` and `per_page`:
 
-**Example pagination:**
+- **Default page size**: 100 records
+- **Maximum page size**: 500 (larger values are reduced; `meta.per_page` reports the size used)
+- `limit` and `offset` are accepted as aliases when `offset` is a multiple of `limit`; other offsets return `400`
+- `exclude_count=1` skips the total count for faster responses
+
 ```
-/?limit=10&offset=30  # Get records 31-40
+/?per_page=50&page=3
+/?limit=50&offset=100      # the same page
 ```
 
-## Error Handling
+Follow `page` up to `meta.total_pages`, or use `load_all` in the Python and MATLAB tools.
 
-The API returns standard HTTP status codes:
+### Planned records
+{: .no_toc}
 
-- **200**: Success
-- **201**: Created successfully
-- **400**: Bad Request (invalid parameters)
-- **401**: Unauthorized (invalid or missing token)
-- **403**: Forbidden (insufficient permissions)
-- **404**: Not Found
-- **500**: Internal Server Error
+Procedures, specimen procedures, sessions and breedings carry a `status` of `planned`, `performed` or `cancelled`. Listings return performed records only unless you add `include_planned=true` or filter on `status` explicitly (`filter{status}=planned`). A record created without `status` is recorded as performed. The public portal never returns planned records.
+
+### Combining parameters
+{: .no_toc}
+
+```
+/?filter{projects}=<project-id>&sort[]=-date_time&include[]=subjects.*&per_page=200
+```
+
+## Writing records
+
+- Create with **POST**, update with **PATCH** (send only the fields you change).
+- Required fields are listed on each resource page. The server validates with the same rules as the web forms and answers `400` with `{"field": ["message"]}`.
+- **Lists replace**: sending `projects`, `subjects`, `equipment`, `target_regions` or `tags` replaces the whole list. Read the record first, change the list, send the full list.
+- **JSON payloads replace**: `details` and the coordinate payloads are replaced as a whole. Read, merge, send the full object.
+- **Type and payload go together**: `type` picks a schema type and the payload must match it. The resource page names the payload field to send (for example `details` on procedures, `details_json` on material usages). The server sets every `*_schema_version` field itself; do not send one.
+- Some records need **form-only inputs** that are not returned in responses, for example `source` on a material usage (inventory, catalog or manual). They are listed under "Form-only inputs" on the resource page.
+- Writes to shared taxonomies and catalog resources by users without approval rights create an **approval request** instead of the record.
+- Deleting a record that other records still reference returns `400` ("still referenced by ...").
+
+{: .warning }
+> A list read with `include[]` holds only the linked records you can read. Sending that list back replaces the stored one, so the links to records you cannot see are removed. Read the record without `include[]` before you change one of its lists.
+
+{: .warning }
+> `PUT .../materials/` replaces the whole material collection: every row missing from `items` is deleted, and a request without `items` deletes them all. When you send `stages`, stages missing from them are deleted too. Read the collection with `GET` first, change it, and send it back with its `expected_parent_updated_at`; the server answers `409` if the record changed in between.
+
+## Other endpoints
+
+| Endpoint | Purpose |
+|---|---|
+| `GET /api/private/recent-activity/` | What changed lately in records you can read. Parameters `limit` (max 200), `actor_filter`, `action_filter`, `model_type`, `search`, `date_from`, `date_to`, `ownership`, `active_projects_only`. |
+| `GET/POST .../stem/project/<id>/export/`, `.../stem/session/<id>/export/` | Project and session exports; see [Exports](/api/export/). |
+| `GET .../taxonomies/anatomicalregion/<id>/descendants/` | The regions below a region in its atlas. |
+| `GET/PUT .../procedure/<id>/materials/` (also specimen procedures and interfaces) | Read or replace the ordered material usage rows of a record. |
+| `POST /api/auth/device/`, `POST /api/auth/device/token/`, `GET /api/auth/token/info/` | Device authorization flow and token information. |
+| `GET /reference/`, `GET /schemas/` | The [agent reference](/api/reference/) and the [public schemas](/api/public-schemas/); no token needed. |
+| `POST /mcp/` | The [MCP server](/api/mcp/). |
+
+## Error handling
+
+| Status | Meaning | What to do |
+|---|---|---|
+| `200` / `201` / `204` | success / created / deleted | |
+| `400` `{"field": [...]}` | validation failed | fix the named fields |
+| `400` `["Invalid nested filter field: x"]` | a filter followed a relation that is not nestable | filter by ids instead |
+| `401` | token missing, invalid, expired or revoked | sign in again or create a new token |
+| `403` | no permission for this record or action | ask a project manager for the role you need |
+| `404` | no such record, or not visible to you | the record may exist in a project you cannot read |
+| `409` | stale write (material lists) or export job not ready | re-read and retry, or wait |
+| `429` | rate limited | wait and retry; do not loop |
+
+## Rate limits
+
+| Scope | Limit |
+|---|---|
+| Anonymous requests (public portal) | 60 per minute per IP |
+| [Agent reference](/api/reference/) (`/reference/`) and [public schemas](/api/public-schemas/) (`/schemas/`) | 600 per minute per IP, each |
+| Authenticated requests | 300 per minute per user |
+| Device flow | 10 session starts and 30 polls per minute |
+| Exports (direct and background jobs together) | 30 per hour per user |
+| MCP messages | 300 per minute |
+
+Requests over the limit receive `429` with a `Retry-After` header.

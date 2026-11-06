@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 520" width="1500" height="520" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Material chain: catalog consumable, inventory stock, material usage, parent record</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="520" fill="#fff"/>
+  <text x="40" y="40" font-size="18" font-weight="600" fill="#2c2a38">Where a material comes from, and where it is used</text>
+  <rect x="60" y="110" width="320" height="100" rx="7" fill="#f4ede5" stroke="#c7a47e" stroke-width="1.2"/>
+  <text x="220" y="132.5" font-size="17" font-weight="600" fill="#6f410e" text-anchor="middle">Consumable</text>
+  <text x="220" y="154.5" font-size="15" fill="#2c2a38" text-anchor="middle">Shared catalog entry</text>
+  <text x="220" y="176.5" font-size="15" fill="#2c2a38" text-anchor="middle">e.g. ASSY-156 silicon probe</text>
+  <text x="220" y="198.5" font-size="15" fill="#2c2a38" text-anchor="middle">nominal value, supplier</text>
+  <rect x="470" y="108" width="320" height="112" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="630" y="136.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Consumable stock</text>
+  <text x="630" y="158.5" font-size="15" fill="#2c2a38" text-anchor="middle">Lot or item in an inventory</text>
+  <text x="630" y="180.5" font-size="15" fill="#2c2a38" text-anchor="middle">e.g. ASSY-156, lot 2024-11</text>
+  <text x="630" y="202.5" font-size="15" fill="#2c2a38" text-anchor="middle">as-received value, lot, expiry</text>
+  <rect x="470" y="290" width="320" height="70" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
+  <text x="484" y="318.5" font-size="15" fill="#4a4858">Manual entry</text>
+  <text x="484" y="340.5" font-size="15" fill="#4a4858">name and free text only, no catalog link</text>
+  <rect x="880" y="120" width="320" height="170" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="1040" y="155.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Material usage</text>
+  <text x="1040" y="177.5" font-size="15" fill="#fff" text-anchor="middle">Role: Silicon probe</text>
+  <text x="1040" y="199.5" font-size="15" fill="#fff" text-anchor="middle">in a silicon probe implant</text>
+  <text x="1040" y="221.5" font-size="15" fill="#fff" text-anchor="middle">Source: stock, catalog or manual</text>
+  <text x="1040" y="243.5" font-size="15" fill="#fff" text-anchor="middle">Applied value: dose, volume, conc.</text>
+  <text x="1040" y="265.5" font-size="15" fill="#fff" text-anchor="middle">Stage (optional), frozen snapshot</text>
+  <rect x="1260" y="110" width="220" height="64" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1370" y="136.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Procedure</text>
+  <text x="1370" y="158.5" font-size="15" fill="#2c2a38" text-anchor="middle">in-vivo event</text>
+  <rect x="1260" y="205" width="220" height="64" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1370" y="231.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Specimen procedure</text>
+  <text x="1370" y="253.5" font-size="15" fill="#2c2a38" text-anchor="middle">ex-vivo processing</text>
+  <rect x="1260" y="300" width="220" height="64" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1370" y="326.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Experimental interface</text>
+  <text x="1370" y="348.5" font-size="15" fill="#2c2a38" text-anchor="middle">what a device is made of</text>
+  <rect x="60" y="420" width="740" height="70" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
+  <text x="74" y="448.5" font-size="15" fill="#4a4858">Material usage templates plan the role, product and details of a row;</text>
+  <text x="74" y="470.5" font-size="15" fill="#4a4858">the stock item is chosen when the template is applied to a real procedure.</text>
+  <path d="M380 160 L470 160" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="425" y="150" font-size="15" fill="#4a4858" text-anchor="middle">stocked as</text>
+  <path d="M790 168 L880 168" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="838" y="158" font-size="15" fill="#4a4858" text-anchor="middle">from stock</text>
+  <path d="M220 210 L220 250 L880 250" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="560" y="242" font-size="15" fill="#4a4858" text-anchor="middle">from catalog (no stock entry)</text>
+  <path d="M790 325 L835 325 L835 275 L880 275" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="800" y="350" font-size="15" fill="#4a4858" text-anchor="start">manual entry</text>
+  <path d="M1200 205 L1230 205 L1230 142 L1260 142" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M1230 205 L1260 205" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M1230 205 L1230 332 L1260 332" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1230" y="392" font-size="15" fill="#4a4858" text-anchor="middle">one row in the</text>
+  <text x="1230" y="412" font-size="15" fill="#4a4858" text-anchor="middle">material list of</text>
+</svg>

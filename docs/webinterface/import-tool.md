@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Import tool
-parent: Web interface
-nav_order: 6
+parent: Import and export
+grand_parent: Web interface
+nav_order: 1
 ---
 # Import tool
 {: .no_toc}
@@ -15,261 +16,190 @@ nav_order: 6
 
 ## Overview
 
-The BrainSTEM import tool helps you add data to BrainSTEM by uploading CSV files. Instead of creating CSV files from scratch, you download pre-built templates for each data type, edit them with your data, and upload them.
+The import tool (**Tools** → **Import tool**, page title **Lab notebook import tool**) creates many entries at once. It has two tabs at the top of the page:
 
-**How it works**: Download template → Edit with your data → Upload → Review results
+- **Batch entry**: fill a grid in the browser, validate the rows and import the valid ones.
+- **CSV import**: download a CSV template for one kind of entry, fill it in a spreadsheet program and upload it.
 
-## Interface Overview
+Both tabs create new entries only. An entry that already exists with the same name is found and left unchanged, never overwritten. Related entries (the project of a subject, the subject of a procedure, the session of a recording) must exist before the rows that refer to them, so import in the order **Projects → Subjects → Sessions → related data**. Rows are created with the same rules as the forms: unique names, species before strain, an experimental interface for every recording. You need to be a Contributor, Manager or Owner of the project the rows go into.
 
-The import tool interface is organized into three main tabs: **Projects**, **Subjects**, and **Sessions**. Each tab provides templates and import functionality for related data types.
+For colony data from SoftMouse use the [SoftMouse integration]({{"webinterface/softmouse/"|absolute_url}}). For scripted imports use the [API tools]({{"tools/"|absolute_url}}).
 
-![Import tool web interface](/assets/images/webinterface/import_tool.png)
+## Batch entry
 
-### Main Navigation Tabs
+Batch entry is a spreadsheet-like grid with dropdowns, date pickers and tag editors. Nothing is written until you validate the rows and confirm the import.
+
+![Batch entry for subjects after Validate current tab: one new row, one that already exists, and one blocked because a required field is missing; the summary line counts them.]({{site.baseurl}}/assets/images/screenshots/import-tool-batch-grid.png)
+{: .screenshot }
+*Batch entry for subjects after Validate current tab: one new row, one that already exists, and one blocked because a required field is missing; the summary line counts them.*
+
+### Choosing what to create
 {: .no_toc}
 
-- **Projects** - Import projects and project-related data
-- **Subjects** - Import subjects, procedures, cohorts, and subject logs
-- **Sessions** - Import sessions, behaviors, data acquisition, manipulations, epochs, and collections
+Under **Choose a model**, pick a **Model family** and then a **Record type**:
 
-### Template Downloads
+| Model family | Record types |
+|--------------|--------------|
+| **Projects** | **Projects** |
+| **Subjects** | **Subjects**, **Procedures**, **Subject Logs**, **Log Entries**, **Breedings**, **Cohorts** |
+| **Sessions** | **Sessions**, **Behaviors**, **Data Acquisition**, **Manipulations**, **Collections** |
+
+Each record type has its own panel. The question-mark button in the panel title opens the help dialog of that entry type. Click **Pin** to keep a panel open while you switch to another record type, for example to keep the Subjects grid next to the Procedures grid; **Pinned** panels stack below the active one.
+
+The project scope sits in the top-right corner of the model card. **All permitted projects** offers every project you may change; switch to **Active only** to offer only your [active projects]({{"webinterface/list-view/#active-projects"|absolute_url}}). The switch is disabled until you have marked at least one project as active; **Manage active projects** opens the selection dialog.
+
+### Filling the grid
 {: .no_toc}
 
-Each tab displays relevant template download buttons:
+- **Add row** appends an empty row. Rows are numbered; each row has **Duplicate** and **Delete** actions.
+- Required cells are marked and show **Choose…** until a value is picked.
+- Dropdown cells search the entries you may use. Dependent cells are filtered by their parent and show "filtered by {parent}": strain by species, target regions by atlas, breeding by project, subjects of a behavior by the session's project, experimental interfaces by session, equipment by setup, consumable stock by inventory, catalog consumable by supplier, protocol by type.
+- Tag cells open a tag editor (**Search or create a tag…**).
+- Date cells take **YYYY-MM-DD**, date and time cells add **HH:MM:SS**.
+- Cells with type-specific fields show an **Edit** button (with the number of filled values) that opens the fields of the chosen type: the **Schema** column for procedure, log, data acquisition and manipulation details, the **Coordinates** column for the chosen coordinate system, **Extra content** for custom key and value pairs, and **Repository links** on sessions. Choose the type first; otherwise the editor says "Select a procedure type first."
+- **Fields** opens a dialog to show or hide columns (**Search fields…**, **Select all**, **Deselect all**, "N of M fields visible"). Hidden columns keep their values.
+- On narrow screens each row is a card; **Edit row** opens the row's fields in a drawer.
 
-- **Blue template buttons** - Download pre-configured CSV templates for each data type
-- Templates include example data and proper column formatting
-- Multiple templates available per tab (e.g., Subjects tab has Subjects, Procedures, Subject Logs, and Cohorts templates; Sessions tab has Sessions, Behaviors, Data Acquisition, Manipulations, Epochs, and Collections templates)
+Your rows are saved as a draft in this browser and are still there when you come back to the page. **Clear draft** empties the grid of the current record type after a confirmation (**Clear this draft?**). A grid holds at most 500 rows ("max 500 records").
 
-### Import Process
+### What each record type asks for
 {: .no_toc}
 
-1. **Choose CSV File** - Drag and drop or click to select your completed CSV file
-2. **Select Import Type** - Click the appropriate purple import button for your data type
-3. **Review Results** - Check the import results for any errors or warnings
+Required cells are in bold.
 
+| Record type | Cells |
+|-------------|-------|
+| Projects | **Project name**, Description, Authenticated groups, Public (Yes or No), Tags, Can change (users), Managers, Owners |
+| Subjects | **Project**, **Subject name**, **Sex**, **Species**, **Status** (default Active), Strain, Description, Genetic line, Genotype, Subject identifier, Supplier, Breeding, Licenses, Birth date, Death date, Tags, Extra content, Name used in storage |
+| Procedures | **Subject**, **Procedure type**, Date/time, Notes, Protocol, Licenses, Atlas, Target regions, Stock source (inventory, catalog or manual) with Inventory and Consumable stock or Supplier and Catalog consumable, Setup, Equipment, Schema, Coordinate system, Coordinates |
+| Subject Logs | **Subject**, **Log type**, Description, Protocol |
+| Log Entries | **Subject**, **Subject log**, Entry date/time (single-point logs) or Entry start and Entry end (ranged logs such as Housing, Food deprivation, Water deprivation, Habituation, Handling, Training session), Entry notes, Schema |
+| Breedings | **Project**, **Breeding name**, **Maternal subject**, **Paternal subject**, Description, Tags, Start date, End date, Birth date, Weaning date, Litter size, Expected genotype |
+| Sessions | **Project**, **Session name**, Description, Date/time, Tags, Data storage, Name in storage, Extra content, Repository links |
+| Behaviors | **Session**, **Subjects**, **Setup**, **Behavioral assay** (an assay with the same setup type as the setup), Notes |
+| Data Acquisition | **Session**, **Data acquisition type**, **Experimental interfaces** (on the session's subjects or specimen sets, of a type the acquisition type allows), Setup, Equipment, Notes, Schema |
+| Manipulations | **Session**, **Manipulation type**, **Experimental interfaces**, Setup, Equipment, Notes, Schema |
+| Cohorts | **Project**, **Cohort name**, **Subjects**, Description, Tags |
+| Collections | **Project**, **Collection name**, **Sessions**, Description, Tags |
 
-## Getting Started
+Procedure types that place something in the brain require a coordinate system; only the systems the procedure form itself offers for that type are listed.
 
-### Quick Start
+### Validating
 {: .no_toc}
 
-1. Go to the import tool page ([www.brainstem.org/private/import-tool/](https://www.brainstem.org/private/import-tool/))
-2. Select your data type (e.g., "subjects", "procedures")
-3. Click "Download CSV Template"
-4. Open the downloaded file and replace the example data with your data
-5. Upload the modified CSV file
-6. Check the results for any errors
+Click **Validate current tab**. Every row gets a status pill and the panel shows a summary line "Create: N · Existing skipped: N · Entries: N · Warnings: N · Blocked: N".
 
-### Why Use Templates?
+| Status | Meaning |
+|--------|---------|
+| **new** | "A new record will be created." |
+| **existing** | "A matching record already exists and will be skipped." |
+| **entry** | "A new entry will be added to the existing record." (log entries) |
+| **blocked** | "This row has errors that prevent import." The message is shown under the cell, for example "This field is required.", "The value is too long." or "This name is unavailable or you do not have permission to use it." |
+| **draft** | "Not validated yet." |
+
+"All rows are ready to import." means every row is new, existing or entry. "Resolve the blocking row errors before importing." means at least one row is blocked. Validate again after changing rows; the import checks every row once more before writing.
+
+### Importing
 {: .no_toc}
 
-**No mistakes** - Templates have correct column names and formatting
+**Import valid rows** is enabled once the current panel has been validated without blocked rows. A dialog asks **Import the validated rows now?** ("The validated rows are imported into BrainSTEM."); click **Import**. The panel reports "Import completed successfully. The draft was cleared." and the new entries are offered in the dropdowns of the other panels right away, for example a new project in a pinned Subjects grid. If the import fails, the row results show the reason and the draft is kept.
 
-**Faster** - All required fields are already included
+## CSV import
 
-**Better examples** - Shows you exactly how to format your data
+The **CSV import** tab has three sections: **Projects**, **Subjects** and **Sessions**. Each section offers templates, a field reference and an upload area.
 
-### Finding Your UUIDs
+![The CSV import tab: the three steps (download a template, prepare your data, upload and review), the recommended order (projects, subjects, sessions, then related data), and the Projects section with its template, field reference and upload area.]({{site.baseurl}}/assets/images/screenshots/import-tool-csv.png)
+{: .screenshot }
+*The CSV import tab: the three steps (download a template, prepare your data, upload and review), the recommended order (projects, subjects, sessions, then related data), and the Projects section with its template, field reference and upload area.*
+
+### Steps
 {: .no_toc}
 
-Templates use `YOUR_*_ID` placeholders for existing BrainSTEM data. To find these IDs:
+1. Under **Download a CSV template**, click the template for the kind of entry you want to create. The file is named `brainstem_template_<kind>.csv` and holds the column headers and one or more example rows (one per type for procedures, subject logs, data acquisition and manipulations).
+2. Open the file in a spreadsheet program, replace the example rows with your data and keep the headers unchanged. Save as CSV (UTF-8).
+3. Drag the file onto **Click or drag file here** in the matching section, or click to select it. Only `.csv` files up to 10 MB are accepted. The area shows "CSV file ready" with the file name.
+4. Click the import button that matches the template: **Import Projects**, **Import Subjects**, **Import Procedures**, **Import Subject Logs**, **Import Cohorts**, **Import Sessions**, **Import Behaviors**, **Import Data Acquisition**, **Import Manipulations**, **Import Epochs** or **Import Collections**.
+5. Read **Import Results**: **Import Successful!** or **Import Completed with Warnings!** with counters such as "3 Subjects Created" and "1 Projects Found", followed by the **Warnings** and **Errors** lists with row numbers. If a row fails, the later rows are still processed.
 
-1. Navigate to the relevant admin section (Procedures, Equipment, etc.)
-2. Click edit/view on your record
-3. Copy the UUID from the URL (long string of letters and numbers)
+{: .important }
+> CSV import has no preview: valid rows are created as soon as you click the import button. Try a file with two or three rows first, then upload the rest.
 
-## Input conventions
-- Column headers must follow the pattern `<entity>__<field>` and match exactly; unrecognised columns are ignored.
-- CSVs are parsed with Python's built-in `csv` module (via our lightweight helpers), so values may be wrapped in double quotes or left bare—both are accepted.
-- Trimming happens automatically, but lookups remain case-sensitive. Keep names ≤200 characters to stay within model limits.
-- Boolean fields treat `true`, `yes`, `1`, `on`, and `enabled` (any casing) as `True`; anything else—including blanks—evaluates to `False`.
-- Datetimes accept ISO strings that include seconds (e.g. `2024-05-01T14:30:00` or `2024-05-01T14:30:00Z`) alongside spaced formats (`2024-05-01 14:30`, `2024-05-01 14:30:45`) and their month/day variants.
-- Date-only fields must use ISO `YYYY-MM-DD` (optionally with a time component that is ignored).
-- Fields that expect multiple values (for example `cohort__subjects`, `collection__sessions`) take comma-separated lists; tags are passed through exactly as provided, so keep any desired commas in the single string.
-- JSON columns must contain valid JSON objects; malformed JSON raises a warning and the field is skipped. Example: `{"laserPower": 5, "units": "mW"}`.
-- Rich-text fields (project, subject, session, cohort, collection descriptions) are backed by CKEditor and therefore accept HTML. Because inline scripts and event handlers will render, keep inputs to simple formatting (paragraphs, bold, italics, links) to avoid introducing interactive content.
-
-## Data Type Details
-
-### Projects
+### Templates
 {: .no_toc}
 
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `project__name` **\*** | Text (e.g. `Auditory Cortex Project`) | Must be unique across BrainSTEM; importer creates the project when it does not exist. |
-| `project__description` | Plain text or limited HTML (e.g. `<p>Two-photon recordings.</p>`) | Stored in the rich-text description field; avoid interactive markup. |
-| `project__is_public` | Boolean keywords (e.g. `true`, `no`, `0`) | Parsed via `parse_boolean`; blank values become `false`. |
-| `project__tags` | Comma-separated tags (e.g. `vision, cortex`) | Converted into individual tag names. |
-| `project__authenticated_groups` | Comma-separated group names (e.g. `"Petersen Lab - UCPH,Neurology Team"`) | Groups start with contributor (`can_change: true`) access. Use quotes for multiple groups. |
-| `project__users__can_change` | Comma-separated emails (e.g. `"user1@uni.edu,user2@uni.edu"`) | Contributor access. Leave blank to rely on the auto-assigned owner created by the importer. |
-| `project__users__is_manager` | Comma-separated emails (e.g. `"pi@uni.edu,postdoc@uni.edu"`) | Manager access (`can_change` + management rights). Entries here don’t need to repeat in the contributor column. |
-| `project__users__is_owner` | Comma-separated emails (e.g. `"admin@lab.edu"`) | Owner access (`can_change`, `is_manager`, `is_owner`). If left blank, the importing user stays owner. |
+| Section | Templates | Import in this order |
+|---------|-----------|----------------------|
+| **Projects** | **Projects Template** | First |
+| **Subjects** | **Subjects Template**, **Procedures Template**, **Subject Logs Template**, **Cohorts Template** | Subjects, then procedures and subject logs, then cohorts |
+| **Sessions** | **Sessions Template**, **Behaviors Template**, **Data Acquisition Template**, **Manipulations Template**, **Epochs Template**, **Collections Template** | Sessions, then behaviors, data acquisition and manipulations, then epochs and collections |
 
-### Subjects
+Breedings and log entries for existing logs are created through batch entry; the CSV tab has no template for them.
+
+### Columns
 {: .no_toc}
 
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `project__name` **\*** | Existing project name (e.g. `Auditory Cortex Project`) | Projects must exist before importing subjects. |
-| `subject__name` **\*** | Text (e.g. `Mouse_001`) | Subject names are globally unique. |
-| `subject__sex` | `M`, `F`, `U` | Defaults to `U` (Unknown) when omitted. |
-| `subject__description` | Plain text or limited HTML (e.g. `<p>WT male.</p>`) | Stored in the subject's rich-text description; avoid interactive markup. |
-| `subject__strain` | Strain name (e.g. `C57BL/6J`) | Looks up the strain taxonomy; missing strains trigger warnings. |
-| `subject__genetic_line` | Text (e.g. `Thy1-GCaMP6s`) | Free-form genetic line entry. |
-| `subject__subject_identifier` | Text (e.g. `EarTag-123`) | External identifier. |
-| `subject__supplier` | Supplier name (e.g. `Charles River Laboratories`) | Looks up existing suppliers; missing suppliers trigger warnings. |
-| `subject__birth_date` | Date (e.g. `2023-02-14`) | Parsed and serialised to ISO date. |
-| `subject__death_date` | Date (e.g. `2024-03-01`) | Parsed and serialised to ISO date. |
-| `subject__tags` | Comma-separated tags (e.g. `training, cohortA`) | Converted into individual tag names. |
-| `subject__name_used_in_storage` | Text (e.g. `mouse_001_data`) | Optional alternate storage label. |
+Headers follow the pattern `<kind>__<field>`, for example `project__name` or `subject__birth_date`. Unknown columns are ignored. The **field reference** under each section (click the heading to expand it) describes every column of the section's templates. The columns a row cannot do without:
 
+| Template | Columns that must be filled |
+|----------|-----------------------------|
+| Projects | `project__name` |
+| Subjects | `project__name`, `subject__name`, `subject__species` |
+| Procedures | `subject__name`, `procedure__type` |
+| Subject Logs | `subject__name`, `subject_log__type`, and `subject_log__entry_datetime` (or `subject_log__entry_start_datetime` for ranged log types) when the row adds an entry |
+| Cohorts | `project__name`, `cohort__name`, `cohort__subjects` |
+| Sessions | `project__name`, `session__name` |
+| Behaviors | `session__name`, `subject__name`, `behavior__setup_id`, `behavior__behavioralassay_id` |
+| Data Acquisition | `session__name`, `data_acquisition__type`, `data_acquisition__interfaces` |
+| Manipulations | `session__name`, `manipulation__type`, `manipulation__interfaces` |
+| Epochs | `session__id` (or `project__name` and `session__name`), `epoch__name` |
+| Collections | `project__name`, `collection__name`, `collection__sessions` |
 
-### Procedures
+A subject without `subject__sex` is imported as Unknown and without `subject__status` as Active. A procedure row creates one procedure; a subject log row adds an entry to the subject's log of that type and creates the log when there is none; a cohort or collection row adds the listed subjects or sessions to an existing cohort or collection of that name in the project.
+
+### How to write values
 {: .no_toc}
 
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `subject__name` **\*** | Existing subject name (e.g. `Mouse_001`) | Subjects must exist before importing procedures. |
-| `procedure__type` **\*** | Procedure type code (e.g. `VirusInjection`) | Must match an API choice. |
-| `procedure__notes` | Plain text (e.g. `Injected 200 nL AAV.`) | Stored as free-form notes (500 characters). |
-| `procedure__date_time` | Datetime (e.g. `2024-04-12 09:30`) | Parsed and stored as ISO-8601. |
-| `procedure__atlas` | Atlas identifier (e.g. `AllenCCFv3`) | Used to scope brain-region lookups. |
-| `procedure__brain_region` | Brain-region UUID or name (e.g. `VISp`) | Resolves within the supplied atlas first; warns and drops the field if unresolved. |
-| `procedure__brain_region_acronym` | Atlas acronym (e.g. `VISp`) | Fallback lookup when the name is absent or ambiguous. |
-| `procedure__coordinates` | Coordinate system key (e.g. `Stereotaxic_BregmaBrainSurface`) | Defaults when omitted. |
-| `procedure__coordinates_data` | JSON object (e.g. `{"apCoordinate": -3.2}`) | Parsed into `coordinates_json`. |
-| `procedure__consumablestock` | Consumable stock UUID (e.g. `6ac4...`) | Must reference an existing consumable stock record. |
-| `procedure__equipment` | Comma-separated equipment UUIDs (e.g. `7f1b...,d2c9...`) | Each UUID is validated individually; invalid IDs raise warnings. |
-| `procedure__details` | JSON object (e.g. `{"virus": "AAV9"}`) | Parsed into `type_json`; schema defaults are loaded if omitted. |
+| Kind of value | Write it as |
+|---------------|-------------|
+| Related entry | Its exact name (`Mouse_001`, `Session_20230601`). Names are matched exactly, including case. Setups, behavioral assays, data storages, experimental interfaces, equipment, breedings, licenses, consumable stock and the epoch links are given by ID instead, see below. |
+| Several related entries | Comma-separated in one cell: `Mouse_001, Mouse_002`. Several data acquisitions or manipulations on one epoch are separated by `;`. |
+| Tags | Comma-separated: `training, cohortA` |
+| Yes or no | `true` or `false` (also `yes`/`no`, `1`/`0`) |
+| Date | `2024-05-01` |
+| Date and time | `2024-05-01 14:30` or `2024-05-01 14:30:00` |
+| Epoch start and end | Time since the start of the session: `00:05:00` or `PT5M` |
+| Type code | The type as shown in the API, for example `VirusInjection`, `Weighing`, `ExtracellularEphys`, `OptogeneticStimulation`. The template examples list one row per type. |
+| Coordinate system | `Stereotaxic_BregmaBrainSurface`, `Stereotaxic_BregmaAbsolute` or another code from the [Coordinate systems]({{"datamodel/schemas/coordinates/"|absolute_url}}) page |
+| Type-specific details, coordinates, log entry data | A JSON object in one cell, as in the template example for that type. A cell that is not valid JSON is skipped with a warning. |
+| Materials of a procedure | `procedure__materials`: a JSON list as in the template example, one object per material with its type and a consumable stock, catalog consumable or manual name |
+| Description | Plain text; simple formatting (paragraphs, bold, italics, links) is kept |
 
-### Subject Logs
+#### Finding an ID
 {: .no_toc}
 
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `subject__name` **\*** | Existing subject name (e.g. `Mouse_001`) | Subjects must exist before logging entries. |
-| `subject_log__type` **\*** | Subject-log type code (e.g. `TrainingSession`) | Example values: `Housing`, `WaterDeprivation`, `Handling`. |
-| `subject_log__description` | Plain text (e.g. `Habituation to head-fix.`) | Stored on the log record (500 characters). |
-| `subject_log__entry_datetime` | Datetime (e.g. `2024-05-02 10:00`) | Required for single-point logs (anything not in the start/end list below). |
-| `subject_log__entry_start_datetime` | Datetime (e.g. `2024-05-02 10:00`) | Required for `Housing`, `FoodDeprivation`, `WaterDeprivation`, `Habituation`, `Handling`, `TrainingSession`. |
-| `subject_log__entry_end_datetime` | Datetime (e.g. `2024-05-02 11:00`) | Optional for the start/end list; defaults to one hour after the start when omitted. |
-| `subject_log__entry_notes` | Plain text (e.g. `Handled by J.D.`) | Saved with the log entry. |
-| `subject_log__entry_data` | JSON object (e.g. `{"task": "Go/No-Go"}`) | Parsed into the entry `details` field. |
+Some columns end in `_id` and take the identifier of an existing entry (`behavior__setup_id`, `session__data_storage__id`, `subject__breeding_id`, `epoch__dataacquisition_id`, …). Open the entry and copy the long identifier from the address bar of the browser, or from the **API** button on its details page. In batch entry these entries are chosen from dropdowns, so IDs are only needed for CSV files.
 
-The importer finds or creates a `SubjectLog` for the subject/type pair, then adds a log entry when any entry timestamps are present. Duplicate entries for the same timestamp receive warnings and are counted as existing records.
-
-### Sessions
+### Warnings and errors
 {: .no_toc}
 
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `project__name` **\*** | Existing project name (e.g. `Auditory Cortex Project`) | Projects must exist before importing sessions. |
-| `session__name` **\*** | Text (e.g. `Session_001`) | Session names are globally unique. |
-| `session__description` | Plain text or limited HTML (e.g. `<p>Baseline recording.</p>`) | Stored in the session's rich-text description; avoid interactive markup. |
-| `session__date_time` | Datetime (e.g. `2024-05-10T13:45:00`) | Parsed and stored as ISO-8601. |
-| `session__tags` | Comma-separated tags (e.g. `baseline, imaging`) | Converted into individual tag names. |
-| `session__data_storage` | Data storage UUID (e.g. `a1b2c3d4-...`) | Must reference an existing data storage record; warnings are emitted when not found. |
-| `session_name_in_data_storage` | Text (e.g. `2024-05-10_baseline`) | Optional alias for storage systems. |
+- A missing required column stops that row with an error; the other rows are still imported.
+- A related entry that cannot be found stops the row when it is required (the project, subject or session) and is dropped with a warning when it is optional (a strain, supplier, target region or equipment item).
+- An invalid date, time or JSON value is dropped with a warning and the rest of the row is imported.
+- Rows that match an existing entry are counted as found, not created. A log entry at a date and time that already exists is reported as a warning.
 
-### Behaviors
-{: .no_toc}
+## Limits
 
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `session__name` **\*** | Existing session name (e.g. `Session_001`) | Sessions must exist before importing behaviors. |
-| `subject__name` **\*** | Existing subject name (e.g. `Mouse_001`) | Subjects must exist before importing behaviors. |
-| `behavior__setup` **\*** | Setup UUID (e.g. `d3d0...`) | Validated via the Setup endpoint. |
-| `behavior__behavioral_paradigm` **\*** | Behavioral Assay UUID (e.g. `f6d4...`) | Validated via the Behavioral Assay endpoint. |
+| Limit | Value |
+|-------|-------|
+| Rows per batch grid | 500 |
+| CSV file size | 10 MB, `.csv` only |
+| Name length | 100 characters for subjects, sessions, breedings, cohorts and collections; 200 for projects |
+| Notes | 500 characters on procedures, data acquisition and manipulations |
 
-### Data Acquisition
-{: .no_toc}
+## Related
 
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `session__name` **\*** | Existing session name (e.g. `Session_001`) | Sessions must exist before importing data acquisition records. |
-| `data_acquisition__type` **\*** | Data-acquisition type code (e.g. `FiberPhotometry`) | Must match an API choice. |
-| `data_acquisition__procedures` **\*** | Comma-separated procedure UUIDs (e.g. `9f50...,aa21...`) | At least one procedure is required; each UUID is validated before linking. |
-| `data_acquisition__equipment` | Comma-separated equipment UUIDs (e.g. `7f1b...,d2c9...`) | Each UUID is validated and attached when found. |
-| `data_acquisition__notes` | Plain text (e.g. `Laser at 10 mW.`) | Stored as free-form notes (500 characters). |
-| `data_acquisition__details` | JSON object (e.g. `{"samplingRate": 30000}`) | Parsed into the `details` field; defaults are pulled from the schema when omitted. |
-
-### Manipulations
-{: .no_toc}
-
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `session__name` **\*** | Existing session name (e.g. `Session_001`) | Sessions must exist before importing manipulations. |
-| `manipulation__type` **\*** | Manipulation type code (e.g. `OptogeneticStimulation`) | Must match an API choice. |
-| `manipulation__procedures` **\*** | Comma-separated procedure UUIDs (e.g. `9f50...,aa21...`) | At least one procedure is required; each UUID is validated. |
-| `manipulation__equipment` | Comma-separated equipment UUIDs (e.g. `7f1b...,d2c9...`) | Each UUID is validated before linking. |
-| `manipulation__notes` | Plain text (e.g. `Blue light, 20 Hz.`) | Stored as free-form notes (500 characters). |
-| `manipulation__details` | JSON object (e.g. `{"pulseWidthMs": 10}`) | Parsed into `type_json`; schema defaults apply when omitted. |
-
-### Epochs
-{: .no_toc}
-
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `project__name` **\*** | Existing project name (e.g. `Auditory Cortex Project`) | Projects must exist before importing epochs. |
-| `session__name` **\*** | Existing session name (e.g. `Session_001`) | Sessions must exist before importing epochs. |
-| `epoch__name` **\*** | Text (e.g. `Baseline_Recording`) | Epoch names are unique within each session. |
-| `epoch__start` | Time duration or timestamp (e.g. `00:00:00`, `PT0S`) | Start time relative to session beginning. Accepts HH:MM:SS format or ISO 8601 duration (PT#S/M/H). |
-| `epoch__end` | Time duration or timestamp (e.g. `00:05:00`, `PT5M`) | End time relative to session beginning. Accepts HH:MM:SS format or ISO 8601 duration (PT#S/M/H). |
-| `epoch__behavior` | Behavior UUID (e.g. `a8f2...`) | Optional link to behavior record during this epoch. |
-| `epoch__dataacquisition` | Data acquisition UUID (e.g. `b3c7...`) | Optional link to data acquisition record during this epoch. |
-| `epoch__manipulation` | Manipulation UUID (e.g. `c4d8...`) | Optional link to manipulation record during this epoch. |
-
-### Cohorts
-{: .no_toc}
-
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `project__name` **\*** | Existing project name (e.g. `Auditory Cortex Project`) | Projects must exist before importing cohorts. |
-| `cohort__name` **\*** | Text (e.g. `Training Cohort A`) | Names are enforced per project by the API. |
-| `cohort__subjects` **\*** | Comma-separated subject names (e.g. `Mouse_001, Mouse_002`) | Each subject must already exist; missing subjects trigger warnings. |
-| `cohort__description` | Plain text or limited HTML (e.g. `<p>For pilot sessions.</p>`) | Stored in the cohort's rich-text description; avoid interactive markup. |
-| `cohort__tags` | Comma-separated tags (e.g. `pilot, cohortA`) | Converted into individual tag names. |
-
-### Collections
-{: .no_toc}
-
-| Field | Accepted Input | Notes |
-| --- | --- | --- |
-| `project__name` **\*** | Existing project name (e.g. `Auditory Cortex Project`) | Projects must exist before importing collections. |
-| `collection__name` **\*** | Text (e.g. `Baseline Series`) | Names are enforced per project by the API. |
-| `collection__sessions` **\*** | Comma-separated session names (e.g. `Session_001, Session_002`) | Each session must already exist; missing sessions trigger warnings. |
-| `collection__description` | Plain text or limited HTML (e.g. `<p>Includes pilot days.</p>`) | Stored in the collection's rich-text description; avoid interactive markup. |
-| `collection__tags` | Comma-separated tags (e.g. `baseline, imaging`) | Converted into individual tag names. |
-
-## Error handling
-
-- Missing required fields stop the current row and records an error; later rows are still evaluated.
-- Lookup failures on required relationships raise errors; missing optional lookups generate warnings and skip only the unresolved relationship.
-- Invalid JSON, date, or datetime values raise warnings and the affected field is removed before the API call.
-- Duplicate Subject Log entries and other unique-constraint hits are reported as warnings and counted as existing records.
-
-## Tips for Success
-
-### Before You Import
-{: .no_toc}
-
-1. **Download the right template** for your data type
-2. **Check existing data** to avoid duplicates (especially for projects, subjects, sessions)
-3. **Find your UUIDs** if the template needs them (see guide above)
-4. **Back up your data** before bulk imports
-
-### Common Issues
-{: .no_toc}
-
-- **Missing required fields** - The template will show you which fields are required
-- **Wrong date format** - Use `YYYY-MM-DD` format
-- **Invalid JSON** - Copy the exact format from template examples
-- **UUID not found** - Double-check that the ID exists in your system and that you have permissions to use it.
-
-### After Import
-{: .no_toc}
-
-- Review the results for any errors or warnings
-- Fix any issues in your CSV and re-upload
-- Check that your data appears correctly in BrainSTEM
+- [Subjects]({{"datamodel/stem/subject/"|absolute_url}}), [Sessions]({{"datamodel/stem/session/"|absolute_url}}) and [Procedures]({{"datamodel/modules/procedure/"|absolute_url}}): the fields the templates and grids fill
+- [Experimental interfaces]({{"datamodel/modules/experimentalinterface/"|absolute_url}}): what a data acquisition or manipulation row must point to
+- [SoftMouse integration]({{"webinterface/softmouse/"|absolute_url}}): importing colony records instead of typing them
+- [Python API tool]({{"tools/python-api-tool/"|absolute_url}}) and [MATLAB API tool]({{"tools/matlab-api-tool/"|absolute_url}}): scripted imports beyond the supported record types
+- [Active projects]({{"webinterface/list-view/#active-projects"|absolute_url}}): the project scope switch

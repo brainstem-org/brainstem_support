@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 640" width="1400" height="640" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Procedure creates an experimental interface; sessions record through it</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="640" fill="#fff"/>
+  <text x="40" y="40" font-size="18" font-weight="600" fill="#2c2a38">From implant procedure to experimental interface to session</text>
+  <rect x="60" y="250" width="240" height="80" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="180" y="284.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Subject</text>
+  <text x="180" y="306.5" font-size="15" fill="#fff" text-anchor="middle">Mouse_01</text>
+  <rect x="400" y="100" width="300" height="120" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="550" y="132.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Procedure</text>
+  <text x="550" y="154.5" font-size="15" fill="#2c2a38" text-anchor="middle">Silicon probe implant</text>
+  <text x="550" y="176.5" font-size="15" fill="#2c2a38" text-anchor="middle">target region, coordinates</text>
+  <text x="550" y="198.5" font-size="15" fill="#2c2a38" text-anchor="middle">materials: probe, cement, screws</text>
+  <rect x="400" y="340" width="300" height="140" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="550" y="371.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Experimental interface</text>
+  <text x="550" y="393.5" font-size="15" fill="#fff" text-anchor="middle">Implanted silicon probe (chronic)</text>
+  <text x="550" y="415.5" font-size="15" fill="#fff" text-anchor="middle">target region: CA1</text>
+  <text x="550" y="437.5" font-size="15" fill="#fff" text-anchor="middle">coordinates and device materials</text>
+  <text x="550" y="459.5" font-size="15" fill="#fff" text-anchor="middle">copied from the procedure</text>
+  <rect x="880" y="100" width="240" height="90" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="1000" y="128.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Session</text>
+  <text x="1000" y="150.5" font-size="15" fill="#fff" text-anchor="middle">Mouse_01, 2026-03-14</text>
+  <text x="1000" y="172.5" font-size="15" fill="#fff" text-anchor="middle">subject-based</text>
+  <rect x="880" y="270" width="240" height="90" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1000" y="298.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Data acquisition</text>
+  <text x="1000" y="320.5" font-size="15" fill="#2c2a38" text-anchor="middle">Extracellular ephys</text>
+  <text x="1000" y="342.5" font-size="15" fill="#2c2a38" text-anchor="middle">interfaces: silicon probe</text>
+  <rect x="880" y="420" width="240" height="90" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1000" y="448.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Manipulation</text>
+  <text x="1000" y="470.5" font-size="15" fill="#2c2a38" text-anchor="middle">Electrical stimulation</text>
+  <text x="1000" y="492.5" font-size="15" fill="#2c2a38" text-anchor="middle">interfaces: silicon probe</text>
+  <rect x="60" y="540" width="640" height="70" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
+  <text x="74" y="568.5" font-size="15" fill="#4a4858">Where and with what a recording was made is read from its interfaces:</text>
+  <text x="74" y="590.5" font-size="15" fill="#4a4858">target regions, coordinates and materials travel with the interface, not the session.</text>
+  <path d="M300 275 L350 275 L350 160 L400 160" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="345" y="140" font-size="15" fill="#4a4858" text-anchor="middle">performed on</text>
+  <path d="M300 305 L350 305 L350 410 L400 410" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="350" y="445" font-size="15" fill="#4a4858" text-anchor="middle">installed on</text>
+  <path d="M550 220 L550 340" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="565" y="285" font-size="15" fill="#4a4858" text-anchor="start">saving the implant creates</text>
+  <path d="M1120 145 L1160 145 L1160 465 L1120 465" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M1160 315 L1120 315" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1170" y="240" font-size="15" fill="#4a4858" text-anchor="start">contains</text>
+  <path d="M880 325 L760 325 L760 390 L700 390" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="872" y="318" font-size="15" fill="#4a4858" text-anchor="end">records through</text>
+  <path d="M880 455 L760 455 L760 430 L700 430" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="872" y="476" font-size="15" fill="#4a4858" text-anchor="end">delivers through</text>
+</svg>

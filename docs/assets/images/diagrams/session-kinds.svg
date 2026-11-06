@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Session kinds: subject-based and specimen-based sessions; behaviors only in subject-based sessions</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="720" fill="#fff"/>
+  <text x="40" y="40" font-size="18" font-weight="600" fill="#2c2a38">Two kinds of session</text>
+  <rect x="560" y="60" width="280" height="64" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="700" y="86.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Project</text>
+  <text x="700" y="108.5" font-size="15" fill="#fff" text-anchor="middle">Hippocampal mapping</text>
+  <rect x="60" y="190" width="300" height="96" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="210" y="221.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Session (subject-based)</text>
+  <text x="210" y="243.5" font-size="15" fill="#fff" text-anchor="middle">Subjects: Mouse_01, Mouse_02</text>
+  <text x="210" y="265.5" font-size="15" fill="#fff" text-anchor="middle">in vivo</text>
+  <rect x="1040" y="190" width="300" height="96" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="1190" y="221.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Session (specimen-based)</text>
+  <text x="1190" y="243.5" font-size="15" fill="#fff" text-anchor="middle">Specimen set: Slice series</text>
+  <text x="1190" y="265.5" font-size="15" fill="#fff" text-anchor="middle">ex vivo</text>
+  <rect x="500" y="170" width="400" height="266" rx="8" fill="#2f7f8a" fill-opacity="0.07" stroke="#2f7f8a" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="514" y="194" font-size="16" font-weight="600" fill="#2f7f8a">Modules in either session</text>
+  <rect x="530" y="210" width="340" height="52" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="700" y="241.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Data acquisitions (through interfaces)</text>
+  <rect x="530" y="278" width="340" height="52" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="700" y="309.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Manipulations (through interfaces)</text>
+  <rect x="530" y="346" width="340" height="52" rx="7" fill="#f1e7f5" stroke="#ba85cb" stroke-width="1.2"/>
+  <text x="700" y="377.5" font-size="17" font-weight="600" fill="#5d1874" text-anchor="middle">Epochs</text>
+  <rect x="60" y="340" width="300" height="76" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="210" y="372.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Subject</text>
+  <text x="210" y="394.5" font-size="15" fill="#fff" text-anchor="middle">Mouse_01</text>
+  <rect x="1040" y="340" width="300" height="76" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="1190" y="372.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Specimen set</text>
+  <text x="1190" y="394.5" font-size="15" fill="#fff" text-anchor="middle">Acute slices, Mouse_03</text>
+  <rect x="60" y="480" width="300" height="96" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="210" y="511.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Experimental interface</text>
+  <text x="210" y="533.5" font-size="15" fill="#2c2a38" text-anchor="middle">Implanted silicon probe</text>
+  <text x="210" y="555.5" font-size="15" fill="#2c2a38" text-anchor="middle">target type: Subject</text>
+  <rect x="1040" y="480" width="300" height="96" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="1190" y="511.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Experimental interface</text>
+  <text x="1190" y="533.5" font-size="15" fill="#2c2a38" text-anchor="middle">Patch pipette, bath perfusion</text>
+  <text x="1190" y="555.5" font-size="15" fill="#2c2a38" text-anchor="middle">target type: Specimen set</text>
+  <rect x="60" y="620" width="300" height="76" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="210" y="652.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Behaviors</text>
+  <text x="210" y="674.5" font-size="15" fill="#2c2a38" text-anchor="middle">subject-based sessions only</text>
+  <path d="M700 124 L700 150 L210 150 L210 190" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M700 150 L1190 150 L1190 190" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="455" y="142" font-size="15" fill="#4a4858" text-anchor="middle">belongs to</text>
+  <text x="945" y="142" font-size="15" fill="#4a4858" text-anchor="middle">belongs to</text>
+  <path d="M360 238 L500 238" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="430" y="228" font-size="15" fill="#4a4858" text-anchor="middle">contains</text>
+  <path d="M1040 238 L900 238" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="970" y="228" font-size="15" fill="#4a4858" text-anchor="middle">contains</text>
+  <path d="M60 238 L32 238 L32 658 L60 658" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M210 286 L210 340" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="225" y="318" font-size="15" fill="#4a4858" text-anchor="start">links</text>
+  <path d="M1190 286 L1190 340" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1205" y="318" font-size="15" fill="#4a4858" text-anchor="start">links</text>
+  <path d="M210 416 L210 480" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="225" y="453" font-size="15" fill="#4a4858" text-anchor="start">interfaces installed on it</text>
+  <path d="M1190 416 L1190 480" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1205" y="453" font-size="15" fill="#4a4858" text-anchor="start">interfaces targeting it</text>
+  <path d="M360 528 L650 528 L650 436" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="505" y="548" font-size="15" fill="#4a4858" text-anchor="middle">used by its acquisitions</text>
+  <path d="M1040 528 L750 528 L750 436" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="895" y="548" font-size="15" fill="#4a4858" text-anchor="middle">used by its acquisitions</text>
+</svg>

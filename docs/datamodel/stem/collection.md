@@ -3,7 +3,7 @@ layout: default
 title: Collections
 parent: Sessions
 grand_parent: Data model
-nav_order: 4
+nav_order: 5
 ---
 
 # Collection model
@@ -12,26 +12,29 @@ nav_order: 4
 ## Table of contents
 {: .no_toc .text-delta }
 
+{::options toc_levels="2..2" /}
 1. TOC
 {:toc}
 
 ## Introduction
 
-Collections allow for creating subgroups of sessions within a project. They can be used to define a set of sessions for a specific analysis or figure. All sessions in a collection must belong to the same project.
+Collections allow for creating subgroups of sessions within a project. They can be used to define a set of sessions for a specific analysis or figure. All sessions in a collection must belong to the same project. The membership is ordered: sessions keep the order you give them.
+
+{% include datamodel_embed.html model="stem.collection" %}
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
 | `Collection name` | Name of the collection (**required**; string; maximum length: 100 characters; must be unique within the project). Example: "Place Cell Analysis", "Learning Sessions Day 1-5" |
-| `Project` | The project the collection belongs to (**required**). A collection can belong to a single project. Example: "Spatial Memory Project" |
-| `Sessions` | Sessions in the collection. All sessions must belong to the same project (**required**). Example: "Recording1", "Recording2", "Recording3" |
-| `Description` | A text description of the collection, providing additional context and information. Pictures can be uploaded and inserted through rich text formatting. Example: "Collection of all place cell recording sessions during the learning phase..." |
-| `Tags` | Tags for the collection. Great for organizational purposes, quick labeling, and filtering. Tags are shared across all users. Example: "place-cells", "learning-phase", "figure-1-data" |
+| `Project` | The project the collection belongs to (**required**). A collection belongs to a single project. Example: "Spatial Memory Project" |
+| `Sessions` | Sessions in the collection (**required**). All sessions must belong to the same project. Add sessions and reorder them using drag-and-drop; the order is stored. Example: "Recording1", "Recording2", "Recording3" |
+| `Description` | A text description of the collection. Pictures can be uploaded and inserted through rich text formatting. |
+| `Tags` | Tags for organization and filtering. Tags are shared across all users. Example: "place-cells", "figure-1-data" |
 
 ## Permissions
 
-Collections inherit permissions from their associated project. You can only add sessions to the collection that are part of the same project.
+Collections inherit permissions from their associated project. You can only add sessions to the collection that are part of the same project. Deleting the project deletes its collections.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more. 
 

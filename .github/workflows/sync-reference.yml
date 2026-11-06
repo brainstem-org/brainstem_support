@@ -1,0 +1,65 @@
+name: Sync generated reference pages
+
+# Keeps the generated API and schema pages in step with the production server. The server publishes a
+# machine-readable description of its REST API and JSON schemas at /reference/data/*.json, generated from its
+# code; scripts/build_reference_docs.py turns those documents into the pages under docs/api/ and
+# docs/datamodel/schemas/. When the result differs from the branch, the workflow opens (or updates) a pull
+# request so a maintainer can review the diff before it goes live.
+#
+# Run it by hand with "Run workflow" (choose the server and the target branch), or let the weekly schedule
+# catch drift. The interactive data model (docs/assets/datamodel/) is not committed: the Pages workflow
+# (pages.yml) fetches it from the server when it builds the site, so this job skips it (--no-assets).
+
+on:
+  schedule:
+    - cron: "17 5 * * 1"   # Mondays 05:17 UTC
+  workflow_dispatch:
+    inputs:
+      server:
+        description: BrainSTEM server to read /reference/ from
+        default: https://www.brainstem.org
+        required: true
+      branch:
+        description: Branch to update
+        default: main
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || 'main' }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild the generated pages from the server's reference
+        env:
+          SERVER: ${{ github.event.inputs.server || 'https://www.brainstem.org' }}
+        run: |
+          python scripts/build_reference_docs.py --server "$SERVER" --clean --no-assets
+          git status --short | head -50
+
+      - name: Open or update a pull request with the changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: automation/sync-reference
+          base: ${{ github.event.inputs.branch || 'main' }}
+          commit-message: "Sync generated pages with the server"
+          title: "Sync generated pages with the server"
+          body: |
+            Regenerated with `scripts/build_reference_docs.py --server ${{ github.event.inputs.server || 'https://www.brainstem.org' }} --no-assets`.
+            The interactive data model is not part of this diff: the Pages workflow fetches it from the server at every build.
+
+            The diff shows what changed on the server since the pages were last generated: fields, choices,
+            permissions, schema types and versions. Hand-written text outside the generated markers is untouched.
+            Review the data-model pages under `docs/datamodel/` for prose that may need the same change.
+          labels: documentation, automated
+          delete-branch: true

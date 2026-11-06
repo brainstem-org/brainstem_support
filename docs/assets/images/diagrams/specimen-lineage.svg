@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 720" width="1400" height="720" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Specimen lineage: subject, specimen set, specimens, specimen procedures, derived sets</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="720" fill="#fff"/>
+  <text x="40" y="40" font-size="18" font-weight="600" fill="#2c2a38">From subject to specimen set to specimens</text>
+  <rect x="60" y="80" width="240" height="80" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="180" y="114.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Subject</text>
+  <text x="180" y="136.5" font-size="15" fill="#fff" text-anchor="middle">Mouse_01</text>
+  <rect x="60" y="250" width="240" height="90" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="180" y="278.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Procedure</text>
+  <text x="180" y="300.5" font-size="15" fill="#2c2a38" text-anchor="middle">Perfusion and sectioning</text>
+  <text x="180" y="322.5" font-size="15" fill="#2c2a38" text-anchor="middle">on the subject</text>
+  <rect x="400" y="240" width="300" height="110" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="550" y="267.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Specimen set</text>
+  <text x="550" y="289.5" font-size="15" fill="#fff" text-anchor="middle">Slice series, coronal 50 µm</text>
+  <text x="550" y="311.5" font-size="15" fill="#fff" text-anchor="middle">Subject: Mouse_01</text>
+  <text x="550" y="333.5" font-size="15" fill="#fff" text-anchor="middle">status Available, conditions Fixed</text>
+  <rect x="400" y="440" width="300" height="90" rx="7" fill="#f1e7f5" stroke="#ba85cb" stroke-width="1.2"/>
+  <text x="550" y="468.5" font-size="17" font-weight="600" fill="#5d1874" text-anchor="middle">Specimens</text>
+  <text x="550" y="490.5" font-size="15" fill="#2c2a38" text-anchor="middle">Slice 01 … Slice 24</text>
+  <text x="550" y="512.5" font-size="15" fill="#2c2a38" text-anchor="middle">individual sections or wells</text>
+  <rect x="800" y="120" width="280" height="90" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="940" y="148.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Specimen procedure</text>
+  <text x="940" y="170.5" font-size="15" fill="#2c2a38" text-anchor="middle">Immunostaining, fixation</text>
+  <text x="940" y="192.5" font-size="15" fill="#2c2a38" text-anchor="middle">stages, materials, conditions</text>
+  <rect x="800" y="250" width="280" height="76" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="940" y="282.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Specimen log</text>
+  <text x="940" y="304.5" font-size="15" fill="#2c2a38" text-anchor="middle">storage and state changes</text>
+  <rect x="800" y="370" width="280" height="90" rx="7" fill="#f1e7f5" stroke="#ba85cb" stroke-width="1.2"/>
+  <text x="940" y="398.5" font-size="17" font-weight="600" fill="#5d1874" text-anchor="middle">Derived specimen set</text>
+  <text x="940" y="420.5" font-size="15" fill="#2c2a38" text-anchor="middle">Mounted slides, slices 1–12</text>
+  <text x="940" y="442.5" font-size="15" fill="#2c2a38" text-anchor="middle">Source specimen set: Slice series</text>
+  <rect x="800" y="500" width="280" height="90" rx="7" fill="#e8f1f2" stroke="#8db9bf" stroke-width="1.2"/>
+  <text x="940" y="528.5" font-size="17" font-weight="600" fill="#225b63" text-anchor="middle">Experimental interface</text>
+  <text x="940" y="550.5" font-size="15" fill="#2c2a38" text-anchor="middle">Patch pipette, MEA, perfusion</text>
+  <text x="940" y="572.5" font-size="15" fill="#2c2a38" text-anchor="middle">target: the specimen set</text>
+  <rect x="1160" y="500" width="200" height="90" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="1260" y="528.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Session</text>
+  <text x="1260" y="550.5" font-size="15" fill="#fff" text-anchor="middle">specimen-based</text>
+  <text x="1260" y="572.5" font-size="15" fill="#fff" text-anchor="middle">data acquisitions</text>
+  <rect x="60" y="620" width="740" height="70" rx="6" fill="#fbf8ee" stroke="#d8d0b4" stroke-width="1"/>
+  <text x="74" y="648.5" font-size="15" fill="#4a4858">Specimen procedures and logs act on the set (or on selected specimens).</text>
+  <text x="74" y="670.5" font-size="15" fill="#4a4858">A set can be derived from a subject or from another set; lineage stays acyclic.</text>
+  <path d="M180 160 L180 250" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="195" y="210" font-size="15" fill="#4a4858" text-anchor="start">undergoes</text>
+  <path d="M300 120 L550 120 L550 240" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="550" y="195" font-size="15" fill="#4a4858" text-anchor="middle">derived from</text>
+  <path d="M300 295 L400 295" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="350" y="285" font-size="15" fill="#4a4858" text-anchor="middle">produces</text>
+  <path d="M550 350 L550 440" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="565" y="400" font-size="15" fill="#4a4858" text-anchor="start">contains</text>
+  <path d="M700 295 L750 295 L750 165 L800 165" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M750 288 L800 288" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M750 295 L750 415 L800 415" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M750 415 L750 545 L800 545" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="750" y="225" font-size="15" fill="#4a4858" text-anchor="middle">acts on</text>
+  <text x="750" y="355" font-size="15" fill="#4a4858" text-anchor="middle">source of</text>
+  <text x="750" y="480" font-size="15" fill="#4a4858" text-anchor="middle">target</text>
+  <path d="M1160 545 L1080 545" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="1120" y="480" font-size="15" fill="#4a4858" text-anchor="middle">records</text>
+  <text x="1120" y="498" font-size="15" fill="#4a4858" text-anchor="middle">through</text>
+</svg>

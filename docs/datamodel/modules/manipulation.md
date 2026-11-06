@@ -12,24 +12,33 @@ nav_order: 3
 ## Table of contents
 {: .no_toc .text-delta }
 
+{::options toc_levels="2..2" /}
 1. TOC
 {:toc}
 
 ## Introduction
 
-The manipulations model describes temporal manipulations performed in a session. Manipulations are ways to perturb natural brain dynamics. The types of manipulations currently supported by BrainSTEM are listed below. A Manipulation is described by the fields in the next section.
+A manipulation describes one controlled stimulus or perturbation delivered during a session: electrical, magnetic, optogenetic, thermal, ultrasound, chemical or pharmacological, or sensory stimulation. Each manipulation is one delivered stimulus. Use separate entries when the stimuli have different types or their own delivery parameters.
+
+A manipulation is applied during a session to perturb the target. A [procedure]({{"datamodel/modules/procedure/"|absolute_url}}) is the action that established the access route, and a [data acquisition]({{"datamodel/modules/dataacquisition/"|absolute_url}}) is the signal recorded. An optogenetic light pulse is a manipulation; the fiber implant that made it possible is a procedure; the photometry trace recorded alongside it is a data acquisition. The stimulus reaches the target through [experimental interfaces]({{"datamodel/modules/experimentalinterface/"|absolute_url}}), and the installing procedure is reached through the interface. Agents delivered (drugs, solutions) belong to the material rows of the procedure or interface that installed them, never directly to the manipulation.
+
+![A session and its parts: the behavior (what the subjects were doing), data acquisitions (what was recorded) and manipulations (what was delivered), each placed in an epoch of the session (when); behaviors run an assay on a setup, and acquisitions and manipulations pass through experimental interfaces.]({{site.baseurl}}/assets/images/diagrams/session-parts-manipulation.svg)
+*A session and its parts. Manipulations, drawn solid, say what was delivered, each through the experimental interfaces the stimulus went through; the behavior says what the subjects were doing, data acquisitions what was recorded, and epochs when.*
+
+{% include datamodel_embed.html model="modules.manipulation" %}
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
 | ``Type of manipulation`` | Type of manipulation (**required**). Selected from predefined types. Example: "Optogenetic stimulation". *See options below* |
-| ``Session`` | Session of the manipulation (**required**). Must reference an existing [session]({{"datamodel/stem/session/"|absolute_url}}). Example: "Optogenetic stimulation session #2" |
-| ``Subject procedures`` | Related subject procedures (**required**). Must reference existing [procedures]({{"datamodel/modules/procedure/"|absolute_url}}). Example: "Optic fiber implant #B789" |
-| ``Setup`` | Setup filter for equipment. Used to filter available equipment by setup. |
-| ``Equipment`` | Equipment used for the manipulation. Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). Example: "LED driver #1" |
-| ``Notes`` | Notes about the manipulation (string). Example: "20Hz stimulation protocol completed successfully" |
-| ``Type specific fields`` | Custom fields based on manipulation type in JSON format. See [Manipulation types schema]({{"datamodel/schemas/manipulation/"|absolute_url}}) for type-specific fields |
+| ``Session`` | Session of the manipulation (**required**). Must reference an existing [session]({{"datamodel/stem/session/"|absolute_url}}). |
+| ``Experimental interfaces`` | The interfaces through which the stimulus was delivered, such as an optic fiber, cannula or stimulating electrode (**required**; one or more). Limited to interfaces installed on the session's subjects or specimen sets. The selection order is stored. |
+| ``Setup`` | Form-only filter for the equipment field. Not stored. |
+| ``Equipment`` | Instruments that generated or controlled the stimulus, such as a laser, stimulator or olfactometer. Must reference existing [equipment]({{"datamodel/modules/equipment/"|absolute_url}}). |
+| ``Data`` | Type-specific parameters. Every manipulation type is a table: each row is one stimulation or perturbation epoch with its own parameter set, so a record is a sequence of repeated epochs. Numeric parameters carry their own unit. See the [Manipulation types schema]({{"datamodel/schemas/manipulation/"|absolute_url}}). |
+| ``Order`` | Where this manipulation appears among the session's entries. Does not imply a start time. |
+| ``Notes`` | Exceptional context, deviations or delivery problems (string; maximum length: 500 characters). |
 
 ## Types of manipulations
 
@@ -88,10 +97,10 @@ See the schema for field details: [Manipulation types]({{"datamodel/schemas/mani
 
 ## Permissions
 
-Manipulations inherit permissions through the session associated with them.
+Manipulations inherit permissions through the projects of the session associated with them. The form limits sessions, interfaces and equipment to entries you are permitted to use.
 
 Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more.
 
 ## API access
 
-The API allows for programmable access to manipulations. Learn more about the manipulations' fields and data structure on the [Manipulation API page]({{"api/modules/manipulation/"|absolute_url}}).
+The API allows for programmable access to manipulations. Interfaces are supplied as `interfaces`, an ordered list of interface ids. Learn more about the manipulations' fields and data structure on the [Manipulation API page]({{"api/modules/manipulation/"|absolute_url}}).

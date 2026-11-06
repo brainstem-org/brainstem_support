@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 520" width="1500" height="520" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">Export to NWB: on BrainSTEM, the server builds the export of one project or session as JSON; on your computer, brainstem-nwb converts it with a configuration file into one NWB file per session and subject with a manifest and a validation report, metadata only; the lab adds the raw data and shares the files on DANDI.</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1500" height="520" fill="#fff"/>
+  <text x="40" y="40" font-size="18" font-weight="600" fill="#2c2a38">From BrainSTEM to NWB</text>
+  <text x="40" y="64" font-size="15" fill="#4a4858" text-anchor="start">Metadata only: the NWB files hold no time series, images or video until the lab adds them.</text>
+  <rect x="20" y="86" width="590" height="290" rx="8" fill="#8122a1" fill-opacity="0.07" stroke="#8122a1" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="34" y="110" font-size="16" font-weight="600" fill="#8122a1">On BrainSTEM</text>
+  <text x="34" y="131" font-size="14" fill="#4a4858">the server builds the export</text>
+  <rect x="640" y="86" width="600" height="412" rx="8" fill="#6f6d82" fill-opacity="0.07" stroke="#6f6d82" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="654" y="110" font-size="16" font-weight="600" fill="#6f6d82">On your computer</text>
+  <text x="654" y="131" font-size="14" fill="#4a4858">run by the lab</text>
+  <rect x="40" y="150" width="250" height="196" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="165" y="209.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle">BrainSTEM</text>
+  <text x="165" y="231.5" font-size="15" fill="#4a4858" text-anchor="middle">web: Project → Download</text>
+  <text x="165" y="253.5" font-size="15" fill="#4a4858" text-anchor="middle">REST API</text>
+  <text x="165" y="275.5" font-size="15" fill="#4a4858" text-anchor="middle">Python and MATLAB tools</text>
+  <text x="165" y="297.5" font-size="15" fill="#4a4858" text-anchor="middle">MCP server</text>
+  <rect x="330" y="150" width="260" height="196" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="460" y="209.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle">Export JSON</text>
+  <text x="460" y="231.5" font-size="15" fill="#4a4858" text-anchor="middle">one project or one session</text>
+  <text x="460" y="253.5" font-size="15" fill="#4a4858" text-anchor="middle">versioned format 2.x</text>
+  <text x="460" y="275.5" font-size="15" fill="#4a4858" text-anchor="middle">lab resources you cannot</text>
+  <text x="460" y="297.5" font-size="15" fill="#4a4858" text-anchor="middle">read: listed as restricted</text>
+  <rect x="660" y="150" width="260" height="196" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="790" y="209.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle">brainstem-nwb</text>
+  <text x="790" y="231.5" font-size="15" fill="#4a4858" text-anchor="middle">pip install brainstem-nwb</text>
+  <text x="790" y="253.5" font-size="15" fill="#4a4858" text-anchor="middle">+ config.toml: experimenter,</text>
+  <text x="790" y="275.5" font-size="15" fill="#4a4858" text-anchor="middle">lab, institution</text>
+  <text x="790" y="297.5" font-size="15" fill="#4a4858" text-anchor="middle">optional: ndx-brainstem</text>
+  <rect x="960" y="150" width="260" height="196" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1090" y="209.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle">NWB files</text>
+  <text x="1090" y="231.5" font-size="15" fill="#4a4858" text-anchor="middle">one per session and subject</text>
+  <text x="1090" y="253.5" font-size="15" fill="#4a4858" text-anchor="middle">+ manifest: what was</text>
+  <text x="1090" y="275.5" font-size="15" fill="#4a4858" text-anchor="middle">written, every warning</text>
+  <text x="1090" y="297.5" font-size="15" fill="#4a4858" text-anchor="middle">+ validation report</text>
+  <rect x="960" y="390" width="260" height="90" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="1090" y="418.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle">Raw data</text>
+  <text x="1090" y="440.5" font-size="15" fill="#4a4858" text-anchor="middle">time series, images, video</text>
+  <text x="1090" y="462.5" font-size="15" fill="#4a4858" text-anchor="middle">added by the lab</text>
+  <rect x="1280" y="190" width="200" height="116" rx="7" fill="#f4f3f8" stroke="#c9c6d6" stroke-width="1.2"/>
+  <text x="1380" y="231.5" font-size="17" font-weight="600" fill="#2c2a38" text-anchor="middle">DANDI</text>
+  <text x="1380" y="253.5" font-size="15" fill="#4a4858" text-anchor="middle">public archive</text>
+  <text x="1380" y="275.5" font-size="15" fill="#4a4858" text-anchor="middle">upload by the lab</text>
+  <path d="M290 248 L330 248" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M590 248 L660 248" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="593" y="224.0" width="64" height="20" fill="#fff"/>
+  <text x="625" y="236.0" font-size="14" fill="#4a4858" text-anchor="middle">download</text>
+  <path d="M920 248 L960 248" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M1220 248 L1280 248" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M1090 390 L1090 346" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+</svg>

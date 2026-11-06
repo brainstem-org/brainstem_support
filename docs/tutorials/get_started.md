@@ -8,6 +8,8 @@ nav_order: 1
 # Get Started with BrainSTEM
 {: .no_toc}
 
+This tutorial takes you from a new account to your first project, subject and session, following the **Getting started** checklist on the dashboard. At the end you have a group, a project, a subject and a session that your lab members can see, and the checklist shows those steps as done.
+
 ## Table of contents
 {: .no_toc .text-delta }
 
@@ -15,232 +17,113 @@ nav_order: 1
 {:toc}
 
 ## Create an account
-{: .no_toc}
 
-First thing to do is [create an account](https://www.brainstem.org/register/). Provide your name, email, and a secure password. Once you have created an account you can visit your profile from the top menu to add a profile image, and link to your orcid account, your google scholar profile, and your website.
+1. [Create an account](https://www.brainstem.org/register/) with your name, email and a password.
+2. Confirm your email address from the message BrainSTEM sends you.
+3. Optional: open your profile from the top menu to add a profile image and links to your ORCID, Google Scholar profile and website (see [User profile]({{site.baseurl}}/webinterface/user-profile/)).
 
-## Create or Join a Group
-{: .no_toc}
+## Follow the "Getting started" checklist
 
-Next, you need to either create a new group for your lab or join an existing one. Groups in BrainSTEM help organize lab members and manage permissions for projects and resources.
+Your dashboard opens with a **Getting started** card that tracks the lab basics in three groups: **Collaborate** (join or create a group, invite your first teammate), **Prepare your environment** (add your first setup, behavioral assay, inventory and data storage) and **Structure your work** (create your first project, subject and session). The sections below follow the same three groups. Once you are done, remove the card with **Add widget** → **Manage widgets**.
 
-### Accessing Groups
-{: .no_toc}
+![The Getting started card with eight of nine steps done: the open step, Invite your first teammate, is at the top, and the completed steps are listed below in their three groups]({{site.baseurl}}/assets/images/screenshots/dashboard-getting-started.png)
+{: .screenshot }
+*The Getting started card with eight of nine steps done: the open step, Invite your first teammate, is at the top, and the completed steps are listed below in their three groups*
 
-1. From your dashboard, locate and click the Users icon in the top right corner of the screen
-2. Select *Groups* from the dropdown menu
-![Groups menu]({{site.baseurl}}/assets/images/tutorials/user_group.png)
+## Collaborate: create or join a group
 
-### Managing Group Membership
-{: .no_toc}
+A group is your lab in BrainSTEM. Projects and personal attributes are shared with groups, so every member gets access at once.
 
-Once on the Groups page, you have two options:
+1. Click the **Users, groups & invitations** icon in the top right corner and select *Groups*.
+2. If your lab already has a group, open it and click *Request membership*. A group manager approves the request.
+3. If it does not, click *Add group* and fill in the group's name. You become its owner.
 
-<div class="code-example" markdown="1">
+Group managers find pending requests under **Users, groups & invitations** → *Invitations & Requests* → *Group membership requests*. To invite your first teammate and to give members manager or owner roles, follow [Managing groups]({{site.baseurl}}/tutorials/managing-groups).
 
-#### Option 1: Create a New Group
-{: .no_toc}
+Give at least two people in the lab the manager role, so requests and invitations are never blocked by one person's absence.
 
-If your lab doesn't have a group yet:
-1. Click the *Add group* button in the top right corner
-2. Fill in the required information for your new group
-![Add group button]({{site.baseurl}}/assets/images/tutorials/add_group.png)
+## Prepare your environment
 
-#### Option 2: Join an Existing Group
-{: .no_toc}
+Setups, behavioral assays, inventories and data storage are your lab's **personal attributes**: the rigs, tasks, stocks and storage locations your records point to. You can create projects, subjects and sessions without them, and add them later. Procedures, behaviors and data acquisitions do need them, so set them up before you record a full experiment:
 
-If your lab already has a group:
-1. Click on the group name from the list of available groups
-2. On the group's detail page, click the *Request membership of group* button
-3. Wait for a group manager to approve your request
-![Request group membership]({{site.baseurl}}/assets/images/tutorials/request_member_lab.png)
+| Checklist step | What it describes | How to set it up |
+|---|---|---|
+| **Add your first setup** | A physical rig or room and its equipment | [Setting up lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) |
+| **Add your first behavioral assay** | A task or behavioral condition sessions refer to | [Behavioral assays]({{site.baseurl}}/tutorials/behavioral-assays) |
+| **Add your first inventory** | Your lab's stocks of probes, viruses and drugs | [Setting up lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) |
+| **Add your first data storage** | Where the data files of your sessions live | [Managing data storage]({{site.baseurl}}/tutorials/managing-data-storage) |
 
-</div>
+## Structure your work: create your first project
 
-### Managing Group Membership Requests
-{: .no_toc}
+A project holds your subjects and sessions and decides who can see them.
 
-For group managers:
+1. Click *Projects* in the left navigation menu.
+2. Click *Add project* in the top right corner.
+3. Enter the **Project name** and choose the **Authenticated groups** that should have access. The groups you select get Contributor access.
+4. Click **Create and continue**. Everything else can be filled in on the form that opens.
 
-1. Click the Users icon in the top right corner
-2. Select *Requests & Invitations*
-3. Navigate to the *Group membership requests* section
-4. Review and accept requests from your lab members
+![The add project form filled in: the project name and the authenticated groups, then Create and continue.]({{site.baseurl}}/assets/images/screenshots/get-started-project-form.png)
+{: .screenshot }
+*The add project form filled in: the project name and the authenticated groups, then Create and continue.*
 
-{: .important }
-> Labs should coordinate among their members to ensure proper group management. It's recommended to have at least two group managers per lab.
+The project's fields are described on the [Project]({{site.baseurl}}/datamodel/stem/project/) page.
 
-## Create Your First Project
+## Create your first subject
 
-After joining or creating a group, you can start creating projects. Projects in BrainSTEM are containers that help organize your research data, including subjects, sessions, and collections.
+A subject is one experimental animal.
 
-1. Click on *Projects* in the left navigation menu
-2. Click the *Add project* button in the top right corner
-3. Fill in the required project information
+1. Click *Subjects* in the left navigation menu.
+2. Click *Add subject* in the top right corner.
+3. Enter the **Subject name**, choose your project under **Projects**, and set **Sex**, **Species** and **Status**. **Strain** is optional; its list shows only strains of the chosen species.
+4. Click **Create and continue**.
 
-![First project]({{site.baseurl}}/assets/images/tutorials/first_project.gif)
+![The add subject form filled in: name, project, sex, species, strain and status, then Create and continue.]({{site.baseurl}}/assets/images/screenshots/get-started-subject-form.png)
+{: .screenshot }
+*The add subject form filled in: name, project, sex, species, strain and status, then Create and continue.*
 
-{: .note }
-> For detailed information about project fields and structure, see the [Project data model]({{site.baseurl}}/datamodel/stem/project/).
-
-## Add your personal attributes
-
-Before creating subjects and sessions, set up personal attributes that describe your setups, inventories and behavioral assays. These provide standardized options for your experiments.
-
-### Define behavioral assays to describe the behavioral conditions of your subjects
-{: .no_toc}
-
-1. Navigate to *Personal Attributes* → *Behavioral Assays* in the left menu
-2. Click *Add behavioral assay*
-3. Fill in the paradigm details (e.g., "Open Field Test", "Novel Object Recognition")
-4. Add a description of the experimental protocol
-
-### Set up data storage locations to link to your data files
-{: .no_toc}
-
-1. Go to *Personal Attributes* → *Data storage*
-2. Click *Add data storage*
-3. Define storage locations where your raw data files are kept (e.g., "Lab Server", "External Drive A")
-4. Include relevant path information and access details
-
-### Create setups to define your physical experimental environments
-{: .no_toc}
-
-1. Navigate to *Personal Attributes* → *Setups*
-2. Click *Add setup*
-3. Describe your experimental setups (e.g., "Theta behavior maze", "Surgical table", "Head-fixed 2P Virtual environment", "Home cage")
-4. **Configure the equipment in your setups:**
-   - Go to *Modules* → *Equipment*
-   - Add devices like "Intan RHD2000", "Behavior Camera", "LED Arrays"
-   - Associate equipment with appropriate setups
-   
-### Set up inventories to track your lab resources
-{: .no_toc}
-
-1. Go to *Personal Attributes* → *Inventories*
-2. Click *Add inventory*
-3. Create inventory categories (e.g., "Silicon Probes", "Virus stocks")
-4. **Add consumable stocks to your inventories:**
-   - Navigate to *Modules* → *Consumable stocks*
-   - Add specific items like probe models, virus batches, drug concentrations
-   - Link them to appropriate inventories
-
-{: .note }
-> These personal attributes will appear as selectable options when creating sessions, subjects, and experiments. Setting them up first streamlines your data entry process.
-
-Now that all your personal attributes are in place, you can continue and add your first subject.
-
-## Create Your First Subject
-
- Subjects in BrainSTEM represent the experimental animals in your studies. Subject can be created without creating personal attributes but if you want to describe procedures performed on the subject, it is recommended to add relevant setups with equipment, and inventories with consumable stocks.
-
-1. Click on *Subjects* in the left navigation menu
-2. Click the *Add subject* button in the top right corner
-3. Fill in the required subject information
-
-![First subject]({{site.baseurl}}/assets/images/tutorials/first_subject.gif)
-
-{: .note }
-> For detailed information about subject fields and available options, see the [Subject data model]({{site.baseurl}}/datamodel/stem/subject/).
+{% include walkthrough.html slug="get-started-create-subject" caption="Creating a subject: name, project, sex, species, strain and status; the strain list follows the species. The video ends with the pointer on Create and continue." %}
 
 {: .important }
-> Remember to associate your subject with the correct project(s) to ensure proper access and organization of your research data.
+> A subject is visible to the people of its projects only. If you leave out a project, its members cannot see the subject.
 
-## Create Your First Session
+If your species or strain is missing, submit it from the *Taxonomies* menu (see [Submitting resources and taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies)). Working with slices, sections or cultures instead of live animals? Create a **specimen set** instead; see the [Ex vivo workflow]({{site.baseurl}}/tutorials/specimen-workflow). All subject fields are described on the [Subject]({{site.baseurl}}/datamodel/stem/subject/) page.
 
-After adding subjects, you can create sessions to record your experimental data. Sessions in BrainSTEM help organize your experiments chronologically.
+## Create your first session
 
-1. Click on *Sessions* in the left navigation menu
-2. Click the *Add session* button in the top right corner 
-3. Fill in the required session information
+A session records one occasion with a subject: a recording, an imaging run, a training day.
 
-![First session]({{site.baseurl}}/assets/images/tutorials/first_session.gif)
+1. Click *Sessions* in the left navigation menu.
+2. Click *Add session* in the top right corner.
+3. Enter the **Session name**, set **Session type** to *Subject* (*Specimen* is for ex vivo material), choose your project under **Projects**, pick your subject under **Subjects** and set the **Status**.
+4. Click **Create and continue**. The session's behaviors, data acquisitions, manipulations and epochs are added on the tabs of the form that opens; the workflow tutorials show how.
 
-{: .note }
-> For detailed information about session fields and options, see the [Session data model]({{site.baseurl}}/datamodel/stem/session/).
+![The add session form: name, session type Subject and project, with the Subjects list open to pick the subjects of the session.]({{site.baseurl}}/assets/images/screenshots/get-started-session-form.png)
+{: .screenshot }
+*The add session form: name, session type Subject and project, with the Subjects list open to pick the subjects of the session.*
 
-{: .important }
-> Sessions inherit permissions from their associated projects. Make sure to select the correct project to enable proper access for your team members.
+{% include walkthrough.html slug="get-started-create-session" caption="Creating a session: name, session type, project, the subjects it was run on and status; the video ends with the pointer on Create and continue." %}
 
-## Already Have Data? Import It Quickly!
+All session fields are described on the [Session]({{site.baseurl}}/datamodel/stem/session/) page.
 
-**Don't want to enter everything manually?** If you already have your research data in spreadsheets, our powerful import tool can save you hours of manual data entry!
+## Check your result
 
-**Why use the import tool?**
+- The **Getting started** card on your dashboard shows the project, subject and session steps as done.
+- *Sessions* lists your new session, and its details page names your subject and project.
+- Members of the groups you chose for the project see the same entries.
 
-- **Save time** - Import dozens or hundreds of records at once
-- **Easy to use** - Download a template, fill in your data, and upload
-- **Comprehensive** - Supports all major data types (subjects, sessions, procedures, and more!)
+## Two shortcuts
 
-**Get started in 3 simple steps:**
+- **Find entries by asking.** The **AI assistant**, from the corner button on every private page, answers plain-language questions such as "Show sessions with silicon probe implants in the hippocampus". It only returns entries you may read and never changes anything. See [AI assistant]({{site.baseurl}}/webinterface/ai-assistant/).
+- **Already have data in spreadsheets?** The [import tool]({{site.baseurl}}/webinterface/import-tool/) creates subjects, sessions, procedures and other entries from a filled-in template.
 
-1. **Download a template** for your data type
-2. **Fill in your data** following the provided examples
-3. **Upload and review** - we'll check for errors and show you the results
+## Next steps
 
-**Ready to import?** Check out our complete [Import Tool Guide]({{site.baseurl}}/webinterface/import-tool/) for detailed instructions and templates!
+**Next:** [Managing groups]({{site.baseurl}}/tutorials/managing-groups): invite your lab and give members the right roles.
 
-## Build Your Own Experiment
+Then, in order:
 
-BrainSTEM uses Personal Attributes and Modules to document your experimental procedures. Below is a recommended order for setting up your experiment components.
+1. [Setting up lab infrastructure]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure): setups, equipment, inventories and consumable stocks.
+2. [Behavioral assays]({{site.baseurl}}/tutorials/behavioral-assays) and [Managing data storage]({{site.baseurl}}/tutorials/managing-data-storage).
+3. A complete experiment: the [Electrophysiology]({{site.baseurl}}/tutorials/electrophysiology-workflow), [Two-photon imaging]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) or [Ex vivo]({{site.baseurl}}/tutorials/specimen-workflow) workflow.
 
-![Describe experiment]({{site.baseurl}}/assets/images/tutorials/describe_experiment.gif)
-
-### Available Components
-{: .no_toc}
-
-STEM models
-- [Subjects]({{site.baseurl}}/datamodel/stem/subject/)
-   - [Procedures]({{site.baseurl}}/datamodel/modules/procedure/)
-   - [Procedure logs]({{site.baseurl}}/datamodel/modules/procedurelog/)
-   - [Subject logs]({{site.baseurl}}/datamodel/modules/subjectlog/)
-
-- [Sessions]({{site.baseurl}}/datamodel/stem/session/)
-   - [Behaviors]({{site.baseurl}}/datamodel/modules/behavior/)
-   - [Data acquisition]({{site.baseurl}}/datamodel/modules/dataacquisition/)
-   - [Manipulations]({{site.baseurl}}/datamodel/modules/manipulation/)
-
-Personal Attributes:
-- [Behavioral Assays]({{site.baseurl}}/datamodel/personal_attributes/behavioralassay/)
-- [Data storages]({{site.baseurl}}/datamodel/personal_attributes/datastorage/)
-- [Setups]({{site.baseurl}}/datamodel/personal_attributes/setup/)
-   - [Equipment]({{site.baseurl}}/datamodel/modules/equipment/)
-- [Inventories]({{site.baseurl}}/datamodel/personal_attributes/inventory/)
-   - [Consumable stocks]({{site.baseurl}}/datamodel/modules/consumablestock/)
-
-### Recommended workflow
-{: .no_toc}
-
-1. Create/Join a group
-2. Create a project
-3. Next, create personal attributes relevant to your experiments
-   1. Define behavioral assays to describe the behavioral conditions of your subjects
-   2. Set up data storage locations to link to your data files
-   3. Create setups to define your physical experimental environments
-   - Configure the equipment in your setups
-   4. Set up inventories to track your lab resources
-   - Add consumable stocks to your inventories
-4. Create your first subject
-   - Add procedures to the subject (e.g., implants and injections)
-   - Begin tracking with procedure logs and subject logs
-5. Create your first session
-   - Set up behaviors to describe subject tasks
-   - Configure data acquisition parameters
-   - Define manipulations for experimental interventions
-
-{: .note }
-> The exact order may vary based on your specific experimental needs. Some components can be set up in parallel or may not be needed for every experiment.
-
-{: .important }
-> This order ensures dependent components are created first. For example, behaviors need setups and behavioral assays to be defined first.
-> Data acquisition are linked to subjects through procedures, and to setups through equipment, which should be created first.
-
-## Next Steps
-
-Now that you've completed the basic setup, here are the recommended next steps:
-
-- **Set up your lab infrastructure**: Follow the [Setting Up Lab Infrastructure tutorial]({{site.baseurl}}/tutorials/setting-up-lab-infrastructure) to properly configure your lab's setups, equipment, inventories, and consumable stocks
-- **Learn project management**: Read [Managing Projects]({{site.baseurl}}/tutorials/managing-projects) to understand how to effectively organize and collaborate on research projects
-- **Configure team access**: Review [Managing Groups]({{site.baseurl}}/tutorials/managing-groups) to set up proper permissions and team collaboration
-- **Plan your experiments**: Explore [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) to define standardized experimental protocols for your studies
-- **Set up data storage**: Follow [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to link your metadata to actual data files for seamless analysis workflows
+To see how all kinds of entries connect, read [How BrainSTEM structures an experiment]({{site.baseurl}}/datamodel/).

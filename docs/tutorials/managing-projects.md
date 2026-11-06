@@ -2,131 +2,82 @@
 layout: default
 title: Manage Projects
 parent: Tutorials
-nav_order: 3
+nav_order: 6
 ---
 
 # Managing Projects
 {: .no_toc}
 
-## Project Permission Levels
+A project holds a study's subjects, sessions and procedures, and decides who can read and change them. This tutorial gives your lab group and individual collaborators a level on a project, changes the levels, edits the project's details and links its publication. At the end, everyone who works on the study has the access they need.
 
-BrainSTEM projects implement four distinct permission levels that can be assigned to both individual users and groups. Each level builds on the previous one with additional capabilities:
+**Prerequisites**: a project you own (see [Get started!]({{site.baseurl}}/tutorials/get_started)) and a lab group (see [Manage Groups]({{site.baseurl}}/tutorials/managing-groups)).
 
-| Permission Level | Capabilities |
-|-----------------|-------------|
-| **Members** | View project-related subjects, sessions, and modules<br>Read-only access to all project content<br>Leave the project voluntarily<br>**Cannot** create, edit, or delete content |
-| **Contributors** | All Member permissions<br>Create new project-related content (subjects, sessions, etc.)<br>Edit existing project content<br>Delete project-related models<br>**Cannot** manage membership or project settings |
-| **Managers** | All Contributor permissions<br>Add new individual members to the project<br>Remove individual members from the project<br>Add and remove project groups<br>Manage project invitations<br>**Cannot** modify core project settings or grant Owner privileges |
-| **Owners** | All Manager permissions<br>Modify project details and metadata<br>Promote members to Manager or Owner roles<br>Change project visibility and access settings<br>Full administrative control over the project |
+## Table of contents
+{: .no_toc .text-delta }
 
-Visit the [permissions page]({{"datamodel/permissions/"|absolute_url}}) to learn more about the BrainSTEM permission system. 
+1. TOC
+{:toc}
 
-## Accessing Project Management
+## Step 1: Open the project's Manage permissions page
 
-**To access your project's management page:**
+1. Click **Projects** in the left menu, or go to [www.brainstem.org/private/stem/project/](https://www.brainstem.org/private/stem/project/).
+2. Open the project.
+3. Click **Manage**. The **Manage permissions** page opens. Everyone with access can open it; only Managers and Owners can change it.
 
-1. Navigate to the Projects page:
-   - Visit [https://www.brainstem.org/private/stem/project/](https://www.brainstem.org/private/stem/project/)
-   - Or go to **Stem** → **Projects** in the navigation menu
-2. Select the project you want to manage from the list
-3. Click the **Manage** button in the top right corner
+![The project's Manage permissions page: a member (Alex Sample, Contributor) and a group (SAMPLE Lab, Contributor, Manager and Owner) with their Contributor, Manager, Owner and Remove boxes, and the Invite user and Invite group buttons.]({{site.baseurl}}/assets/images/screenshots/project-manage-members.png)
+{: .screenshot }
+*The project's Manage permissions page: a member (Alex Sample, Contributor) and a group (SAMPLE Lab, Contributor, Manager and Owner) with their Contributor, Manager, Owner and Remove boxes, and the Invite user and Invite group buttons.*
 
-{: .note }
-> You must have Manager or Owner permissions to access the project management interface.
+## Step 2: Invite your lab group
 
-## Manager Capabilities
-
-As a project manager, you can add and remove members and groups, as well as manage invitations.
-
-### Adding New Members
-
-**To invite users or groups to your project:**
-
-1. Go to your project's management page
-2. Click either:
-   - **Invite user** button to invite an individual researcher
-   - **Invite group** button to invite an entire research group
-3. Complete the invitation form:
-   - **Email** (for users): The recipient's email address
-   - **Group** (for groups): Select the group from the dropdown
-   - **Permission Level**: Select Member, Contributor, or Manager
-   - **Message** (optional): Personal note explaining the invitation
-4. Click **Submit** to send the invitation
-
-{: .note }
-> When inviting a group, all current and future members of that group will inherit the assigned permission level for this project.
-
-### Tracking Invitations
-
-**To monitor pending project invitations:**
-
-1. Visit [https://www.brainstem.org/private/users/projectmembershipinvitation/](https://www.brainstem.org/private/users/projectmembershipinvitation/)
-2. Review invitation status:
-   - **Pending**: Invitation sent but not yet accepted
-
-### Managing Membership
-
-**To remove members or groups from your project:**
-
-1. Access the project's user/group list in the management page
-2. To remove members or groups:
-   - Check the checkbox next to their name
-   - Click **Save** to confirm removal
+1. Click **Invite group**.
+2. Type your group's name and pick it from the suggestions.
+3. As an Owner, tick **Contributor** under **Extra permissions**, so that your lab members can add subjects and sessions.
+4. Click **Send invitation**.
 
 {: .important }
-> Removing a member or group will immediately revoke their access to the project.
+> Leaving all boxes unticked invites the group as Members, who can only read the project. Managers who are not Owners do not see **Extra permissions**, so their invitations always grant Member; an Owner must raise the level afterwards.
 
-## Owner Capabilities
+The group's managers receive an email, and any member of the group can accept the invitation under **Invitations & Requests**. Every current and future member of the group then holds the group's level. Invite an individual collaborator the same way with **Invite user** and their email address; people without an account receive a sign-up link that is valid for 14 days.
 
-As a project owner, you have full administrative control including the ability to promote members, modify project settings, and manage all aspects of the project.
+## Step 3: Change or remove levels
 
-### Setting Permission Levels
-
-**To modify member permission levels:**
-
-1. Access the project member list in the management page
-2. For each member or group, you can assign elevated permissions by checking the appropriate boxes:
-
-| Checkbox | Permission Granted | Capabilities |
-|----------|-------------------|-------------|
-| **Change permissions** | Contributor | Create, edit, and delete project content |
-| **Managers** | Manager | All Contributor permissions plus member management |
-| **Owners** | Owner | Full administrative control |
-
-3. Click **Save** to apply changes
+1. On the **Manage permissions** page, tick or untick **Contributor**, **Manager** or **Owner** in a user's or group's row, or tick **Remove**.
+2. Click **Save**. "Permissions updated successfully!" confirms the change.
 
 {: .important }
-> Owner permissions should be granted carefully as they provide complete control over the project, including the ability to modify settings and remove other owners.
+> Removing a user or group immediately revokes their access. Only Owners can grant or take away Manager and Owner, and a project always keeps at least one Owner. An Owner can change the project's details, make it public and delete it, so give the Owner level sparingly.
 
-### Managing Project Settings
+The invitation flow, the messages and leaving a project are described on [Sharing and memberships]({{site.baseurl}}/webinterface/sharing-and-memberships/); what each level allows is on the [Permissions]({{site.baseurl}}/datamodel/permissions/#project-permissions) page.
 
-**To modify core project details:**
+## Step 4: Edit the project's details
 
-Project owners can update fundamental project information and configuration:
+You need Owner on the project.
 
-1. Go to the project's main page
-2. Click the **Edit** button
-3. Modify project fields as needed:
+1. Open the project and click **Edit**.
+2. Change the **Description** or **Tags**, or the **Project name in storage** under **Online repositories** if your data folders use another name.
+3. Click **Save**.
 
-| Field | Description |
-|-------|-------------|
-| **Name** | Project title visible to all members |
-| **Description** | Detailed project overview and goals |
-| **Keywords/Tags** | Search terms for project discovery |
-| **Public Access** | Toggle project visibility (private/public) |
-| **Authenticated Groups** | Default groups with project access |
+All fields are described on the [Projects]({{site.baseurl}}/datamodel/stem/project/) page. **Project visibility** makes the project public; see [Share data publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) before switching it.
 
-4. Click **Save** to apply changes
+## Step 5: Link the publication
 
-{: .note }
-> Changes to public access settings will affect project visibility across BrainSTEM. See [Sharing Project Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) for more details on making projects public.
+1. On the project's edit page, click the **+** next to **Publications**.
+2. Enter the DOI and click **Lookup DOI**, as described in [Resources & Taxonomies]({{site.baseurl}}/tutorials/submit-resource-and-taxonomies#step-2-submit-a-new-entry), and save the publication.
+3. Select it in **Publications** and click **Save**.
 
-## Next Steps
+The DOI then appears in the project's STAR Methods report and NWB files. The **Publication coverage** dashboard widget shows which of your projects have a publication.
 
-With your projects properly configured, you can start documenting your research:
+## End state
 
-- **Set up experimental protocols**: Define [Behavioral Assays]({{site.baseurl}}/tutorials/behavioral-assays) for standardized experimental procedures within your projects
-- **Configure data management**: Set up [Managing Data Storage]({{site.baseurl}}/tutorials/managing-data-storage) to link project data to actual files for analysis workflows  
-- **Start documenting experiments**: Follow complete experimental workflows like [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow)<!-- or [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow)-->
-- **Enable programmatic access**: Master the [Python API tool]({{site.baseurl}}/api-tools/python-api-tool) or [MATLAB API tool]({{site.baseurl}}/api-tools/matlab-api-tool) to programmatically access your project data
-- **Enable open science**: Use [Sharing Project Publicly]({{site.baseurl}}/tutorials/sharing-project-publicly) to make your project data accessible to the research community
+Your lab group and collaborators hold the roles they need on the project, and the project carries its description and publication. Contributors can now add subjects and sessions to it.
+
+To download the project or draft a methods section, use **Export** on the project's page; see [Exports and reports]({{site.baseurl}}/webinterface/exports-and-reports/). **Graph** on the project's page shows its entries counted by kind; the [Interactive data model]({{site.baseurl}}/datamodel/?view=interactive) shows how permissions flow from the project.
+
+## Next steps
+
+- **Next:** [Electrophysiology Workflow]({{site.baseurl}}/tutorials/electrophysiology-workflow): document a complete experiment in the project.
+- [Two-Photon Imaging Workflow]({{site.baseurl}}/tutorials/two-photon-imaging-workflow) and [Ex vivo workflow]({{site.baseurl}}/tutorials/specimen-workflow): other complete workflows.
+- [Share data publicly]({{site.baseurl}}/tutorials/sharing-project-publicly): publish the project when the study is out.
+- Data model: [Projects]({{site.baseurl}}/datamodel/stem/project/) and [Permissions]({{site.baseurl}}/datamodel/permissions/).
+- [Exporting to NWB]({{site.baseurl}}/tutorials/exporting-to-nwb): turn the project's export into NWB files.

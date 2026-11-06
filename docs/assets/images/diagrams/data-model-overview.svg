@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 930" width="1600" height="930" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+  <title id="t">BrainSTEM data model overview</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#6f6d82"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="930" fill="#fff"/>
+  <rect x="40" y="40" width="300" height="150" rx="8" fill="#51459d" fill-opacity="0.07" stroke="#51459d" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="54" y="64" font-size="16" font-weight="600" fill="#51459d">Users and groups</text>
+  <text x="54" y="85" font-size="14" fill="#4a4858">roles on projects and personal attributes</text>
+  <rect x="40" y="220" width="300" height="190" rx="8" fill="#a8365e" fill-opacity="0.07" stroke="#a8365e" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="54" y="244" font-size="16" font-weight="600" fill="#a8365e">Dissemination</text>
+  <text x="54" y="265" font-size="14" fill="#4a4858">submitted by DOI;</text>
+  <text x="54" y="283" font-size="14" fill="#4a4858">publications link to projects</text>
+  <rect x="380" y="40" width="860" height="670" rx="8" fill="#8122a1" fill-opacity="0.07" stroke="#8122a1" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="394" y="64" font-size="16" font-weight="600" fill="#8122a1">Projects, subjects, sessions, specimen sets and their modules</text>
+  <rect x="1280" y="40" width="280" height="670" rx="8" fill="#3f6bb3" fill-opacity="0.07" stroke="#3f6bb3" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="1294" y="64" font-size="16" font-weight="600" fill="#3f6bb3">Personal attributes</text>
+  <text x="1294" y="85" font-size="14" fill="#4a4858">owned by users or groups and</text>
+  <text x="1294" y="103" font-size="14" fill="#4a4858">shared with users and groups,</text>
+  <text x="1294" y="121" font-size="14" fill="#4a4858">like projects</text>
+  <rect x="40" y="730" width="740" height="170" rx="8" fill="#9a5a14" fill-opacity="0.07" stroke="#9a5a14" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="54" y="754" font-size="16" font-weight="600" fill="#9a5a14">Resources: shared catalog, used by everyone</text>
+  <text x="54" y="775" font-size="14" fill="#4a4858">probe and ECoG designs, viruses, reagents, devices; an RRID can be given on submission</text>
+  <rect x="820" y="730" width="740" height="170" rx="8" fill="#6b7c2a" fill-opacity="0.07" stroke="#6b7c2a" stroke-opacity="0.6" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="834" y="754" font-size="16" font-weight="600" fill="#6b7c2a">Taxonomies, used by everyone</text>
+  <rect x="60" y="100" width="120" height="50" rx="7" fill="#51459d" stroke="#3a3271" stroke-width="1.2"/>
+  <text x="120" y="130.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Users</text>
+  <rect x="200" y="100" width="120" height="50" rx="7" fill="#51459d" stroke="#3a3271" stroke-width="1.2"/>
+  <text x="260" y="130.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Groups</text>
+  <rect x="60" y="300" width="120" height="50" rx="7" fill="#a8365e" stroke="#792744" stroke-width="1.2"/>
+  <text x="120" y="330" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Journals</text>
+  <rect x="200" y="300" width="120" height="50" rx="7" fill="#a8365e" stroke="#792744" stroke-width="1.2"/>
+  <text x="260" y="330" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Publications</text>
+  <path d="M180 325 L200 325" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M320 325 L360 325 L360 128 L720 128" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="720" y="80" width="200" height="56" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="820" y="113.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Project</text>
+  <rect x="1000" y="80" width="220" height="56" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="1110" y="102" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Cohorts, Collections,</text>
+  <text x="1110" y="124" font-size="15" fill="#fff" text-anchor="middle">Breedings</text>
+  <path d="M320 110 L720 110" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="530" y="101" font-size="15" fill="#4a4858" text-anchor="middle">member, contributor, manager, owner</text>
+  <path d="M920 108 L1000 108" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="410" y="180" width="230" height="56" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="525" y="213.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Subject</text>
+  <rect x="690" y="180" width="230" height="56" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="805" y="213.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Specimen set</text>
+  <rect x="970" y="180" width="230" height="56" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="1085" y="213.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Session</text>
+  <path d="M820 136 L820 155 L525 155 L525 180" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M820 155 L1085 155 L1085 180" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M805 155 L805 180" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M525 236 L525 258 L396 258 L396 673" fill="none" stroke="#6f6d82" stroke-width="1.6"/>
+  <rect x="410" y="290" width="230" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="525" y="318" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Procedures</text>
+  <path d="M396 313 L410 313" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M424 336 L424 553" fill="none" stroke="#6f6d82" stroke-width="1.6"/>
+  <rect x="440" y="350" width="200" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="540" y="378" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Experimental interfaces</text>
+  <path d="M424 373 L440 373" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="440" y="410" width="200" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="540" y="438" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Procedure logs</text>
+  <path d="M424 433 L440 433" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="440" y="470" width="200" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="540" y="498" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Material usages</text>
+  <path d="M424 493 L440 493" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="440" y="530" width="200" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="540" y="558" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Procedure stages</text>
+  <path d="M424 553 L440 553" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="410" y="590" width="230" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="525" y="618" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Procedure episodes</text>
+  <path d="M396 613 L410 613" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="410" y="650" width="230" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="525" y="678" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Subject logs</text>
+  <path d="M396 673 L410 673" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M805 236 L805 258 L676 258 L676 493" fill="none" stroke="#6f6d82" stroke-width="1.6"/>
+  <rect x="690" y="290" width="230" height="46" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="805" y="318" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Specimens</text>
+  <path d="M676 313 L690 313" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="690" y="350" width="230" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="805" y="378" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Specimen procedures</text>
+  <path d="M676 373 L690 373" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="690" y="410" width="230" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="805" y="438" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Specimen logs</text>
+  <path d="M676 433 L690 433" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="690" y="470" width="230" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="805" y="498" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Experimental interfaces</text>
+  <path d="M676 493 L690 493" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <path d="M1085 236 L1085 258 L956 258 L956 493" fill="none" stroke="#6f6d82" stroke-width="1.6"/>
+  <rect x="970" y="290" width="230" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="1085" y="318" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Data acquisitions</text>
+  <path d="M956 313 L970 313" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="970" y="350" width="230" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="1085" y="378" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Manipulations</text>
+  <path d="M956 373 L970 373" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="970" y="410" width="230" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="1085" y="438" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Behaviors</text>
+  <path d="M956 433 L970 433" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="970" y="470" width="230" height="46" rx="7" fill="#8122a1" stroke="#5d1874" stroke-width="1.2"/>
+  <text x="1085" y="498" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Epochs</text>
+  <path d="M956 493 L970 493" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="1300" y="140" width="240" height="46" rx="7" fill="#3f6bb3" stroke="#2d4d81" stroke-width="1.2"/>
+  <text x="1420" y="168" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Setups</text>
+  <rect x="1330" y="200" width="210" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="1435" y="228" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Equipment</text>
+  <path d="M1314 186 L1314 223 L1330 223" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="1300" y="260" width="240" height="46" rx="7" fill="#3f6bb3" stroke="#2d4d81" stroke-width="1.2"/>
+  <text x="1420" y="288" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Inventories</text>
+  <rect x="1330" y="320" width="210" height="46" rx="7" fill="#2f7f8a" stroke="#225b63" stroke-width="1.2"/>
+  <text x="1435" y="348" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Consumable stock</text>
+  <path d="M1314 306 L1314 343 L1330 343" fill="none" stroke="#6f6d82" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="1300" y="380" width="240" height="46" rx="7" fill="#3f6bb3" stroke="#2d4d81" stroke-width="1.2"/>
+  <text x="1420" y="408" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Protocols</text>
+  <rect x="1300" y="440" width="240" height="46" rx="7" fill="#3f6bb3" stroke="#2d4d81" stroke-width="1.2"/>
+  <text x="1420" y="468" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Licenses</text>
+  <rect x="1300" y="500" width="240" height="46" rx="7" fill="#3f6bb3" stroke="#2d4d81" stroke-width="1.2"/>
+  <text x="1420" y="528" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Data storage</text>
+  <rect x="1300" y="560" width="240" height="46" rx="7" fill="#3f6bb3" stroke="#2d4d81" stroke-width="1.2"/>
+  <text x="1420" y="588" font-size="16" font-weight="600" fill="#fff" text-anchor="middle">Behavioral assays</text>
+  <rect x="60" y="805" width="200" height="50" rx="7" fill="#9a5a14" stroke="#6f410e" stroke-width="1.2"/>
+  <text x="160" y="835.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Consumables</text>
+  <rect x="300" y="805" width="200" height="50" rx="7" fill="#9a5a14" stroke="#6f410e" stroke-width="1.2"/>
+  <text x="400" y="835.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Hardware devices</text>
+  <rect x="540" y="805" width="200" height="50" rx="7" fill="#9a5a14" stroke="#6f410e" stroke-width="1.2"/>
+  <text x="640" y="835.5" font-size="17" font-weight="600" fill="#fff" text-anchor="middle">Suppliers</text>
+  <rect x="840" y="775" width="166" height="44" rx="7" fill="#6b7c2a" stroke="#4d591e" stroke-width="1.2"/>
+  <text x="923" y="801.5" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Species</text>
+  <rect x="1018" y="775" width="166" height="44" rx="7" fill="#6b7c2a" stroke="#4d591e" stroke-width="1.2"/>
+  <text x="1101" y="801.5" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Strains</text>
+  <rect x="1196" y="775" width="166" height="44" rx="7" fill="#6b7c2a" stroke="#4d591e" stroke-width="1.2"/>
+  <text x="1279" y="801.5" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Anatomical regions</text>
+  <rect x="1374" y="775" width="166" height="44" rx="7" fill="#6b7c2a" stroke="#4d591e" stroke-width="1.2"/>
+  <text x="1457" y="801.5" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Setup types</text>
+  <rect x="840" y="835" width="225" height="44" rx="7" fill="#6b7c2a" stroke="#4d591e" stroke-width="1.2"/>
+  <text x="952.5" y="861.5" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Regulatory authorities</text>
+  <rect x="1077" y="835" width="225" height="44" rx="7" fill="#6b7c2a" stroke="#4d591e" stroke-width="1.2"/>
+  <text x="1189.5" y="861.5" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Behavioral categories</text>
+  <rect x="1314" y="835" width="225" height="44" rx="7" fill="#6b7c2a" stroke="#4d591e" stroke-width="1.2"/>
+  <text x="1426.5" y="861.5" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Behavioral paradigms</text>
+</svg>

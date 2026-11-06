@@ -3,7 +3,7 @@ layout: default
 title: Species
 parent: Taxonomies
 grand_parent: Data model
-nav_order: 6
+nav_order: 1
 ---
 
 # Species model
@@ -12,33 +12,40 @@ nav_order: 6
 ## Table of contents
 {: .no_toc .text-delta }
 
+{::options toc_levels="2..2" /}
 1. TOC
 {:toc}
 
 ## Introduction
 
-A biological species is a group of organisms that can reproduce with one another in nature and produce fertile offspring. Species are characterized by reproductive isolation from other groups, meaning organisms in one species are incapable of reproducing with organisms in another species. The term "species" also represents the most basic category in the system of taxonomy, a scientific system that classifies organisms into categories based on their biological characteristics. Additionally, species can be defined based on a shared evolutionary history and ancestry. In BrainSTEM, species is a shared model across users.
+A species is one animal species available across BrainSTEM. It sits above [strain]({{"datamodel/taxonomies/strain/"|absolute_url}}): every strain belongs to a species. Every [subject]({{"datamodel/stem/subject/"|absolute_url}}) stores its species directly and may optionally select a strain from that species. [Anatomical references]({{"datamodel/taxonomies/anatomicalreference/"|absolute_url}}) (atlases) also name their species. In BrainSTEM, species is a shared model across users.
+
+{% include datamodel_embed.html model="taxonomies.species" %}
 
 ## Fields
 
 | Field | Description |
 |:------|:------------|
-| ``Name of species`` | The scientific name of the species (**required**; string; maximum length: 100 characters; must be unique). Example: "Homo sapiens", "Mus musculus" |
-| ``Popular name`` | Common or colloquial name of the species (maximum length: 100 characters). Example: "Human", "House mouse" |
-| ``Appearance`` | A description of the physical characteristics of the species (**required**; maximum length: 500 characters). Example: "Small, quadrupedal mammal with fur, whiskers, and a long tail" |
-| ``Description`` | A general description of the species, including its biological and ecological attributes (maximum length: 2000 characters). Example: "Small rodent commonly used in laboratory research due to its well-characterized genetics and physiology" |
-| ``RRID`` | Research Resource Identifier. Must start with "RRID:". Example: "RRID:NCBI_txid9606" |
-| ``External identifiers`` | External identifiers from databases like NCBI, Ensembl, etc.. Include URLs when available. |
+| ``Name of species`` | The scientific binomial (**required**; string; maximum length: 100 characters; must be unique across BrainSTEM). Example: "Mus musculus", "Homo sapiens" |
+| ``Popular name`` | The everyday name (string; maximum length: 100 characters). Worth filling in, because it is how most people search. Example: "House mouse" |
+| ``RRID`` | Research Resource Identifier (string; maximum length: 100 characters). **Lookup RRID** beside the field fetches the organism from the registry and fills in the name, popular name, description and external identifiers. Example: "RRID:NCBITaxon_10090" |
+| ``External identifiers`` | Identifiers in other registries, such as an NCBI taxonomy ID, each with source, id and URL. |
+| ``Appearance`` | Distinguishing physical characteristics, useful where related species are easily confused (maximum length: 500 characters). |
+| ``Description`` | What the species is and why it is used in research (maximum length: 2000 characters). Write for someone in another lab. |
 | ``Adding/editing comments`` | Comments for the submission/approval process. |
+
+{% include schemas/species.md %}
 
 ## Submission process
 
-Any user can submit new species entries or propose changes to existing ones. However, all submissions must undergo an approval process before becoming available for use. Please refer to existing entries for examples of appropriate submissions.
+Any user can submit new species entries or propose changes to existing ones. A submission enters the approval queue and is usable in your own records immediately; it is visible only to you until accepted. Check the list under both the scientific and the common name before submitting. For the approval statuses see the [Resources page]({{"datamodel/resources/#submission-and-approval"|absolute_url}}).
+
+A species cannot be deleted while strains, subjects or anatomical references point to it.
 
 ## Permissions
 
-Once an entry has been approved, it becomes accessible to all users.
+Everyone can read the accepted list. Editing an accepted species is restricted; an edit creates a change request that is reviewed before it takes effect. Your own pending submissions remain yours to edit or cancel.
 
-## Species API access
+## API access
 
-The API provides programmable access to species data, allowing you to read, edit, and delete entries. For more information about the fields and data structure of species entries, please consult the [Species API page]({{"api/taxonomies/species/"|absolute_url}}).
+The API provides programmable access to species data, returning the accepted list plus your own pending submissions. For more information about the fields and data structure, please consult the [Species API page]({{"api/taxonomies/species/"|absolute_url}}).
