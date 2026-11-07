@@ -29,7 +29,7 @@ Templates exist for seven kinds of entry:
 6. __Manipulation templates__ prefill a [manipulation]({{"datamodel/modules/manipulation/"|absolute_url}}): type, type-specific fields, equipment and notes.
 7. __Material usage templates__ prefill one [material usage]({{"datamodel/modules/materialusage/"|absolute_url}}) row. They live inside a procedure, specimen procedure or interface template, or stand alone in a material template library.
 
-![A template prefills type, type-specific fields, coordinates and material rows. You still enter the subject, the date, notes and the actual stock items; the same pattern applies to episode, specimen procedure, interface, material usage, acquisition and manipulation templates.]({{site.baseurl}}/assets/images/diagrams/templates.svg)
+[![A template prefills type, type-specific fields, coordinates and material rows. You still enter the subject, the date, notes and the actual stock items; the same pattern applies to episode, specimen procedure, interface, material usage, acquisition and manipulation templates.]({{site.baseurl}}/assets/images/diagrams/templates.svg)]({{site.baseurl}}/assets/images/diagrams/templates.svg)
 *A template prefills type, type-specific fields, coordinates and material rows. You still enter the subject, the date, notes and the actual stock items; the same pattern applies to episode, specimen procedure, interface, material usage, acquisition and manipulation templates.*
 
 {% include datamodel_embed.html model="modules.proceduretemplate" %}

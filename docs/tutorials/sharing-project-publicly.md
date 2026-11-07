@@ -25,7 +25,7 @@ Public access flows from the project to everything that belongs to it (subjects,
 {: .important }
 > Making a project public does not share the personal attributes its entries refer to. Behavioral assays, setups, data storage, inventories, protocols and licenses each have their own public setting and must be made public separately.
 
-![What the project's visibility switch publishes, what needs its own switch, what is always public and what is never public.]({{site.baseurl}}/assets/images/diagrams/public-sharing-scope.svg)
+[![What the project's visibility switch publishes, what needs its own switch, what is always public and what is never public.]({{site.baseurl}}/assets/images/diagrams/public-sharing-scope.svg)]({{site.baseurl}}/assets/images/diagrams/public-sharing-scope.svg)
 *What the project's visibility switch publishes, what needs its own switch, what is always public and what is never public.*
 
 ## What becomes public

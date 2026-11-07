@@ -22,7 +22,7 @@ Materials are the probes, fibers, viruses, drugs, reagents, media and supplies t
 
 ## The material chain
 
-![A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)
+[![A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)
 *A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.*
 
 | Entry | Question it answers | Values it holds |

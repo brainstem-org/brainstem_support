@@ -22,7 +22,7 @@ An epoch is a named time segment within one [session]({{"datamodel/stem/session/
 
 Times are relative to the session's own date and time, so set the session onset before relying on epoch boundaries. The end of an epoch cannot be before its start. Epochs carry no planning status of their own; they follow the status of their session.
 
-![Epochs are named intervals measured from the session onset. Behaviors, data acquisitions and manipulations are linked to the epoch they belong to.]({{site.baseurl}}/assets/images/diagrams/epoch-timeline.svg)
+[![Epochs are named intervals measured from the session onset. Behaviors, data acquisitions and manipulations are linked to the epoch they belong to.]({{site.baseurl}}/assets/images/diagrams/epoch-timeline.svg)]({{site.baseurl}}/assets/images/diagrams/epoch-timeline.svg)
 *Epochs are named intervals measured from the session onset. Behaviors, data acquisitions and manipulations are linked to the epoch they belong to.*
 
 {% include datamodel_embed.html model="stem.epoch" %}

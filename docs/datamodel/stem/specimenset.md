@@ -30,7 +30,7 @@ Specimen sets are the permission anchor for the whole specimen cluster. The foll
 
 Specimen sets can take part in sessions. A [session]({{"datamodel/stem/session/"|absolute_url}}) is either subject-based or specimen-based (its session type is set on creation). A specimen session links one or more specimen sets instead of subjects, and its data acquisitions and manipulations use the experimental interfaces of those sets.
 
-![A specimen set is the ex-vivo counterpart of a subject: it holds the individual specimens, is processed by specimen procedures and logs, can give rise to derived sets, and is recorded through interfaces whose target is the set.]({{site.baseurl}}/assets/images/diagrams/specimen-lineage.svg)
+[![A specimen set is the ex-vivo counterpart of a subject: it holds the individual specimens, is processed by specimen procedures and logs, can give rise to derived sets, and is recorded through interfaces whose target is the set.]({{site.baseurl}}/assets/images/diagrams/specimen-lineage.svg)]({{site.baseurl}}/assets/images/diagrams/specimen-lineage.svg)
 *A specimen set is the ex-vivo counterpart of a subject: it holds the individual specimens, is processed by specimen procedures and logs, can give rise to derived sets, and is recorded through interfaces whose target is the set.*
 
 {% include datamodel_embed.html model="stem.specimenset" %}

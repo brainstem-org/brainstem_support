@@ -11,7 +11,7 @@ nav_order: 5
 
 Each file holds the session and its subject; the surgeries, viruses and drugs the subject received; the devices, electrode groups and optogenetic sites; and the acquisitions, behaviors, manipulations and epochs of the session. The converter is **metadata only**: measured data (time series, images, video) is not converted.
 
-![From BrainSTEM to NWB: on BrainSTEM, the server builds the export JSON of a project or session; on your computer, brainstem-nwb converts it into one NWB file per session and subject with a manifest and a validation report. Metadata only: the lab adds the raw data and shares the files on DANDI.]({{site.baseurl}}/assets/images/diagrams/export-nwb-pipeline.svg)
+[![From BrainSTEM to NWB: on BrainSTEM, the server builds the export JSON of a project or session; on your computer, brainstem-nwb converts it into one NWB file per session and subject with a manifest and a validation report. Metadata only: the lab adds the raw data and shares the files on DANDI.]({{site.baseurl}}/assets/images/diagrams/export-nwb-pipeline.svg)]({{site.baseurl}}/assets/images/diagrams/export-nwb-pipeline.svg)
 *From a BrainSTEM export through brainstem-nwb to one NWB file per session and subject, with a conversion manifest and a validation report. The files hold metadata only; raw data is added to them separately.*
 
 > **Repository:** [brainstem-org/brainstem-nwb](https://github.com/brainstem-org/brainstem-nwb), with full documentation of the mapping, the manifest, the warnings and the validation.

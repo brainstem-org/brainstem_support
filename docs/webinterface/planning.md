@@ -46,7 +46,7 @@ Set **Status** to **Planned** when you create the record, or duplicate an existi
 
 ## Transitions
 
-![The planned, performed and cancelled states with the buttons and guards of each transition, and where planned entries appear.]({{site.baseurl}}/assets/images/diagrams/planning-states.svg)
+[![The planned, performed and cancelled states with the buttons and guards of each transition, and where planned entries appear.]({{site.baseurl}}/assets/images/diagrams/planning-states.svg)]({{site.baseurl}}/assets/images/diagrams/planning-states.svg)
 
 While a record is planned, its form shows a transition button in the header; the details page shows the **Planned** pill. The same transitions exist as bulk actions in list views for several rows at once.
 
@@ -62,7 +62,7 @@ A transition checks the whole record and is recorded in the history as "{label} 
 
 When a planned implant procedure is marked as performed, its experimental interface is created at that moment, in the same way as for a procedure saved as performed. The form notes this: "Creating this procedure also creates a/an {label} experimental interface for the subject, unless the procedure is planned…".
 
-![Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)
+[![Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)
 
 {: .important }
 > Once a performed implant has an experimental interface, it cannot go back to planned: "This procedure has linked experimental interfaces, so it cannot go back to planned. Remove the interface links first."

@@ -218,7 +218,7 @@ Anesthesia and analgesia are their own procedures (**Anesthesia** with the requi
 
 Three weeks later, record the window. Saving a **Cranial window** procedure also creates the **experimental interface** (the window) that the imaging acquisitions refer to.
 
-![Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)
+[![Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)
 *Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.*
 
 1. Add a procedure on VC_M001 as in Step 5 and fill in:
@@ -413,7 +413,7 @@ Which interfaces a data acquisition can select is described in [Interfaces in se
 
 5. On the **Epochs** tab add the epochs and drag the acquisitions from **Link to epochs** onto them:
 
-![Epochs are named intervals measured from the session onset. Behaviors, data acquisitions and manipulations are linked to the epoch they belong to.]({{site.baseurl}}/assets/images/diagrams/epoch-timeline.svg)
+[![Epochs are named intervals measured from the session onset. Behaviors, data acquisitions and manipulations are linked to the epoch they belong to.]({{site.baseurl}}/assets/images/diagrams/epoch-timeline.svg)]({{site.baseurl}}/assets/images/diagrams/epoch-timeline.svg)
 *Epochs are named intervals measured from the session onset. Behaviors, data acquisitions and manipulations are linked to the epoch they belong to.*
 
 | Name | Start | End |

@@ -22,7 +22,7 @@ A procedure stage is one ordered phase of a [procedure]({{"datamodel/modules/pro
 
 A stage is not a procedure (the parent owns the event, its date and its type-specific fields), and not a material row (materials name a stage; they do not live inside it). Stages are also not a type family of their own: which stage types exist is set per procedure type, and two shared detail schemas serve all of them. Stages are edited inside the parent entry and have no API route of their own; they appear in the `stages` list of the parent's payload.
 
-![A procedure type's rules can declare stages. Each stage carries the conditions its materials share (route, rate, duration), and every material usage row names one stage or none for the whole procedure.]({{site.baseurl}}/assets/images/diagrams/procedure-stages.svg)
+[![A procedure type's rules can declare stages. Each stage carries the conditions its materials share (route, rate, duration), and every material usage row names one stage or none for the whole procedure.]({{site.baseurl}}/assets/images/diagrams/procedure-stages.svg)]({{site.baseurl}}/assets/images/diagrams/procedure-stages.svg)
 *A procedure type's rules can declare stages. Each stage carries the conditions its materials share (route, rate, duration), and every material usage row names one stage or none for the whole procedure.*
 
 {% include datamodel_embed.html model="modules.procedurestage" %}

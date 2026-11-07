@@ -77,7 +77,7 @@ Empty optional detail fields are dropped when you save. Changing the type on a n
 
 ## Materials editor
 
-![A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)
+[![A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)
 
 Procedures, specimen procedures, experimental interfaces and their templates have a **Materials** tab: "Record what was used and where it came from." Click **+ Add material** to pick a material type; only types that the parent type accepts are listed, with required types first. Each material card has:
 
@@ -108,7 +108,7 @@ On compact inline rows (for example procedures on a subject page) the editor ope
 
 Some procedure types are recorded in stages, and materials are attached to the stage they took part in.
 
-![A procedure type's rules can declare stages. Each stage carries the conditions its materials share (route, rate, duration), and every material usage row names one stage or none for the whole procedure.]({{site.baseurl}}/assets/images/diagrams/procedure-stages.svg)
+[![A procedure type's rules can declare stages. Each stage carries the conditions its materials share (route, rate, duration), and every material usage row names one stage or none for the whole procedure.]({{site.baseurl}}/assets/images/diagrams/procedure-stages.svg)]({{site.baseurl}}/assets/images/diagrams/procedure-stages.svg)
 
 Stages appear as sections in the Materials tab next to a **Whole procedure** section for materials not tied to one stage. Click **+ Add stage** to add a stage with a **Stage type**, conditions and **Stage notes**; a material's **Stage** field can also create a stage.
 

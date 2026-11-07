@@ -19,7 +19,7 @@ nav_order: 3
 
 Silicon probes and ECoG arrays are recorded in BrainSTEM through the material chain: a shared catalog entry describes the manufacturer's design, a consumable stock entry describes the physical probe your lab owns, and an implant procedure records which probe went into which subject. BrainSTEM ships a catalog of probe designs from the main vendors so that you rarely have to type probe geometry yourself. The chain itself is explained on the [Materials]({{"datamodel/materials/"|absolute_url}}) page.
 
-![A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)
+[![A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)
 
 ## Designs as consumables
 

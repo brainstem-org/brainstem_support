@@ -38,7 +38,7 @@ Behavioral paradigms represent standardized behavioral tasks and protocols share
 
 ## How it fits together
 
-![The behavioral track and the setup track: behavioral categories group paradigms, and an assay is your lab's version of a paradigm on a setup type; a setup is your rig of a setup type, with its equipment. A behavior in a session runs one assay on one setup with its subjects.]({{site.baseurl}}/assets/images/diagrams/behavior-tracks-behavioralparadigm.svg)
+[![The behavioral track and the setup track: behavioral categories group paradigms, and an assay is your lab's version of a paradigm on a setup type; a setup is your rig of a setup type, with its equipment. A behavior in a session runs one assay on one setup with its subjects.]({{site.baseurl}}/assets/images/diagrams/behavior-tracks-behavioralparadigm.svg)]({{site.baseurl}}/assets/images/diagrams/behavior-tracks-behavioralparadigm.svg)
 *The behavioral track (left) and the setup track (right) run from the shared taxonomies through your lab's personal attributes and meet in a behavior recorded in a session. This page describes the behavioral paradigm, drawn solid. The setup type category is a field of the setup type, not a separate record.*
 
 BrainSTEM organizes behavioral experiments through a hierarchy that separates shared scientific knowledge from lab-specific implementation details:

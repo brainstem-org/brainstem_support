@@ -40,7 +40,7 @@ Whether you run a small lab or manage large collaborative projects, BrainSTEM pr
 
 A project holds the subjects, and each session records one occasion with a subject. Around them, BrainSTEM records what was done, what was recorded, with what, where in the brain, under which rules and where the data lives. Colours follow the apps of the [data model]({{ "/datamodel/"|absolute_url}}).
 
-![How BrainSTEM structures an experiment: a project holds subjects and sessions; procedures, interfaces, epochs, behavior, data acquisition and manipulations answer what was done and recorded; species, data storage, protocols, atlases, materials and setups answer which animal, where the data lives, under which rules, where in the brain, which products and with what.]({{site.baseurl}}/assets/images/diagrams/what-brainstem-records.svg)
+[![How BrainSTEM structures an experiment: a project holds subjects and sessions; procedures, interfaces, epochs, behavior, data acquisition and manipulations answer what was done and recorded; species, data storage, protocols, atlases, materials and setups answer which animal, where the data lives, under which rules, where in the brain, which products and with what.]({{site.baseurl}}/assets/images/diagrams/what-brainstem-records.svg)]({{site.baseurl}}/assets/images/diagrams/what-brainstem-records.svg)
 
 [Data model]({{"/datamodel/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [Web interface]({{"/webinterface/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [API]({{"/api/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4} [Tools]({{"/tools/"|absolute_url}}){: .btn .fs-5 .mb-4 .mb-md-0 .mr-4}
 

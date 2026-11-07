@@ -32,7 +32,7 @@ The **Overview** below is a drawing of the whole model; the **Interactive** view
 
 What happened decides which kind of entry records it: an action on a subject, an observation over time, a device that stays in place, tissue taken out, or what was measured, delivered or done in a session.
 
-![Which kind of entry records what happened: procedures, subject logs, interfaces, specimen sets, data acquisition, manipulations, behaviors, epochs and material usage]({{site.baseurl}}/assets/images/diagrams/where-to-record.svg)
+[![Which kind of entry records what happened: procedures, subject logs, interfaces, specimen sets, data acquisition, manipulations, behaviors, epochs and material usage]({{site.baseurl}}/assets/images/diagrams/where-to-record.svg)]({{site.baseurl}}/assets/images/diagrams/where-to-record.svg)
 *Which kind of entry records what happened. Each kind has its own page under [Organization of the models](#organization-of-the-models).*
 
 ### Organization of the models

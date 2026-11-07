@@ -116,7 +116,7 @@ BrainSTEM publishes terms of use for the [reference]({{"api/reference/#terms-of-
 
 ## What becomes public
 
-![What the project's visibility switch publishes, what needs its own switch, what is always public and what is never public.]({{site.baseurl}}/assets/images/diagrams/public-sharing-scope.svg)
+[![What the project's visibility switch publishes, what needs its own switch, what is always public and what is never public.]({{site.baseurl}}/assets/images/diagrams/public-sharing-scope.svg)]({{site.baseurl}}/assets/images/diagrams/public-sharing-scope.svg)
 *What the project's visibility switch publishes, what needs its own switch, what is always public and what is never public.*
 
 {: .warning }

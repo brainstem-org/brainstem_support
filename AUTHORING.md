@@ -191,6 +191,9 @@ Drawings are generated, never edited by hand:
 - `scripts/render_example_figure.py` draws the worked example on the data model page (`data-model-example.svg`,
   one ephys session in a rat as table cards).
 
+A page shows a drawing as an image linked to itself, so a click opens it full screen:
+`[![<alt text>]({{site.baseurl}}/assets/images/diagrams/<name>.svg)]({{site.baseurl}}/assets/images/diagrams/<name>.svg)`.
+
 Both take their colours from `scripts/diagram_style.py`, which copies the app colours of the interactive data
 model (the `--dm-group-*` tokens of `data-model-diagram.css`): STEM data purple, Modules teal, Personal
 attributes blue, Resources brown, Taxonomies olive, Dissemination rose, Users indigo. A model has its app's colour

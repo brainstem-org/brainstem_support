@@ -43,7 +43,7 @@ A setup cannot be deleted while equipment or behaviors point to it.
 
 A setup is where the work happens, and its equipment is what the work is done with. Most records reach a setup through its equipment; behaviors point at the setup itself.
 
-![A setup is built as a setup type and holds its equipment, and each piece of equipment can name its model in the shared catalog. Procedures, specimen procedures, experimental interfaces, data acquisitions and manipulations name the equipment they used; a behavior names the whole setup.]({{site.baseurl}}/assets/images/diagrams/setup-hub-setup.svg)
+[![A setup is built as a setup type and holds its equipment, and each piece of equipment can name its model in the shared catalog. Procedures, specimen procedures, experimental interfaces, data acquisitions and manipulations name the equipment they used; a behavior names the whole setup.]({{site.baseurl}}/assets/images/diagrams/setup-hub-setup.svg)]({{site.baseurl}}/assets/images/diagrams/setup-hub-setup.svg)
 *Procedures, specimen procedures and experimental interfaces on a subject or specimen set, and data acquisitions and manipulations in a session, name the [equipment]({{"datamodel/modules/equipment/"|absolute_url}}) they used; their templates can prefill it. A behavior names the whole setup. This page describes the setup, drawn solid.*
 
 Setups are part of a two-level hierarchy for describing experimental apparatus:
@@ -57,7 +57,7 @@ Anywhere a form offers equipment (procedures, specimen procedures, experimental 
 ### In behavioral experiments
 {: .no_toc}
 
-![The behavioral track and the setup track: behavioral categories group paradigms, and an assay is your lab's version of a paradigm on a setup type; a setup is your rig of a setup type, with its equipment. A behavior in a session runs one assay on one setup with its subjects.]({{site.baseurl}}/assets/images/diagrams/behavior-tracks-setup.svg)
+[![The behavioral track and the setup track: behavioral categories group paradigms, and an assay is your lab's version of a paradigm on a setup type; a setup is your rig of a setup type, with its equipment. A behavior in a session runs one assay on one setup with its subjects.]({{site.baseurl}}/assets/images/diagrams/behavior-tracks-setup.svg)]({{site.baseurl}}/assets/images/diagrams/behavior-tracks-setup.svg)
 *The behavioral track (left) and the setup track (right) run from the shared taxonomies through your lab's personal attributes and meet in a behavior recorded in a session. This page describes the setup, drawn solid. The setup type category is a field of the setup type, not a separate record.*
 
 A **behavior** record links a **behavioral assay** with a **setup** and the **subjects** involved. The setup must be of the assay's setup type; the behavior form refuses other combinations.

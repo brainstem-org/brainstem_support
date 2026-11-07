@@ -43,7 +43,7 @@ Equipment is the durable apparatus around an experiment. [Hardware devices]({{"d
 
 ## How it fits together
 
-![A setup is built as a setup type and holds its equipment, and each piece of equipment can name its model in the shared catalog. Procedures, specimen procedures, experimental interfaces, data acquisitions and manipulations name the equipment they used; a behavior names the whole setup.]({{site.baseurl}}/assets/images/diagrams/setup-hub-equipment.svg)
+[![A setup is built as a setup type and holds its equipment, and each piece of equipment can name its model in the shared catalog. Procedures, specimen procedures, experimental interfaces, data acquisitions and manipulations name the equipment they used; a behavior names the whole setup.]({{site.baseurl}}/assets/images/diagrams/setup-hub-equipment.svg)]({{site.baseurl}}/assets/images/diagrams/setup-hub-equipment.svg)
 *Equipment is installed in one [setup]({{"datamodel/personal_attributes/setup/"|absolute_url}}) and can name its model in the shared catalog. Procedures, specimen procedures and experimental interfaces on a subject or specimen set, and data acquisitions and manipulations in a session, name the equipment they used; their templates can prefill it. A behavior names the whole setup instead. This page describes equipment, drawn solid.*
 
 ## Types of equipment

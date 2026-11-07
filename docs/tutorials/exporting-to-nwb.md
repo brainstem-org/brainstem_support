@@ -18,7 +18,7 @@ nav_order: 11
 
 BrainSTEM exports a project, or a single session with everything it touches, as one versioned JSON file. The `brainstem-nwb` converter turns that file into [Neurodata Without Borders](https://www.nwb.org) files, one per session and subject, with a manifest and a validation report.
 
-![From BrainSTEM to NWB: on BrainSTEM, the server builds the export JSON of a project or session; on your computer, brainstem-nwb converts it into one NWB file per session and subject with a manifest and a validation report. Metadata only: the lab adds the raw data and shares the files on DANDI.]({{site.baseurl}}/assets/images/diagrams/export-nwb-pipeline.svg)
+[![From BrainSTEM to NWB: on BrainSTEM, the server builds the export JSON of a project or session; on your computer, brainstem-nwb converts it into one NWB file per session and subject with a manifest and a validation report. Metadata only: the lab adds the raw data and shares the files on DANDI.]({{site.baseurl}}/assets/images/diagrams/export-nwb-pipeline.svg)]({{site.baseurl}}/assets/images/diagrams/export-nwb-pipeline.svg)
 *From BrainSTEM export JSON through brainstem-nwb to one NWB file per session and subject with a manifest and validation report; metadata only, raw data added separately.*
 
 {: .important }

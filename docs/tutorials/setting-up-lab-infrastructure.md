@@ -22,12 +22,12 @@ This tutorial creates the lab infrastructure that the [Electrophysiology Workflo
 
 A **setup** is a place where experiments run, and its **equipment** is the devices installed in it:
 
-![A setup is built as a setup type and holds its equipment, and each piece of equipment can name its model in the shared catalog. Procedures, specimen procedures, experimental interfaces, data acquisitions and manipulations name the equipment they used; a behavior names the whole setup.]({{site.baseurl}}/assets/images/diagrams/setup-hub-setup.svg)
+[![A setup is built as a setup type and holds its equipment, and each piece of equipment can name its model in the shared catalog. Procedures, specimen procedures, experimental interfaces, data acquisitions and manipulations name the equipment they used; a behavior names the whole setup.]({{site.baseurl}}/assets/images/diagrams/setup-hub-setup.svg)]({{site.baseurl}}/assets/images/diagrams/setup-hub-setup.svg)
 *A setup is built as a setup type and holds its equipment, and each piece of equipment can name its model in the shared catalog. Procedures, specimen procedures, experimental interfaces, data acquisitions and manipulations name the equipment they used; a behavior names the whole setup.*
 
 An **inventory** is where your lab keeps materials, and a **consumable stock** is one lot of a catalog consumable in it. Procedures, specimen procedures and experimental interfaces use stock in their material rows:
 
-![A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)
+[![A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)]({{site.baseurl}}/assets/images/diagrams/material-chain.svg)
 *A material usage row records what was actually applied; it points at a lot in your inventory, at the shared catalog entry, or at a manual entry, and sits on a procedure, specimen procedure or experimental interface.*
 
 A setup has a **setup type** (Theta maze, Sleepbox, Surgical table, ...). A [behavioral assay]({{site.baseurl}}/tutorials/behavioral-assays) has one too.

@@ -19,7 +19,7 @@ This tutorial creates a behavioral assay, the description of a task your subject
 
 ## How assays, setups and sessions fit together
 
-![The behavioral track and the setup track: behavioral categories group paradigms, and an assay is your lab's version of a paradigm on a setup type; a setup is your rig of a setup type, with its equipment. A behavior in a session runs one assay on one setup with its subjects.]({{site.baseurl}}/assets/images/diagrams/behavior-tracks-behavioralassay.svg)
+[![The behavioral track and the setup track: behavioral categories group paradigms, and an assay is your lab's version of a paradigm on a setup type; a setup is your rig of a setup type, with its equipment. A behavior in a session runs one assay on one setup with its subjects.]({{site.baseurl}}/assets/images/diagrams/behavior-tracks-behavioralassay.svg)]({{site.baseurl}}/assets/images/diagrams/behavior-tracks-behavioralassay.svg)
 *The behavioral track and the setup track: behavioral categories group paradigms, and an assay is your lab's version of a paradigm on a setup type; a setup is your rig of a setup type, with its equipment. A behavior in a session runs one assay on one setup with its subjects.*
 
 A behavioral assay belongs to a **setup type** (Theta maze, Open field arena, Head-fixed disc, ...). A setup belongs to a setup type too. When you add a behavior to a session, you pick a setup and an assay, and the form requires both to have the same setup type. One assay therefore serves every setup of that type in your lab, and each session records which physical setup was used on that day.

@@ -27,7 +27,7 @@ A session is one experimental occasion: a recording day, an imaging run, a behav
 
 Sessions can also be grouped in [__Collections__]({{"datamodel/stem/collection"|absolute_url}}). Each of these entries has its own page with its fields; the session itself has only the fields below.
 
-![A session is either subject-based or specimen-based. Both belong to a project and hold data acquisitions, manipulations and epochs; behaviors belong to subject-based sessions only. They differ in what they link (subjects or a specimen set) and therefore in which interfaces their acquisitions and manipulations can use.]({{site.baseurl}}/assets/images/diagrams/session-kinds.svg)
+[![A session is either subject-based or specimen-based. Both belong to a project and hold data acquisitions, manipulations and epochs; behaviors belong to subject-based sessions only. They differ in what they link (subjects or a specimen set) and therefore in which interfaces their acquisitions and manipulations can use.]({{site.baseurl}}/assets/images/diagrams/session-kinds.svg)]({{site.baseurl}}/assets/images/diagrams/session-kinds.svg)
 *A session is either subject-based or specimen-based. Both belong to a project and hold data acquisitions, manipulations and epochs; behaviors belong to subject-based sessions only. They differ in what they link (subjects or a specimen set) and therefore in which interfaces their acquisitions and manipulations can use.*
 
 {% include datamodel_embed.html model="stem.session" %}

@@ -28,7 +28,7 @@ Three related models complete the picture:
 
 Ex-vivo tissue work (slicing, sectioning, clearing, staining) is recorded as a [__Specimen procedure__]({{"datamodel/modules/specimenprocedure/"|absolute_url}}) on a specimen set, not as a procedure.
 
-![Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)
+[![Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)]({{site.baseurl}}/assets/images/diagrams/procedure-interface-session.svg)
 *Saving an implant procedure creates an experimental interface on the subject. Sessions record through the interface, so a data acquisition inherits where (target region, coordinates) and with what (materials) it was made.*
 
 {% include datamodel_embed.html model="modules.procedure" %}

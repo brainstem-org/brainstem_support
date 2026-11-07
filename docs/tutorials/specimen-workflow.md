@@ -18,7 +18,7 @@ nav_order: 9
 
 Subjects describe live animals. Ex vivo material has its own records: a **specimen set** is a batch of tissue or cultures prepared together (a slice series, a section series, a well plate), **specimens** are the individual items in the set, **specimen procedures** are the processing steps (fixation, sectioning, staining), and **specimen logs** follow conditions over time (bath solution, temperature, slice health). A **specimen session** records what you measured on the material.
 
-![A specimen set is the ex-vivo counterpart of a subject: it holds the individual specimens, is processed by specimen procedures and logs, can give rise to derived sets, and is recorded through interfaces whose target is the set.]({{site.baseurl}}/assets/images/diagrams/specimen-lineage.svg)
+[![A specimen set is the ex-vivo counterpart of a subject: it holds the individual specimens, is processed by specimen procedures and logs, can give rise to derived sets, and is recorded through interfaces whose target is the set.]({{site.baseurl}}/assets/images/diagrams/specimen-lineage.svg)]({{site.baseurl}}/assets/images/diagrams/specimen-lineage.svg)
 *A specimen set is the ex-vivo counterpart of a subject: it holds the individual specimens, is processed by specimen procedures and logs, can give rise to derived sets, and is recorded through interfaces whose target is the set.*
 
 This tutorial walks through an acute slice experiment: a slice series cut from a mouse, patch-clamp recordings in a session, and a fixation and immunolabeling of the slices afterwards.
@@ -97,7 +97,7 @@ The local identifier is unique within the set. After **Create and continue**, th
 
 Sessions have a **Session type**: **Subject** sessions take subjects, **Specimen** sessions take specimen sets.
 
-![A session is either subject-based or specimen-based. Both belong to a project and hold data acquisitions, manipulations and epochs; behaviors belong to subject-based sessions only. They differ in what they link (subjects or a specimen set) and therefore in which interfaces their acquisitions and manipulations can use.]({{site.baseurl}}/assets/images/diagrams/session-kinds.svg)
+[![A session is either subject-based or specimen-based. Both belong to a project and hold data acquisitions, manipulations and epochs; behaviors belong to subject-based sessions only. They differ in what they link (subjects or a specimen set) and therefore in which interfaces their acquisitions and manipulations can use.]({{site.baseurl}}/assets/images/diagrams/session-kinds.svg)]({{site.baseurl}}/assets/images/diagrams/session-kinds.svg)
 *A session is either subject-based or specimen-based. Both belong to a project and hold data acquisitions, manipulations and epochs; behaviors belong to subject-based sessions only. They differ in what they link (subjects or a specimen set) and therefore in which interfaces their acquisitions and manipulations can use.*
 
 {: .important }
