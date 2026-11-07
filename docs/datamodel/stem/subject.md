@@ -52,9 +52,7 @@ A subject is one animal (or planned animal) in the lab: its identity, where it c
 | `Licenses` | [Licenses]({{"datamodel/personal_attributes/license/"|absolute_url}}) covering work on this animal as a whole. Individual procedures and procedure episodes carry their own licenses too. |
 | `Tags` | Tags for organization and filtering. Shared across all users. |
 | `Subject name used in data storage` | The name of your subject in your local data storage, when it differs from the name above (string; maximum length: 200 characters). |
-| `Extra content` | Custom key-value fields that the standard fields do not cover. Values can be text or numbers. Example: {"Weight": "25g", "Litter": "A3"} |
-
-{% include schemas/subject.md %}
+| `Extra content` | Custom key-value fields that the standard fields do not cover. Values can be text or numbers. Example: {"Weight": "25g", "Litter": "A3"}. [Schema](https://www.brainstem.org/schemas/Subject/Array.json) |
 
 ## Changing species and strain
 

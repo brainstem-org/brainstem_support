@@ -34,12 +34,10 @@ A setup is one physical rig or workstation in your lab: an ephys station, a two-
 | ``Location`` | Where the rig is: room, building, floor (string; maximum length: 100 characters). Example: "Room 302B, Neuroscience Building" |
 | ``Description`` | Rich text description of the rig as a whole. Individual instruments belong in equipment. Can include uploaded images. |
 | ``Image`` | A photo of the rig. |
-| ``Specifications`` | Key-value details about the station, such as dimensions, weight or power requirements, in JSON format. Example: {"length": "200 cm", "width": "10 cm"} |
+| ``Specifications`` | Key-value details about the station, such as dimensions, weight or power requirements, in JSON format. Example: {"length": "200 cm", "width": "10 cm"}. [Schema](https://www.brainstem.org/schemas/Setup/specifications.json) |
 | ``Public access`` | Designates if the setup is publicly available (boolean; default: False). It makes the rig readable on the public portal, not usable: selecting its equipment still requires Contributor. Only owners can modify this setting. |
 
 A setup cannot be deleted while equipment or behaviors point to it.
-
-{% include schemas/setup.md %}
 
 ## How it fits together
 

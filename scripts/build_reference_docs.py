@@ -137,9 +137,9 @@ PREFERRED_ORDER = {
 }
 # Families whose schemas belong to one model's own JSON fields (additional fields, repositories, external
 # identifiers, specifications) rather than selecting a type (``selects_type: false`` in the reference). They get
-# no page of their own: the data-model flavour is written to ``docs/_includes/schemas/<family>.md`` for the model
-# page to include, and the API flavour is appended to the model's API resource page. This maps each such family
-# to its resource; a family the reference marks that is missing here maps to the resource of the same name.
+# no page of their own: the model page describes each field in its hand-written Fields table, with a link to the
+# latest schema, and the API flavour is appended to the model's API resource page. This maps each such family to
+# its resource; a family the reference marks that is missing here maps to the resource of the same name.
 INLINE_FAMILIES = {
     "Project": "project",
     "Session": "session",
@@ -1662,24 +1662,6 @@ def inline_types(family: dict) -> list[dict]:
     return [t for t in family["types"] if t["properties"] or t.get("shape") not in ("empty", None)]
 
 
-def render_inline_family_human(family: dict, ctx: dict) -> str:
-    """The data-model flavour of an inline family, as a snippet the model page includes."""
-    name = family["family"]
-    lines = ["## Structured fields", ""]
-    lines.append(
-        f"{FAMILY_INTROS.get(name, '')} These fields hold rows validated against a published schema; the form "
-        "shows them as a table, the API returns them as stored. The fields of each row:"
-    )
-    lines.append("")
-    for t in inline_types(family):
-        lines += render_type_human(t, family, ctx, level="###")
-    lines.append(
-        f"The schemas are published at `{SERVER}/schemas/{name}/` (see [Public schemas](/api/public-schemas/)); "
-        f"the API view with property codes is on the [{name} API page](/api/{{}}/#json-field-schemas)."
-    )
-    return "\n".join(lines)
-
-
 def render_inline_family_api(family: dict, resource: dict, ctx: dict) -> list[str]:
     """The API flavour of an inline family, appended to its model's API resource page."""
     name = family["family"]
@@ -1800,12 +1782,12 @@ def render_schema_index(families: list[dict], ctx: dict, for_api: bool) -> str:
         page = ctx["datamodel_pages"].get(INLINE_FAMILIES.get(name, ""))
         if name in INLINE_FAMILIES and page:
             label = next((r["label"] for r in resources if r["resource"] == INLINE_FAMILIES[name]), name)
-            inline_pages.append(f"[{label}]({page}#structured-fields)")
+            inline_pages.append(f"[{label}]({page}#fields)")
     if inline_pages:
         lines.append(
             "A few records also have structured fields (additional fields, repository links, external identifiers, "
-            "specifications) whose rows follow a schema that does not depend on a type. They are described on the "
-            "page of the record: " + ", ".join(inline_pages) + "."
+            "specifications) whose rows follow a schema that does not depend on a type. They are described in the "
+            "Fields table of the record, with a link to the schema: " + ", ".join(inline_pages) + "."
         )
         lines.append("")
     lines.append(
@@ -2098,13 +2080,6 @@ def main():
     for family in families:
         name = family["family"]
         if name in INLINE_FAMILIES:
-            include_path = DOCS / "_includes" / "schemas" / f"{name.lower()}.md"
-            resource = by_resource.get(INLINE_FAMILIES[name])
-            body = render_inline_family_human(family, ctx)
-            if resource:
-                body = body.replace("/api/{}/", page_path(resource))
-            write_page(include_path, None, body, commit)
-            written.append(include_path)
             continue
         order = nav.index(name) + 1
         api_path = DOCS / "api" / "schemas" / f"{name.lower()}.md"

@@ -11,7 +11,7 @@ The site is published at [support.brainstem.org](https://support.brainstem.org/)
 | `docs/` | The Jekyll site. Hand-written pages for the data model, web interface, tutorials and tools; generated pages for the API resources and schemas. |
 | `docs/assets/datamodel/` | `explorer.html`, the page that hosts the interactive data model. The model itself (graph, type summaries and renderer) is fetched from the BrainSTEM server when the site is built and is not committed. |
 | `docs/_preambles/` | Hand-written introductions inserted into generated schema pages. |
-| `docs/_includes/` | `datamodel_embed.html` (the focused diagram on model pages) and generated `schemas/*.md` snippets for models whose JSON fields have a schema. |
+| `docs/_includes/` | `datamodel_embed.html` (the focused diagram on model pages). |
 | `scripts/build_reference_docs.py` | Generates the API and schema pages from the server's public reference (`/reference/data/*.json`) and fetches the interactive data model (graph, type summaries, renderer) from it. |
 | `.github/workflows/pages.yml` | Builds the site and deploys it to GitHub Pages on every push to `main` and daily, fetching the interactive data model from the server first (see [Deployment](#deployment)). |
 | `.github/workflows/sync-reference.yml` | Weekly job that regenerates the API and schema pages from production and opens a pull request when they changed. |

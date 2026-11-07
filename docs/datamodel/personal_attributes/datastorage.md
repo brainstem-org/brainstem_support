@@ -29,15 +29,13 @@ A data storage describes where session data physically live and how to reach the
 | ``Data storage name`` | Name of the data storage (**required**; string; maximum length: 100 characters; must be unique). Example: "Lab Server 01" |
 | ``Location`` | Location of the data storage (string; maximum length: 100 characters). Example: "Cabinet A", "Computer B", "Network storage C" |
 | ``Description`` | Rich text description of the data storage. Can include uploaded images. Example: "Primary data storage server for electrophysiology recordings..." |
-| ``Data organization`` | How folders are nested inside the storage, as structured JSON (see the [data organization schema](#structured-fields)). Example: "Projects → Subjects → Sessions" |
-| ``Data protocols`` | How the storage is reached, as a JSON list (see the [data protocols schema](#structured-fields)). Each entry has a protocol type (Local Storage, SMB/CIFS, NFS, AFP, SFTP, FTP, HTTPS/Web, Globus, S3, Dropbox, Google Drive, OneDrive and others), a path and whether that route is publicly reachable. Example: "SMB/CIFS: smb://labserver/data, private" |
+| ``Data organization`` | How folders are nested inside the storage, as structured JSON, from top level to most specific. Example: "Projects → Subjects → Sessions". [Schema](https://www.brainstem.org/schemas/DataStorage/data_organization.json) |
+| ``Data protocols`` | How the storage is reached, as a JSON list. Each entry has a protocol type (Local Storage, SMB/CIFS, NFS, AFP, SFTP, FTP, HTTPS/Web, Globus, S3, Dropbox, Google Drive, OneDrive and others), a path and whether that route is publicly reachable. Example: "SMB/CIFS: smb://labserver/data, private". [Schema](https://www.brainstem.org/schemas/DataStorage/data_protocols.json) |
 | ``Authenticated groups`` | Groups given access when the data storage is created (create only). After creation, access is managed from the storage's own page, where individual people can also be invited. |
 | ``Public access`` | Whether the data storage is shown on the public portal. It has no switch of its own: saving the storage makes it public when at least one of its data protocols is marked public, and private otherwise. Public access publishes the description of where data live, including the public protocols' paths; it does not make the data themselves reachable. Only owners can change the data protocols. |
 
 {: .important }
 Marking a single data protocol public makes the whole data storage public when you save it, and that protocol's path is shown as a download source on the public sessions stored there. Mark only the routes outside readers should see.
-
-{% include schemas/datastorage.md %}
 
 ## Permissions
 

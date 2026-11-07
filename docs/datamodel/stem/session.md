@@ -47,10 +47,8 @@ Sessions can also be grouped in [__Collections__]({{"datamodel/stem/collection"|
 | `Tags` | Tags for organization and filtering. Shared across all users. |
 | `Data storage` | Where the session's data are held. Several [data storages]({{"datamodel/personal_attributes/datastorage/"|absolute_url}}) can be selected; their order is kept. |
 | `Session name in data storage` | The session's directory or dataset name when it differs from the name above (string; maximum length: 200 characters). Example: "ses01_mem_2024" |
-| `Extra content` | Custom key-value fields that the standard fields do not cover. Values can be text or numbers. Example: {"Room": "B115", "Temperature": "22C"} |
-| `Repository links` | External locations of this session's data, such as a DANDI set or an OpenNeuro dataset. |
-
-{% include schemas/session.md %}
+| `Extra content` | Custom key-value fields that the standard fields do not cover. Values can be text or numbers. Example: {"Room": "B115", "Temperature": "22C"}. [Schema](https://www.brainstem.org/schemas/Session/Array.json) |
+| `Repository links` | External locations of this session's data, such as a DANDI set. Each link names the repository (CRCNS, DANDI, Figshare, GitHub, Globus, Mendeley, Zenodo, Webshare or Other) and its URL, both required. [Schema](https://www.brainstem.org/schemas/Session/Repository.json) |
 
 ## Subject sessions and specimen sessions
 

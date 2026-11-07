@@ -29,12 +29,10 @@ A species is one animal species available across BrainSTEM. It sits above [strai
 | ``Name of species`` | The scientific binomial (**required**; string; maximum length: 100 characters; must be unique across BrainSTEM). Example: "Mus musculus", "Homo sapiens" |
 | ``Popular name`` | The everyday name (string; maximum length: 100 characters). Worth filling in, because it is how most people search. Example: "House mouse" |
 | ``RRID`` | Research Resource Identifier (string; maximum length: 100 characters). **Lookup RRID** beside the field fetches the organism from the registry and fills in the name, popular name, description and external identifiers. Example: "RRID:NCBITaxon_10090" |
-| ``External identifiers`` | Identifiers in other registries, such as an NCBI taxonomy ID, each with source, id and URL. |
+| ``External identifiers`` | Identifiers in other registries, such as an NCBI taxonomy ID. Each has a source (NCBI, JAX, MGI, RGD, DOI and others) and an identifier, both required, and an optional URL. [Schema](https://www.brainstem.org/schemas/Species/ExternalIdentifiers.json) |
 | ``Appearance`` | Distinguishing physical characteristics, useful where related species are easily confused (maximum length: 500 characters). |
 | ``Description`` | What the species is and why it is used in research (maximum length: 2000 characters). Write for someone in another lab. |
 | ``Adding/editing comments`` | Comments for the submission/approval process. |
-
-{% include schemas/species.md %}
 
 ## Submission process
 

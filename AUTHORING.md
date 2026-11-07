@@ -46,10 +46,11 @@ Audience: a researcher deciding what to record where. Required sections, in this
 4. **Fields**: a table of every user-facing field of the add and change forms, labelled as the form labels
    them, with **required** marked, the type or limits, the choices with their meanings, and an example. Not the
    bookkeeping fields (ids, timestamps, schema versions).
-5. **Structured fields** (models whose JSON fields have a schema that does not depend on a type: project,
-   session, subject, setup, data storage, species, strain, behavioral paradigm): the generated snippet
-   `{% include schemas/<family>.md %}` directly after the Fields section. These families get no schema page of
-   their own; the API flavour is appended to the model's API page under "JSON field schemas".
+5. **JSON fields with a schema** (a schema that does not depend on a type: project, session, subject, setup,
+   data storage, species, strain, behavioral paradigm): no section of their own. The field's row in the Fields
+   table says what each entry holds (its parts, which are required, the choices) and ends with a link to the
+   latest schema, `[Schema](https://www.brainstem.org/schemas/<Family>/<Type>.json)`. These families get no
+   schema page; the API flavour is appended to the model's API page under "JSON field schemas".
 6. **Types** (typed models only): the groups and types in dropdown order, linking to the schema page for the
    type-specific fields; what lifecycle consequence a type has (for example "creates an experimental interface").
 7. **Model-specific sections**: lifecycle and status, materials and stages, templates, automatic behaviour,
@@ -70,9 +71,8 @@ The API flavour lists the type codes, versions, published schema URLs, property 
 types, material policies and an illustrative payload. Both are rendered from `data/schemas.json`.
 
 Families with a single schema, or whose schemas do not depend on a type (`selects_type: false` in the reference;
-`INLINE_FAMILIES` in the script for older servers), get no page: their data-model flavour is written to
-`docs/_includes/schemas/<family>.md` and included by the model page, and their API flavour is appended to the
-model's API resource page.
+`INLINE_FAMILIES` in the script for older servers), get no page: the model page describes them in its hand-written Fields table with a link to the latest
+schema, and their API flavour is appended to the model's API resource page.
 
 Hand-written introductions go in `docs/_preambles/schemas/<family>.md` (inserted after the table of contents of
 the data-model flavour; the coordinate-system conventions live there). The introductions of the type groups and of the
@@ -205,7 +205,6 @@ BrainSTEM changes an app colour, change it in `diagram_style.py` and rerun both 
 | API resource pages, app indexes | `/reference/data/api_surface.json`, `relationships.json`, `model_summaries.json` | `scripts/build_reference_docs.py` | `docs/api/<app>/*.md`, `docs/api/<app>.md`, `docs/api/relationships.md` |
 | Schema pages, both flavours, relations | `/reference/data/schemas.json` | `scripts/build_reference_docs.py` | `docs/api/schemas/*.md`, `docs/datamodel/schemas/*.md` |
 | Interactive data model | `/reference/data/datamodel_graph.json`, `datamodel_types.json` and the per-type files, `/reference/renderer/*` | `scripts/build_reference_docs.py` (same run; `--no-assets` skips it, `--assets-only` does only this) | `docs/assets/datamodel/` (`graph.json`, `types/`, `vendor/`), ignored by git and fetched by `.github/workflows/pages.yml` at every build |
-| Structured-field snippets | `/reference/data/schemas.json` | `scripts/build_reference_docs.py` | `docs/_includes/schemas/*.md` |
 
 The interactive data model is shown on the data model page and the permissions page through
 `docs/_includes/datamodel_switch.html`: an *Overview* view and an *Interactive* view. The Overview is the diagram

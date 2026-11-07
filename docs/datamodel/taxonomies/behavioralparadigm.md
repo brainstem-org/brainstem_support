@@ -33,10 +33,8 @@ Behavioral paradigms represent standardized behavioral tasks and protocols share
 | ``Original publication`` | Citation for the original publication (string; maximum length: 500 characters). Example: "Morris 1984". |
 | ``Reference URL`` | URL to reference documentation or the original publication (URL; maximum length: 200 characters). |
 | ``RRID`` | Research Resource Identifier, where the task has one (string; maximum length: 100 characters). |
-| ``External identifiers`` | Identifiers in other registries or ontologies, each with source, id and URL. |
+| ``External identifiers`` | Identifiers in other registries or ontologies. Each has a source (NIF, Wikipedia, PubMed, DOI, Wikidata, InterLex, Custom or Other) and an identifier, both required, and an optional URL. [Schema](https://www.brainstem.org/schemas/BehavioralParadigm/ExternalIdentifiers.json) |
 | ``Adding/editing comments`` | Comments for the submission/approval process. |
-
-{% include schemas/behavioralparadigm.md %}
 
 ## How it fits together
 

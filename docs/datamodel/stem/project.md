@@ -33,16 +33,14 @@ The lab's own resources (setups and their equipment, inventories and their stock
 | `Description` | A rich text description of the project. You can insert images (see the warning below). |
 | `Publications` | Related [publications]({{"datamodel/dissemination/publication/"|absolute_url}}). A project can link several publications; this is what lets a reader move from a paper to the underlying entries. A new publication must be approved before other users can see it. |
 | `Tags` | Tags for organization and filtering. Tags are shared across all users; the suggestions show tags already used in your projects, and you can always type a new one. Example: "electrophysiology", "hippocampus" |
-| `Extra content` | Custom key-value fields that the standard fields do not cover. Values can be text or numbers. Example: {"Ethics_Protocol": "2024-001", "Funding": "NIH R01"} |
+| `Extra content` | Custom key-value fields that the standard fields do not cover. Values can be text or numbers. Example: {"Ethics_Protocol": "2024-001", "Funding": "NIH R01"}. [Schema](https://www.brainstem.org/schemas/Project/Array.json) |
 | `Project name in storage` | The name of the project in your local data storage, when it differs from the name above (string; maximum length: 200 characters). Shown in the **Online repositories** part of the form. Example: "HPC_MEM_24" |
-| `Repository links` | Links to where the data or code live externally, such as a DANDI set, a GitHub repository or an institutional archive. Each link names the repository (DANDI, Zenodo, GitHub, Figshare and others) and its URL. |
+| `Repository links` | Links to where the data or code live externally, such as a DANDI set, a GitHub repository or an institutional archive. Each link names the repository (CRCNS, DANDI, Figshare, GitHub, Globus, Mendeley, Zenodo, Webshare or Other) and its URL, both required. [Schema](https://www.brainstem.org/schemas/Project/Repository.json) |
 
 {: .warning }
 An image inserted in the description is stored at a public address. Anyone with the address can open it, even while the project is private.
 
 **Project name in storage**, **Repository links**, the user roles below and the groups chosen at creation are available only in the web form; the REST API exposes the other fields (**Extra content** is called `extra_fields` there).
-
-{% include schemas/project.md %}
 
 ## User roles
 

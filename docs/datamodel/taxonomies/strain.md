@@ -31,12 +31,10 @@ A strain is a genetically defined line within a [species]({{"datamodel/taxonomie
 | ``Species`` | The species to which the strain belongs (**required**). Must reference an existing [species]({{"datamodel/taxonomies/species/"|absolute_url}}). |
 | ``Breeding`` | How the strain is maintained (**required**): Inbred, Outbred, Wild-type or Unknown. |
 | ``RRID`` | Research Resource Identifier, such as an IMSR or MGI identifier (string; maximum length: 100 characters). **Lookup RRID** beside the field fetches the line from the registry and fills in the name, popular name, description, external identifiers and the species. Example: "RRID:IMSR_JAX:000664" |
-| ``External identifiers`` | Identifiers in other registries (JAX, EMMA and others), each with source, id and URL. |
+| ``External identifiers`` | Identifiers in other registries. Each has a source (JAX, MGI, IMSR, RGD, NCBI, DOI and others) and an identifier, both required, and an optional URL. [Schema](https://www.brainstem.org/schemas/Strain/ExternalIdentifiers.json) |
 | ``Appearance`` | Coat colour and other visible characteristics (maximum length: 500 characters). |
 | ``Description`` | A description of the strain's genetic and behavioral attributes (maximum length: 2000 characters). |
 | ``Adding/editing comments`` | Comments for the submission/approval process. |
-
-{% include schemas/strain.md %}
 
 ## Submission process
 
