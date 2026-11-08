@@ -150,22 +150,29 @@ one step of a tutorial each, next to a still for readers who skim.
 
 The landing page shows each key feature in the web interface, `{% include tour.html %}` above the feature list:
 one short clip per feature (complete records, collaboration and compliance, shared resources, open science,
-programmable and AI ready, integrations). The feature list right after the include, marked `{: .tour-features }`,
+programmable and AI ready, integrations and import), ten to twenty seconds each. The feature list right after the include, marked `{: .tour-features }`,
 is the only chapter navigation: clicking a feature plays its clip, and the playing one's number is filled in. The
 tour opens neutrally on a welcome card about BrainSTEM as a whole (`TOUR_INTRO`, written to `intro` in
 `docs/_data/tour.yml`) and goes straight into the first feature; the interactive data model is too detailed for the
-tour and stays on the data model pages. A chapter opens on a title card (number, title and the chapter's one-line `text`), and every later shot on a card naming
-it (its caption), each shown long enough to read and faded slowly in and out; the player then plays the chapter and
-waits at its end for the arrow (Back and Replay too). The progress bar has a segment per shot and the caption under
-the video follows the shots. So a chapter tells one story, each shot leading to the next (a procedure filled in, then
-its coordinates in the atlas), and captions say what a shot means, not what the pointer does. A chapter is two or three shots, one idea each, and shows the
-interface being used rather than still pages: a pointer glides to every control it uses and ripples where it clicks,
-data is entered one field at a time (`type`, `pick`, `select2`), lists open as they would for a reader, and the
+tour and stays on the data model pages. A chapter opens on a title card (number, title and the chapter's one-line
+`text`), shown long enough to read and faded in and out; the player then plays the chapter through, holds its last
+frame for a moment and goes on to the next chapter, so the tour plays once from start to end by itself and waits on
+the last chapter (the arrows and Replay move by hand and stop the advance; with reduced motion nothing advances).
+Every later shot opens on a short banner along the bottom of the picture naming it (its caption), the clip held
+just long enough to read it, and the caption under the video follows the shots, with a segment of the progress bar
+each. So a chapter tells one story,
+each shot leading to the next (a procedure filled in, then its coordinates in the atlas), and captions say what a
+shot means, not what the pointer does. A chapter is three or four shots, one idea each, and shows the interface
+being used rather than still pages: a pointer glides to every control it uses and ripples where it clicks,
+data is entered one field at a time (`type`, `pick`, `select2`), the pointer itself clicking every option (a native
+select's list is drawn under its field, as a screencast does not show it), lists open as they would for a reader, and the
 camera glides (`move`) to the next part of the same page instead of cutting. A shot opens already framed on what it
 is about (a `frame` step; never zoom in from the whole page), and changing page crossfades. Across, the camera
 widens to the whole card, panel, dialog or table around the target, so the screen's edges never cut through a
 neighbouring field. A `mark` outlines one element at a time with a short tag beside it (above, below, beside a table
-cell or inside a wide form row), never over it, and replaces the previous mark. The captions are not drawn into the
+cell or inside a wide form row), never over it, and replaces the previous mark. Nothing is shown twice: what a shot
+needs on the screen but not in the clip (the picks before the fields the shot is about, a viewer loading) is done in
+its `prepare` steps, or after a `("pause",)` step, which stops the recording until the next `frame`. The captions are not drawn into the
 clips: each `frame` (or captioned `move`) sentence becomes a timed cue in `docs/_data/tour.yml`; keep them to one
 short line. The recording only shows: the browser refuses every request that would change a record (forms autosave
 as fields change), and a Select2 list is closed with Escape only where its highlighted option is the current value,
@@ -176,8 +183,12 @@ which is too lossy for zoomed text. `TOUR` in `scripts/screenshots.py` defines t
 each) and writes the chapter list with its cues to `docs/_data/tour.yml`, and
 `python scripts/screenshots.py tour:programmable` re-records one chapter. Keep the chapters in the order of the
 feature list on `docs/index.md`. Cutting the clips needs an ffmpeg with VP8; the script finds Playwright's own when
-there is none on the path. The assistant shot stops before the search on servers whose assistant cannot answer yet;
-the search steps are in the chapter as a comment.
+there is none on the path. The assistant shot opens the drawer from its launcher and types `ASSISTANT_QUESTION_TEXT`;
+it stops there unless `BRAINSTEM_SCREENSHOT_ASSISTANT=1` (a server whose assistant answers, with a provider configured),
+when the search runs with its wait cut out and the answer's records are framed and scrolled. The question must be
+one the demo dataset answers with records; an answer without them fails the chapter, so it is recorded again. The
+public-portal shot lists the public projects of the server it records from: check that the demo dataset's public
+project is there.
 
 Drawings are generated, never edited by hand:
 

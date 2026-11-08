@@ -27,12 +27,12 @@ Whether you run a small lab or manage large collaborative projects, BrainSTEM pr
 
 {% include tour.html %}
 
-- **Complete experimental records**: projects, subjects and specimen sets, procedures with their materials and the interfaces they implant, sessions with data acquisition, manipulations, behavior and epochs, all with type-specific, validated fields.
+- **Complete experimental records**: projects, subjects and specimen sets; procedures with their materials, coordinates and the interfaces they implant; sessions with data acquisition, manipulations, behavior and epochs, in vivo and ex vivo, all with type-specific, validated fields.
 - **Collaboration and compliance**: object-level permissions through projects and groups, procedure episodes with severity classifications, licenses and protocols, and planned records.
 - **Shared resources and taxonomies**: a catalog of consumables (including hundreds of silicon probe and ECoG array designs), hardware devices and suppliers; species, strains, atlases with brain-region trees and coordinate previews; new entries can be submitted with an RRID or DOI.
 - **Open science**: one-click public sharing of projects, a public portal and API, versioned JSON exports, STAR Methods reports, and conversion to NWB files for DANDI.
 - **Programmable and AI ready**: a REST API with Python and MATLAB tools, permanent URLs for every schema version and a machine-readable reference generated from the server; an in-app assistant that searches your records, an MCP server for Claude, Cursor and other assistants, and agent skills for coding agents, all bound by your permissions.
-- **Integrations**: SoftMouse colony import, CSV and batch import, and an interactive data model to explore how everything connects.
+- **Integrations and import**: batch entry checked row by row, CSV import with a template for every record type, SoftMouse colony import, and an interactive data model to explore how everything connects.
 {: .tour-features }
 
 ### How BrainSTEM structures an experiment

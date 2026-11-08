@@ -1,65 +1,74 @@
 # Written by scripts/screenshots.py (tour): the opening card and the chapters of the landing-page tour.
 intro:
   title: "BrainSTEM at a glance"
-  text: "An electronic lab notebook for experimental neuroscience. A short tour of its key features follows."
+  text: "A collaborative lab notebook for experimental neuroscience. Six features, about two minutes."
 chapters:
   - file: "01-records.webm"
     poster: "01-records.jpg"
     title: "Complete experimental records"
-    text: "A procedure filled in field by field, placed in the atlas, and the sessions that follow"
+    text: "A typed procedure placed in the atlas, the sessions that follow, and a specimen set cut from a subject"
     doc: "/datamodel/"
     link: "See the data model"
     cues:
       - {t: 0.0, text: "Every procedure, recording and log has a type", doc: "/datamodel/modules/procedure/", link: "About procedures"}
-      - {t: 5.09, text: "Link it to its subject, setup, atlas and target brain region", doc: "/webinterface/forms/", link: "How forms work"}
-      - {t: 20.96, text: "Each type adds its own fields: here the implant's stereotaxic coordinates", doc: "/webinterface/atlases-and-coordinates/", link: "More about coordinates"}
-      - {t: 28.07, text: "Its coordinates place the implant in the rat brain atlas", doc: "/webinterface/atlases-and-coordinates/", link: "More about atlases and coordinates"}
-      - {t: 34.9, text: "Sessions with the implanted rat line up their epochs, behavior and recordings", doc: "/datamodel/stem/epoch/", link: "About epochs"}
+      - {t: 4.07, text: "Linked to its subject, the setup and equipment used, its atlas and target region", doc: "/webinterface/forms/", link: "How forms work"}
+      - {t: 23.41, text: "Each type adds its own fields: here the implant's stereotaxic coordinates", doc: "/webinterface/atlases-and-coordinates/", link: "More about coordinates"}
+      - {t: 29.2, text: "Its coordinates place the implant in the rat brain atlas", doc: "/webinterface/atlases-and-coordinates/", link: "More about atlases and coordinates"}
+      - {t: 43.93, text: "Sessions with the implanted rat line up their epochs, behavior and recordings", doc: "/datamodel/stem/epoch/", link: "About epochs"}
+      - {t: 51.43, text: "Ex vivo work carries on from a subject: specimen sets, their procedures and slice sessions", doc: "/tutorials/specimen-workflow/", link: "The specimen workflow"}
   - file: "02-compliance.webm"
     poster: "02-compliance.jpg"
     title: "Collaboration and compliance"
-    text: "Roles for people and groups, procedure episodes with severity and licenses"
+    text: "Inviting people and groups to a project by role, and procedure episodes with severity and licenses"
     doc: "/datamodel/permissions/"
     link: "Learn about permissions"
     cues:
-      - {t: 0.0, text: "Projects share their records with people and groups, by role", doc: "/datamodel/permissions/", link: "Learn about permissions"}
-      - {t: 8.33, text: "Procedure episodes record their severity and licenses", doc: "/datamodel/modules/procedureepisode/", link: "About procedure episodes"}
+      - {t: 0.0, text: "A project shares its records with people and groups, by role", doc: "/datamodel/permissions/", link: "Learn about permissions"}
+      - {t: 12.13, text: "Invite a colleague by email and give them a role", doc: "/webinterface/sharing-and-memberships/", link: "How sharing works"}
+      - {t: 18.7, text: "Procedure episodes record their severity and licenses", doc: "/datamodel/modules/procedureepisode/", link: "About procedure episodes"}
+      - {t: 35.14, text: "One episode groups the procedures it covers", doc: "/datamodel/modules/procedureepisode/", link: "About procedure episodes"}
   - file: "03-resources.webm"
     poster: "03-resources.jpg"
     title: "Shared resources and taxonomies"
-    text: "A shared catalog of probe designs, devices and reagents, and taxonomies of species and strains"
+    text: "A catalog of probe designs, devices and reagents, and taxonomies of species, strains and brain regions"
     doc: "/webinterface/probe-catalog/"
     link: "More about the probe catalog"
     cues:
       - {t: 0.0, text: "A shared catalog of consumables, with hundreds of probe designs", doc: "/webinterface/probe-catalog/", link: "More about the probe catalog"}
-      - {t: 3.1, text: "Each design is drawn from its geometry", doc: "/webinterface/probe-catalog/", link: "More about the probe catalog"}
-      - {t: 5.7, text: "Species and strains come from shared taxonomies", doc: "/datamodel/taxonomies/", link: "About taxonomies"}
+      - {t: 5.03, text: "Each design is drawn from its geometry", doc: "/webinterface/probe-catalog/", link: "More about the probe catalog"}
+      - {t: 7.43, text: "Species and strains come from shared taxonomies", doc: "/datamodel/taxonomies/", link: "About taxonomies"}
+      - {t: 12.3, text: "Atlases bring their brain-region trees: filter any list by region", doc: "/webinterface/atlases-and-coordinates/", link: "More about atlases"}
   - file: "04-open-science.webm"
     poster: "04-open-science.jpg"
     title: "Open science"
-    text: "Public projects, JSON exports for NWB conversion, and STAR Methods reports"
+    text: "Public projects on the portal and API, JSON exports for NWB conversion, and STAR Methods reports"
     doc: "/tutorials/sharing-project-publicly/"
     link: "How to share a project publicly"
     cues:
       - {t: 0.0, text: "Make a project public in one step", doc: "/tutorials/sharing-project-publicly/", link: "How to share a project publicly"}
-      - {t: 2.4, text: "Its records then appear on the public portal and API", doc: "/tutorials/sharing-project-publicly/", link: "How to share a project publicly"}
-      - {t: 5.57, text: "Download a whole project, or one session to convert to NWB", doc: "/tutorials/exporting-to-nwb/", link: "How to export to NWB"}
-      - {t: 12.9, text: "A STAR Methods draft with the RRIDs for your paper", doc: "/webinterface/exports-and-reports/", link: "More about exports and reports"}
+      - {t: 2.23, text: "Everything it refers to goes with it, after a confirmation", doc: "/tutorials/sharing-project-publicly/", link: "What becomes public"}
+      - {t: 5.1, text: "Public projects are read on the portal and through the public API, no account needed", doc: "/publicdata/", link: "About public data"}
+      - {t: 7.7, text: "Download a whole project, or one session to convert to NWB", doc: "/tutorials/exporting-to-nwb/", link: "How to export to NWB"}
+      - {t: 17.27, text: "Reports come from the project's Export menu", doc: "/webinterface/exports-and-reports/", link: "More about exports and reports"}
+      - {t: 22.0, text: "A STAR Methods draft with the RRIDs for your paper", doc: "/webinterface/exports-and-reports/", link: "More about exports and reports"}
   - file: "05-programmable.webm"
     poster: "05-programmable.jpg"
     title: "Programmable and AI ready"
-    text: "Every record through the REST API, and plain-language search with the AI assistant"
+    text: "Every record through the REST API from Python or MATLAB, and plain-language search with the AI assistant"
     doc: "/api/"
     link: "Explore the API"
     cues:
       - {t: 0.0, text: "Every record through the REST API, from Python or MATLAB", doc: "/api/", link: "Explore the API"}
-      - {t: 6.0, text: "The AI assistant offers plain-language, semantic search of your records", doc: "/webinterface/ai-assistant/", link: "About the AI assistant"}
+      - {t: 6.2, text: "The AI assistant searches your records in plain language", doc: "/webinterface/ai-assistant/", link: "About the AI assistant"}
+      - {t: 15.0, text: "It answers with the matching records, within your permissions", doc: "/tutorials/working-with-ai/", link: "Working with AI"}
   - file: "06-integrations.webm"
     poster: "06-integrations.jpg"
-    title: "Integrations"
-    text: "Batch entry and CSV import, every row checked before anything is created"
+    title: "Integrations and import"
+    text: "Batch entry checked row by row, CSV import with templates, and your SoftMouse colony"
     doc: "/webinterface/import-tool/"
     link: "Learn about the import tool"
     cues:
       - {t: 0.0, text: "Enter rows one field at a time, or paste them from a spreadsheet", doc: "/webinterface/import-tool/", link: "Learn about the import tool"}
-      - {t: 15.17, text: "Each row is checked before anything is imported", doc: "/webinterface/import-tool/", link: "Learn about the import tool"}
+      - {t: 19.34, text: "Each row is checked before anything is imported", doc: "/webinterface/import-tool/", link: "Learn about the import tool"}
+      - {t: 25.17, text: "Or upload a CSV made from a template"}
+      - {t: 33.47, text: "Bring your colony over from SoftMouse: upload its export", doc: "/webinterface/softmouse/", link: "About the SoftMouse import"}

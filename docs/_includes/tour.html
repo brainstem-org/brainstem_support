@@ -1,11 +1,14 @@
 {%- comment -%}
 The landing-page tour: one short silent clip per key feature, each made of shots. The tour opens on a welcome card
 (`intro` in the data: what BrainSTEM is) and goes straight into the first feature. A chapter opens on a title card (its
-number, title and one line on what it shows), and every later shot on a card naming what comes next, the clip held
-behind it, each long enough to read (a click skips it); the player then plays the whole chapter, stops on its last frame and waits: Next opens the following chapter, Back the previous one, Replay plays this one
-again; the arrow keys do the same while the tour has focus. The captions are not part of the clips: each chapter's
-cues (seconds into its clip and a sentence, one per shot) are shown under the video as it reaches them, and the
-progress bar has a segment per shot. The list that follows the include, marked `{: .tour-features }`, becomes the
+number, title and one line on what it shows), held long enough to read (a click skips it); the player then plays the
+whole chapter through, each later shot opening on a short banner along the bottom of the picture naming what it
+shows (the clip holds just long enough to read it; a click skips it), holds the last frame for a moment and goes on
+to the next chapter, so left alone the tour plays once from start to end and waits on the last chapter. Next opens the following chapter at once, Back the
+previous one, Replay plays this one again; the arrow keys do the same while the tour has focus, and any of them
+stops the automatic advance for that chapter. The captions are not part of the clips: each chapter's cues (seconds
+into its clip and a sentence, one per shot) are shown under the video as it reaches them, the caption flashing as it
+changes, and the progress bar has a segment per shot. The list that follows the include, marked `{: .tour-features }`, becomes the
 chapter picker (one item per chapter, in order): clicking an item plays its clip, and the playing one's number is
 filled in. Without such a list, a row of chapter buttons under the video does the same. Chapters come from
 docs/_data/tour.yml and the clips and posters from
@@ -19,6 +22,7 @@ Usage: {% include tour.html %}
     <video class="tour__video is-active" muted playsinline preload="auto" aria-hidden="true" poster="{{ clips }}{{ tour[0].poster }}"></video>
     <video class="tour__video" muted playsinline preload="auto" aria-hidden="true"></video>
     <div class="tour__card" data-tour-card hidden><span class="tour__card-kicker"></span><strong class="tour__card-title"></strong><span class="tour__card-text"></span></div>
+    <div class="tour__shot" data-tour-shot hidden><span class="tour__shot-kicker">Next</span><span class="tour__shot-text"></span></div>
     <button type="button" class="tour__play" data-tour-start hidden aria-label="Play the tour">&#9654;</button>
     <button type="button" class="tour__expand" data-tour-expand aria-label="Watch full screen" title="Full screen">&#x26F6;</button>
   </div>
@@ -43,7 +47,7 @@ Usage: {% include tour.html %}
   .tour__stage { position: relative; aspect-ratio: 16 / 10; border: 1px solid #e2e0ea; border-radius: 8px 8px 0 0; overflow: hidden; background: #f7f6fb; }
   .tour__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.25s ease; }
   .tour__video.is-active { opacity: 1; }
-  .tour__expand { position: absolute; right: 10px; top: 10px; width: 34px; height: 34px; border-radius: 50%; border: 0; cursor: pointer;
+  .tour__expand { position: absolute; right: 10px; top: 10px; z-index: 3; width: 34px; height: 34px; border-radius: 50%; border: 0; cursor: pointer;
     background: rgba(38, 22, 58, 0.75); color: #fff; font-size: 16px; line-height: 34px; padding: 0; }
   .tour__play { position: absolute; left: 50%; top: 50%; z-index: 2; width: 4rem; height: 4rem; margin: -2rem 0 0 -2rem; border: 0;
     border-radius: 50%; background: #8122a1; color: #fff; font-size: 1.5rem; cursor: pointer; box-shadow: 0 6px 20px rgba(38, 22, 58, 0.35); }
@@ -55,12 +59,21 @@ Usage: {% include tour.html %}
   .tour__card-title { font-size: clamp(1.1rem, 3.4vw, 1.9rem); line-height: 1.2; max-width: 34rem; }
   .tour__card-text { font-size: clamp(0.85rem, 1.8vw, 1rem); line-height: 1.4; max-width: 32rem; opacity: 0.88; }
   .tour__card-text:empty { display: none; }
+  .tour__shot { cursor: pointer; position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; display: flex; align-items: baseline; gap: 0.7rem;
+    padding: 0.7rem 1.2rem 0.8rem; background: linear-gradient(to top, rgba(28, 18, 48, 0.92), rgba(28, 18, 48, 0.78)); color: #fff;
+    opacity: 0; transform: translateY(0.4rem); transition: opacity 0.35s ease, transform 0.35s ease; }
+  .tour__shot.is-on { opacity: 1; transform: none; }
+  .tour__shot-kicker { flex: none; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #e4b8f7; }
+  .tour__shot-text { font-size: clamp(0.9rem, 2.2vw, 1.15rem); font-weight: 600; line-height: 1.3; }
   .tour__progress { display: flex; gap: 3px; height: 4px; }
   .tour__progress span { flex: 1; background: rgba(129, 34, 161, 0.15); overflow: hidden; }
   .tour__progress span::after { content: ""; display: block; height: 100%; background: #8122a1; transform: scaleX(var(--done, 0)); transform-origin: left; }
   .tour__bar { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem 1rem; margin-top: 0.55rem; }
   .tour__caption { margin: 0; min-height: 2.6em; font-size: 0.95rem; line-height: 1.35; color: #26163a; }
   .tour__cue { font-weight: 600; margin-right: 0.4rem; }
+  .tour__cue.is-fresh { animation: tour-cue 1.1s ease; }
+  @keyframes tour-cue { 0% { color: #8122a1; } 100% { color: inherit; } }
+  @media (prefers-reduced-motion: reduce) { .tour__cue.is-fresh { animation: none; } }
   .tour__caption a { font-size: 0.85rem; white-space: nowrap; }
   .tour__controls { display: flex; gap: 0.35rem; flex: none; }
   .tour__btn { font: inherit; font-size: 1rem; line-height: 1; cursor: pointer; min-width: 2.2rem; height: 2.2rem; padding: 0 0.6rem;
@@ -112,8 +125,41 @@ Usage: {% include tour.html %}
   var cur = 0, chapter = 0, shots = [], visible = true, started = false, pending = null;
   /* The opening card (`intro` in the data): what BrainSTEM is, shown once before the first feature. */
   var welcomed = !root.dataset.introTitle;
-  /* The title card: shown over the held clip, then `then` runs. shown: the last shot that has had its card. */
-  var card = root.querySelector('[data-tour-card]'), cardTimer = null, cardThen = null, shown = 0;
+  /* The title card: shown over the held clip, then `then` runs. */
+  var card = root.querySelector('[data-tour-card]'), cardTimer = null, cardThen = null;
+  /* The hold on a chapter's last frame before the next chapter starts by itself. */
+  var HOLD = 2800, hold = null;
+  /* The banner naming a new shot, the clip held behind it; shown: the last shot that has had its banner. */
+  var shot = root.querySelector('[data-tour-shot]'), shotTimer = null, shotFade = null, shotThen = null, shown = 0;
+  function showShot(caption, then) {
+    var ms = Math.max(1500, 900 + 160 * caption.split(/\s+/).filter(Boolean).length);
+    clearTimeout(shotTimer);
+    clearTimeout(shotFade);
+    shotThen = then;
+    shot.querySelector('.tour__shot-text').textContent = caption;
+    shot.hidden = false;
+    shot.getBoundingClientRect();
+    shot.classList.add('is-on');
+    shotTimer = setTimeout(endShot, ms);
+  }
+  /* The clip goes on; the banner stays a moment longer, over the first of the shot. */
+  function endShot() {
+    clearTimeout(shotTimer);
+    shotTimer = null;
+    var then = shotThen;
+    shotThen = null;
+    if (then) { then(); }
+    shotFade = setTimeout(hideShot, 1000);
+  }
+  function hideShot() {
+    clearTimeout(shotTimer);
+    clearTimeout(shotFade);
+    shotTimer = null;
+    shotThen = null;
+    shot.classList.remove('is-on');
+    setTimeout(function () { if (!shot.classList.contains('is-on')) { shot.hidden = true; } }, 400);
+  }
+  shot.addEventListener('click', function () { if (shotTimer) { endShot(); } });
   /* Long enough to read: 1.5 s plus 0.3 s a word, and at least `least` ms. */
   function readingTime(words, least) { return Math.max(least, 1500 + 300 * words.split(/\s+/).filter(Boolean).length); }
   function showCard(kicker, title, text, least, then) {
@@ -165,9 +211,17 @@ Usage: {% include tour.html %}
       var end = Math.min(s.end, total || s.end);
       var done = v.ended ? 1 : Math.max(0, Math.min(1, (now - s.t) / Math.max(0.1, end - s.t)));
       progress.children[i].style.setProperty('--done', done);
-      if (now + 0.05 >= s.t && now < s.end && text.textContent !== s.text) { text.textContent = s.text; setLink(s); }
+      if (now + 0.05 >= s.t && now < s.end && text.textContent !== s.text) { text.textContent = s.text; setLink(s); flash(); }
     });
   }
+  /* The caption flashes when it changes (not on a chapter's first shot, where the card has just named it). */
+  function flash() {
+    if (!(video().currentTime > 0.5)) { return; }
+    text.classList.remove('is-fresh');
+    text.getBoundingClientRect();
+    text.classList.add('is-fresh');
+  }
+  text.addEventListener('animationend', function () { text.classList.remove('is-fresh'); });
   /* The link under the video: the shot's own page when it has one, else the chapter's. */
   var base = (root.dataset.base || '/').replace(/\/$/, '');
   function setLink(shot) {
@@ -183,7 +237,8 @@ Usage: {% include tour.html %}
     next.setAttribute('aria-label', label);
     next.title = label + ' (\u2192)';
   }
-  /* While the clip plays, the caption and progress follow it every frame; at its end the tour waits for Next. */
+  /* While the clip plays, the caption and progress follow it every frame; at its end the tour holds the last
+     frame, then goes on to the next chapter (on the last one, and with reduced motion, it waits for the reader). */
   var looping = false;
   function loop() {
     if (looping) { return; }
@@ -191,17 +246,25 @@ Usage: {% include tour.html %}
     (function step() {
       var v = video();
       draw();
-      /* A new shot: the clip holds while a card names it. */
+      /* A new shot: the clip holds while the banner names it. */
       var now = v.currentTime, at = 0;
       shots.forEach(function (s, i) { if (s.t <= now + 0.05) { at = i; } });
       if (at > shown && !v.ended) {
         shown = at;
         v.pause();
         looping = false;
-        showCard('Next', shots[at].text, '', 3000, function () { if (visible) { v.play().then(loop).catch(function () {}); } });
+        showShot(shots[at].text, function () { if (visible) { v.play().then(loop).catch(function () {}); } });
         return;
       }
-      if (v.paused || v.ended) { looping = false; setControls(v.ended); return; }
+      if (v.paused || v.ended) {
+        looping = false;
+        setControls(v.ended);
+        if (v.ended && !reduced && chapter < chapters.length - 1) {
+          clearTimeout(hold);
+          hold = setTimeout(function () { hold = null; if (visible && video().ended) { load(chapter + 1); } }, HOLD);
+        }
+        return;
+      }
       requestAnimationFrame(step);
     })();
   }
@@ -219,9 +282,13 @@ Usage: {% include tour.html %}
   }
   function load(i) {
     /* Whatever was playing stops at once, not when the next clip has loaded. */
+    clearTimeout(hold);
+    hold = null;
     halt(videos[cur]);
     halt(videos[1 - cur]);
     hideCard();
+    hideShot();
+    shown = 0;
     if (started) { start.hidden = true; }
     chapter = i;
     var button = chapters[i];
@@ -258,7 +325,7 @@ Usage: {% include tour.html %}
       load((chapter + 1) % chapters.length);
     }
     else if (step < 0) { load(Math.max(0, chapter - 1)); }
-    else { halt(video()); chapterCard(); }
+    else { clearTimeout(hold); hold = null; halt(video()); hideShot(); chapterCard(); }
   }
   start.addEventListener('click', function () {
     start.hidden = true;
@@ -314,8 +381,8 @@ Usage: {% include tour.html %}
     new IntersectionObserver(function (entries) {
       visible = entries[0].isIntersecting;
       var v = video();
-      if (!visible) { v.pause(); return; }
-      if (!pending && !cardTimer && v.paused && !v.ended && (started || !(reduced || small))) { v.play().then(loop).catch(function () {}); }
+      if (!visible) { v.pause(); clearTimeout(hold); hold = null; return; }
+      if (!pending && !cardTimer && !shotTimer && v.paused && !v.ended && (started || !(reduced || small))) { v.play().then(loop).catch(function () {}); }
     }, { threshold: 0.4 }).observe(root);
   }
   cur = 1;

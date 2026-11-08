@@ -60,7 +60,8 @@ NUMBER_FIELDS_JS = """(() => {
             .observe(document.documentElement, {childList: true, subtree: true});
     });
 })();"""
-DEMO_EMAILS = {"alex.sample@brainstem.org"}  # the demo dataset's other member
+INVITE_EMAIL = "maria.colleague@university.edu"  # typed into the tour's invitation form, never sent
+DEMO_EMAILS = {"alex.sample@brainstem.org", INVITE_EMAIL}  # the demo dataset's other member, and the tour's invitee
 ALLOWED_EMAILS = DEMO_EMAILS | {e.strip().lower() for e in os.environ.get("BRAINSTEM_SCREENSHOT_ALLOW_EMAILS", "").split(",") if e.strip()}
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
 
@@ -383,8 +384,12 @@ SHORT_EDITOR_CSS = (".ck.ck-editor__main > .ck-editor__editable, .ck-editor__edi
 # The AI assistant answers only on a server with a working provider; set BRAINSTEM_SCREENSHOT_ASSISTANT=1 there and
 # ai-assistant-drawer-results shows the answer (result cards, Show all and the link to the list).
 ASSISTANT_ANSWERS = os.environ.get("BRAINSTEM_SCREENSHOT_ASSISTANT") == "1"
+# A question the demo dataset answers with records (the rats with a silicon probe implant targeting CA1), worded so
+# that the model reads it the same way each time ("rats" it sometimes took for a strain or another species); one it
+# answers with "no matching records" or a rejected plan makes no picture.
+ASSISTANT_QUESTION_TEXT = "Which subjects have a silicon probe implant in CA1?"
 ASSISTANT_QUESTION = [("click_sel", ".brainstem-assistant__launcher"), ("wait", 1200),
-                      ("fill", "[class*=brainstem-assistant] textarea", "Reversal sessions of mouse M09"), ("wait", 600)]
+                      ("fill", "[class*=brainstem-assistant] textarea", ASSISTANT_QUESTION_TEXT), ("wait", 600)]
 
 
 TAB = "fieldset.module.selected"  # the open tab of a details or change page
@@ -745,12 +750,13 @@ def record_walkthroughs(p, slugs: list[str]) -> tuple[list, list]:
 # is a list of shots; a shot opens a screen (`go`, a path or callable(page) -> path; none stays on a blank page),
 # readies it unrecorded (`prepare`) and runs its `steps`, then its `after` steps unrecorded. Only what follows a
 # ("frame", targets, caption[, options]) step is recorded, so every shot starts with one: it points the camera at the
-# targets at once, never zooming in from the whole page, and the clip cuts from the previous framing to it. Targets
+# targets at once, never zooming in from the whole page, and the clip cuts from the previous framing to it (with a
+# None caption, a plain cut inside a shot, for a wait the viewer need not watch after a ("pause",)). Targets
 # are a selector, a list of fallbacks (the first with a visible match) or, with {"union": True}, a list whose every
 # entry (a selector or its fallbacks) is framed together; None frames the whole screen. Options: max zoom, pad (screen
 # pixels kept around the targets) and maxh (CSS pixels of a tall target to keep). More tour steps: ("mark", selector
-# or fallbacks, tag[, ms]) outlines one element with a short tag beside it, replacing the previous mark, and ("pause",)
-# stops recording until the next frame, for a wait the viewer need not watch. A mark's tag goes above the element, left of
+# or fallbacks, tag[, ms]) outlines one element with a short tag beside it, replacing the previous mark, ("unmark",)
+# removes it, and ("pause",) stops recording until the next frame, for a wait the viewer need not watch. A mark's tag goes above the element, left of
 # a table cell, or where a fifth item says ("below", "left", "right", "inset"). Captions are not drawn into the clip:
 # each frame's caption is a cue in docs/_data/tour.yml, shown under the video from that moment. Clips go to
 # docs/assets/images/walkthroughs/tour/<nn>-<slug>.webm with a poster <nn>-<slug>.jpg (the end of the first shot).
@@ -778,6 +784,50 @@ def open_assistant(page):
     page.locator(".brainstem-assistant__drawer.is-open textarea").first.wait_for(state="visible", timeout=8000)
 
 
+def wait_assistant_answer(page, tries: int = 3):
+    """Wait for the assistant's answer to the question just searched. The model reads a question a little
+    differently each time, so an answer without records (none found, or a search plan the server rejected) is asked
+    again, off camera, up to `tries` times; still none, and the chapter fails so that it is recorded again."""
+    drawer = page.locator(".brainstem-assistant__drawer")
+    for attempt in range(tries):
+        page.wait_for_function("""() => { const d = document.querySelector('.brainstem-assistant__drawer');
+            return d && !/Searching/.test(d.innerText)
+                && (d.querySelector('.llm-assistant__card, .llm-assistant__empty') || /Search stopped|Retry|Error/.test(d.innerText)); }""",
+                               timeout=180000)
+        if drawer.locator(".llm-assistant__card").count():
+            return
+        text = drawer.first.inner_text()
+        if "allowance is exhausted" in text:
+            raise RuntimeError("the assistant's free token allowance is exhausted (raise LLM_ASSISTANT_FREE_*_TOKENS on the server)")
+        if attempt == tries - 1:
+            break
+        print(f"        (the assistant answered without records; asked again, {attempt + 2} of {tries})")
+        clear = drawer.locator("button:has-text('Clear result')").first
+        if clear.count() and clear.is_visible():
+            clear.click()
+            page.wait_for_timeout(500)
+        page.fill("[class*=brainstem-assistant] textarea", ASSISTANT_QUESTION_TEXT)
+        page.locator(".brainstem-assistant__submit").first.click()
+        page.wait_for_timeout(1500)
+    raise RuntimeError(f"the assistant answered {ASSISTANT_QUESTION_TEXT!r} without records, {tries} times")
+
+
+def scroll_assistant_results(page, selector: str):
+    """Scroll the drawer's results (their own scrolling box) smoothly until `selector` is at the top."""
+    page.locator(selector).first.evaluate("e => e.scrollIntoView({behavior: 'smooth', block: 'start'})")
+
+
+def open_star_methods(page):
+    """From a project's open Export menu, the pointer clicks STAR Methods (preview) and the report opens in this tab
+    (the menu's link opens a new one, which a recording of this tab would not show)."""
+    link = page.locator(".exportlink__dropdown__option[href*='star_methods'][href*='html']").first
+    point(page, link, click=True)
+    link.evaluate("a => a.removeAttribute('target')")
+    with page.expect_navigation(wait_until="networkidle"):
+        link.click(timeout=8000)
+    page.add_style_tag(content=HIDE_CSS)
+
+
 CODE_SNIPPET = ('from brainstem_api_tools import BrainstemClient\n\n'
                 'client = BrainstemClient()\n'
                 'response = client.load("session", filters={"name.icontains": "Reversal"})\n'
@@ -791,14 +841,14 @@ html, body { margin: 0; height: 100%; background: #f4f1f8; font-family: """ + 'I
 pre { margin: 0; padding: 18px 24px; font: 20px/1.5 "SFMono-Regular", Menlo, Consolas, monospace; color: #f2ecfa; white-space: pre-wrap; }
 .out { opacity: 0; transition: opacity .5s ease; } .out.on { opacity: 1; }
 </style></head><body><div class="wrap">
-<div class="card"><div class="bar">Python</div><pre id="code"> </pre></div>
+<div class="card"><div class="bar">Python</div><pre id="code">__HEAD__</pre></div>
 <div class="card out" id="out"><div class="bar">Response (excerpt)</div><pre>__JSON__</pre></div>
 </div><script>
 const code = __CODE__;
 window.tourType = () => {
-    const el = document.getElementById('code'); let i = 0;
+    const el = document.getElementById('code'); let i = el.textContent.length;
     const tick = () => { el.textContent = code.slice(0, ++i);
-        if (i < code.length) { setTimeout(tick, 18); } else { setTimeout(() => document.getElementById('out').classList.add('on'), 350); } };
+        if (i < code.length) { setTimeout(tick, 14); } else { setTimeout(() => document.getElementById('out').classList.add('on'), 350); } };
     tick();
 };
 </script></body></html>"""
@@ -817,12 +867,17 @@ def code_card(page):
     if found:
         raise RuntimeError(f"the API response shows another account's email ({', '.join(sorted(found))})")
     page.goto("about:blank")  # not over a BrainSTEM page, whose content security policy blocks the card's script
-    page.set_content(CODE_CARD.replace("__JSON__", html.escape(text)).replace("__CODE__", json.dumps(CODE_SNIPPET)))
+    # The import line is on the card from the start; the call is typed.
+    head = CODE_SNIPPET[:CODE_SNIPPET.index("\n\n") + 2]
+    page.set_content(CODE_CARD.replace("__JSON__", html.escape(text)).replace("__CODE__", json.dumps(CODE_SNIPPET))
+                     .replace("__HEAD__", html.escape(head)))
 
 
 SESSION_R02 = entry("/private/stem/session/", "R02+Steve+Reversal+01", "")
+SESSION_R06 = entry("/private/stem/session/", "R06+Carol+Reversal+01", "")  # the implanted rat's own session
 PROJECT = "Neural+dynamics"
-ROLE_CELL = "table:has(th:has-text('Contributor')) tr:has(td) >> nth=0 >> td >> nth={}"
+# The group table's first row (the demo lab, with every role), not the people table above it.
+ROLE_CELL = "table:has(th:has-text('Group')):has(th:has-text('Contributor')) tr:has(td) >> nth=0 >> td >> nth={}"
 IMPORT_STATUS = "table:visible tbody tr >> nth={} >> .guided-import-editor__row-status"
 GRID = "table:visible tbody tr >> nth={} >> td >> nth={} >> {}"  # row, column, control of the import grid
 DIALOG = ["dialog[open]", "[role=dialog]:visible", ".modal-content:visible", "text=Make this project public?"]
@@ -841,6 +896,108 @@ def import_grid_rows(page):
         select_by_text(grid.locator("tbody tr").nth(index).locator("td").nth(6).locator("select"), "Active")
 
 
+PASTE_JS = """(el, text) => {
+    const data = new DataTransfer();
+    data.setData('text/plain', text);
+    el.dispatchEvent(new ClipboardEvent('paste', {clipboardData: data, bubbles: true, cancelable: true}));
+}"""
+
+
+def paste_second_row(page):
+    """Paste a spreadsheet row (tab-separated: project, name and sex, no species) into the grid's second row, from
+    its first cell, as a reader would after copying it from a sheet; the pointer clicks the cell first."""
+    cell = page.locator(GRID.format(1, 1, "select")).first
+    point(page, [GRID.format(1, 1, "select + .select2"), GRID.format(1, 1, "select")], click=True)
+    cell.evaluate(PASTE_JS, "Neural dynamics of adaptive spatial decision-making\tMouse M11 - Lola\tF")
+    page.wait_for_timeout(700)
+
+
+def upload_csv(page):
+    """On the CSV import page's Subjects tab, choose a CSV through the drop zone: the pointer clicks it and the file
+    chooser is answered with the subjects template, saved under a filled-in name (nothing is imported)."""
+    import tempfile
+    label = page.locator("#subjects-tab .lab-importer__file-input-label").first
+    template = page.request.get(BASE + "/private/import-tool/template/?import_model=subjects")
+    folder = Path(tempfile.mkdtemp())
+    csv = folder / "new_mice_2026-11.csv"
+    csv.write_bytes(template.body() if template.ok else b"name,sex,species,strain\nMouse M10 - Bruno,M,Mus musculus,C57BL/6J\n")
+    point(page, label, click=True)
+    with page.expect_file_chooser() as chooser:
+        label.click()
+    chooser.value.set_files(str(csv))
+
+
+def zoom_atlas(page, notches: int = 6):
+    """Bring the 3D brain closer in the coordinate viewer: the wheel over the canvas, as a reader would."""
+    canvas = page.locator(".coordinate-preview-modal__modal canvas").first
+    box = canvas.bounding_box()
+    page.mouse.move(box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
+    for _ in range(notches):
+        page.mouse.wheel(0, 250)
+        page.wait_for_timeout(120)
+
+
+def softmouse_credential(page, create: bool = True):
+    """The SoftMouse browse page needs a saved credential: one is created for the demo user through the checkout
+    (BRAINSTEM_CHECKOUT) when there is none, with placeholder values (the page's Excel upload needs no API), and
+    removed again after the shot when this run created it."""
+    if not CHECKOUT:
+        print("        (no BRAINSTEM_CHECKOUT: the SoftMouse browse page needs a saved credential)")
+        return
+    code = (
+        "from django.contrib.auth import get_user_model\n"
+        "from softmouse_integration.models import SoftMouseCredential\n"
+        f"u=get_user_model().objects.get(email='{USER}')\n"
+        "c=SoftMouseCredential.objects.filter(user=u).first()\n"
+        + ("if not c:\n"
+           "    c=SoftMouseCredential(user=u, username='lab-colony', is_active=True)\n"
+           "    c.set_password('placeholder')\n"
+           "    c.save()\n"
+           "    print('created')\n"
+           "else:\n"
+           "    print('kept')\n"
+           if create else
+           "if c and c.username == 'lab-colony' and getattr(c, '_docs', True):\n"
+           "    c.delete()\n"
+           "    print('removed')\n")
+    )
+    python = Path(CHECKOUT) / ".venv" / "bin" / "python"
+    out = subprocess.run([str(python), "manage.py", "shell", "-c", code], cwd=CHECKOUT, capture_output=True, text=True)
+    print(f"        (SoftMouse credential: {out.stdout.strip().splitlines()[-1] if out.stdout.strip() else out.stderr.strip()[-120:]})")
+
+
+def softmouse_export() -> Path:
+    """A small SoftMouse Animal List export (the single-sheet format the import tool reads), written with openpyxl."""
+    import tempfile
+    import openpyxl
+    book = openpyxl.Workbook()
+    sheet = book.active
+    sheet.title = "Animal List"
+    sheet.append(["Animal SID", "Sex", "State", "Date of Birth", "Date of Death", "Strain", "Genotype"])
+    for row in (["M0421", "Female", "Active", "2026-06-14", None, "C57BL/6J", "Cre/+"],
+                ["M0422", "Female", "Active", "2026-06-14", None, "C57BL/6J", "+/+"],
+                ["M0423", "Male", "Active", "2026-06-14", None, "C57BL/6J", "Cre/+"],
+                ["M0431", "Male", "Active", "2026-07-02", None, "Ai14", "flox/flox"],
+                ["M0432", "Female", "Active", "2026-07-02", None, "Ai14", "flox/+"],
+                ["M0398", "Male", "Dead", "2026-03-20", "2026-09-30", "C57BL/6J", "+/+"]):
+        sheet.append(row)
+    file = Path(tempfile.mkdtemp()) / "SoftMouse_AnimalList_2026-11.xlsx"
+    book.save(file)
+    return file
+
+
+def softmouse_upload(page):
+    """On the SoftMouse browse page in its file mode, choose the export through Upload Excel (the pointer clicks it
+    and the file chooser is answered), then wait for the animals to be listed."""
+    label = page.locator("label[for=xlsx-upload-input]").first
+    point(page, label, click=True)
+    with page.expect_file_chooser() as chooser:
+        label.click()
+    chooser.value.set_files(str(softmouse_export()))
+    page.wait_for_selector("#animals-content table tbody tr", timeout=20000)
+    page.wait_for_timeout(600)
+
+
 def click_public(page):
     """Flip the project's visibility switch to Public, with the pointer: its label, else the radio button itself."""
     label = page.locator("label[for=id_is_public_1]").locator("visible=true").first
@@ -854,150 +1011,272 @@ def click_public(page):
 
 # The card the tour opens on, before the first feature: what BrainSTEM is, not yet any feature.
 TOUR_INTRO = {"title": "BrainSTEM at a glance",
-              "text": "An electronic lab notebook for experimental neuroscience. A short tour of its key features follows."}
+              "text": "A collaborative lab notebook for experimental neuroscience. Six features, about two minutes."}
+# Each chapter is ten to twenty seconds: three or four shots of one idea each, and nothing the viewer need watch
+# twice (a field picked a second time, a list scrolled). What a shot needs on the screen but not in the clip is set
+# up in `prepare` or after a ("pause",), which stops the recording until the next frame.
 TOUR = [
     {"slug": "records", "link": "See the data model", "title": "Complete experimental records",
-     "text": "A procedure filled in field by field, placed in the atlas, and the sessions that follow", "doc": "/datamodel/",
+     "text": "A typed procedure placed in the atlas, the sessions that follow, and a specimen set cut from a subject",
+     "doc": "/datamodel/",
      "shots": [
-         # A new silicon probe implant filled in field by field, down to its coordinates (nothing is saved).
+         # A new silicon probe implant filled in on camera, every option picked with the pointer: its type and
+         # subject, the setup and, from the equipment the setup narrows the list to, the stereotaxic frame, then the
+         # atlas and target region, then the coordinates its type adds (nothing is saved).
          {"go": "/private/modules/procedure/add/", "prepare": [("wait", 600)],
-          "steps": [("frame", field("type"), "Every procedure, recording and log has a type", {"below": 240, "max": 1.8}),
-                    ("wait", 400), ("select2", "#id_type", "Silicon probe"), ("wait", 1200),
+          "steps": [("frame", {"union": True, "targets": [["h1.custom-content__title", "h1"], field("type")]},
+                     "Every procedure, recording and log has a type", {"below": 230, "max": 1.8}),
+                    ("wait", 300), ("select2", "#id_type", "Silicon probe"), ("wait", 600),
                     ("move", {"union": True, "targets": [field("subject"), field("target_regions")]},
-                     "Link it to its subject, setup, atlas and target brain region", {"ms": 1000, "below": 200}),
+                     "Linked to its subject, the setup and equipment used, its atlas and target region", {"ms": 900, "below": 200}),
                     ("select2", "#id_subject", "R06"), ("wait", 300),
-                    ("select2", "#id_equipment_setup", "Rat Electrophysiology"), ("wait", 300),
-                    ("select2", "#id_target_regions_atlas", "Waxholm"), ("wait", 900),
+                    ("select2", "#id_equipment_setup", "Stereotaxic Surgery"), ("wait", 400),
+                    # Equipment takes several values, so its list stays open after a pick.
+                    ("select2", "#id_equipment", "Stereotaxic frame"), ("wait", 300),
+                    ("select2", "#id_target_regions_atlas", "Waxholm"), ("wait", 500),
                     # Target regions takes several values, so its list stays open after a pick.
-                    ("optional", ("select2", "#id_target_regions", "CA1")), ("wait", 700), ("press", "body", "Escape"), ("wait", 500),
-                    ("move", {"union": True, "targets": ["#id_coordinates + .select2", 'input[name="root.depth[value]"]']},
-                     "Each type adds its own fields: here the implant's stereotaxic coordinates", {"ms": 1400, "below": 30}),
+                    ("optional", ("select2", "#id_target_regions", "CA1")), ("wait", 400), ("press", "body", "Escape"), ("wait", 300),
                     # The default system (Bregma-based surface coordinates with depth) is the implant's.
-                    ("point", "#id_coordinates + .select2"), ("wait", 600),
+                    ("move", {"union": True, "targets": ["#id_coordinates + .select2", 'input[name="root.depth[value]"]']},
+                     "Each type adds its own fields: here the implant's stereotaxic coordinates", {"ms": 1200, "below": 30}),
+                    ("wait", 300),
                     ("type", 'input[name="root.apCoordinate[value]"]', "-3.6"),
                     ("type", 'input[name="root.mlCoordinate[value]"]', "2.4"),
-                    ("type", 'input[name="root.depth[value]"]', "2.7"), ("wait", 1000)]},
-         # The saved implant with the same coordinates, in the atlas (which loads unrecorded).
-         {"go": RAT_IMPLANT, "prepare": [("click_sel", "[data-coordinate-preview-button]"), ("wait_gone", VIEWER_LOADING, 120000), ("wait", 800)],
+                    ("type", 'input[name="root.depth[value]"]', "2.7"), ("wait", 900)]},
+         # The saved implant with the same coordinates in the atlas (loaded unrecorded): the 3D brain, then the
+         # coronal plane (the brain at its full opacity: a quarter, as in the screenshot, is near black in a clip).
+         # The 3D brain closer (the viewer's own zoom), half translucent so the track shows, and turning; the coronal
+         # plane's render (a second or two) is cut out of the clip.
+         {"go": RAT_IMPLANT, "prepare": [("click_sel", "[data-coordinate-preview-button]"), ("wait_gone", VIEWER_LOADING, 120000),
+                                        ("wait", 800), ("js", BRAIN_OPACITY_JS.replace("r.value = 25", "r.value = 40")),
+                                        ("call", zoom_atlas),
+                                        ("js", "const a = document.querySelector('#coordinate-preview-auto-rotate'); if (a && !a.checked) a.click()"),
+                                        ("wait", 800)],
           "steps": [("frame", ".coordinate-preview-modal__modal", "Its coordinates place the implant in the rat brain atlas"),
-                    ("wait", 1000), ("click", "Coronal"), ("wait", 2800)]},
-         {"go": SESSION_R02, "prepare": [("click", "Epochs ("), ("wait", 1200)],
-          "steps": [("frame", ".epochs-timeline", "Sessions with the implanted rat line up their epochs, behavior and recordings",
-                     {"maxh": 520}), ("wait", 800),
-                    ("click_sel", ".epoch-timeline__mode[data-mode=kind]"), ("wait", 2000),
-                    ("click_sel", ".epoch-timeline__mode[data-mode=epoch]"), ("wait", 1300)]}]},
+                    ("wait", 3200), ("click_sel", "[data-coordinate-plane]:has-text('Coronal')"), ("pause",), ("wait", 2500),
+                    ("frame", ".coordinate-preview-modal__modal", None), ("wait", 2200)]},
+         # The implanted rat's session, opened on its header so the page reads as a session; the Epochs tab is
+         # clicked on camera and the camera glides down to the timeline.
+         {"go": SESSION_R06,
+          "steps": [("frame", {"union": True, "targets": [["h1.custom-content__title", "h1"], [".changeform-tabs", ".changeform-tabs-item"]]},
+                     "Sessions with the implanted rat line up their epochs, behavior and recordings", {"maxh": 420}),
+                    ("wait", 700), ("click", "Epochs ("), ("wait", 900),
+                    ("move", ".epochs-timeline", None, {"ms": 1100, "maxh": 520}), ("wait", 900),
+                    ("click_sel", ".epoch-timeline__mode[data-mode=kind]"), ("wait", 1800)]},
+         # Ex vivo: the section series of the two-photon tutorial's mouse, at its lineage.
+         {"go": entry("/private/stem/specimenset/", "Coronal+Section+Series"),
+          "steps": [("frame", {"union": True, "targets": [field("type"), field("subject"), field("source_specimen_set"), field("item_count")]},
+                     "Ex vivo work carries on from a subject: specimen sets, their procedures and slice sessions", {"pad": 36}),
+                    # The two fields share one row, so each mark takes the field's own control, not the row.
+                    ("wait", 400), ("mark", "#id_subject + .select2", "The subject it came from", 1400),
+                    ("mark", "#id_source_specimen_set + .select2", "The block it was cut from", 1500)]}]},
     {"slug": "compliance", "link": "Learn about permissions", "title": "Collaboration and compliance",
-     "text": "Roles for people and groups, procedure episodes with severity and licenses", "doc": "/datamodel/permissions/",
+     "text": "Inviting people and groups to a project by role, and procedure episodes with severity and licenses",
+     "doc": "/datamodel/permissions/",
      "shots": [
+         # The project's permissions page: its members and groups with their roles, then Invite user, where a
+         # colleague's email is typed and a role ticked; the pointer stops on Send invitation (nothing is sent).
          {"go": entry("/private/stem/project/", PROJECT, "manage/"),
-          "steps": [("frame", "table:has(th:has-text('Contributor'))", "Projects share their records with people and groups, by role",
-                     {"pad": 70, "below": 60}), ("wait", 600),
+          "steps": [("frame", {"union": True, "targets": [["h1.custom-content__title", "h1"], "table:has(th:has-text('Contributor'))"]},
+                     "A project shares its records with people and groups, by role", {"maxh": 520}), ("wait", 600),
+                    ("move", {"union": True, "targets": [["li:has-text('Member groups')", "text=Member groups"], ROLE_CELL.format(3)]}, None,
+                     {"ms": 1000, "pad": 36, "below": 24}),
                     # The group's checkbox under each role, tagged below it, where the table ends.
-                    ("mark", ROLE_CELL.format(1), "Add and edit", 1800, "below"),
-                    ("mark", ROLE_CELL.format(2), "Manage members", 1800, "below"),
-                    ("mark", ROLE_CELL.format(3), "Full control", 2000, "below")]},
+                    ("mark", ROLE_CELL.format(1), "Add and edit", 1300, "below"),
+                    ("mark", ROLE_CELL.format(2), "Manage members", 1300, "below"),
+                    ("mark", ROLE_CELL.format(3), "Full control", 1500, "below"), ("unmark",),
+                    ("move", {"union": True, "targets": [["h1.custom-content__title", "h1"], "a:has-text('Invite user')"]}, None, {"ms": 900, "maxh": 300}),
+                    ("wait", 300), ("click_sel", "a:has-text('Invite user')"), ("wait", 1500),
+                    ("frame", {"union": True, "targets": [["h1.custom-content__title", "h1"], "#unique_checkbox_id_2"]},
+                     "Invite a colleague by email and give them a role", {"maxh": 560}),
+                    ("wait", 400), ("type", "#new_member", INVITE_EMAIL), ("wait", 300),
+                    # The styled checkbox hides its input: the pointer goes to its box and the input is ticked by script.
+                    ("point", ["label[for=unique_checkbox_id_0]", "#unique_checkbox_id_0 + label", "#unique_checkbox_id_0"]),
+                    ("js", "document.querySelector('#unique_checkbox_id_0').click()"), ("wait", 600),
+                    ("point", "input[type=submit][name=_save]"), ("wait", 1500)]},
          # No list is opened here: closing a Select2 list picks its highlighted option, which would show (and,
          # without the guard in record_tour, autosave) a severity the episode does not have.
+         # Opened on the page header (its breadcrumb names procedure episodes), then down to the fields.
          {"go": entry("/private/modules/procedureepisode/", "R02+Steve+Electrophysiology"),
-          "steps": [("frame", {"union": True, "targets": [field("intervention_class"), field("severity"), field("licenses")]},
-                     "Procedure episodes record their severity and licenses"), ("wait", 600),
-                    ("mark", field("intervention_class"), "Intervention class", 1700),
-                    ("mark", field("severity"), "Severity", 1800), ("mark", field("licenses"), "Licenses", 1900)]}]},
+          "steps": [("frame", {"union": True, "targets": [["h1.custom-content__title", "h1"], field("intervention_class")]},
+                     "Procedure episodes record their severity and licenses", {"maxh": 520}), ("wait", 1000),
+                    ("move", {"union": True, "targets": [field("intervention_class"), field("severity"), field("licenses")]}, None, {"ms": 1000, "below": 160}),
+                    ("wait", 400),
+                    ("mark", field("intervention_class"), "Intervention class", 1300),
+                    # The severity list opens on the episode's own value and closes on it, so nothing changes.
+                    ("mark", field("severity"), "Severity under the EU scheme", 1200),
+                    ("open_select2", "#id_severity", ""), ("wait", 1500), ("press", "body", "Escape"), ("wait", 300),
+                    ("mark", field("licenses"), "Licenses", 1500), ("unmark",),
+                    # The procedures the episode groups, on their own tab.
+                    ("move", {"union": True, "targets": [["h1.custom-content__title", "h1"], [".changeform-tabs", ".changeform-tabs-item"]]}, None, {"ms": 900, "maxh": 360}),
+                    ("wait", 300), ("click_sel", ".changeform-tabs-item a:has-text('Procedures')"), ("wait", 900),
+                    ("move", ["#procedures-group", "section.inline-group.selected"], "One episode groups the procedures it covers", {"ms": 1000, "maxh": 520}),
+                    ("wait", 2200)]}]},
     {"slug": "resources", "link": "More about the probe catalog", "title": "Shared resources and taxonomies",
-     "text": "A shared catalog of probe designs, devices and reagents, and taxonomies of species and strains",
+     "text": "A catalog of probe designs, devices and reagents, and taxonomies of species, strains and brain regions",
      "doc": "/webinterface/probe-catalog/",
      "shots": [
          {"go": "/private/resources/consumable/?q=Buzsaki",
           "steps": [("frame", "#result_list", "A shared catalog of consumables, with hundreds of probe designs", {"maxh": 420}),
-                    ("wait", 600), ("mark", "#result_list tbody tr:first-child", "One probe design", 1800)]},
+                    ("wait", 500), ("mark", ["text=/\\(\\d+ total\\)/", "#result_list tbody tr:first-child"], "Shared by every lab", 1500),
+                    ("mark", "#result_list tbody tr:first-child", "One probe design", 1500)]},
          {"go": entry("/private/resources/consumable/", "A16x8-5mm-berg-200-160", "schematic.svg"), "prepare": [("wait", 800)],
-          "steps": [("frame", None, "Each design is drawn from its geometry"), ("wait", 2600)]},
+          "steps": [("frame", None, "Each design is drawn from its geometry"), ("wait", 2400)]},
          # The strain list opens filtered to the species, and closes unchanged.
          {"go": entry("/private/stem/subject/", "M09+Antonio"),
           "steps": [("frame", {"union": True, "targets": [field("species"), field("strain")]},
-                     "Species and strains come from shared taxonomies", {"below": 200}), ("wait", 500),
-                    ("open_select2", "#id_strain", "C57"), ("wait", 1500), ("press", "body", "Escape"), ("wait", 400)]}]},
+                     "Species and strains come from shared taxonomies", {"below": 200}), ("wait", 400),
+                    ("open_select2", "#id_strain", "C57"), ("wait", 1500), ("press", "body", "Escape"), ("wait", 300)]},
+         # The procedures list's region filter: the atlas's region tree, one branch opened (nothing is applied).
+         {"go": "/private/modules/procedure/", "prepare": [("wait", 500)],
+          "steps": [("frame", None, "Atlases bring their brain-region trees: filter any list by region"), ("wait", 300),
+                    ("click_sel", ".anatomical-region-filter__trigger"), ("wait_gone", ["Loading"], 10000), ("wait", 400),
+                    # The dialog's head and the top of its tree (the whole dialog is as tall as the screen).
+                    ("move", {"union": True, "targets": [".anatomical-region-modal__header", ".anatomical-region-modal__controls"]}, None,
+                     {"ms": 1000, "below": 250}), ("wait", 900),
+                    ("optional", ("click_sel", ".anatomical-region-node__chevron--closed >> nth=0")), ("wait", 2000)],
+          "after": [("press", "body", "Escape")]}]},
     {"slug": "open-science", "link": "How to share a project publicly", "title": "Open science",
-     "text": "Public projects, JSON exports for NWB conversion, and STAR Methods reports",
+     "text": "Public projects on the portal and API, JSON exports for NWB conversion, and STAR Methods reports",
      "doc": "/tutorials/sharing-project-publicly/",
      "shots": [
          # Cancel closes the dialog: the project stays private (Escape in `after` in case it is still open).
          {"go": entry("/private/stem/project/", PROJECT),
-          "steps": [("frame", field("is_public"), "Make a project public in one step", {"pad": 70}), ("wait", 500),
-                    ("call", click_public), ("wait", 1000),
-                    ("frame", DIALOG, "Its records then appear on the public portal and API"), ("wait", 1600),
-                    ("click_sel", LAST_CANCEL), ("wait", 700)],
+          "steps": [("frame", field("is_public"), "Make a project public in one step", {"pad": 70}), ("wait", 400),
+                    ("call", click_public), ("wait", 900),
+                    ("frame", DIALOG, "Everything it refers to goes with it, after a confirmation"), ("wait", 1500),
+                    ("click_sel", LAST_CANCEL), ("wait", 500)],
           "after": [("press", "body", "Escape")]},
+         # The public portal, which needs no account: its project list (the demo dataset's public project; a server
+         # without one shows an empty list, so check the clip).
+         {"go": "/public/stem/project/", "prepare": [("wait", 600)],
+          "steps": [("frame", ["#result_list", "main"], "Public projects are read on the portal and through the public API, no account needed",
+                     {"maxh": 520}), ("wait", 2600)]},
          {"go": entry("/private/stem/project/", PROJECT, "download/"), "viewport": {"width": 960, "height": 600},
           "steps": [("frame", ".form__wrapper", "Download a whole project, or one session to convert to NWB", {"maxh": 420}),
-                    ("wait", 500), ("mark", field("export_format"), "JSON", 1700, "inset"),
-                    ("pick", "#session", "Reversal 01"), ("wait", 500),
-                    ("mark", field("session"), "One session, one NWB file", 2000, "inset")]},
-         {"go": entry("/private/stem/project/", PROJECT, "export/?format=html&mode=star_methods"),
-          "steps": [("frame", "table:has(th:has-text('Identifier'))", "A STAR Methods draft with the RRIDs for your paper",
-                     {"maxh": 360}), ("wait", 600), ("mark", "th:has-text('Identifier')", "RRIDs", 1700),
-                    ("optional", ("move", "table:has(th:has-text('Identifier')) tbody tr >> nth=5", None, {"ms": 2600})),
-                    ("wait", 800)]}]},
+                    ("wait", 400), ("mark", field("export_format"), "JSON", 1500, "inset"),
+                    ("pick", "#session", "Reversal 01"), ("wait", 400),
+                    ("mark", field("session"), "One session, one NWB file", 1800, "inset")]},
+         # The report from the project's own page: its Export menu opened, STAR Methods (preview) clicked, the report
+         # as it opens, then the camera closing in on its key resources table.
+         {"go": entry("/private/stem/project/", PROJECT),
+          "steps": [("frame", {"union": True, "targets": ["h1", ".exportlink--with-dropdown"]},
+                     "Reports come from the project's Export menu", {"below": 200}), ("wait", 600),
+                    ("click_sel", ".exportlink--with-dropdown"), ("wait", 1300),
+                    ("call", open_star_methods),
+                    ("frame", None, "A STAR Methods draft with the RRIDs for your paper"), ("wait", 2000),
+                    ("move", "table:has(th:has-text('Identifier'))", None, {"ms": 1500, "maxh": 360}), ("wait", 500),
+                    ("mark", "th:has-text('Identifier')", "RRIDs", 1500),
+                    ("optional", ("move", "table:has(th:has-text('Identifier')) tbody tr >> nth=5", None, {"ms": 2200})),
+                    ("wait", 600)]}]},
     {"slug": "programmable", "link": "Explore the API", "title": "Programmable and AI ready",
-     "text": "Every record through the REST API, and plain-language search with the AI assistant", "doc": "/api/",
+     "text": "Every record through the REST API from Python or MATLAB, and plain-language search with the AI assistant",
+     "doc": "/api/",
      "shots": [
          {"prepare": [("call", code_card)],
           "steps": [("frame", None, "Every record through the REST API, from Python or MATLAB"),
-                    ("js", "window.tourType()"), ("wait", 6000)]},
-         # The question box with its examples and Search button, not the whole drawer, which is taller than the screen.
-         # The shot stops before the search: on the development server the assistant's searches still fail or come
-         # back empty. Where they work, add after the typing, so the wait for the answer is cut:
-         #   ("click_sel", ".brainstem-assistant__submit"), ("pause",),
-         #   ("call", lambda p: p.wait_for_selector(".brainstem-assistant__loading", state="hidden", timeout=90000)),
-         #   ("frame", ".brainstem-assistant__drawer", "It answers with the matching records"), ("wait", 3400)
-         # Over the subjects list: the dashboard's activity widgets name other people.
-         {"go": "/private/stem/subject/", "prepare": [("call", open_assistant), ("wait", 1000)],
-          "steps": [("frame", {"union": True, "targets": [".brainstem-assistant__examples", ".brainstem-assistant__submit"]},
-                     "The AI assistant offers plain-language, semantic search of your records", {"max": 1.7}),
-                    ("wait", 400), ("type", "[class*=brainstem-assistant] textarea", "Reversal sessions of mouse M09"),
-                    ("wait", 1800)],
+                    ("js", "window.tourType()"), ("wait", 6200)]},
+         # The assistant opened from its launcher on camera, the question typed into its box (with the examples and
+         # Search button, not the whole drawer, which is taller than the screen) and searched. On a server whose
+         # assistant answers (BRAINSTEM_SCREENSHOT_ASSISTANT=1) the search's wait is cut out and the answer, the
+         # matching records, is framed and scrolled; elsewhere the shot stops at the typed question. Over the
+         # subjects list: the dashboard's activity widgets name other people.
+         {"go": "/private/stem/subject/",
+          "prepare": [("call", lambda p: p.locator(".brainstem-assistant__launcher").first.wait_for(state="visible", timeout=15000)),
+                      ("wait", 400)],
+          "steps": [("frame", None, "The AI assistant searches your records in plain language"), ("wait", 400),
+                    ("click_sel", ".brainstem-assistant__launcher"), ("wait", 1200),
+                    ("move", {"union": True, "targets": [".brainstem-assistant__examples", ".brainstem-assistant__submit"]}, None,
+                     {"ms": 900, "max": 1.6}), ("wait", 300),
+                    ("type", "[class*=brainstem-assistant] textarea", ASSISTANT_QUESTION_TEXT), ("wait", 600)]
+                   + ([("click_sel", ".brainstem-assistant__submit"), ("pause",), ("call", wait_assistant_answer), ("wait", 600),
+                       ("frame", {"union": True, "targets": [".llm-assistant__card-group-title", ".llm-assistant__card >> nth=0"]},
+                        "It answers with the matching records, within your permissions", {"max": 1.5, "maxh": 520}),
+                       ("wait", 2800),
+                       ("call", lambda p: scroll_assistant_results(p, ".llm-assistant__card >> nth=1")), ("wait", 2400)]
+                      if ASSISTANT_ANSWERS else [("wait", 1200)]),
           "after": [("click_sel", ".brainstem-assistant__close")]}]},
-    {"slug": "integrations", "link": "Learn about the import tool", "title": "Integrations",
-     "text": "Batch entry and CSV import, every row checked before anything is created", "doc": "/webinterface/import-tool/",
+    {"slug": "integrations", "link": "Learn about the import tool", "title": "Integrations and import",
+     "text": "Batch entry checked row by row, CSV import with templates, and your SoftMouse colony",
+     "doc": "/webinterface/import-tool/",
      "shots": [
-         # Two rows entered field by field: one complete (new), one without species (blocked).
+         # One row entered field by field (complete: new), one pasted from a spreadsheet without its species
+         # (blocked). The grid is as wide as the screen, so this shot stays at the page's own scale.
          {"go": "/private/import-tool/", "prepare": [("wait", 600), ("call", import_grid_rows), ("wait", 400)],
           "steps": [("frame", "table:visible", "Enter rows one field at a time, or paste them from a spreadsheet",
-                     {"below": 40}), ("wait", 400),
+                     {"below": 40}), ("wait", 300),
                     ("pick", GRID.format(0, 1, "select"), "Neural dynamics"),
-                    ("type", GRID.format(0, 2, "input"), "SAMPLE Mouse M10 - Bruno II"),
+                    ("type", GRID.format(0, 2, "input"), "Mouse M10 - Bruno"),
                     ("pick", GRID.format(0, 3, "select"), "Male"),
-                    ("pick", GRID.format(0, 4, "select"), "Mus musculus"), ("wait", 400),
-                    ("pick", GRID.format(0, 5, "select"), "C57BL/6J"),
-                    ("pick", GRID.format(1, 1, "select"), "Neural dynamics"),
-                    ("type", GRID.format(1, 2, "input"), "SAMPLE Mouse M11 - Lola"),
-                    ("pick", GRID.format(1, 3, "select"), "Female"), ("wait", 300),
-                    ("click", "Validate current tab"), ("wait", 1600),
+                    ("pick", GRID.format(0, 4, "select"), "Mus musculus"), ("wait", 300),
+                    # The second row arrives as one paste from a spreadsheet (project, name and sex; no species).
+                    ("call", paste_second_row),
+                    ("mark", "table:visible tbody tr >> nth=1", "Pasted from a spreadsheet", 1700, "below"), ("unmark",),
+                    ("click", "Validate current tab"), ("wait", 1400),
                     # Validation adds a summary above the grid: the camera follows the grid down.
                     ("move", "table:visible", "Each row is checked before anything is imported", {"ms": 700, "below": 40}),
-                    ("mark", IMPORT_STATUS.format(0), "Ready to create", 1900, "right"),
-                    ("mark", IMPORT_STATUS.format(1), "Needs a fix", 2100, "right")]}]},
+                    ("mark", IMPORT_STATUS.format(0), "Ready to create", 1600, "right"),
+                    ("mark", IMPORT_STATUS.format(1), "Needs a fix", 1800, "right")]},
+         # The CSV side of the tool, on its Subjects tab: the templates, a completed CSV chosen (the file chooser is
+         # answered with a copy of the template) and the import actions it enables; nothing is imported.
+         {"go": "/private/import-tool/", "prepare": [("wait", 500), ("click", "CSV import"), ("wait", 600),
+                                                     ("click_sel", "#subjects-tab-button"), ("wait", 600)],
+          "steps": [("frame", {"union": True, "targets": ["#subjects-tab .lab-importer__template-buttons", "#subjects-tab .lab-importer__button-group"]},
+                     "Or upload a CSV made from a template", {"pad": 30}),
+                    ("wait", 400), ("mark", "#subjects-tab .lab-importer__template-buttons", "A template per record type", 1500),
+                    ("unmark",), ("call", upload_csv), ("wait", 600),
+                    ("mark", "#subjects-tab .lab-importer__file-input-label", "Ready to import", 1500),
+                    ("unmark",), ("point", "#subjects-tab button[value=subjects]"), ("wait", 1200)]},
+         # The SoftMouse import: its browse page in file mode, a colony export chosen on camera (the file chooser is
+         # answered with a small Animal List workbook), the animals it lists, and the import configuration that
+         # Import all opens; nothing is imported. The page needs a saved credential: softmouse_credential makes a
+         # placeholder one through the checkout and removes it after the shot.
+         {"go": "/private/softmouse/browse/",
+          "prepare": [("call", lambda p: softmouse_credential(p, True)),
+                      # Without a credential the first visit was sent to the credentials page: the browse page again.
+                      ("call", lambda p: p.goto(BASE + "/private/softmouse/browse/", wait_until="networkidle")),
+                      ("wait", 500), ("click_sel", "#source-file-btn"), ("wait", 600)],
+          "steps": [("frame", {"union": True, "targets": [["h1.custom-content__title", "h1"], "#file-upload-bar"]},
+                     "Bring your colony over from SoftMouse: upload its export", {"maxh": 420}),
+                    ("wait", 400), ("call", softmouse_upload),
+                    ("move", {"union": True, "targets": ["#file-upload-bar", "#animals-content"]}, None, {"ms": 1000, "maxh": 520}),
+                    ("wait", 1400),
+                    ("click_sel", "#import-all-btn"), ("wait", 900),
+                    # The configuration's head and first fields (the whole dialog is as tall as the screen).
+                    ("optional", ("move", {"union": True, "targets": ["#import-configuration-title", "#import-configuration-description"]}, None,
+                                  {"ms": 900, "below": 260})),
+                    ("wait", 2400)],
+          "after": [("click_sel", "#close-import-configuration-btn"), ("call", lambda p: softmouse_credential(p, False))]}]},
 ]
 # Where the link under the video points while a shot plays (by the shot's caption); the chapter's own `doc` otherwise.
 SHOT_LINKS = {
     "Every procedure, recording and log has a type": ("/datamodel/modules/procedure/", "About procedures"),
-    "Link it to its subject, setup, atlas and target brain region": ("/webinterface/forms/", "How forms work"),
+    "Linked to its subject, the setup and equipment used, its atlas and target region": ("/webinterface/forms/", "How forms work"),
     "Each type adds its own fields: here the implant's stereotaxic coordinates": ("/webinterface/atlases-and-coordinates/", "More about coordinates"),
     "Its coordinates place the implant in the rat brain atlas": ("/webinterface/atlases-and-coordinates/", "More about atlases and coordinates"),
+    "Ex vivo work carries on from a subject: specimen sets, their procedures and slice sessions": ("/tutorials/specimen-workflow/", "The specimen workflow"),
     "Sessions with the implanted rat line up their epochs, behavior and recordings": ("/datamodel/stem/epoch/", "About epochs"),
-    "Projects share their records with people and groups, by role": ("/datamodel/permissions/", "Learn about permissions"),
+    "A project shares its records with people and groups, by role": ("/datamodel/permissions/", "Learn about permissions"),
+    "Invite a colleague by email and give them a role": ("/webinterface/sharing-and-memberships/", "How sharing works"),
     "Procedure episodes record their severity and licenses": ("/datamodel/modules/procedureepisode/", "About procedure episodes"),
+    "One episode groups the procedures it covers": ("/datamodel/modules/procedureepisode/", "About procedure episodes"),
     "A shared catalog of consumables, with hundreds of probe designs": ("/webinterface/probe-catalog/", "More about the probe catalog"),
     "Each design is drawn from its geometry": ("/webinterface/probe-catalog/", "More about the probe catalog"),
     "Species and strains come from shared taxonomies": ("/datamodel/taxonomies/", "About taxonomies"),
+    "Atlases bring their brain-region trees: filter any list by region": ("/webinterface/atlases-and-coordinates/", "More about atlases"),
     "Make a project public in one step": ("/tutorials/sharing-project-publicly/", "How to share a project publicly"),
-    "Its records then appear on the public portal and API": ("/tutorials/sharing-project-publicly/", "How to share a project publicly"),
+    "Everything it refers to goes with it, after a confirmation": ("/tutorials/sharing-project-publicly/", "What becomes public"),
+    "Public projects are read on the portal and through the public API, no account needed": ("/publicdata/", "About public data"),
     "Download a whole project, or one session to convert to NWB": ("/tutorials/exporting-to-nwb/", "How to export to NWB"),
+    "Reports come from the project's Export menu": ("/webinterface/exports-and-reports/", "More about exports and reports"),
     "A STAR Methods draft with the RRIDs for your paper": ("/webinterface/exports-and-reports/", "More about exports and reports"),
     "Every record through the REST API, from Python or MATLAB": ("/api/", "Explore the API"),
-    "The AI assistant offers plain-language, semantic search of your records": ("/webinterface/ai-assistant/", "About the AI assistant"),
+    "The AI assistant searches your records in plain language": ("/webinterface/ai-assistant/", "About the AI assistant"),
+    "It answers with the matching records, within your permissions": ("/tutorials/working-with-ai/", "Working with AI"),
     "Enter rows one field at a time, or paste them from a spreadsheet": ("/webinterface/import-tool/", "Learn about the import tool"),
     "Each row is checked before anything is imported": ("/webinterface/import-tool/", "Learn about the import tool"),
+    "Or upload a CSV, with a template for every record type": ("/webinterface/import-tool/", "CSV import"),
+    "Bring your colony over from SoftMouse: upload its export": ("/webinterface/softmouse/", "About the SoftMouse import"),
 }
 TOUR_OUT = WALKTHROUGH_OUT / "tour"
 TOUR_DATA = REPO_ROOT / "docs" / "_data" / "tour.yml"
@@ -1149,6 +1428,109 @@ TOUR_MARK_JS = """({box, tag, place}) => {
     if (label) label.style.opacity = '1';
 }"""
 TOUR_UNMARK_JS = "() => document.querySelectorAll('.docs-tour-mark').forEach(el => el.remove())"
+# A native select's list does not render in a screencast: its options are drawn under the field (above it when there
+# is no room), sized from the field as the camera shows it, for the pointer to pick from. Returns the chosen row's box.
+TOUR_LIST_JS = """({box, labels, chosen}) => {
+    document.querySelectorAll('.docs-tour-list').forEach(el => el.remove());
+    const h = Math.max(24, Math.round(box.height)), font = Math.round(h * 0.42);
+    const list = document.createElement('div'); list.className = 'docs-tour-list';
+    list.style.cssText = 'position:fixed;z-index:2147483644;pointer-events:none;left:' + box.x + 'px;width:' + box.width + 'px;'
+        + 'background:#fff;border:1px solid #c9c4d6;border-radius:' + Math.round(h * 0.2) + 'px;overflow:hidden;'
+        + 'box-shadow:0 8px 24px rgba(38,22,58,.22);font:400 ' + font + 'px/1.2 """ + TOUR_FONT.replace('"', '\\"') + """;color:#26163a;'
+        + 'opacity:0;transition:opacity .15s ease';
+    labels.forEach(l => { const row = document.createElement('div'); row.textContent = l;
+        row.style.cssText = 'padding:0 ' + Math.round(h * 0.35) + 'px;height:' + h + 'px;line-height:' + h + 'px;'
+            + 'white-space:nowrap;overflow:hidden;text-overflow:ellipsis';
+        list.appendChild(row); });
+    const below = box.y + box.height + 2, height = labels.length * h + 2;
+    list.style.top = (below + height <= innerHeight - 4 ? below : Math.max(4, box.y - 2 - height)) + 'px';
+    document.documentElement.appendChild(list);
+    list.getBoundingClientRect(); list.style.opacity = '1';
+    const r = list.children[chosen].getBoundingClientRect();
+    return {x: r.left, y: r.top, width: r.width, height: r.height};
+}"""
+TOUR_LIST_PICK_JS = """({chosen}) => {
+    const list = document.querySelector('.docs-tour-list');
+    if (!list) return;
+    const row = list.children[chosen];
+    row.style.background = '#8122a1'; row.style.color = '#fff';
+    setTimeout(() => list.remove(), 220);
+}"""
+
+
+def pick_from_list(page, select, text: str):
+    """Draw the native select's options under it and have the pointer pick `text` (the value is set by the caller)."""
+    labels = [label.strip() for label in select.locator("option").all_text_contents()]
+    chosen = next((i for i, label in enumerate(labels) if label.lower() == text.lower()), None)
+    if chosen is None:
+        chosen = next((i for i, label in enumerate(labels) if text.lower() in label.lower()), None)
+    box = select.bounding_box()
+    if chosen is None or not box:
+        return
+    # Up to six options around the chosen one, without the placeholder.
+    rows = [i for i, label in enumerate(labels) if label and not label.startswith("---") and not label.startswith("Choose")]
+    if chosen not in rows:
+        rows.append(chosen)
+        rows.sort()
+    at = rows.index(chosen)
+    start = max(0, min(at - 2, len(rows) - 6))
+    window = rows[start:start + 6]
+    row = page.evaluate(TOUR_LIST_JS, {"box": box, "labels": [labels[i] for i in window], "chosen": window.index(chosen)})
+    page.wait_for_timeout(200)
+    page.evaluate(TOUR_POINTER_JS, {"x": row["x"] + min(row["width"] / 2, 90), "y": row["y"] + row["height"] / 2, "ms": 500, "click": True})
+    page.wait_for_timeout(500 + 220)
+    page.evaluate(TOUR_LIST_PICK_JS, {"chosen": window.index(chosen)})
+    page.wait_for_timeout(260)
+
+
+def select2_with_pointer(page, css: str, text: str):
+    """Open a Select2 list, type the search and have the pointer go to the option and click it (the field itself has
+    been clicked already). A list that stays open after the pick (one that takes several values) is closed: its
+    highlighted option is the one just picked, so closing changes nothing."""
+    container = page.locator(f"{css} + .select2").first
+    container.click(timeout=8000)
+    # A list that did not open: the row may have been re-rendered under the click (a grid after a typed cell, a
+    # chained field after its parent changed), so it is clicked once more; failing that, Select2 is asked to open.
+    for attempt in range(3):
+        page.wait_for_timeout(300)
+        if page.locator(".select2-container--open").count():
+            break
+        if attempt == 0:
+            container.click(timeout=8000)
+        else:
+            page.locator(css).first.evaluate("s => { const $ = window.jQuery || (window.django && django.jQuery); if ($) $(s).select2('open'); }")
+    search = page.locator(".select2-container--open .select2-search:not(.select2-search--hide) .select2-search__field").first
+    if search.count() and search.is_visible():
+        search.type(text, delay=40)
+    # The option itself: the exact label, else the first starting with the text, else the first containing it
+    # ("Male" is also inside "Female"); a list that loads its results is given up to four seconds.
+    options = page.locator(".select2-container--open .select2-results__option")
+    pattern = re.escape(text)
+    match = None
+    for attempt in range(9):
+        if attempt:
+            page.wait_for_timeout(500)
+        for candidate in (rf"^\s*{pattern}\s*$", rf"^\s*{pattern}", pattern):
+            found = options.filter(has_text=re.compile(candidate, re.I))
+            if found.count():
+                match = found.first
+                break
+        if match is not None:
+            break
+    if match is None:
+        page.keyboard.press("Escape")
+        raise LookupError(f"no option {text!r} in {css}")
+    match.scroll_into_view_if_needed()
+    page.wait_for_timeout(150)
+    point(page, match, click=True)
+    match.click()
+    page.wait_for_timeout(250)
+    # A single-value list still open after the click did not take it: the highlighted option is taken with Enter.
+    if page.locator(f"{css} + .select2.select2-container--open").count() and not page.locator(css).first.evaluate("s => s.multiple"):
+        page.keyboard.press("Enter")
+        page.wait_for_timeout(250)
+    if page.locator(f"{css} + .select2.select2-container--open").count():
+        page.keyboard.press("Escape")
 
 # The text a viewer can read: text in the viewport that nothing covers (a dialog's backdrop hides the page under it),
 # and the values of visible fields. The options of a closed <select> are not drawn.
@@ -1370,7 +1752,8 @@ def record_chapter(page, chapter: dict, ffmpeg: str, clip: Path) -> list[dict]:
             check_no_foreign_email_on_screen(page)
             page.wait_for_timeout(600)  # the framed screen is drawn before the shot starts
             cast.cut()
-            captions.append((time.monotonic(), step[2]))
+            if step[2]:  # a frame without a caption is a plain cut inside a shot
+                captions.append((time.monotonic(), step[2]))
         elif kind == "move":
             options = step[3] if len(step) > 3 else {}
             if step[2]:
@@ -1380,6 +1763,8 @@ def record_chapter(page, chapter: dict, ffmpeg: str, clip: Path) -> list[dict]:
             check_no_foreign_email_on_screen(page)
         elif kind == "pause":
             cast.pause()
+        elif kind == "unmark":
+            page.evaluate(TOUR_UNMARK_JS)
         elif kind == "optional":
             try:
                 run(step[1])
@@ -1396,20 +1781,30 @@ def record_chapter(page, chapter: dict, ffmpeg: str, clip: Path) -> list[dict]:
         elif kind == "point":
             point(page, step[1])
         elif kind == "pick":
-            # A dropdown: the pointer clicks it and the option is chosen (a native list does not show in a recording).
-            point(page, [f"{step[1]} + .select2", step[1]], click=True)
-            native = page.locator(step[1]).first
-            if native.is_visible():
-                select_by_text(native, step[2])
+            # A dropdown: a Select2 one opens and the pointer picks the option from its list; a native one (whose list
+            # does not show in a recording) has its options drawn under it for the pointer to pick from. Select2
+            # leaves the native select in place as a narrow stub, so the widget is looked for first.
+            if page.locator(f"{step[1]} + .select2").count():
+                point(page, page.locator(f"{step[1]} + .select2").first, click=True)
+                select2_with_pointer(page, step[1], step[2])
             else:
-                choose(page, step[1], step[2])
+                point(page, step[1], click=True)
+                native = page.locator(step[1]).first
+                if native.is_visible():
+                    pick_from_list(page, native, step[2])
+                    select_by_text(native, step[2])
+                else:
+                    choose(page, step[1], step[2])
             page.wait_for_timeout(350)
+        elif kind == "select2":
+            # The pointer clicks the field, the search is typed, and the pointer clicks the option.
+            point(page, page.locator(f"{step[1]} + .select2").first, click=True)
+            select2_with_pointer(page, step[1], step[2])
         else:
             # Steps that use a control: the pointer goes there first.
             target = {"click": lambda: page.get_by_text(step[1], exact=False).first,
                       "click_sel": lambda: page.locator(step[1]).first,
                       "type": lambda: page.locator(step[1]).first,
-                      "select2": lambda: page.locator(f"{step[1]} + .select2").first,
                       "open_select2": lambda: page.locator(f"{step[1]} + .select2").first}.get(kind)
             if target:
                 point(page, target(), click=True)
@@ -1426,10 +1821,17 @@ def record_chapter(page, chapter: dict, ffmpeg: str, clip: Path) -> list[dict]:
             # The assistant drawer remembers that it was open; a shot that wants it opens it in `prepare`.
             if page.locator(".brainstem-assistant__close:visible").count():
                 page.locator(".brainstem-assistant__close").first.click()
+        # A step that fails names itself in the error, so the chapter's report says where it stopped.
         for step in shot.get("prepare", []):
-            do_step(page, step)
+            try:
+                do_step(page, step)
+            except Exception as error:  # noqa: BLE001
+                raise RuntimeError(f"{str(error).splitlines()[0][:100]} at prepare step {step[:2]!r}") from error
         for step in shot["steps"]:
-            run(step)
+            try:
+                run(step)
+            except Exception as error:  # noqa: BLE001
+                raise RuntimeError(f"{str(error).splitlines()[0][:100]} at step {step[:2]!r}") from error
         cast.pause()
         frame(page, None, {})  # zoomed, the controls of `after` can be off the screen
         for step in shot.get("after", []):
